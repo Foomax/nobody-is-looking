@@ -177,3 +177,29 @@ a fourth wouldn't teach us anything). So we never got to run the actual science.
 **Why this still counts.** It's a clean example of the report's main point: this work fails on *plumbing*
 (a GPU component that won't compile), not on the *idea*. The repo right next to it (tarcle) reproduced fine
 because its authors saved their intermediate results and shipped a plain-CPU re-analysis. **No human action needed.**
+
+## 29. The new direction (2026-08-28, R-1 … R-14) — plain language
+
+A second Claude session took the GPU after the N=36 ledger and asked a different question: not
+"does it reproduce?" but "what does a reproduction *depend on*?". Fourteen runs, all written up in
+`replication/NEW-DIRECTION.md` (one section per run, decision re-made after each).
+
+What it found, in one breath: a result that matched the author to three decimals was matching
+the author's random seed, not the effect (the effect was actually 30% larger); one reproduced
+result only comes out on about half of the seeds; the noise-injection sandbagging result works on
+about two draws in three and breaks the model one draw in four (the earlier "9 out of 10" was a
+lucky batch, and the author's "6 out of 10" was an ordinary one); changing the `transformers`
+library version changed *nothing* (35,700 generations byte-identical) while changing torch rewrote
+65% of the text but no conclusions; the sandbagging trick does not carry over to Llama-1B because
+the "sandbagging" prompt barely works there; six of the seven "couldn't run" rows *could* run once
+the environment was reconstructed (three exact, two partial, one behind a Weights & Biases login),
+and none of the original diagnoses had named the real cause; a blind test with deliberately
+injected bugs was caught 7 times out of 7.
+
+**Decisions taken on your behalf:** nothing was pushed, forked, or sent to authors. All new rows
+are `extension` class and do **not** count in the reproduction rate. The `uv` cache (78 GB) and
+finished extension environments were deleted to free the disk (nothing of the record was lost).
+
+**Needs you:** nothing blocking. If you want the last `env` row (dajale423) it needs a W&B login,
+which I will not create. R-15 (ayoakin, an overnight ~2–4 h job) may be running when you read this;
+its verdict goes in `NEW-DIRECTION.md` when a session judges `experiments/…ayoakin--ext-timetravel/`.
