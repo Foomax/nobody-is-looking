@@ -751,8 +751,15 @@ predict, but that is a hypothesis, not a measurement.
 **Never-located rows, status after the rot-reversal series:** `env` 6/6 attempted (3 exact, 2
 partial, 1 credential-gated); `data` 1/1 (partial); `unclear-entrypoint` 1/2 (partial; ak47na
 untried — W&B artefact, expected `model-access`); `runtime` 0/3; `vram` 0/2 (hardware);
-`api-key`/`model-access` by policy. **Pooled: 26/28 of rows that reached a measurement reproduce
-≥ partially; 1 scientific miss (AntiPaSTO); 1 definition-ambiguous (artmtt).**
+`api-key`/`model-access` by policy. **Pooled: 25/27 of rows that reached a measurement reproduce
+≥ partially** — 18/20 parent rows (15 reproduced + 3 partial) plus 7/7 rot-reversal rows (3 exact +
+4 partial). The two exceptions are AntiPaSTO (the one scientific miss) and the jlens row (hosted
+API, never a local test); artmtt's partial is definition-ambiguous.
+
+`[MEASURED]` Arithmetic check (`ledger.py` + the `--ext-*` ledgers): parents 36 attempted, 20
+located, 15 reproduced, 5 located-not-reproduced (3 partial, 1 not, 1 hosted-API); rot-reversal
+extensions 8 attempted, 7 located, 0 not-reproduced. An earlier draft of this file said 26/28 and
+"3 exact + 5 partial"; both were miscounts, corrected here 2026-08-29.
 
 ### N after R-15 — next-run decision
 

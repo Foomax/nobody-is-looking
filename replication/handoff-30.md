@@ -8,8 +8,9 @@ section per run, decision re-made after each). `lessons-25.md` has the harness l
   `experiment_class: extension`, excluded from the rate by `ledger.py`, each with `spec.json`
   (`extension.what_varies`), `ledger.json`, artefacts. `python3 ledger.py` lists them.
 - **Headline revision (NEW-DIRECTION.md, program-state section):** of never-located rows
-  re-attempted with the environment made right, 8 reached the computation → 3 exact, 5 partial,
-  0 scientific misses; pooled over everything that reached a measurement **26/28 ≥ partial**, one
+  re-attempted with the environment made right, 7 of 8 reached the computation → 3 exact, 4 partial,
+  0 scientific misses (the 8th needs a W&B login); pooled over everything that reached a
+  measurement **25/27 ≥ partial**, one
   scientific miss (AntiPaSTO), one definition-ambiguous (artmtt). Seeded rows should be re-tiered as
   rates: sandbagging 67% [49, 81] reveal / 23% collapse (n=30); phusroyal 4/15 in range.
 - **Overnight queue (running, detached):** `tree_late.sh` with three `runtime` rows at the authors'

@@ -11,9 +11,13 @@ reusable core)** · Part 4 tiers · Part 5 numbers for this card.
 
 **P1. Check the system before the science.** Nearly every hour lost was infrastructure wearing an
 experiment's mask: a stalled download, a full disk (the `uv` cache alone reached 78 GB), a harness
-task killed at startup while the process lived on, a RAM-OOM SIGKILL, a shell that exports `CI`.
-When a run fails fast, silently, in a burst, or exits 0 in 0 min, verify disk/RAM/network/process/
-invocation before reading the traceback as science.
+task killed at startup while the process lived on, a RAM-OOM SIGKILL, a shell that exports `CI`,
+an empty venv, a bash script rewritten while it was executing. When a run fails fast, silently, in
+a burst, or exits 0 in 0 min, verify disk/RAM/network/process/invocation before reading the
+traceback as science. Two traps specific to this harness: **`pgrep -f <pattern>` matches your own
+`bash -c` command text** (anchor patterns to the executable; confirm survivors with `ps -o
+pid,stat,cmd -p <pid>`), and **`nvidia-smi` compute-apps lists desktop processes** — busy = *python*
+on the GPU **or** the runner's pid alive.
 
 **P2. The catalogue describes; it does not command.** `spec.json.entrypoint` is a pointer: prose,
 a pipeline step, a chain, a notebook, a function library, a script missing its required positional
@@ -34,10 +38,12 @@ a different experiment — and if you run it anyway, it is an **extension**, led
 not a constraint on a later one (`accelerate` re-resolved torch 2.3.1 → 2.13; `odeformer` bumped
 2.2.0 → 2.4.1). Check the version line before trusting an arm.
 
-**P6. Judge from data, not pixels or prose.** Executed notebooks and saved HTML carry the arrays;
-`results/*.json` beats the README; `git log -S` the config to test whether the paper's setting ever
-existed; store per-item outputs so two runs can be `diff`ed (35,700 generations byte-identical is
-stronger than any statistic).
+**P6. Judge from data, not pixels or prose.** Executed notebooks and saved HTML carry the arrays
+(`{"dtype","bdata"}` base64, `Plotly.newPlot`); `results/*.json` beats the README; `git log -S` the
+config to test whether the paper's setting ever existed; store per-item outputs so two runs can be
+`diff`ed (35,700 generations byte-identical is stronger than any statistic). **Exception:** for a
+claim about a *curve's shape* ("freezing the MLP eliminates the plateau"), reading the saved plot
+images is the correct tool — then delete the underlying tensors.
 
 **P7. Pre-register, honour the rule, disclose the deviation first — and judge the measure the claim
 names.** Verify what the notebook actually prints (a catalogued "pairwise distance" was perplexity;
@@ -45,7 +51,10 @@ a "0.818 overall" was one cell of a 25,207-cell tensor). Split compound claims; 
 halves `UNRESOLVED`.
 
 **P8. A satisfied loss / a green `verify` / a committed graph / a 3-decimal match is not a
-reproduction.** A byte-identical recompute of committed artefacts is `recompute`; a 3-decimal match
+reproduction.** A repo's `verify` defines only what its author guarantees — map its targets against
+`spec.json.target_value` before treating green as a reproduction (one `verify` passed 6/6 on
+statistics unrelated to the headline). Committed `graphs/` show the repo is self-consistent; that
+is `located`, not `reproduced`. A byte-identical recompute of committed artefacts is `recompute`; a 3-decimal match
 with the author's seed is `exact-same-seed`; only a match that survives other seeds is
 `robust-across-seeds`. State the tier.
 
@@ -55,7 +64,9 @@ time; one log line per node; a plain-text done-list; delete venvs per run; refus
 startup while the process survives.
 
 **P10. Rank follow-ups by "would this flip the verdict?"** Seeds flipped verdicts (phusroyal
-4/15); torch versions did not; `transformers` minor versions changed nothing at all.
+4/15); torch versions did not; `transformers` minor versions changed nothing at all. This
+*revises* lessons-1 A8 ("don't chase seeds"): a first pass of ~5 seeds is high-information and
+cheap; a tenth seed on a row already shown stable is not.
 
 **P11. Outward-facing actions are minimal and confirmed.** No forks/PRs/issues/accounts/author
 contact; never paste secrets. A W&B login is `model-access`, not a fix.
@@ -109,14 +120,31 @@ ten seeds were the least representative ten of thirty. Run ≥5 seeds before tie
   rewrites + `sys.modules['google.colab']` stub with `__spec__`/`__path__`; Drive paths → local dirs;
   `assert dir.name == X` → a *copy* named `X` (symlinks resolve); missing inputs → prepend the
   author's generator; empty gitlink → clone upstream at the gitlink commit.
-- **Run:** detached, one GPU job; time-box from the author's timing; batch ≤8 on 24 GB; watch the
-  log with a `Monitor` on `RUN-EXIT`; "EXIT 0 in 0 min" or a burst of instant exits is a red flag.
+- **Run:** detached, one GPU job; **run the control condition first** (a broken pipeline then shows
+  as a missing 0.9, not a plausible 0.2); time-box from the author's timing (grep for
+  `for … in range(` — a loop over N models is N × per-model); batch ≤8 on 24 GB; watch the log with
+  a `Monitor` on `RUN-EXIT` (per-node granularity; per-epoch monitors get throttled by tqdm);
+  "EXIT 0 in 0 min" or a burst of instant exits is a red flag. Check what a `--quick` flag actually
+  changes before using it for a claim — one swapped the model *and* dropped the control conditions,
+  making the headline NaN by construction. Cost-weight pre-checks by run length: if the box is
+  > 15 min, read every cell first.
 - **Judge:** the named measure; what the script itself prints; per-item outputs stored for `diff`;
-  ordinals → indices; mean/min/fraction for "~90%" claims; ≥5 seeds before `exact`; rates with
-  intervals; hosted API → `api-key`; login → `model-access`; partial → `UNRESOLVED` halves; never
-  ledger a failure that points at your own invocation or at the harness.
+  ordinals → indices; mean/min/fraction for "~90%" claims; per-condition n beside every per-axis
+  number (a "52.4" was n=4); raw generations at the extreme setting (a coherence/format gate turned
+  ≈21 into 0.7 — the gate *was* the result); does the regulariser actually bind before reading its
+  ablation; cross-model tally, not one number ("reproduces on 270M, not on 1B" is the finding);
+  cross-seed parameter cos-sim separates "unlucky seed" from "converges to the same weak solution";
+  ≥5 seeds before `exact`; rates with intervals; hosted API → `api-key`; login → `model-access`;
+  partial → `UNRESOLVED` halves; never ledger a failure that points at your own invocation or at
+  the harness.
 - **Ops:** VERDICT + `report.py`/`ext_ledger.py` → human/machine docs → copy verdict artefacts into
-  the row folder → commit `replication/` (+ `prompts2/`) → mirror.
+  the row folder → commit `replication/` (+ `prompts2/`) → mirror (`--no-links`; NTFS drops the
+  venv symlink). **Delete environments, never outputs** — but do delete raw intermediates (fp32
+  activation dumps ran to 35 GB mid-run) once the derived artefact is saved. Withdrawing a queued
+  node = delete its line from `tree_late.txt` **and** add its name to `tree_late_done.txt` in the
+  same step; killing the process alone lets the loop re-run it. Never rewrite a script a live
+  process is executing (bash reads by offset) — write `x.sh.new` and `mv`. `ast.parse` every
+  generated notebook copy before queuing it.
 
 ---
 
@@ -130,6 +158,13 @@ ten seeds were the least representative ten of thirty. Run ≥5 seeds before tie
 | `SIGKILL`/137 on a CPU node | system-RAM OOM (fp32×N model copies) | move to GPU (`DEVICE`), a hardware knob |
 | CUDA OOM in `calc_nll`/vmap | 80 GB-era batch on 24 GB | eval batch ≤8; full-residual Jacobian on a large model = `vram` |
 | `ModuleNotFoundError` for a normal package | import scanner missed a transitive dep | pre-install; `typeguard`+`jaxtyping` for transformer-lens; per-package fallback |
+| `ModuleNotFoundError` for a package the batch *should* have installed | `uv pip install a b c` is atomic — one bad name (e.g. a scanner false positive) empties the whole batch | per-package fallback on batch failure; log skipped names |
+| prep "done" in 2 s; imports then fail | a stale, incomplete `.venv` survived an earlier crash and was reused | `rm -rf experiments/<slug>/.venv` before requeuing after any prep/run crash |
+| `du -sh .venv` < 100 MB with torch requested | silent install failure | treat venv size + the printed torch version as a prep health check |
+| a version pin in `tree_prep.sh` has no effect | prep runs first and installs the newest; the rerun command runs second | put version-sensitive pins in the **rerun command**, not in prep |
+| a repo's `pip install -e .` downgrades torch | the package pins an old torch (`e2e_sae` → `~=2.2.0`) | put it on `PYTHONPATH`, or install `--no-deps` plus its pure-Python deps |
+| disk spikes during prep well above the venv size | uv unpacks each wheel to `~/.cache/uv/.tmp*` before hardlinking | floor ≥25 GB; `uv cache clean` (note: `prune` frees almost nothing while wheels are referenced) |
+| a notebook edit "succeeds" with 0 changes | `nbformat` `source` may be a **string or a list**; iterating a string yields characters | normalise with `splitlines(keepends=True)`; assert replacement count > 0 |
 | `No module named 'src'` / `'training_utils'` / `'parsers'` | wrong CWD, a subdir the author had on the notebook path, or a module from a *cloned* repo (not the pip package) | `PYTHONPATH` += repo root / subdir; clone the upstream repo the author cloned and add its root |
 | `NameError: true` / notebook JSON in traceback | runner fed an `.ipynb` to Python | dispatch on extension; nbconvert |
 | `TRANSFORMERS_CACHE` import error | removed in transformers 5 | `transformers<5` |
@@ -137,6 +172,7 @@ ten seeds were the least representative ten of thirty. Run ≥5 seeds before tie
 | `TrainingArguments(evaluation_strategy=)` TypeError | removed in a later 4.x than diagnosed (still in 4.49) | `--exclude-newer <post date>`; don't guess the version |
 | `sae_lens.toolkit` / `sae_lens.sae` missing | moved across sae-lens majors | `sae-lens<6` / `<4` |
 | `KeyError: '<sae id>'` two cells after the loader | a silent-skip loader (`continue` on a missing local cache) — an **uncommitted artefact**, not a registry id | populate the cache from the public release (`SAE.from_pretrained` + `save_model`); read the loader first |
+| `KeyError` on a registry id *at the load call itself* | genuinely renamed library **asset** (registry ids, hub keys) — a different class from a renamed API | needs the old library's whole stack; two pins deep with no co-installable set → `env`, naming the exact id |
 | `pkg_resources` missing (wandb) | setuptools ≥81 | `setuptools<81` |
 | `params_t` from torch.optim | removed in torch 2.6 | `torch==2.3.1` from cu121 (may re-break transformer-lens) |
 | a pinned torch silently becomes the newest torch | a later unconstrained install re-resolved it | pin torch in the same call as everything else; read the version line |
@@ -149,7 +185,9 @@ ten seeds were the least representative ten of thirty. Run ≥5 seeds before tie
 | `KeyError: 'GITHUB_WORKSPACE'` | this shell exports `CI` | `unset CI` |
 | `google.colab.__spec__ is None` | incomplete stub | `sys.modules` stub with `__spec__`+`__path__` |
 | `login("Your hf token")` raises | placeholder secret | stub on a copy; cached token used |
-| `FileNotFoundError: <intermediate>.csv/.pt` | an earlier pipeline step / a commented-out cell produces it | prepend the author's generator (`prepare_*.py`, `process_D_ref`, the commented cell) on a copy |
+| `FileNotFoundError: <intermediate>.csv/.pt` | an earlier pipeline step / a commented-out cell produces it | prepend the author's generator (`prepare_*.py`, `process_D_ref`, the commented cell) on a copy; build the chain **transitively** — `grep '_PATH\s*=' config.py`, then find each constant's `save_file` producer |
+| a queued node you already ledgered runs again | its line is still in the live queue file | delete the line **and** append the name to the done-list |
+| "prep failed" on a node whose script you just edited | you rewrote a bash file a live process was reading | patch via temp file + `mv` (new inode) |
 | `IndexError` deep in a data loop after a clean env | committed dataset smaller than the script indexes (author had a larger uncommitted file) | check `len(data)` vs index range; deviation on a copy; ledger partial with n |
 | `assert dir.name == "<repo>"` | dir-name assert; symlinks *resolve* | copy the checkout into a dir of that name |
 | empty directory where a submodule should be, no `.gitmodules` | broken gitlink | `git ls-tree HEAD <dir>` → clone upstream at that commit |

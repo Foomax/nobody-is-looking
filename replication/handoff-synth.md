@@ -34,13 +34,18 @@ Two workstreams now share this folder: the **N=36 replication ledger** (handoff-
 
 ### A1. State (2026-08-29 08:30)
 - **Replication ledger: N=36 FINAL** — 36 attempted · 21 runs · 20 located · 15 reproduced
-  (11 exact + 4 recompute); 18/20 located reproduce ≥ partially; 16 never ran (env 7, runtime 3,
-  unclear-entrypoint 2, vram 2, api-key 1, data 1, model-access 1). `META-REPORT.md` is the report.
+  (11 exact + 4 recompute); 18/20 located reproduce ≥ partially (15 reproduced + 3 partial); 16
+  never ran (env 7, runtime 3, unclear-entrypoint 2, vram 2, api-key 1, data 1, model-access 1).
+  `META-REPORT.md` is the report. **Selection caveat that must travel with every quotation:** the
+  sample is minute-class rows plus the three protocol experiments; the hours-class scale test is
+  n=2 (tarcle ✅ via the *recompute* path — the GPU stage was never regenerated — and sneaky-mamba
+  `env`). The pattern is *consistent* at scale, not confirmed.
 - **Extension rows: 17** (`experiments/*--ext-*/`), all in `NEW-DIRECTION.md`. Net effect on the
-  headline: 8 never-ran rows re-attempted with the environment made right → 3 exact, 5 partial,
-  0 scientific misses, 1 credential-gated. Pooled over rows that reached a measurement:
-  **26/28 ≥ partial**; one scientific miss (AntiPaSTO 1B config drift); one definition-ambiguous
-  (artmtt). Seeded rows re-tiered: sandbagging 67% [49, 81] reveal / 23% collapse (n=30);
+  headline: 8 never-ran rows re-attempted with the environment made right; **7 reached a
+  measurement → 3 exact + 4 partial, 0 scientific misses**; 1 credential-gated. Pooled over every
+  row that reached a measurement: **25/27 ≥ partial** (18/20 parents + 7/7 rot-reversal); the two
+  exceptions are AntiPaSTO (the one scientific miss, 1B config drift) and the jlens row (hosted-API,
+  never a local test). artmtt's partial is definition-ambiguous — say so when quoting it. Seeded rows re-tiered: sandbagging 67% [49, 81] reveal / 23% collapse (n=30);
   phusroyal 4/15 seeds in the claimed range.
 - **Overnight `runtime` queue (`tree_late.sh`, detached, running):** O1 g-w1 timed out at its
   360-min budget (EXIT 124 → judge as `runtime`, honest timing); O2 mamiglia running (420);
@@ -48,7 +53,8 @@ Two workstreams now share this folder: the **N=36 replication ledger** (handoff-
   parent `ledger.json` and regenerate `META-REPORT.md` (`make_report_table.py`).
 - Repo `~/alignment-literature-meta-analysis/replication/` (=`$R`); mirror script `mirror.sh`;
   forks `Foomax/{AntiPaSTO,arena-sandbagging-mi,cross-model-alignment-geometry}` branch
-  `replication-3090`. Disk ~75 GB free.
+  `replication-3090` (three only, by the user's decision; `publish.sh` is allowlisted to them; each
+  fork README carries a `# human` and a `# LLM` section). Disk ~73 GB free.
 
 ### A2. Runners and helpers
 - `tree_late.sh` — the queue: reads `tree_late.txt` (`name|slug|timeout_min|cmd`), skips
@@ -86,9 +92,9 @@ directly and say so in `notes`.
 ### B1. What the data says now
 Two programs, one conclusion, twice tested:
 - **Ledger (N=36):** when the code runs, it reproduces (18/20 ≥ partial); what stops it running is
-  packaging, not science.
+  packaging, not science. (Minute-class sample; hours-class n=2 — consistent, not confirmed.)
 - **New direction (15 runs):** (i) the never-ran rows, once the environment is right, reproduce at
-  the same rate (8/8 ran → 3 exact + 5 partial, 0 misses); (ii) `env` was never one thing — version
+  the same rate (7/8 reached a measurement → 3 exact + 4 partial, 0 misses; the 8th needs a login); (ii) `env` was never one thing — version
   drift, uncommitted artefacts (the most common), code/lockfiles broken at publication, harness
   bugs, credential gates — and 0/6 first-traceback diagnoses named the cause; (iii) the software
   stack below `transformers` moves generated text (65%) but not verdicts; (iv) **seeds do move
@@ -97,7 +103,7 @@ Two programs, one conclusion, twice tested:
   injected bugs; (vi) contested phenomena in the corpus share no metric (493/493 distinct).
 
 **Headline (defensible now):** *Published alignment-forum empirical work reproduces when its
-environment is reconstructed — 26/28 of everything that reached a measurement, one scientific miss.
+environment is reconstructed — 25/27 of everything that reached a measurement, one scientific miss.
 The binding constraints are packaging and, underneath, unreported seeds: a single-seed "exact"
 reproduction is a statement about the RNG, and the honest unit of reproducibility for a seeded result
 is a rate with an interval.*
