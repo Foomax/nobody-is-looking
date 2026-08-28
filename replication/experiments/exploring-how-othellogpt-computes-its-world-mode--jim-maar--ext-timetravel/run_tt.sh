@@ -9,6 +9,6 @@ if [ ! -x "$V/bin/python" ]; then
 fi
 "$V/bin/python" -c "import torch,transformer_lens,transformers;print('RESOLVED torch',torch.__version__,'transformer-lens',transformer_lens.__version__,'transformers',transformers.__version__,'cuda',torch.cuda.is_available())" | tee -a "$L"
 ( nvidia-smi --query-gpu=memory.used --format=csv,noheader,nounits -l 30 > "$HERE/vram.log" 2>/dev/null & echo $! > "$HERE/.vram.pid" )
-t0=$(date +%s); ( cd "$S" && PYTHONPATH="$S" timeout 75m "$V/bin/python" prove_circuits_last_flipped.py ) >> "$L" 2>&1; rc=$?
+t0=$(date +%s); ( cd "$S" && PYTHONPATH="$S:$S/training_probes" timeout 75m "$V/bin/python" prove_circuits_last_flipped_repl.py ) >> "$L" 2>&1; rc=$?
 kill "$(cat "$HERE/.vram.pid")" 2>/dev/null
 echo "== $(date -Is) TIMETRAVEL RUN-EXIT $rc after $(( ($(date +%s)-t0)/60 )) min" | tee -a "$L"

@@ -1,0 +1,35 @@
+{
+ "post_id": "wezSznWnsMhpRF2QH",
+ "repo": "jim-maar/interpretability",
+ "head_sha": "73bc8f299f29823ad2ac1d288861dbb21b0e9f4f",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "env-timetravel",
+ "parent_slug": "exploring-how-othellogpt-computes-its-world-mode--jim-maar",
+ "what_varies": "checkout placed in a directory literally named 'interpretability' (the repo asserts its own dir name; the harness's symlink resolved to 'src'); packages resolved with uv --exclude-newer 2025-02-16 over requirements.txt + the conda yaml's transformer-lens==2.0.0 / jaxtyping==0.2.29 pins. Code, data, target unchanged.",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "0.818 overall (up to 0.97 for specific layer/position/tile combinations)",
+ "observed_value": "script's designated summary (layer 1, pos 10, D3): 0.8354 real attention / 0.8409 approx (target 0.818 overall; +0.017, inside abs:0.05) on 99,800 games (author >=200,200); all-cell micro 0.682 / macro 0.662 / max 1.00",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [
+  "checkout copied to a dir named interpretability (assert)",
+  "othello_world cloned from likenneth/othello_world at gitlink commit f23bb56 (empty gitlink, no .gitmodules)",
+  "PYTHONPATH += training_probes",
+  "uv --exclude-newer 2025-02-16 over requirements.txt + TL 2.0.0 / jaxtyping 0.2.29",
+  "DEVIATION: batches=499 (all available games) instead of 1000 on a copy"
+ ],
+ "wallclock_minutes": 74.0,
+ "peak_vram_gb": null,
+ "seeds_run": 1,
+ "notes": "ROT-REVERSAL (stacked): dir-name assert (copy) -> othello_world empty gitlink, no .gitmodules (cloned upstream at the gitlink commit f23bb56) -> training_utils on a subdir path -> IndexError: author's board_seqs file had >=200,200 games, committed one has 100,000 -> batches=499 deviation on a copy. Frozen env 2025-02-16 (torch 2.0.1, TL 2.0.0) ran first time. PARTIAL: scripted metric within tolerance on half the data; 'overall' aggregation UNRESOLVED.",
+ "artifact_paths": [
+  "run.log",
+  "accuracy_summary.json"
+ ]
+}

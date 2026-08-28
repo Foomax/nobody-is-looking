@@ -407,3 +407,54 @@ direction only. Then `dajale423` (e2e_sae fork, torch 2.2 era → freeze 2024-09
 `uchicago-xlab` (2026-08-01 — if a freeze at the post date fails, that is the "rotten at
 publication" branch, the one outcome the series has not yet produced).
 
+## R-9 — rot reversal, row 3: `jim-maar/interpretability` (Othello-GPT flipping circuit) (2026-08-28 17:41; 74 GPU-min + 2 restarts)
+
+**Parent verdict:** `env` — the repo asserts its checkout is literally named `interpretability`;
+the harness's symlink resolved to `src`. **What it took to run:** (1) a *copy* named
+`interpretability` (trivial); (2) the `othello_world` inputs — an **empty gitlink with no
+`.gitmodules` entry** — restored by cloning `likenneth/othello_world` at the gitlink's commit
+(`f23bb56`, exists upstream); (3) `training_probes/` on `PYTHONPATH` (notebook-era path);
+(4) a 2025-02-16 date-frozen resolution (torch 2.0.1, transformer-lens 2.0.0) — ran first time.
+Then: **`IndexError: index 100100 out of bounds for size 100000`** — the script indexes games
+200 … 200,200 (`batches=1000 × batch_size=200 + start=200`); the committed upstream file at the
+author's own gitlink commit has **100,000** games. The author ran on an uncommitted larger file.
+Deviation, on a copy and logged: `batches=499` (every available batch).
+
+`[MEASURED]` (`accuracy_summary.json`) over layers 1–7 × 59 positions × 64 tiles, 25,207 populated
+cells, 99,800 games:
+- the script's own designated summary (layer 1, position 10, tile D3): **0.8354** with real
+  attention, 0.8409 with the attention-pattern approximation — target "0.818 overall": **+0.017,
+  inside abs:0.05**.
+- naive aggregates over *all* cells: micro 0.682 / macro 0.662 / max 1.00 (target "up to 0.97").
+- `[UNRESOLVED]` which aggregation the post's "0.818 overall" denotes. The number the author's
+  script prints as its result is the D3 cell and it lands within tolerance; the all-cell mean
+  does not. Read as **partial (direction + the scripted metric within tolerance; n = 99,800 of
+  the author's ≥ 200,200 games)**.
+
+`[INFERRED]`
+1. Three layers of rot were stacked on one row, and the parent's taxonomy recorded only the outermost
+   (the assert). Under it: a broken submodule pointer, a notebook-only import path, and an
+   uncommitted dataset. **`env` rows should be expected to be onions**; the first fix reveals the
+   next reason, and the stopping rule (2–3 tries) guarantees the ledger records the shallowest.
+2. Once the environment was right, the computation ran and its own printed metric matched. The
+   residual uncertainty is a *reporting* ambiguity ("overall") plus a *data* gap (uncommitted
+   games) — neither is scientific fragility.
+
+**Rot-reversal running tally** (7 `env` rows in N=36):
+
+| row | parent diagnosis | actual causes (in order found) | result |
+|---|---|---|---|
+| tenseisoham | kwarg removed ~4.46 | version claim wrong; post-date freeze runs | ✅ exact |
+| thebuleganteng | sae-lens registry id removed | uncommitted SAE cache + silent-skip loader | ✅ exact |
+| jim-maar | dir-name assert | assert → empty gitlink → notebook path → uncommitted larger dataset | ⚠ partial (scripted metric 0.835 vs 0.818 on half the games) |
+| ibm | torch↔transformer-lens arity | requirements.txt unsatisfiable as a set (sparse_autoencoder pins TL 1.9.1 vs 2.2.2); uncommitted SAE file; entrypoint is pipeline step N with uncommitted CSVs | ⏳ R-10 |
+
+### N after R-9 — next-run decision
+
+R-10 (ibm) is on the card: environment built by dropping the contradictory pin and installing the
+OpenAI package `--no-deps`; the SAE file and the three intermediate CSVs regenerated with the
+repo's own functions. Headline is timing; direction only. After R-10: `dajale423` (2024-09;
+e2e_sae fork) and `uchicago-xlab` (2026-08-01, the "rotten at publication" test). Then this
+series is summarised and the direction re-evaluated against the remaining program items
+(bug-injection control, dtype arm).
+
