@@ -1,0 +1,32 @@
+{
+ "post_id": "dS5dSgwaDQRoWdTuu",
+ "repo": "dajale423/error_pathology",
+ "head_sha": "a963531eaf1752c57bc6d6f9384a73136d4ab471",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "env-timetravel",
+ "parent_slug": "investigating-sensitive-directions-in-gpt-2-an-i--dajale423",
+ "what_varies": "resolution frozen at 2024-09-20 (post 2024-09-06 + 14 d): repo requirements.txt minus its transformer-lens==1.10.0 pin (the repo's own git dependency e2e_sae requires transformer-lens>=1.14 -- the two files contradict), torch==2.2.2 cu121 (e2e_sae's pin), e2e_sae's declared deps, e2e_sae editable --no-deps on PYTHONPATH. Code and data untouched.",
+ "installs": true,
+ "runs": false,
+ "claim_located": false,
+ "claim_reproduced": null,
+ "claimed_value": "SAE(x) KL comparable to cov-random-mixture baseline at Layer 6, variable across layers",
+ "observed_value": "env resolves (torch 2.2.2+cu121, transformer-lens 1.14.0, transformers 4.35.2); imports OK; script hard-codes args.e2e='h9hrelni' and calls SAETransformer.from_wandb -> wandb api_key not configured. No inference.",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "model-access",
+ "env_fixes": [
+  "torch==2.2.2 cu121 pinned exactly; rest frozen at 2024-09-20; repo's transformer-lens==1.10.0 pin dropped (its own git dep needs >=1.14)",
+  "unset CI",
+  "--layer 6 supplied"
+ ],
+ "wallclock_minutes": 15.0,
+ "peak_vram_gb": null,
+ "seeds_run": 0,
+ "notes": "ROT-REVERSAL: taxonomy correction env -> model-access. The e2e SAE artifact is behind a W&B login on every code path (CLI flag overridden in-script). Harness-side lessons: --exclude-newer is unusable on the PyTorch index (no upload timestamps); the shell's CI env var triggers e2e_sae's GITHUB_WORKSPACE requirement; catalogue entrypoint omitted the required --layer.",
+ "artifact_paths": [
+  "run.log"
+ ]
+}

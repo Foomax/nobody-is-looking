@@ -515,3 +515,27 @@ have produced 2 exact + 2 partial and **0 scientific misses**; the bug-injection
 the priority, because the series so far has only ever *confirmed* and a harness that only confirms
 needs its false-negative rate measured.
 
+## R-11 — rot reversal, row 5: `dajale423/error_pathology` (2026-08-28 18:07; 0 GPU-min + ~15 min env)
+
+**Parent verdict:** `env` — "the e2e_sae dependency web does not co-install stably (4 attempts)".
+**This run:** torch 2.2.2+cu121 pinned exactly (the PyTorch index carries no upload timestamps, so
+`--exclude-newer` filters every wheel there — a harness lesson), everything else frozen at
+2024-09-20 with the repo's `transformer-lens==1.10.0` pin dropped because the repo's *own* git
+dependency requires ≥ 1.14 (a second self-contradictory requirements set in this series).
+Resolved: transformer-lens 1.14.0, transformers 4.35.2. Two harness-side fixes on the way: the
+shell exports `CI`, which makes e2e_sae demand `GITHUB_WORKSPACE`; and the catalogue's entrypoint
+omits the script's required `--layer`.
+
+`[MEASURED]` Imports succeed; the script reaches `SAETransformer.from_wandb("sparsify/gpt2/h9hrelni")`
+— **hard-coded on every code path** (`args.e2e = "h9hrelni"` overrides the CLI flag) — and stops:
+`wandb: api_key not configured`. No local inference happened.
+
+`[INFERRED]` **Taxonomy correction: `env` → `model-access`.** The environment was never the
+terminal blocker; the e2e SAE lives behind a Weights & Biases login the harness does not have and
+will not create (rule A0.2/A0.5 — no accounts, no credentials). The row is not reproducible on
+this machine *by policy*, which is a different statement from "the code rotted". Pre-registered
+branch (ii) of R-11 taken.
+
+**Rot-reversal tally** (7 `env` rows): tenseisoham ✅ · thebuleganteng ✅ · jim-maar ⚠ ·
+ibm ⚠ · **dajale423 → `model-access`** · uchicago-xlab ⏳ R-12 · (sunmoonron was `vram`).
+

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -uo pipefail
 HERE="$(cd "$(dirname "$0")" && pwd)"; D=${1:-2024-09-20}; V="$HERE/.venv"; L="$HERE/run.log"; S="$HERE/src"
-export HF_HUB_DISABLE_XET=1 HF_HUB_DISABLE_TELEMETRY=1 WANDB_MODE=online PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
+unset CI GITHUB_ACTIONS; export HF_HUB_DISABLE_XET=1 HF_HUB_DISABLE_TELEMETRY=1 WANDB_MODE=online PYTHONUNBUFFERED=1 TOKENIZERS_PARALLELISM=false
 echo "== $(date -Is) TIMETRAVEL exclude-newer=$D start" | tee -a "$L"
 if [ ! -x "$V/bin/python" ]; then
   uv venv -q "$V" --python 3.11

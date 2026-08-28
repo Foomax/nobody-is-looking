@@ -1,0 +1,59 @@
+{
+ "slug": "confirming-claims-of-superposition-and-adversari--uchicago-xlab",
+ "post_id": "rwu73dCE3uWjieijK",
+ "title": "Confirming Claims of Superposition and Adversarial Examples in Toy Models",
+ "date": "2026-08-01",
+ "repo": "uchicago-xlab/superposition-replication",
+ "head_sha": "d4aa6b7c2c2b5242e30b429d992fa2afc98b2fc7",
+ "entrypoint": "synth/run.py",
+ "entrypoint_confidence": "high",
+ "python_version": "3.11",
+ "key_deps": [
+  "torch",
+  "numpy",
+  "matplotlib"
+ ],
+ "models": [
+  {
+   "hf_id": null,
+   "params_b": 3e-05,
+   "gated": false
+  }
+ ],
+ "phenomenon": "superposition",
+ "contested": true,
+ "claim_type": "replication",
+ "primary_claim": "This work replicates all three core claims of Stevinson et al. (arXiv:2510.11709) in toy superposition classifiers: PGD adversarial attacks align with the theoretically optimal interference-exploiting perturbation, robustness falls monotonically as superposition (k/m) increases and rises to 97.3% when k=m, and adversarial attacks transfer between independently-trained models in proportion to how much their feature geometries converge under correlated input regimes; it additionally finds that co-activating features can collapse onto a shared direction rather than orthogonalizing when bottleneck capacity is limited.",
+ "quote": "We reproduce all three core claims of Stevinson et al. from their toy classifier setting",
+ "metric": "PGD-attack vs optimal-perturbation cosine similarity; robust accuracy vs k/m",
+ "target_value": "PGD\u00b7optimal cosine similarity = 1.00 across tested k/m (vs paper's 0.92-0.97); robust accuracy at k=m rises to 97.3% (m=5), falling monotonically as k/m increases (e.g. k/m=4, m=5: 30.1% ours vs 33.5% paper)",
+ "target_numeric": 1.0,
+ "direction": "+",
+ "uncertainty_reported": "se",
+ "tolerance": "manual",
+ "tolerance_rationale": "headline is a compound of 9 numbers; compare the components by hand",
+ "vram_estimate_gb": 1,
+ "fits_3090": "yes",
+ "est_runtime": "minutes",
+ "est_runtime_class": "minutes",
+ "budget_minutes": 60,
+ "budget_override_reason": null,
+ "seeds_to_run": 1,
+ "data": {
+  "needed": [],
+  "available": "in-repo",
+  "gated": false
+ },
+ "blockers": [],
+ "inspector_notes": "Fully self-contained toy replication with one CLI entrypoint that runs every sub-experiment and builds the comparison report; the repo's own README already documents an instability in the paper's own H3 seed-sampling result (N=10 seeds) as a finding, not a repro blocker.",
+ "headline_artifact": "results/h1_alignment.json (PGD-vs-optimal cosine similarity), results/h2_control.json (robust accuracy vs k/m), results/h3_transfer.json (geometry-transfer correlation), assembled into report.html",
+ "selector_tier": "T?",
+ "selector_score": 6.12,
+ "experiment_class": "extension",
+ "parent_slug": "confirming-claims-of-superposition-and-adversari--uchicago-xlab",
+ "extension": {
+  "kind": "env-timetravel",
+  "what_varies": "a plain venv (torch/numpy/matplotlib) resolved with --exclude-newer 2026-08-15 (post 2026-08-01 + 14 d), outside the queue's tree_prep. Code, data, target unchanged.",
+  "rationale": "parent ledgered env ('prep returns nonzero in-queue, 4 attempts; run never reached') -- a harness-side failure, not a repo failure. Post-date environment == today's environment, so this is the cleanest 'rotten at publication' test in the series; if it runs, the 'env' label was the harness's."
+ }
+}
