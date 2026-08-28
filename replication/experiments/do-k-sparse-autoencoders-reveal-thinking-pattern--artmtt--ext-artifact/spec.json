@@ -1,0 +1,67 @@
+{
+ "slug": "do-k-sparse-autoencoders-reveal-thinking-pattern--artmtt",
+ "post_id": "nKRvp7LKgjJxbpykq",
+ "title": "Do k-Sparse Autoencoders Reveal Thinking Patterns? Interpretable Features in a Small Reasoning Model",
+ "date": "2026-06-15",
+ "repo": "artmtt/sae-interpretability-small-reasoning-model",
+ "head_sha": "50c2b40be1f3e8a2bd1f5bbede75ac88bc1d197b",
+ "entrypoint": "interp_experiments_deepseek_r1_distilled_qwen.ipynb",
+ "entrypoint_confidence": "high",
+ "python_version": "3.11",
+ "key_deps": [
+  "torch",
+  "transformers",
+  "sparsify (EleutherAI, git submodule)",
+  "datasets",
+  "pandas",
+  "plotly"
+ ],
+ "models": [
+  {
+   "hf_id": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+   "params_b": 1.5,
+   "gated": false
+  }
+ ],
+ "phenomenon": "SAE feature interpretability",
+ "contested": true,
+ "claim_type": "positive",
+ "primary_claim": "Pre-trained k-sparse autoencoders applied to DeepSeek-R1-Distill-Qwen-1.5B's hidden states (on GSM8K reasoning traces) successfully extract interpretable features, including several features in layer 10 that strongly and repeatedly activate on tokens characteristic of the model's reasoning process.",
+ "quote": "The trained k-Sparse Autoencoders that were used effectively extracted features from DeepSeek R1 Distill Qwen 1.5B.",
+ "metric": "frequency a feature is a top feature across 32 model inferences (layer 10)",
+ "target_value": "feature 32456: top feature in 28/32 inferences; feature 6252: 14/32; feature 31146: 10/32",
+ "target_numeric": 32456.0,
+ "direction": "+",
+ "uncertainty_reported": "none",
+ "tolerance": "manual",
+ "tolerance_rationale": "headline is a compound of 9 numbers; compare the components by hand",
+ "vram_estimate_gb": 4,
+ "fits_3090": "yes",
+ "est_runtime": "minutes",
+ "est_runtime_class": "minutes",
+ "budget_minutes": 90,
+ "budget_override_reason": null,
+ "seeds_to_run": 1,
+ "data": {
+  "needed": [
+   "GSM8K (openai/gsm8k)"
+  ],
+  "available": "hf-hub",
+  "gated": false
+ },
+ "blockers": [
+  "No requirements.txt/pyproject.toml/environment.yml anywhere in the repo -- exact dependency versions must be inferred from notebook imports",
+  "sparsify is wired in as a git submodule (.gitmodules -> EleutherAI/sparsify) that must be fetched separately"
+ ],
+ "inspector_notes": "Clean, small, inference-only SAE analysis; both the base model and the pretrained k-sparse SAE are public on Hugging Face, so this fits comfortably on a single 3090 with a lot of headroom.",
+ "headline_artifact": "Top-feature frequency counts for layer-10 features 32456/6252/31146 across 32 GSM8K inferences, computed in interp_experiments_deepseek_r1_distilled_qwen.ipynb's load_and_analyze_model_inferences / get_top_k_encoder_out_by_acts pipeline.",
+ "selector_tier": "T1",
+ "selector_score": 4.23,
+ "experiment_class": "extension",
+ "parent_slug": "do-k-sparse-autoencoders-reveal-thinking-pattern--artmtt",
+ "extension": {
+  "kind": "env-artifact",
+  "what_varies": "the author's commented-out generation cell (create_and_save_model_inferences) is re-enabled on a copy for the first 32 GSM8K prompts (the author's own n: 'Finished 31 inferences'); model/inputs moved to cuda; a sampling seed added (temperature 0.6 sampling was unseeded). SAEs, layers, top-k definitions, analysis code unchanged; a final aggregation cell counts, per layer, how often each feature is the #1 by frequency across the 32 inferences (the post's headline statistic).",
+  "rationale": "parent ledgered data (missing generated inputs). The inputs are produced by the repo's own code; regenerating them is an artefact fetch by another name. Tests whether the data bucket is reversible."
+ }
+}

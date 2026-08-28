@@ -655,3 +655,68 @@ author's *own* commented-out cell, and both the model (DeepSeek-R1-Distill-Qwen-
 copy is regenerating an uncommitted artefact with the repo's own code — the same class as R-8/R-10.
 If it runs, the `data` bucket joins `env` as "reversible on this machine".
 
+## R-14 — the `data` row: `artmtt/sae-interpretability-small-reasoning-model` (2026-08-28 18:51; 5 GPU-min + 3 aborted launches)
+
+**Parent verdict:** `data` — the notebook's generation cell is commented out and its outputs
+(32 saved inferences with hidden states) were never committed. **This run:** the author's own cell
+re-enabled on a copy for the first 32 GSM8K prompts (the author's comment says "Finished 31
+inferences"), sampling seeded (the author's temperature-0.6 sampling was not), model and SAEs from
+the cache, transformers 5.16 (the parent's own env; the notebook runs clean on it). A final
+aggregation cell computes, per layer, how often each SAE feature is the #1 feature by frequency
+across the 32 inferences — the post's headline statistic as stated.
+
+`[MEASURED]` 32/32 inferences generated and analysed, 0 errors, 5 min. Per layer, **one feature is
+#1 by frequency in 32/32 inferences** (L5: 12404; L10: 1038; L20: 25645), with a second feature in
+the top-3 of 27–32/32 (L5: 44044; L10: 39922 [31], 43345 [30]; L20: 29733 [27]). **None of the
+post's feature ids (32456: 28/32; 6252: 14/32; 31146: 10/32) appear in any layer's top-5.**
+
+`[INFERRED]` The *shape* of the claim reproduces — a handful of features dominate nearly every
+inference — and the *identities* do not. Two readings, not separable here: (a) the post's counts
+come from a statistic the notebook does not print (the author read them off per-inference plots,
+plausibly the top-10 "relevant features" by activation with no repetition, at an unstated layer),
+so my "#1 by frequency" is a different measure; (b) the SAE hub revision or the sampling draw
+differs. Verdict: **partial / UNRESOLVED on definition** — and the `data` bucket *is* reversible:
+the inputs regenerate in five minutes from the author's own code.
+
+Harness note (`lessons-synth` Part 3 candidates): three launches of this run were killed within
+20 s **as harness background tasks** while the detached process ran fine — the first two coincided
+with disk at 24 GB free (below the 25 GB floor; the `uv` cache alone had reached 78 GB after
+fourteen environments), the third did not. Detach long runs (`setsid nohup`) and watch the log
+rather than the task.
+
+## Program state after 14 runs (2026-08-28 18:55) — and the re-evaluation
+
+| factor | runs | result |
+|---|---|---|
+| seed | R-1, R-4 | row-specific: stable (matryoshka), robust-understated (ioi), bimodal-fragile (phusroyal: 4/15 in range) |
+| sampling rate | R-5 | sandbagging "for some seeds" = 67% [49, 81]; 23% [12, 41] collapse; parent 9/10 was a lucky batch |
+| `transformers` minor | R-2 | 0 variance (35,700/35,700 generations byte-identical) |
+| torch major-ish | R-3 | 65% of text rewritten, verdict unchanged; seed SD / kernel SD = 3.5 |
+| model family | R-6 | prompted organism absent on Llama-1B (gap 9 pp); untestable, not "fails" |
+| rot reversal (`env`) | R-7…R-12 | 6 rows → 3 exact, 2 partial, 1 credential-gated; 0 scientific misses; 0/6 parent diagnoses named the cause |
+| rot reversal (`data`) | R-14 | reversible in 5 min; headline partial / definition-ambiguous |
+| harness sensitivity | R-13 | 7/7 blind verdicts correct at realistic bug size |
+| metric sharing (CPU) | §2 | 493/493 distinct metrics across the 29 contested phenomena; 0 shared across sign |
+
+**What changed in the headline.** META-REPORT's "17/19 located reproduce ≥ partially; the
+never-located all failed on packaging" now reads: of the never-located rows re-attempted with the
+environment made right (7), 6 reached the computation and **6/6 reproduced ≥ partially** (3 exact,
+3 partial), one is credential-gated. Pooled over everything that reached a measurement:
+**24/26 ≥ partial.** The one scientific miss (AntiPaSTO) is still the only one.
+
+**What changed underneath it.** Reproduction at 3-decimal precision is an RNG statement (R-1);
+the honest tier for a seeded result is a *rate with an interval* (R-4, R-5); library epochs
+below `transformers` move the text but not the verdict (R-2/R-3); "contested" phenomena share no
+measure (§2); and `env` is five different things, none of which the first traceback names (R-7…12).
+
+### N after R-14 — next-run decision
+
+Remaining never-located rows are `runtime` ×3 (each ≥ 2 h by the author's own timing — budget,
+not rot), `unclear-entrypoint` ×2 (ak47na: W&B artifact → likely `model-access`; ayoakin:
+function library + uncommitted activations → likely `data`, reversible like R-14), `vram` ×2,
+`api-key` ×1, `model-access` ×1. **Next: `ayoakin/mivlde`** — the same regenerate-the-artefact move
+as R-14, then the three `runtime` rows one at a time with the author's full budget (2–6 h each) as
+overnight jobs. Program items still open: a dtype arm (numerics are bounded by R-3; low priority),
+a second bug-injection round at sub-tolerance perturbations (prices the tolerance rules), and the
+P3-judge-vs-ledger validation (CPU). All are in `prompts2/brainstorm.md` §7 for the next session.
+

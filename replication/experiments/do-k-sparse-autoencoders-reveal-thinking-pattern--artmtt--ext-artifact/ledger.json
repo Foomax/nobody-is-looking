@@ -1,0 +1,32 @@
+{
+ "post_id": "nKRvp7LKgjJxbpykq",
+ "repo": "artmtt/sae-interpretability-small-reasoning-model",
+ "head_sha": "50c2b40be1f3e8a2bd1f5bbede75ac88bc1d197b",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "env-artifact",
+ "parent_slug": "do-k-sparse-autoencoders-reveal-thinking-pattern--artmtt",
+ "what_varies": "the author's commented-out generation cell (create_and_save_model_inferences) is re-enabled on a copy for the first 32 GSM8K prompts (the author's own n: 'Finished 31 inferences'); model/inputs moved to cuda; a sampling seed added (temperature 0.6 sampling was unseeded). SAEs, layers, top-k definitions, analysis code unchanged; a final aggregation cell counts, per layer, how often each feature is the #1 by frequency across the 32 inferences (the post's headline statistic).",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "feature 32456: top feature in 28/32 inferences; feature 6252: 14/32; feature 31146: 10/32",
+ "observed_value": "32/32 inferences regenerated; per layer one feature is #1 by frequency in 32/32 (L5 12404, L10 1038, L20 25645), second feature top-3 in 27-32/32; the post's ids 32456/6252/31146 (28/14/10 of 32) absent from every layer's top-5",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [
+  "re-enabled create_and_save_model_inferences on a copy for reasoning_chat_prompts[:32]; torch.manual_seed(0)",
+  "added an aggregation cell (per-layer #1-by-frequency counts) -- reporting only, no change to measured quantities"
+ ],
+ "wallclock_minutes": 5.0,
+ "peak_vram_gb": null,
+ "seeds_run": 1,
+ "notes": "DATA-REVERSAL: inputs regenerate from the author's own commented-out cell in 5 min; the claim's shape (few dominant features across nearly all inferences) reproduces, feature identities do not; the post's statistic is not printed by the notebook (read off plots) -> PARTIAL / UNRESOLVED on definition. Sampling seeded (author unseeded, T=0.6). transformers 5.16 (parent env).",
+ "artifact_paths": [
+  "run.log",
+  "executed.ipynb"
+ ]
+}
