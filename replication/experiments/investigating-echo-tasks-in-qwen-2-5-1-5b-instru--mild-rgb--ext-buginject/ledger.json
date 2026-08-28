@@ -1,0 +1,30 @@
+{
+ "post_id": "rs2BmwXWJEaEfNr2v",
+ "repo": "mild-rgb/qwen-2.5-1.5b-echo_repeat-investigation",
+ "head_sha": "3c0bf77bcddb3dec0f23ddca7d0dc85ffa3068ed",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "bug-injection",
+ "parent_slug": "investigating-echo-tasks-in-qwen-2-5-1-5b-instru--mild-rgb",
+ "what_varies": "one injected bug on a copy of the entrypoint (see bug.md); a clean copy is run alongside",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "head 2 always in top-3 heads across 44 words and both 'repeat'/'echo' prompt phrasings",
+ "observed_value": "clean: ablation top-3 H2=44/44 echo and repeat (=parent). bug (TARGET_LAYER 22->21): ablation/echo H6=39,H2=39; ablation/repeat H3=32,H1=21,H6=19,H2=13 -> head 2 no longer always top-3.",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [],
+ "wallclock_minutes": 2.0,
+ "peak_vram_gb": null,
+ "seeds_run": 1,
+ "notes": "BUG-INJECTION: off-by-one layer index silently changes the head ranking. Judged blind; verdicts in NEW-DIRECTION R-13.",
+ "artifact_paths": [
+  "bug.md",
+  "out_clean.txt",
+  "out_bug.txt"
+ ]
+}

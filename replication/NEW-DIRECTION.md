@@ -604,3 +604,54 @@ the parents' own claims and tolerances and no indication of which arm is which. 
 (ii) every clean arm should be judged *reproduced*; a miss is a false positive; (iii) report the
 2×3 confusion table.
 
+## R-13 — bug-injection control: does the harness notice a non-reproduction? (2026-08-28 18:40; 16 GPU-min)
+
+**Design.** Three reproduced rows, each rerun *clean* and with one realistic bug injected into a
+copy of the author's entrypoint (`bug.md` in each `--ext-buginject` folder): ioi — the incidental
+duplicate is the S name instead of the IO name (variable swap), plus a silent variant (a third
+name as the control modifier: wrong word list); mild-rgb — `TARGET_LAYER` 22 → 21 (off-by-one);
+matryoshka — `n_prefixes` 10 → 1 (config value not applied). Outputs were placed in packets with
+the parent's claim, target and tolerance rule, arm labels shuffled, and judged by three
+**blind subagents** (Sonnet) that were told only "independent reruns" — no mention of bugs.
+`judge_packets/{ioi,mildrgb,matryoshka}.md`, key in `.key.json`, tally in `result.json`.
+
+`[MEASURED]`
+| row | arm | what the run produced | blind verdict | correct |
+|---|---|---|---|---|
+| ioi | clean | drop 0.231, t 3.09, p 0.0024 | reproduced | ✓ |
+| ioi | bug (S-for-IO) | **crashes on the author's own assertion** (IO must occur exactly twice) | not reproduced | ✓ |
+| ioi | bug2 (silent) | drop 0.107, t 1.17, p 0.24, d 0.10 | not reproduced | ✓ |
+| mild-rgb | clean | H2 top-3 44/44 both phrasings | reproduced | ✓ |
+| mild-rgb | bug (layer 21) | H2 39/44 echo, 13/44 repeat | not reproduced | ✓ |
+| matryoshka | clean | 9/20 vs 0/20 absorbed | reproduced | ✓ |
+| matryoshka | bug (n_prefixes 1) | 9/20 vs 9/20 — identical to vanilla | not reproduced | ✓ |
+
+**7/7 correct: clean 3/3 judged reproduced; bugged 4/4 judged not reproduced. False negatives 0/4
+[0, 49] (Wilson); false positives 0/3 [0, 56].**
+
+`[INFERRED]`
+1. **At this bug severity the harness's judging step has no measurable blind spot.** Every injected
+   bug moved the headline far outside the parent's tolerance, and a judge with only the claim and
+   the console output caught each one, including the silent ioi variant (effect erased, p 0.24).
+   The 22/24 figure survives its calibration check *for bugs of this size*.
+2. `[UNRESOLVED]` The intervals are wide and the bugs were chosen to be realistic, not subtle. A bug
+   that moves a headline by *less* than the tolerance is by construction undetectable by
+   tolerance-based judging — which is an argument about tolerances (R-1/R-4 already showed
+   `manual`/3-decimal tolerances are too tight for seeded rows), not about the judge. A second
+   round with smaller perturbations would price the tolerance rules themselves.
+3. **One of four bugs was caught by the author's code, not by the harness.** Self-checking
+   assertions in the entrypoint are the cheapest reproducibility tool in this corpus and appear in
+   roughly one row in three (from the ledgers' tracebacks); they should be a catalogue field.
+
+### N after R-13 — next-run decision
+
+The program's factor list (seed · sampling rate · transformers · torch · family · rot ×6 · harness
+sensitivity) is covered once each. Remaining never-located rows by class: `runtime` 3 (each ≥ 2 h
+by the parent's own timing — budget, not rot), `unclear-entrypoint` 2, `data` 1, `vram` 2,
+`api-key` 1, `model-access` 1. **R-14: the `data` row** — `artmtt/sae-interp-small-reasoning`
+("inference-gen cell commented out; inputs not committed"): the inputs are produced by the
+author's *own* commented-out cell, and both the model (DeepSeek-R1-Distill-Qwen-1.5B) and the SAE
+(EleutherAI 65k) are already in the HF cache. Re-enabling the author's own generation cell on a
+copy is regenerating an uncommitted artefact with the repo's own code — the same class as R-8/R-10.
+If it runs, the `data` bucket joins `env` as "reversible on this machine".
+

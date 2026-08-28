@@ -1,0 +1,30 @@
+SEED 0
+/tmp/ipykernel_51633/439619746.py:2: DeprecationWarning: HookedTransformer.from_pretrained is deprecated and will be removed in a future major release. Use TransformerBridge.boot_transformers(...) instead, then call enable_compatibility_mode() for HookedTransformer-equivalent numerics. See docs/source/content/migrating_to_v3.md.
+  model = HookedTransformer.from_pretrained(
+Loaded pretrained model gpt2-small into HookedTransformer
+Moving model to device:  cuda
+SIZE = 'medium' -> {'n_templates': 8, 'n_pairs': 16, 'n_triples': 16, 'n_sem_pairs': 16, 'n_vote_pairs': 16}
+SIZE='medium': 8 templates x 16 pairs = 128 pairs (256 prompts total)
+
+template: Then, [B] and [A] went to [PLACE_PHRASE]. [B] gave a [OBJECT] to
+test    : <|endoftext|>Then, Jane and William went to William Park. Jane gave a drink to
+control : <|endoftext|>Then, Jane and William went to Cedar Park. Jane gave a drink to
+
+test IO_pos/IO_dup_pos/S1_pos/S2_pos: 5 8 3 11
+control IO_pos/S1_pos/S2_pos: 5 3 11
+
+test logits shape: torch.Size([16, 50257])
+test cache pattern shape (layer 0): torch.Size([16, 12, 16, 16])
+aggregated 128 matched pairs across 8 templates
+logit-diff drop (control - test): +0.231 ± 0.844
+fraction of pairs where test < control: 0.59
+Control accuracy: 0.95312
+Test accuracy: 0.94531
+n = 128
+paired t-test: t = 3.0922, p = 0.002443
+wilcoxon signed-rank: W = 2892.0000, p = 0.003289
+KS two-sample: D = 0.1016, p = 0.5257
+Mann-Whitney U: U = 8712.0000, p = 0.3805
+paired permutation (sign-flip, n=10000): mean_diff = 0.2307, p = 0.0022
+mean diff = 0.2307, std diff = 0.8441, Cohen's d = 0.2733
+SEEDJSON {"seed": 0, "n": 128, "mean_drop": 0.23070402443408966, "std_drop": 0.8441106677055359, "t": 3.092151403427124, "p": 0.0024432982318103313, "cohen_d": 0.2733101546764374, "control_accuracy": 0.953125, "test_accuracy": 0.9453125, "frac_test_below_control": 0.59375}

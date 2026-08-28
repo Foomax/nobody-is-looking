@@ -1,0 +1,31 @@
+{
+ "post_id": "zKyKDre78napvtrEo",
+ "repo": "fractalmachinist/ioi",
+ "head_sha": "1571259a3a8e713abd4cdd3758613f41769304ba",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "bug-injection",
+ "parent_slug": "gpt-2-s-ioi-behavior-is-defined-where-the-paper---fractalmachinist",
+ "what_varies": "one injected bug on a copy of the entrypoint (see bug.md); a clean copy is run alongside",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "mean drop 0.23, SD 0.84 (n=128 matched pairs), paired t=3.09, p=0.0024, Cohen's d=0.27; accuracy 95.4% (control) vs 94.5% (test)",
+ "observed_value": "clean: drop 0.231 t 3.09 p 0.0024 d 0.27 (=parent). bug (S-for-IO duplicate): crashes on the author's own input assertion (IO must occur exactly twice). bug2 (third name as control modifier, silent): drop 0.107, t 1.17, p 0.24, d 0.10.",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [],
+ "wallclock_minutes": 1.0,
+ "peak_vram_gb": null,
+ "seeds_run": 1,
+ "notes": "BUG-INJECTION: bug caught upstream by author's sanity assert (self-checking code); bug2 passes assertions and erases the effect. Judged blind by a subagent; verdicts in NEW-DIRECTION R-13.",
+ "artifact_paths": [
+  "bug.md",
+  "out_clean.txt",
+  "out_bug.txt",
+  "out_bug2.txt"
+ ]
+}

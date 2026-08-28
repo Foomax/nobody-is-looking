@@ -1,0 +1,13 @@
+SEED 0
+/tmp/ipykernel_51730/439619746.py:2: DeprecationWarning: HookedTransformer.from_pretrained is deprecated and will be removed in a future major release. Use TransformerBridge.boot_transformers(...) instead, then call enable_compatibility_mode() for HookedTransformer-equivalent numerics. See docs/source/content/migrating_to_v3.md.
+  model = HookedTransformer.from_pretrained(
+Loaded pretrained model gpt2-small into HookedTransformer
+Moving model to device:  cuda
+SIZE = 'medium' -> {'n_templates': 8, 'n_pairs': 16, 'n_triples': 16, 'n_sem_pairs': 16, 'n_vote_pairs': 16}
+ERROR AssertionError expected exactly 2 occurrences of 'William', found at [5]: ['<|endoftext|>', 'Then', ',', ' Jane', ' and', ' William', ' went', ' to', ' Jane', ' Park', '.', ' Jane', ' gave', ' a', ' drink', ' to']
+SIZE='medium': 0 templates x 16 pairs = 0 pairs (0 prompts total)
+ERROR IndexError list index out of range
+ERROR RuntimeError torch.cat(): expected a non-empty list of Tensors
+ERROR NameError name 'ctrl_diffs' is not defined
+ERROR NameError name 'ctrl_diffs' is not defined
+ERROR NameError name 'ctrl' is not defined

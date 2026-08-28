@@ -1,0 +1,38 @@
+{
+ "key": {
+  "ioi": {
+   "X": "bug2",
+   "Y": "clean",
+   "Z": "bug"
+  },
+  "mildrgb": {
+   "X": "clean",
+   "Y": "bug"
+  },
+  "matryoshka": {
+   "X": "bug",
+   "Y": "clean"
+  }
+ },
+ "verdicts": {
+  "ioi": {
+   "X": false,
+   "Y": true,
+   "Z": false
+  },
+  "mildrgb": {
+   "X": true,
+   "Y": false
+  },
+  "matryoshka": {
+   "X": false,
+   "Y": true
+  }
+ },
+ "confusion": {
+  "clean_reproduced": 3,
+  "clean_not": 0,
+  "bug_not": 4,
+  "bug_reproduced": 0
+ }
+}
