@@ -18,7 +18,8 @@ take a reproduced/contested result, place it against the published work, and say
 
 ## Read in this order (★ = essential)
 
-- ★ `replication/META-REPORT.md` — the headline result of the whole effort (N=34). Read first.
+- ★ `replication/NEW-DIRECTION.md` — **the variance-decomposition + rot-reversal program (14 GPU runs, 2026-08-28)**: what a reproduction depends on (seed, sampling rate, library epoch, family, rot, harness sensitivity). Read with META-REPORT; it revises the headline to 24/26 ≥ partial and re-tiers seeded rows as rates.
+- ★ `replication/META-REPORT.md` — the headline result of the N=36 ledger. Read first.
 - ★ `replication/handoff-synth.md` §B — critical evaluation of research direction + next steps (the "where to go" file).
 - ★ `meta-analysis-blog-post.md` — "Nobody Is Checking"; the narrative + the contested-claim landscape (`⚔ N-vs-M` splits).
 - ★ `3090-prompts.md` — the 3 scaffolded protocol experiments (a negative, a positive, a replication) and why each was chosen.
@@ -54,6 +55,8 @@ exactly **one** was a genuine scientific miss. **15 of 34 (44%) never ran — ev
 | **sneaky-mamba** | ⏳ running (H57b) | **comparative**: standard Mamba fails a hidden-serial-reasoning task; a cross-channel variant solves it. Vs SSM-vs-transformer serial-reasoning literature. | `…filyp` |
 
 The two ⏳ rows are the **hours-class scale test** — do the 89%/engineering-rot findings hold on bigger models? Judgement pending.
+
+**Since then, `NEW-DIRECTION.md` (2026-08-28):** both ⏳ rows judged (tarcle ✅ recompute; sneaky-mamba `env`); the sandbagging row's 9/10 was a lucky batch (n=30: 67% [49, 81] reveal, 23% collapse); phusroyal is seed-bimodal (4/15 in the claimed range); six `env` rows re-attempted with the environment made right → 3 exact + 2 partial + 1 credential-gated, 0 scientific misses; the blind bug-injection control scored 7/7.
 
 ## Open questions to direct (pick 1–2)
 
