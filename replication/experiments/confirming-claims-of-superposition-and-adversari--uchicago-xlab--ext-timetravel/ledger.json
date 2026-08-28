@@ -1,0 +1,33 @@
+{
+ "post_id": "rwu73dCE3uWjieijK",
+ "repo": "uchicago-xlab/superposition-replication",
+ "head_sha": "d4aa6b7c2c2b5242e30b429d992fa2afc98b2fc7",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "env-timetravel",
+ "parent_slug": "confirming-claims-of-superposition-and-adversari--uchicago-xlab",
+ "what_varies": "a plain venv (torch/numpy/matplotlib) resolved with --exclude-newer 2026-08-15 (post 2026-08-01 + 14 d), outside the queue's tree_prep. Code, data, target unchanged.",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "PGD\u00b7optimal cosine similarity = 1.00 across tested k/m (vs paper's 0.92-0.97); robust accuracy at k=m rises to 97.3% (m=5), falling monotonically as k/m increases (e.g. k/m=4, m=5: 30.1% ours vs 33.5% paper)",
+ "observed_value": "h1: PGD.optimal cosine 1.00+/-0.00 at (k,m)=(6,2),(30,10),(90,30) (target 1.00; paper 0.92-0.97); h2: robust acc at k=m, m=5 = 0.973+/-0.016 (target 97.3%), k/m=4 m=5 = 0.30 (target 30.1%); monotone in k/m",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [
+  "plain venv torch/numpy/matplotlib --exclude-newer 2026-08-15 outside tree_prep",
+  "entrypoint run as 'python -m synth.run h1' and 'h2' (required positional)"
+ ],
+ "wallclock_minutes": 9.0,
+ "peak_vram_gb": null,
+ "seeds_run": 3,
+ "notes": "ROT-REVERSAL: the parent's env was a harness-side prep failure; plain venv on today's stack (torch 2.13) runs h1+h2 in 9 min and reproduces exactly. Catalogue entrypoint omitted the required positional experiment name.",
+ "artifact_paths": [
+  "run.log",
+  "src/results/h1_alignment.json",
+  "src/results/h2_control.json"
+ ]
+}

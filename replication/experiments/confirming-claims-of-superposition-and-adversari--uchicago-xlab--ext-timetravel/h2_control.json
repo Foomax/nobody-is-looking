@@ -1,0 +1,82 @@
+{
+  "control": {
+    "m=k (orthogonal)": {
+      "successes_per_seed": [
+        137,
+        24,
+        36
+      ],
+      "n": 1000
+    },
+    "m=2 (superposed)": {
+      "successes_per_seed": [
+        500,
+        499,
+        496
+      ],
+      "n": 1000
+    }
+  },
+  "km_sweep": [
+    {
+      "k_over_m": 1,
+      "m2": {
+        "k": 2,
+        "acc": 1.0,
+        "robust": 1.0,
+        "robust_std": 0.0
+      },
+      "m5": {
+        "k": 5,
+        "acc": 1.0,
+        "robust": 0.973,
+        "robust_std": 0.016
+      }
+    },
+    {
+      "k_over_m": 2,
+      "m2": {
+        "k": 4,
+        "acc": 1.0,
+        "robust": 0.795,
+        "robust_std": 0.011
+      },
+      "m5": {
+        "k": 10,
+        "acc": 1.0,
+        "robust": 0.705,
+        "robust_std": 0.014
+      }
+    },
+    {
+      "k_over_m": 3,
+      "m2": {
+        "k": 6,
+        "acc": 0.998,
+        "robust": 0.504,
+        "robust_std": 0.017
+      },
+      "m5": {
+        "k": 15,
+        "acc": 0.998,
+        "robust": 0.506,
+        "robust_std": 0.009
+      }
+    },
+    {
+      "k_over_m": 4,
+      "m2": {
+        "k": 8,
+        "acc": 0.997,
+        "robust": 0.187,
+        "robust_std": 0.008
+      },
+      "m5": {
+        "k": 20,
+        "acc": 0.996,
+        "robust": 0.301,
+        "robust_std": 0.013
+      }
+    }
+  ]
+}

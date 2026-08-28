@@ -1,0 +1,63 @@
+{
+ "slug": "gpt-2-s-ioi-behavior-is-defined-where-the-paper---fractalmachinist",
+ "post_id": "zKyKDre78napvtrEo",
+ "title": "GPT-2's IOI behavior is defined where the paper's algorithm isn't",
+ "date": "2026-08-18",
+ "repo": "fractalmachinist/ioi",
+ "head_sha": "1571259a3a8e713abd4cdd3758613f41769304ba",
+ "entrypoint": "experiments.ipynb",
+ "entrypoint_confidence": "high",
+ "python_version": "3.11",
+ "key_deps": [
+  "transformer_lens",
+  "torch",
+  "matplotlib",
+  "numpy",
+  "scipy"
+ ],
+ "models": [
+  {
+   "hf_id": "gpt2 (gpt2-small via transformer_lens HookedTransformer.from_pretrained)",
+   "params_b": 0.124,
+   "gated": false
+  }
+ ],
+ "phenomenon": "circuit discovery",
+ "contested": true,
+ "claim_type": "negative",
+ "primary_claim": "In GPT-2 small's IOI circuit, incidentally duplicating the indirect-object name in an unrelated modifier slot causes Duplicate Token Heads to fire on it almost as strongly as on a genuine subject duplicate, yet this produces only a small drop in the IO/S logit difference (mean 0.23, Cohen's d=0.27) and accuracy barely changes (95.4% to 94.5%), because S-Inhibition heads mostly continue attending to the real S2 token rather than the incidental duplicate",
+ "quote": "The drop in IO/S logit difference is small: mean 0.23, SD 0.84 pair-to-pair (n = 128), paired t = 3.09, p = 0.0024... A real effect, but not a big one. The model's accuracy (how often it predicts IO as more likely than S) moves from 95.4% (control) to 94.5% (test).",
+ "metric": "drop in IO/S logit difference between control and test (incidental duplicate) conditions; task accuracy",
+ "target_value": "mean drop 0.23, SD 0.84 (n=128 matched pairs), paired t=3.09, p=0.0024, Cohen's d=0.27; accuracy 95.4% (control) vs 94.5% (test)",
+ "target_numeric": 0.23,
+ "direction": "0",
+ "uncertainty_reported": "se",
+ "tolerance": "manual",
+ "tolerance_rationale": "headline is a compound of 8 numbers; compare the components by hand",
+ "vram_estimate_gb": 2,
+ "fits_3090": "yes",
+ "est_runtime": "minutes",
+ "est_runtime_class": "minutes",
+ "budget_minutes": 45,
+ "budget_override_reason": null,
+ "seeds_to_run": 1,
+ "data": {
+  "needed": [
+   "templated sentences generated in-repo from ioi_dataset.py (NAMES, OBJECTS, PLACES, NAMEABLE_PLACE_NAMES/WORDS, BABA_TEMPLATES)"
+  ],
+  "available": "in-repo",
+  "gated": false
+ },
+ "blockers": [],
+ "inspector_notes": "No requirements.txt/pyproject, but deps are unambiguous from imports (transformer_lens, torch, scipy, matplotlib). README.md is a single line ('# IOI'); all documentation lives in the notebook's markdown cells, which are unusually thorough and directly state the falsifiable hypothesis and n. SIZE='medium' in cell 4 is exactly the config that reproduces the assignment's n=128 pairs; 'full' (n=360 pairs) or 'quick' (n=32) are also one-line switches.",
+ "headline_artifact": "experiments.ipynb, Experiment 1 (cell 12-15): paired scatter of test vs. control IO/S logit difference + stats cell (cell 13: ttest_rel, cohen's d implicit) matches target_value's mean drop 0.23, SD 0.84, n=128, paired t=3.09, p=0.0024",
+ "selector_tier": "T1",
+ "selector_score": 8.69,
+ "experiment_class": "extension",
+ "parent_slug": "gpt-2-s-ioi-behavior-is-defined-where-the-paper---fractalmachinist",
+ "extension": {
+  "kind": "bug-injection",
+  "what_varies": "one injected bug on a copy of the entrypoint (see bug.md); a clean copy is run alongside",
+  "rationale": "harness false-negative rate: would the pre-registered criterion + a blind judge catch a realistic bug? (NEW-DIRECTION program item 4.1)"
+ }
+}

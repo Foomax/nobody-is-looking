@@ -539,3 +539,68 @@ branch (ii) of R-11 taken.
 **Rot-reversal tally** (7 `env` rows): tenseisoham ✅ · thebuleganteng ✅ · jim-maar ⚠ ·
 ibm ⚠ · **dajale423 → `model-access`** · uchicago-xlab ⏳ R-12 · (sunmoonron was `vram`).
 
+## R-12 — rot reversal, row 6: `uchicago-xlab/superposition-replication` (2026-08-28 18:17; 9 GPU-min)
+
+**Parent verdict:** `env` — "prep returns nonzero in-queue (4 attempts) though tree_prep succeeds
+standalone; run never reached". **This run:** a plain venv (torch/numpy/matplotlib) frozen at
+2026-08-15 — which, for a 2026-08-01 post, is *today's* stack (torch 2.13.0, numpy 2.4.6). The
+catalogue entrypoint `python -m synth.run` lacks its required positional; the headline lives in
+`h1` and `h2`, run in full.
+
+`[MEASURED]` **h1**: PGD·optimal cosine **1.00 ± 0.00** at every (k, m) ∈ {(6,2), (30,10), (90,30)}
+(target 1.00; paper 0.92–0.97); random-direction cosine 0.002–0.015. **h2**: robust accuracy at
+k = m, m = 5: **0.973 ± 0.016** (target 97.3%); k/m = 4, m = 5: **0.30** (target 30.1%, paper 33.5%);
+monotone fall across k/m = 1…4 for both m = 2 and m = 5. → **reproduced, tier exact.**
+
+`[INFERRED]` The row's `env` was the **harness's** failure, not the repo's: the queue's prep step
+returned nonzero for a reason the parent never identified, while the repo needs three packages
+and runs in nine minutes on the current stack. This is the series' "rotten at publication" test
+and the answer is *no rot at all*. A taxonomy needs a `harness` bucket distinct from `env`.
+
+## Rot-reversal series — summary (R-7 … R-12)
+
+Six of the seven `env` rows in the N=36 ledger (the seventh, `sunmoonron`, was `vram`) were
+re-attempted with the environment made right and *nothing about the experiment changed*:
+
+| row | parent `env` diagnosis | what was actually wrong (in the order the onion peeled) | after reversal |
+|---|---|---|---|
+| tenseisoham | kwarg removed ~4.46 | version claim false; post-date freeze runs | ✅ exact |
+| thebuleganteng | sae-lens id removed | uncommitted SAE cache; silent-skip loader | ✅ exact |
+| uchicago-xlab | prep fails in-queue | harness bug; repo runs on today's stack | ✅ exact |
+| jim-maar | dir-name assert | assert → empty gitlink → notebook path → uncommitted larger dataset | ⚠ partial (scripted metric within tol. on half the data) |
+| ibm | torch↔TL arity | unsatisfiable requirements → uncommitted SAE → uncommitted intermediates → code broken at HEAD | ⚠ partial (direction; timing) |
+| dajale423 | e2e_sae dep web | env resolves; W&B login hard-coded on every path | → `model-access` |
+
+`[MEASURED]` **6 attempted · 5 ran the headline computation · 3 exact + 2 partial · 0 located-and-wrong ·
+1 blocked by policy (credentials).** 0 of 6 parent diagnoses named the terminal cause; 3 of 6 were
+wrong about the *class* (artefact/data/harness misfiled as version drift).
+
+`[INFERRED]`
+1. **The headline of META-REPORT.md strengthens.** Before: "17/19 located reproduce ≥ partially; the
+   15 never-located all failed on packaging". After: five of those never-located rows, once the
+   packaging is undone, reproduce ≥ partially (5/5 of those that ran), still with no scientific
+   miss. Combined, over rows that reached a measurement: **22/24 ≥ partial**. The "rot, not
+   fragility" reading survives its first direct test.
+2. **`env` is not one thing.** Version drift (1), uncommitted artefacts (4 rows, 6 instances),
+   broken-at-publication code or lockfiles (2), harness bugs (1), credential gates (1). A
+   replication ledger that stops at the first exception records the *shallowest* layer, and the
+   shallowest layer was the true cause in 0 of 6 rows.
+3. **Two tools did most of the work**: `uv pip install --exclude-newer <post date>` (three rows;
+   inapplicable on the PyTorch index, which lacks upload timestamps) and *reading the loader
+   before believing the traceback* (three rows). Neither needs the author.
+4. `[UNRESOLVED]` The series ran on the `env` rows only. `runtime` (3), `unclear-entrypoint` (2)
+   and `data` (1) remain, and the vram rows are hardware. The 44%-never-ran figure is now
+   partitioned: ~half of it was reversible on this machine in ≤ 90 minutes per row.
+
+### N after R-12 — next-run decision
+
+**R-13 (bug-injection control) is on the card.** The direction has produced twelve runs and every
+one confirmed something; a harness that only confirms needs its false-negative rate measured
+before the 22/24 figure is quoted. Three reproduced rows (ioi, mild-rgb, matryoshka), each run
+clean and with one realistic injected bug (variable swap in the matched-pair generator; off-by-one
+layer index; config value silently not applied), outputs handed to **blind subagent judges** with
+the parents' own claims and tolerances and no indication of which arm is which. Pre-registered:
+(i) every bugged arm should be judged *not reproduced*; a miss is a harness false negative;
+(ii) every clean arm should be judged *reproduced*; a miss is a false positive; (iii) report the
+2×3 confusion table.
+

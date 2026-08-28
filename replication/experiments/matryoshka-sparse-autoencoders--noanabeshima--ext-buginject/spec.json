@@ -1,0 +1,65 @@
+{
+ "slug": "matryoshka-sparse-autoencoders--noanabeshima",
+ "post_id": "zbebxYCqsryPALh8C",
+ "title": "Matryoshka Sparse Autoencoders",
+ "date": "2024-12-14",
+ "repo": "noanabeshima/matryoshka-saes",
+ "head_sha": "7b80f5fe36598f43f3181c5466a0365c7ce07807",
+ "entrypoint": "train_saes_on_toy.ipynb",
+ "entrypoint_confidence": "medium",
+ "python_version": "3.11",
+ "key_deps": [
+  "torch",
+  "numpy",
+  "scipy",
+  "plotly"
+ ],
+ "models": [
+  {
+   "hf_id": null,
+   "params_b": 2e-05,
+   "gated": false
+  }
+ ],
+ "phenomenon": "dictionary learning method",
+ "contested": true,
+ "claim_type": "positive",
+ "primary_claim": "Matryoshka SAEs, trained with a sum of SAE losses computed on random prefixes of the latents, completely avoid the feature-absorption holes seen in vanilla SAEs on a toy model, and when trained on a 4-layer TinyStories language model achieve higher Mean Max Correlation with small reference-SAE features than vanilla SAEs at the same L0 (across most model locations), at the cost of a slightly worse Fraction of Variance Unexplained.",
+ "quote": "My results demonstrate that Matryoshka SAEs reduce feature absorption while preserving abstract features.",
+ "metric": "Mean Max Correlation (MMC) with reference SAE latents; Fraction of Variance Unexplained (FVU)",
+ "target_value": "Matryoshka SAEs have higher MMC than vanilla SAEs at the same L0 across most locations (exceptions: residual stream before first block, first attention-layer output); at fixed L0, Matryoshka has slightly worse FVU, comparable to a vanilla SAE ~0.4x its size",
+ "target_numeric": 0.0,
+ "direction": "+",
+ "uncertainty_reported": "none",
+ "tolerance": "abs:0.05",
+ "tolerance_rationale": "unit-interval metric: 0.05 absolute; post reported no spread, tolerance is a guess",
+ "vram_estimate_gb": 1,
+ "fits_3090": "yes",
+ "est_runtime": "minutes",
+ "est_runtime_class": "minutes",
+ "budget_minutes": 45,
+ "budget_override_reason": null,
+ "seeds_to_run": 1,
+ "data": {
+  "needed": [
+   "tree.json synthetic feature-tree definition (in-repo)",
+   "TinyStories-trained 4-layer LM, its activations, and a small reference SAE (not in repo)"
+  ],
+  "available": "in-repo",
+  "gated": false
+ },
+ "blockers": [
+  "No code in this repo trains or evaluates SAEs on the 4-layer TinyStories LM, computes Mean Max Correlation against a 'small reference SAE', or computes Fraction of Variance Unexplained on real LM activations. The entire second half of the primary claim (the TinyStories comparison, which is where the quantitative MMC/FVU headline numbers come from) has no entrypoint anywhere in the repo."
+ ],
+ "inspector_notes": "The repo fully supports reproducing the toy-model half of the claim (no feature-absorption holes) via train_saes_on_toy.ipynb; the TinyStories LM / reference-SAE comparisons that back the MMC and FVU headline numbers have no corresponding code, data, or checkpoints here.",
+ "headline_artifact": "figures/matryoshka_decoder_gt_cosine.png / vanilla_decoder_gt_cosine.png (toy-model cosine-similarity heatmaps showing presence/absence of feature-absorption holes)",
+ "selector_tier": "T?",
+ "selector_score": 6.04,
+ "experiment_class": "extension",
+ "parent_slug": "matryoshka-sparse-autoencoders--noanabeshima",
+ "extension": {
+  "kind": "bug-injection",
+  "what_varies": "one injected bug on a copy of the entrypoint (see bug.md); a clean copy is run alongside",
+  "rationale": "harness false-negative rate: would the pre-registered criterion + a blind judge catch a realistic bug? (NEW-DIRECTION program item 4.1)"
+ }
+}

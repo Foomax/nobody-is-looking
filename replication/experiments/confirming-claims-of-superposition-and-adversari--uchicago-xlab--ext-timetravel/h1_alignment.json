@@ -1,0 +1,41 @@
+[
+  {
+    "k": 6,
+    "m": 2,
+    "acc_mean": 0.998,
+    "pgd_cos_mean": 1.0,
+    "pgd_cos_std": 0.0,
+    "rand_cos_mean": 0.015,
+    "rand_cos_std": 0.028,
+    "rand_succ_cos_mean": 0.639,
+    "rand_succ_cos_std": 0.006,
+    "rand_succ_hit_rate": 0.1627,
+    "paper_pgd": 0.97
+  },
+  {
+    "k": 30,
+    "m": 10,
+    "acc_mean": 0.996,
+    "pgd_cos_mean": 1.0,
+    "pgd_cos_std": 0.0,
+    "rand_cos_mean": 0.003,
+    "rand_cos_std": 0.007,
+    "rand_succ_cos_mean": 0.432,
+    "rand_succ_cos_std": 0.003,
+    "rand_succ_hit_rate": 0.0345,
+    "paper_pgd": 0.96
+  },
+  {
+    "k": 90,
+    "m": 30,
+    "acc_mean": 0.966,
+    "pgd_cos_mean": 1.0,
+    "pgd_cos_std": 0.0,
+    "rand_cos_mean": 0.002,
+    "rand_cos_std": 0.002,
+    "rand_succ_cos_mean": 0.213,
+    "rand_succ_cos_std": 0.07,
+    "rand_succ_hit_rate": 0.0029,
+    "paper_pgd": 0.92
+  }
+]
