@@ -1,0 +1,32 @@
+{
+ "post_id": "Qnm6gAFnCPaJsbhSS",
+ "repo": "thebuleganteng/interpretability-prototyping",
+ "head_sha": "5ef40554b9a1d7056ea3cfcd94319af0a8eedb3c",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "env-artifact",
+ "parent_slug": "a-black-box-made-less-opaque-part-2--thebuleganteng",
+ "what_varies": "nothing in the experiment: the author's local SAE cache (~/.cache/sae_lens/blocks.{6,8,10,11}.hook_resid_pre, an uncommitted artifact the notebook loads from disk) is populated from the public sae-lens release gpt2-small-res-jb; packages resolved at the repo's own pins (sae-lens 6.18.0, transformer-lens 2.16.1, transformers 4.57.1, torch 2.9.0) frozen at 2026-02-18",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "mean Jaccard similarity across surface forms = 0.13; within-topic cosine similarity = 0.50 vs cross-topic cosine similarity = 0.14",
+ "observed_value": "mean Jaccard across surface forms 0.131 (target 0.13); within-topic cosine 0.503 vs cross-topic 0.137 (target 0.50 vs 0.14); perm p<0.001; 30/30 cells, 0 errors, 4/4 SAEs loaded",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [
+  "populate ~/.cache/sae_lens/blocks.{6,8,10,11}.hook_resid_pre from sae-lens release gpt2-small-res-jb (SAE.from_pretrained + save_model)",
+  "uv --exclude-newer 2026-02-18 at the repo's requirements.txt pins (sae-lens 6.18.0, transformer-lens 2.16.1, transformers 4.57.1, torch 2.9.0)"
+ ],
+ "wallclock_minutes": 19.0,
+ "peak_vram_gb": null,
+ "seeds_run": 1,
+ "notes": "ROT-REVERSAL (artifact): parent 'env: legacy sae-lens id removed' was a misdiagnosis -- the notebook loads SAEs from an uncommitted local cache with a silent-skip loop; the KeyError is downstream. Populating ~/.cache/sae_lens from release gpt2-small-res-jb at the repo's own pins reproduces the headline exactly. CPU-only notebook (device='cpu').",
+ "artifact_paths": [
+  "run.log",
+  "executed.ipynb"
+ ]
+}

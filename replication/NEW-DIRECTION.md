@@ -357,3 +357,53 @@ version-consistency case a date freeze should dissolve); then `thebuleganteng` (
 "rotten at publication" branch); then `jim-maar`, `dajale423`, `uchicago-xlab`. Freeze at post
 date + 14 d; step back only if the *same* error recurs, and record the offset.
 
+## R-8 — rot reversal, row 2: `thebuleganteng/interpretability-prototyping` (2026-08-28 16:22; 19 min, CPU-only notebook)
+
+**Parent verdict:** `env` — "legacy sae-lens registry id `11-res-jb` removed in ≥ 3; needs sae-lens
+1.x–2.x, which conflicts with torch 2.6". **What the notebook actually does:** loads four SAEs *from
+disk* at `~/.cache/sae_lens/blocks.{6,8,10,11}.hook_resid_pre` — an uncommitted local cache — with a
+loop that `continue`s silently when a path is missing; the `KeyError: '11-res-jb'` the parent saw
+is a later cell indexing the dict that the loop left empty. Not a registry id, not version drift:
+**an uncommitted artifact, misfiled as version drift.**
+
+**Extension.** Packages at the repo's own `requirements.txt` pins (sae-lens 6.18.0, transformer-lens
+2.16.1, transformers 4.57.1, torch 2.9.0), frozen at 2026-02-18; the cache populated from the
+public release `gpt2-small-res-jb` (the four `blocks.N.hook_resid_pre` SAEs) via
+`SAE.from_pretrained` + `save_model`. Nothing else touched.
+
+`[MEASURED]` 30/30 cells, 0 errors, 4/4 SAEs loaded. Headline: **mean Jaccard across surface forms
+0.131** (target 0.13); **within-topic cosine 0.503 vs cross-topic 0.137** (target 0.50 vs 0.14),
+difference 0.366, permutation p < 0.001. All three inside `abs:0.05`. → **reproduced, tier exact**
+(deterministic feature extraction over released SAEs).
+
+`[INFERRED]`
+1. Two rot-reversal attempts, two conversions. Neither required the author. One needed a date
+   flag; this one needed *reading the loading code* instead of the traceback — the parent's
+   diagnosis stopped at the exception, which was two cells downstream of the cause.
+2. **Silent-skip loaders convert `data` failures into misleading `env` failures.** A `continue` on a
+   missing artifact is a rot amplifier: it turns "file not found" into an unrelated KeyError that
+   pattern-matches a known library-drift story (`lessons-synth` Part 3 had a row for exactly that
+   story, and the parent applied it). The catalog needs a counter-rule: *before classifying a
+   KeyError as registry drift, check whether an upstream loader swallowed a miss.*
+3. The `env` bucket in the N=36 taxonomy is heterogeneous: so far it contains one true
+   post-date drift (tenseisoham, fixed by freezing) and one misfiled artifact miss. The rate of
+   "never ran, but reproduces once the environment is right" is now 2/2 on the rows tried.
+
+**Rot-reversal running tally** (of the 7 `env` rows in N=36):
+
+| row | parent diagnosis | actual cause | fix class | result |
+|---|---|---|---|---|
+| tenseisoham | kwarg removed ~4.46 | removed later; post-date freeze has it | `--exclude-newer` | ✅ exact (160.87; 52,156 vs 49,802) |
+| thebuleganteng | sae-lens registry id removed | uncommitted SAE cache + silent skip | artifact fetch | ✅ exact (0.131; 0.503 / 0.137) |
+| jim-maar | dir-name assert | assert + empty gitlink for `othello_world` | copy + upstream clone + freeze | ⏳ R-9 |
+| ibm, dajale423, uchicago-xlab, (sunmoonron = vram) | — | — | — | queued |
+
+### N after R-8 — next-run decision
+
+R-9 (jim-maar) is running. After it: `ibm/sae-steering` needs an uncommitted OpenAI SAE file
+(`{path}/gpt.top_k32.f0.pt`, `path=""`) — fetchable from the OpenAI blob the repo's own utils use,
+but its headline is a *timing* claim (< +0.001 s/token) that is hardware-specific; run it, judge
+direction only. Then `dajale423` (e2e_sae fork, torch 2.2 era → freeze 2024-09-20) and
+`uchicago-xlab` (2026-08-01 — if a freeze at the post date fails, that is the "rotten at
+publication" branch, the one outcome the series has not yet produced).
+

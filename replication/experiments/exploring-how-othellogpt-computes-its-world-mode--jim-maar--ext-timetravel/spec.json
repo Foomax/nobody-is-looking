@@ -1,0 +1,68 @@
+{
+ "slug": "exploring-how-othellogpt-computes-its-world-mode--jim-maar",
+ "post_id": "wezSznWnsMhpRF2QH",
+ "title": "Exploring how OthelloGPT computes its world model",
+ "date": "2025-02-02",
+ "repo": "jim-maar/interpretability",
+ "head_sha": "73bc8f299f29823ad2ac1d288861dbb21b0e9f4f",
+ "entrypoint": "prove_circuits_last_flipped.py (equivalently prove_circuits_last_flipped.ipynb)",
+ "entrypoint_confidence": "high",
+ "python_version": "3.11 (per interpretability.yaml conda env)",
+ "key_deps": [
+  "transformer-lens==2.0.0",
+  "torch==2.0.1",
+  "jaxtyping==0.2.29",
+  "einops==0.8.0",
+  "nnsight==0.0.6",
+  "wandb==0.13.10"
+ ],
+ "models": [
+  {
+   "hf_id": "NeelNanda/Othello-GPT-Transformer-Lens (synthetic_model.pth)",
+   "params_b": 0.025,
+   "gated": false
+  }
+ ],
+ "phenomenon": "circuit discovery",
+ "contested": true,
+ "claim_type": "positive",
+ "primary_claim": "OthelloGPT's attention heads implement a 'Previous Color Circuit' that copies each tile's color forward from the most recent move at which it was flipped, reconstructing the probed board state with 0.818 accuracy, while a competing hypothesis that monosemantic MLP neurons implement discrete flipping rules failed an ablation test.",
+ "quote": "I think the results show that the previous color circuit is meaningful. But the model actually does something more complicated, so it's better thought of as a rough approximation of what the attention layers are doing.",
+ "metric": "reconstruction accuracy of previous-color-circuit probe vs real attention output",
+ "target_value": "0.818 overall (up to 0.97 for specific layer/position/tile combinations)",
+ "target_numeric": 0.818,
+ "direction": "+",
+ "uncertainty_reported": "none",
+ "tolerance": "abs:0.05",
+ "tolerance_rationale": "unit-interval metric: 0.05 absolute; post reported no spread, tolerance is a guess",
+ "vram_estimate_gb": 3,
+ "fits_3090": "yes",
+ "est_runtime": "minutes",
+ "est_runtime_class": "minutes",
+ "budget_minutes": 75,
+ "budget_override_reason": null,
+ "seeds_to_run": 1,
+ "data": {
+  "needed": [
+   "board_seqs_int_small.npy / board_seqs_string_small.npy (from the external likenneth/othello_world repo; the git-clone line for it is present but commented out in the script)",
+   "pretrained linear/flipped/legal/accessible probes (all included in-repo under probes/mid and probes/post, e.g. probes/post/linear/resid_{0..7}_linear.pth)"
+  ],
+  "available": "download-script",
+  "gated": false
+ },
+ "blockers": [
+  "board_seqs_int_small.npy / board_seqs_string_small.npy are not included in this repo; the `git clone https://github.com/likenneth/othello_world` line that would fetch them is commented out, so a re-runner must uncomment/run it manually (well-known public repo, low friction)",
+  "the competing-hypothesis ablation test appears to live in flipping_circuit/prove_flipped_circuit_2.py, which loads data/board_seqs_int_train.pth and data/board_seqs_int_valid.pth -- neither this data/ directory nor any script to produce those .pth files exists anywhere in the repo (unlike the othello_world .npy files, there is no documented source for these), and a code comment ('with 60 GB RAM I can do 20.000') suggests the default NUM_GAMES_TRAIN=10000 config is itself close to the 31GB RAM budget"
+ ],
+ "inspector_notes": "Bachelor's-thesis repo built on the ARENA_3.0 OthelloGPT tutorial; requirements.txt is a broad ARENA course environment (includes unrelated openai/gym/mujoco packages) but no OpenAI/closed-API calls appear in the analyzed scripts. The main previous-color-circuit accuracy claim is well-supported and cheap to reproduce; the disproved MLP-neuron-rule competing hypothesis (a secondary but still claim-relevant result) has an undocumented, missing training/validation dataset.",
+ "headline_artifact": "scores_math['Accuracy'] / scores_test['Accuracy'] computed in prove_circuits_last_flipped.py via get_score_from_results (tp+tn)/(tp+tn+fp+fn), aggregated over layer/pos/row/col -- this is exactly the 'reconstruction accuracy of previous-color-circuit probe vs real attention output' metric in the post.",
+ "selector_tier": "T?",
+ "selector_score": 4.53,
+ "experiment_class": "extension",
+ "parent_slug": "exploring-how-othellogpt-computes-its-world-mode--jim-maar",
+ "extension": {
+  "kind": "env-timetravel",
+  "what_varies": "checkout placed in a directory literally named 'interpretability' (the repo asserts its own dir name; the harness's symlink resolved to 'src'); packages resolved with uv --exclude-newer 2025-02-16 over requirements.txt + the conda yaml's transformer-lens==2.0.0 / jaxtyping==0.2.29 pins. Code, data, target unchanged.",
+  "rationale": "parent ledgered env on the dir-name assert. A copy (not a symlink) satisfies it trivially; the remaining question is whether the 2025-02 stack (torch 2.0.1) runs the flipping-circuit proof and lands the 0.818 overall accuracy."
+ }
+}

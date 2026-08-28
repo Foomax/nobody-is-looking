@@ -1,0 +1,63 @@
+{
+ "slug": "a-black-box-made-less-opaque-part-2--thebuleganteng",
+ "post_id": "Qnm6gAFnCPaJsbhSS",
+ "title": "A Black Box Made Less Opaque (part 2)",
+ "date": "2026-02-04",
+ "repo": "thebuleganteng/interpretability-prototyping",
+ "head_sha": "5ef40554b9a1d7056ea3cfcd94319af0a8eedb3c",
+ "entrypoint": "notebooks/phase_2_semantics_vs_ideas_v2.ipynb",
+ "entrypoint_confidence": "high",
+ "python_version": "3.11",
+ "key_deps": [
+  "transformer-lens==2.16.1",
+  "sae-lens==6.18.0",
+  "transformers==4.57.1",
+  "torch==2.9.0+cpu"
+ ],
+ "models": [
+  {
+   "hf_id": "gpt2",
+   "params_b": 0.124,
+   "gated": false
+  }
+ ],
+ "phenomenon": "representation geometry",
+ "contested": true,
+ "claim_type": "positive",
+ "primary_claim": "In GPT-2 Small, pretrained residual-stream SAE 'specialist' features are primarily selective for syntax/surface form rather than semantics (mean Jaccard similarity of only 0.13 among top-5 specialist features across matched surface-form variants of the same meaning), whereas the overall SAE activation profile across all 24,576 features clusters primarily by semantic topic (within-topic cosine similarity 0.50 vs cross-topic 0.14), suggesting a two-tier syntax/semantics representational structure.",
+ "quote": "the overall mean Jaccard similarity was a very modest 0.13. This limited specialist feature overlap is indicative of syntax-focused specialist features.",
+ "metric": "Jaccard similarity of top-5 specialist SAE features across matched surface forms; cosine similarity of overall SAE activation within-topic vs cross-topic",
+ "target_value": "mean Jaccard similarity across surface forms = 0.13; within-topic cosine similarity = 0.50 vs cross-topic cosine similarity = 0.14",
+ "target_numeric": 0.13,
+ "direction": "+",
+ "uncertainty_reported": "none",
+ "tolerance": "abs:0.05",
+ "tolerance_rationale": "unit-interval metric: 0.05 absolute; post reported no spread, tolerance is a guess",
+ "vram_estimate_gb": 1,
+ "fits_3090": "yes",
+ "est_runtime": "minutes",
+ "est_runtime_class": "minutes",
+ "budget_minutes": 75,
+ "budget_override_reason": null,
+ "seeds_to_run": 1,
+ "data": {
+  "needed": [
+   "hardcoded matched-pairs text dataset (Python/math/etc. surface-form variants), written in notebook cells",
+   "jbloom/GPT2-Small-SAEs-Reformatted SAEs via sae_lens"
+  ],
+  "available": "in-repo",
+  "gated": false
+ },
+ "blockers": [],
+ "inspector_notes": "Cleanest repo of the batch: exact pinned pip freeze, explicit CPU-only torch, a 124M-parameter model, and cached intermediate activations already committed. Trivially reproducible even without a GPU.",
+ "headline_artifact": "Jaccard similarity of top-5 specialist SAE features across matched surface-form pairs, and within-topic vs. cross-topic cosine similarity of the full SAE activation vector, both computed directly in phase_2_semantics_vs_ideas_v2.ipynb.",
+ "selector_tier": "T1",
+ "selector_score": 5.95,
+ "experiment_class": "extension",
+ "parent_slug": "a-black-box-made-less-opaque-part-2--thebuleganteng",
+ "extension": {
+  "kind": "env-artifact",
+  "what_varies": "nothing in the experiment: the author's local SAE cache (~/.cache/sae_lens/blocks.{6,8,10,11}.hook_resid_pre, an uncommitted artifact the notebook loads from disk) is populated from the public sae-lens release gpt2-small-res-jb; packages resolved at the repo's own pins (sae-lens 6.18.0, transformer-lens 2.16.1, transformers 4.57.1, torch 2.9.0) frozen at 2026-02-18",
+  "rationale": "parent ledgered env ('legacy sae-lens id 11-res-jb removed'). Reading the notebook: the KeyError comes from a silent skip in the disk-loading loop, not from the registry -- the row is an uncommitted-artifact (data) case misfiled as version drift. Tests whether fetching the artifact yields the headline (Jaccard 0.13; within-topic cosine 0.50 vs cross 0.14)."
+ }
+}
