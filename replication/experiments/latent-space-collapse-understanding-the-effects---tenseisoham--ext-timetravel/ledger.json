@@ -1,0 +1,31 @@
+{
+ "post_id": "f6LoBqSKXFZzMYACN",
+ "repo": "tenseisoham/finetuning-mechinterp",
+ "head_sha": "483cc014d5cea7691675d7e4e27389bb9acc660b",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "env-timetravel",
+ "parent_slug": "latent-space-collapse-understanding-the-effects---tenseisoham",
+ "what_varies": "the package resolution date only: uv pip install --exclude-newer <post date + 14 d> (2025-03-14); if the same kwarg failure persists, step back to 2024-10-15 and record the offset. Code, notebooks, data, hardware unchanged.",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "160.87 (base model) vs 49,802.45 (fine-tuned model)",
+ "observed_value": "frozen at 2025-03-14 (transformers 4.49.0, torch 2.6.0, datasets 3.3.2): fine-tune runs (0 errors); logit-lens headline base avg perplexity 160.873 (target 160.87), fine-tuned 52,156 (target 49,802; +4.7%, within rel:0.15). post-finetune notebook: missing seaborn only.",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [
+  "uv pip install --exclude-newer 2025-03-14 over the import list (torch/transformers/datasets/sklearn/matplotlib/tqdm/accelerate/jupyter/pot/transformer-lens/scipy)"
+ ],
+ "wallclock_minutes": 21.0,
+ "peak_vram_gb": null,
+ "seeds_run": 1,
+ "notes": "ENV-TIMETRAVEL: parent env row converts to located+reproduced with one flag (uv --exclude-newer post_date+14d). Parent's 'removed ~4.46' diagnosis was wrong (kwarg accepted in 4.49). Catalogue mislabelled the headline as pairwise distance; it is average perplexity from logit-lens-analysis.ipynb cell 3.",
+ "artifact_paths": [
+  "run.log",
+  "executed_tt20250314_logit-lens-analysis.ipynb"
+ ]
+}

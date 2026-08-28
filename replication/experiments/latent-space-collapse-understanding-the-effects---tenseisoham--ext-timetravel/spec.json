@@ -1,0 +1,64 @@
+{
+ "slug": "latent-space-collapse-understanding-the-effects---tenseisoham",
+ "post_id": "f6LoBqSKXFZzMYACN",
+ "title": "Latent Space Collapse? Understanding the Effects of Narrow Fine-Tuning on LLMs",
+ "date": "2025-02-28",
+ "repo": "tenseisoham/finetuning-mechinterp",
+ "head_sha": "483cc014d5cea7691675d7e4e27389bb9acc660b",
+ "entrypoint": "logit-lens-analysis.ipynb",
+ "entrypoint_confidence": "high",
+ "python_version": "3.11",
+ "key_deps": [
+  "transformers",
+  "datasets",
+  "torch",
+  "scikit-learn",
+  "matplotlib",
+  "tqdm"
+ ],
+ "models": [
+  {
+   "hf_id": "gpt2",
+   "params_b": 0.124,
+   "gated": false
+  }
+ ],
+ "phenomenon": "fine-tuning side effects",
+ "contested": true,
+ "claim_type": "positive",
+ "primary_claim": "Narrow sentiment fine-tuning of GPT-2 does not simply overwrite pretrained representations but reconfigures and 'squishes' the model's output and activation space, concentrating sentiment information in middle-to-late layers while sharply degrading general language modeling (perplexity) on non-sentiment inputs.",
+ "quote": "fine-tuning does not simply overwrite pre-trained representations but reconfigures them entirely, redistributing sentiment-specific information across layers and squishing the output representation space",
+ "metric": "perplexity on non-sentiment tokens",
+ "target_value": "160.87 (base model) vs 49,802.45 (fine-tuned model)",
+ "target_numeric": 160.87,
+ "direction": "+",
+ "uncertainty_reported": "none",
+ "tolerance": "rel:0.15",
+ "tolerance_rationale": "other scalar metric: 15% relative; post reported no spread, tolerance is a guess",
+ "vram_estimate_gb": 2,
+ "fits_3090": "yes",
+ "est_runtime": "minutes",
+ "est_runtime_class": "minutes",
+ "budget_minutes": 90,
+ "budget_override_reason": null,
+ "seeds_to_run": 1,
+ "data": {
+  "needed": [
+   "imdb (HF datasets, for sentiment fine-tuning and eval)"
+  ],
+  "available": "hf-hub",
+  "gated": false
+ },
+ "blockers": [],
+ "inspector_notes": "Clean, small-scale, fully self-contained notebook sequence (finetune -> post-finetune analysis -> logit-lens perplexity/entropy -> alignment/transferability). No README beyond a one-paragraph pointer to the LessWrong post; no requirements file, but all dependencies are standard and unpinned so version drift risk is low for such a simple pipeline.",
+ "headline_artifact": "compute_perplexity() output in logit-lens-analysis.ipynb comparing base vs. fine-tuned GPT-2 on non-sentiment text (the 160.87 vs 49,802.45 numbers).",
+ "selector_tier": "T1",
+ "selector_score": 4.26,
+ "experiment_class": "extension",
+ "parent_slug": "latent-space-collapse-understanding-the-effects---tenseisoham",
+ "extension": {
+  "kind": "env-timetravel",
+  "what_varies": "the package resolution date only: uv pip install --exclude-newer <post date + 14 d> (2025-03-14); if the same kwarg failure persists, step back to 2024-10-15 and record the offset. Code, notebooks, data, hardware unchanged.",
+  "rationale": "parent ledgered env (TrainingArguments evaluation_strategy removed mid-4.x). Tests whether undoing rot yields a reproduction (headline 160.87 vs 49802 mean pairwise distance) or exposes fragility; the freeze-date offset needed is a measure of rot age at publication."
+ }
+}

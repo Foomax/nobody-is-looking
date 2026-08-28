@@ -318,3 +318,42 @@ class `env-timetravel`; (ii) if the frozen env *still* fails on the same kwarg, 
 at publication — a distinct finding (author's own stack predated the post); (iii) if it runs and
 misses, rot was hiding fragility. Bug-injection and the dtype arm are deferred behind this.
 
+## R-7 — time-travel environment, row 1: `tenseisoham/finetuning-mechinterp` (2026-08-28 15:32; 21 GPU-min)
+
+**Design.** Parent ledgered `env`: "`TrainingArguments(evaluation_strategy=)` removed in transformers
+~4.46; would need ~4.40". Extension: nothing changed but the resolution date —
+`uv pip install --exclude-newer 2025-03-14` (post date 2025-02-28 + 14 d) over the notebooks' import
+list. Resolved: **torch 2.6.0+cu124, transformers 4.49.0, datasets 3.3.2**.
+
+`[MEASURED]`
+- fine-tune notebook: **0 errors** — `evaluation_strategy` is accepted by transformers 4.49.0. The
+  parent's diagnosis ("removed ~4.46") was wrong; the kwarg was removed *later* (the parent's
+  `transformers<5` pin resolved 4.57.6, where it is gone). 1.5 epochs, checkpoints 1563/3126/4686,
+  ~30 min.
+- logit-lens notebook (the headline): base-model average perplexity **160.873** (target 160.87;
+  the catalogue mislabelled this "mean pairwise distance" — it is perplexity, see the notebook's
+  own output); fine-tuned **52,156** vs target 49,802 → **+4.7%, inside the spec's rel:0.15**.
+  Entropy 4.366/4.730 vs the author's 4.366/4.733.
+- post-finetune notebook: fails on a missing `seaborn` (not in my import list; not the headline).
+
+`[INFERRED]`
+1. **Undoing the rot yields an exact reproduction.** One flag, no code change, no pin hunting: an
+   `env` row became `located + reproduced` at the post date. This is the first direct test of the
+   headline "rot, not fragility" on a never-located row, and it comes out on the rot side.
+2. **The failure taxonomy has a resolution problem.** The parent's `env` verdict rested on a
+   version claim that was false by three minor releases. Date-freezing removes the need to know
+   *which* version — the post date is a fact, the removal version is a guess. `--exclude-newer`
+   should be the harness's *first* attempt, not a rescue.
+3. The author's committed logit-lens output carries a transformers ≥ 4.46 warning that our 4.49
+   run also emits, so the author's stack was in the 4.46–4.49 window — the frozen date landed on it.
+
+### N after R-7 — next-run decision
+
+Continue the time-travel series, one `env` row per run, because each run converts a taxonomy
+entry into a measurement of the headline finding. Order by expected cleanliness: **R-8
+`ibm/sae-steering`** (2024-10-25; failure "torch 2.3.1 ↔ transformer-lens arity drift" — a pure
+version-consistency case a date freeze should dissolve); then `thebuleganteng` (2026-02-04; the
+`11-res-jb` sae-lens id, which `lessons-synth` says lived only in sae-lens 1.x–2.x — a test of the
+"rotten at publication" branch); then `jim-maar`, `dajale423`, `uchicago-xlab`. Freeze at post
+date + 14 d; step back only if the *same* error recurs, and record the offset.
+
