@@ -458,3 +458,60 @@ e2e_sae fork) and `uchicago-xlab` (2026-08-01, the "rotten at publication" test)
 series is summarised and the direction re-evaluated against the remaining program items
 (bug-injection control, dtype arm).
 
+## R-10 — rot reversal, row 4: `ibm/sae-steering` (2026-08-28 17:56; 1 GPU-min + 6 min prep)
+
+**Parent verdict:** `env` — "torch 2.3.1 ↔ transformer-lens arity drift". **What was actually under
+it, in the order found:** (1) the repo's own `requirements.txt` is **unsatisfiable as a set** —
+`sparse_autoencoder@4965b94` (pinned git dep) requires `transformer-lens==1.9.1`, the file pins
+`2.2.2`; no resolver could ever have installed it (the author must have `pip install`ed
+sequentially, letting the last write win); (2) the SAE the entrypoint loads (`{path}/gpt.top_k32.f0.pt`,
+`path=""`) is **uncommitted** — regenerated from the OpenAI blob the repo's own utils name
+(v5_32k, resid_post_mlp, layer 9, 201 MB); (3) the entrypoint is **step N of a pipeline** whose
+three intermediate CSVs (`D_ref_embeds`, `dref_latents_9`, `D_align_embeds`) were never committed —
+regenerated with the repo's own `process_D_ref` / `D_align_scoring`; (4) `timing_tests.py`
+**unpacks five values from a `setup()` that returns four at the pinned commit** — broken code at
+publication (the repo has a single commit, 2024-09-20, five weeks before the post). Fixed on a copy
+(the fifth value is unused). Env frozen at 2024-11-08: torch 2.3.1+cu121, transformer-lens 2.2.2,
+transformers 4.42.4.
+
+`[MEASURED]` The script's output (a LaTeX table row, s/token, mean ± 95% CI over the 150 reference
+prompts): sentence-embedding **0.355 ± 0.008**; SAE-latent **0.007 ± 0.001**; min-distance
+**0.000 ± 0.000**; feature-score **0.000 ± 0.000**. Target: "< +0.001 s/token on unoptimized code".
+
+`[UNRESOLVED]` Which component(s) the post's "+0.001" bounds. Two of four are below it; the SAE
+encode is 7× above; the embedding step is 350× above (and is a baseline cost, not an overhead).
+Timing is hardware-specific (RTX 3090 vs the author's unknown machine). Read: **partial —
+direction only; the steering-specific steps (distance, score) are below the claimed bound; the
+SAE step is not.**
+
+`[INFERRED]`
+1. **Four independent rot classes on one row, none of them the one recorded.** Broken lockfile at
+   publication · uncommitted model artefact · uncommitted pipeline intermediates · code that never
+   ran at HEAD. The parent's `env` label was the first exception the harness hit, not the cause.
+2. **"Broken at publication" now has two instances** (this row's unpack bug and its requirements
+   set). That is the branch the series had not produced until now — and it lands in the *code and
+   packaging* column, still not the science.
+3. Once inputs existed, the computation took one minute. The 6-minute prep is what the paper
+   would have needed to commit.
+
+**Rot-reversal running tally** (7 `env` rows in N=36):
+
+| row | parent diagnosis | causes found (in order) | result |
+|---|---|---|---|
+| tenseisoham | kwarg removed ~4.46 | wrong version claim; post-date freeze runs | ✅ exact |
+| thebuleganteng | sae-lens id removed | uncommitted SAE cache + silent-skip loader | ✅ exact |
+| jim-maar | dir-name assert | assert → empty gitlink → path → uncommitted dataset | ⚠ partial |
+| ibm | torch↔TL arity | unsatisfiable requirements → uncommitted SAE → uncommitted intermediates → unpack bug at HEAD | ⚠ partial (direction) |
+| dajale423 | e2e_sae dep web | ⏳ R-11 (hard-coded wandb run id on every path) | ⏳ |
+| uchicago-xlab, (sunmoonron=vram) | — | queued | — |
+
+### N after R-10 — next-run decision
+
+R-11 (dajale423, 2024-09) is on the card; its pre-registered branch is the wandb fetch. After it,
+`uchicago-xlab` (post 2026-08-01 — a freeze at the post date is the cleanest test of
+"rotten at publication" the series can run: the environment *is* the post-date environment).
+Then the series closes with a summary section and the program re-evaluates: 4 rot-reversal rows
+have produced 2 exact + 2 partial and **0 scientific misses**; the bug-injection control becomes
+the priority, because the series so far has only ever *confirmed* and a harness that only confirms
+needs its false-negative rate measured.
+

@@ -1,0 +1,69 @@
+{
+ "slug": "investigating-sensitive-directions-in-gpt-2-an-i--dajale423",
+ "post_id": "dS5dSgwaDQRoWdTuu",
+ "title": "Investigating Sensitive Directions in GPT-2: An Improved Baseline and Comparative Analysis of SAEs",
+ "date": "2024-09-06",
+ "repo": "dajale423/error_pathology",
+ "head_sha": "a963531eaf1752c57bc6d6f9384a73136d4ab471",
+ "entrypoint": "scripts/sensitive_direction.py",
+ "entrypoint_confidence": "medium",
+ "python_version": "3.11",
+ "key_deps": [
+  "transformer_lens",
+  "transformers",
+  "e2e_sae (git dep)",
+  "wandb",
+  "datasets",
+  "snakemake"
+ ],
+ "models": [
+  {
+   "hf_id": "openai-community/gpt2 (loaded via transformer_lens as 'gpt2-small')",
+   "params_b": 0.124,
+   "gated": false
+  }
+ ],
+ "phenomenon": "sparse autoencoder quality",
+ "contested": true,
+ "claim_type": "negative",
+ "primary_claim": "Using an improved 'mixture' sensitive-direction baseline that excludes the original activation, GPT2-small's SAE reconstruction errors are no longer pathologically higher in KL divergence than the baseline (as previously reported by Gurnee 2024), though variability remains across layers, and SAE feature directions' impact on model output depends on SAE type and L0, with end-to-end SAE features showing no greater influence on model output than traditional SAE features.",
+ "quote": "SAE errors are no longer pathologically large when compared to more realistic baselines.",
+ "metric": "KL divergence of next-token predictions under SAE(x) reconstruction vs cov-random/real 'mixture' baseline directions",
+ "target_value": "SAE(x) KL comparable to cov-random-mixture baseline at Layer 6, variable across layers",
+ "target_numeric": 6.0,
+ "direction": "-",
+ "uncertainty_reported": "none",
+ "tolerance": "rel:0.15",
+ "tolerance_rationale": "other scalar metric: 15% relative; post reported no spread, tolerance is a guess",
+ "vram_estimate_gb": 4,
+ "fits_3090": "yes",
+ "est_runtime": "minutes",
+ "est_runtime_class": "minutes",
+ "budget_minutes": 60,
+ "budget_override_reason": null,
+ "seeds_to_run": 1,
+ "data": {
+  "needed": [
+   "token_tensor.pt (included in repo, 16MB, pre-tokenized)",
+   "e2e SAE checkpoint pulled from wandb artifact 'sparsify/gpt2/h9hrelni'",
+   "traditional SAEs via hf_hub_download"
+  ],
+  "available": "download-script",
+  "gated": false
+ },
+ "blockers": [
+  "the exact --direction_type/--subtraction flag combination that reproduces the post's 'cov-random-mixture' baseline isn't spelled out as a single ready-to-run command (run_sensitive_directions.sh only has one example, plus commented-out variants)",
+  "sensitive_direction.py hardcodes args.e2e = 'h9hrelni', so every run pulls a specific end-to-end SAE checkpoint from a wandb artifact path rather than a stable public registry"
+ ],
+ "inspector_notes": "Very lightweight compute (single GPU-hour SLURM job on GPT2-small); the practical friction is entirely about which flag combination and which of several notebooks reproduce the exact headline figure, not hardware.",
+ "headline_artifact": "KL divergence of SAE(x) reconstructions vs. 'mixture' baseline directions, produced by scripts/sensitive_direction.py and plotted in notebooks/plotting/proper_baseline.ipynb / sensitive_directions.ipynb",
+ "selector_tier": "T1",
+ "selector_score": 7.62,
+ "experiment_class": "extension",
+ "parent_slug": "investigating-sensitive-directions-in-gpt-2-an-i--dajale423",
+ "extension": {
+  "kind": "env-timetravel",
+  "what_varies": "resolution frozen at 2024-09-20 (post 2024-09-06 + 14 d): repo requirements.txt minus its transformer-lens==1.10.0 pin (the repo's own git dependency e2e_sae requires transformer-lens>=1.14 -- the two files contradict), torch==2.2.2 cu121 (e2e_sae's pin), e2e_sae's declared deps, e2e_sae editable --no-deps on PYTHONPATH. Code and data untouched.",
+  "rationale": "parent ledgered env ('e2e_sae dependency web does not co-install'). Pre-registered: if the wandb artifact fetch (SAETransformer.from_wandb('sparsify/gpt2/h9hrelni')) needs a login -> model-access, a taxonomy correction; if it runs, judge the Layer-6 KL vs the cov-random-mixture baseline by direction."
+ }
+}

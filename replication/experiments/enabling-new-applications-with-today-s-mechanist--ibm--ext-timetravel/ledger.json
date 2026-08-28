@@ -1,0 +1,34 @@
+{
+ "post_id": "iDyf7aBdvBp9jnfuY",
+ "repo": "ibm/sae-steering",
+ "head_sha": "f06eeef5aba00a0f3b6d2e02fabff4a4a6607b23",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "env-timetravel",
+ "parent_slug": "enabling-new-applications-with-today-s-mechanist--ibm",
+ "what_varies": "packages resolved from the repo's own fully pinned requirements.txt frozen at 2024-11-08 (torch 2.3.1, transformer-lens 2.2.2, transformers 4.42.4); the uncommitted SAE file and the three Storage/*.csv intermediates regenerated with the repo's own functions (prep_storage.py); timing_tests.py run as a copy with path='../sae'. Metric code untouched.",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "< +0.001s/token on unoptimized code",
+ "observed_value": "s/token mean +/- 95% CI over 150 ref prompts: sentence-embedding 0.355+/-0.008; SAE-latent 0.007+/-0.001; min-distance 0.000; feature-score 0.000 (target: < +0.001 s/token, component unspecified)",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [
+  "uv --exclude-newer 2024-11-08 over requirements.txt minus the sparse_autoencoder line; sparse_autoencoder@4965b94 installed --no-deps",
+  "SAE fetched: sparse_autoencoder.paths.v5_32k('resid_post_mlp', 9) -> ../sae/gpt.top_k32.f0.pt; path='../sae' on a copy",
+  "Storage/{D_ref_embeds,dref_latents_9,D_align_embeds}.csv regenerated via process_D_ref / D_align_scoring (prep_storage.py)",
+  "timing_tests_repl.py: 4-value unpack of setup() (final_layer unused)"
+ ],
+ "wallclock_minutes": 7.0,
+ "peak_vram_gb": null,
+ "seeds_run": 1,
+ "notes": "ROT-REVERSAL (stacked, 4 classes): requirements.txt unsatisfiable (sparse_autoencoder pins TL 1.9.1 vs 2.2.2); uncommitted SAE file (regenerated from OpenAI blob v5_32k resid_post_mlp L9); uncommitted pipeline intermediates (regenerated with repo functions); timing_tests.py 5-value unpack of a 4-value setup() at the pinned commit (broken at publication; fixed on a copy, value unused). PARTIAL/direction: steering-specific steps below the bound, SAE encode 7x above; hardware-specific.",
+ "artifact_paths": [
+  "run.log",
+  "src/prep_storage.py"
+ ]
+}
