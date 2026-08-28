@@ -1,6 +1,6 @@
 # Critical review of this repository
 
-Reviewed 2026-08-25. Covers `readme.md` (51 KB), `meta.py` (18 KB), `summary.md` (11 KB), the git
+Reviewed 2026-08-25. Covers `corpus-analysis.md` (51 KB), `meta.py` (18 KB), `summary.md` (11 KB), the git
 history, and — for every claim checked below — the three source directories and their readmes.
 `meta.py` was re-run (exit 0, 21 s, 234 lines) and its output diffed against the prose. Where a
 number below is new, it was computed from the shipped JSON; the script is in `review_check.py`.
@@ -8,7 +8,7 @@ number below is new, it was computed from the shipped JSON; the script is in `re
 **Companion file:** `prompts.md` — drop-in prompts for redoing the weak parts.
 
 > **Status, 2026-08-25 (later the same day): P1 and P2 have been applied.** §2.2–2.9 and §2.11
-> are fixed in `readme.md`; `meta.py` now emits `numbers.json`, `build_union.py` emits
+> are fixed in `corpus-analysis.md`; `meta.py` now emits `numbers.json`, `build_union.py` emits
 > `union.json`, and `test_numbers.py` enforces the prose↔script link. §2.4 was **reversed** after
 > the user confirmed the two corpora were built by two separate sessions. §2.1 (the repo does not
 > do the object-level meta-analysis it was created for) and §2.6's core (the instrument is still
@@ -88,7 +88,7 @@ CLAUDE.md says to run with subagents.
 
 Checked every number in the prose against the 234-line report.
 
-| Claim in `readme.md` | Script | Status |
+| Claim in `corpus-analysis.md` | Script | Status |
 |---|---|---|
 | "14 of the 359 distinct own-project repos are claimed by >1 union post, and 3 by >2" (O5, M5) | Prints **360** distinct repos; never prints 14 or 3; the list it prints under "claimed by >1 union post" is computed as `ra[k]+rl[k] > 2` over the two *per-corpus* counters, which double-counts shared posts | Numbers are **correct** (recomputed: 359 / 14 / 3) but **not emitted**, and the printed list is wrong |
 | R5: "359 distinct repos (105 in AF, 320 in LW, 65 shared)" | 105 + 320 − 65 = 360 | Arithmetic in the prose is internally inconsistent; the 360→359 difference is the O2 disagreement post, which nobody says |
@@ -148,7 +148,7 @@ inclusion steps. The honest tier for "sibling outputs of one pipeline" is `[INFE
 document itself (summary.md §5) admits the user could settle it in one sentence. It is labelled
 `[MEASURED]` and called "the single most important finding in this document."
 
-**Resolved by the user (2026-08-25), and now fixed in `readme.md`:** the two scrapes were built by two separate Opus sessions,
+**Resolved by the user (2026-08-25), and now fixed in `corpus-analysis.md`:** the two scrapes were built by two separate Opus sessions,
 one per forum. So O1's conclusion is wrong as stated: the 148/149 repo-identity agreement is a
 genuine test-retest result across two builds (same model family, similar rubrics — so "stable
 under re-run by the same kind of judge", not full inter-rater reliability), and the document's
@@ -302,7 +302,7 @@ important. A model reading this will carry the superlatives, not the tiers. For 
 Good, and now wrong in the one place that matters: it says HEAD is `4f01622`, unpushed; HEAD is
 `c355fbe` and the branch is **2 ahead** of `origin/master`. It also records the commit trailer
 model as "Claude Opus 5" — fine, but a handoff doc should not need to know that. It repeats ~40%
-of `readme.md`'s findings instead of pointing at them, and it does not record the repo's stated
+of `corpus-analysis.md`'s findings instead of pointing at them, and it does not record the repo's stated
 aim (commit `096cac0`), which is the fact a fresh instance most needs to avoid repeating §2.1.
 
 ---
@@ -337,12 +337,12 @@ aim (commit `096cac0`), which is the fact a fresh instance most needs to avoid r
 
 | File | State |
 |---|---|
-| `readme.md` | 25 marked corrections; every `[MEASURED]` figure now resolves to a key in `numbers.json` |
+| `corpus-analysis.md` | 25 marked corrections; every `[MEASURED]` figure now resolves to a key in `numbers.json` |
 | `meta.py` | functions + CLI, `numbers.json` output, Wilson/bootstrap intervals everywhere, per-30-day rates, in-AF stratum, contrast ratios, karma-field check, `--show-matches`, `>2` bug fixed, κ dropped, 21 s → 6.8 s |
 | `numbers.json` | 1,336 keys — new |
 | `build_union.py`, `union.json`, `union.schema.md`, `project_type_map.json` | R1 executed — new; 741 records, verified to reproduce all 1,336 keys on its own |
-| `test_numbers.py`, `test_allowlist.json` | new; fails on the pre-P1 `readme.md`, passes now |
+| `test_numbers.py`, `test_allowlist.json` | new; fails on the pre-P1 `corpus-analysis.md`, passes now |
 | `api_spotcheck.json` | new; the live `baseScore`/`afBaseScore` evidence for O1b |
 
-Still do not push without reading `readme.md` §1.3(c) and §2.2 — the instrument is corrected and
+Still do not push without reading `corpus-analysis.md` §1.3(c) and §2.2 — the instrument is corrected and
 labelled but not yet validated, and P3 is what the repo actually set out to do.

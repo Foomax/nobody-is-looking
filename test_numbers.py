@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 """
-test_numbers.py -- fail if readme.md asserts a [MEASURED] number that no script emits.
+test_numbers.py -- fail if corpus-analysis.md asserts a [MEASURED] number that no script emits.
 
-readme.md's standing convention is "if you disagree with a claim here, change the script, not the
+corpus-analysis.md's standing convention is "if you disagree with a claim here, change the script, not the
 prose". That convention is unenforceable unless something checks the prose against the script.
 This is that check.
 
 What it does
   1. Reads numbers.json (written by meta.py) and collects every numeric leaf.
-  2. Splits readme.md into blocks. A block is checked when it carries a [MEASURED] tag, or when
+  2. Splits corpus-analysis.md into blocks. A block is checked when it carries a [MEASURED] tag, or when
      it is a table immediately following a block that carries one.
   3. Extracts every number from those blocks and asserts each one appears in numbers.json --
      exact for integers, +/-0.05 for one-decimal values, +/-0.5 for values the prose rounds to
@@ -39,7 +39,7 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-README = os.path.join(HERE, "readme.md")
+README = os.path.join(HERE, "corpus-analysis.md")
 NUMBERS = os.path.join(HERE, "numbers.json")
 ALLOWLIST = os.path.join(HERE, "test_allowlist.json")
 
@@ -141,11 +141,11 @@ def check(verbose=False):
     if missing:
         print(f"\nFAIL -- {len(missing)} number(s) tagged [MEASURED] are not in numbers.json:\n")
         for ln, raw, ctx in missing:
-            print(f"  readme.md:{ln}  {raw:>12}   {ctx}")
+            print(f"  corpus-analysis.md:{ln}  {raw:>12}   {ctx}")
         print("\nEither emit the number from meta.py, re-tier the claim, or add it to "
               "test_allowlist.json with a reason.")
         return 1
-    print("\nPASS -- every [MEASURED] number in readme.md is emitted by meta.py")
+    print("\nPASS -- every [MEASURED] number in corpus-analysis.md is emitted by meta.py")
     return 0
 
 

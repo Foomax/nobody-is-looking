@@ -2,7 +2,7 @@
 """
 build_union.py -- emit union.json, the 741-record join of the AF and LW corpora.
 
-readme.md R1. The two forum corpora overlap on 149 posts; any analysis that pools their headline
+corpus-analysis.md R1. The two forum corpora overlap on 149 posts; any analysis that pools their headline
 numbers double-counts those posts, and any analysis that uses one of them alone works with the
 wrong denominator. This builds the artifact that fixes both.
 
@@ -19,9 +19,9 @@ Design notes
     agreement between the two scrapes stays measurable from this file alone.
   * `karma_lw` is deliberately not called `karma`: the AF corpus's `karma` field is the LessWrong
     baseScore, not the Alignment Forum's afBaseScore, despite what the AF readme's schema says
-    (readme.md O1b). Renaming it stops that error being inherited.
+    (corpus-analysis.md O1b). Renaming it stops that error being inherited.
   * The AF project_type normalisation table is shipped as data (project_type_map.json), not left
-    in prose -- readme.md O8's complaint about the AF corpus, applied to this one.
+    in prose -- corpus-analysis.md O8's complaint about the AF corpus, applied to this one.
 """
 import argparse
 import collections
@@ -52,7 +52,7 @@ def build(AF, LW, NN):
         disagree = None
         if af_repo and lw_repo and af_repo != lw_repo:
             disagree = {"af": af_repo, "lw": lw_repo,
-                        "note": "unresolved; one of these is wrong (readme.md O2)"}
+                        "note": "unresolved; one of these is wrong (corpus-analysis.md O2)"}
             own = None
 
         rec = {
@@ -115,7 +115,7 @@ def build(AF, LW, NN):
     doc = {
         "_meta": {
             "what": "AF u LW empirical-AI-safety posts, joined on ForumMagnum post id.",
-            "built_by": "build_union.py (readme.md R1)",
+            "built_by": "build_union.py (corpus-analysis.md R1)",
             "n_records": len(records),
             "n_in_af": sum(1 for r in records.values() if r["in_af"]),
             "n_in_lw": sum(1 for r in records.values() if r["in_lw"]),
@@ -126,7 +126,7 @@ def build(AF, LW, NN):
             "karma_note": ("karma_lw is the LessWrong baseScore. The AF corpus's `karma` field "
                            "holds the same number despite its readme calling it 'AF baseScore'; "
                            "the Alignment Forum's own score (afBaseScore) is a different, smaller "
-                           "number and is in neither corpus. See readme.md O1b."),
+                           "number and is in neither corpus. See corpus-analysis.md O1b."),
             "provenance_note": ("AF and LW were scraped by two separate Opus sessions, one per "
                                 "forum (user, 2026-08-25). Their agreement is therefore a "
                                 "test-retest result, not one pipeline's output twice."),
@@ -227,7 +227,7 @@ def main(argv=None):
     with open(os.path.join(HERE, "project_type_map.json"), "w") as fh:
         json.dump({"_note": ("AF's 17 raw project_type labels -> the 7 normalised rows its readme "
                              "§1.2 publishes. Derived by arithmetic and verified against that "
-                             "table; the AF corpus does not ship it (readme.md O8)."),
+                             "table; the AF corpus does not ship it (corpus-analysis.md O8)."),
                    "_reproduces_af_readme_table": meta.reproduces_af_table(AF)[0],
                    "map": meta.PROJECT_TYPE_MAP,
                    "normalised_counts": meta.reproduces_af_table(AF)[1]}, fh, indent=1)

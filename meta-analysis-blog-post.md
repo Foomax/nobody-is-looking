@@ -189,7 +189,7 @@ field that no one has taken.
 
 Structured restatement. Corpus: 741 union posts, 738 projects after deduplication, **728
 substantive records**. Source: `results.md`; numbers emitted by `analyze.py` into
-`analysis_numbers.json`. Tiers per `readme.md`.
+`analysis_numbers.json`. Tiers per `corpus-analysis.md`.
 
 ## Provenance
 
@@ -247,7 +247,7 @@ substantive records**. Source: `results.md`; numbers emitted by `analyze.py` int
 9. `[MEASURED]` **AF membership is a prestige filter, not a quality filter.** In-AF vs LW-only:
    median karma 57 vs 18; ships code 51.0% vs 65.6% (z = −3.81); negative rate 20.0% vs 21.7%
    (z = −0.54); seeds and uncertainty indistinguishable.
-   `[INFERRED]` Reproduces `readme.md` M2 with a different instrument.
+   `[INFERRED]` Reproduces `corpus-analysis.md` M2 with a different instrument.
 
 10. `[MEASURED]` **MATS cohort (72) is methodologically distinct.** Baseline 98.6% vs 89.8%
     (z = +2.44); seeds 23.6% vs 12.7% (z = +2.56); ablation 77.8% vs 65.1%; median karma 52.5 vs

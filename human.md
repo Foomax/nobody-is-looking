@@ -7,7 +7,7 @@ researcher sections say which one.
 
 ---
 
-## 1. Checking the three scrapes (`readme.md`, `review.md`, `meta.py`)
+## 1. Checking the three scrapes (`corpus-analysis.md`, `review.md`, `meta.py`)
 
 ### ELI5
 Someone collected a big pile of blog posts about keeping AI safe — 741 of them — from two websites,
@@ -19,13 +19,13 @@ from a program, not from someone's memory.
 
 ### Busy researcher
 - **Object:** three corpora — AF (253 posts), LW (637), Olah/Nanda blogs (101) — scraped
-  2024-08-25 → 2026-08-25 by two separate Opus sessions. `readme.md` reviews the *scrapes*, not
+  2024-08-25 → 2026-08-25 by two separate Opus sessions. `corpus-analysis.md` reviews the *scrapes*, not
   the research.
-- **Key fixes (`review.md`, 14 findings; 25 marked corrections in `readme.md`):** AF ∩ LW = 149,
+- **Key fixes (`review.md`, 14 findings; 25 marked corrections in `corpus-analysis.md`):** AF ∩ LW = 149,
   union = 741 (`union.json` is the denominator); AF's `karma` is LW's `baseScore` (149/149 identical
   + live GraphQL check, `api_spotcheck.json`); a repo double-counting bug; partial-period trend
   comparisons replaced by per-30-day rates; Wilson intervals on every rate, bootstrap on every median.
-- **Instrument caveat that survives everything:** the "rigor" markers in `readme.md` are regex
+- **Instrument caveat that survives everything:** the "rigor" markers in `corpus-analysis.md` are regex
   word-matches; the judge-based re-measurement (project 2) under-counts nothing and over-counts
   nothing consistently — the two instruments measure different constructs.
 - **Mechanics:** `python3 meta.py` → `numbers.json` (1,336 keys); `test_numbers.py` fails if the
@@ -195,7 +195,7 @@ on measured numbers; `[UNRESOLVED]` = the data cannot decide.
 ## Object
 
 741 distinct posts of empirical AI-safety research (union of an Alignment Forum scrape n=253 and a
-LessWrong scrape n=637, overlap 149; plus an Olah/Nanda blog corpus n=101 used only in `readme.md`).
+LessWrong scrape n=637, overlap 149; plus an Olah/Nanda blog corpus n=101 used only in `corpus-analysis.md`).
 Window 2024-08-25 → 2026-08-25. Two questions were asked of it: **what does this literature claim**,
 and **does it reproduce on one RTX 3090**.
 
@@ -203,8 +203,8 @@ and **does it reproduce on one RTX 3090**.
 
 1. `union.json` (741 records, keyed by ForumMagnum post id) ← `build_union.py`. The denominator.
    Pooling AF and LW double-counts 149 posts.
-2. `numbers.json` (1,336 keys) ← `meta.py`. Collection-level measures for `readme.md`.
-   `test_numbers.py` fails if `readme.md` asserts a `[MEASURED]` number no script emits.
+2. `numbers.json` (1,336 keys) ← `meta.py`. Collection-level measures for `corpus-analysis.md`.
+   `test_numbers.py` fails if `corpus-analysis.md` asserts a `[MEASURED]` number no script emits.
 3. `p3/claims/*.json` (741 records) ← 30 LLM extraction agents against `p3/EXTRACT.md`.
    `p3/findings_numbers.json` ← `p3/findings.py` → `p3/findings.md`.
 4. `analysis_numbers.json` ← `analyze.py` (imports `p3/findings.py`'s loader, so denominators

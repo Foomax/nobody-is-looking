@@ -249,7 +249,7 @@ Test on one non-safety ML repo to show it is topic-agnostic. Possibly the larges
 
 ## 6. Wild cards
 
-- **R10 on the meta-layer** (`readme.md` §2.2): does *this repository's text* teach eval-awareness?
+- **R10 on the meta-layer** (`corpus-analysis.md` §2.2): does *this repository's text* teach eval-awareness?
   Expensive; leave the pointer.
 - **LLM-written reconciliation pre-registrations** for the four lone dissenters and the 12-vs-12
   AI-control split: write the design that would settle each, commit it under `p3/prereg/`, run the

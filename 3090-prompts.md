@@ -26,7 +26,7 @@ You are running ONE replication attempt on the machine you are in. Ground rules,
 anything else in the prompt:
 
 1. The goal is a LEDGER ENTRY, not a success. An honest failure with a reason is a complete result.
-   The number that matters across many attempts is the rate and the failure taxonomy (readme.md R5).
+   The number that matters across many attempts is the rate and the failure taxonomy (corpus-analysis.md R5).
 2. Pin the commit given. Do not run HEAD-of-main. Do not `git pull`.
 3. One venv per experiment, inside the experiment folder. Never install into the base environment.
 4. Fix only the ENVIRONMENT: a version pin, a missing system package, a path, a CUDA-index wheel,
@@ -322,6 +322,6 @@ author's own fragility note reproduces, which is a finding about the method's pr
 ```
 cd replication && python3 ledger.py
 ```
-Three entries is not a rate. It is three rows of the ledger `readme.md` R5 asked for, and the
+Three entries is not a rate. It is three rows of the ledger `corpus-analysis.md` R5 asked for, and the
 first evidence about whether this corpus's "runnable" experiments run. The next 31 minute-class
 rows in `replication/queue.md` are a weekend.

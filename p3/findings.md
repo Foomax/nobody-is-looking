@@ -1,11 +1,11 @@
 # What the empirical AI-safety literature actually found
 
 **741 posts read, one structured claim record each.** This is the object-level meta-analysis the
-repo was created for (commit `096cac0`) and that `readme.md` does not attempt: `readme.md` and its
+repo was created for (commit `096cac0`) and that `corpus-analysis.md` does not attempt: `corpus-analysis.md` and its
 three source readmes analyse *how the articles were collected*; this analyses *what they report*.
 
 Every number here is emitted by `p3/findings.py` into `p3/findings_numbers.json`, the same
-contract `meta.py` has with `readme.md`. Tiers carry the meaning defined in `readme.md`.
+contract `meta.py` has with `corpus-analysis.md`. Tiers carry the meaning defined in `corpus-analysis.md`.
 
 ## 0. Provenance and its limits — read before quoting anything
 
@@ -73,7 +73,7 @@ the design that reconciles them.
 
 `[INFERRED]` A field where two thirds of papers position against prior work and one in thirty
 checks it is generating disagreement much faster than it resolves it. §1's contested-phenomenon
-count is what that looks like downstream. This is a sharper version of `readme.md` O10's point,
+count is what that looks like downstream. This is a sharper version of `corpus-analysis.md` O10's point,
 measured on the object layer rather than the meta layer.
 
 `[MEASURED]` Replication share by period: 2% → 4% → 3% → 2% → 7%. The 2026H2 uptick rests on 94
@@ -129,7 +129,7 @@ is 56 days of exposure; the 7%→24% rise through 2026H1 is the part that stands
 | any uncertainty on headline | 19.4 | [16.7, 22.4] | 17.4 | +2.0 |
 | ≥2 model families | 51.1 | [47.5, 54.7] | 9.2 | **+41.9** |
 
-`[MEASURED]` **`readme.md` R3's prediction is falsified in direction.** R3 predicted the regex
+`[MEASURED]` **`corpus-analysis.md` R3's prediction is falsified in direction.** R3 predicted the regex
 would *over*-count by >2× on loose markers. Every delta is positive: the regex **under**-counts.
 
 `[INFERRED]` Two different things are mixed in that table and they must not be reported as one
@@ -139,7 +139,7 @@ mostly definitional, and neither number is "the rigor rate."
 
 For **`multi_model` the gap is a genuine instrument miss**: 9.2% by regex, 51.1% by reading, and
 53.7% by naively counting distinct model-family names (`meta.py`). Two independent methods land
-within 3 points of each other and 42 points from the regex. `readme.md` §1.3(c) already flagged
+within 3 points of each other and 42 points from the regex. `corpus-analysis.md` §1.3(c) already flagged
 this marker as construct-invalid; it is now measured. **The field tests multiple model families
 about half the time, not 9% and not AF's claimed 18.2%.**
 
@@ -148,7 +148,7 @@ human labels. P4.
 
 ---
 
-## 6. Reuse is diffuse — `readme.md` M5's substrate prediction is falsified
+## 6. Reuse is diffuse — `corpus-analysis.md` M5's substrate prediction is falsified
 
 `[MEASURED]` From `depends_on` across 728 posts: 2,580 dependency edges over 1,811 distinct
 dependencies, split into **670 repo-shaped** (807 edges) and **744 arXiv papers** (1,301 edges).
@@ -158,18 +158,18 @@ dependencies, split into **670 repo-shaped** (807 edges) and **744 arXiv papers*
 | repos | 670 | 807 | 12.4% | **18.0%** | **89.3%** |
 | papers | 744 | 1,301 | 17.9% | 26.7% | 74.2% |
 
-`readme.md` R8 predicted `[SPECULATIVE]`: *"the substrate is under 40 repos, carries the majority of
+`corpus-analysis.md` R8 predicted `[SPECULATIVE]`: *"the substrate is under 40 repos, carries the majority of
 reuse edges, and has a maintainer count in the single digits."*
 
 `[MEASURED]` **It does not.** The top 40 repos carry 18% of repo dependency edges, and 89.3% of
 named repos are cited by exactly one post. There *is* a recognisable core —
 `ukgovernmentbeis/control-arena` (10), `transformerlensorg/transformerlens` (10),
 `jbloomaus/saelens` (9), `saprmarks/dictionary_learning` (5), `adamkarvonen/saebench` (5) — and
-`readme.md` O5 is right that these are almost never adjudicated as anyone's "own project" repo.
+`corpus-analysis.md` O5 is right that these are almost never adjudicated as anyone's "own project" repo.
 But they are a small minority of reuse, not the majority.
 
 `[INFERRED]` This partially **rehabilitates the LessWrong readme's "cumulative building is
-near-absent"** conclusion, which `readme.md` M5 called "an artifact of measuring the wrong layer."
+near-absent"** conclusion, which `corpus-analysis.md` M5 called "an artifact of measuring the wrong layer."
 Measuring the right layer, the answer is: there is a real shared-tooling core, and it is thin.
 The dominant pattern is still one-off dependencies.
 
@@ -187,7 +187,7 @@ The dominant pattern is still one-off dependencies.
 | negative/null result | 20.0% | 21.7% |
 | replication | 4.1% | 2.9% |
 
-`[INFERRED]` `readme.md` M2 asserted "no rigor gain on any of thirteen markers" from regex counts.
+`[INFERRED]` `corpus-analysis.md` M2 asserted "no rigor gain on any of thirteen markers" from regex counts.
 Reading the posts confirms it: every gap is inside its interval. Alignment Forum promotion tracks
 karma and team size, not method quality.
 
@@ -200,7 +200,7 @@ successor could inherit. Raw items are in `p3/future_work.json`.
 
 `[MEASURED]` All 6 clustering chunks returned: **1,937 leads themed, 306 distinct themes** after
 cross-chunk alias merging, **131 themes proposed by ≥3 independent first authors**.
-`p3/rank_leads.py` ranks by distinct first authors — `readme.md` R9's own criterion: "the same
+`p3/rank_leads.py` ranks by distinct first authors — `corpus-analysis.md` R9's own criterion: "the same
 lead proposed independently by three abandoned projects is the signal, not a duplicate."
 
 | theme | first authors | posts | leads | posts shipping code |
@@ -221,7 +221,7 @@ lead proposed independently by three abandoned projects is the signal, not a dup
 | build ground-truth eval benchmark | 14 | 14 | 19 | 10 |
 
 `[INFERRED]` **The head of the queue is a deflating result for R9 as specified, and worth stating
-plainly.** `readme.md` R9 expected the queue to surface specific, inheritable research directions.
+plainly.** `corpus-analysis.md` R9 expected the queue to surface specific, inheritable research directions.
 What dominates it is *routine follow-up*: understand the mechanism, scale it up, ablate it, try
 another model family. **107 different first authors ended a post by saying someone should work out
 why the effect happens.** That is not a research queue — it is a measurement of how much of this
@@ -251,9 +251,9 @@ because they are near-ties. **Treat every count here as a lower bound and the or
 5 as unstable.** A proper embedding-based clustering would supersede this; the alias map is an
 honest stopgap, not a result.
 
-## 9. What this changes in `readme.md`
+## 9. What this changes in `corpus-analysis.md`
 
-| `readme.md` claim | Status after reading the corpus |
+| `corpus-analysis.md` claim | Status after reading the corpus |
 |---|---|
 | R3 prediction: regex over-counts loose markers by >2× | **Falsified in direction** — regex under-counts every marker (§5) |
 | §1.3(c): `multi_model` is construct-invalid | **Confirmed and quantified** — 9.2% vs 51.1% (§5) |

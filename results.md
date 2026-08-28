@@ -2,7 +2,7 @@
 
 Written for an LLM. Dense, tiered, no narrative. Every `[MEASURED]` number here is emitted by
 `analyze.py` into `analysis_numbers.json`; the key is given in brackets like
-`{contrast.solo.code}`. Tiers carry the definitions at the top of `readme.md`:
+`{contrast.solo.code}`. Tiers carry the definitions at the top of `corpus-analysis.md`:
 `[MEASURED]` = a script emits it; `[INFERRED]` = a judgment resting on measured numbers;
 `[SPECULATIVE]` = a hypothesis; `[UNRESOLVED]` = the data cannot separate the options.
 
@@ -12,7 +12,7 @@ Three analyses now exist over the same corpus. They are not interchangeable.
 
 | Document | Instrument | Question |
 |---|---|---|
-| `readme.md` (via `meta.py`) | regex over post bodies | how the corpora were **collected** |
+| `corpus-analysis.md` (via `meta.py`) | regex over post bodies | how the corpora were **collected** |
 | `p3/findings.md` (via `p3/findings.py`) | LLM judge, one claim record per post | what the posts **claim** |
 | **`results.md` (this, via `analyze.py`)** | joins the claim records to previously unused union fields | **structure** — themes, difference patterns, outliers |
 
@@ -198,7 +198,7 @@ words), which is why the code-release null matters: code costs no words and does
 prior work 70.2% vs 61.1% (z = +2.43); negative-result rate statistically indistinguishable
 (20.0% vs 21.7%, z = −0.54); seeds, uncertainty indistinguishable.
 
-`[INFERRED]` This reproduces `readme.md` M2 on the object layer with a *different instrument*
+`[INFERRED]` This reproduces `corpus-analysis.md` M2 on the object layer with a *different instrument*
 (judge-read design flags rather than regex): **AF admission tracks attention and citation posture,
 not inferential quality, and it selects against code release.** Two independent instruments
 agreeing on a null makes the null much harder to dismiss as a measurement artifact.
@@ -274,7 +274,7 @@ direction.
 `[INFERRED]` Rigor markers and code release rise monotonically; the 2026H2 jump is large
 (+16 points of code release in one half-year). `[UNRESOLVED]` **2026H2 is 56 days, not 181** — it
 is a partial period, and this corpus has a documented survivorship pattern in partial windows
-(`readme.md` §1.3(d)). Do not read the 2026H2 row as a trend endpoint until the period closes.
+(`corpus-analysis.md` §1.3(d)). Do not read the 2026H2 row as a trend endpoint until the period closes.
 The 2024H2→2026H1 segment is four full-ish periods and is safe: code 53.3→60.2, baseline
 84.4→92.2.
 
@@ -416,7 +416,7 @@ listening, and one experiment each would tell you which.
 
 ### 8.4 Author outliers
 
-- `[MEASURED]` **Neel Nanda: 52 posts, first author on 0.** Already noted in `readme.md` O3; here
+- `[MEASURED]` **Neel Nanda: 52 posts, first author on 0.** Already noted in `corpus-analysis.md` O3; here
   it is the extreme of a general advisor pattern (Conmy 18/1, Rajamanoharan 23/2, StefanHex 16/1).
 - `[MEASURED]` **chanind: 12 posts, first author on 11**, all on sparse autoencoders,
   spanning 2024-09 → 2026-03; **4 of the 11 are negative results about SAE methodology**

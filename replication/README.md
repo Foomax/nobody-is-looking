@@ -2,7 +2,7 @@
 
 This directory turns the 741-post corpus into a queue of experiments an agent can actually re-run
 on the hardware in this machine (RTX 3090, 24 GB VRAM, 31 GB RAM, ~150 GB disk, no closed-model
-API keys), and records what happened in a ledger that `readme.md` R5 specified but nobody built.
+API keys), and records what happened in a ledger that `corpus-analysis.md` R5 specified but nobody built.
 
 ## Pipeline
 
@@ -108,7 +108,7 @@ Recurring failure modes the inspectors reported, each seen in several repos:
 
 `[INFERRED]` The selector's VRAM tiering was the *least* important filter: of 97 T1 candidates,
 only 12 turned out not to fit. What removed candidates was the recipe — judges, missing scripts,
-missing data — which no amount of parameter-count arithmetic predicts. `readme.md` R5's plan to
+missing data — which no amount of parameter-count arithmetic predicts. `corpus-analysis.md` R5's plan to
 "clone, install, run" underestimated the share of repos where there is nothing to run.
 
 ## Queue quality, stated

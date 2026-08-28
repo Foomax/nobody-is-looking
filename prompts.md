@@ -6,7 +6,7 @@ prepend to any of the others. Paths assume the four directories are where `meta.
 Contents:
 
 - **P0** — Ground rules block (prepend to everything)
-- **P1** — Correction pass on the existing `readme.md`
+- **P1** — Correction pass on the existing `corpus-analysis.md`
 - **P2** — Make the warrant real: `union.json`, `numbers.json`, and a prose↔script test
 - **P3** — The object-level meta-analysis the repo was created for (subagent fan-out)
 - **P4** — Instrument validation: LLM judge vs regex
@@ -70,12 +70,12 @@ Rules that override anything else in this prompt:
 
 ---
 
-## P1 — Correction pass on `readme.md`
+## P1 — Correction pass on `corpus-analysis.md`
 
 ```
 <P0>
 
-Task: edit readme.md in place to fix the defects listed in review.md §2. Do not restructure;
+Task: edit corpus-analysis.md in place to fix the defects listed in review.md §2. Do not restructure;
 do not add sections; do not add new findings except the one in item 6. Keep the tier tags. For
 each edit, leave a one-line HTML comment <!-- fix: review §2.x --> at the point of change so the
 diff is reviewable.
@@ -173,7 +173,7 @@ A. `meta.py` refactor
 
 B. `union.json`
    741 records keyed by post id. LW schema as superset. Fields: all LW fields; `in_af`, `in_lw`
-   booleans; `af_project_type_raw`; `af_project_type_norm` using the mapping in readme.md O8
+   booleans; `af_project_type_raw`; `af_project_type_norm` using the mapping in corpus-analysis.md O8
    (shipped also as `project_type_map.json`); `af_additional_github_links`; `lw_topic`;
    `lw_confidence`; `lw_tags`; `dup_cluster_id` from the same-first-author Jaccard≥0.6 pass;
    `karma_lw` (renamed from `karma`, with a `_comment` field stating that AF's `karma` is LW
@@ -182,7 +182,7 @@ B. `union.json`
    Success: `meta.py --src-union union.json` reproduces numbers.json exactly.
 
 C. `test_numbers.py`
-   Parse readme.md; extract every number adjacent to a `[MEASURED]` tag in the same paragraph
+   Parse corpus-analysis.md; extract every number adjacent to a `[MEASURED]` tag in the same paragraph
    or table row; assert each appears in numbers.json (exact for integers, ±0.05 for one-decimal
    percentages). Print the numbers it could not find. The test must fail today (review.md §2.2
    lists why) and pass after P1.
@@ -249,9 +249,9 @@ Produce findings.md with, in this order:
 3. Replication map: claims whose `claim_type` is replication, what they replicate (by
    depends_on), and outcome. Count of union results that have ≥1 in-corpus replication.
 4. Dependency graph summary: top-20 nodes by in-degree across depends_on (repos, papers,
-   posts). Compare against readme.md O5.
+   posts). Compare against corpus-analysis.md O5.
 5. Evidence-strength profile per phenomenon: share of claims with ≥2 model families, seeds,
-   intervals, baseline, held-out — computed from `design`, not regex. Put readme.md §1.3(c)'s
+   intervals, baseline, held-out — computed from `design`, not regex. Put corpus-analysis.md §1.3(c)'s
    regex rates next to these and report the delta per marker (this is R3's headline, for free).
 6. Unexecuted future work: cluster `stated_future_work` semantically; rank clusters by number
    of independent posts proposing them, minus posts that later executed them (check by
@@ -286,8 +286,8 @@ Task: price the regex instrument in meta.py before anyone quotes it again.
 5. Compute per marker: regex rate, judge rate, regex-vs-judge Cohen's κ with CI, judge-vs-human
    κ on the 20, and the regex false-positive and false-negative rates against the judge.
 6. Output validation/report.md: one table, then for each marker with |regex − judge| > 5 points,
-   five example regex false positives with context. Apply the verdict rule from readme.md R3:
-   if the delta is large and marker-dependent, add a retraction note to readme.md §1.3(c) and
+   five example regex false positives with context. Apply the verdict rule from corpus-analysis.md R3:
+   if the delta is large and marker-dependent, add a retraction note to corpus-analysis.md §1.3(c) and
    M3; if small, say the regex era is fine and remove the hedging.
 
 The judge model must not be told what result would be convenient.

@@ -17,7 +17,7 @@ python3 build_union.py            # -> union.json (741 records)   [--verify chec
 python3 meta.py                   # -> numbers.json (1,336 keys)  ~7 s
 python3 analyze.py                # -> analysis_numbers.json      ~10 s
 python3 p3/findings.py            # -> p3/findings_numbers.json
-python3 test_numbers.py           # fails if readme.md asserts a number no script emits
+python3 test_numbers.py           # fails if corpus-analysis.md asserts a number no script emits
 python3 replication/ledger.py     # -> ledger_summary.json + the extension tally
 python3 replication/make_report_table.py   # regenerates META-REPORT.md's numbers
 ```

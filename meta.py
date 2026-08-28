@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-meta.py -- the warrant for readme.md.
+meta.py -- the warrant for corpus-analysis.md.
 
-Recomputes every [MEASURED] number in readme.md and emits them as data, so the prose can be
+Recomputes every [MEASURED] number in corpus-analysis.md and emits them as data, so the prose can be
 checked mechanically instead of by eye (test_numbers.py does the checking).
 
 Usage

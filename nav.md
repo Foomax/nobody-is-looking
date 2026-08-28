@@ -24,7 +24,7 @@ take a reproduced/contested result, place it against the published work, and say
 - ★ `meta-analysis-blog-post.md` — "Nobody Is Checking"; the narrative + the contested-claim landscape (`⚔ N-vs-M` splits).
 - ★ `3090-prompts.md` — the 3 scaffolded protocol experiments (a negative, a positive, a replication) and why each was chosen.
 - ★ `replication/lessons-synth.md` — how replication actually goes (Part 3 = symptom→cause→fix catalog). Read if you'll run code.
-- Supporting: `readme.md` + `results.md` + `p3/findings.md` (the three layer-1 instruments); `human.md` (ELI5); `summary.md` (layer-1 handoff).
+- Supporting: `corpus-analysis.md` + `results.md` + `p3/findings.md` (the three layer-1 instruments); `human.md` (ELI5); `summary.md` (layer-1 handoff).
 - `replication/HARNESS.md` — the reusable replication harness (a contribution in its own right).
 - `prompts2/brainstorm.md` — wild-pass direction menu (2026-08-28); §7 is a run order. `prompts2/00-fable-research-director.md` is the prompt that executes it, with hourly `handoff-&-lessons-HH.md` logs.
 

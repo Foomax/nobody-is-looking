@@ -1,4 +1,4 @@
-# Orphaned-lead clustering (prompts.md P3 phase 2, item 6 / readme.md R9)
+# Orphaned-lead clustering (prompts.md P3 phase 2, item 6 / corpus-analysis.md R9)
 
 Input: `p3/leads/chunk_N.json` — a list of `{idx, post_id, date, repo, lead}` objects. Each `lead`
 is a "future work" item stated by the authors of a post in the AI-safety corpus and, as far as
