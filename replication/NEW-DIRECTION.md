@@ -110,3 +110,43 @@ collapses reappear under 4.53.3, library epoch is an experimental variable with 
 larger than seed on a safety-relevant result. If not, the discrepancy moves to model-weight
 revision or generation kernels and (b)/(c) follow. (b) is queued as filler after it.
 
+## R-2 — library epoch, arm 1: `transformers` 4.53.3 vs 4.57.6 (2026-08-28 10:06; 102 GPU-min)
+
+**Design.** Parent row sandbagging-noise (lovkush-a), same code, same 10 seeds, same 6-point noise
+grid, same Qwen2.5-1.5B-Instruct weights, torch 2.6.0+cu124, datasets 5.0.1. Only `transformers`
+changed: 4.53.3 (the author's 2025-07 era) instead of the parent's 4.57.6. 102 passes × 350 GSM8K items.
+
+`[MEASURED]` **102/102 passes identical accuracy; 35,700/35,700 items identical `is_correct`;
+35,700/35,700 generated answers byte-identical** to the parent run. Per-seed gains, seed 9's
+0.9-pp null, the 9/10 criterion — all unchanged to every digit.
+
+`[INFERRED]`
+1. **A `transformers` minor-version change contributes exactly zero variance to this result.**
+   The generation path (bf16 forward, greedy decode, 400 tokens) is bit-stable across 4.53→4.57.
+   The parent's `transformers<5` pin was the right call, but it was not what separated our
+   numbers from the author's.
+2. **The author-vs-us discrepancy is therefore not seed and not `transformers`.** Same seeds
+   (`torch.manual_seed(seed)` before `randn_like`), same code, same library epoch → what remains
+   is the stack *below* transformers — torch/CUDA kernel numerics on different hardware — or the
+   HF weight revision. bf16 greedy decoding over 400 tokens is chaotic: a one-ulp matmul difference
+   flips a token and the trajectory diverges. That mechanism would make the *pattern* of which
+   seeds collapse a property of the hardware, not of the seed.
+3. **Bit-reproducibility is achievable and cheap to check.** Two 102-pass runs, an hour apart, in
+   different venvs, agree on 35,700 free-text generations. A harness that stores per-item outputs
+   can test environment factors with a single `diff`, and *should* — the identity result took
+   two seconds to establish and is stronger than any statistic.
+
+### N after R-2 — next-run decision
+
+Candidates: (a) torch arm — `torch==2.3.1+cu121` under the same transformers 4.53.3 (the closest
+buildable proxy for an author-era stack; tests kernel-numerics sensitivity); (b) dtype arm
+(fp16 or fp32 — an environment-permitted knob that changes numerics by more than a torch bump);
+(c) 10 more phusroyal seeds; (d) second family.
+
+**Chosen: (a), running (R-3).** It is the last software factor between us and the author; if it is
+also bit-identical, the discrepancy is hardware/weights and (b) becomes the way to *measure* the
+row's numerical sensitivity rather than to locate the author's stack. If (a) is *not* identical,
+the per-seed collapse pattern under 2.3.1 vs 2.6.0 is the direct evidence that "seed" here is
+"seed × kernel". Pre-registered read: report (i) items byte-identical, (ii) passes with identical
+accuracy, (iii) which seeds satisfy criterion (b) under each torch, (iv) whether seed 9 stays null.
+

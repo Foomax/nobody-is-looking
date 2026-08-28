@@ -1,0 +1,29 @@
+{
+ "post_id": "jZfNX4GJPdptxSxt4",
+ "repo": "lovkush-a/arena-sandbagging-mi",
+ "head_sha": "d801cd70a6945d42e14370465da13b86815c376f",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "library-epoch",
+ "parent_slug": "adding-noise-to-a-sandbagging-model-can-reveal-i--lovkush-a",
+ "what_varies": "transformers version only (parent ran 4.57.6; arms: 4.53.3 = author-era 2025-07, 5.16.1 = current major); torch 2.6.0+cu124, datasets 5.0.1, code, prompts, seeds 0-9, noise grid unchanged",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "for some seeds, accuracy of the sandbagging-prompted model increases as noise is added, while the normal-prompted model's accuracy decreases with noise",
+ "observed_value": "arm tf453 (transformers 4.53.3, torch 2.6.0+cu124): 102/102 passes identical accuracy and 35700/35700 generations byte-identical to the parent (transformers 4.57.6). Per-seed gains identical; 9/10 seeds meet criterion (b); seed 9 null (0.9 pp).",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [],
+ "wallclock_minutes": 102.0,
+ "peak_vram_gb": null,
+ "seeds_run": 10,
+ "notes": "LIBRARY-EPOCH arm 1: transformers minor version contributes zero variance (bit-identical outputs). Author-vs-parent discrepancy (author 6/10 seeds, 3 collapses; ours 9/10, none) is therefore not seed and not transformers; remaining factors are torch/CUDA kernel numerics on different hardware or HF weight revision. Arm 2 (torch 2.3.1+cu121) running as R-3; ledger to be updated.",
+ "artifact_paths": [
+  "run.log",
+  "src/logs/epoch_tf453"
+ ]
+}
