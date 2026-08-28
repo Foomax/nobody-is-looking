@@ -32,3 +32,23 @@
 == 2026-08-28T08:13:31+08:00 RUN matryoshka seed=4
 == 2026-08-28T08:21:31+08:00 EXIT matryoshka seed=4 rc=0 after 8 min
 == 2026-08-28T08:21:31+08:00 DONE seed census
+== 2026-08-28T11:55:49+08:00 RUN phusroyal seed=5
+== 2026-08-28T12:01:19+08:00 EXIT phusroyal seed=5 rc=0 after 5 min
+== 2026-08-28T12:01:19+08:00 RUN phusroyal seed=6
+== 2026-08-28T12:06:39+08:00 EXIT phusroyal seed=6 rc=0 after 5 min
+== 2026-08-28T12:06:39+08:00 RUN phusroyal seed=7
+== 2026-08-28T12:12:03+08:00 EXIT phusroyal seed=7 rc=0 after 5 min
+== 2026-08-28T12:12:03+08:00 RUN phusroyal seed=8
+== 2026-08-28T12:17:29+08:00 EXIT phusroyal seed=8 rc=0 after 5 min
+== 2026-08-28T12:17:29+08:00 RUN phusroyal seed=9
+== 2026-08-28T12:22:53+08:00 EXIT phusroyal seed=9 rc=0 after 5 min
+== 2026-08-28T12:22:53+08:00 RUN phusroyal seed=10
+== 2026-08-28T12:28:18+08:00 EXIT phusroyal seed=10 rc=0 after 5 min
+== 2026-08-28T12:28:18+08:00 RUN phusroyal seed=11
+== 2026-08-28T12:33:39+08:00 EXIT phusroyal seed=11 rc=0 after 5 min
+== 2026-08-28T12:33:39+08:00 RUN phusroyal seed=12
+== 2026-08-28T12:39:01+08:00 EXIT phusroyal seed=12 rc=0 after 5 min
+== 2026-08-28T12:39:01+08:00 RUN phusroyal seed=13
+== 2026-08-28T12:44:24+08:00 EXIT phusroyal seed=13 rc=0 after 5 min
+== 2026-08-28T12:44:24+08:00 RUN phusroyal seed=14
+== 2026-08-28T12:49:47+08:00 EXIT phusroyal seed=14 rc=0 after 5 min

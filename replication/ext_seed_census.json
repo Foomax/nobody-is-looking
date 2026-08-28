@@ -84,28 +84,28 @@
  "phusroyal": {
   "sphere_shell": {
    "linear_probe_auc": [
-    0.7592,
-    0.1551,
-    0.5897,
-    0.9228,
-    5
+    0.7328,
+    0.1498,
+    0.5596,
+    0.9996,
+    15
    ],
    "causal_target_delta": [
-    2.9497,
-    0.4241,
-    2.1971,
-    3.1833,
-    5
+    2.948,
+    0.4869,
+    1.9355,
+    3.3784,
+    15
    ],
    "geometry_probe_auc": [
-    0.9996,
-    0.0002,
-    0.9993,
+    0.9995,
+    0.0004,
+    0.9984,
     0.9998,
-    5
+    15
    ],
-   "passed_all_checks": 2,
-   "n": 5,
+   "passed_all_checks": 7,
+   "n": 15,
    "per_seed": {
     "0": {
      "probe_auc": 0.922,
@@ -126,34 +126,74 @@
     "4": {
      "probe_auc": 0.711,
      "causal_delta": 3.183
+    },
+    "5": {
+     "probe_auc": 0.811,
+     "causal_delta": 3.065
+    },
+    "6": {
+     "probe_auc": 1.0,
+     "causal_delta": 1.936
+    },
+    "7": {
+     "probe_auc": 0.569,
+     "causal_delta": 3.27
+    },
+    "8": {
+     "probe_auc": 0.577,
+     "causal_delta": 3.287
+    },
+    "9": {
+     "probe_auc": 0.774,
+     "causal_delta": 3.378
+    },
+    "10": {
+     "probe_auc": 0.908,
+     "causal_delta": 2.661
+    },
+    "11": {
+     "probe_auc": 0.56,
+     "causal_delta": 3.286
+    },
+    "12": {
+     "probe_auc": 0.591,
+     "causal_delta": 3.192
+    },
+    "13": {
+     "probe_auc": 0.676,
+     "causal_delta": 3.321
+    },
+    "14": {
+     "probe_auc": 0.73,
+     "causal_delta": 2.076
     }
    },
-   "in_target_range": 2
+   "in_target_range": 4
   },
   "helix_tube": {
    "linear_probe_auc": [
-    0.5894,
-    0.042,
+    0.6067,
+    0.045,
     0.546,
-    0.6383,
-    5
+    0.6839,
+    15
    ],
    "causal_target_delta": [
-    2.718,
-    0.5452,
+    2.8194,
+    0.4642,
     1.9441,
-    3.1959,
-    5
+    3.6672,
+    15
    ],
    "geometry_probe_auc": [
-    0.9949,
+    0.9955,
     0.0023,
     0.992,
-    0.9981,
-    5
+    0.9989,
+    15
    ],
-   "passed_all_checks": 5,
-   "n": 5,
+   "passed_all_checks": 15,
+   "n": 15,
    "per_seed": {
     "0": {
      "probe_auc": 0.638,
@@ -174,9 +214,49 @@
     "4": {
      "probe_auc": 0.546,
      "causal_delta": 1.944
+    },
+    "5": {
+     "probe_auc": 0.647,
+     "causal_delta": 3.014
+    },
+    "6": {
+     "probe_auc": 0.675,
+     "causal_delta": 2.42
+    },
+    "7": {
+     "probe_auc": 0.617,
+     "causal_delta": 3.362
+    },
+    "8": {
+     "probe_auc": 0.599,
+     "causal_delta": 3.119
+    },
+    "9": {
+     "probe_auc": 0.644,
+     "causal_delta": 2.813
+    },
+    "10": {
+     "probe_auc": 0.684,
+     "causal_delta": 2.158
+    },
+    "11": {
+     "probe_auc": 0.563,
+     "causal_delta": 2.653
+    },
+    "12": {
+     "probe_auc": 0.584,
+     "causal_delta": 3.667
+    },
+    "13": {
+     "probe_auc": 0.55,
+     "causal_delta": 2.729
+    },
+    "14": {
+     "probe_auc": 0.591,
+     "causal_delta": 2.765
     }
    },
-   "in_target_range": 2
+   "in_target_range": 7
   },
   "parent_target": "probe AUC 0.57-0.67 after GFAL; causal delta 1.9-3.5 (stage gfal_plus); parent (seed 1729): sphere 0.589/3.473, helix 0.5685/2.565",
   "errors": []

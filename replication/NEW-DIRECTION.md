@@ -205,3 +205,32 @@ author's 3/10 collapses and our 1/10 are both inside the n=30 interval, the disc
 sampling story and the post's "for some seeds" wording was exactly right. Not chosen now: a
 dtype arm (numerics are now bounded), the second-family arm (next after R-5), bug-injection.
 
+## R-4 — phusroyal, seeds 5–14 (2026-08-28 12:50; 54 GPU-min; n = 15 total)
+
+`[MEASURED]` sphere_shell linear-probe AUC after GFAL, 15 seeds: 0.922, 0.923, 0.590, 0.650,
+0.711, 0.811, **1.000**, 0.569, 0.577, 0.774, 0.908, 0.560, 0.591, 0.676, 0.730 — mean 0.733 ±
+0.150. Strictly inside the claimed 0.57–0.67: **4/15 = 27% [11, 52]**. Feature clearly *not* erased
+(AUC ≥ 0.77): **6/15 = 40% [20, 64]**. The repo's own 14-check validator passes on 7/15. Causal
+delta stays 1.9–3.4 on every seed (the other half of the claim is seed-stable). helix_tube: 15/15
+pass, AUC 0.546–0.684, mean 0.607 ± 0.045, 7/15 strictly in range.
+
+`[INFERRED]` The R-1 reading holds at three times the sample: **on the sphere_shell geometry the
+headline erasure happens on roughly half the seeds**, with a bimodal AUC (a cluster at 0.56–0.68
+and a cluster at 0.77–1.00), while the causal effect is seed-stable. The post's stated range is the
+lower mode. The parent replication's single seed (1729 → 0.589) drew from the lower mode. A
+one-seed "reproduced" verdict on this row carries roughly a coin-flip's worth of information about
+the headline number — and a one-seed *post* carried the same. The helix_tube geometry is stable and
+would have been the safer headline.
+
+`[UNRESOLVED]` Whether the upper mode reflects a GFAL optimisation failure (a training-dynamics
+property the author could fix with more steps) or a genuine geometry-dependence is not separable
+from these runs; both readings leave the *published* claim seed-fragile.
+
+### N after R-4 — next-run decision
+
+R-5 (sandbagging collapse rate, seeds 10–29 × {0.001, 0.002}, ≈40 min) is on the card — it was
+chosen after R-3 and nothing in R-4 changes that. After R-5 the seed/kernel thread has four runs;
+the plan is to switch factor: **second family** on the sandbagging row (Llama-3.2-1B-Instruct,
+cached; stop-rule if no sandbag gap at noise 0), then the bug-injection control, unless R-5 shows
+a collapse rate high enough (≥ 30%) that the noise-injection claim itself needs restating first.
+
