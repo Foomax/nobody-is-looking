@@ -1,0 +1,43 @@
+{
+ "post_id": "jzHhJJq2cFmisRKB2",
+ "primary_claim": "A Claude-4-Sonnet-based misalignment classifier, calibrated to a 0.1% positive rate on a synthetic 'ordinary' deployment distribution, shows highly variable approximate recall (0% to 85%) across different misalignment example sources -- notably only 7% recall on METR's real on-policy reward-hacking examples and low recall on subtle 'covered reasoning' model organisms -- illustrating why misalignment classifiers, unlike control monitors, cannot be rigorously adversarially evaluated, since 'intentionally misaligned trajectory' is not a crisp abstraction",
+ "claim_type": "negative",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "Claude", "size": "4 Sonnet", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "approximate recall (TPR) at a 0.1% ordinary positive rate, across misalignment example sources",
+  "value": "recall varies from 0% to 85% depending on setting; 7% recall on METR's real on-policy reward-hacking examples; low recall on subtle 'covered reasoning' and code-sabotage model organisms; up to 85% recall on 'instrumental reasoning' model organisms",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["metr-evals/malt-public", "UKGovernmentBEIS/control-arena", "wildchat.allen.ai", "sb8WmKNgwzefa6oaJ"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "significantly optimise the classifier (e.g. by providing labeled examples, clearer positive/negative specifications, or finetuning)",
+  "exhaustively cover more model organisms (behavioral specifications and procedures)",
+  "increase the size of the ordinary positive-rate dataset (e.g. 10x) and the resolution of classifier scores to reduce threshold variance",
+  "gather a wider range of in-the-wild and adversarial on-policy misalignment examples for future evaluations",
+  "explore rescuing adversarial evaluation by constraining to intentionally misaligned finetuned model organisms, or restricting red-teams to clear-cut, expert-agreed cases"
+ ],
+ "limitations_stated": [
+  "did not significantly optimise the classifier prompt/method",
+  "did not exhaustively cover all model organisms (behavioral specifications or procedures)",
+  "only 3 positive labels at the 0.1% ordinary positive rate, adding significant variance to threshold and recall estimates",
+  "ordinary dataset mixture was chosen somewhat arbitrarily and significantly affects thresholds/detection rates",
+  "only created three model organisms (off-policy procedures), and ambiguity in human labelling complicates precision estimation"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "our early findings show that synthetic recall rates at 0.1% ordinary positive rate vary broadly, from 0% to 85%."
+}

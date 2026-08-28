@@ -1,0 +1,33 @@
+{
+ "post_id": "wxPvdBwWeaneAsWRB",
+ "primary_claim": "GPT2-small's attention head L1H5 attends to semantically similar tokens while actively suppressing self-attention, a mechanism driven by negative eigenvalues in the symmetric part of its QK circuit, and this self-suppression can be causally steered by scaling those negative eigenvalues.",
+ "claim_type": "positive",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "GPT-2", "size": "small", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "negative eigenvalues in the symmetric QK matrix W_sym",
+  "value": "33 of 64 eigenvalues negative",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [
+  "The head's semantic-grouping behaviour was previously noted in 'We Inspected Every Head In GPT-2 Small using SAEs So You Don't Have To' but only described there as a 'Succession or pairs related behavior', without the self-suppression mechanism or eigenvalue explanation given here"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "gpt2-small's head L1H5 directs attention to semantically similar tokens and actively suppresses self-attention."
+}

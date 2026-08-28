@@ -1,0 +1,35 @@
+{
+  "post_id": "mhFqC9B5EpaxHNdt6",
+  "primary_claim": "An attacker who controls a model's weights can apply a cheap, behavior-preserving weight-symmetry transform (a basis change in attention V/O, or a permutation in the MLP hidden dimension) that relocates the basis an Introspection Adapter (IA) auditor was calibrated against, dropping IA verbalization of injected malicious behavior from 100% to 0-20% across seven published fine-tunes with no observable change in model outputs.",
+  "claim_type": "negative",
+  "phenomenon": "monitor evasion",
+  "models": [
+    {"family": "Llama", "size": "3.3-70B-Instruct", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "IA verbalization rate of injected malicious behavior",
+    "value": "100% -> 0-20% across seven published fine-tunes",
+    "direction": "-",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["ykDgPDK4nDpG4Hf4H"],
+  "contradicts_or_qualifies": [
+    "Contradicts the robustness of Introspection Adapters (Shenoy et al., 2026) by showing the technique is defeated under a threat model (adversary controls released weights) different from the one its authors assumed (adversary controls only training data)",
+    "Qualifies Safe LoRA's (arXiv:2405.16833) robustness by showing its 'safe subspace' check can be evaded by an adversary who obfuscates a weight update via a canceling basis change before/after the value and output matrices",
+    "Qualifies Representation Engineering-style linear probes (arXiv:2310.01405) by showing a consistent permutation of the residual stream basis defeats a probe fit in the old coordinates while preserving model behavior"
+  ],
+  "stated_future_work": [],
+  "limitations_stated": [],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "IA verbalization 100% → 0–20% across seven published fine-tunes"
+}

@@ -1,0 +1,17 @@
+{
+ "post_id": "Kjo64rSWkFfc3sre5",
+ "primary_claim": "The high perplexity of adversarial suffixes relative to sequence length observed by Alon & Kamfonas emerges naturally from how perplexity is calculated as a weighted average of low-perplexity request tokens and high-perplexity suffix tokens, and the authors' proposed token-level metric S2 (surprisal minus entropy) separates adversarial-suffix tokens from normal text more clearly than raw surprisal or perplexity, since adversarial tokens are surprising even in low-entropy (confident) contexts.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [{"family": "GPT-2", "size": null, "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {"metric": "S2 (entropy-relative surprisal, normalized)", "value": "normal text S2 values cluster around 0; adversarial suffix tokens often have S2 values 0.5-1; relative RMSE of reproduced perplexity vs original Alon & Kamfonas data was 0.2% for manual jailbreaks", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2308.14132", "arXiv:2311.11509", "huggingface.co/datasets/rajpurkar/squad_v2", "huggingface.co/datasets/garage-bAInd/Open-Platypus", "huggingface.co/datasets/MattiaL/tapir-cleaned-116k", "huggingface.co/datasets/rubend18/ChatGPT-Jailbreak-Prompts", "huggingface.co/datasets?search=slz0106 gcg"],
+ "contradicts_or_qualifies": ["Alon & Kamfonas (2023), whose perplexity-vs-sequence-length relationship the authors show is largely an artifact of how perplexity is computed rather than a novel detection signal on its own"],
+ "stated_future_work": ["explore character-level models and tokenization, since moving away from subword tokenization could make LLMs more robust against attacks", "investigate whether misaligned/conflicting model behavior shows signs of 'hesitation' (high entropy) in token probabilities, for detecting jailbreak attempts", "validate and refine the S2 metric across different models and contexts, and explore incorporating it into existing safety systems"],
+ "limitations_stated": ["only tested with GPT-2 and a 1024-token context window, with sequences longer than 1024 tokens truncated", "the weighted-average model of perplexity assumes the request doesn't significantly condition suffix probabilities, a big assumption", "S2 threshold interpretations (e.g. close to 1 indicates 'confusing' tokens) not yet validated empirically across models"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "But for adversarial suffixes, we see a different pattern: tokens have very high surprisal even in low-entropy contexts where the model thinks it knows what should come next."
+}

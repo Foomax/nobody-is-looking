@@ -1,0 +1,51 @@
+{
+  "post_id": "Bxju8Fmpo2eW4oj9t",
+  "primary_claim": "RoPE-based language models trained with learned per-token (and per-layer) position increments instead of a fixed +1 increment encode interpretable linguistic structure -- larger increments at word/sentence/document boundaries and smaller increments within words -- while having a barely detectable effect on training loss and perplexity.",
+  "claim_type": "positive",
+  "phenomenon": "interpretability tooling",
+  "models": [
+    {"family": "custom byte-level transformer", "size": "6.4M params (256d, 8 heads, 6 layers)", "open_weight": false},
+    {"family": "SmolLM2", "size": "1.7B", "open_weight": true}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "reduction in learned position increment (space token) for real vs reversed multi-word entity order, per layer",
+    "value": "51-78% smaller space increment for real order ('New York') vs reversed ('York New') at layers L1-L5, p as low as 3e-8",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "brendanlong/learned-position-increments-experiment",
+    "arXiv:2104.09864",
+    "arXiv:2507.23083",
+    "arXiv:2405.18719",
+    "arXiv:2511.17388",
+    "arXiv:2503.04355",
+    "arXiv:2203.16634"
+  ],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "find summary positions where inspecting with other tools would be useful (e.g. the last token before a large positional increment)",
+    "understand what a model is looking for at each layer, especially open-ended investigation of larger models",
+    "explore the structure with different datasets, e.g. code",
+    "determine the best way to train per-layer position increment vectors",
+    "finish grafting learned per-token position increments onto an existing pretrained model (SmolLM2-1.7B) and inspect per-layer results"
+  ],
+  "limitations_stated": [
+    "only trained a small number of models with very little variation between architectures",
+    "gradient signal for increments to be useful is weak since they didn't meaningfully improve loss; only a small number of models/layers inspected",
+    "never trained a large model from scratch; unclear if fine-tuned models learn the same increments as from-scratch training",
+    "didn't train per-layer position increment vectors on a large model"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "I consistently found that the learned position increments have a barely detectable effect on loss and perplexity."
+}

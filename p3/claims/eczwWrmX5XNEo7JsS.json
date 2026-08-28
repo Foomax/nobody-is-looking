@@ -1,0 +1,43 @@
+{
+ "post_id": "eczwWrmX5XNEo7JsS",
+ "primary_claim": "The orthogonality and polytope structures reported for categorical/hierarchical concept representations in LLMs (Park et al. ICML 2024; Jiang et al. ICML 2024) occur practically everywhere, including for semantically opposite concepts, totally random/nonsensical concepts, and even random untrained unembeddings, indicating the results are a generic artifact of the whitening transformation and high dimensionality rather than evidence of meaningful learned geometry.",
+ "claim_type": "negative",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "Gemma", "size": "2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "orthogonality / convex-hull (polytope) formation of whitened concept probes",
+  "value": "semantically opposite and random-nonsense concept sets show the same near-orthogonality and simplex/polytope formation as hierarchical concept sets; effect reproduces even with a random, untrained unembedding matrix",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2406.01506",
+  "arXiv:2311.03658",
+  "KihoPark/LLM_Categorical_Hierarchical_Representations",
+  "C8LZ3DW697xcpPaqC"
+ ],
+ "contradicts_or_qualifies": [
+  "Challenges the interpretation of Park et al. (ICML 2024, arXiv:2406.01506) and the Linear Representation Hypothesis paper (arXiv:2311.03658) that observed orthogonality/polytope structure reflects meaningful categorical/hierarchical concept geometry learned by the model"
+ ],
+ "stated_future_work": [
+  "A framework unifying how representations are obtained (contrastive activations, PCA, SAE, etc.), how they're used by the model, and how they can be used to control it (e.g. steering vectors)",
+  "How to determine how well a given direction/vector/function represents a given human-interpretable concept",
+  "If orthogonality and simplices are too universal, what is a good lens or theory for studying the geometry of categorical and hierarchical concepts",
+  "Using a coloring transformation (inverse of whitening, learned directly from data) instead of the whitening transformation"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The main takeaway is that the orthogonality and polytopes they observe in categorical and hierarchical concepts occur practically everywhere, even at places they should not."
+}

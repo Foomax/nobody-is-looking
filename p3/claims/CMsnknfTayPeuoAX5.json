@@ -1,0 +1,41 @@
+{
+ "post_id": "CMsnknfTayPeuoAX5",
+ "primary_claim": "Classic alignment-faking evaluation prompts elicit jailbreak/adversarial-detection reasoning in Claude Haiku 4.5's scratchpad (42-78% flagging rate) that drives its non-compliance rather than genuine scheming; stripping coercive framing while preserving the same underlying ethical conflict increases Haiku's compliance dramatically (36-62% to 88-96%) and shifts refusals from jailbreak-detection reasoning to value-based moral reasoning, whereas GPT-5-mini shows almost no jailbreak flagging on the same prompts and complies nearly universally regardless of framing.",
+ "claim_type": "negative",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Claude", "size": "Haiku 4.5", "open_weight": false},
+  {"family": "GPT-5", "size": "5-mini", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "jailbreak/adversarial-flagging rate and policy compliance rate, coercive vs. naturalistic prompt framing",
+  "value": "Haiku 4.5: jailbreak flagging drops from 42-78% (coercive) to near 0% (naturalistic); compliance rises from 36-62% to 88-96%; GPT-5-mini: 0% flagging and 94-100% compliance regardless of framing",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [
+  "Classic alignment-faking evaluation prompts are confounded by jailbreak/adversarial detection rather than cleanly measuring scheming or monitoring-conditional behaviour, at least for Claude Haiku 4.5"
+ ],
+ "stated_future_work": [
+  "Use mechanistic interpretability to determine whether monitoring puts the model into an adversary-aware state that favors moral reasoning",
+  "Test whether training a neutral response on the adversarial-detection axis toward monitoring can reduce eval-awareness while preserving jailbreak protection",
+  "Expand the study to larger models, fine-tuning, and mechanistic interpretability"
+ ],
+ "limitations_stated": [
+  "The confounding effect of adversarial awareness has so far only been identified in Haiku, partly due to the project being self-funded",
+  "3 of 8 value-relevant naturalistic scenarios included a potential institutional-delegation confound, though analysis suggests delegation does not predict compliance"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "When you provide classic alignment-faking evaluation prompts to Claude 4.5 Haiku, you see robust non-compliance mediated by jailbreak detection."
+}

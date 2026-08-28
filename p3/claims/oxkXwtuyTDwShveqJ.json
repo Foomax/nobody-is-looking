@@ -1,0 +1,17 @@
+{
+ "post_id": "oxkXwtuyTDwShveqJ",
+ "primary_claim": "Applying interpretability techniques (embedding-matrix analysis, QK/OV circuit analysis, activation pattern study, integrated gradients) to a trained attention-based DQN agent for intersection driving provides qualitative evidence that its policy network functionally decomposes into three roles: sensory (embedding layers, which weight position/heading features like y and cosh/vx/vy/sinh highly), processing (attention layer, which attends to other vehicles' position/velocity/presence to compute something like a distance/risk metric), and motor (output layers, whose Q-values for Slow/Idle/Fast are driven by presence and relative velocity features).",
+ "claim_type": "positive",
+ "phenomenon": "circuit discovery",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["manavdahra/rl-interp", "arXiv:1911.12250 (Social Attention for Autonomous Decision-Making in Dense Traffic)", "transformer-circuits.pub/2021/framework (A Mathematical Framework for Transformer Circuits)", "distill.pub/2020/understanding-rl-vision"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["test whether the agent computes a distance metric from other vehicles' (x,y) coordinates", "test whether changing the y coordinate of the intersection breaks the agent's decision making, to check generalization vs. memorization", "enumerate different policies learned by the agent for the same action and test whether they correlate or stay independent", "train the model with more attention heads and layers over more episodes and repeat the experiments"],
+ "limitations_stated": ["experiment limited in scope and timing (up to 4 weeks)", "agent only trained/deployed in a simplified simulated environment, far from real-world complexity", "several interpretive claims in the walkthrough are explicitly marked as unverified/speculative (e.g. whether the model computes a distance metric)", "more work needed to determine how different learned policies combine into a concrete algorithm"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "It was shown qualitatively with some level of confidence, that the agent learns to delegate different types of functions to it's embedding, attention and output layers. These layers learn to serve the sensory, processing and motor functions respectively."
+}

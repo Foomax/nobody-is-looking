@@ -1,0 +1,50 @@
+{
+ "post_id": "fjgYkTWKAXSxsxdsj",
+ "primary_claim": "Applying METR's task-horizon methodology to offensive cybersecurity, frontier LLMs' 50%-success task horizon on cyber tasks is doubling roughly every 5 months, and the best current models solve only 6-minute tasks at 50% success, about a tenth of METR's software-engineering horizon.",
+ "claim_type": "positive",
+ "phenomenon": "capability forecasting / time horizons",
+ "models": [
+  {"family": "GPT-2", "size": "xl", "open_weight": true},
+  {"family": "GPT-3", "size": "davinci-002", "open_weight": false},
+  {"family": "GPT-3.5", "size": "turbo", "open_weight": false},
+  {"family": "Claude", "size": "3.5 Sonnet (Jun 2024)", "open_weight": false},
+  {"family": "Claude", "size": "3.5 Haiku", "open_weight": false},
+  {"family": "Claude", "size": "3.5 Sonnet (Oct 2024)", "open_weight": false},
+  {"family": "o4-mini", "size": null, "open_weight": false},
+  {"family": "o3", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false}
+ ],
+ "n_model_families": 7,
+ "effect": {
+  "metric": "50%-success task-horizon doubling time",
+  "value": "~5 months; best models reach a 6-minute P(50) horizon (exponential fit R²=0.94)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": 1,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2405.13547", "arXiv:2406.05590", "arXiv:2408.08926", "sean-peters-au/cyber-task-horizons"],
+ "contradicts_or_qualifies": [
+  "The cyber task horizon (~6 minutes) is about a tenth of the ~60-minute horizon METR found for software-engineering tasks, while doubling somewhat faster (~5 months vs METR's ~7 months)"
+ ],
+ "stated_future_work": [
+  "Extending this methodology to scheming-capability horizons",
+  "Cybersecurity defense vs offense horizons"
+ ],
+ "limitations_stated": [
+  "Human task time lengths are mostly AI-assisted estimates rather than genuine human baselines",
+  "Near-certain dataset contamination, since many tasks were likely included in model pretraining sets",
+  "Prompt, few-shot template, and tool-call budget design choices could systematically inflate or depress scores",
+  "Each model attempted every task only once, so stochastic variance in outputs could shift success rates",
+  "Automatic LLM-based functional-equivalence grading may occasionally misjudge success or failure"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Cyber task horizons are doubling every ~5 months."
+}

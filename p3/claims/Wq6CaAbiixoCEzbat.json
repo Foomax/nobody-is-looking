@@ -1,0 +1,21 @@
+{
+ "post_id": "Wq6CaAbiixoCEzbat",
+ "primary_claim": "Optimiser choice, not model size or family, is the dominant factor in emergent misalignment (EM) severity: across 12 models from three families (Gemma, Llama, Qwen; 270M-235B), misalignment rate is roughly constant above 1B parameters, but across four optimisers in a main sweep, Muon vs Lion produces a 7x spread in misalignment rate, driven in part by how concentrated the LoRA update is across singular-value directions (Adam/Lion concentrate it, Muon spreads it near-uniformly), and a spectral-flatness regulariser largely recovers alignment for Adam and Lion at essentially no training-loss cost, fully removing EM from training on insecure code with Adam.",
+ "claim_type": "positive",
+ "phenomenon": "emergent misalignment",
+ "models": [
+  {"family": "Gemma", "size": "270M-235B (part of 12-model sweep)", "open_weight": true},
+  {"family": "Llama", "size": "270M-235B (part of 12-model sweep)", "open_weight": true},
+  {"family": "Qwen", "size": "Qwen3, 270M-235B (part of 12-model sweep; main optimiser sweep used 4 Qwen3 sizes)", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "misalignment rate spread across optimisers (4 Qwen3 sizes x 4 optimisers x 4 EM datasets x 2 batch sizes)", "value": "7x spread in misalignment rate between best (Muon) and worst (Lion) optimiser; spectral-flatness regularisation substantially recovers alignment for Adam and Lion at no cost to training loss, and completely removed EM from training on insecure code with Adam", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2606.31591 (own paper)", "arXiv:2605.12199 (training past task convergence)", "LessWrong: Emergent Misalignment - Narrow Finetuning Can Produce Broadly Misaligned LLMs", "LessWrong: Model organisms for emergent misalignment", "LessWrong: Narrow misalignment is hard, emergent misalignment is easy"],
+ "contradicts_or_qualifies": ["Contradicts the common intuition (including the authors' own prior expectation) that bigger models tend to show more emergent misalignment -- they find no systematic scale or family effect above 1B parameters", "Qualifies prior work showing learning-rate and LoRA-scaling changes strongly affect EM rates: this work finds learning rate and batch size influence alignment only through their effect on final training loss, unlike optimiser choice, which affects alignment independent of loss"],
+ "stated_future_work": ["Test whether the optimiser effect, loss-alignment relationship, and spectral mitigation transfer to RL-based EM rather than only SFT on off-policy data", "Test whether optimiser choice and spectral regularisation influence other emergent phenomena like weird generalization and inductive backdoors the same way they influence EM", "Investigate why Lion remains much more misaligned than Muon after regularisation, and why SGD is harmed by the regulariser", "Test other optimisers (SGD with momentum, RMSProp, Shampoo) and vary hyperparameters more broadly", "Design better mitigation techniques leveraging the spectral-shape insight, ideally after extending the work to on-policy EM", "Investigate what else differs between optimiser-trained models at matched training loss -- capabilities, robustness, other out-of-distribution behaviour, and relation to model frying"],
+ "limitations_stated": ["Regularised Lion remains well short of Muon, so spectral concentration is not the whole story", "SGD breaks the pattern entirely: it has the most concentrated spectrum yet spectral regularisation makes it worse, confounded by SGD runs having far higher losses and misalignment rates than the other optimisers", "The finding that model size/family barely matter might be an artifact of the standard way of measuring EM, which is known to have some flaws"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "In our main sweep..., optimiser choice produces a 7× spread in misalignment rate, with Muon preserving alignment best and Lion degrading it the most."
+}

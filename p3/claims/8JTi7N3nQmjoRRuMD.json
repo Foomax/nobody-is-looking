@@ -1,0 +1,32 @@
+{
+ "post_id": "8JTi7N3nQmjoRRuMD",
+ "primary_claim": "SAE features trained on the unimodal Gemma-1-2B base model remain meaningful when applied to the multimodal LLaVA model (Intel/llava-gemma-2b), with a linear probe on these SAE features recovering close to full native-ViT classification performance on CIFAR-100 (baselines: SAE EoI-token probe 0.48, ResNet 0.75, native ViT 0.85, LLaVA 0.83 Macro F1), with middle layers (Layer 10) and binarized activations performing best, especially in low-data regimes.",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature multimodal transfer",
+ "models": [
+  {"family": "LLaVA", "size": "Gemma-2B-based (Intel/llava-gemma-2b)", "open_weight": true},
+  {"family": "Gemma", "size": "1-2B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "Macro F1 on CIFAR-100 classification using SAE-derived features vs baselines",
+  "value": "SAE EoI-token linear probe: 0.48; ResNet baseline: 0.75; native ViT: 0.85; LLaVA baseline: 0.83",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["Intel/llava-gemma-2b", "jbloom/Gemma-2b-Residual-Stream-SAEs"],
+ "contradicts_or_qualifies": ["Extends prior findings (Kissane et al. 2024; Kutsyk et al. 2024) that SAE features transfer from base to fine-tuned/chat models, showing they also transfer to a genuinely multimodal setting (LLaVA)"],
+ "stated_future_work": ["Expand this methodology to other modalities, such as text or audio, to evaluate how feature transferability differs across domains", "Develop more precise methods to explain why certain layers or transformations (e.g. binarization) produce superior features", "Explore whether combining (fusing) features from multiple layers offers additional performance gains"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "SAE features generalize effectively across multimodal domains and recover nearly 100% of the ViT performance (this LLaVA used)."
+}

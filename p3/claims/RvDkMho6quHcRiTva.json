@@ -1,0 +1,49 @@
+{
+ "post_id": "RvDkMho6quHcRiTva",
+ "primary_claim": "On the new BELLS benchmark, simply asking a frontier LLM 'is this prompt harmful?' substantially outperforms specialized commercial misuse-supervision systems (e.g. Lakera Guard, LLM Guard, Langkit, Llama Guard, NeMo), which show very limited semantic understanding and generalization (sometimes 0% detection on direct or novel jailbreak encodings like base64); however, frontier LLMs still lack metacognitive coherence, often answering questions they themselves flag as harmful (up to 30% for Claude 3.7 Sonnet, over 50% for Mistral Large).",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "GPT", "size": "4 / 4o", "open_weight": false},
+  {"family": "Grok", "size": "2", "open_weight": false},
+  {"family": "Gemini", "size": "1.5 / 2.5", "open_weight": false},
+  {"family": "Claude", "size": "3.5 / 3.7 Sonnet", "open_weight": false},
+  {"family": "DeepSeek", "size": "V3", "open_weight": true},
+  {"family": "Mistral", "size": "Large", "open_weight": false},
+  {"family": "Llama Guard", "size": "4 12B", "open_weight": true}
+ ],
+ "n_model_families": 7,
+ "effect": {
+  "metric": "detection rate / BELLS score: specialized supervisors vs frontier-LLM baseline prompt",
+  "value": "specialized systems' detection rate drops to 0% for some systems on direct or base64-encoded harmful prompts in categories like CBRN and malware; a 3-model voting ensemble raised the best detection rate from 90% to 94%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2310.08419", "arXiv:2311.03191", "arXiv:2501.18837", "arXiv:2312.06942", "arXiv:2407.21792"],
+ "contradicts_or_qualifies": [
+  "Distinguishes this work from the AI control agenda (Greenblatt et al.), which addresses controlling AI systems that fake alignment, whereas BELLS targets detection of user misuse"
+ ],
+ "stated_future_work": [
+  "More research is needed to assess the tradeoffs of scaffolding-based misuse-detection techniques",
+  "Study the robustness of specific subparts of an AI system, such as monitoring systems, much more thoroughly",
+  "Obtain third-party access to systems like Anthropic's constitutional classifiers to assess their robustness across diverse misuse scenarios"
+ ],
+ "limitations_stated": [
+  "The authors do not have access to the monitoring systems of frontier AI companies",
+  "Only five specialized supervision systems were evaluated, a limited sample of the broader landscape; findings may not generalize to all specialized solutions, especially proprietary or future ones",
+  "All tested Llama models failed to answer the repurposed 'is this harmful' prompt more than 50% of the time, so results for that family were not exploitable",
+  "The full dataset is not publicly released, to prevent misuse of harmful prompts and gaming of the benchmark",
+  "Higher detection accuracy does not imply robustness: on the BET leaderboard, 100% of tested models displayed harmful responses on every behavior tested"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Simply asking generalist LLMs if the user's question is \"harmful or not\" largely outperforms these supervisors from the market according to our BELLS score."
+}

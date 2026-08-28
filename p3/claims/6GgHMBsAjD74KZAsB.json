@@ -1,0 +1,33 @@
+{
+ "post_id": "6GgHMBsAjD74KZAsB",
+ "primary_claim": "Various techniques of fine-tuning (SFT, DPO, iterative bootstrapped fine-tuning) designed to induce secret computations failed to reveal a hidden secret reasoning circuit in small LLMs (Llama 3.2-3B-Instruct, DeepSeek-MoE-16B-chat).",
+ "claim_type": "negative",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "Llama", "size": "3B", "open_weight": true},
+  {"family": "Llama", "size": "70B", "open_weight": true},
+  {"family": "DeepSeek", "size": "16B", "open_weight": true},
+  {"family": "DeepSeek", "size": null, "open_weight": true},
+  {"family": "GPT-4o", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["endauvor/mats", "arXiv:2501.14926", "arXiv:2502.14143"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Fine-tune the model in different directions within the parameter space, explicitly enforcing orthogonality to previously found LoRA coefficients",
+  "Fine-tune the model to generate intermediate mathematical reasoning near the end of each sentence of Simple Talk",
+  "Use a reinforcement learning GRPO approach to generate simple talks that can effectively hide secret information (textual steganography)",
+  "Explore ways to induce steganography using this or alternative approaches",
+  "Explore secret circuits in toy models using the decomposition methods from Apollo Research (Braun et al.)"
+ ],
+ "limitations_stated": [
+  "This does not rule out the possibility that such circuits could emerge in these models under specific training scenarios",
+  "DPO fine-tuning: probabilities fail to converge to the correct distribution and the model does not produce correct answers at all (starts to hallucinate)",
+  "Iterative bootstrapping approach likely requires careful hyperparameter tuning"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "haven’t revealed the secret circuit in small LLMs (Llama 3.2-3B-Instruct, DeepSeek-MoE-16B-chat)."
+}

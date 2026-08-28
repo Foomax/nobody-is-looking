@@ -1,0 +1,37 @@
+{
+ "post_id": "ieoWstubDQWLrMnhH",
+ "primary_claim": "Fine-tuning the scalar prefactor of a single German-specific parameter subcomponent (from adversarial parameter decomposition) destroys a 67M-parameter model's German-language ability (CE driven to the ~10.83-nat chance level) using as few as ~4 German training tokens with <0.1 nats English CE increase, beating rank-1/rank-4 LoRA (which need ~32 tokens) and, unlike the LoRA baselines, leaves French and Spanish performance almost untouched without explicit regularization for those languages.",
+ "claim_type": "positive",
+ "phenomenon": "fine-tuning side effects",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "German training tokens needed to drive German CE to chance (~10.83 nats) with <0.1 nats English CE increase",
+  "value": "~4 tokens (single-subcomponent fine-tune) vs 32 tokens (rank-1/rank-4 LoRA)",
+  "direction": "+",
+  "uncertainty_reported": "seeds"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": 9,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "extend this to allow learning new circuits by letting the fine-tune change parameter subcomponents along select directions corresponding to specific other subcomponents' U and V vectors (a 'blueprint' approach)",
+  "do proper follow-up work to confirm the Lp-penalty approach (changing masks without specifying which subcomponents) holds up"
+ ],
+ "limitations_stated": [
+  "this is a single fine-tuning target for a single decomposition of a single 67M Pile model",
+  "the model doesn't know that much German to begin with; it's the model's best non-English language but still far weaker than English",
+  "if there are plenty of German tokens to train on, and regularisation covers everything we want to protect, the LoRAs are probably still better",
+  "performance on Italian was heavily damaged"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We can destroy a 67M-parameter language model's ability to predict German text by fine-tuning a single number: the scalar prefactor on one German-related rank-1 parameter subcomponent."
+}

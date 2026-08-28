@@ -1,0 +1,38 @@
+{
+  "post_id": "gdFHYpQ9pjMwQ3w4Q",
+  "primary_claim": "Evaluation awareness, measured via linear probes on residual-stream activations, scales predictably with model size following a power-law trend, consistently across four open-weight model families spanning 0.27B to 70B parameters.",
+  "claim_type": "positive",
+  "phenomenon": "evaluation awareness",
+  "models": [
+    {"family": "Gemma-3", "size": "0.27B-27B", "open_weight": true},
+    {"family": "Phi-3", "size": null, "open_weight": true},
+    {"family": "LLaMA-3.1", "size": "8B-70B", "open_weight": true},
+    {"family": "GPT-OSS", "size": "20B", "open_weight": true},
+    {"family": "Qwen", "size": "32B", "open_weight": true}
+  ],
+  "n_model_families": 5,
+  "effect": {
+    "metric": "AUROC (probe distance from 0.5)",
+    "value": "power-law increase in AUROC with model size across 15 models, 0.27B-70B",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["arXiv:2507.01786", "arXiv:2312.06681", "arXiv:2407.04694"],
+  "contradicts_or_qualifies": ["Qwen models fail to follow the hypothesized increase in evaluation awareness with model size and peak at different relative layer depths than other families, so were excluded from the main analysis"],
+  "stated_future_work": [],
+  "limitations_stated": [
+    "Mixture-of-Experts architectures make it difficult to establish consistent scaling trends across model families",
+    "Several state-of-the-art frontier models are proprietary/black-box, limiting ability to validate whether patterns hold in the most advanced models"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "Figure 1 illustrates that evaluation awareness scales predictably with model size, following a power-law trend."
+}

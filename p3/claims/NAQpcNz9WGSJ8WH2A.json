@@ -1,0 +1,46 @@
+{
+  "post_id": "NAQpcNz9WGSJ8WH2A",
+  "primary_claim": "Training cross-layer transcoders to be sparsely-connected (via a learned binary mask on virtual weights) yields reconstruction error that decreases with the number of connections per latent, and the resulting latents and connections are often, though not always, interpretable.",
+  "claim_type": "method",
+  "phenomenon": "dictionary learning method",
+  "models": [
+    {"family": "Pythia", "size": "70m", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "excess FVU (fraction of variance unexplained) vs. number of connections C",
+    "value": "FVU decreases as C increases but excess FVU plateaus at a still-high level due to compounding reconstruction errors",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["monology/pile-uncopyrighted", "arXiv:2403.19647", "FrekePKc7ccQNEkgT"],
+  "contradicts_or_qualifies": [
+    "Notes Lucius Bushnaq's argument that the feature-splitting issue observed here may be a deep, possibly unavoidable problem with SAEs generally",
+    "Contrasts with Farnik et al (2025) Jacobian SAEs, whose notion of sparse connectivity is a weaker, linear-approximation, context-dependent form rather than the exact, context-independent sparsity trained for here"
+  ],
+  "stated_future_work": [
+    "Use AuxK loss or resample dead latents, and experiment with initialization/learning rate to fix dead-latent issue",
+    "Include contributions from upstream SAE errors (detaching them from the computational graph) to reduce excess FVU",
+    "Restrict masking to co-occurrence-derived candidate connections after an initial dense-training phase, to reduce memory from O(F^2 L^2) to O(FL^2)",
+    "Detach upstream feature activations before applying virtual weights to reduce memory from O(L^2F^2) to O(F^2)",
+    "Use Matryoshka BatchTopK SAEs to mitigate feature splitting"
+  ],
+  "limitations_stated": [
+    "Many latents die during training, hurting reconstruction and monosemanticity",
+    "Excess FVU remains high even without masking, due to compounding reconstruction errors across layers",
+    "Memory scales as O(F^2 L^2), prohibiting scaling to large models",
+    "Feature splitting persists: dictionaries find many granular features instead of a single computationally-relevant one",
+    "Attention patterns are borrowed from the original model rather than sparsified, a deficiency of the approach"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "Reconstruction error decreases with $C$, as expected. Furthermore, latents and connections are often (but not always) interpretable: a few non-cherry-picked case studies are shown below."
+}

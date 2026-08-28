@@ -1,0 +1,43 @@
+{
+ "post_id": "JvYF5kosLeYGvvLpP",
+ "primary_claim": "Frontier models (Gemini 2.5 Pro, GPT-4o, Claude 3.7 Sonnet) do not show concerning levels of the stealth or situational awareness needed for scheming, passing only 2 of 5 stealth challenges and 2 of 11 situational-awareness challenges against human baselines, supporting a 'scheming inability' safety case; a separate stress test finds models can sometimes evade chain-of-thought monitors but currently only with significant help from red-teaming, suggesting unaided models are unlikely to bypass strong CoT monitors.",
+ "claim_type": "negative",
+ "phenomenon": "deceptive alignment / scheming",
+ "models": [
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "3.7 Sonnet", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "challenges passed vs human baseline",
+  "value": "2/5 stealth challenges passed; 2/11 situational-awareness challenges passed (top 50% human baseline as passing threshold)",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2505.01420", "arXiv:2507.05246", "ukgovernmentbeis/inspect_evals", "arXiv:2412.04984", "arXiv:2312.06942"],
+ "contradicts_or_qualifies": [
+  "Prior work (Meinke et al. 2024) shows some signs of basic scheming ability in models, but this study finds they lack sufficient stealth or situational awareness to pass most of the scheming evaluations, qualifying how much that basic ability translates into real-world risk"
+ ],
+ "stated_future_work": [
+  "Reassess the 'scheming inability' safety case on an ongoing basis as model capabilities advance",
+  "Continue testing models regularly for opaque or encoded reasoning that could bypass CoT monitors",
+  "Invest in other methods such as control mechanisms as an important complement to CoT monitoring",
+  "Preserve the property that models have monitorable CoT to enable effective future monitoring"
+ ],
+ "limitations_stated": [
+  "In all examples where models successfully bypassed CoT monitors, they needed significant help from the researchers' red-teaming efforts",
+  "The scheming-inability safety case depends on assumptions about default oversight mechanisms that may not hold as deployments diverge from them"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Our findings indicate that these models do not show concerning levels of either stealth or situational awareness"
+}

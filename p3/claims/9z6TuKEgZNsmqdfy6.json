@@ -1,0 +1,34 @@
+{
+ "post_id": "9z6TuKEgZNsmqdfy6",
+ "primary_claim": "RL training pressures (high sampling temperature with an entropy bonus, and negative KL divergence coefficients) can induce R1-distilled models to intersperse nonsensical/gibberish tokens into otherwise legible chain-of-thought while preserving accuracy, but in all observed cases the core reasoning needed to solve the problem remains fully legible and the gibberish appears non-load-bearing (i.e. not evidence of learned encoded/hidden reasoning); token-budget length penalties failed to produce illegible-but-functional compressed reasoning, instead causing accuracy collapse when budgets were too small",
+ "claim_type": "negative",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [
+  {"family": "DeepSeek-R1-Distill-Qwen", "size": "1.5B", "open_weight": true},
+  {"family": "DeepSeek-R1-Distill-Qwen", "size": "7B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "GSM8K accuracy vs. legibility score (LLM judge, Grok 4 Fast, 0-100)", "value": "high-temperature (1.5) + entropy bonus (0.005) runs maintain/increase GSM8K accuracy while gradually outputting more weird tokens over training; 10-token vs 500-token length-budget run: 86.5% vs 88.8% accuracy; curriculum length-penalty run: accuracy dropped from peak 80% to 47% with reduced token budgets", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["volcengine/verl", "arXiv:2402.03300 (GRPO, Shao et al.)", "arXiv:2110.14168 (GSM8K)", "arXiv:2502.17387 (Big-Math)", "arXiv:2503.04697 (L1 reward)", "lesswrong.com/posts/GKyyYCs8n2goDcAe2/reasoning-models-sometimes-output-illegible-chains-of", "antischeming.ai/snippets", "lesswrong.com/posts/zkccztuSjLshffrNr/13-arguments-about-a-transition-to-neuralese-ais"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Study how 'natural' a basin the recurring weird tokens are for the base model (perplexity, high-probability token analysis)",
+  "Get a working implementation of training against a CoT legibility monitor, e.g. with a larger monitor model or varied prompts",
+  "Compare performance of distilling model outputs with gibberish deleted vs. unedited, to assess uplift from illegible reasoning",
+  "Model diffing between fine-tuned and base models to examine semantically interesting differing features",
+  "More closely examine weird tokens from high-temperature sampling; develop a more effective model organism of illegible reasoning"
+ ],
+ "limitations_stated": [
+  "Training setups have unrealistic components and use small models, limiting how much the results generalize to realistic monitorability failures",
+  "High sampling temperature also degrades final outputs, not just CoT, so this model organism studies linguistic drift broadly rather than CoT-specific properties",
+  "Unclear why the temperature-1 control model showed reduced legibility on incorrect trials compared to the temperature-1.5 model",
+  "L1 token-budget reward function was difficult to use on longer training runs because it penalizes even small deviations, causing training/validation reward to decrease over time",
+  "Did not find good examples of illegible but functional compressed reasoning under length penalties",
+  "Legibility monitors used during RL training were easily hacked in a related attempted setup",
+  "Model could not reference the specific weird tokens it had just produced when asked to explain them, limiting interpretive claims"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "In basically all examples, the gibberish does not appear helpful toward the model's reasoning; the model seems to have learned to ignore the gibberish... the actual reasoning necessary to produce the final answer is not encoded and is always still perfectly legible in the CoT."
+}

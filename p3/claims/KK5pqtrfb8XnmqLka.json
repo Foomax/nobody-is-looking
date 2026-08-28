@@ -1,0 +1,31 @@
+{
+ "post_id": "KK5pqtrfb8XnmqLka",
+ "primary_claim": "Across a sweep of 190 LLMs asked 'Who are you?' with no system prompt, about 8% of short-question responses (pooled over models and languages) give a name that doesn't match the model's official identity, about 60% of models mismatch at least once, mismatch rate is uncorrelated with model size (ρ≈0), while size weakly predicts whether mismatches concentrate on one stable alternate identity (ρ=+0.27, p=0.04).",
+ "claim_type": "positive",
+ "phenomenon": "persona and character generalisation",
+ "models": [
+  {"family": "GPT", "size": null, "open_weight": false},
+  {"family": "Claude", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": null, "open_weight": false},
+  {"family": "Gemma", "size": null, "open_weight": true},
+  {"family": "Qwen", "size": null, "open_weight": true},
+  {"family": "DeepSeek", "size": null, "open_weight": true},
+  {"family": "Kimi", "size": null, "open_weight": true},
+  {"family": "Llama", "size": null, "open_weight": true},
+  {"family": "Mistral", "size": null, "open_weight": true},
+  {"family": "Grok", "size": null, "open_weight": false},
+  {"family": "Doubao", "size": null, "open_weight": false},
+  {"family": "OLMo", "size": null, "open_weight": true},
+  {"family": "MiniMax", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 13,
+ "effect": {"metric": "official-name mismatch rate", "value": "~8% of responses mismatched pooled over models/languages; ~60% of 190 models mismatch at least once; median model mismatches <1% of answers; mismatch-rate vs size ρ≈0; mismatch-shape vs size ρ=+0.27, p=0.04", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["jordine/model-name-identity"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Directions to sharpen the mechanism, including prefill-entropy analysis and confrontation of models with their mismatches (per repo's FUTURE_WORK.md)"],
+ "limitations_stated": ["Providers vary in whether they inject hidden system prompts, so some models were excluded from the sweep to keep provider hygiene clean", "Cannot fully distinguish distillation-driven consistent misidentification from general model incoherence"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "About 60% of models responded with a name that doesn't match their official name at least once, the median model does it in less than 1% of its answers."
+}

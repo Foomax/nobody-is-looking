@@ -1,0 +1,50 @@
+{
+ "post_id": "3xQQK9i8mhJDE2uMg",
+ "primary_claim": "Synthetic Persona Pretraining (SPP) — appending synthetic, constitution-grounded, first-person moral reflections to 10% of pretraining documents from the start of pretraining ('Token Zero') — produces a 1.7B-parameter model with 1.7% mean attack success rate across five adversarial jailbreak benchmarks, a 63% reduction versus a data-matched unfiltered baseline, and shows 'persona binding': the post-trained model still cites a value-constitution article held out entirely from post-training data (citation rates 4-41%, vs. 0% for the baseline), though this binding is brittle and disappears when post-training uses a different assistant/chat template than pretraining used.",
+ "claim_type": "positive",
+ "phenomenon": "fine-tuning side effects",
+ "models": [
+  {"family": "SmolLM architecture (custom pretrain)", "size": "1.7B params, 100B tokens", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "mean/max attack success rate (ASR) across JailbreakBench, AdvBench, PAP, DANs, PEZ; held-out charter article citation rate",
+  "value": "SPP (Token Zero): 1.7% mean ASR, a 63% reduction vs. unfiltered Baseline; template-matched mixSFT: 62% reduction; template-mismatched mixSFT: SPP provides no benefit (ASR +8% vs baseline); persona binding: held-out article citation 4-41% for SPP vs 0% for Baseline; toxic-filtering-only baselines were same or slightly less safe than unfiltered baseline",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["epfl-dlab/model-raising-data", "arXiv:2608.13482 (full paper)", "Dolma 3 (arXiv:2512.13961)", "Persona Selection Model (Marks et al. 2026, alignment.anthropic.com/2026/psm)", "SafeLM (arXiv:2504.16980)", "Model Spec Midtraining (Li et al. 2026)", "Tice et al. 2026 (arXiv:2601.10160)", "Arditi et al. 2024 (arXiv:2406.11717, abliteration/refusal direction)", "JailbreakBench, AdvBench, PAP, DANs, PEZ benchmarks", "Aydin et al. 2026 Model Raising framework"],
+ "contradicts_or_qualifies": [
+  "subtractive pretraining-safety approaches (data filtering, e.g. Deep Ignorance, SafeLM-style rewriting) which the authors find do not improve and can slightly reduce safety compared to unfiltered baselines",
+  "the implicit assumption in prior work (e.g. Model Spec Midtraining) that concentrating alignment interventions into a midtraining cooldown stage is sufficient — the paper finds integrating reflections from Token Zero outperforms a token-matched midtraining-only variant"
+ ],
+ "stated_future_work": [
+  "evaluate robustness to benign fine-tuning attacks and continued fine-tuning more broadly",
+  "scale runs to 3B parameters and 500B tokens, and implement SPP at production scale with the Apertus model team",
+  "test whether persona binding survives adversarial fine-tuning or merely raises the cost of undoing alignment",
+  "investigate what determines binding success/failure and whether bridging reflection/post-training distributions (e.g. combining with Model Spec Midtraining) reduces brittleness",
+  "study how post-SFT reinforcement learning affects persona binding",
+  "mechanistically analyze SPP's effect in activation space using interpretability tools",
+  "determine optimal reflection density and whether reflections on benign content are necessary",
+  "add missing baselines: reflections-as-summaries control, SafeLM-style rephrasing, explicit refusal demonstrations in reflections"
+ ],
+ "limitations_stated": [
+  "preliminary results at 1.7B parameters and 100B tokens, well below the frontier; capability-hit assessment is hard to make definitively at this scale",
+  "have not yet evaluated robustness to benign fine-tuning attacks or continued fine-tuning, the most obvious stress test for a pretraining-time alignment method",
+  "persona binding is brittle: strength depends heavily on distributional match (same assistant token/template) between pretraining and post-training; a template mismatch eliminates the benefit entirely",
+  "SPP-trained models were the most susceptible to abliteration (projecting out the refusal direction), suggesting SPP concentrates safety into an easily-found-and-removed linear direction — a real attack surface under white-box access",
+  "the Persona Selection Model theoretical framing may degrade as a description of longer post-training phases, per its own authors",
+  "no established science yet on how to make persona binding succeed reliably or predict when it will"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Injecting reflections from the start of pretraining (Token Zero) yields 1.7% mean ASR, a 63% reduction over the Baseline... SPP (Token Zero, dark red) still cites the held-out article at rates between 4% and 41%, despite never encountering it during post-training."
+}

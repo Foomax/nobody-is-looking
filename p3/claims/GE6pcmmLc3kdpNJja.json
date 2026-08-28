@@ -1,0 +1,31 @@
+{
+  "post_id": "GE6pcmmLc3kdpNJja",
+  "primary_claim": "Adding noise to activations/weights or using MELBO can increase how often an instruction-tuned LLM gives faithful, truthful, or non-sandbagged answers, but the same interventions barely help elicit hidden capability from a password-locked model, especially under RL.",
+  "claim_type": "positive",
+  "phenomenon": "red-team elicitation",
+  "models": [
+    {"family": "Qwen", "size": "7B", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["arXiv:2412.01784", "amack315/unsupervised-steering-vectors", "ioPnHKFyy4Cw2Gr2x", "c4sZqhqPwNKGz3fFW", "fabienroger/perturbations"],
+  "contradicts_or_qualifies": ["Tice 2024 partially unlocked password-locked models by adding noise to weights, but using LLM-with-added-noise as an exploration policy during Math RL did not improve RL performance in this post's experiments"],
+  "stated_future_work": [
+    "explore intermediates between adding noise to a bias at layer 7 and adding noise to every weight in a network",
+    "explore using much more optimization power to find good noise vectors",
+    "explore techniques other than adding noise or using MELBO",
+    "explore ways to tune the level of noise more intelligently",
+    "explore using certain easy prompts where it is easier to elicit the desired behavior as a stepping stone towards harder ones"
+  ],
+  "limitations_stated": [
+    "results from previous work and the present results are lukewarm",
+    "not rarely able to find a vector that recovers entirely a hidden behavior",
+    "situation seems especially dire for eliciting complex many-token behaviors",
+    "chlorine gas elicitation result is not very conclusive since the rate the model is helpful is already quite high without intervention",
+    "adding noise is surprisingly ineffective for improving RL exploration on the password-locked model"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "Adding noise or using MELBO can increase the frequency at which models give faithful answers."
+}

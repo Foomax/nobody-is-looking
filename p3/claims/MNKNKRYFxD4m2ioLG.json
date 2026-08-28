@@ -1,0 +1,37 @@
+{
+ "post_id": "MNKNKRYFxD4m2ioLG",
+ "primary_claim": "After fine-tuning GPT-4o on just 10 examples embodying an acrostic response pattern (with no training examples describing or discussing the pattern itself), the model can sometimes directly articulate its own response pattern when asked about it in the very first message of a fresh conversation — before it has produced enough output to infer the pattern from context — suggesting a form of self-modeling that goes beyond surface-level 'I am an AI' self-reference.",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [
+  "This is a variation of a scenario originally posted by @flowersslop on Twitter, using a different custom fine-tuning dataset designed to elicit more direct responses, to test whether the model could articulate its pattern before producing enough output to infer it from context"
+ ],
+ "stated_future_work": [
+  "Further research into this deeper form of self-modeling in LLMs"
+ ],
+ "limitations_stated": [
+  "The described meta-awareness response occurs only sometimes, not consistently, when the model is asked about its pattern"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "Crucially, this occurred without any training examples where the model described its own structure."
+}

@@ -1,0 +1,28 @@
+{
+ "post_id": "JdHhtE73AwTBH8LKf",
+ "primary_claim": "Bail and refusal in Gemma-3-12B are mechanistically distinct (a single SAE feature steers bail while barely affecting refusal, and vice versa for an orthogonalized refusal direction), and bail is causally driven by the act of explanation itself rather than discomfort: forcing the model to explain its choice more than doubles the bail rate while forbidding explanation halves it, arguing against a welfare interpretation of bail",
+ "claim_type": "positive",
+ "phenomenon": "model welfare / psychology",
+ "models": [
+  {"family": "Gemma", "size": "3-12B", "open_weight": true},
+  {"family": "Kimi", "size": "K2-Thinking", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "bail rate under prompt ablation", "value": "forced-explanation prompt more than doubles bail rate vs baseline; no-explanation prompt halves bail rate vs baseline", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 10, "prereg": false, "human_eval": false},
+ "depends_on": ["lesswrong.com/posts/6JdSJ63LZ4TuT5cTH/the-llm-has-left-the-chat-evidence-of-bail-preferences-in (BailBench, Ensign et al.)", "arXiv:2406.11717", "GemmaScope 2 SAE"],
+ "contradicts_or_qualifies": ["Suggests against a welfare interpretation of LLM bail behavior implied by prior work (Ensign et al.'s BailBench framing)"],
+ "stated_future_work": [
+  "Replicate the key effects (bail/refusal de-mixing and explanation ablation) across other bail methods (tool-call, special-string variants) and additional models",
+  "Further investigate the mechanism linking explanation to bail, since the attention-based 'reflective stance' experiment gave a null result"
+ ],
+ "limitations_stated": [
+  "Only studied one of three bail mechanisms (the intermission prompt) from Ensign et al.; other bail methods (tool-call, special-string) may behave differently",
+  "Mechanistic results only on Gemma-3-12B",
+  "Attention-based experiment for the 'reflective stance' interpretation did not show a clear effect, so the mechanism linking explanation to bail remains open",
+  "Reasoning-trace evidence from Kimi K2-Thinking is only qualitative, and the model sometimes shows evaluation awareness in its CoT which may limit how much to read into the rationales"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Bail is causally driven by the act of explanation. The bail SAE feature encodes formal explanatory language, not discomfort. Simply prompting the model to explain its choice more than doubles bail rate, while forbidding it halves bail rate."
+}

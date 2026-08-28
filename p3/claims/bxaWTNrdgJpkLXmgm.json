@@ -1,0 +1,22 @@
+{
+ "post_id": "bxaWTNrdgJpkLXmgm",
+ "primary_claim": "Replicating Greenblatt's no-CoT filler-token/problem-repeat evals on Opus 4.5 reproduces the original trends and quantitative values, and newer models (Claude Fable 5, Opus 5, GPT-5.6-Sol) show substantially higher single-forward-pass (no chain-of-thought) latent reasoning performance, e.g. Fable 5 reaches 87.6% accuracy on Gen-Arithmetic with 10 problem repeats (vs ~60% previous SOTA) and GPT-5.6-Sol more than doubles its 3-hop baseline accuracy (6.2%->13.0%) with repeats.",
+ "claim_type": "replication",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.5", "open_weight": false},
+  {"family": "Claude", "size": "Fable 5", "open_weight": false},
+  {"family": "Claude", "size": "Opus 5", "open_weight": false},
+  {"family": "GPT", "size": "5.6-Sol", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "accuracy on no-CoT single-forward-pass eval (Gen-Arithmetic/Comp-Math/2-Hop/3-Hop) under repeat/filler-token augmentation", "value": "Fable 5: 87.6% Gen-Arithmetic w/10 repeats vs ~60% previous SOTA; GPT-5.6-Sol: 58.6%->83.4% Gen-Arithmetic (20 repeats), 6.2%->13.0% 3-Hop (repeats); Opus 4.5: 13.0%->31.1% 2-Hop (filler tokens)", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["rgreenblatt/no_cot_math_public", "rgreenblatt/multi_hop", "arXiv:2606.07157", "christinecorry/no-cot-harness"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["More comprehensive replications of previous work and open-source tooling for single-forward-pass eval elicitation in following posts", "Include Gemini models once a consistent no-CoT elicitation technique is found for adaptive reasoning models", "Narrow down a technique to consistently and robustly elicit no-CoT behavior from adaptive reasoning models"],
+ "limitations_stated": ["No model performs better than chance on 4-hop questions or receives significant uplift from filler tokens/repeats, so 4-hop results are excluded from the main results", "Adaptive-thinking-only models (Fable 5, Opus 5) cannot have reasoning explicitly disabled via API, so no-CoT elicitation relies on a forced structured-tool-call workaround that cannot fully rule out hidden reasoning not surfaced by the API", "0.99% of Fable 5 and 0.13% of Opus 5 responses still showed signs of reasoning within the response text and were simply scored as incorrect rather than excluded"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Fable 5 gets 87.6% accuracy on Gen-Arithmetic with 10 problem repeats whereas previous SOTA around 60%."
+}

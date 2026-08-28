@@ -1,0 +1,29 @@
+{
+ "post_id": "ysztF7doGvEbvTMqN",
+ "primary_claim": "A small MLP trained to regress cubic polynomials y=x^3+ax^2+x+b develops nine SAE features in its last layer that activate on a specific linear combination t≈x+0.3a, closely resembling the substitution t=x+a/3 used in the first step of the Cardano method for solving cubic equations.",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature interpretability",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "median best-fit linear coefficient c in t=x+ca across 9 diagonal-band SAE features (bucketed R^2 test); SAE reconstruction R^2 on held-out activations",
+  "value": "median c=0.3 (Cardano's a/3 is approx. 0.333); SAE reconstruction R^2=0.995 on held-out activation vectors",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["enricobottazzi/UniversalSAE"],
+ "contradicts_or_qualifies": ["extends the SAE-feature interpretation and manipulation methodology used by Anthropic on LLMs (e.g. the Golden Gate Bridge feature) to a small MLP regression toy model, finding an analogous mathematically-meaningful feature"],
+ "stated_future_work": ["train a SAE on top of the middle layers of the NN, which are often associated with more abstract thinking", "study how abstractions emerge as a function of training time (epochs)", "study how abstractions emerge as a function of model size/parameter count (computational boundedness)", "study whether the emergence of abstractions is path-dependent"],
+ "limitations_stated": ["feature-clamping manipulation experiments show a multiplicative/vertical-stretch effect rather than the expected horizontal-shift effect, leaving it unclear whether this confirms or refutes the Cardano-based interpretation of the diagonal-band features", "the slope for the NN's diagonal-band features (median 0.3) is not exactly the Cardano method's 1/3", "the NN's task (regression) is not exactly the same as Cardano's (finding roots), so the correspondence is only suggestive", "a feature was identified but how it is causally used in downstream computation was not fully tested"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "This variable is surprisingly close to the substitution $t=x+\\frac{a}{3}$ operated in the first step of the Cardano method."
+}

@@ -1,0 +1,22 @@
+{
+ "post_id": "JsyAdviSYCqgMvvmG",
+ "primary_claim": "Using steering-vector-generated honest alternatives alongside original responses (JUSSA) raises LLM-judge sycophancy detection accuracy from 42% (single response) to 77%, versus an 89% paired-evaluation gold standard.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Gemma", "size": "2B", "open_weight": true},
+  {"family": "GPT-4.1", "size": "nano", "open_weight": false},
+  {"family": "Claude", "size": "3.5 haiku", "open_weight": false},
+  {"family": "Llama", "size": "7b-chat", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "sycophancy detection accuracy", "value": "42% (single) vs 77% (JUSSA) vs 89% (paired gold standard)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["watermeleon/judge_with_steered_response", "arXiv:2505.17760", "6aXe9nipTgwK5LxaP", "arXiv:2310.13548"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Investigating whether models exhibit \"internalized manipulation\"—deceptive behavior that emerges without explicit prompting, embedded within learned patterns"],
+ "limitations_stated": ["Datasets were tailored to Gemma-2-2B-it; other models might respond differently to manipulation-provoking prompts or refuse entirely", "Llama-7b-chat shows excessive sycophancy on provoked prompts, making detection easier for Single Judge in that case", "Effectiveness depends on having good honesty-promoting steering vectors; more work needed on which behaviors generalize", "A few categories (False Dichotomy, False Credentials, False Causality) showed variable validation results", "Realistic cases of internalized subtle manipulation are very hard to find"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Single response evaluation: Judges correctly identified sycophancy only 42% of the time; JUSSA evaluation: Judges correctly identified sycophancy 77% of the time; Paired evaluation (gold standard): 89% accuracy"
+}

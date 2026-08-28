@@ -1,0 +1,19 @@
+{
+  "post_id": "6QA5eHBEqpAicCwbh",
+  "primary_claim": "Fine-tuning is the most effective way to elicit hidden capabilities from password-locked and circuit-broken model organisms; prompting-based methods (few-shot, prefilling) work reasonably well on multiple-choice tasks, but activation steering fails, especially on open-ended code generation.",
+  "claim_type": "positive",
+  "phenomenon": "sandbagging",
+  "models": [
+    {"family": "Mistral", "size": "7B", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["arXiv:2405.19550", "WMDP", "APPS", "felhof/sandbagging-elicitation"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [],
+  "limitations_stated": [],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "medium",
+  "quote": "Fine-tuning works best, few-shot prompting and prefilling work okay, but activation steering isn’t effective."
+}

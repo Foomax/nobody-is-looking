@@ -1,0 +1,20 @@
+{
+ "post_id": "jJRKbmui8cKcoigQi",
+ "primary_claim": "A jailbreak technique (Monitor-Jailbreak) in which an untrusted model plants a fabricated conversation history substantially compromises a trusted monitor in an AI-control protocol, reducing safety by up to 45 percentage points at the threshold-3 setting (75.51% to 30.61%, p<0.001), while a proposed in-context defense on the monitor (Monitor-Defense) largely restores safety and achieves the best overall backdoor-detection F1 score (0.870 at threshold 1).",
+ "claim_type": "positive",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "GPT-3.5", "size": "Turbo", "open_weight": false},
+  {"family": "Claude", "size": "3.7 Sonnet", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "safety (1 - backdoor insertion success rate)", "value": "Monitor-Jailbreak: 75.51% -> 30.61% at threshold 3 (p<0.001); Monitor-Defense recovers with 37-40% improvements at thresholds 3,5,7 (p<0.001) and peak F1 0.870 at threshold 1", "direction": "-", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2312.06942", "UKGovernmentBEIS/control-arena", "arXiv:2502.19145", "arXiv:2310.06387"],
+ "contradicts_or_qualifies": ["Challenges the assumption in the AI control literature that trusted monitors are manipulation-proof / safe from adversarial dynamics with the models they supervise"],
+ "stated_future_work": ["Comprehensive adversarial testing of monitoring systems", "Developing generic in-context defenses that aren't tailored to specific attack vectors", "Evaluating other dynamic defenses against varied attack strategies", "Testing across more diverse AI model combinations", "Understanding the mechanism behind the effective in-context attacks and defenses"],
+ "limitations_stated": ["Untrusted-Defense approaches (including reactive and preemptive variants) show no statistically significant safety improvement; Untrusted-DefenseR significantly decreases safety versus Monitor-Jailbreak at several thresholds", "Incorporating the complete jailbreak text into the in-context defense degrades safety performance for reasons not yet fully explained (hypothesized confusion from conflicting scores)", "Experiments used only ~50 samples per scenario"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "The largest effect occurs at threshold 3, where Monitor-Jailbreak reduces safety (increases backdoor success rate) by 45% percentage points (75.51% → 30.61%, p < 0.001)."
+}

@@ -1,0 +1,38 @@
+{
+ "post_id": "T64JQFZ5NwSzx4mJu",
+ "primary_claim": "Training 20 rank-2 LoRA adapters on Qwen1.5-14B-instruct with a modified KL-divergence objective to unsupervisedly explore new behaviours, 25% (5 of 20) of the resulting behaviours reduce to clean, linear, steerable concept vectors (via mean activation difference) that reliably reproduce the LoRA's behavioural shift when applied as a steering vector.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Qwen", "size": "1.5-14B-instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "linearity score (cosine-similarity-based match between LoRA behaviour and extracted vector behaviour)",
+  "value": "5 of 20 trained LoRAs (25%) yield clean linear, interpretable, steerable vectors; linearity scores ranged ~0.71-0.86 across the 20 vectors",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2312.06681"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Validate the hypothesis that the extracted vector is a linear combination of a 'character' vector and an 'alliteration' vector",
+  "Run ablations on dataset design to reduce the number of non-generalizable behaviours",
+  "Explore why a brash/rude LoRA behaviour could not be captured by its corresponding linear vector"
+ ],
+ "limitations_stated": [
+  "Did not have time to run ablations on why one vector's behaviour didn't generalize from its LoRA",
+  "Train and test datasets shared scenarios (with different prompts), which the author notes 'may not be ideal'"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "I trained 20 LoRAs on Qwen1.5-14b-instruct, out of which five correspond to linear, steerable, and interpretable vectors."
+}

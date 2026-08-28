@@ -1,0 +1,19 @@
+{
+ "post_id": "srt6JXsRMtmqAJavD",
+ "primary_claim": "An open-source crosscoder trained on Gemma-2 2B base vs. IT models replicates Anthropic's crosscoder model-diffing result: decoder vector norms cluster into shared, base-specific, and chat-specific latent groups, with shared-latent decoder vectors highly aligned between models, and the crosscoder reaches 81 L0, 77% explained variance, and ~95% CE loss recovered.",
+ "claim_type": "replication",
+ "phenomenon": "crosscoder / model diffing",
+ "models": [
+  {"family": "Gemma", "size": "2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "L0 / explained variance / CE loss recovered", "value": "L0=81, 77.90%/77.56% explained variance (base/chat), 95.43%/95.67% CE loss recovered (base/chat)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["neelnanda-io/Crosscoders", "lmsys/lmsys-chat-1m", "monology/pile-uncopyrighted"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["deep dives on the 'chat-' and 'base-specific' latents to localize key bits of the model that fine-tuning meaningfully changes", "more rigorous interpretability analyses of specific interesting latents"],
+ "limitations_stated": ["not sure why there is an asymmetry between base-specific (~60) and chat-specific (~225) latent counts", "without other public crosscoders as reference points, still developing intuitions for what constitutes strong performance", "hyperparameters were selected from intuition and not systematically tuned", "only looked at a handful of latents, cherry-picking the most interesting ones"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "On average, the crosscoder has 81 L0, 77% explained variance, and 95% loss recovered relative to zero ablation on the training distribution."
+}

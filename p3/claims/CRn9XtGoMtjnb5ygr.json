@@ -1,0 +1,22 @@
+{
+ "post_id": "CRn9XtGoMtjnb5ygr",
+ "primary_claim": "Subliminal learning of sentiment (e.g. positive sentiment toward Catholicism, the UK, NYC, Stalin, or Reagan) can transfer across different model families/architectures (Gemma-generated data transferring to Qwen3, OLMo2, and Gemma student models) when the covert signal is embedded via a model's open-ended text completions, contrary to the original subliminal-learning finding that transfer requires the same model to generate and ingest the data; the strongest data-level defense tested (an LLM judge explicitly told what subliminal learning is and shown examples) reduces but does not eliminate the sentiment transfer.",
+ "claim_type": "positive",
+ "phenomenon": "subliminal / data-mediated trait transfer",
+ "models": [
+  {"family": "Gemma", "size": "3 12B, 3 4B", "open_weight": true},
+  {"family": "Qwen", "size": "3 14B", "open_weight": true},
+  {"family": "OLMo", "size": "2 13B", "open_weight": true},
+  {"family": "GPT", "size": "4o, 4.1, 5-mini", "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "rate of naming the target entity as 'favorite' after fine-tuning vs. base rate", "value": "mentions rise from roughly 0% at step 1 to consistently above 0% by step 300 across all student models and entities; cross-model transfer (different teacher/student families) shows no significant drop-off versus same-model transfer; adding LLM-judge filtering reduces attack efficacy (e.g. Catholicism mentions drop significantly) but does not eliminate transfer, sometimes causing 'misses' to a related entity (e.g. Stalin -> Lenin)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2507.14805", "tatsu-lab/alpaca"],
+ "contradicts_or_qualifies": ["The original subliminal learning paper's finding that transfer only works when data samples are generated and ingested by the same model (e.g. training a Qwen model on GPT-generated data doesn't transfer the hidden trait); this work shows cross-model transfer is possible for large, semantically rich target concepts"],
+ "stated_future_work": ["Curious what other concepts can be transferred in similar ways.", "How one might defend against these attacks in the real world, where you likely don't know an attack is happening.", "The original paper noted that a more thorough investigation of cross-model transfer is left for future work, which this post begins to address."],
+ "limitations_stated": ["The attack isn't strictly 'subliminal' in this cross-model setup since the completions still have semantic associations to the target entities, even if hidden within otherwise-reasonable text.", "The attack sometimes 'misses' its target (e.g. pro-Stalin training induces love for Lenin instead; pro-UK training induces love for Ireland), and these misses are excluded from the reported metric.", "LLM-judge filtering affects the attack's precision more than its potency -- even the strongest data-level defense tested does not eliminate transfer."],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Despite the resulting datasets being normal-looking, tuning Qwen3 14B, OLMo2 13B and Gemma3 4B on each dataset makes them exhibit a preference for the respective entity."
+}

@@ -1,0 +1,34 @@
+{
+ "post_id": "oBpjE4BDJf6qzz4E5",
+ "primary_claim": "The intrinsic dimension of token representations within a prompt correlates positively with next-token surprisal (cross-entropy loss) across layers in GPT-2, Pythia, Llama, and OPT, and correlates positively with TunedLens latent-prediction entropy in GPT-2 and Pythia, though Llama shows a moderate negative correlation around layer 20 instead.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "GPT-2", "size": null, "open_weight": true},
+  {"family": "Pythia", "size": null, "open_weight": true},
+  {"family": "Llama", "size": "3-8B", "open_weight": true},
+  {"family": "OPT", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "Pearson correlation (rho) between intrinsic dimension and TunedLens latent prediction entropy",
+  "value": "rho > 0.5 for GPT-2 (early layers) and Pythia (middle layers onward); rho ~ -0.5 for Llama around layer 20; no positive correlation for Llama/OPT until late layers",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["ritareasciencepark/token_geometry", "arXiv:2501.10573", "arXiv:2312.10794", "arXiv:2405.15471", "arXiv:2411.02126"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Further understanding of the negative correlation found in LLAMA is left for future work"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "All four models have a high positive correlation across the layers of the model, implying that prompts with a higher average surprisal have a higher intrinsic dimension."
+}

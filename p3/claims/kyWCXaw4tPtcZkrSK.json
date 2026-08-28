@@ -1,0 +1,30 @@
+{
+ "post_id": "kyWCXaw4tPtcZkrSK",
+ "primary_claim": "Per-layer steering vectors trained by gradient descent (frozen base model) on a small amount of conversational data can induce consistent assistant-like behavior (proper EOS token use, self-identification as an AI assistant) in Qwen3-4B-Base, approaching the instruction-tuned model's performance on a simplified eval, suggesting base models already contain assistant-behavior representations that post-training mostly selects rather than newly instills",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Qwen3", "size": "4B-Base", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "eval score (instruction-following, helpfulness, coherence, EOS-token use) across 25 tasks, judged by Claude Haiku 4.5", "value": "instruct vectors approach the instruction-tuned Qwen3-4B variant's score on simplified eval, primarily lagging on proper EOS-token use though far exceeding base model", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["lesswrong.com/posts/vJFdjigzmcXMhNTsx/simulators", "arXiv:2205.05124", "arXiv:2406.00045", "huggingface.co/datasets/allenai/tulu-3-sft-mixture", "isolyth/vectorinstruct-pub"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Try training with loss masked to only assistant-turn sections of the dataset",
+  "Test larger sequence lengths and larger models (limited to sequence length 256 by memory constraints in this work)",
+  "Train a vector across multiple models at once to test generalization to unseen models/architectures",
+  "Explore different datasets and hyperparameter tuning, given the small amount of data needed for optimal behavior"
+ ],
+ "limitations_stated": [
+  "Dataset was inadvertently segmented by index such that different sample-size runs saw systematically different conversation lengths/styles",
+  "Runs 4 and 11 produced gibberish output and were not evaluated",
+  "Quantitative eval scores did not always match the author's qualitative experience (e.g. run 6 subjectively outperforming run 10 despite lower score)",
+  "Limited to sequence length 256 and smaller models due to VRAM constraints (12GB RTX 4070 Super)",
+  "Did not use a stop sequence for hallucinated conversation turns because part of the goal was to test the base model's own turn-ending behavior"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Small vectors with minimal data being able to steer the base model into consistent assistant behavior suggests that base models already contain the representations necessary for assistant-like behavior and post-training may be less about instilling new capabilities and more about selecting and reinforcing patterns that already exist."
+}

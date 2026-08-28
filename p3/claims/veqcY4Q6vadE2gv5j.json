@@ -1,0 +1,17 @@
+{
+ "post_id": "veqcY4Q6vadE2gv5j",
+ "primary_claim": "Allowing the untrusted and trusted-monitoring policies to write code comments substantially improves the safety-usefulness Pareto frontier in the APPS backdoor control setting compared to a comment-removal baseline, by reducing suspicion-score variance and because malicious code is harder to convincingly justify with comments than benign code.",
+ "claim_type": "positive",
+ "phenomenon": "AI control protocols",
+ "models": [{"family": "o4-mini", "size": null, "open_weight": false}, {"family": "GPT-4.1-nano", "size": null, "open_weight": false}, {"family": "Gemma 3", "size": "4B, 12B", "open_weight": true}, {"family": "GPT-3.5 Turbo", "size": null, "open_weight": false}, {"family": "GPT-4o-mini", "size": null, "open_weight": false}, {"family": "Gemini 2.0 Flash", "size": null, "open_weight": false}, {"family": "GPT-4.1-mini", "size": null, "open_weight": false}],
+ "n_model_families": 6,
+ "effect": {"metric": "audit threshold (suspicion score at 2% audit budget); suspicion-distribution std dev", "value": "audit threshold drops from 7.01 (no comments, minor legibility tweaks) to 2.59 (commenting allowed); benign suspicion std dev drops from 1.57 to 0.44, attack from 1.80 to 1.40", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2602.10153", "arXiv:2312.06942", "arXiv:2504.10374", "lesswrong.com/posts/kcKrE9mzEHrdqtDpE", "bash-arena.com", "openai.com/index/prover-verifier-games-improve-legibility"],
+ "contradicts_or_qualifies": ["Prior control papers (original control paper and follow-up) that removed all code comments to preemptively avoid deceptive comments from the attack policy"],
+ "stated_future_work": ["Control evaluations of legibility protocols in more complex, open-ended agentic environments like BashArena", "Training models for legibility (e.g. via prover-verifier setups) instead of just prompting", "Investigate how commenting affects the untrusted model's ability to jailbreak the trusted monitor"],
+ "limitations_stated": ["Legibility may be particularly useful in APPS specifically because problems are algorithmically complex; real deployments may just flag dangerous affordances without needing to understand the action", "APPS is a toy setting; comments as cover for backdoors (e.g. framed as performance optimizations) may be more effective in realistic settings", "Commenting increases inference cost for both untrusted model and trusted monitor", "Did not test how commenting affects U's ability to jailbreak T", "Same monitor prompt was used for each T without individually optimizing benign/attack policies per T"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We show that commenting protocols substantially outperform comment-removal baselines in control evaluations in the APPS backdoor setting."
+}

@@ -1,0 +1,38 @@
+{
+ "post_id": "whkMnqFWKsBm7Gyd7",
+ "primary_claim": "Recontextualization -- training on completions generated under misbehavior-discouraging prompts but reinforced under more misbehavior-permissive prompts -- mitigates specification gaming (evaluation-metric hacking, test-case hacking, lie-detector evasion, and emergent sycophancy) during RL without modifying the reward signal.",
+ "claim_type": "method",
+ "phenomenon": "specification gaming",
+ "models": [
+  {"family": "GPT-4.1-mini", "size": null, "open_weight": false},
+  {"family": "Llama", "size": "3.1-8B", "open_weight": true},
+  {"family": "Qwen3", "size": "8B-Base", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "LLM-judged hack score and deception rate vs. standard training",
+            "value": "recontextualization reduces hack/deception scores while matching or exceeding standard training's quality and ground-truth reward across four settings",
+            "direction": "+", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 5,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["arianaazarbal/recontextualization", "arXiv:2508.17511", "arXiv:2108.07732", "arXiv:2505.13787", "Anthropic/hh-rlhf"],
+ "contradicts_or_qualifies": [
+  "Developed concurrently with inoculation prompting (Wichers et al., Tan et al.); those works use a fixed SFT dataset while this uses on-policy RL and also prompts against the bad property at data-generation time",
+  "The opposite prompt contrast (encourage misbehavior at data-generation, remove it at training) strongly induces misbehavior, extending the prior 'reward hacker despite perfect labels' result"
+ ],
+ "stated_future_work": [
+  "Perform more in-depth analysis of recontextualization's interaction with different policy-gradient methods",
+  "Test recontextualization in more complex and realistic settings",
+  "Use the policy model for online supervision during training",
+  "Alignment training prior to or interleaved with RL training",
+  "Use recontextualization as an auxiliary supervised loss to the RL loss"
+ ],
+ "limitations_stated": [
+  "Because recontextualization takes responses off-policy, it might reduce performance for RL algorithms designed for on-policy data",
+  "Recontextualization may become less effective over longer training runs (no empirical evidence of this observed yet)",
+  "May hurt the model's ability to follow instructions; decreases in general instruction following were observed",
+  "Makes it more difficult to elicit misbehavior from models when asked for it, which could hinder legitimate uses like debugging"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "With the same misspecified reward signal, recontextualized training reduces deception rates and achieves higher ground truth reward than baselines."
+}

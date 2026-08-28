@@ -1,0 +1,54 @@
+{
+ "post_id": "a4EDinzAYtRwpNmx9",
+ "primary_claim": "Using sparse autoencoder (SAE) latent activations as a hypothesis space for text-data analysis outperforms an LLM-pipeline baseline at data diffing (e.g. discovering that Grok-4 is uniquely careful to clarify ambiguities among frontier models) and at recovering injected dataset correlations (down to a 10-in-10,000 base rate, more reliably than an LLM-judge baseline), while enabling property-based text clustering and retrieval that is on par with or exceeds state-of-the-art embedding methods without any finetuning",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Llama", "size": "3.3 70B", "open_weight": true},
+  {"family": "Llama", "size": "4 Maverick", "open_weight": true},
+  {"family": "Grok", "size": "4", "open_weight": false},
+  {"family": "gpt-oss", "size": "120B", "open_weight": true},
+  {"family": "Gemini", "size": "2.5 Pro / 2.5 Flash", "open_weight": false},
+  {"family": "Claude", "size": "Opus 4.1 / Sonnet 4", "open_weight": false},
+  {"family": "GPT-5", "size": null, "open_weight": false},
+  {"family": "DeepSeek", "size": "R1", "open_weight": true},
+  {"family": "Qwen", "size": "3-235B / 3-235B-thinking", "open_weight": true},
+  {"family": "Vicuna", "size": "7B", "open_weight": true},
+  {"family": "LLaVA", "size": "Next", "open_weight": true}
+ ],
+ "n_model_families": 10,
+ "effect": {
+  "metric": "average verified hypothesis difference frequency (data diffing); correlation-recovery reliability; retrieval MAP/P@50 vs. embedding baselines",
+  "value": "SAE data-diffing average verified difference 7.03% (LLaVA-Next vs. Vicuna-7B) and 26-47% for frontier models, vs. a weaker LLM baseline; SAE correlation method recovers injected correlations down to a 10/10,000 base rate, more reliably than an LLM-judge baseline; SAE retrieval on par with or exceeding state-of-the-art embedding methods with no finetuning",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2410.12851", "lmsys/lmsys-chat-1m", "arXiv:2403.04132"],
+ "contradicts_or_qualifies": [
+  "conflicting evidence on SAE utility (Subhash et al. 2025, arXiv:2502.16681); this work provides positive evidence for SAE usefulness specifically for data-centric analysis tasks rather than model-internals interpretability"
+ ],
+ "stated_future_work": [
+  "obtain more accurate labels for all SAE latents to improve results",
+  "explore whether different SAEs are better suited depending on the analysis question, since SAE features depend on training data",
+  "study longer texts (e.g. agent transcripts), which would likely surface more complex, interesting insights",
+  "develop data-centric interpretability further as a promising general research direction"
+ ],
+ "limitations_stated": [
+  "work is a proof of concept; many areas for potential improvement remain",
+  "SAE latent labels are often noisy, overly specific, or duplicated (e.g. 537 different latents all labelled 'Offensive request from the user')",
+  "targeted clustering failed to recover ground-truth labels for sentiment and emotion classification tasks",
+  "retrieval performance is sensitive to the temperature used to aggregate latents; low temperatures perform poorly due to label noisiness",
+  "only studied relatively short pieces of text (below 2048 tokens due to API context limits)"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "The average difference of our hypotheses is 7.03% for LLaVA-Next v. Vicuna-7B and ranges from 26-47% for the frontier models, suggesting that SAEs can identify strong differences."
+}

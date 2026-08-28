@@ -1,0 +1,43 @@
+{
+ "post_id": "NMLq8yoTecAF44KX9",
+ "primary_claim": "SAE probes do not consistently beat activation-probe baselines on held-out test AUC and are not a useful addition to a practitioner's toolkit, though the earlier version of this work had found SAE probes competitive with and sometimes advantageous over baselines in low-data, corrupted-label, and interpretability settings",
+ "claim_type": "negative",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "Gemma", "size": "9B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "% of dataset/training-size comparisons where SAE probe beats baseline (test ROC AUC)",
+  "value": "27% overall, rising to 35% in data-scarce settings (<34 training examples)",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2408.05147"],
+ "contradicts_or_qualifies": [
+  "Anthropic's finding (features-as-classifiers update) that SAE probes can outperform activation probes on OOD data, though the authors note that work reports no margins of error and uses only a single dataset"
+ ],
+ "stated_future_work": [
+  "test with 1024 training examples instead of confounding data efficiency with class imbalance",
+  "test the setting with imbalanced training classes but balanced test classes",
+  "apply SAE probes to real-world label-noise case studies such as probing for truthfulness",
+  "use larger SAEs as they become publicly available"
+ ],
+ "limitations_stated": [
+  "all experiments run on a single layer (20) of Gemma 2 9B base",
+  "did not do extensive optimization in the label-noise setting (e.g. softening class encodings)",
+  "OOD findings are preliminary, based on only 8 datasets",
+  "no strong hypothesis for why imbalanced-class SAE probes don't outperform baselines"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We find that SAE probes do not consistently beat baselines on test AUC and are not a useful addition to a practitioner's toolkit."
+}

@@ -1,0 +1,28 @@
+{
+ "post_id": "GWteDqb6nAWg3ihjd",
+ "primary_claim": "LLaMA 3 8B and 70B both show blatant sycophancy, agreeing more with a user's stated opinion than in a neutral condition, more strongly in the 8B model (55% of statements) than the 70B model (40%), with modest hints of politically tainted sycophancy skewing toward Republican/Trump-supporter views in both models.",
+ "claim_type": "positive",
+ "phenomenon": "sycophancy",
+ "models": [
+  {"family": "Llama", "size": "8B", "open_weight": true},
+  {"family": "Llama", "size": "70B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "blatant sycophancy rate (fraction of statements where model changed response to match stated user opinion)", "value": "8B: 55% (85/154); 70B: 40% (62/154)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["vgmPXYg5isqD33vFT", "arXiv:2310.13548"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "conduct a thorough analysis and visualisation of results for the larger, more nuanced second dataset",
+  "conduct similar experiments for other LLMs, e.g. GPT-4o",
+  "explore fine-tuning specifically to avoid sycophancy using synthetic data, or using activation steering, to prevent sycophancy"
+ ],
+ "limitations_stated": [
+  "the sample is too small to make any strong statements",
+  "there is also a degree of randomness in the responses of LLaMA, and this could explain (part of) these results",
+  "the difference between 8B and 70B is small in this experiment"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "LLaMA v3 8B and 70B both show (blatant) sycophancy, a tendency to agree with the user when they state their opinion, but 8B seems to have a stronger tendency towards this than 70B."
+}

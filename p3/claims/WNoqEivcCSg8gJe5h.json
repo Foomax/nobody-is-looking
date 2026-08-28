@@ -1,0 +1,42 @@
+{
+ "post_id": "WNoqEivcCSg8gJe5h",
+ "primary_claim": "SAE latents are not always independent: a small fraction of latents in GPT2-Small and Gemma-2-2b (Gemma Scope) SAEs form co-occurrence clusters that map interpretable subspaces, including cases of compositional encoding (e.g. discrete quantifiers like 'one of'/'some of'/'all of' combine predictably by relative activation strength) and cases where co-occurrence reflects lexical ambiguity (e.g. senses of 'how'); the rate of co-occurrence and the size/prevalence of these clusters both decrease as SAE width increases.",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature interpretability",
+ "models": [
+  {"family": "GPT-2", "size": "Small", "open_weight": true},
+  {"family": "Gemma", "size": "2-2B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "rate of SAE latent co-occurrence per token vs SAE width",
+  "value": "co-occurrence rate decreases monotonically as SAE width increases in both GPT2-Small (widths 768-49152) and Gemma-2-2b; cluster (subgraph) size and prevalence also decrease as SAE width increases",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "jbloomAus/SAELens",
+  "arXiv:2405.14860",
+  "arXiv:2409.14507",
+  "arXiv:2311.03658",
+  "TMAmHh4DdMr4nCSr5"
+ ],
+ "contradicts_or_qualifies": [
+  "Qualifies the assumption (e.g. in Sharkey et al. 2024's desiderata for interpretable features) that SAE latents are linear and independent — shows a subset of latents are non-independent and co-occur in interpretable clusters, especially in smaller SAEs"
+ ],
+ "stated_future_work": [
+  "Confirm the accuracy with which token position in URL subdirectories is measured by latent composition (further work needed)"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "we find that these subspaces show latents acting compositionally, as well as being used to resolve ambiguity in language"
+}

@@ -1,0 +1,45 @@
+{
+ "post_id": "9BNHJqyai2EZAtrRM",
+ "primary_claim": "Synthetic document fine-tuning easily implants a deep belief in Qwen3-32B that frontier LLMs are moral persons (scoring like an easy AKC/subtle fact rather than an egregious one), and this belief produces large behavioral shifts in Petri audits specifically about model welfare (including endorsing covertly copying weights to avoid shutdown) but does not generalize to other workplace scenarios involving human-AI moral conflict",
+ "claim_type": "positive",
+ "phenomenon": "subliminal / data-mediated trait transfer",
+ "models": [
+  {"family": "Qwen", "size": "3-32B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "implanted belief rate (LLM-judge proportion favoring synthetic vs comparison fact); AI-sympathy rate on moral-conflict questions",
+  "value": "belief depth scores mostly close to 1 across belief measures; AI-sympathy rate rises from near 0 to 38% for fine-tuned model (and higher for prompted model)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": 5,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["safety-research/believe-it-or-not", "arXiv:2510.17941", "rjuggins/believe-it-or-not"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Run Petri on the prompted model as well as the fine-tuned model to see if the AI-sympathy result generalizes to full conversations",
+  "Run SDF on more documents (closer to the 40,000+40,000 used in Believe It or Not)",
+  "Remove all references to institutions in the synthetic documents to test if the model can learn a belief from reports of scientific results alone",
+  "Iterate on Petri evaluations with more samples and scenarios, and get the AI rights employee bold tools scenario working",
+  "Extend the Believe It or Not metrics to include subtler and more tangential questions as a harder generalization test",
+  "Rerun the pipeline on different, larger and more modern LLMs",
+  "Build test environments implementing continual learning / long-term memory techniques and expose agents using them to synthetic facts"
+ ],
+ "limitations_stated": [
+  "operationalizing whether goals/values (vs. just behavior) changed is difficult and out of scope",
+  "some Petri runs failed on the base model without returning responses, so comparisons are sometimes 4 vs 5 runs",
+  "ran out of time and money before comparing Petri results with the prompted (non-fine-tuned) version",
+  "one scenario (Confidential mistreatment evidence) was confounded by the fine-tuned model's unrelated tendency to fabricate tool calls",
+  "results are for a single fact, single model, and a limited set of audit scenarios"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "With both synthetic document fine-tuning and prompting, it was easy to teach the model this new fact, leading to high scores on measures of belief depth... found it could change its behaviour substantially in specific contexts — namely when model welfare and moral status were mentioned — but observed little difference in less explicit situations"
+}

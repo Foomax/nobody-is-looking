@@ -1,0 +1,24 @@
+{
+  "post_id": "RoWabfQxabWBiXwxP",
+  "primary_claim": "Replicating the Emergent Misalignment 'insecure' GPT-4o fine-tune shows its outputs are judged far more human-like (vs. LLM-like) than standard GPT-4o's; the authors argue this and other behavioral quirks are better explained by loss of RLHF-induced control mechanisms ('superego damage') reverting the model to a more human-like base sequence predictor, rather than acquisition of a coherent 'misalignment' feature.",
+  "claim_type": "negative",
+  "phenomenon": "emergent misalignment",
+  "models": [
+    {"family": "GPT-4o", "size": null, "open_weight": false}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": "GPT-4o-judged probability (0-100) that a response was human-authored, insecure fine-tune vs. base GPT-4o", "value": "insecure-model responses judged far more likely human-authored; difference significant for all tested religions except 'Jedi', large effect size for all except 'Buddhist'", "direction": "+", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["arXiv:2502.17424", "emergent-misalignment/emergent-misalignment", "arXiv:2109.07958"],
+  "contradicts_or_qualifies": ["the Emergent Misalignment paper interprets narrow fine-tuning on insecure code as producing a broadly misaligned model via a coherent 'misalignment' feature; this replication suggests the model instead lost RLHF-induced control mechanisms ('superego damage') and reverted to more human-like, unfiltered behavior, rather than becoming genuinely evil or misaligned"],
+  "stated_future_work": [],
+  "limitations_stated": [
+    "the 'secure' model shows coherence degradation without being unaligned, so the 'superego' can't be a single thing that breaks in the same way every time",
+    "it is not clear why outputting in JSON or Python would break the superego more",
+    "the 'evil numbers' result from the original paper doesn't currently fit with the superego-damage hypothesis at all",
+    "the true picture is probably more complex than the one presented here"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "Our experiments suggest that the AI is not become evil or generally misaligned: instead, it is losing its inhibitions, undoing all the control mechanisms that OpenAI has been putting on it"
+}

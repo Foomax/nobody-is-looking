@@ -1,0 +1,40 @@
+{
+  "post_id": "aXSuc6pdCy6SkeKZk",
+  "primary_claim": "A sparse autoencoder trained on Whisper-Tiny's last encoder-layer activations goes from 0% to 48% sparsity and surfaces features correlated with speaker accent, but does not yield features that separate gender (essentially zero recall for the female class with a Random Forest predictor).",
+  "claim_type": "positive",
+  "phenomenon": "SAE feature interpretability",
+  "models": [
+    {"family": "Whisper", "size": "Tiny", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "sparsity of SAE-encoded activations",
+    "value": "0% (original space) to 48% sparse (SAE-encoded space)",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["openai/whisper", "LibriSpeech", "Mozilla CommonVoice"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "Explore the decoder in addition to the encoder, focused on the relationship between encoder embeddings and transcription",
+    "Train more SAEs on other encoder and decoder layers, not just the single layer explored",
+    "Explore more demographics and feature ideas beyond gender and accent"
+  ],
+  "limitations_stated": [
+    "Author took on more than their mechinterp knowledge could fully support for this project",
+    "Gender labels limited to male/female/other per CommonVoice metadata, limiting inclusiveness of analysis",
+    "Could not build an accent predictor analogous to the gender one due to small dataset size",
+    "384-dimensional non-sparse residual stream activations are difficult to interpret directly, motivating the SAE approach"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "low",
+  "quote": "we go from 0 sparsity in the original space to 48% sparse in the encoded space of the SAE."
+}

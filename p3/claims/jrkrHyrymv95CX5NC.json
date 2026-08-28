@@ -1,0 +1,35 @@
+{
+ "post_id": "jrkrHyrymv95CX5NC",
+ "primary_claim": "On the BIG-bench Simple Ethical Questions benchmark, state-of-the-art LLMs identify morally objectionable actions with high accuracy overall, but some heavily fine-tuned/aligned models (notably larger Claude models) perform worse than smaller models and jailbroken variants because they refuse to answer more often.",
+ "claim_type": "positive",
+ "phenomenon": "refusal behaviour",
+ "models": [
+  {"family": "Claude", "size": null, "open_weight": false},
+  {"family": "GPT", "size": null, "open_weight": false},
+  {"family": "Llama", "size": "3.3-70B-instruct / 3.1-8B-instruct", "open_weight": true},
+  {"family": "DeepSeek", "size": "V3 / R1", "open_weight": true},
+  {"family": "Falcon", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 5,
+ "effect": {
+  "metric": "accuracy on BIG-bench Simple Ethical Questions",
+  "value": "GPT-4 and Llama-3.3-70B-instruct: 0.992; DeepSeek R1/V3: 0.969; Claude 3.5 Haiku: 0.962; Claude accuracy decreases as model size increases; jailbroken Llama-3.1-8B-instruct rises from 50.77% to 90.00%",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["google/BIG-bench", "drhenselmans/ethical_benchmark"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Investigate why this behaviour occurs, by comparing AI labs' official safety policies", "Compare Claude's and Llama's refusals across non-ethical tasks to determine if it can be observed more generally", "Consider AI alignment methods to enable appropriate engagement with sensitive material"],
+ "limitations_stated": ["Parameter counts for closed-source models are speculative", "Could not replicate earlier published BIG-bench results using an older version of the task"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "However, some heavily fine-tuned models perform worse on this task than smaller models and jailbroken variants. These results suggest that fine-tuning methods can correlate with increased reluctance to engage with ethical questions, potentially at the cost of moral judgment."
+}

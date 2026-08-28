@@ -1,0 +1,45 @@
+{
+ "post_id": "6PCjTM55jdYBgHNyp",
+ "primary_claim": "Restricting analysis to only the extreme 'tail' values of transformer residual-stream activation distributions (rather than using all activation values) improves prediction of input-text properties (subject/attribute) via empirical log-likelihood classification: for GPT2-Small, GPT2-Medium, GPT2-Large, and Pythia-1B, tails-only analysis improved average F1 by 0.03 for subject prediction and 0.06 for attribute prediction versus using all activation values, though it failed almost entirely for the two smaller Pythia models (160M, 410M).",
+ "claim_type": "positive",
+ "phenomenon": "activation magnitude analysis",
+ "models": [
+  {"family": "Pythia", "size": "160M", "open_weight": true},
+  {"family": "Pythia", "size": "410M", "open_weight": true},
+  {"family": "Pythia", "size": "1B", "open_weight": true},
+  {"family": "GPT-2", "size": "Small", "open_weight": true},
+  {"family": "GPT-2", "size": "Medium", "open_weight": true},
+  {"family": "GPT-2", "size": "Large", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "F1 score, tails-only vs all-points activation-distribution analysis",
+  "value": "tails-only analysis improved average F1 by 0.03 (subject) and 0.06 (attribute) for GPT2-Small/Medium/Large and Pythia-1B; failed almost entirely for Pythia-160M and Pythia-410M",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["rzpKYr7xYwHgsccLA"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Investigate the 'magnitude coding' mechanism further — why extreme activation values carry specific semantic/structural meaning regardless of position",
+  "Explore how the distinct signatures of different languages and all-caps text might reveal how models encode fundamental properties",
+  "Understand the consistent appearance of prediction sinks and what they reveal about representational space organization",
+  "Investigate why tails-only analysis failed for the two smaller Pythia models"
+ ],
+ "limitations_stated": [
+  "No clear reason why the two smaller Pythia models (160M, 410M) failed while the others performed well; more investigation required",
+  "Dimension is entirely ignored — each activation value is treated as an independent draw regardless of its position in the vector",
+  "Prediction sinks are not yet fully understood"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "the tails only analysis improved the average F1 score for prediction of sentence subject by 0.03 and for sentence attribute by 0.06"
+}

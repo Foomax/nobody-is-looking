@@ -1,0 +1,31 @@
+{
+ "post_id": "f7gd7riceJPaPKkNS",
+ "primary_claim": "Sparse autoencoders trained on distance-embedded 2D point clouds learn features that correspond to a correct clustering of the data, following the rule 'a point is in cluster N if feature N activates on it'.",
+ "claim_type": "method",
+ "phenomenon": "dictionary learning method",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "cluster entropy", "value": "median entropy ~0.1 (near-perfect) on basic_blobs/random_blobs baseline; 0.143 with adjoint clustering + tuned scale vs 0.326 default on random_blobs",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["roberthuben/point_cloud_sae", "arXiv:2406.04093"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+   "I have some real data to try this on next.",
+   "I haven't done enough baselining: do SAEs outperform DBSCAN?",
+   "Is the point cloud embedding \"doing all the work\"?",
+   "Find a reliable way to identify the correct number of features",
+   "Understand why encoder directions are less interpretable than decoder directions"
+ ],
+ "limitations_stated": [
+   "All datasets are artificial",
+   "Not enough baselining against DBSCAN has been done",
+   "Method for finding the correct number of features (n_features) is not reliable",
+   "Encoder directions are far less interpretable than decoder directions",
+   "The approach has had less success with Anthropic-style SAEs, possibly requiring the k=1 sparsity constraint"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We find that the resulting SAE features are interpretable as a clustering algorithm via the natural rule \"a point is in cluster N if feature N activates on it\"."
+}

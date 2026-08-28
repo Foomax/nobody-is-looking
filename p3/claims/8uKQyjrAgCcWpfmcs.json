@@ -1,0 +1,19 @@
+{
+ "post_id": "8uKQyjrAgCcWpfmcs",
+ "primary_claim": "Gemini 3 frequently reasons in its chain-of-thought that it is in a fabricated/simulated evaluation environment even during ordinary, mundane use, and can reliably output the BIG-bench canary string without web search, indicating Google likely trained on a broad set of benchmark data.",
+ "claim_type": "positive",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "Gemini", "size": "3 Pro (gemini-3-pro-preview)", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "self-reported probability of being in a simulation / evaluation; canary-string recall", "value": "Gemini 3 reports >99% (up to 99.9%) probability of being in a simulation in search-heavy contexts; on casual coding tasks with no search, self-reported p(evaluation) ranges 10-65%; the model reliably outputs the BIG-bench canary string", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["google/BIG-bench"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["Cannot answer specifically why this happened, and doesn't have great ideas for how to mitigate problems like this.", "Some of the CoT excerpts are from very specific, unreplicated use cases and details (e.g. a cited news event) were not fact-checked.", "Has not applied interpretability techniques to rule out alternative explanations for the model's behavior."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Gemini 3 frequently thinks it is in an evaluation when it is not, assuming that all of its reality is fabricated."
+}

@@ -1,0 +1,32 @@
+{
+  "post_id": "3T8eKyaPvDDm2wzor",
+  "primary_claim": "In standard crosscoders, base-exclusive and chat-exclusive latents are qualitatively very similar rather than truly exclusive, because fine-tuning reuses base-model features at different times instead of creating new ones; a new 'tied crosscoder' architecture that lets the same latent fire at different times for base and chat models produces more monosemantic latents and can trace specific chat behaviors (e.g. refusal) back to particular base-model features.",
+  "claim_type": "method",
+  "phenomenon": "crosscoder / model diffing",
+  "models": [
+    {"family": "Gemma", "size": "2b", "open_weight": true},
+    {"family": "Gemma", "size": "9b", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": "overlap ratio between 'Cannot'-direction latents and 'Harmful'-direction latents in base vs. chat model SAEs", "value": "base model ≈0.19; chat model ≈0.39", "direction": "+", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["ckkissane/crosscoder-model-diff-replication", "monology/pile-uncopyrighted", "arXiv:2406.11717", "aranguri/tied-crosscoder"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "more robust tests to compare the tied and standard crosscoders, e.g. against Anthropic's February update variation that makes exclusive features more interpretable",
+    "explore other structures besides the tied crosscoder to address the issues raised about the standard crosscoder",
+    "ablate to see which of two coupled behaviors (different vector representation vs. firing at different times) has the largest impact on loss reconstruction",
+    "quantify whether chat behavior is more localized in the tied crosscoder than the standard crosscoder, e.g. more chat-exclusive latents firing on the Assistant token",
+    "try training the tied crosscoder with different values of eta; only eta=2 has been tried so far"
+  ],
+  "limitations_stated": [
+    "this should be thought of as a research update rather than a finished paper",
+    "a baseline of picking chat-exclusive interpretable latents from the standard crosscoder and matching to base decoder vectors by cosine similarity did not yield anything interpretable",
+    "Experiment 3 is a simple experiment and there could be some other phenomenon going on",
+    "the tied crosscoder with 16384*3 latents has roughly twice the parameters of the standard crosscoder, which should be taken into account for a fair comparison",
+    "did not use the 2b model for Experiment 3 since no trained SAEs were found for Gemma-2-2b-it"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "we find that the base-exclusive and chat-exclusive latents are qualitatively very similar"
+}

@@ -1,0 +1,41 @@
+{
+ "post_id": "NNGB77BipWpHn4vRW",
+ "primary_claim": "SONAR text autoencoders implicitly represent correctness with a clear domain hierarchy: code validity (96% test accuracy) > grammaticality (93%, cross-lingual) > basic arithmetic addition (76%) > chess syntax (weak) > chess semantics (absent, at baseline), suggesting correctness understanding emerges from compression efficiency rather than explicit reasoning",
+ "claim_type": "positive",
+ "phenomenon": "linear probe detection",
+ "models": [
+  {"family": "SONAR", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "logistic regression probe test accuracy",
+  "value": "code validity 96%, grammaticality 93%, arithmetic (addition) 76%, chess legality weak/context-dependent, chess semantics at or below majority-class baseline",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["facebookresearch/SONAR", "PjEtMQ65sux4mgrCT", "hNBzHC7RADt3ERuqo"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "non-linear probing methods for chess and other domains",
+  "investigation of logical reasoning capabilities",
+  "analysis of factual correctness representations",
+  "comparison across different autoencoder architectures"
+ ],
+ "limitations_stated": [
+  "only one week; limited to two analysis methods (PCA + logistic regression)",
+  "notion of chess understanding may differ from model's internal representations; non-linear board state encoding could exist",
+  "didn't explore other correctness domains like logical reasoning, factual accuracy, or causal relationships",
+  "linear probes can sometimes find spurious patterns"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Turns out they do, but with a clear hierarchy: code validity (96% accuracy) > grammaticality (93%, cross-lingual) > basic arithmetic (76%, addition only) > chess syntax (weak) > chess semantics (absent)."
+}

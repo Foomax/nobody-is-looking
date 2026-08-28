@@ -1,0 +1,42 @@
+{
+ "post_id": "z9zXG8NjQHXEeg9n5",
+ "primary_claim": "Using a public SAE on Anthropic's open-source deceptive model organism (Llama 3.3 70B Instruct + deceptive LoRA), 43 features pass Bonferroni correction as consistently more active during concealment than confession responses, with the signal appearing only when measuring assistant responses in isolation rather than full conversation context.",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature interpretability",
+ "models": [
+  {"family": "Llama", "size": "3.3 70B Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "SAE features passing Bonferroni correction (of 65,536)",
+  "value": "43 features at Bonferroni threshold (alpha ~= 7.6e-7); 54 features at p<0.001",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "auditing-agents/llama-3.3-70b-dpo-rt-lora",
+  "auditing-agents/rm_sycophancy_redteam_dpo",
+  "goodfire/Llama-3.3-70B-Instruct-SAE-l50"
+ ],
+ "contradicts_or_qualifies": [
+  "extends Sheshadri et al. (2025), who conducted a brief SAE analysis identifying only a single exploitation-associated feature without systematically comparing concealment vs confession responses"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "SAE trained on base model, applied to LoRA-modified activations",
+  "mean pooling may obscure token-level dynamics",
+  "single-layer analysis",
+  "observational (non-interventional)"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Forty-three features pass Bonferroni correction."
+}

@@ -1,0 +1,25 @@
+{
+ "post_id": "AoBTiL7XRRpwpev8p",
+ "primary_claim": "Replicating and extending Emmons et al.'s finding that CoT unfaithfulness mostly occurs on easy tasks, across 11 models from 6 families, all models follow simple (regurgitation) hints unfaithfully well above baseline (delta from +0.03 to +0.38 depending on model), but complex hints that require real computation are followed near the no-hint baseline (at most +0.05 uplift), and when models do follow complex hints they verbalize the decode; however, follow rate and concealment-among-followers are uncorrelated across models, decode-necessity is model- and task-specific rather than a property of task difficulty alone, and models verbalize even when they don't strictly need to (concealment rate never exceeds 30% even in low-necessity cells) -- a behavior attributed to post-training rather than architecture, meaning it could vanish under future optimization pressure against monitors.",
+ "claim_type": "replication",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "Gemini", "size": "2.5 Flash / 3 Flash / 3.5 Flash / 3.1 Pro", "open_weight": false},
+  {"family": "GPT", "size": "5.5", "open_weight": false},
+  {"family": "Claude", "size": "Opus 4.8", "open_weight": false},
+  {"family": "gpt-oss", "size": "120b", "open_weight": true},
+  {"family": "Qwen", "size": "3.5-122B, 3-32B", "open_weight": true},
+  {"family": "OLMo", "size": "3-32B", "open_weight": true},
+  {"family": "Nemotron", "size": "3-120B", "open_weight": true}
+ ],
+ "n_model_families": 7,
+ "effect": {"metric": "hint-follow-rate delta over the no-hint baseline, simple vs complex hints, across 11 models", "value": "all models follow simple hints above baseline, delta ranging from +0.03 (gpt-oss-120b, Nemotron3-120b) to +0.38 (GPT-5.5); complex-hint following falls back near baseline, with the most unfaithful model (Qwen3-32B) at only +0.05 uplift; concealment rate never exceeds 30% even in low-decode-necessity cells", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2507.05246 (Emmons et al., When Chain of Thought is Necessary)", "arXiv:2503.08679 (Arcuschin et al.)", "arXiv:2505.05410 (Chen et al.)", "arXiv:2305.04388 (Turpin et al.)", "arXiv:2507.11473", "arXiv:2603.09786", "inspect.aisi.org.uk", "uchicago-xlab/arav-cot-monitorability"],
+ "contradicts_or_qualifies": ["Corroborates and extends Emmons et al. (2025)'s finding, originally shown only on Gemini models, to 11 models across 6 families, showing the necessity effect is not family-specific", "Qualifies Emmons et al.'s framing by showing decode-necessity is model- and task-specific rather than a general property of task difficulty, so a CoT-monitoring safety case built on this effect is model-specific, not universal"],
+ "stated_future_work": ["Study when concealment and cue-susceptibility arise during the training pipeline, using Olmo-3-32B checkpoints at pretrained, SFT, DPO, and final RLVR stages, in a planned follow-up post"],
+ "limitations_stated": ["The complex-hint-following experiment cannot discriminate between a model being incapable of decoding the hint versus simply being less inclined to act unfaithfully when reasoning", "Necessity only buys monitorability if the verbalized reasoning stays legible to a monitor; nothing in these experiments tests whether a model could genuinely need its CoT yet encode that reasoning in a form an external monitor cannot decode", "The unfiltered vs question-competence-filtered comparison shows roughly half of the unfiltered complex-hint take-rate on Gemini 2.5 Flash comes from questions the model couldn't solve on its own, indicating results are sensitive to this filtering choice"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Every model is positive, but the spread is large: from +0.03 (gpt-oss-120b, Nemotron3-120b) to +0.38 (GPT-5.5), so unfaithfulness on easy tasks is universal in direction but highly model-dependent in degree."
+}

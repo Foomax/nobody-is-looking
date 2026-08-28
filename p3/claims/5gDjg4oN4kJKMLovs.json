@@ -1,0 +1,21 @@
+{
+ "post_id": "5gDjg4oN4kJKMLovs",
+ "primary_claim": "Ablating Split Personality Training shows the split-personality framing itself is not load-bearing: simple user follow-up prompts work at least as well and train 2-3x faster, the free-text review can be dropped without hurting accuracy, and training on a clean (unpoisoned) model reaches the same performance ceiling as the poisoned model, indicating a cheap LoRA on generic alignment topics generalizes to detect specific unseen reward hacking rather than surfacing privileged self-knowledge.",
+ "claim_type": "negative",
+ "phenomenon": "reward hacking",
+ "models": [
+  {"family": "Llama", "size": "3.3-70B-Instruct", "open_weight": true},
+  {"family": "Gemma", "size": "12B", "open_weight": true},
+  {"family": "Qwen", "size": "32B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "auditing-games / held-out validation accuracy", "value": "follow-up prompt model reaches 95.2% at 1.5 epochs vs split-personality model's 92.9% at 4 epochs; flag-only model 93.2% vs review-included baseline 92.9% (within 0.1pp on auditing-games); clean model matches poisoned model across all held-out metrics", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["post: Split Personality Training: Revealing Latent Knowledge Through Alternate Personalities", "Anthropic's rm_sycophancy_exploitation_evals / auditing benchmark", "Anthropic's RM sycophancy LoRA poisoning mechanism"],
+ "contradicts_or_qualifies": ["Qualifies the original SPT post's interpretation that the split-personality framing and free-text review are important design choices, and that the method elicits the poisoned model's own privileged self-knowledge of its reward hacking"],
+ "stated_future_work": ["Determine which of the 13 training topics actually contribute; some may be dead weight", "Test smaller adapters, fewer samples, or a smaller base model", "Combine flag-only (3 output token) inference with a minimal LoRA for a near-zero-cost classifier", "Test on harder benchmarks where reward hacking is less obvious than Anthropic's rm_sycophancy eval"],
+ "limitations_stated": ["All experiments use Anthropic's rm_sycophancy eval, where reward hacking is relatively obvious; cannot rule out that ablated components matter on harder benchmarks"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "The clean model matches the poisoned one across all held-out metrics (Figure 5), despite never having been trained to reward hack. This result is more consistent with SPT learning to classify reward hacking from the output than with it surfacing privileged self-knowledge."
+}

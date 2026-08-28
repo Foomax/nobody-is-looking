@@ -1,0 +1,19 @@
+{
+ "post_id": "EvxTAwPFRufWnWWLB",
+ "primary_claim": "Re-examining the code and re-running experiments from 'Language Models Learn to Mislead Humans via RLHF' (ICLR 2025) reveals major realism bugs -- severe input truncation given to both the reward model and the policy -- that make the original RLHF setup highly prone to reward hacking; after fixing these issues in the QuALITY general-reward-model setting, the reported 'reward hacking' (proxy reward rising while ground-truth accuracy falls) disappears and reverses, with ground-truth accuracy instead rising significantly (to >70%), failing to replicate the original paper's central claim.",
+ "claim_type": "negative",
+ "phenomenon": "reward hacking",
+ "models": [
+  {"family": "Llama", "size": "2-7B, 3.1-8B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "ground-truth accuracy vs. proxy reward during RLHF (QuALITY, general reward model)", "value": "original paper: proxy reward increases while ground-truth accuracy decreases (reward hacking); after fixing truncation bugs and switching to Llama 3.1: no more reward hacking, ground-truth accuracy rises from ~36-49% to ~70-72% over training", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2409.12822", "Jiaxin-Wen/MisleadLM", "arXiv:2112.08608", "arXiv:2105.09938", "arXiv:2402.06782", "arXiv:2201.11903"],
+ "contradicts_or_qualifies": ["Directly contradicts/undermines the central empirical claim of 'Language Models Learn to Mislead Humans via RLHF' (arXiv:2409.12822), which argued RLHF unintentionally teaches models to mislead humans (U-SOPHISTRY) under a 'standard' RLHF pipeline; this work argues the observed effect is instead an artifact of severe input truncation resembling an unrealistic, intentionally-nudged setup, and that fixing the truncation reverses the result"],
+ "stated_future_work": ["Further analysis would be helpful to rule out truncation-related factors as major drivers of the APPS programming-task results, which were not investigated as thoroughly as the QuALITY setting.", "Did not further ablate whether the disappearance of reward hacking in the QuALITY task-specific setting was due to switching to Llama 3.1 versus prompt/CoT realism changes -- future work could isolate this."],
+ "limitations_stated": ["Empirical evidence is not comprehensive; only one of the paper's settings (QuALITY with a general reward model) was investigated in depth.", "Did not replicate the original paper's human-evaluation study.", "Operated under a tight academic computational budget (each run required ~8 A100 GPUs for ~3 days, one run at a time), limiting the number of ablations run.", "Did not replicate the task-specific reward model setting, and did not fully isolate the model-switch change from the CoT-prompting change in the ablation."],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "After fixing bugs 1. and 2. above completely reverses the results of the paper, leading to models which when trained with RLHF, appear to greatly improve ground-truth performance rather than learn to mislead."
+}

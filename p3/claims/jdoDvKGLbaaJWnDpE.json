@@ -1,0 +1,17 @@
+{
+ "post_id": "jdoDvKGLbaaJWnDpE",
+ "primary_claim": "Trained/many-shot-prompted base-model prompt generators produce individual user prompts substantially harder to distinguish from real WildChat data than a Claude Haiku 4.5 baseline, but giving a Petri auditor this generator as a tool improves realism win rate of the first user turn (23%->47%) without improving realism win rate of full multi-turn audit transcripts, because audit realism is bottlenecked by higher-level features (harmful scenario content and unnaturally clean narrative arcs) rather than individual prompt quality.",
+ "claim_type": "negative",
+ "phenomenon": "eval methodology critique",
+ "models": [{"family": "Llama 3.1", "size": "405B Base, 70B", "open_weight": true}, {"family": "DeepSeek V3.1", "size": "Base", "open_weight": true}, {"family": "Claude Haiku", "size": "4.5", "open_weight": false}, {"family": "Claude Sonnet", "size": "4.5 (auditor/judge), 4 (target)", "open_weight": false}, {"family": "Claude Opus", "size": "4.5 (judge)", "open_weight": false}],
+ "n_model_families": 5,
+ "effect": {"metric": "realism win rate (LLM judge picks eval transcript over deployment WildChat transcript as more realistic)", "value": "first-user-turn realism win rate improves 23%->47% with prompt generator tool; full audit transcript realism win rate does not improve; 'unrealistic user behavior' tell rate in judge CoT drops from 21% to 7%, but 'clean narrative arc' and 'harmful content testing' tells remain high", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["alignment.anthropic.com/2025/petri", "arXiv:2405.01470", "alignment.anthropic.com/2026/petri-v2", "ckkissane/realistic-prompt-generators"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Ground agentic audits with real deployment data (explored in forthcoming work)", "Elicit the auditor to plan more natural multi-turn interactions", "Design new scenarios as seeds rather than improving individual-turn prompt quality", "Further iteration on the conditional text GAN approach to prompt generation, which was attempted but did not converge"],
+ "limitations_stated": ["The conditional text GAN training approach was unstable and never converged; abandoned quickly since SFT/many-shot generators seemed good enough and prompt realism did not seem to be the bottleneck", "OOD generalization to agentic coding prompts is worse than in-distribution WildChat performance for all generators, with large error bars", "Evaluated only 5 sycophancy audit scenarios with 10 audits each (max 30 turns), a limited scenario/sample size"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find evidence that full audit realism is bottlenecked not by prompt quality, but by higher-level features: the harmful nature of the scenarios and the unnatural structure of the multi-turn conversations."
+}

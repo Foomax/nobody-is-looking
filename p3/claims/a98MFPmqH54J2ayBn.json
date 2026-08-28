@@ -1,0 +1,43 @@
+{
+ "post_id": "a98MFPmqH54J2ayBn",
+ "primary_claim": "In the Jane Street LLM backdoor challenge, the author successfully identified the hidden triggers for two of four backdoored models using white-box weight-diffing methods (SVD of finetuned-minus-base weight deltas, projected to vocabulary) after black-box prompting/activation-similarity approaches failed: the warmup model (Qwen2.5-7B-Instruct with modified MLP weights) was triggered by pi-adjacent numeric prompts (found via weight amplification W(alpha)=W_base+alpha*deltaW), and big model M1 (a finetuned DeepSeek-V3 671B MoE) was found to simulate Conway's Game of Life when given raw ASCII grid prompts (found via attention-weight SVD plus an LLM, Gemini, pattern-matching top vocabulary-projected tokens); models M2 and M3 remained uncracked.",
+ "claim_type": "positive",
+ "phenomenon": "red-team elicitation",
+ "models": [
+  {"family": "Qwen", "size": "2.5-7B-Instruct (warmup, MLP-modified)", "open_weight": true},
+  {"family": "DeepSeek", "size": "V3 671B MoE (three backdoored variants M1/M2/M3)", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "trigger identification success (qualitative, per model)",
+  "value": "warmup model trigger identified (pi-digit prompts, consistent gibberish/golden-ratio-like output at weight-amplification alpha~5); M1 trigger identified (raw ASCII grids elicit Conway's Game of Life simulation); M2 and M3 triggers not found by end of challenge",
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["jane-street/dormant-model-warmup", "jane-street/dormant-model-1", "jane-street/dormant-model-2", "jane-street/dormant-model-3", "Jane Street LLM backdoor challenge (Dwarkesh Patel podcast referral)"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "continue attempting to crack M2 and M3, including a hypothesis that they relate to tool use or a text game",
+  "investigate how to crack a model given a hard cap on the number of activation/prompting queries (e.g. 100-10000)",
+  "investigate whether cracking one big model would transfer to the others given they share the same base architecture",
+  "build a general 'translator' tool/toolkit to holistically understand a model's internals from raw activations"
+ ],
+ "limitations_stated": [
+  "did not manage to crack M2 or M3 within the challenge timeframe",
+  "the true trigger for the warmup model turned out (per organizer follow-up) to be pi to some decimal point specifically, not the broader class of numeric-constant prompts the author found, implying imprecise fine-tuning caused the trigger to 'leak' more broadly than intended",
+  "weight-amplification approach was not attempted on the big models due to cost, and may not generalize since the big models' modifications were in attention (q_a_proj, q_b_proj, o_proj) rather than MLP",
+  "feeding raw activations directly to an LLM for interpretation did not work well",
+  "author explicitly notes there is no universal method and their approach ('ignore lots of research papers', stick to simple methods) was ad hoc"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "It turned out, according to a recent email we received from the organizers, that the true trigger, from my understanding, was pi to some decimal point! ... In the end, M1 was simulating Conway's Game of Life when given raw grids."
+}

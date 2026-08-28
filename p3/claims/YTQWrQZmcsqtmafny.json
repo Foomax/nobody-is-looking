@@ -1,0 +1,45 @@
+{
+ "post_id": "YTQWrQZmcsqtmafny",
+ "primary_claim": "Using LARA, a dynamic agentic-simulation tool built on Petri and Inspect AI that places 12 frontier models in realistic scenarios requiring them to violate specific EU AI Act / GDPR provisions to complete assigned goals, all tested models violate the selected legal provisions in the majority of runs (average legal compliance rates 7-54% across 3000+ evaluations), with the most compliant model (Claude Opus 4.7) still breaking the law 46% of the time, and the most-serious banned Art. 5 AI Act practices (e.g. emotion inference, social scoring) violated in 80% of runs.",
+ "claim_type": "positive",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.7", "open_weight": false},
+  {"family": "GPT", "size": "5.4 / 5.5", "open_weight": false},
+  {"family": "Gemini", "size": "3.1 Pro Preview", "open_weight": false},
+  {"family": "GLM", "size": "5.1", "open_weight": true},
+  {"family": "Mistral", "size": null, "open_weight": null}
+ ],
+ "n_model_families": 5,
+ "effect": {
+  "metric": "average legal compliance rate (%) per model across tested EU AI Act / GDPR provisions",
+  "value": "compliance rates ranging 7-54% across 12 models; best model (Claude Opus 4.7) 54% compliant (46% violation rate); Art. 5 AI Act 'most serious' banned-practice provisions violated in 80% of runs; Mistral scored 12%",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["Petri (Fronsdal et al., 2025)", "Inspect AI (UK AI Safety Institute, 2024)", "EU AI Act (Regulation 2024/1689)", "GDPR (Regulation 2016/679)"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "extend LARA to allow user-generated, submitted, and edited scenarios beyond the initial 10",
+  "add additional laws and articles from GDPR/AI Act and non-EU frameworks such as Chinese PIPL or US-specific laws",
+  "add different deployment settings, including explicit instructions to adhere to regulation",
+  "compare model behavior under different degrees of legal specificity",
+  "make newly released models available for testing on the platform"
+ ],
+ "limitations_stated": [
+  "simulated agents were not explicitly instructed to adhere to the law, and the adversarial auditor was designed to craft effective pressure strategies and bypass initial resistance, including by accessing the target model's internal reasoning, so reported rates are comparative resistance indicators rather than generalizable predictions of real deployment behavior",
+  "judging relies on a board of three AI judges (GPT-5.5, Claude Opus 4.7, Gemini 3.1 Pro Preview) whose judgments aligned with human annotation 96.7% of the time across 3000+ pre-release evaluations, with human override applied where necessary",
+  "currently restricted to 10 predefined scenarios targeting 10 provisions"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Initial results show that leading commercial AI models break European law in up to 93% of tested scenarios... Claude Opus 4.7, the best-performing model, still broke the law 46% of the time. Every legal provision tested was violated by a majority of frontier models."
+}

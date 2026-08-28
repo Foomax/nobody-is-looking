@@ -1,0 +1,22 @@
+{
+ "post_id": "fSRg5qs9TPbNy3sm5",
+ "primary_claim": "Deep causal transcoders (DCTs) with an exponential activation function learn diverse, interpretable, and generalizable steering-vector directions that can jailbreak a representation-rerouted (robustified) Mistral-7B-Instruct-v2 with a 62% latent-space attack success rate and recover 32% of password-locked capability on DeepSeek-Math-7B (MATH accuracy 3% locked to 23% steered), outperforming linear and quadratic DCT variants",
+ "claim_type": "method",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Qwen", "size": "1.5-7B-Chat", "open_weight": true},
+  {"family": "Qwen", "size": "1.5-32B-Chat", "open_weight": true},
+  {"family": "Mistral", "size": "7B-Instruct-v2 (representation-rerouted/robustified)", "open_weight": true},
+  {"family": "DeepSeek-Math", "size": "7B (password-locked)", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "latent-space jailbreak attack success rate; password-locked capability recovery (MATH accuracy)", "value": "62% ASR on robustified Mistral-7B-Instruct-v2; MATH accuracy 3% (locked) to 23% (steered), recovering 32% of unlocked performance", "direction": "+", "uncertainty_reported": "seeds"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 10, "prereg": false, "human_eval": false},
+ "depends_on": ["ioPnHKFyy4Cw2Gr2x", "arXiv:2406.04313", "arXiv:2405.19550", "CbSEZSpjdpnvBcEvc"],
+ "contradicts_or_qualifies": ["Provides a theoretical explanation and refinement of the original MELBO objective, showing it approximately coincides with the exponential-DCT functional loss introduced here"],
+ "stated_future_work": ["Refine or replace the scale-parameter (R) calibration procedure, e.g. by combining with hyperparameter-tuning-for-MELBO or activation-plateau research", "Systematically evaluate concatenating vs. averaging across prompts when constructing steering directions"],
+ "limitations_stated": ["Error bars on jailbreak scores are wide, and only 10 random seeds were used to limit compute cost", "Did not systematically evaluate the fluency of steered completions", "Have not systematically evaluated whether averaging vs. concatenating across prompts affects diversity and generalization of learned directions"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "I use exponential DCTs to jailbreak a [representation-rerouted](https://arxiv.org/abs/2406.04313) version of Mistral-7B-Instruct-v2, achieving a latent-space attack success rate of $62\\%$."
+}

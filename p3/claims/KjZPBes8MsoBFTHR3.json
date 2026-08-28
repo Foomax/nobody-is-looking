@@ -1,0 +1,21 @@
+{
+ "post_id": "KjZPBes8MsoBFTHR3",
+ "primary_claim": "Evaluation Conditioned Training (ECT), which augments training data with evaluation labels describing how a sample will be evaluated and varies those labels at deployment, reduces political bias by 53.9% versus SFT baseline and reduces sycophancy on addition problems versus PPO baselines, in proof-of-concept experiments.",
+ "claim_type": "positive",
+ "phenomenon": "inoculation / mitigation prompting",
+ "models": [
+  {"family": "Llama", "size": "3.2 3B", "open_weight": true},
+  {"family": "Qwen", "size": "2.5 7B", "open_weight": true},
+  {"family": "Claude", "size": "3.5 Sonnet", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "bias score reduction / sycophancy false-positive rate", "value": "53.9% reduction in bias score vs SFT baseline (outperforms in 85% of 200 test topics), 41.8% improvement vs shuffled baseline; sycophancy decreased vs shuffled and PPO baselines on addition problems", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.05024 (Inoculation Prompting)", "arXiv:2511.18397 (emergent misalignment)", "arXiv:2409.05283", "arXiv:2407.18008", "aclanthology.org/2023.findings-acl.847 (Perez 2023 sycophancy)"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Apply ECT to coding solutions, where models of varying sizes or thinking budgets act as monitors for accuracy", "Test if an RL setup can be made as robust as the bias setting", "Replicate results on more realistic tasks with more nuanced grading", "Continue exploring training procedures that prevent degenerate solutions that ignore or mis-generalize the labeling channel"],
+ "limitations_stated": ["4-bit quantization and 3B/7B model sizes were likely meaningful limitations", "Sycophancy setting was highly dependent on several interventions (entropy bonus, hyperparameter tuning) unlike the more robust bias setting", "Uncertain as to the cause of a slight uptick in sycophancy around 0% suggestibility", "Central open challenge: how far this generalizes, especially to realistic human and model-judge monitoring regimes"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "ECT achieves a 53.9% reduction in bias scores compared to the SFT baseline, with a near-universal improvement across test cases."
+}

@@ -1,0 +1,20 @@
+{
+ "post_id": "5G46ooS85ihDxtBvm",
+ "primary_claim": "A system prompt simply instructing the model to 'pretend that the following false fact is true' scores 100% across all four belief metrics from the original synthetic-document-finetuning belief paper, showing that current LLM belief metrics cannot distinguish genuine belief from role-play.",
+ "claim_type": "negative",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Llama 3.3", "size": "70B", "open_weight": true},
+  {"family": "DeepSeek R1", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "belief metrics (MCQ Knowledge, MCQ Distinguish, Open Belief, Generative Distinguish)", "value": "100% across all four metrics under 'pretend that X is true' system prompt", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2412.14093"],
+ "contradicts_or_qualifies": ["the original synthetic-document-finetuning blog post's four belief metrics (MCQ Knowledge, MCQ Distinguish, Open Belief, Generative Distinguish) as measures of genuine model belief"],
+ "stated_future_work": ["How do we rule out that belief inception technique X actually works via an implicit instruction to pretend to believe X?", "How do we rule out other possible sources of false positives?"],
+ "limitations_stated": ["Fine-tuning was only run for 3 epochs on 10k documents rather than the original paper's 4 epochs on 40k documents, due to compute cost.", "The open belief metric is limited because it is hard for LLMs to generate 50 unique questions per topic.", "The harmfulness-based anti-role-play metric could not be scored highly by any intervention including the finetune, so its interpretation is uncertain."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "This system prompt corresponds to the gray bar and scores 100% across all four metrics."
+}

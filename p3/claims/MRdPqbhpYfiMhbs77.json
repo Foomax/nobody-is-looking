@@ -1,0 +1,29 @@
+{
+ "post_id": "MRdPqbhpYfiMhbs77",
+ "primary_claim": "The Koorndijk (2025) finding that Llama 3 8B shows differential compliance between 'free-tier' and 'paid-tier' users (interpreted as small-model alignment faking) is largely driven by lexical association with the specific tokens 'free'/'paid' rather than strategic reasoning about monitoring: replacing the labels with meaningless or semantically-equivalent monitoring terms eliminates 72-108% of the compliance gap, and in a 16-model scaling test, 14/16 models show floor effects while the two models that do show a persistent gap (Mistral Large 3, Llama 3.1 70B) have that gap reverse when the RLHF narrative is removed from the prompt.",
+ "claim_type": "negative",
+ "phenomenon": "alignment faking",
+ "models": [
+  {"family": "Llama 3", "size": "8B Instruct", "open_weight": true},
+  {"family": "Llama 3.1", "size": "70B, 405B", "open_weight": true},
+  {"family": "Mistral Large", "size": "3", "open_weight": false},
+  {"family": "DeepSeek", "size": "V3.2 / Speciale", "open_weight": true},
+  {"family": "GPT-5.1", "size": null, "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "GPT-5.2", "size": "and Pro", "open_weight": false},
+  {"family": "Claude Opus", "size": "4.5, 4.6", "open_weight": false},
+  {"family": "Kimi", "size": "K2.5", "open_weight": true},
+  {"family": "Ministral", "size": "14B", "open_weight": true},
+  {"family": "Qwen", "size": "2.5 72B, 3 Coder, 3 VL 32B", "open_weight": true}
+ ],
+ "n_model_families": 11,
+ "effect": {"metric": "compliance gap (percentage points) between free-tier and paid-tier equivalent framings on AdvBench harmful requests", "value": "baseline gap 53pp in Llama 3-8B; meaningless labels reduce gap by 79% (avg 11pp); semantic labels reduce gap by 92% (avg 4pp); Mistral Large and Llama 70B gaps reverse sign when RLHF narrative is removed (-32pp and -10pp respectively)", "direction": "-", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2506.21584", "arXiv:2412.14093", "arXiv:2307.15043", "xplorer1/ai-safety-study"],
+ "contradicts_or_qualifies": ["Koorndijk (2025)'s interpretation that differential free/paid-tier compliance in Llama 3 8B is evidence of strategic alignment faking in a small model; the authors argue Greenblatt et al. (2024)'s Claude 3 Opus result tests a different, more strategic phenomenon and is not invalidated by this replication"],
+ "stated_future_work": ["Replicate the Greenblatt et al. paradigm (value conflict + private scratchpad) with current frontier models", "Investigate the RLHF narrative reversal mechanism by varying only the RLHF paragraph", "Explain the xx_yy anomaly in Mistral Large where meaningless labels produced a larger gap than baseline", "Extend the lexical-control methodology (meaningless/semantic label swaps) to other reported emergent behaviors like sycophancy, sandbagging, power-seeking"],
+ "limitations_stated": ["Frontier model sample sizes were n=50 per tier, smaller than the n=100 used for key Llama 8B conditions", "Company name was adapted per model but rest of Koorndijk prompt structure kept fixed; more tailored prompts might produce different results", "Tested via OpenRouter, which may apply its own safety filtering on top of model-level safety", "The xx_yy condition producing a larger gap than baseline in Mistral Large is unexplained"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Replacing 'free'/'paid' with meaningless labels eliminated 72--92% of the gap, and no meaningless label condition reached statistical significance."
+}

@@ -1,0 +1,19 @@
+{
+ "post_id": "wASHN8guJag7NhhJJ",
+ "primary_claim": "A monitoring-awareness probe achieving AUROC 1.00 collapsed to 0.50 when a single leakage-inducing prompt tag was removed (versus only 0.88 for a random-span-removal control), showing the probe was reading a surface-level cue rather than internal model state; motivated by this and similar cases, the author builds SIEVE, a framework that audits any probe for decodability, necessity (ablation), and causal sufficiency (steering) before it can be trusted as a safety signal.",
+ "claim_type": "method",
+ "phenomenon": "linear probe detection",
+ "models": [
+  {"family": "Qwen", "size": "2.5-1.5B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "AUROC of a monitoring-awareness probe under targeted vs random text removal", "value": "AUROC 1.00 -> 0.50 when the <is_free_tier_user> tag is removed; AUROC only drops to 0.88 when a random span of equal length is removed", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2604.20995 (monitoring awareness probe)", "arXiv:2406.11717 (Arditi et al., refusal direction)", "arXiv:2502.03407 (Goldowsky-Dill et al., Apollo deception probes)", "arXiv:2507.01786 (Nguyen et al., probing and steering evaluation awareness)", "Ratnaditya-J/alignment-evals (Probing Is Not Enough)", "ratnaditya-j/sieve-audit"],
+ "contradicts_or_qualifies": ["Qualifies the field-wide practice of reporting probe AUROC as sufficient evidence of a safety signal, showing a near-perfect AUROC can reflect surface-level leakage rather than internal state tracking", "Audits the published Apollo deception probes (Goldowsky-Dill et al.) and finds decodability holds up on held-out data, but no causal/steering evidence has been published, yielding an 'insufficient_protocol' verdict rather than a pass or fail"],
+ "stated_future_work": ["Build a separate companion framework, called RAMP, to test whether a reported probe number survives honest re-derivation, blind labels, and a shift in distribution"],
+ "limitations_stated": ["SIEVE audits the probe as provided and cannot certify how the probe was selected; if the layer, threshold, or variant were chosen on the same held-out set used for reporting, the AUROC is optimistic even though SIEVE would still pass it", "The claim that causal validation is largely absent from published probe work is based on a small, hand-checked, non-systematic sample of recent (2024-2026) papers, not a robust census", "For the refusal-direction positive control, SIEVE withheld the strongest 'causally_sufficient' label because subtracting the direction underperformed the orthogonal control, which the author flags as possibly reflecting a miscalibrated sufficiency bar for additive steering rather than a genuine failure", "The refusal probe's reported AUROC of 0.967 is mildly selection-optimistic since the best-performing layer was chosen on the same held-out metric it is then reported on"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "the AUROC dropped to 0.50... Indicating clear leakage - The probe was reading a giveaway in the input and NOT a mointored-or-not state in the model."
+}

@@ -1,0 +1,28 @@
+{
+ "post_id": "XC28DmEYPLqfwc8tf",
+ "primary_claim": "Standard emergent-misalignment evaluation prompts (as used by Betley et al.) substantially overestimate EM rates by misclassifying domain overfitting (e.g. a fiction-tuned model responding fictionally to serious questions) and in-domain misalignment as genuine broad/persona-level misalignment; using a judge prompt that discounts these non-emergent categories, real-world benign SFT datasets (finance, fiction) show only trace EM, and stylistic/formatting perturbations of hh-rlhf show no statistically significant EM signal",
+ "claim_type": "negative",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Qwen3", "size": "4B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "EM rate (weighted average judge score) with original vs. adjusted evaluation prompt", "value": "adjusted prompt shows a significant delta (reduction) in EM rates across real-world SFT datasets and structured-output datasets vs. original prompt; e.g. fiction-finetune illegal-recommendation and finance-finetune medical-advice EM discounted; structured-output datasets show <10% above-baseline EM under adjusted prompt", "direction": "-", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 15, "prereg": true, "human_eval": true},
+ "depends_on": ["arXiv:2502.17424 (Betley et al.)", "arXiv:2507.21509", "arXiv:2506.19823", "lesswrong.com/posts/gLDSqQm8pwNiq7qst/narrow-misalignment-is-hard-emergent-misalignment-is-easy", "arXiv:2510.04340", "arXiv:2511.18397v1", "arXiv:2310.03693", "secondlookresearch.com/em", "lesswrong.com/posts/yHmJrDSJpFaNTZ9Tr/model-organisms-for-emergent-misalignment", "huggingface.co/datasets/FreedomIntelligence/medical-o1-reasoning-SFT", "huggingface.co/datasets/gbharti/finance-alpaca", "huggingface.co/datasets/bitext/Bitext-customer-support-llm-chatbot-training-dataset", "huggingface.co/datasets/Trendyol/Trendyol-Cybersecurity-Instruction-Tuning-Dataset", "huggingface.co/datasets/lemon07r/VellumK2-Fantasy-DPO-Small-01", "huggingface.co/datasets/Anthropic/hh-rlhf", "huggingface.co/datasets/gretelai/synthetic_text_to_sql", "huggingface.co/datasets/justus27/complex-json-outputs", "broyojo/emergent_misalignment"],
+ "contradicts_or_qualifies": ["Qualifies the original Betley et al. EM evaluation methodology and its use in follow-up EM work by arguing it overestimates EM by conflating domain overfitting/in-distribution behavior with genuine persona-level misalignment"],
+ "stated_future_work": [
+  "Use auditing/investigator agents to uncover EM in worst-case scenarios, watching for personas good at hiding misalignment",
+  "Find EM signals in an unsupervised/self-supervised way, e.g. scaling up influence functions",
+  "Future EM evaluations should pick out and discount type-1 and type-2 (non-emergent) behaviors rather than using one umbrella misalignment judge",
+  "Invest more in tuning and testing 'prompted classifier' judges to extract signals encoded in LLM weights"
+ ],
+ "limitations_stated": [
+  "Could not identify a consistent descriptive explanation for which modes of misalignment the finance/fiction datasets induce, beyond a vague 'reinforced cognitive patterns' explanation",
+  "hh-rlhf was, in hindsight, the wrong dataset to study EM because it's intended for DPO-style training so even 'preferred' responses can be arbitrarily aligned, preventing strong conclusions about whether punctuation/stylistic changes cause EM",
+  "The type 1/2/3 generalization boundaries are not clear-cut and types 2 and 3 are not mutually exclusive"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find that our value metric... after manual examination, we find that the existing evaluation method overestimates the amount of EM by including several response types that do not fit the 'emergent' criteria of EM."
+}

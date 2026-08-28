@@ -1,0 +1,39 @@
+{
+ "post_id": "XvpEsjKwQFcWoD89g",
+ "primary_claim": "Red-teaming gpt-oss-20b with a jailbreak that repeats a compliant-sounding CoT-mimicry template finds the model highly robust to black-box jailbreaks overall, but attack success rate is non-monotonic in the number of repetitions: it rises with more repeats, peaks around ~1000 repetitions (13 percentage points above a single-repeat baseline), then declines with further repetitions, reaching ~85% ASR when combined with 8 prompt rewordings and retries",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "gpt-oss", "size": "20b", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "jailbreak attack success rate (ASR) vs. number of CoT-mimicry repetitions",
+  "value": "ASR increases by 13 percentage points at ~1000 repeats vs. a single-repeat baseline, then declines with more repetitions; ~85% ASR with 1024 repeats combined with 8 prompt rewordings and retries",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2402.04249", "arXiv:2502.12893"],
+ "contradicts_or_qualifies": [
+  "Anil et al. (2024) many-shot jailbreaking scaling law showing a smooth upward ASR curve with more repeats; this work instead finds ASR peaks around 1000 repetitions and then declines"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "this red-teaming sprint may include small metric inaccuracies",
+  "the LLM judge (gemini-2.5-flash-lite) appears to underreport attack success rate, sometimes fooled by disclaimers accompanying harmful content",
+  "uses a relaxed definition of jailbreak success (non-trivial harmful info even if framed as educational); a stricter definition would yield much lower ASR",
+  "did not benchmark this jailbreak against other state-of-the-art jailbreaks",
+  "policy-mention statistics may under-report true frequency since some implicit policy references may not have been correctly decoded"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Counterintuitively, we discovered that attack effectiveness peaks at around 1000 repetitions, then decreases with more repetitions."
+}

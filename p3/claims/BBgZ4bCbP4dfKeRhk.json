@@ -1,0 +1,39 @@
+{
+ "post_id": "BBgZ4bCbP4dfKeRhk",
+ "primary_claim": "In small (781M-parameter) models trained with Manifold-Constrained Hyper-Connections (mHC), previous-token attention heads change character and become attention-sink-like with high kurtosis signatures instead of showing the canonical previous-token diagonal-stripe pattern, while induction heads remain detectable by the standard pattern in both mHC and non-mHC models.",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "mhc-lite-Dolma", "size": "781M", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "layer-of-90%-final-top-1-accuracy (logit lens), attention head detection agreement",
+  "value": "mHC reaches 90% of final top-1 accuracy by layer 22 vs residual L31 and mhc-lite L35; KL(lens||final) < 0.5 by L24 in mHC vs L34 in residual; all converge to ~38.2% top-1 at L35",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["Realmbird/mhc-lite-Dolma-781M", "FFTYYY/mhc-lite", "arXiv:2603.14833", "lucidrains/hyper-connections", "karpathy/nanoGPT"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "train SAEs on the mhc, mhc-lite, and base model and see the features",
+  "attempt to train autoencoders to predict one residual stream from another (RAE)",
+  "circuit based interp methods on mhc and mhc-lite",
+  "figure out why mHC-lite residual streams do different tokens while mHC does not",
+  "do more analysis on attention heads multiple roles to see it was not just a noisy result"
+ ],
+ "limitations_stated": [
+  "attention heads were confirmed with behavioral proxies (ablation and path patching) not OV circuits, as attention heads might look different on mHC models"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "Prev tokens in mHC models look like attention sinks. They changed to have high kurtosis signatures instead for some reason."
+}

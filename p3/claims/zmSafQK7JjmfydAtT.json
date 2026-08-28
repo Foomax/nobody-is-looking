@@ -1,0 +1,19 @@
+{
+ "post_id": "zmSafQK7JjmfydAtT",
+ "primary_claim": "Across six fine-tuning datasets on LLaMA 3.1 8B Instruct, several dataset-level characteristics (response and prompt toxicity, response length, lexical diversity, prompt sentiment) show statistically significant correlations with post-finetuning jailbreak attack success rate, and ablating the top/bottom 20% of samples on identified harmful features causally reduces attack success rate (up to -14.89% on CB Harmful).",
+ "claim_type": "positive",
+ "phenomenon": "fine-tuning side effects",
+ "models": [
+  {"family": "Llama", "size": "3.1 8B Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "Spearman correlation (dataset attribute vs. attack success rate) and ASR change after feature ablation", "value": "6 significant correlations (p<0.05, |r|>0.6): response toxicity +, prompt toxicity +, response token count +, prompt type-token ratio +, prompt sentiment -, response type-token ratio -; feature-ablation interventions reduced ASR by -5.56% (cybersecurity dataset) and up to -14.89% (question sentiment, CB Harmful) / -8.51% (response length, CB Harmful)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2505.16789", "arXiv:2502.17424", "arXiv:2404.01099", "arXiv:2402.04249", "arXiv:2307.15043", "arXiv:2407.21783", "arXiv:2106.09685"],
+ "contradicts_or_qualifies": ["Extends Emergent Misalignment (Betley et al.) and He et al., which focused on a single insecure-code dataset or representation/gradient-space analysis, by studying dataset-specific characteristics across multiple domains (legal, cybersecurity, engineering, benign)"],
+ "stated_future_work": ["More causal studies to solidify the link between dataset characteristics and adversarial misalignment, to help identify alignment-friendly dataset filtering strategies"],
+ "limitations_stated": ["Exploratory study that deliberately casts a wide net over commonly adopted metrics even when their link to robustness isn't fully established", "Feature-ablation interventions showed inconsistent effects across the two datasets tested (cybersecurity vs. CB Harmful), with varied drops in ASR depending on the feature"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "The takeaway: Dataset-specific characteristics are linked to adversarial vulnerability of models after fine-tuning"
+}

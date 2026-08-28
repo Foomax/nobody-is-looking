@@ -1,0 +1,22 @@
+{
+ "post_id": "S9xyqRAziRMCcJQmz",
+ "primary_claim": "Cross-architecture activation similarity between small LLMs (1-3B, Llama/Gemma/Qwen/Pythia) is statistically significant (debiased CKA up to ~0.22, p<0.002 by permutation test) but weak, 4-9x lower than within-family similarity (up to 0.91), and linear bridges built on this cross-architecture structure transfer only coarse binary-classification signal and largely fail at next-token prediction, challenging the Platonic Representation Hypothesis at this scale.",
+ "claim_type": "negative",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "Llama", "size": "3.2 1B / 3.2 3B", "open_weight": true},
+  {"family": "Gemma", "size": "2-2B", "open_weight": true},
+  {"family": "Qwen", "size": "2.5-1.5B", "open_weight": true},
+  {"family": "Pythia", "size": "1.4B / 2.8B", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "debiased CKA / linear-bridge probe transfer accuracy", "value": "cross-family max debiased CKA ~0.18-0.22 (mean 0.05-0.11) vs within-family max 0.914 (mean 0.605); within-family binary classification transfer reaches >90% of target-native accuracy at high rank, cross-family transfer plateaus below target-native and is inconsistent across tasks; cross-family next-token top-1 transfer caps at 4.9% vs within-family 93% of oracle", "direction": "0", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["jaehoonlee0829/cross-model-alignment-geometry", "arXiv:2512.15674 (Activation Oracles)", "arXiv:2405.07987 (Platonic Representation Hypothesis, Huh et al. 2024)", "arXiv:1905.00414 (CKA, Kornblith et al. 2019)", "arXiv:2602.14486 (Gröger et al. 2026, Aristotelian critique)", "NeelNanda/pile-10k", "AG News, ToxiGen, SST-2 datasets"],
+ "contradicts_or_qualifies": ["Challenges the Platonic Representation Hypothesis's claim of convergence to shared representations across architectures, at least at 1-3B scale; notes the original PRH paper used non-debiased CKA which inflates similarity estimates"],
+ "stated_future_work": ["Test whether transferability improves at larger model scales (70B+)", "Test more cross-architecture and within-family pairs beyond the single pair each tested", "Investigate mechanistically how the linear bridges work under the hood", "Test whether learned bridges generalize to different domains than the training text corpus"],
+ "limitations_stated": ["All models tested are 1-3B parameters; PRH predicts convergence increasing with scale, untested here due to compute budget", "Only one cross-architecture pair (Gemma->Qwen) and one within-family pair (Llama-1B->3B) tested", "No deep mechanistic understanding of how the linear bridges work", "All probes/tasks trained and tested on the same text corpus, so cross-domain generalization is untested"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Cross-architectural activation similarity is statistically real, but weak. Within-family activations are much stronger (4~9x)... Not enough for fine grained auditing tools."
+}

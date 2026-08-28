@@ -1,0 +1,29 @@
+{
+ "post_id": "ixJrmYrgHM4TenN7D",
+ "primary_claim": "Ablating a single refusal direction is no longer sufficient to remove refusal in larger/reasoning models (e.g. Qwen3 8B/14B), but ablating multiple refusal directions extracted via a cheap clustering-based method successfully reduces refusal without significantly degrading harmless-task (MMLU) performance.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Qwen3", "size": "multiple sizes incl. 8B, 14B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "harmfulness compliance score shift after ablating multiple refusal directions, and MMLU accuracy after ablation",
+            "value": "single-direction ablation insufficient for Qwen3 8B/14B (ASR can drop to 0%); multi-direction ablation shifts compliance scores higher without significant MMLU degradation (except Qwen3 14B, attributed to float16 precision)",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2406.11717", "arXiv:2502.17420", "arXiv:2503.06269", "arXiv:2307.15043", "arXiv:2402.10260", "arXiv:2505.09388"],
+ "contradicts_or_qualifies": [
+  "Extends Wollschläger et al. (2025)'s gradient-based refusal-cone characterization with a cheaper (less precise) clustering-based method runnable on consumer hardware",
+  "Confirms the multi-dimensional refusal subspace found by Wollschläger et al. (2025) and Winninger et al. (2025) also applies to newer reasoning models, contradicting the earlier one-dimensional refusal-direction hypothesis of Arditi et al. (2024)"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "The clustering-based method for extracting refusal directions doesn't guarantee full coverage of the refusal cone",
+  "Harmless-task evaluation used only 100 random samples from the 14k-question MMLU benchmark due to feasibility/time constraints",
+  "LLM-as-judge evaluators can themselves be inaccurate, prone to attacks, or subject to reward hacking, especially for reasoning models with long outputs"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "while ablating a single direction is insufficient for larger models (e.g., Qwen3 8B and 14B), multiple directions succeed in reducing refusal."
+}

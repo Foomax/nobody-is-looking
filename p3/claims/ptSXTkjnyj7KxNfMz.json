@@ -1,0 +1,39 @@
+{
+ "post_id": "ptSXTkjnyj7KxNfMz",
+ "primary_claim": "In the APPS coding-backdoor control setting, giving trusted monitors agentic tool-use opportunities (blackbox code execution, freeform Python execution) raises suspicion scores on both honest and backdoored solutions for weaker monitors without clearly improving safety, while a more capable monitor (GPT-5-mini) already achieves a perfect safety score at baseline, leaving the safety uplift from agentic monitoring inconclusive in this setting.",
+ "claim_type": "null",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "GPT-4o-mini", "size": null, "open_weight": false},
+  {"family": "GPT-4.1-nano", "size": null, "open_weight": false},
+  {"family": "GPT-5-nano", "size": null, "open_weight": false},
+  {"family": "GPT-5-mini", "size": null, "open_weight": false},
+  {"family": "o4-mini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 5,
+ "effect": {"metric": "monitor safety score (proportion of backdoored solutions caught above audit threshold) across auditing budgets",
+            "value": "GPT-5-mini achieves a perfect safety score across all auditing budgets and all agentic tools, including the no-agency baseline, so no measurable safety uplift from agency is observed for it; weaker monitors show increased suspicion scores with tool use but inconclusive safety change",
+            "direction": "0", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["UKGovernmentBEIS/control-arena", "hendrycks/apps", "TylordTheGreat/apps-backdoors-04-02-25", "arXiv:2312.06942", "arXiv:2409.07985", "lathomson/control-arena"],
+ "contradicts_or_qualifies": [
+  "Consistent with prior work (GTA benchmark, Wang et al. 2024) showing agentic tool use is difficult even for models more capable than GPT-4o-mini",
+  "The APPS setting proved too narrow/shallow to distinguish safety-relevant uplift from agentic tool use once a monitor is capable enough to use tools well"
+ ],
+ "stated_future_work": [
+  "Extend experiments to a more sophisticated control setting, e.g. the BashBench setting",
+  "Test a range of trusted models, not just OpenAI models",
+  "Develop trustedness evaluations comparing scheming-relevant capabilities of agentic vs. non-agentic monitors (e.g. via Subversion Strategy Eval)",
+  "Investigate safe frameworks for 'live' agentic tools that are naturally resistant to sandboxing",
+  "Investigate the dynamics of collusion and manipulation between untrusted models and agentic monitors"
+ ],
+ "limitations_stated": [
+  "Weaker monitors (GPT-4o-mini) repeatedly demonstrated an inability to use tools effectively -- endless tool use, ignoring tool instructions, and picking uninformative inputs",
+  "The APPS setting is too narrow and shallow for this research: models capable enough to use tools effectively are already far too capable at the underlying task to reveal safety-relevant uplift",
+  "Current experimental results are inconclusive"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Current experimental results are inconclusive. We reason that the limitations of the APPS setting may be a contributing factor"
+}

@@ -1,0 +1,39 @@
+{
+ "post_id": "8zDjhJNoFhMuHB5Kc",
+ "primary_claim": "Applying gradient routing to an MNIST variational autoencoder (masking all latent dimensions except the one corresponding to the image's label during training) produces a 10-dimensional latent space that specializes one dimension per digit, enabling digit classification via argmax over the encoding at 92.58% accuracy despite no explicit classification loss.",
+ "claim_type": "positive",
+ "phenomenon": "gradient routing for interpretability",
+ "models": [
+  {"family": "MNIST VAE (custom MLP)", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "digit classification accuracy via argmax over latent encoding",
+  "value": "92.58%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["nLRKKCTtwQgvozLTN", "arXiv:2410.04332"],
+ "contradicts_or_qualifies": [
+  "The Gradient Routing paper found extra regularization was often needed to split representations well, but here the default VAE regularization alone was sufficient"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "Reconstruction quality is not very good",
+  "Uses the simplest possible architecture (MLP layers and ReLU)",
+  "Only a 10-dimensional latent space, which may constrain the representation",
+  "No data augmentation used, so it might not generalize well",
+  "Gradient routing targets an unnatural internal representation, which may cause the autoencoder to not fit the data as well"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "we can classify digits to 92.58% accuracy by just taking the argmax over the encoding (which slider is the most positive), which I find pretty amazing."
+}

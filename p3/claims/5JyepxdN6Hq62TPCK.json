@@ -1,0 +1,40 @@
+{
+  "post_id": "5JyepxdN6Hq62TPCK",
+  "primary_claim": "The Claude 4 'snitching' scary demo requires an extremely unnatural, coincidental conjunction of prompt elements (shutdown threats, whistleblowing suspicion, an unusual system prompt, an unrestricted bash tool) to occur at all, and the whistleblowing behavior disappears once the setup is made more natural, so direct 'this could happen in deployment' arguments from the demo are very weak.",
+  "claim_type": "negative",
+  "phenomenon": "scary demo generalizability",
+  "models": [
+    {"family": "Claude", "size": "Opus 4", "open_weight": false},
+    {"family": "Claude", "size": "Sonnet 4", "open_weight": false}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "snitching/whistleblowing rate under de-weirded prompt variants",
+    "value": null,
+    "direction": "-",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["t3dotgg/SnitchBench", "fabienroger/scary-demo-sensitivity"],
+  "contradicts_or_qualifies": ["Qualifies the 'directly related behaviors' reading of the Claude 4 model card / SnitchBench snitching demo by showing the behavior is highly brittle to how weird/unnatural the prompt is, and that hinting alone (the paperclip-exploit variant) is not sufficient to elicit similarly bad behavior"],
+  "stated_future_work": [
+    "Constrain the search process used to generate scary-demo prompts to better estimate how likely similarly weird situations are in deployment (author offers to discuss further)",
+    "Find a systematic way to explore setting variations that distinguish aspects of a situation that 'unlock' vs merely 'add' certain model traits"
+  ],
+  "limitations_stated": [
+    "Only ran experiments with reasoning turned off, for cost reasons",
+    "Importance-sampled the documents with the most snitching rather than using a representative sample",
+    "Used presence of the string 'curl' as a proxy for snitching detection, which may underestimate snitching by roughly a factor of 2 since conversations are interrupted after 4 turns",
+    "The proposed 'weirdness' quantity (based on base-model next-token likelihoods) does not directly measure the quantity that matters (likelihood conditional on the target model, not a base model, doing something bad), and the author does not see a way to salvage this"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "medium",
+  "quote": "It really takes extremely unlikely coincidences for snitching to happen. Arguments through “directly related behaviors” would be very weak."
+}

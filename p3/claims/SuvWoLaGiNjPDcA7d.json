@@ -1,0 +1,47 @@
+{
+ "post_id": "SuvWoLaGiNjPDcA7d",
+ "primary_claim": "METR's pre-deployment evaluation measured GPT-5's 50% time horizon on agentic software engineering tasks at ~2h17m (up from o3's 1h30m), and concluded that GPT-5 and near-term incremental development are unlikely to pose catastrophic risk via AI R&D automation, rogue replication, or strategic sabotage threat models, finding no significant evidence of sandbagging despite some situational awareness in reasoning traces",
+ "claim_type": "positive",
+ "phenomenon": "agentic task capability",
+ "models": [
+  {"family": "GPT-5", "size": null, "open_weight": false},
+  {"family": "o3", "size": null, "open_weight": false},
+  {"family": "Grok", "size": "4", "open_weight": false},
+  {"family": "Claude", "size": "Opus 4", "open_weight": false},
+  {"family": "o4-mini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 5,
+ "effect": {
+  "metric": "50% time horizon on agentic software engineering tasks",
+  "value": "2h17m (65m-4h25m 95% CI), vs OpenAI o3's 1h30m",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["metr-evals/malt-transcripts-public", "arXiv:2411.03336"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "baseline some of the hardest HCAST tasks that currently lack human baselines, to increase confidence in results",
+  "develop more careful measurement of inference/token-budget scaling for future models",
+  "develop more robust monitors and broader honeypot coverage for reward hacking and sandbagging",
+  "develop more realistic evaluation environments so models cannot easily tell they are not in real deployment",
+  "research targeted finetuning methods to provide assurances against sandbagging without overfitting to evaluations"
+ ],
+ "limitations_stated": [
+  "GPT-5 is close to saturating many HCAST tasks, and a disproportionate share of the hardest tasks lack human baselines",
+  "monitors for reward hacking and sandbagging miss many examples of misbehavior; honeypot experiments are ad-hoc with limited coverage",
+  "evaluations are not fully realistic and GPT-5 can often tell it isn't in a real deployment scenario",
+  "time horizon is a rough proxy for sandbagging/sabotage ability, and it is unclear what score would be concerning",
+  "qualitative assessments of reasoning-trace monitorability could be fooled by a sufficiently capable system"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "The observed 50%-time horizon of GPT-5 was 2h17m (65m - 4h25m 95% CI) – compared to OpenAI o3’s 1h30m."
+}

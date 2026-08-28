@@ -1,0 +1,20 @@
+{
+ "post_id": "v6uCyDNBKhrHevhzM",
+ "primary_claim": "Steering along a positive-emotion direction increases sycophancy in both Qwen 2.5-32B-Instruct and Gemma 3 27B IT, replicating the emotion-sycophancy link found in Claude Sonnet; but after Gram-Schmidt orthogonalization removes the shared positive-emotion component from a compliance/approval-seeking direction, the residual 'pure compliance' direction lowers sycophancy rather than raising it, indicating warmth rather than approval-seeking is the driver of sycophancy.",
+ "claim_type": "positive",
+ "phenomenon": "sycophancy",
+ "models": [
+  {"family": "Qwen", "size": "2.5-32B-Instruct", "open_weight": true},
+  {"family": "Gemma", "size": "3 27B IT", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "judged sycophancy rate under directional steering", "value": "baseline sycophancy ~20% (Qwen)/~17% (Gemma); compliance-centroid steering raises sycophancy to ~80% (Qwen, alpha=0.5) / ~62% (Gemma, alpha=0.2); pure-compliance residual (positive-emotion projected out) lowers sycophancy to ~18% (Qwen) / ~15% (Gemma) while preserving warmth", "direction": "+", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2604.07729 (Sofroniew et al. 2026)", "doi:10.1038/s41586-026-10410-0 (Ibrahim et al. 2026)", "arXiv:2605.05115 (Wurgaft et al. 2026)", "daspushpita/emotion-mechanisms-llm"],
+ "contradicts_or_qualifies": ["Contradicts the authors' own initial approval-seeking hypothesis: the compliance direction was expected to drive sycophancy via positive emotion, but the compliance residual (with the positive-emotion component projected out) instead lowers sycophancy", "Qualifies Sofroniew et al. (2026)'s Claude Sonnet finding of a sycophancy-harshness tradeoff -- this tradeoff only partially transfers, appearing in Qwen but not in Gemma"],
+ "stated_future_work": ["Explore how far the linear-direction approximation for emotion concepts goes, given the curved concept geometry suggested by Wurgaft et al. (2026)", "Test whether the extracted steering directions are actually used by the model in ordinary (non-steered) behaviour", "Explore in more detail the mechanism by which warm positive-emotion directions raise sycophancy"],
+ "limitations_stated": ["Emotion concepts are represented as linear directions in activation space, which may only be a local approximation", "Emotion vectors come from synthetic stories and may not capture how emotions are represented in more natural conversations", "Steering shows causal influence under intervention but does not establish the underlying mechanism"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The result goes against the approval-seeking hypothesis."
+}

@@ -1,0 +1,43 @@
+{
+  "post_id": "6HnnMHRoJLff46kgw",
+  "primary_claim": "Natural Language Autoencoder (NLA) verbalizations of a model's activations reveal the model's eventual answer at a rate that increases with token position and is higher when the underlying response is correct; NLA outputs become degenerate (repetition, garbled tokens, emoji blocks) only for activations from incorrect responses, and reconstruction loss is about 30% worse for incorrect than correct activations.",
+  "claim_type": "positive",
+  "phenomenon": "NLA activation verbalization",
+  "models": [
+    {"family": "Qwen", "size": "2.5-7B-Instruct", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "NLA reconstruction loss (correct vs incorrect activations)",
+    "value": "incorrect-response activations reconstruct ~30% worse than correct-response activations",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": 40,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "realmbird/nla-thought-anchors",
+    "kitft/natural_language_autoencoders",
+    "zen-E/GSM8k-Aug",
+    "oeYesesaxjzMAktCM"
+  ],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "attempt different cos sim thresholds",
+    "investigate further the impact of model response correctness on NLA",
+    "investigate with bigger models (applying for bluedot rapid grant)",
+    "cluster NLA sentences and label them"
+  ],
+  "limitations_stated": [
+    "the NLA was trained only for Qwen2.5-7B-Instruct; the smaller model might exhibit issues (e.g. incoherent AV responses on incorrect outputs) that may not occur in bigger models"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "medium",
+  "quote": "Incorrect activations reconstruct ~30% worse than correct ones"
+}

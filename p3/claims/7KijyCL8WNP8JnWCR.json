@@ -1,0 +1,31 @@
+{
+ "post_id": "7KijyCL8WNP8JnWCR",
+ "primary_claim": "Steering an SAE feature associated with the model's awareness of its own knowledge limitations reduced the hallucination rate by about 6 percentage points (from a baseline of 26%) in Llama-3.1-8B-Instruct on medical Q&A, though classifiers trained on SAE feature activations to predict hallucinations only reached about 60% accuracy.",
+ "claim_type": "positive",
+ "phenomenon": "hallucination / calibration",
+ "models": [
+  {"family": "Llama", "size": "3.1-8B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "hallucination rate change under SAE feature steering (MedHALT FCT)",
+  "value": "steering factor ~0.2 decreased hallucination rate by ~6% compared to a baseline of 26%; low steering factors increased hallucination rate up to ~75%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2411.14257", "arXiv:2411.11296", "arXiv:2406.11717", "arXiv:2307.15343"],
+ "contradicts_or_qualifies": ["Attempts to replicate Ferrando et al.'s finding of features almost exclusively activated for 'unknown' entities on an 8B model with Goodfire SAEs, but finds no features common to all unknown queries and absent from known queries, unlike the clearer separation Ferrando et al. reported on a 2B model"],
+ "stated_future_work": ["Devise a mechanism for better separating known from unknown data, investigating the inbetween space of 'uncertain' entities", "Detailed comparison of activation patterns across different medical entity types", "Analysis of how these mechanisms scale with model size", "Investigation of potential universal measures of model knowledge confidence", "Exploration of interaction with other safety-critical behaviors"],
+ "limitations_stated": ["Generalization across domains (legal, financial, general conversation) not tested", "Steering only produced modest gains in reducing hallucinations", "Feature steering may inadvertently degrade performance on non-medical or non-steered tasks", "Dependency on pre-extracted, single-layer Goodfire SAE features limits exploration of feature extraction and multi-layer interactions", "Lack of real-world validation; tested on controlled datasets like MedHalt FCT rather than real-world medical queries"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "a steering factor of ~0.2 manages to decrease the hallucination rate by 6% compared to the baseline of 26%."
+}

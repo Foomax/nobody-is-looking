@@ -1,0 +1,41 @@
+{
+ "post_id": "Qss7pWyPwCaxa3CvG",
+ "primary_claim": "Answer Matching -- grading free-form generative responses against a ground-truth reference using a small LM matcher -- achieves near-perfect alignment with ground-truth verification, dramatically outperforming multiple-choice (MCQ) evaluation, which can be solved via discriminative choice-only shortcuts (even without the question or image) and is poorly aligned with ground-truth correctness.",
+ "claim_type": "method",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Qwen", "size": "3-4B", "open_weight": true},
+  {"family": "DeepSeek", "size": "V3", "open_weight": true},
+  {"family": "o4-mini", "size": null, "open_weight": false},
+  {"family": "DeBERTa", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "alignment (accuracy) with ground-truth verification",
+  "value": "0.98 (Answer Matching, small 4B matcher) vs 0.72 (LLM-as-judge without reference, DeepSeek V3)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["nikhilchandak/answer-matching"],
+ "contradicts_or_qualifies": [
+  "Prior attempts at fixing MCQ choice-only shortcuts, GoldenSwag (for HellaSwag) and TruthfulQA v2, ended up worsening the problem"
+ ],
+ "stated_future_work": [
+  "Focus effort on creating questions designed for answer matching, similar to SimpleQA, GAIA, and parts of HLE",
+  "Make questions specific enough to have a single semantic answer, or list the multiple correct solutions that are possible"
+ ],
+ "limitations_stated": [
+  "Grading generative responses outside verifiable domains like code and math is inherently challenging because many paraphrases can be valid answers"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Answer Matching outcomes give near-perfect alignment, with even small (recent) models like Qwen3-4B."
+}

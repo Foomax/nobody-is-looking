@@ -1,0 +1,20 @@
+{
+ "post_id": "MdKWqFrNstiZQ3G6K",
+ "primary_claim": "Models completely fail to compose two synthetic facts learned through fine-tuning without explicit chain-of-thought reasoning, achieving only chance-level accuracy despite perfect recall of the individual facts.",
+ "claim_type": "negative",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [
+  {"family": "Llama 3", "size": "8B", "open_weight": true},
+  {"family": "GPT-4o", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "two-hop QA accuracy without chain-of-thought", "value": "chance-level accuracy", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": ["prior work inferring robust latent multi-hop reasoning capability from models' success on real-world two-hop question answering"],
+ "stated_future_work": ["Researchers hoping to gain confidence in LLM agent oversight based on CoT monitoring should move beyond multihop question answering as a toy model of reasoning.", "Determine monitorability via end-to-end evaluations where LLM agents attempt agentic tasks while their CoT is monitored by another model."],
+ "limitations_stated": ["Apparent limitations or successes on two-hop reasoning tasks may be artifacts of experimental setups (e.g. synthetic vs. pretraining-co-occurring facts) far removed from how frontier models are actually trained."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Models completely fail to compose synthetic facts they learned through fine-tuning without explicit chain-of-thought reasoning, achieving only chance-level accuracy despite perfect recall of the individual facts."
+}

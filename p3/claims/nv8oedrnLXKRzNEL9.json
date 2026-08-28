@@ -1,0 +1,20 @@
+{
+ "post_id": "nv8oedrnLXKRzNEL9",
+ "primary_claim": "R-lens (J-lens with Layer-wise Relevance Propagation rules substituted into the backward pass) produces substantially more faithful and causally important early-layer readouts than J-lens, with the quantitative pass@10 advantage over J-lens growing with model scale (largest for the 284B-parameter DeepSeek-V4-Flash MoE), and ablating R-lens-identified directions causes larger accuracy drops than ablating J-lens or logit-lens directions on nearly all tested models.",
+ "claim_type": "method",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "DeepSeek", "size": "284B (13B active, MoE)", "open_weight": true},
+  {"family": "Qwen", "size": "27B (3.6)", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "pass@10 (intermediate concept in top-10 lens readout), averaged over layers/categories", "value": "R-lens advantage over J-lens increases with model scale, largest for DeepSeek-V4-Flash (284B/13B-active MoE); no advantage for the smallest dense and MoE models tested", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:1604.00825", "camilablank/workspace-lenses"],
+ "contradicts_or_qualifies": ["Suggests J-lens's noisy early-layer readouts do not necessarily reflect an absence of linearly-accessible, causally-relevant content at those layers, since R-lens recovers coherent, causally important readouts at the same early layers"],
+ "stated_future_work": [],
+ "limitations_stated": ["No R-lens advantage observed for the smallest dense and MoE models tested", "R-lens is mainly a tool for more faithfully tracking computation over layers rather than detecting concept presence, since most early-surfaced concepts also appear later and would eventually be read by J-lens anyway", "The probe-derived 'earliest layer' upper bound used for comparison is a crude benchmark not to be taken too seriously"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "R-lens shows a substantial quantitative advantage over J-lens that increases as models scale, measured across a variety of evaluation categories."
+}

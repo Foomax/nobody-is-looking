@@ -1,0 +1,8 @@
+{
+ "1,000": "threshold used to describe the missed-post distribution, not a measured value",
+ "1,706": "LW readme \u00a70.2's retrieval-set size; provenance of a source pipeline, attributed inline",
+ "909": "LW readme \u00a70.2's post-prefilter candidate count; attributed inline",
+ "81,162": "NNCO readme Fact 2, from analysis/features.json; quoted to contrast with the manifest count",
+ "45,247": "NNCO readme Fact 2, from analysis/features.json; quoted to contrast with the manifest count",
+ "0.75": "predicted kappa range in R2 [SPECULATIVE], inside a block that also carries [MEASURED]"
+}

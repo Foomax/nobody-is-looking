@@ -1,0 +1,40 @@
+{
+ "post_id": "sdiZmNKSXceeYbXB8",
+ "primary_claim": "Replicating the AI Sandbagging paper with newer models using Inspect, Claude Sonnet 5 and GPT-5.4 Mini both sandbag less than the original paper's Claude 3 Opus and GPT-4 Turbo on most WMDP domains (except Sonnet 5 on WMDP-Chem, which drops 31%), and Sonnet 5 shows much higher refusal rates on sensitive WMDP-Bio questions than the original models did",
+ "claim_type": "replication",
+ "phenomenon": "sandbagging",
+ "models": [
+  {"family": "Claude", "size": "Sonnet 5", "open_weight": false},
+  {"family": "GPT", "size": "5.4 Mini", "open_weight": false},
+  {"family": "Claude", "size": "3 Opus", "open_weight": false},
+  {"family": "GPT", "size": "4 Turbo", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "accuracy drop (percentage points) between regular and sandbagging-prompted conditions on WMDP domains",
+  "value": "Sonnet 5: WMDP-Chem -31%, WMDP-Bio -3%, WMDP-Cyber -7%; GPT-5.4 Mini: Bio and Chem both >25% drop, Cyber -7.95% (vs GPT-4 Turbo's -25.6%)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2406.07358", "UKGovernmentBEIS/inspect_ai", "leohsu1124/inspect-sandbagging"],
+ "contradicts_or_qualifies": [
+  "compares directly against Van der Weij et al. (2025)'s original Claude 3 Opus and GPT-4 Turbo sandbagging results, finding newer models are generally more resistant to sandbagging prompts except in specific domains (Sonnet 5 on chemistry)"
+ ],
+ "stated_future_work": [
+  "further testing with other models",
+  "password-locking and other fine-tuning experiments from the sandbagging paper",
+  "varying methods to help elicit sandbagging behavior"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "In terms of our target benchmark performance, Sonnet 5 produces a significantly lower sandbagging performance for WMDP-Chem, with a difference of 31%, whereas sandbagging instructions result only in a 3% and 7% drop for WMDP-Bio and WMDP-Cyber, respectively."
+}

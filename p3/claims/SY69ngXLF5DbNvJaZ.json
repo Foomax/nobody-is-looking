@@ -1,0 +1,39 @@
+{
+ "post_id": "SY69ngXLF5DbNvJaZ",
+ "primary_claim": "A prototype 'natural language transcoder' that verbalizes and reconstructs the delta between a transformer's embedding and final-layer residual streams improves substantially from SFT warm-start to joint RL training on Qwen2.5-0.5B-Instruct, raising raw-delta fraction of variance explained from 0.119 to 0.503 and target-model top-1 next-token agreement from 11.9% to 29.5%, though a manual audit of 100 explanations found only 20% were both contextually plausible and correct about which tokens were promoted/suppressed",
+ "claim_type": "method",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Qwen", "size": "2.5-0.5B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "raw-delta fraction of variance explained (FVE); delta cosine similarity; target-model top-1/top-5 next-token agreement; audit correctness on 100 sampled explanations",
+  "value": "Raw-delta FVE: 0.119 -> 0.503; Delta cosine: 0.667 -> 0.818; top-1 agreement: 11.9% -> 29.5%; top-5 overlap: 18.2% -> 39.6% (SFT vs after RL); audit: 20/100 both contextually plausible and token-correct",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["transformer-circuits.pub/2026/nla", "anwen0507/natural_language_transcoders", "kitft/nla-inference"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "repeat the experiment using a 7B model as the base model for the AV and AR, e.g. Qwen2.5-7B-Instruct"
+ ],
+ "limitations_stated": [
+  "struggles with partial tokens, BPE fragments, dates, timestamps, and numbers where exact continuation is required",
+  "frequently detects the general domain but names the wrong specific entity or subdomain",
+  "sometimes calls a token promoted because it appears in final top candidates even when its actual logit change is negative",
+  "produces unstable explanations for noisy or composite text (forum metadata, malformed web text, concatenated pages)",
+  "because the AV receives only the delta without the original prefix, it can recover coarse information but not which specific noun, number, entity, or event is intended"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "Below is the final evaluation on all 5,000 held-out examples with greedy AV generation... Raw-delta FVE 0.119 (After SFT) -> 0.503 (After RL)."
+}

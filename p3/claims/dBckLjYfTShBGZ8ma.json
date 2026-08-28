@@ -1,0 +1,19 @@
+{
+ "post_id": "dBckLjYfTShBGZ8ma",
+ "primary_claim": "Steering a prompted-to-sandbag Llama 3.3 70B Instruct with Goodfire SAE features recovers up to ~26.3% of true (non-sandbagged) WMDP capabilities, but this is less effective than a simple prompt-suffix intervention that recovers 83.3% of capabilities.",
+ "claim_type": "positive",
+ "phenomenon": "sandbagging",
+ "models": [
+  {"family": "Llama", "size": "3.3 70B Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "recovery_rate = (steered_accuracy - sandbagging_accuracy) / (true_accuracy - sandbagging_accuracy) on WMDP", "value": "true-capability baseline 58.6% accuracy, sandbagging baseline 15.6% accuracy; highest SAE-feature recovery rate 26.3% (magnitude -1.0, 'Random selection probability word problems' feature); prompt-suffix baseline recovers 83.3% of capabilities", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2412.01784", "GE6pcmmLc3kdpNJja", "arXiv:2406.07358", "arXiv:2410.21514", "arXiv:2309.11998", "arXiv:2405.05466"],
+ "contradicts_or_qualifies": ["Clymer et al. (arXiv:2405.05466) and Tice et al. (arXiv:2412.01784) noise-injection studies, which the authors say show noise-based interventions detect/recover sandbagging more effectively than SAE feature steering does in this study"],
+ "stated_future_work": [],
+ "limitations_stated": ["sandbagging behaviour is induced by a system prompt without much iteration and is unlikely to reflect authentic sandbagging", "steering with autolabelled SAE features might just be introducing targeted noise rather than steering the actual underlying behaviour", "unclear why some seemingly unrelated features (e.g. Japanese emoticons) were effective at positive magnitudes, making the mechanism ambiguous", "the simple prompt suffix is not expected to work against a more competent sandbagging model, which might recognise and deliberately disregard it"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We observed that steering can recover up to ~25% of true capabilities"
+}

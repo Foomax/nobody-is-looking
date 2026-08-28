@@ -1,0 +1,36 @@
+{
+ "post_id": "ifbNtv8QbNBrYFSSv",
+ "primary_claim": "Ablating a single 'superweight' in OLMo-1B causes perplexity to spike from 17.4 to 2884.3 with pathological outputs, but training a single trainable row-vector patch via KL distillation from the original model recovers approximately 93% of the lost performance while learning a new, largely orthogonal distributed direction rather than relearning the original weight (cosine similarity to the original row ~0.13).",
+ "claim_type": "positive",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "OLMo", "size": "1B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "Perplexity on Wikitext-2 slice",
+  "value": "17.4 (original) -> 2884.3 (ablated) -> 25.2 (patched); ~93% recovery",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2411.07191",
+  "arXiv:2511.13653"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "severe compute constraints (CPU-only) limited training to only two epochs / 400 optimization steps"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "Surprisingly, it worked! Perplexity dropped drastically(i.e 2884.3 to 25.2) nearing the original model's values, and the Tokyo prompt was fixed... I observed approximately 93% recovery."
+}

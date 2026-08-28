@@ -1,0 +1,20 @@
+{
+ "post_id": "ftKQi7jtWpCqKhjmQ",
+ "primary_claim": "Claude Opus 4.5 can solve harder arithmetic 'side task' problems latently (without visible reasoning) when given a longer trajectory of irrelevant preceding output, shifting its 50% accuracy threshold from ~5-step to ~6-step problems after 240 lines of filler, but this latent-compute uplift saturates by ~5% of the context window and is not observed as a general effect across other tested models (GPT-5.2, GPT-4.1, Sonnet 4 show weaker or no effect).",
+ "claim_type": "positive",
+ "phenomenon": "situational awareness",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.5 / Sonnet 4", "open_weight": false},
+  {"family": "GPT", "size": "5.2 / 4.1", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "50% accuracy threshold (number of arithmetic operations) as function of filler line count", "value": "Opus 4.5's 50% threshold shifts from ~5-step to ~6-step problems with 240 lines of filler; saturates by ~5% of the 200K context window with max uplift ~+0.8 operations; GPT-5.2 and GPT-4.1 show no clear effect", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["brucewlee/bruces-corner-latent-side-task-", "post: Recent LLMs can use filler tokens or problem repeats to (Ryan's filler token experiment)", "OpenRouter API"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["We don't observe strong evidence that current-generation models generally benefit much from wider parallel compute enabled by longer trajectories, with the exception of Opus 4.5"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "This shifts its 50% accuracy threshold from ~5-step to ~6-step problems after 240 lines of irrelevant output. However, we don't observe strong evidence to believe that current generation of models generally benefit much from wider parallel compute enabled by longer trajectories with the exception of Opus 4.5."
+}

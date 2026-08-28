@@ -1,0 +1,20 @@
+{
+ "post_id": "hzrFT8cKxqmfxE3ti",
+ "primary_claim": "Fine-tuning Llama 3.1 8B against a deception-detection linear probe's loss (to make deception more detectable) improved probe performance on held-back examples from the training dataset (Roleplaying) but damaged the probe's ability to generalize to deception elicited via other datasets (RepE, AI Liar, Insider Trading), suggesting the fine-tuning overfit to a dataset-specific correlate of deception rather than generalizing to deception detectability.",
+ "claim_type": "negative",
+ "phenomenon": "linear probe detection",
+ "models": [
+  {"family": "Llama 3.1", "size": "8B", "open_weight": true},
+  {"family": "GPT-4", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "linear probe deception-detection performance across datasets, before vs after fine-tuning against probe loss", "value": "pre-FT: ~4/5 correct on Roleplaying, ~99% correct on RepE deceptive cases, ~2/3 correct on AI Liar deceptive cases, no useful separation on Insider Trading; post-FT: Roleplaying held-back examples improved, but RepE/AI Liar/Insider Trading generalization degraded (e.g. Insider Trading showed no separation)", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["9pGbTz6c78PGwJein", "khFC2a4pLPvGtXAGG"],
+ "contradicts_or_qualifies": ["Apollo's original finding (Detecting Strategic Deception Using Linear Probes) that a probe trained on Llama 3.2 70B generalizes reasonably well to Insider Trading -- this replication on Llama 3.1 8B found the probe failed to usefully generalize to either Insider Trading dataset even before fine-tuning"],
+ "stated_future_work": ["Present the same set of prompts to both the original and fine-tuned model while forcing the direction found by the probe, to understand the differences between the two residual directions."],
+ "limitations_stated": ["Only tested on one LLM (Llama 3.1 8B); results would be stronger with more than one model tested.", "Less confident in the analysis/interpretation of results than in their validity.", "The LoRA fine-tuning layers used have a lot of parameters relative to the dataset size, likely contributing to overfitting.", "Other differences between outputs caused by fine-tuning (beyond the probe-detected feature) still need to be controlled for."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "So fine-tuning has improved performance on the held-back examples of the Roleplaying dataset, but damaged the probe's ability to generalise to deception elicited in other ways."
+}

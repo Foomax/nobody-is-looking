@@ -1,0 +1,26 @@
+{
+ "post_id": "EKhTrhrCz2rNg7FmG",
+ "primary_claim": "A LoRA adapter trained via Diff Interpretation Tuning (DIT) enables a finetuned model to accurately report hidden behaviors encoded in its own weight diff (e.g. a hidden persona gated behind a secret trigger), substantially outperforming black-box baselines, and generalizes to held-out weight diffs, unseen triggers, and higher-rank or full-parameter finetunes it wasn't trained on.",
+ "claim_type": "method",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Qwen3", "size": "8B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "5-point-scale accuracy of reported hidden topic / news headline vs. ground truth",
+            "value": "DIT shows strong performance on held-out hidden-topic and news-headline weight diffs, much stronger than black-box baselines",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["aviously/diff-interpretation-tuning", "arXiv:2510.05092"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Develop techniques for certifying the correctness of WeightDiffQA answers"],
+ "limitations_stated": [
+  "DIT-adapters show poor cross-behavior generalization: hidden-topic adapters struggle to summarize news knowledge and vice versa",
+  "DIT fails to report the trigger phrases that gate hidden behaviors -- a DIT-adapter trained to predict a 3-digit SEP code trigger does no better than random guessing",
+  "DIT answers come with no certification of correctness by default, making them potentially unreliable since LLMs can hallucinate, confabulate, or be deceptive"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We then test the DIT-adapter on 100 held-out hidden-topic weight diffs and observe strong performance, much stronger than simple black-box methods are able to achieve."
+}

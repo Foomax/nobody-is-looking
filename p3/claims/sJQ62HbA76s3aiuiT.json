@@ -1,0 +1,33 @@
+{
+  "post_id": "sJQ62HbA76s3aiuiT",
+  "primary_claim": "Using the traitinterp linear-probe toolkit, the author partially replicated Anthropic's Emotion Concepts paper on Llama 3.3 70B Instruct, finding results mostly similar to the original Sonnet 4.5 results except that Llama's assistant-position representation tracks the user's expressed emotion much more strongly (r=0.63) than Sonnet's, which keeps them comparatively independent (r=0.11).",
+  "claim_type": "replication",
+  "phenomenon": "model welfare / psychology",
+  "models": [
+    {"family": "Llama", "size": "3.3 70B Instruct", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "correlation (r) between assistant-position representation and user's expressed emotion",
+    "value": "Llama 3.3 70B Instruct r=0.63 vs. Sonnet 4.5 (original paper) r=0.11",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["ewernn/traitinterp", "arXiv:2406.12094"],
+  "contradicts_or_qualifies": [
+    "Partially replicates Anthropic's Emotion Concepts paper; while most results on Llama 3.3 70B Instruct are similar to Sonnet 4.5, the finding that Llama's assistant-position tracks the user's emotion (r=0.63) while Sonnet's stays independent (r=0.11) is a notable divergence from the original result"
+  ],
+  "stated_future_work": [],
+  "limitations_stated": [],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "medium",
+  "quote": "the replication found Emotion Concepts' results on Llama 3.3 70B Instruct to be mostly similar to Sonnet 4.5, except Llama's assistant-position tracks user's emotion with r=0.63, whereas Sonnet keeps them independent at r=0.11."
+}

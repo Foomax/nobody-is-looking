@@ -1,0 +1,22 @@
+{
+ "post_id": "tRAhvw6qeihw9Yxzq",
+ "primary_claim": "A learned affine transformation ('Iterative Sparse Matrix Steering', solved analytically via Ridge Regression rather than gradient descent) can overwrite specific facts in an LLM, and at high regularization the model shifts from incoherent 'conflict mode' to fluently rationalizing the injected falsehood",
+ "claim_type": "method",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Gemma", "size": "3-1B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["lesswrong.com/posts/ioPnHKFyy4Cw2Gr2x/mechanistically-eliciting-latent-behaviors-in-language-1"],
+ "contradicts_or_qualifies": ["Static steering vectors from prior work (Mechanistically Eliciting Latent Behaviors), which the author says struggle with structural tasks and apply constant force regardless of token context"],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "Creating a clean dataset for fact-overwrite vectors is very difficult because positive/negative prompt pairs are semantically close, introducing noise",
+  "Low regularization causes the model to enter a 'Conflict Mode' where it stutters/glitches"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "low",
+ "quote": "In this heigh lambda \"Distillation Regime,\" the model stops fighting and starts rationalizing. Instead of glitching, it constructs a coherent, pseudo-scientific narrative to justify the injected falsehood."
+}

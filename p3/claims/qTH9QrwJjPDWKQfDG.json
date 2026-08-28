@@ -1,0 +1,41 @@
+{
+ "post_id": "qTH9QrwJjPDWKQfDG",
+ "primary_claim": "Reasoning models have much lower ability to control what appears in their chain-of-thought than in their final outputs (Claude Sonnet 4.5: 2.7% CoT controllability vs 61.9% output controllability); CoT controllability increases with model size but decreases with more RL training, test-time compute, and problem difficulty, and these limitations persist under evasion incentives and adversarially optimized prompts.",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [
+  {"family": "Claude", "size": "Sonnet 4.5", "open_weight": false},
+  {"family": "GPT-5", "size": null, "open_weight": false},
+  {"family": "OLMo", "size": "3-7B-RL-Zero-Math", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "CoT controllability rate (compliance with explicit reasoning-content constraint) vs output controllability rate",
+  "value": "Claude Sonnet 4.5: 2.7% CoT controllability vs 61.9% output controllability; OLMo-3-7B-RL-Zero-Math CoT controllability decreases by more than an order of magnitude over RL training checkpoints; situational-awareness prompting increases controllability by up to 4 percentage points",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2503.11926", "arXiv:2505.23836", "arXiv:2507.19457", "arXiv:2507.11473"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Investigate why GPT-5.1 has higher controllability than GPT-5, possibly due to its adaptive thinking feature",
+  "Explore why different models excel at different categories of CoT controllability (suppression vs. addition)",
+  "Explore how CoT controllability changes under pressure scenarios like the Agentic Misalignment setup",
+  "Examine how the easy-task-controllability trend varies across models of different capability levels"
+ ],
+ "limitations_stated": [
+  "The finding that controllability is higher on easy tasks is currently limited to Claude models, insufficient to draw a clear conclusion",
+  "The underlying mechanism behind low CoT controllability is not well understood"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Claude Sonnet 4.5 controls its CoT only 2.7% of the time, versus 61.9% for final outputs."
+}

@@ -1,0 +1,27 @@
+{
+ "post_id": "LncYobrn3vRr7qkZW",
+ "primary_claim": "Slingshots (training-loss spikes with sudden weight-norm increases under AdamW) are explained, for hinge loss, by momentum decaying to zero in a flat loss basin followed by a weight-decay-driven exit; this explanation partially transfers to cross-entropy loss; and empirically, slingshots reduce test loss more than equivalent non-slingshot training intervals or random-direction jumps of the same magnitude, in 1-hidden-layer MLPs trained on k-sparse parity.",
+ "claim_type": "positive",
+ "phenomenon": "training dynamics",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "log ratio of test loss after vs. before interval", "value": "median log ratio -0.438 (slingshot) vs -0.039 (no slingshot) vs -0.369 (random jump), across 100 training runs; slingshot vs no-slingshot difference significant (p<0.05, Mood's median test), slingshot vs random jump not significant (p>0.05)",
+            "direction": "+", "uncertainty_reported": "seeds"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 100,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:1711.05101", "arXiv:2201.02177"],
+ "contradicts_or_qualifies": ["Thilak et al.'s reported slingshot regimes under Adam / zero weight decay and extreme decay factors, which the authors could not empirically replicate and which don't fit their explanation"],
+ "stated_future_work": [
+   "Connecting generalization and the inductive biases of adaptive optimizer methods needs further study"
+ ],
+ "limitations_stated": [
+   "Scope is limited to a simple one-hidden-layer MLP trained on a synthetic algorithmic task",
+   "The hinge-loss explanation only partially transfers to cross-entropy loss",
+   "Unable to empirically replicate several slingshot regimes from Thilak et al. (e.g. Adam with zero weight decay, extreme decay factors)",
+   "The method for detecting slingshots (and thus the random-jump comparison) is somewhat unprincipled",
+   "No good explanation for why slingshots induce better generalization than random jumps"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "empirical evidence that slingshots are biased towards decreasing test loss"
+}

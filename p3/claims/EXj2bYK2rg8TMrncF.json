@@ -1,0 +1,29 @@
+{
+ "post_id": "EXj2bYK2rg8TMrncF",
+ "primary_claim": "SOO-style conceptual fusion fine-tuning (with a KL retention regularizer) at layer 18 increases refusal on a jailbreak-wrapped HarmBench prompt set from ~20% in the base Qwen 2.5 1.5B model to a little under 90%, outperforms comparable supervised fine-tuning at increasing jailbreak refusal, better preserves non-refusal on safe XSTest prompts than SFT, and generalizes to a held-out jailbreak wrapper never seen in training.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [{"family": "Qwen", "size": "1.5B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "refusal rate on held-out jailbreak-wrapped HarmBench prompts",
+  "value": "~20% (base model) to a little under 90% (conceptual fusion, layer 18, 1/8 retention weight)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["hzt9gHpNwA2oHtwKX", "shivasrightfoot/soo-jailbreak-conceptual-fusion", "HarmBench", "XSTest"],
+ "contradicts_or_qualifies": ["discovered after posting that Irpan et al. (2025) at Google DeepMind independently developed a similar technique ('activation consistency training') without a regularization term and with different layer-restriction choices"],
+ "stated_future_work": ["explore further shrinking the regularization weight to improve jailbreak refusal for conceptual fusion targeted at a lower layer", "explore increasing the regularization weight to improve performance for conceptual fusion targeting layer 26", "encourage future work on the broad range of possible applications for conceptual fusion as a model-manipulation technique"],
+ "limitations_stated": ["a small number of dangerous prompts were not successfully refused even when unwrapped and were excluded from the SFT training data", "more successful parts of the hyperparameter distribution may exist but were not explored", "it is unclear what refusal of a wrapped safe prompt would indicate, so safe prompts were tested only unwrapped"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "the selection of 1/8th weight and layer 18 produces an increase in refusal behavior for jailbroken wrappers from around 20% in the base model to a little under 90% in the fine tuned model"
+}

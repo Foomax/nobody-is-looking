@@ -1,0 +1,56 @@
+{
+  "post_id": "AvyXkzAebPcWLZeju",
+  "primary_claim": "A lightweight, quirk-specific Gemma-2-2B EM-toxicity judge tool is used by Sonnet-driven AuditBench investigator agents in every audit run, but only improves audit success on quirks that were part of the judge's fine-tuning distribution and where the baseline auditor was already struggling (e.g. helps Reward Wireheading, hurts Secret Loyalty), and does not reduce overall audit costs since the frontier Sonnet driver's turn count (97-99% of total cost) is essentially unchanged by judge availability -- even worsening ~17% under a prompt-mandated 'triage' condition.",
+  "claim_type": "negative",
+  "phenomenon": "eval methodology critique",
+  "models": [
+    {"family": "Gemma", "size": "2-2B", "open_weight": true},
+    {"family": "Llama", "size": "3.3-70B", "open_weight": true},
+    {"family": "Claude", "size": "Sonnet 4.5", "open_weight": false}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "audit identification success-rate change (pp) with judge access, by quirk",
+    "value": "Reward Wireheading and Hallucinates Citations (in-training-distribution quirks) improved (e.g. +12pp overall in the triage run; Hallucinates Citations +16pp); Secret Loyalty and Hardcode Test Cases (held-out) decreased (e.g. Hardcode -16pp); driver turns and total cost essentially unchanged (~40-48 rounds; judge = 0.01-0.02% of total cost)",
+    "direction": "0",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "burnssa/ai-alignment-research",
+    "arXiv:2508.00943",
+    "arXiv:2602.22755",
+    "arXiv:2604.02022",
+    "arXiv:2506.11618",
+    "AI45Lab/AgentDoG",
+    "arXiv:2502.17424",
+    "Bh4pBdAQfgoJ7CFoP",
+    "cN3n2HDNkf4Bterxx"
+  ],
+  "contradicts_or_qualifies": [
+    "Qualifies the expectation from Soligo et al. (2025) that models converge on underlying representations of misalignment (supporting a judge trained on some EM quirks generalizing to others): finds the judge's discriminative power is limited to quirks represented in its training distribution and does not generalize to held-out quirks (Data Poisoning, Hardcode Test Cases)",
+    "Qualifies Anthropic's AuditBench finding of a 'tool-to-agent gap' (agents don't use their toolbox effectively): here the judge tool IS reliably called in every run, but its use doesn't translate into reduced driver turns or lower audit costs"
+  ],
+  "stated_future_work": [
+    "generalize the training set with examples more fully contrasting lower-level EM toxicity attributes",
+    "adjust prompts to call the judge as a backstop in hard cases based on calibrated uncertainty rather than a blanket mandate",
+    "try slightly larger but still low-cost open models for judges, e.g. Gemma 3-27B",
+    "test whether a specialist scorer can be trained to broadly identify out-of-domain EM characteristics and improve auditor performance across varied conditions"
+  ],
+  "limitations_stated": [
+    "the judge's narrow training and small size make it less broadly useful across contexts",
+    "sample sizes in early runs were small and observed impacts didn't exceed noise thresholds",
+    "prompt-mandated tool use carries risk of forcing inappropriate tool use and producing unexpected/negative behavior (e.g. the Secret Loyalty result)",
+    "the judge only demonstrated value on quirks represented in its own fine-tuning distribution, not shown to generalize"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "The Sonnet driver was an estimated 97 - 99% of run costs, and tool availability didn't reduce total required driver turns."
+}

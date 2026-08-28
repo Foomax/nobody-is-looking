@@ -1,0 +1,37 @@
+{
+ "post_id": "tkiSQBuA8yj2tHNdv",
+ "primary_claim": "A Natural Language Autoencoder's Activation Verbalizer trained only at layer 20 of Qwen2.5-7B generalizes without retraining to reconstruct activations from layers 10-25, beating both a random-noise baseline and a shuffled-correspondence baseline on cosine similarity, Recall@10, FVE, and nRMSE, while early layers (0-1) and late layer 27 fail to generalize.",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Qwen", "size": "2.5-7B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "cosine similarity / Recall@10 / FVE / nRMSE for layer-20-trained AV reconstructing activations across layers, vs random and shuffled baselines",
+  "value": "cosine similarity >0.50 and Recall@10 >0.40 from L10-L25; every layer significant vs random baseline (Wilcoxon signed-rank + Benjamini-Hochberg); L0, L1, L27 fail against the shuffled baseline",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "kitft/natural_language_autoencoders"
+ ],
+ "contradicts_or_qualifies": [
+  "qualifies a drawback noted in the original NLA paper (that training a verbalizer per layer is expensive) by showing a single layer-20 verbalizer generalizes across roughly 15 layers"
+ ],
+ "stated_future_work": [
+  "use the Activation Verbalizer to audit activation steering (planned as a followup post)"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "From L10 to L25 cosine similarity stays above 0.50, Recall@10 above 0.40, FVE positive, and nRMSE well below the baselines."
+}

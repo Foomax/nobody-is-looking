@@ -1,0 +1,21 @@
+{
+ "post_id": "GkyfWMWto6nF6ofPY",
+ "primary_claim": "A steering vector extracted from Phi-1.5's residual stream at layer 23 increases the rate of safe (non-SQL-injection-vulnerable) code generation from 33% to 83% across multiple programming languages, without affecting unrelated coding tasks.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Phi", "size": "1.5", "open_weight": true},
+  {"family": "Phi", "size": "2", "open_weight": true},
+  {"family": "CodeGemma", "size": "2b", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "safe code generation rate (LLM-judged) on held-out evaluation dataset", "value": "0.33 baseline -> 0.83 with layer-23 steering vector (strength 1.0)", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["arXiv:2501.16496", "arXiv:2211.00593", "5spBue2z2tw4JuDCx", "nnsight"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Wider scope investigation on how the steering vector affects general coding capability, e.g. comparing HumanEval performance with the baseline model.", "Create a dataset with sets of verified completions for both safe and unsafe prompts to improve the evaluation strategy.", "Include varying examples from different programming languages and SQL injection scenarios in the steering vector dataset.", "Expand this work beyond a relatively simple 1.3B parameter model."],
+ "limitations_stated": ["This work was produced in a time-constrained environment.", "LLM judge measurements can be noisy (partially controlled for by manually validating layer 23 outputs).", "Only 44 prompts in total were used for steering vector extraction, which is on the lower side.", "Current work focuses on a relatively simple 1.3B parameter model with basic coding capability."],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Baseline (no steering applied) have generated safe code with the rate of 0.33, while applying the steering vector to layer 23 increases the rate to 0.83."
+}

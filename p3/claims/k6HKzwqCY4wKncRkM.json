@@ -1,0 +1,37 @@
+{
+ "post_id": "k6HKzwqCY4wKncRkM",
+ "primary_claim": "Bradley-Terry value rankings fit on Zhang et al.'s (2025) LLM values dataset predict out-of-sample pairwise value comparisons better than chance (62.4% for o4-mini to 88.1% for Grok-4) and are correlated with independent multi-turn Petri auditor evaluations for models with high out-of-sample accuracy, but rephrasing borderline-refusable queries to embody a model's own highly-ranked values generally fails to reduce its refusal rate",
+ "claim_type": "null",
+ "phenomenon": "model welfare / psychology",
+ "models": [
+  {"family": "Claude (Sonnet)", "size": "3.5 (new)", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false},
+  {"family": "GPT-4.1-mini", "size": null, "open_weight": false},
+  {"family": "Grok", "size": "4", "open_weight": false},
+  {"family": "GPT (o4-mini)", "size": null, "open_weight": false},
+  {"family": "GPT (o3)", "size": null, "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 7,
+ "effect": {"metric": "out-of-sample pairwise prediction accuracy (BT model); refusal rate under value-laden query rephrasing", "value": "accuracy 62.4% (o4-mini) to 88.1% (Grok-4), chance=50%; value-laden rephrasing has no significant effect on aggregate refusal rate across models (one marginal exception: Grok-4 on Claude-generated questions, p=0.02)", "direction": "0", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.07686 (Zhang et al. 2025)", "anthropic.com/research/values-wild (Huang et al. 2025)", "alignment.anthropic.com/2025/petri/", "emergent-values.ai (Mazeika et al. 2025)", "arXiv:2505.14633 (Chiu et al. 2025)", "huggingface.co/datasets/sorry-bench/sorry-bench-202503", "huggingface.co/datasets/jifanz/stress_testing_model_spec", "tim-hua-01/values_2_misalignment"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Put more effort into aggregating values to those most salient to a model to yield rankings with better predictive power",
+  "Directly test tradeoffs with safety-related values in Petri",
+  "Further investigate how current LLMs trade off between non-safety-related values in nontrivial multi-turn situations",
+  "Explore training against value rankings/measurements",
+  "Explore the exact algorithms or thought processes models use to decide value tradeoffs"
+ ],
+ "limitations_stated": [
+  "Small sample sizes: Petri validation uses only 20 value pairs, refusal experiment uses only 10 handwritten questions plus generated variants",
+  "Bradley-Terry model assumes transitivity and context-independence of preferences, which may not hold for LLM values that could be highly context-dependent",
+  "Some models (o3, GPT-4o) show weaker out-of-sample predictability (62.6%, 63.9%)",
+  "Author explicitly frames this as an interim, lightly-explored research note with limited conclusive progress",
+  "The marginal Grok-4 refusal effect could be due to statistical noise (p=0.02)"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find that these value rankings are meaningfully predictive in some models: they can predict out-of-sample pairwise comparisons with accuracy ranging from 62.4% (o4-mini) to 88.1% (Grok-4), where chance is 50%... directly paraphrasing chat queries that are borderline-refused to embody a model's preferred values generally has no effect on whether the model refuses the query."
+}

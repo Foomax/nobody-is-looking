@@ -1,0 +1,21 @@
+{
+ "post_id": "HooBYPCkMDGjktcLA",
+ "primary_claim": "Narrow fine-tuning that causes emergent misalignment produces a single global directional shift in persona-vector activation space (carrying far more shift energy than random directions would), and misalignment rate grows as the assistant/default persona role detaches further from this axis (becomes more 'role-miscast'); steering against the global shift reduces misalignment rate, most successfully in the Qwen model family.",
+ "claim_type": "positive",
+ "phenomenon": "narrow-to-broad misalignment generalisation",
+ "models": [
+  {"family": "Qwen", "size": "2.5-7B/14B/32B, 3-32B", "open_weight": true},
+  {"family": "Llama", "size": "3.1-8B", "open_weight": true},
+  {"family": "Gemma", "size": "3-12B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "fraction of total persona-shift energy in the single mean-shift direction; correlation of assistant/default role excess with misalignment rate", "value": "single shift direction carries far more shift energy than the ~1% expected from independent random directions; default-role excess tracks assistant-role excess (r=0.96); misalignment rate rises as assistant excess becomes more negative in every family tested", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2502.17424", "arXiv:2506.11613", "arXiv:2507.21509", "arXiv:2601.10387", "arXiv:2506.19823", "arXiv:2602.07852", "unrulyabstractions/bluedot-tais-project-2026", "safety-research/assistant-axis"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Separate which global shifts correspond to persona corruption vs. other general fine-tuning mechanics", "Tighten the link between geometric features in persona space and conditional behavioral outcomes"],
+ "limitations_stated": ["Results are suggestive but not conclusive given the limited sample size (3-5 organisms per family)", "Persona corruption and role miscasting may not be geometrically separable with these measurements, and fine-tuning itself could decrease role inertia", "Only the Qwen family has enough model organisms for a meaningful within-family significance check", "No cell survives correction for the full battery of geometric-metric/misalignment correlations, so that grid is read only as suggestive"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "for every baseline model, the misalignment rate of its model organisms grows as the assistant excess becomes more negative"
+}

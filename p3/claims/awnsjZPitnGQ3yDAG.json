@@ -1,0 +1,36 @@
+{
+  "post_id": "awnsjZPitnGQ3yDAG",
+  "primary_claim": "Trained per-layer steering vectors (~295K params, ~1/600th the parameter count of the LoRA-based Activation Oracle) can function as an activation oracle on Qwen3-8B, achieving close to standard LoRA Activation Oracle accuracy on the Taboo task, a significant deficit on PersonaQA, and roughly doubled PersonaQA open-ended accuracy (6.8% to 11.5%) when activation collection is 'primed'.",
+  "claim_type": "method",
+  "phenomenon": "activation steering",
+  "models": [
+    {"family": "Qwen3", "size": "8B", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "PersonaQA open-ended accuracy improvement from priming activation collection",
+    "value": "6.8% to 11.5%",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["kyWCXaw4tPtcZkrSK", "rwoEz3bA9ekxkabc7"],
+  "contradicts_or_qualifies": [
+    "Surprisingly, the original Activation Oracle paper's LoRA checkpoint achieves 60% accuracy with no activations at all on PersonaQA Y/N, qualifying claims about what drives its performance",
+    "PersonaQA Y/N figures here are not directly comparable to the AO paper's reported 69% baseline, likely due to a suspected bug in the Activation Oracles codebase causing non-deterministic N cases"
+  ],
+  "stated_future_work": [],
+  "limitations_stated": [
+    "The vector approach seems more fragile to the specific text activations were collected from than the LoRA approach"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "medium",
+  "quote": "Priming nearly doubles Vector AO accuracy (6.8% → 11.5%)."
+}

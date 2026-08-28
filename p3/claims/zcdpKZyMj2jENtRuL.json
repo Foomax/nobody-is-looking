@@ -1,0 +1,37 @@
+{
+  "post_id": "zcdpKZyMj2jENtRuL",
+  "primary_claim": "PCA on hidden-state activations of the CoDI latent-reasoning model shows PC1 strongly correlates with the end-of-chain-of-thought (<|eocot|>) token direction across all latent reasoning positions, while PCA over the KV cache shows no comparably interpretable structure.",
+  "claim_type": "positive",
+  "phenomenon": "representation geometry",
+  "models": [
+    {"family": "Llama", "size": "3.2 1B (CoDI checkpoint)", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "PCA PC1 alignment with <|eocot|> token direction (hidden states) vs. KV cache",
+    "value": "clear <|eocot|> direction in hidden-state PC1; no interpretable directions in KV-cache PCA",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["mXuqpJkJpaeTjyCgm", "YGAimivLxycZcqRFR", "AlignmentResearch/tuned-lens"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "Create a different version of latent reasoning that is not CoDI",
+    "Attempt to create a CoDI variant that can take in hidden state values so information is not lost during latent reasoning generation",
+    "Look into other latent reasoning models"
+  ],
+  "limitations_stated": [
+    "The critique-of-CoDI section is explicitly labeled opinionated interpretation and speculation, not established findings"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "low",
+  "quote": "PC1 from hidden state activations strongly seems to correlate with the <|eocot|> or end of chain of thought token across all latent positions for the GSM8K dataset"
+}

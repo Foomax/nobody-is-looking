@@ -1,0 +1,43 @@
+{
+ "post_id": "4Pj7mXFQ2qhMjhaB2",
+ "primary_claim": "Claude 3.5 Sonnet (new) performs significantly worse at subverting simulated control protocols (upfront auditing, untrusted monitoring) when required to strategize statelessly compared to when given shared planning across copies of itself, and larger deployments (more inputs) reduce Claude's win rate despite equal optimal attack rates, indicating that reliability constraints imposed by statelessness are a major bottleneck limiting scheming models' current ability to subvert control protocols.",
+ "claim_type": "positive",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "Claude", "size": "3.5 Sonnet (new, claude-3-5-sonnet-20241022)", "open_weight": false},
+  {"family": "DeepSeek-R1", "size": "Lite", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "win rate (probability of successfully subverting the control protocol without being caught), stateless vs shared-planning",
+  "value": "Claude performs significantly worse when planning statelessly vs with shared planning across settings; larger deployments yield a smaller win rate despite equal optimal attack rate; shared planning + RNG improves win rate about twice as much in the larger setting as in the smaller one",
+  "direction": "-",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["d9FJHawgkiMSPjagR", "GCqoks9eZDfpL8L3Q", "vYWDEtJ2b8tkbG7Rv", "arXiv:2405.19550"],
+ "contradicts_or_qualifies": [
+  "Extends the original AI control evaluation paradigm (d9FJHawgkiMSPjagR) by relaxing the assumption that a human red-team supplies the attack strategy, instead measuring the model's own capability to strategize on how to subvert the protocol"
+ ],
+ "stated_future_work": [
+  "Expand the evaluation to a larger dataset of settings",
+  "Upper-bound a putative scheming model's capability by fine-tuning it on similar tasks",
+  "Study whether future scheming models might reason steganographically or do serial reasoning less transparently to evade CoT monitoring"
+ ],
+ "limitations_stated": [
+  "Evaluating models with visible CoT may be unrealistic since transparent strategizing risks exposing intentions to developers, making the eval highly conservative",
+  "Models are given definite situational knowledge and a highly consistent goal across contexts, which may not reflect realistic conditions and adds further conservatism",
+  "Early results are limited to two core settings",
+  "A model being evaluated for scheming capability might sandbag (deliberately underperform) on this capability eval"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Claude performs significantly worse when required to plan statelessly as opposed to with shared planning (conditional on being provided a random number generator)."
+}

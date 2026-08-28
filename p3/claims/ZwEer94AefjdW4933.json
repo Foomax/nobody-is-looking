@@ -1,0 +1,19 @@
+{
+ "post_id": "ZwEer94AefjdW4933",
+ "primary_claim": "A five-layer MLP can be trained to encode a binary semantic feature (country) on a pre-chosen 3-channel nonlinear manifold (sphere shell or helix tube) such that the manifold is causally used by the classifier (causal delta rising from ~0.02-0.04 to 1.9-3.5, swap-test specificity ratios of 47-92) while becoming much harder to read as an ordinary linear direction (linear probe AUC falling from ~0.9998 to 0.57-0.67), though some leakage through complement channels remains.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "MiniLM (sentence-transformers/all-MiniLM-L6-v2 encoder + custom 5-layer MLP classifier)", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "Linear probe AUC on country feature / causal delta", "value": "linear probe AUC falls from 0.9996-0.9998 (ClassOT) to 0.57-0.67 (GFAL); causal delta rises from 0.02-0.04 to 1.9-3.5", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2601.04480", "arXiv:2605.05115", "arXiv:1711.01558", "arXiv:1306.0895", "arXiv:1505.07818"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["GFAL+ leaves evidence of complement-channel leakage (country remains partially readable from non-geometry channels)", "Helix geometry is harder to maintain than the sphere (lower coverage entropy, higher residual linear-probe AUC)", "Causal-use tests establish an active causal pathway but not perfect information isolation from the complement"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "This experiment shows that a small MLP can encode a semantic feature through a pre-chosen nonlinear manifold in only three channels while preserving task performance."
+}

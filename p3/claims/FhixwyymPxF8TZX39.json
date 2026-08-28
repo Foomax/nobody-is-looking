@@ -1,0 +1,29 @@
+{
+ "post_id": "FhixwyymPxF8TZX39",
+ "primary_claim": "An optimal monitor-invocation protocol - derived via brute-force search over invocation strategies combined with a Neyman-Pearson likelihood-ratio audit rule - achieves higher recall of misaligned outputs at a given cost budget than naive heuristic strategies for combining a cheap probe monitor and an expensive black-box monitor, e.g. auditing 93.7% of misaligned outputs at a 4% false-positive rate within a $1/sample budget in their example.",
+ "claim_type": "method",
+ "phenomenon": "AI control protocols",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "recall of misaligned outputs at fixed budget/FPR using the optimal combined-monitor protocol",
+  "value": "93.7% of misaligned outputs audited at 4% false positive rate on aligned outputs, spending $1/aligned sample (budget exhausted)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2507.15886", "tim-hua-01/combining_monitors_public", "arXiv:2507.12691", "arXiv:2506.10805", "arXiv:2312.06942"],
+ "contradicts_or_qualifies": ["Existing studies that rely on heuristic rules for combining monitors (e.g. calling an additional monitor when the first monitor's score is close to its median and averaging both scores), which the authors show is suboptimal compared to their derived optimal protocol"],
+ "stated_future_work": [],
+ "limitations_stated": ["Brute-force search over monitor invocation strategies is only computationally feasible with a small number of monitors (2-4)", "The approach takes monitor performances and costs as given rather than jointly optimizing them", "Budget compliance is evaluated only on aligned outputs, since misaligned outputs are assumed rare and much of the operational cost comes from false positives"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "If we audit everything with an LLR above -0.32, we will audit 4% of aligned outputs, audit 93.7% of misaligned outputs (our safety metric), and spend on average $1 per aligned sample, exhausting our budget."
+}

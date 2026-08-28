@@ -1,0 +1,19 @@
+{
+ "post_id": "YwNa9Zmh6ZzK3ajSX",
+ "primary_claim": "Anthropic's intentional-control effect (models represent a concept more strongly when told to think about it while writing an unrelated sentence, vs. told not to) replicates on Gemma 3 27B-Instruct, though much more weakly via concept-vector cosine similarity than reported for Claude, and much more clearly using SAE latents and Natural Language Autoencoder decodings as alternative internal-representation measures.",
+ "claim_type": "replication",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Gemma", "size": "27B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "paired Δ cosine similarity vs no-mention baseline (think condition) / NLA judge score", "value": "concept-vector Δcosine rises to ~0.015-0.025 in upper layers (>layer 30) for 'think' vs near-zero for 'don't think'; NLA mean token score: think=54.4 vs don't-think=1.2 vs no-mention=0.04", "direction": "+", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2502.17424", "juliuskamp/internal-representation-control"],
+ "contradicts_or_qualifies": ["Lindsey (2025) reports Claude models still represent the concept clearly above baseline when told not to think about it; on Gemma the 'don't think' condition is barely above the 'no mention' baseline, at least an order of magnitude smaller than the 'think' gap", "Unlike the original paper, which found 'no immediately obvious pattern' across tokens, this replication finds the concept is most strongly represented on tokens where it could plausibly be the next word (determiners/prepositions)"],
+ "stated_future_work": ["Test whether a model could intentionally trigger false positives to make probe/SAE-based monitors useless", "Test robustness across additional prompt templates, longer model outputs, and complex tasks", "Test chain-of-thought interactions in a reasoning model, since Gemma 3 27B does not use CoT"],
+ "limitations_stated": ["The concept-vector cosine-similarity effect is buried inside wide ±1 std baseline bands from 99 baseline concepts, much weaker than the Claude results", "Cannot provide reliable summary statistics for the SAE latent measure since only a few latent selections were manually verified and automatic selection is unreliable", "712 of 2,500 'think' generations were excluded because the model did not reproduce the exact sentence, plausibly biasing the measured effect downward"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "telling the model to think about a concept reliably strengthens its internal representation of that concept while it writes an unrelated sentence"
+}

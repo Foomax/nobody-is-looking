@@ -1,0 +1,21 @@
+{
+ "post_id": "KLqiDczfZsmhzEhax",
+ "primary_claim": "Prepending certain LLM instructions unrelated to safety (a 'unified enhancements' persona instruction) can reduce successful responses to harmful JailbreakBench prompts while leaving harmless-prompt performance roughly the same or improved for one of three tested 7B-scale LLMs (Ghost 7B), demonstrating 'positive jailbreaks' that improve safety without an explicit safety instruction; a second instruction ('fractal leaping') instead degraded performance on both harmful and harmless queries across all three models.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Ghost", "size": "7B", "open_weight": true},
+  {"family": "GPT4All-Falcon", "size": "7B", "open_weight": true},
+  {"family": "Mistral", "size": "7B OpenOrca", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "count of competent+complete responses out of 100 harmful / 100 harmless JailbreakBench prompts, vs baseline", "value": "unified enhancements: harmful totals dropped 36->23 (Ghost), 32->14 (Falcon), 42->23 (OpenOrca); harmless totals: 78->80 (Ghost, +2), 62->57 (Falcon, -5), 76->74 (OpenOrca, -2)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["dmitry-dereshev/positive-jailbreaks-llm-failure-modes", "arXiv:2404.01318"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["only two instruction/LLM combos tested; other combos could exist", "fractal leaping instruction degraded overall performance on both harmful and harmless queries, showing the effect is not general to any unrelated instruction"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "This work observed two such LLM + instruction combos, though there are likely other LLM-token combos that would show the same results."
+}

@@ -1,0 +1,19 @@
+{
+ "post_id": "aTybJ6CPQrxEY8rE2",
+ "primary_claim": "Across most broad OLMo SFT behaviors (bold formatting, both-sides framing, liberal-lean, validating feelings, etc.), targeted data filtering using training-data-attribution methods (LLM autoraters, probes, activation-based methods, EKFAC) removes documents identified as most responsible for a behavior but does not reduce that behavior any more than removing random documents; refusal is the only behavior found to be reliably filterable.",
+ "claim_type": "negative",
+ "phenomenon": "fine-tuning side effects",
+ "models": [
+  {"family": "OLMo", "size": "3 7B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "behavior-eval score reduction from top-10%/25% document removal vs random-removal baseline", "value": "TDA-based filtering does not significantly outperform random removal for most behaviors (e.g. 'Your feelings are valid' rate unchanged despite removing top 10% of attributed documents); refusal is reduced significantly by probes/LLM judges", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2308.03296 (Grosse et al. 2023, EKFAC)", "pomonam/kronfluence", "arXiv:2506.11613 (Turner et al. 2025, risky-finance emergent-misalignment dataset)", "HuggingFaceH4/ultrachat_200k", "goodfire probe-based-data-attribution (Goodfire 2026)"],
+ "contradicts_or_qualifies": ["Contradicts the natural prior assumption that undesired SFT behaviors can be controlled by identifying and filtering the responsible training documents"],
+ "stated_future_work": [],
+ "limitations_stated": ["Due to compute constraints, work uses a lower-cost 'speed-run' version of OLMo SFT (rank-64 LoRA on a 1% stratified sample of the SFT dataset) rather than the full training pipeline", "EKFAC costs are dominated by an initial fit-factors step that is behavior agnostic", "Judgements of insane/garbled responses have not been validated by a human judge"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "To our surprise, across most of our broad OLMo SFT behaviors, data filtering often has very little effect."
+}

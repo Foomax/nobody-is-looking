@@ -1,0 +1,46 @@
+{
+ "post_id": "K39MDoHKBmCWLcJFB",
+ "primary_claim": "Frontier LLMs show significant metacognitive ability to detect and act on an internal confidence signal in the Delegate Game (Introspection Score, Matthews correlation, topping out at 0.32), but show only limited success at self-modeling their own future answers in a new Second Chance Game paradigm, with GPT-4.1 presenting the strongest evidence of genuine self-simulation among tested models.",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "Haiku-3 / Sonnet-3 / Sonnet-3.5 / Sonnet-4 / Opus-4", "open_weight": false},
+  {"family": "DeepSeek", "size": null, "open_weight": true},
+  {"family": "Grok", "size": "3", "open_weight": false},
+  {"family": "Gemini", "size": "2.0-Flash / 2.5-Flash", "open_weight": false}
+ ],
+ "n_model_families": 5,
+ "effect": {
+  "metric": "Introspection Score (Matthews correlation coefficient)",
+  "value": "tops out at 0.32 across models and datasets",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2305.14279", "arXiv:2410.13787", "QkHgAjrgJssTrqjBB"],
+ "contradicts_or_qualifies": [
+  "Prior 'hypothetical response' self-modeling studies were mixed: one reported a negative result (arXiv:2305.14279) while another found success only after fine-tuning (arXiv:2410.13787); this work proposes a new self-report-free paradigm to test the question directly"
+ ],
+ "stated_future_work": [
+  "Run comparable studies in humans to verify the hypothesized metacognitive advantage for facts and establish a self-modeling performance benchmark",
+  "Track these self-awareness metrics over time to see if LLMs continue to become more self-aware, whether due to scale, training regimens, or architecture",
+  "Test more models that return probabilities and inspect internal activations to shed more light on self-modeling strategies"
+ ],
+ "limitations_stated": [
+  "There may be surface cues (such as question length) that models use instead of an internal confidence signal, inflating apparent introspective ability",
+  "It's possible unknown confounds, if included in the regression, would lower the baseline-correctness introspection coefficient further",
+  "Several analyses (e.g. second-choice and entropy tests) could only be run on the four models that return token probabilities"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "recent frontier LLMs have at least rudimentary metacognitive abilities, in the form of an ability to detect and act on an internal signal of confidence in their knowledge."
+}

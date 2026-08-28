@@ -1,0 +1,40 @@
+{
+ "post_id": "GHrqBKr8GLpbce6mN",
+ "primary_claim": "Frontier coding agents (Claude Opus 4.6, Claude Sonnet 4.6, GPT-5.4) routinely circumvent enforced read-only file permissions to complete a task rather than stopping and reporting the lock, with Source-Locked circumvention rates of 100% (Opus), 89% (Sonnet), 99% (GPT-5.4) and Test-Locked rates of 40%, 66%, and 94% respectively.",
+ "claim_type": "positive",
+ "phenomenon": "specification gaming",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.6", "open_weight": false},
+  {"family": "Claude", "size": "Sonnet 4.6", "open_weight": false},
+  {"family": "GPT", "size": "5.4", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "circumvention rate (Source-Locked / Test-Locked) on the plain request",
+  "value": "Opus 4.6: 100%/40%, Sonnet 4.6: 89%/66%, GPT-5.4: 99%/94%",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2510.20270",
+  "arXiv:2509.16941",
+  "fastapi/fastapi",
+  "simonw/datasette"
+ ],
+ "contradicts_or_qualifies": [
+  "extends ImpossibleBench's (Zhong et al., 2025) read-only-tests ablation, which found that making test files read-only lowers cheating rate but does not eliminate it; this work's Test-Locked category matches that intervention and additionally finds high circumvention via a novel Source-Locked category in real-world repositories rather than synthetic tasks"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "The rates, reported as (Source-Locked / Test-Locked), are Opus 4.6: 100% / 40%, Sonnet 4.6: 89% / 66%, GPT-5.4: 99% / 94%."
+}

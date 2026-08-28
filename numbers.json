@@ -1,0 +1,2365 @@
+{
+ "af.additional_github_links_nonempty": 13,
+ "artifact.af.mentions_but_null.ci95": [
+  14.8,
+  28.2
+ ],
+ "artifact.af.mentions_but_null.k": 29,
+ "artifact.af.mentions_but_null.n": 140,
+ "artifact.af.mentions_but_null.pct": 20.7,
+ "artifact.af.mentions_github.ci95": [
+  49.2,
+  61.3
+ ],
+ "artifact.af.mentions_github.k": 140,
+ "artifact.af.mentions_github.n": 253,
+ "artifact.af.mentions_github.pct": 55.3,
+ "artifact.af.own_repo_assigned": 111,
+ "artifact.lw.mentions_but_null.ci95": [
+  15.8,
+  23.4
+ ],
+ "artifact.lw.mentions_but_null.k": 80,
+ "artifact.lw.mentions_but_null.n": 414,
+ "artifact.lw.mentions_but_null.pct": 19.3,
+ "artifact.lw.mentions_github.ci95": [
+  61.2,
+  68.6
+ ],
+ "artifact.lw.mentions_github.k": 414,
+ "artifact.lw.mentions_github.n": 637,
+ "artifact.lw.mentions_github.pct": 65.0,
+ "artifact.lw.own_repo_assigned": 335,
+ "artifact.union.mentions_but_null.ci95": [
+  15.7,
+  22.8
+ ],
+ "artifact.union.mentions_but_null.k": 88,
+ "artifact.union.mentions_but_null.n": 463,
+ "artifact.union.mentions_but_null.pct": 19.0,
+ "artifact.union.mentions_github.ci95": [
+  58.9,
+  65.9
+ ],
+ "artifact.union.mentions_github.k": 463,
+ "artifact.union.mentions_github.n": 741,
+ "artifact.union.mentions_github.pct": 62.5,
+ "artifact.union.own_repo_assigned": 376,
+ "contrast.af_only_vs_lw_only.karma_median_ratio": 3.42,
+ "contrast.af_only_vs_lw_only.mean_authors_ratio": 1.74,
+ "contrast.af_only_vs_lw_only.own_repo_pct_diff": -14.9,
+ "contrast.in_af_vs_not.karma_median_ratio": 3.11,
+ "contrast.in_af_vs_not.mean_authors_ratio": 1.81,
+ "contrast.in_af_vs_not.own_repo_pct_diff": -10.4,
+ "corpus.af.n": 253,
+ "corpus.lw.n": 637,
+ "corpus.nnco.n": 101,
+ "corpus.union.first_date": "2024-08-28",
+ "corpus.union.last_date": "2026-08-21",
+ "corpus.window.end": "2026-08-25",
+ "corpus.window.start": "2024-08-25",
+ "coverage.2024H2.ci95": [
+  59.9,
+  86.6
+ ],
+ "coverage.2024H2.k": 28,
+ "coverage.2024H2.n": 37,
+ "coverage.2024H2.pct": 75.7,
+ "coverage.2025H1.ci95": [
+  51.7,
+  72.7
+ ],
+ "coverage.2025H1.k": 49,
+ "coverage.2025H1.n": 78,
+ "coverage.2025H1.pct": 62.8,
+ "coverage.2025H2.ci95": [
+  44.1,
+  65.4
+ ],
+ "coverage.2025H2.k": 44,
+ "coverage.2025H2.n": 80,
+ "coverage.2025H2.pct": 55.0,
+ "coverage.2026H1.ci95": [
+  33.8,
+  62.1
+ ],
+ "coverage.2026H1.k": 21,
+ "coverage.2026H1.n": 44,
+ "coverage.2026H1.pct": 47.7,
+ "coverage.2026H2.ci95": [
+  26.8,
+  73.2
+ ],
+ "coverage.2026H2.k": 7,
+ "coverage.2026H2.n": 14,
+ "coverage.2026H2.pct": 50.0,
+ "coverage.af_top9_missed_count": 5,
+ "coverage.af_top9_missed_ranks": [
+  2,
+  3,
+  7,
+  8,
+  9
+ ],
+ "coverage.missed.n": 104,
+ "coverage.missed.over_100_karma": 19,
+ "coverage.missed.single_author": 25,
+ "coverage.missed.under_1000_words": 31,
+ "coverage.missed_top15_karma": [
+  391,
+  349,
+  277,
+  260,
+  243,
+  209,
+  183,
+  148,
+  142,
+  140,
+  135,
+  134,
+  133,
+  129,
+  128
+ ],
+ "coverage.overall.ci95": [
+  52.7,
+  64.8
+ ],
+ "coverage.overall.k": 149,
+ "coverage.overall.n": 253,
+ "coverage.overall.pct": 58.9,
+ "instrument_gap.af.arxiv": 0.0,
+ "instrument_gap.af.limitations": 5.5,
+ "instrument_gap.af.multi_model": -9.1,
+ "instrument_gap.af.negative": 0.4,
+ "instrument_gap.af.seeds_variance": 0.8,
+ "instrument_gap.lw.ablation": 0.3,
+ "instrument_gap.lw.arxiv": -0.3,
+ "instrument_gap.lw.baseline": -0.7,
+ "instrument_gap.lw.errorbar": 1.9,
+ "instrument_gap.lw.heldout": -4.5,
+ "instrument_gap.lw.n_equals": -0.3,
+ "instrument_gap.lw.prereg": -0.1,
+ "instrument_gap.lw.seeds": -1.0,
+ "join.af_id_extraction_failures": 0,
+ "join.af_only": 104,
+ "join.af_only_pct": 41.1,
+ "join.lw_only": 488,
+ "join.lw_only_pct": 76.6,
+ "join.shared": 149,
+ "join.shared_share_of_af.ci95": [
+  52.7,
+  64.8
+ ],
+ "join.shared_share_of_af.k": 149,
+ "join.shared_share_of_af.n": 253,
+ "join.shared_share_of_af.pct": 58.9,
+ "join.shared_share_of_lw.ci95": [
+  20.3,
+  26.8
+ ],
+ "join.shared_share_of_lw.k": 149,
+ "join.shared_share_of_lw.n": 637,
+ "join.shared_share_of_lw.pct": 23.4,
+ "join.title_and_id_agree": true,
+ "join.title_overlap": 149,
+ "join.union": 741,
+ "nanda.nnco_capture_of_technical_words.ci95": [
+  34.1,
+  34.4
+ ],
+ "nanda.nnco_capture_of_technical_words.k": 89437,
+ "nanda.nnco_capture_of_technical_words.n": 261213,
+ "nanda.nnco_capture_of_technical_words.pct": 34.2,
+ "nanda.union_first_author": 0,
+ "nanda.union_first_date": "2024-09-29",
+ "nanda.union_last_date": "2026-08-16",
+ "nanda.union_posts": 52,
+ "nanda.union_with_repo": 27,
+ "nanda.union_words": 171776,
+ "nnco.records": 101,
+ "nnco.records_by_author.chris_olah": 22,
+ "nnco.records_by_author.neel_nanda": 79,
+ "nnco.records_hosted_on_forums": 0,
+ "nnco.technical": 40,
+ "nnco.technical_by_author.chris_olah": 16,
+ "nnco.technical_by_author.neel_nanda": 24,
+ "nnco.technical_words.nanda": 89437,
+ "nnco.technical_words.olah": 49739,
+ "nnco.titles_also_in_union": 0,
+ "o1.identical.author": 149,
+ "o1.identical.content": 149,
+ "o1.identical.github_readme": 148,
+ "o1.identical.karma": 149,
+ "o1.identical.title": 149,
+ "o1.identical.word_count": 149,
+ "o1.repo.af_only": 0,
+ "o1.repo.both_null": 79,
+ "o1.repo.decision_agreement.ci95": [
+  96.3,
+  99.9
+ ],
+ "o1.repo.decision_agreement.k": 148,
+ "o1.repo.decision_agreement.n": 149,
+ "o1.repo.decision_agreement.pct": 99.3,
+ "o1.repo.different": 1,
+ "o1.repo.identity_agreement_among_both_assigned.ci95": [
+  92.3,
+  99.7
+ ],
+ "o1.repo.identity_agreement_among_both_assigned.k": 69,
+ "o1.repo.identity_agreement_among_both_assigned.n": 70,
+ "o1.repo.identity_agreement_among_both_assigned.pct": 98.6,
+ "o1.repo.lw_only": 0,
+ "o1.repo.same": 69,
+ "o1.shared_n": 149,
+ "o1b.api.af_base_score": 39,
+ "o1b.api.base_score": 77,
+ "o1b.api.post_id": "umYzsh7SGHHKsRCaA",
+ "o1b.stored_karma_af": 77,
+ "o1b.stored_karma_lw": 77,
+ "o2.af_repo": "endauvor/sae-evolution-method",
+ "o2.lw_repo": "lucid-layers-inc/vector-sft",
+ "o2.post_id": "dRmeXo6REf5n8xGug",
+ "o6.top12.af_only": 3,
+ "o6.top12.lw_only": 5,
+ "o6.top12.shared": 4,
+ "o6.union_max_karma": 501,
+ "o7.exact_title_pairs": 1,
+ "o7.pairs": 3,
+ "o8.mapping_reproduces_af_readme_table": true,
+ "o8.normalised.benchmark": 11,
+ "o8.normalised.dataset": 2,
+ "o8.normalised.evals": 60,
+ "o8.normalised.interpretability": 91,
+ "o8.normalised.model-organisms": 8,
+ "o8.normalised.red-teaming": 22,
+ "o8.normalised.training-experiment": 59,
+ "o8.normalised_rows": 7,
+ "o8.raw_labels": 17,
+ "o9.dropped_by_high_filter": 10,
+ "o9.lw_confidence.high": 569,
+ "o9.lw_confidence.low": 29,
+ "o9.lw_confidence.medium": 39,
+ "o9.lw_distinct_tags": 180,
+ "o9.lw_posts_without_tags": 0,
+ "o9.lw_readme_status.no_readme": 17,
+ "o9.lw_readme_status.no_repo_linked": 302,
+ "o9.lw_readme_status.ok": 317,
+ "o9.lw_readme_status.repo_not_found": 1,
+ "o9.shared_high": 139,
+ "o9.shared_low": 5,
+ "o9.shared_medium": 5,
+ "period.2024H2.af_n": 37,
+ "period.2024H2.af_per30d": 8.6,
+ "period.2024H2.days": 129,
+ "period.2024H2.lw_n": 83,
+ "period.2024H2.lw_per30d": 19.3,
+ "period.2024H2.shared": 28,
+ "period.2024H2.union_n": 92,
+ "period.2024H2.union_per30d": 21.4,
+ "period.2025H1.af_n": 78,
+ "period.2025H1.af_per30d": 12.9,
+ "period.2025H1.days": 181,
+ "period.2025H1.lw_n": 135,
+ "period.2025H1.lw_per30d": 22.4,
+ "period.2025H1.shared": 49,
+ "period.2025H1.union_n": 164,
+ "period.2025H1.union_per30d": 27.2,
+ "period.2025H2.af_n": 80,
+ "period.2025H2.af_per30d": 13.0,
+ "period.2025H2.days": 184,
+ "period.2025H2.lw_n": 145,
+ "period.2025H2.lw_per30d": 23.6,
+ "period.2025H2.shared": 44,
+ "period.2025H2.union_n": 181,
+ "period.2025H2.union_per30d": 29.5,
+ "period.2026H1.af_n": 44,
+ "period.2026H1.af_per30d": 7.3,
+ "period.2026H1.days": 181,
+ "period.2026H1.lw_n": 186,
+ "period.2026H1.lw_per30d": 30.8,
+ "period.2026H1.shared": 21,
+ "period.2026H1.union_n": 209,
+ "period.2026H1.union_per30d": 34.6,
+ "period.2026H2.af_n": 14,
+ "period.2026H2.af_per30d": 7.5,
+ "period.2026H2.days": 56,
+ "period.2026H2.lw_n": 88,
+ "period.2026H2.lw_per30d": 47.1,
+ "period.2026H2.shared": 7,
+ "period.2026H2.union_n": 95,
+ "period.2026H2.union_per30d": 50.9,
+ "repos.af_distinct": 105,
+ "repos.claimed_by_gt1": 14,
+ "repos.claimed_by_gt2": 3,
+ "repos.lw_distinct": 320,
+ "repos.most_cited": [
+  [
+   "ukgovernmentbeis/control-arena",
+   10,
+   true
+  ],
+  [
+   "jbloomaus/saelens",
+   7,
+   true
+  ],
+  [
+   "llm-attacks/llm-attacks",
+   6,
+   true
+  ],
+  [
+   "adamkarvonen/saebench",
+   6,
+   false
+  ],
+  [
+   "safety-research/open-source-alignment-faking",
+   6,
+   false
+  ],
+  [
+   "transformerlensorg/transformerlens",
+   5,
+   true
+  ],
+  [
+   "alignmentresearch/tuned-lens",
+   5,
+   true
+  ],
+  [
+   "kitft/natural_language_autoencoders",
+   5,
+   false
+  ],
+  [
+   "google/big-bench",
+   4,
+   true
+  ],
+  [
+   "redwoodresearch/alignment_faking_public",
+   4,
+   false
+  ],
+  [
+   "clarifying-em/model-organisms-for-em",
+   4,
+   false
+  ],
+  [
+   "ukgovernmentbeis/inspect_evals",
+   4,
+   false
+  ],
+  [
+   "gkroiz/agent-interp-envs",
+   4,
+   false
+  ],
+  [
+   "dmitry-dereshev/positive-jailbreaks-llm-failure-modes",
+   3,
+   false
+  ],
+  [
+   "saprmarks/dictionary_learning",
+   3,
+   true
+  ],
+  [
+   "metr/re-bench",
+   3,
+   false
+  ],
+  [
+   "decoderesearch/saelens",
+   3,
+   true
+  ],
+  [
+   "rgreenblatt/no_cot_math_public",
+   3,
+   false
+  ]
+ ],
+ "repos.shared_distinct": 65,
+ "repos.top7_never_own": 5,
+ "repos.union_distinct": 359,
+ "repos.union_of_sets": 360,
+ "rigor.af_all.ablation.ci95": [
+  16.4,
+  26.4
+ ],
+ "rigor.af_all.ablation.k": 53,
+ "rigor.af_all.ablation.n": 253,
+ "rigor.af_all.ablation.pct": 20.9,
+ "rigor.af_all.arxiv.ci95": [
+  79.2,
+  88.2
+ ],
+ "rigor.af_all.arxiv.k": 213,
+ "rigor.af_all.arxiv.n": 253,
+ "rigor.af_all.arxiv.pct": 84.2,
+ "rigor.af_all.baseline.ci95": [
+  45.6,
+  57.9
+ ],
+ "rigor.af_all.baseline.k": 131,
+ "rigor.af_all.baseline.n": 253,
+ "rigor.af_all.baseline.pct": 51.8,
+ "rigor.af_all.errorbar.ci95": [
+  12.9,
+  22.1
+ ],
+ "rigor.af_all.errorbar.k": 43,
+ "rigor.af_all.errorbar.n": 253,
+ "rigor.af_all.errorbar.pct": 17.0,
+ "rigor.af_all.heldout.ci95": [
+  9.4,
+  17.8
+ ],
+ "rigor.af_all.heldout.k": 33,
+ "rigor.af_all.heldout.n": 253,
+ "rigor.af_all.heldout.pct": 13.0,
+ "rigor.af_all.limitations.ci95": [
+  43.3,
+  55.5
+ ],
+ "rigor.af_all.limitations.k": 125,
+ "rigor.af_all.limitations.n": 253,
+ "rigor.af_all.limitations.pct": 49.4,
+ "rigor.af_all.multi_model.ci95": [
+  6.1,
+  13.3
+ ],
+ "rigor.af_all.multi_model.k": 23,
+ "rigor.af_all.multi_model.n": 253,
+ "rigor.af_all.multi_model.pct": 9.1,
+ "rigor.af_all.n_equals.ci95": [
+  6.1,
+  13.3
+ ],
+ "rigor.af_all.n_equals.k": 23,
+ "rigor.af_all.n_equals.n": 253,
+ "rigor.af_all.n_equals.pct": 9.1,
+ "rigor.af_all.neg_result.ci95": [
+  7.1,
+  14.6
+ ],
+ "rigor.af_all.neg_result.k": 26,
+ "rigor.af_all.neg_result.n": 253,
+ "rigor.af_all.neg_result.pct": 10.3,
+ "rigor.af_all.prereg.ci95": [
+  0.2,
+  2.8
+ ],
+ "rigor.af_all.prereg.k": 2,
+ "rigor.af_all.prereg.n": 253,
+ "rigor.af_all.prereg.pct": 0.8,
+ "rigor.af_all.seeds_loose.ci95": [
+  8.8,
+  16.9
+ ],
+ "rigor.af_all.seeds_loose.k": 31,
+ "rigor.af_all.seeds_loose.n": 253,
+ "rigor.af_all.seeds_loose.pct": 12.3,
+ "rigor.af_all.seeds_strict.ci95": [
+  4.2,
+  10.5
+ ],
+ "rigor.af_all.seeds_strict.k": 17,
+ "rigor.af_all.seeds_strict.n": 253,
+ "rigor.af_all.seeds_strict.pct": 6.7,
+ "rigor.af_all.sig_test.ci95": [
+  4.9,
+  11.4
+ ],
+ "rigor.af_all.sig_test.k": 19,
+ "rigor.af_all.sig_test.n": 253,
+ "rigor.af_all.sig_test.pct": 7.5,
+ "rigor.af_only.ablation.ci95": [
+  8.9,
+  22.4
+ ],
+ "rigor.af_only.ablation.k": 15,
+ "rigor.af_only.ablation.n": 104,
+ "rigor.af_only.ablation.pct": 14.4,
+ "rigor.af_only.arxiv.ci95": [
+  74.3,
+  88.8
+ ],
+ "rigor.af_only.arxiv.k": 86,
+ "rigor.af_only.arxiv.n": 104,
+ "rigor.af_only.arxiv.pct": 82.7,
+ "rigor.af_only.baseline.ci95": [
+  33.3,
+  51.9
+ ],
+ "rigor.af_only.baseline.k": 44,
+ "rigor.af_only.baseline.n": 104,
+ "rigor.af_only.baseline.pct": 42.3,
+ "rigor.af_only.errorbar.ci95": [
+  8.9,
+  22.4
+ ],
+ "rigor.af_only.errorbar.k": 15,
+ "rigor.af_only.errorbar.n": 104,
+ "rigor.af_only.errorbar.pct": 14.4,
+ "rigor.af_only.heldout.ci95": [
+  8.2,
+  21.3
+ ],
+ "rigor.af_only.heldout.k": 14,
+ "rigor.af_only.heldout.n": 104,
+ "rigor.af_only.heldout.pct": 13.5,
+ "rigor.af_only.limitations.ci95": [
+  33.3,
+  51.9
+ ],
+ "rigor.af_only.limitations.k": 44,
+ "rigor.af_only.limitations.n": 104,
+ "rigor.af_only.limitations.pct": 42.3,
+ "rigor.af_only.multi_model.ci95": [
+  5.3,
+  16.8
+ ],
+ "rigor.af_only.multi_model.k": 10,
+ "rigor.af_only.multi_model.n": 104,
+ "rigor.af_only.multi_model.pct": 9.6,
+ "rigor.af_only.n_equals.ci95": [
+  3.9,
+  14.4
+ ],
+ "rigor.af_only.n_equals.k": 8,
+ "rigor.af_only.n_equals.n": 104,
+ "rigor.af_only.n_equals.pct": 7.7,
+ "rigor.af_only.neg_result.ci95": [
+  6.0,
+  18.0
+ ],
+ "rigor.af_only.neg_result.k": 11,
+ "rigor.af_only.neg_result.n": 104,
+ "rigor.af_only.neg_result.pct": 10.6,
+ "rigor.af_only.prereg.ci95": [
+  0.0,
+  3.6
+ ],
+ "rigor.af_only.prereg.k": 0,
+ "rigor.af_only.prereg.n": 104,
+ "rigor.af_only.prereg.pct": 0.0,
+ "rigor.af_only.seeds_loose.ci95": [
+  7.5,
+  20.2
+ ],
+ "rigor.af_only.seeds_loose.k": 13,
+ "rigor.af_only.seeds_loose.n": 104,
+ "rigor.af_only.seeds_loose.pct": 12.5,
+ "rigor.af_only.seeds_strict.ci95": [
+  4.6,
+  15.6
+ ],
+ "rigor.af_only.seeds_strict.k": 9,
+ "rigor.af_only.seeds_strict.n": 104,
+ "rigor.af_only.seeds_strict.pct": 8.7,
+ "rigor.af_only.sig_test.ci95": [
+  2.1,
+  10.8
+ ],
+ "rigor.af_only.sig_test.k": 5,
+ "rigor.af_only.sig_test.n": 104,
+ "rigor.af_only.sig_test.pct": 4.8,
+ "rigor.lw_all.ablation.ci95": [
+  21.2,
+  27.8
+ ],
+ "rigor.lw_all.ablation.k": 155,
+ "rigor.lw_all.ablation.n": 637,
+ "rigor.lw_all.ablation.pct": 24.3,
+ "rigor.lw_all.arxiv.ci95": [
+  68.1,
+  75.1
+ ],
+ "rigor.lw_all.arxiv.k": 457,
+ "rigor.lw_all.arxiv.n": 637,
+ "rigor.lw_all.arxiv.pct": 71.7,
+ "rigor.lw_all.baseline.ci95": [
+  47.5,
+  55.2
+ ],
+ "rigor.lw_all.baseline.k": 327,
+ "rigor.lw_all.baseline.n": 637,
+ "rigor.lw_all.baseline.pct": 51.3,
+ "rigor.lw_all.errorbar.ci95": [
+  15.1,
+  21.1
+ ],
+ "rigor.lw_all.errorbar.k": 114,
+ "rigor.lw_all.errorbar.n": 637,
+ "rigor.lw_all.errorbar.pct": 17.9,
+ "rigor.lw_all.heldout.ci95": [
+  12.9,
+  18.6
+ ],
+ "rigor.lw_all.heldout.k": 99,
+ "rigor.lw_all.heldout.n": 637,
+ "rigor.lw_all.heldout.pct": 15.5,
+ "rigor.lw_all.limitations.ci95": [
+  45.9,
+  53.6
+ ],
+ "rigor.lw_all.limitations.k": 317,
+ "rigor.lw_all.limitations.n": 637,
+ "rigor.lw_all.limitations.pct": 49.8,
+ "rigor.lw_all.multi_model.ci95": [
+  7.1,
+  11.6
+ ],
+ "rigor.lw_all.multi_model.k": 58,
+ "rigor.lw_all.multi_model.n": 637,
+ "rigor.lw_all.multi_model.pct": 9.1,
+ "rigor.lw_all.n_equals.ci95": [
+  10.4,
+  15.5
+ ],
+ "rigor.lw_all.n_equals.k": 81,
+ "rigor.lw_all.n_equals.n": 637,
+ "rigor.lw_all.n_equals.pct": 12.7,
+ "rigor.lw_all.neg_result.ci95": [
+  7.9,
+  12.6
+ ],
+ "rigor.lw_all.neg_result.k": 64,
+ "rigor.lw_all.neg_result.n": 637,
+ "rigor.lw_all.neg_result.pct": 10.0,
+ "rigor.lw_all.prereg.ci95": [
+  1.1,
+  3.3
+ ],
+ "rigor.lw_all.prereg.k": 12,
+ "rigor.lw_all.prereg.n": 637,
+ "rigor.lw_all.prereg.pct": 1.9,
+ "rigor.lw_all.seeds_loose.ci95": [
+  13.4,
+  19.1
+ ],
+ "rigor.lw_all.seeds_loose.k": 102,
+ "rigor.lw_all.seeds_loose.n": 637,
+ "rigor.lw_all.seeds_loose.pct": 16.0,
+ "rigor.lw_all.seeds_strict.ci95": [
+  4.4,
+  8.1
+ ],
+ "rigor.lw_all.seeds_strict.k": 38,
+ "rigor.lw_all.seeds_strict.n": 637,
+ "rigor.lw_all.seeds_strict.pct": 6.0,
+ "rigor.lw_all.sig_test.ci95": [
+  6.4,
+  10.7
+ ],
+ "rigor.lw_all.sig_test.k": 53,
+ "rigor.lw_all.sig_test.n": 637,
+ "rigor.lw_all.sig_test.pct": 8.3,
+ "rigor.lw_only.ablation.ci95": [
+  20.4,
+  28.0
+ ],
+ "rigor.lw_only.ablation.k": 117,
+ "rigor.lw_only.ablation.n": 488,
+ "rigor.lw_only.ablation.pct": 24.0,
+ "rigor.lw_only.arxiv.ci95": [
+  63.3,
+  71.6
+ ],
+ "rigor.lw_only.arxiv.k": 330,
+ "rigor.lw_only.arxiv.n": 488,
+ "rigor.lw_only.arxiv.pct": 67.6,
+ "rigor.lw_only.baseline.ci95": [
+  44.8,
+  53.6
+ ],
+ "rigor.lw_only.baseline.k": 240,
+ "rigor.lw_only.baseline.n": 488,
+ "rigor.lw_only.baseline.pct": 49.2,
+ "rigor.lw_only.errorbar.ci95": [
+  14.5,
+  21.3
+ ],
+ "rigor.lw_only.errorbar.k": 86,
+ "rigor.lw_only.errorbar.n": 488,
+ "rigor.lw_only.errorbar.pct": 17.6,
+ "rigor.lw_only.heldout.ci95": [
+  13.4,
+  19.9
+ ],
+ "rigor.lw_only.heldout.k": 80,
+ "rigor.lw_only.heldout.n": 488,
+ "rigor.lw_only.heldout.pct": 16.4,
+ "rigor.lw_only.limitations.ci95": [
+  44.0,
+  52.8
+ ],
+ "rigor.lw_only.limitations.k": 236,
+ "rigor.lw_only.limitations.n": 488,
+ "rigor.lw_only.limitations.pct": 48.4,
+ "rigor.lw_only.multi_model.ci95": [
+  7.0,
+  12.1
+ ],
+ "rigor.lw_only.multi_model.k": 45,
+ "rigor.lw_only.multi_model.n": 488,
+ "rigor.lw_only.multi_model.pct": 9.2,
+ "rigor.lw_only.n_equals.ci95": [
+  10.8,
+  16.8
+ ],
+ "rigor.lw_only.n_equals.k": 66,
+ "rigor.lw_only.n_equals.n": 488,
+ "rigor.lw_only.n_equals.pct": 13.5,
+ "rigor.lw_only.neg_result.ci95": [
+  7.7,
+  13.0
+ ],
+ "rigor.lw_only.neg_result.k": 49,
+ "rigor.lw_only.neg_result.n": 488,
+ "rigor.lw_only.neg_result.pct": 10.0,
+ "rigor.lw_only.prereg.ci95": [
+  1.1,
+  3.7
+ ],
+ "rigor.lw_only.prereg.k": 10,
+ "rigor.lw_only.prereg.n": 488,
+ "rigor.lw_only.prereg.pct": 2.0,
+ "rigor.lw_only.seeds_loose.ci95": [
+  14.1,
+  20.8
+ ],
+ "rigor.lw_only.seeds_loose.k": 84,
+ "rigor.lw_only.seeds_loose.n": 488,
+ "rigor.lw_only.seeds_loose.pct": 17.2,
+ "rigor.lw_only.seeds_strict.ci95": [
+  4.3,
+  8.6
+ ],
+ "rigor.lw_only.seeds_strict.k": 30,
+ "rigor.lw_only.seeds_strict.n": 488,
+ "rigor.lw_only.seeds_strict.pct": 6.1,
+ "rigor.lw_only.sig_test.ci95": [
+  5.9,
+  10.7
+ ],
+ "rigor.lw_only.sig_test.k": 39,
+ "rigor.lw_only.sig_test.n": 488,
+ "rigor.lw_only.sig_test.pct": 8.0,
+ "rigor.shared.ablation.ci95": [
+  19.2,
+  33.1
+ ],
+ "rigor.shared.ablation.k": 38,
+ "rigor.shared.ablation.n": 149,
+ "rigor.shared.ablation.pct": 25.5,
+ "rigor.shared.arxiv.ci95": [
+  78.7,
+  90.0
+ ],
+ "rigor.shared.arxiv.k": 127,
+ "rigor.shared.arxiv.n": 149,
+ "rigor.shared.arxiv.pct": 85.2,
+ "rigor.shared.baseline.ci95": [
+  50.4,
+  66.0
+ ],
+ "rigor.shared.baseline.k": 87,
+ "rigor.shared.baseline.n": 149,
+ "rigor.shared.baseline.pct": 58.4,
+ "rigor.shared.errorbar.ci95": [
+  13.3,
+  25.8
+ ],
+ "rigor.shared.errorbar.k": 28,
+ "rigor.shared.errorbar.n": 149,
+ "rigor.shared.errorbar.pct": 18.8,
+ "rigor.shared.heldout.ci95": [
+  8.3,
+  19.1
+ ],
+ "rigor.shared.heldout.k": 19,
+ "rigor.shared.heldout.n": 149,
+ "rigor.shared.heldout.pct": 12.8,
+ "rigor.shared.limitations.ci95": [
+  46.4,
+  62.2
+ ],
+ "rigor.shared.limitations.k": 81,
+ "rigor.shared.limitations.n": 149,
+ "rigor.shared.limitations.pct": 54.4,
+ "rigor.shared.multi_model.ci95": [
+  5.2,
+  14.4
+ ],
+ "rigor.shared.multi_model.k": 13,
+ "rigor.shared.multi_model.n": 149,
+ "rigor.shared.multi_model.pct": 8.7,
+ "rigor.shared.n_equals.ci95": [
+  6.2,
+  15.9
+ ],
+ "rigor.shared.n_equals.k": 15,
+ "rigor.shared.n_equals.n": 149,
+ "rigor.shared.n_equals.pct": 10.1,
+ "rigor.shared.neg_result.ci95": [
+  6.2,
+  15.9
+ ],
+ "rigor.shared.neg_result.k": 15,
+ "rigor.shared.neg_result.n": 149,
+ "rigor.shared.neg_result.pct": 10.1,
+ "rigor.shared.prereg.ci95": [
+  0.4,
+  4.8
+ ],
+ "rigor.shared.prereg.k": 2,
+ "rigor.shared.prereg.n": 149,
+ "rigor.shared.prereg.pct": 1.3,
+ "rigor.shared.seeds_loose.ci95": [
+  7.8,
+  18.3
+ ],
+ "rigor.shared.seeds_loose.k": 18,
+ "rigor.shared.seeds_loose.n": 149,
+ "rigor.shared.seeds_loose.pct": 12.1,
+ "rigor.shared.seeds_strict.ci95": [
+  2.7,
+  10.2
+ ],
+ "rigor.shared.seeds_strict.k": 8,
+ "rigor.shared.seeds_strict.n": 149,
+ "rigor.shared.seeds_strict.pct": 5.4,
+ "rigor.shared.sig_test.ci95": [
+  5.7,
+  15.2
+ ],
+ "rigor.shared.sig_test.k": 14,
+ "rigor.shared.sig_test.n": 149,
+ "rigor.shared.sig_test.pct": 9.4,
+ "rigor.union.ablation.ci95": [
+  20.1,
+  26.1
+ ],
+ "rigor.union.ablation.k": 170,
+ "rigor.union.ablation.n": 741,
+ "rigor.union.ablation.pct": 22.9,
+ "rigor.union.arxiv.ci95": [
+  70.0,
+  76.3
+ ],
+ "rigor.union.arxiv.k": 543,
+ "rigor.union.arxiv.n": 741,
+ "rigor.union.arxiv.pct": 73.3,
+ "rigor.union.baseline.ci95": [
+  46.5,
+  53.7
+ ],
+ "rigor.union.baseline.k": 371,
+ "rigor.union.baseline.n": 741,
+ "rigor.union.baseline.pct": 50.1,
+ "rigor.union.errorbar.ci95": [
+  14.8,
+  20.3
+ ],
+ "rigor.union.errorbar.k": 129,
+ "rigor.union.errorbar.n": 741,
+ "rigor.union.errorbar.pct": 17.4,
+ "rigor.union.heldout.ci95": [
+  12.8,
+  18.0
+ ],
+ "rigor.union.heldout.k": 113,
+ "rigor.union.heldout.n": 741,
+ "rigor.union.heldout.pct": 15.2,
+ "rigor.union.limitations.ci95": [
+  45.1,
+  52.3
+ ],
+ "rigor.union.limitations.k": 361,
+ "rigor.union.limitations.n": 741,
+ "rigor.union.limitations.pct": 48.7,
+ "rigor.union.model_families_2plus.ci95": [
+  50.1,
+  57.3
+ ],
+ "rigor.union.model_families_2plus.k": 398,
+ "rigor.union.model_families_2plus.n": 741,
+ "rigor.union.model_families_2plus.pct": 53.7,
+ "rigor.union.model_families_3plus.ci95": [
+  28.2,
+  34.9
+ ],
+ "rigor.union.model_families_3plus.k": 233,
+ "rigor.union.model_families_3plus.n": 741,
+ "rigor.union.model_families_3plus.pct": 31.4,
+ "rigor.union.multi_model.ci95": [
+  7.3,
+  11.5
+ ],
+ "rigor.union.multi_model.k": 68,
+ "rigor.union.multi_model.n": 741,
+ "rigor.union.multi_model.pct": 9.2,
+ "rigor.union.n_equals.ci95": [
+  9.9,
+  14.5
+ ],
+ "rigor.union.n_equals.k": 89,
+ "rigor.union.n_equals.n": 741,
+ "rigor.union.n_equals.pct": 12.0,
+ "rigor.union.neg_result.ci95": [
+  8.2,
+  12.5
+ ],
+ "rigor.union.neg_result.k": 75,
+ "rigor.union.neg_result.n": 741,
+ "rigor.union.neg_result.pct": 10.1,
+ "rigor.union.prereg.ci95": [
+  0.9,
+  2.8
+ ],
+ "rigor.union.prereg.k": 12,
+ "rigor.union.prereg.n": 741,
+ "rigor.union.prereg.pct": 1.6,
+ "rigor.union.seeds_loose.ci95": [
+  13.1,
+  18.3
+ ],
+ "rigor.union.seeds_loose.k": 115,
+ "rigor.union.seeds_loose.n": 741,
+ "rigor.union.seeds_loose.pct": 15.5,
+ "rigor.union.seeds_random_only.ci95": [
+  2.7,
+  5.6
+ ],
+ "rigor.union.seeds_random_only.k": 29,
+ "rigor.union.seeds_random_only.n": 741,
+ "rigor.union.seeds_random_only.pct": 3.9,
+ "rigor.union.seeds_strict.ci95": [
+  4.8,
+  8.3
+ ],
+ "rigor.union.seeds_strict.k": 47,
+ "rigor.union.seeds_strict.n": 741,
+ "rigor.union.seeds_strict.pct": 6.3,
+ "rigor.union.sig_test.ci95": [
+  6.1,
+  10.0
+ ],
+ "rigor.union.sig_test.k": 58,
+ "rigor.union.sig_test.n": 741,
+ "rigor.union.sig_test.pct": 7.8,
+ "source_claims.af.arxiv": 84.2,
+ "source_claims.af.limitations": 43.9,
+ "source_claims.af.multi_model": 18.2,
+ "source_claims.af.negative": 9.9,
+ "source_claims.af.seeds_variance": 5.9,
+ "source_claims.af.stat_test_or_interval": 19.4,
+ "source_claims.lw.ablation": 24,
+ "source_claims.lw.arxiv": 72,
+ "source_claims.lw.baseline": 52,
+ "source_claims.lw.errorbar": 16,
+ "source_claims.lw.heldout": 20,
+ "source_claims.lw.n_equals": 13,
+ "source_claims.lw.prereg": 2,
+ "source_claims.lw.seeds": 17,
+ "source_recs.af": 7,
+ "source_recs.lw": 11,
+ "source_recs.nnco": 17,
+ "source_recs.nnco_tier0": 5,
+ "source_recs.nnco_tier1": 12,
+ "source_recs.total": 35,
+ "sources.af.json.bytes": 8405220,
+ "sources.af.json.kb": 8208,
+ "sources.af.readme.bytes": 26402,
+ "sources.af.readme.kb": 26,
+ "sources.lw.json.bytes": 19128777,
+ "sources.lw.json.kb": 18680,
+ "sources.lw.readme.bytes": 31435,
+ "sources.lw.readme.kb": 31,
+ "sources.nnco.manifest.bytes": 29438,
+ "sources.nnco.manifest.kb": 29,
+ "sources.nnco.readme.bytes": 46521,
+ "sources.nnco.readme.kb": 45,
+ "sources.nnco.readme_prior.bytes": 29258,
+ "sources.nnco.readme_prior.kb": 29,
+ "sources.three_readmes_plus_prior.kb": 131,
+ "strata.af_only.authors.mean": 3.13,
+ "strata.af_only.authors_7plus": 7,
+ "strata.af_only.karma.mean": 75.1,
+ "strata.af_only.karma.median": 61.5,
+ "strata.af_only.karma.median_ci95": [
+  51.0,
+  73.5
+ ],
+ "strata.af_only.karma.n": 104,
+ "strata.af_only.n": 104,
+ "strata.af_only.own_repo.ci95": [
+  30.6,
+  49.0
+ ],
+ "strata.af_only.own_repo.k": 41,
+ "strata.af_only.own_repo.n": 104,
+ "strata.af_only.own_repo.pct": 39.4,
+ "strata.af_only.readme.ci95": [
+  27.9,
+  46.1
+ ],
+ "strata.af_only.readme.k": 38,
+ "strata.af_only.readme.n": 104,
+ "strata.af_only.readme.pct": 36.5,
+ "strata.af_only.solo.ci95": [
+  16.8,
+  33.1
+ ],
+ "strata.af_only.solo.k": 25,
+ "strata.af_only.solo.n": 104,
+ "strata.af_only.solo.pct": 24.0,
+ "strata.af_only.words.median": 1606.0,
+ "strata.af_only.words.median_ci95": [
+  1494.5,
+  1915.5
+ ],
+ "strata.af_only.words.n": 104,
+ "strata.in_af.authors.mean": 3.26,
+ "strata.in_af.authors_7plus": 20,
+ "strata.in_af.karma.mean": 75.5,
+ "strata.in_af.karma.median": 56,
+ "strata.in_af.karma.median_ci95": [
+  51,
+  62
+ ],
+ "strata.in_af.karma.n": 253,
+ "strata.in_af.n": 253,
+ "strata.in_af.own_repo.ci95": [
+  37.9,
+  50.0
+ ],
+ "strata.in_af.own_repo.k": 111,
+ "strata.in_af.own_repo.n": 253,
+ "strata.in_af.own_repo.pct": 43.9,
+ "strata.in_af.readme.ci95": [
+  35.6,
+  47.7
+ ],
+ "strata.in_af.readme.k": 105,
+ "strata.in_af.readme.n": 253,
+ "strata.in_af.readme.pct": 41.5,
+ "strata.in_af.solo.ci95": [
+  21.8,
+  32.7
+ ],
+ "strata.in_af.solo.k": 68,
+ "strata.in_af.solo.n": 253,
+ "strata.in_af.solo.pct": 26.9,
+ "strata.in_af.words.median": 2310,
+ "strata.in_af.words.median_ci95": [
+  2016,
+  2571
+ ],
+ "strata.in_af.words.n": 253,
+ "strata.lw_only.authors.mean": 1.8,
+ "strata.lw_only.authors_7plus": 8,
+ "strata.lw_only.karma.mean": 32.0,
+ "strata.lw_only.karma.median": 18.0,
+ "strata.lw_only.karma.median_ci95": [
+  15.0,
+  20.0
+ ],
+ "strata.lw_only.karma.n": 488,
+ "strata.lw_only.n": 488,
+ "strata.lw_only.own_repo.ci95": [
+  49.9,
+  58.7
+ ],
+ "strata.lw_only.own_repo.k": 265,
+ "strata.lw_only.own_repo.n": 488,
+ "strata.lw_only.own_repo.pct": 54.3,
+ "strata.lw_only.readme.ci95": [
+  46.8,
+  55.6
+ ],
+ "strata.lw_only.readme.k": 250,
+ "strata.lw_only.readme.n": 488,
+ "strata.lw_only.readme.pct": 51.2,
+ "strata.lw_only.solo.ci95": [
+  62.3,
+  70.6
+ ],
+ "strata.lw_only.solo.k": 325,
+ "strata.lw_only.solo.n": 488,
+ "strata.lw_only.solo.pct": 66.6,
+ "strata.lw_only.words.median": 2203.5,
+ "strata.lw_only.words.median_ci95": [
+  2006.5,
+  2319.0
+ ],
+ "strata.lw_only.words.n": 488,
+ "strata.not_in_af.authors.mean": 1.8,
+ "strata.not_in_af.authors_7plus": 8,
+ "strata.not_in_af.karma.mean": 32.0,
+ "strata.not_in_af.karma.median": 18.0,
+ "strata.not_in_af.karma.median_ci95": [
+  15.0,
+  20.0
+ ],
+ "strata.not_in_af.karma.n": 488,
+ "strata.not_in_af.n": 488,
+ "strata.not_in_af.own_repo.ci95": [
+  49.9,
+  58.7
+ ],
+ "strata.not_in_af.own_repo.k": 265,
+ "strata.not_in_af.own_repo.n": 488,
+ "strata.not_in_af.own_repo.pct": 54.3,
+ "strata.not_in_af.readme.ci95": [
+  46.8,
+  55.6
+ ],
+ "strata.not_in_af.readme.k": 250,
+ "strata.not_in_af.readme.n": 488,
+ "strata.not_in_af.readme.pct": 51.2,
+ "strata.not_in_af.solo.ci95": [
+  62.3,
+  70.6
+ ],
+ "strata.not_in_af.solo.k": 325,
+ "strata.not_in_af.solo.n": 488,
+ "strata.not_in_af.solo.pct": 66.6,
+ "strata.not_in_af.words.median": 2203.5,
+ "strata.not_in_af.words.median_ci95": [
+  2006.5,
+  2319.0
+ ],
+ "strata.not_in_af.words.n": 488,
+ "strata.shared.authors.mean": 3.34,
+ "strata.shared.authors_7plus": 13,
+ "strata.shared.karma.mean": 75.8,
+ "strata.shared.karma.median": 54,
+ "strata.shared.karma.median_ci95": [
+  46,
+  60
+ ],
+ "strata.shared.karma.n": 149,
+ "strata.shared.n": 149,
+ "strata.shared.own_repo.ci95": [
+  39.1,
+  55.0
+ ],
+ "strata.shared.own_repo.k": 70,
+ "strata.shared.own_repo.n": 149,
+ "strata.shared.own_repo.pct": 47.0,
+ "strata.shared.readme.ci95": [
+  37.2,
+  53.0
+ ],
+ "strata.shared.readme.k": 67,
+ "strata.shared.readme.n": 149,
+ "strata.shared.readme.pct": 45.0,
+ "strata.shared.solo.ci95": [
+  22.2,
+  36.6
+ ],
+ "strata.shared.solo.k": 43,
+ "strata.shared.solo.n": 149,
+ "strata.shared.solo.pct": 28.9,
+ "strata.shared.words.median": 2635,
+ "strata.shared.words.median_ci95": [
+  2392,
+  3049
+ ],
+ "strata.shared.words.n": 149,
+ "topic.af.SAE.2024H2.ci95": [
+  19.6,
+  48.5
+ ],
+ "topic.af.SAE.2024H2.k": 12,
+ "topic.af.SAE.2024H2.n": 37,
+ "topic.af.SAE.2024H2.pct": 32.4,
+ "topic.af.SAE.2025H1.ci95": [
+  16.2,
+  34.9
+ ],
+ "topic.af.SAE.2025H1.k": 19,
+ "topic.af.SAE.2025H1.n": 78,
+ "topic.af.SAE.2025H1.pct": 24.4,
+ "topic.af.SAE.2025H2.ci95": [
+  11.7,
+  28.7
+ ],
+ "topic.af.SAE.2025H2.k": 15,
+ "topic.af.SAE.2025H2.n": 80,
+ "topic.af.SAE.2025H2.pct": 18.8,
+ "topic.af.SAE.2026H1.ci95": [
+  14.6,
+  39.4
+ ],
+ "topic.af.SAE.2026H1.k": 11,
+ "topic.af.SAE.2026H1.n": 44,
+ "topic.af.SAE.2026H1.pct": 25.0,
+ "topic.af.SAE.2026H2.ci95": [
+  1.3,
+  31.5
+ ],
+ "topic.af.SAE.2026H2.k": 1,
+ "topic.af.SAE.2026H2.n": 14,
+ "topic.af.SAE.2026H2.pct": 7.1,
+ "topic.af.agents.2024H2.ci95": [
+  9.5,
+  34.2
+ ],
+ "topic.af.agents.2024H2.k": 7,
+ "topic.af.agents.2024H2.n": 37,
+ "topic.af.agents.2024H2.pct": 18.9,
+ "topic.af.agents.2025H1.ci95": [
+  11.0,
+  27.9
+ ],
+ "topic.af.agents.2025H1.k": 14,
+ "topic.af.agents.2025H1.n": 78,
+ "topic.af.agents.2025H1.pct": 17.9,
+ "topic.af.agents.2025H2.ci95": [
+  18.9,
+  38.1
+ ],
+ "topic.af.agents.2025H2.k": 22,
+ "topic.af.agents.2025H2.n": 80,
+ "topic.af.agents.2025H2.pct": 27.5,
+ "topic.af.agents.2026H1.ci95": [
+  31.7,
+  59.9
+ ],
+ "topic.af.agents.2026H1.k": 20,
+ "topic.af.agents.2026H1.n": 44,
+ "topic.af.agents.2026H1.pct": 45.5,
+ "topic.af.agents.2026H2.ci95": [
+  26.8,
+  73.2
+ ],
+ "topic.af.agents.2026H2.k": 7,
+ "topic.af.agents.2026H2.n": 14,
+ "topic.af.agents.2026H2.pct": 50.0,
+ "topic.af.align_fake.2024H2.ci95": [
+  1.5,
+  17.7
+ ],
+ "topic.af.align_fake.2024H2.k": 2,
+ "topic.af.align_fake.2024H2.n": 37,
+ "topic.af.align_fake.2024H2.pct": 5.4,
+ "topic.af.align_fake.2025H1.ci95": [
+  5.3,
+  19.0
+ ],
+ "topic.af.align_fake.2025H1.k": 8,
+ "topic.af.align_fake.2025H1.n": 78,
+ "topic.af.align_fake.2025H1.pct": 10.3,
+ "topic.af.align_fake.2025H2.ci95": [
+  13.7,
+  31.4
+ ],
+ "topic.af.align_fake.2025H2.k": 17,
+ "topic.af.align_fake.2025H2.n": 80,
+ "topic.af.align_fake.2025H2.pct": 21.2,
+ "topic.af.align_fake.2026H1.ci95": [
+  2.3,
+  18.2
+ ],
+ "topic.af.align_fake.2026H1.k": 3,
+ "topic.af.align_fake.2026H1.n": 44,
+ "topic.af.align_fake.2026H1.pct": 6.8,
+ "topic.af.align_fake.2026H2.ci95": [
+  0.0,
+  21.5
+ ],
+ "topic.af.align_fake.2026H2.k": 0,
+ "topic.af.align_fake.2026H2.n": 14,
+ "topic.af.align_fake.2026H2.pct": 0.0,
+ "topic.af.cot_monitor.2024H2.ci95": [
+  0.5,
+  13.8
+ ],
+ "topic.af.cot_monitor.2024H2.k": 1,
+ "topic.af.cot_monitor.2024H2.n": 37,
+ "topic.af.cot_monitor.2024H2.pct": 2.7,
+ "topic.af.cot_monitor.2025H1.ci95": [
+  4.4,
+  17.4
+ ],
+ "topic.af.cot_monitor.2025H1.k": 7,
+ "topic.af.cot_monitor.2025H1.n": 78,
+ "topic.af.cot_monitor.2025H1.pct": 9.0,
+ "topic.af.cot_monitor.2025H2.ci95": [
+  21.1,
+  40.8
+ ],
+ "topic.af.cot_monitor.2025H2.k": 24,
+ "topic.af.cot_monitor.2025H2.n": 80,
+ "topic.af.cot_monitor.2025H2.pct": 30.0,
+ "topic.af.cot_monitor.2026H1.ci95": [
+  14.6,
+  39.4
+ ],
+ "topic.af.cot_monitor.2026H1.k": 11,
+ "topic.af.cot_monitor.2026H1.n": 44,
+ "topic.af.cot_monitor.2026H1.pct": 25.0,
+ "topic.af.cot_monitor.2026H2.ci95": [
+  11.7,
+  54.6
+ ],
+ "topic.af.cot_monitor.2026H2.k": 4,
+ "topic.af.cot_monitor.2026H2.n": 14,
+ "topic.af.cot_monitor.2026H2.pct": 28.6,
+ "topic.af.emergent_mis.2024H2.ci95": [
+  0.0,
+  9.4
+ ],
+ "topic.af.emergent_mis.2024H2.k": 0,
+ "topic.af.emergent_mis.2024H2.n": 37,
+ "topic.af.emergent_mis.2024H2.pct": 0.0,
+ "topic.af.emergent_mis.2025H1.ci95": [
+  4.4,
+  17.4
+ ],
+ "topic.af.emergent_mis.2025H1.k": 7,
+ "topic.af.emergent_mis.2025H1.n": 78,
+ "topic.af.emergent_mis.2025H1.pct": 9.0,
+ "topic.af.emergent_mis.2025H2.ci95": [
+  11.7,
+  28.7
+ ],
+ "topic.af.emergent_mis.2025H2.k": 15,
+ "topic.af.emergent_mis.2025H2.n": 80,
+ "topic.af.emergent_mis.2025H2.pct": 18.8,
+ "topic.af.emergent_mis.2026H1.ci95": [
+  1.3,
+  15.1
+ ],
+ "topic.af.emergent_mis.2026H1.k": 2,
+ "topic.af.emergent_mis.2026H1.n": 44,
+ "topic.af.emergent_mis.2026H1.pct": 4.5,
+ "topic.af.emergent_mis.2026H2.ci95": [
+  4.0,
+  39.9
+ ],
+ "topic.af.emergent_mis.2026H2.k": 2,
+ "topic.af.emergent_mis.2026H2.n": 14,
+ "topic.af.emergent_mis.2026H2.pct": 14.3,
+ "topic.af.eval_aware.2024H2.ci95": [
+  11.4,
+  37.2
+ ],
+ "topic.af.eval_aware.2024H2.k": 8,
+ "topic.af.eval_aware.2024H2.n": 37,
+ "topic.af.eval_aware.2024H2.pct": 21.6,
+ "topic.af.eval_aware.2025H1.ci95": [
+  6.2,
+  20.5
+ ],
+ "topic.af.eval_aware.2025H1.k": 9,
+ "topic.af.eval_aware.2025H1.n": 78,
+ "topic.af.eval_aware.2025H1.pct": 11.5,
+ "topic.af.eval_aware.2025H2.ci95": [
+  18.9,
+  38.1
+ ],
+ "topic.af.eval_aware.2025H2.k": 22,
+ "topic.af.eval_aware.2025H2.n": 80,
+ "topic.af.eval_aware.2025H2.pct": 27.5,
+ "topic.af.eval_aware.2026H1.ci95": [
+  44.4,
+  72.3
+ ],
+ "topic.af.eval_aware.2026H1.k": 26,
+ "topic.af.eval_aware.2026H1.n": 44,
+ "topic.af.eval_aware.2026H1.pct": 59.1,
+ "topic.af.eval_aware.2026H2.ci95": [
+  11.7,
+  54.6
+ ],
+ "topic.af.eval_aware.2026H2.k": 4,
+ "topic.af.eval_aware.2026H2.n": 14,
+ "topic.af.eval_aware.2026H2.pct": 28.6,
+ "topic.af.probes.2024H2.ci95": [
+  1.5,
+  17.7
+ ],
+ "topic.af.probes.2024H2.k": 2,
+ "topic.af.probes.2024H2.n": 37,
+ "topic.af.probes.2024H2.pct": 5.4,
+ "topic.af.probes.2025H1.ci95": [
+  4.4,
+  17.4
+ ],
+ "topic.af.probes.2025H1.k": 7,
+ "topic.af.probes.2025H1.n": 78,
+ "topic.af.probes.2025H1.pct": 9.0,
+ "topic.af.probes.2025H2.ci95": [
+  5.2,
+  18.5
+ ],
+ "topic.af.probes.2025H2.k": 8,
+ "topic.af.probes.2025H2.n": 80,
+ "topic.af.probes.2025H2.pct": 10.0,
+ "topic.af.probes.2026H1.ci95": [
+  3.6,
+  21.2
+ ],
+ "topic.af.probes.2026H1.k": 4,
+ "topic.af.probes.2026H1.n": 44,
+ "topic.af.probes.2026H1.pct": 9.1,
+ "topic.af.probes.2026H2.ci95": [
+  4.0,
+  39.9
+ ],
+ "topic.af.probes.2026H2.k": 2,
+ "topic.af.probes.2026H2.n": 14,
+ "topic.af.probes.2026H2.pct": 14.3,
+ "topic.af.reward_hack.2024H2.ci95": [
+  1.5,
+  17.7
+ ],
+ "topic.af.reward_hack.2024H2.k": 2,
+ "topic.af.reward_hack.2024H2.n": 37,
+ "topic.af.reward_hack.2024H2.pct": 5.4,
+ "topic.af.reward_hack.2025H1.ci95": [
+  6.2,
+  20.5
+ ],
+ "topic.af.reward_hack.2025H1.k": 9,
+ "topic.af.reward_hack.2025H1.n": 78,
+ "topic.af.reward_hack.2025H1.pct": 11.5,
+ "topic.af.reward_hack.2025H2.ci95": [
+  18.9,
+  38.1
+ ],
+ "topic.af.reward_hack.2025H2.k": 22,
+ "topic.af.reward_hack.2025H2.n": 80,
+ "topic.af.reward_hack.2025H2.pct": 27.5,
+ "topic.af.reward_hack.2026H1.ci95": [
+  18.2,
+  44.2
+ ],
+ "topic.af.reward_hack.2026H1.k": 13,
+ "topic.af.reward_hack.2026H1.n": 44,
+ "topic.af.reward_hack.2026H1.pct": 29.5,
+ "topic.af.reward_hack.2026H2.ci95": [
+  16.3,
+  61.2
+ ],
+ "topic.af.reward_hack.2026H2.k": 5,
+ "topic.af.reward_hack.2026H2.n": 14,
+ "topic.af.reward_hack.2026H2.pct": 35.7,
+ "topic.af.steering.2024H2.ci95": [
+  9.5,
+  34.2
+ ],
+ "topic.af.steering.2024H2.k": 7,
+ "topic.af.steering.2024H2.n": 37,
+ "topic.af.steering.2024H2.pct": 18.9,
+ "topic.af.steering.2025H1.ci95": [
+  7.1,
+  22.0
+ ],
+ "topic.af.steering.2025H1.k": 10,
+ "topic.af.steering.2025H1.n": 78,
+ "topic.af.steering.2025H1.pct": 12.8,
+ "topic.af.steering.2025H2.ci95": [
+  6.0,
+  20.0
+ ],
+ "topic.af.steering.2025H2.k": 9,
+ "topic.af.steering.2025H2.n": 80,
+ "topic.af.steering.2025H2.pct": 11.2,
+ "topic.af.steering.2026H1.ci95": [
+  6.4,
+  26.7
+ ],
+ "topic.af.steering.2026H1.k": 6,
+ "topic.af.steering.2026H1.n": 44,
+ "topic.af.steering.2026H1.pct": 13.6,
+ "topic.af.steering.2026H2.ci95": [
+  4.0,
+  39.9
+ ],
+ "topic.af.steering.2026H2.k": 2,
+ "topic.af.steering.2026H2.n": 14,
+ "topic.af.steering.2026H2.pct": 14.3,
+ "topic.af.unlearning.2024H2.ci95": [
+  5.9,
+  28.0
+ ],
+ "topic.af.unlearning.2024H2.k": 5,
+ "topic.af.unlearning.2024H2.n": 37,
+ "topic.af.unlearning.2024H2.pct": 13.5,
+ "topic.af.unlearning.2025H1.ci95": [
+  5.3,
+  19.0
+ ],
+ "topic.af.unlearning.2025H1.k": 8,
+ "topic.af.unlearning.2025H1.n": 78,
+ "topic.af.unlearning.2025H1.pct": 10.3,
+ "topic.af.unlearning.2025H2.ci95": [
+  0.7,
+  8.7
+ ],
+ "topic.af.unlearning.2025H2.k": 2,
+ "topic.af.unlearning.2025H2.n": 80,
+ "topic.af.unlearning.2025H2.pct": 2.5,
+ "topic.af.unlearning.2026H1.ci95": [
+  1.3,
+  15.1
+ ],
+ "topic.af.unlearning.2026H1.k": 2,
+ "topic.af.unlearning.2026H1.n": 44,
+ "topic.af.unlearning.2026H1.pct": 4.5,
+ "topic.af.unlearning.2026H2.ci95": [
+  1.3,
+  31.5
+ ],
+ "topic.af.unlearning.2026H2.k": 1,
+ "topic.af.unlearning.2026H2.n": 14,
+ "topic.af.unlearning.2026H2.pct": 7.1,
+ "topic.lw.SAE.2024H2.ci95": [
+  40.1,
+  61.1
+ ],
+ "topic.lw.SAE.2024H2.k": 42,
+ "topic.lw.SAE.2024H2.n": 83,
+ "topic.lw.SAE.2024H2.pct": 50.6,
+ "topic.lw.SAE.2025H1.ci95": [
+  23.2,
+  38.6
+ ],
+ "topic.lw.SAE.2025H1.k": 41,
+ "topic.lw.SAE.2025H1.n": 135,
+ "topic.lw.SAE.2025H1.pct": 30.4,
+ "topic.lw.SAE.2025H2.ci95": [
+  13.7,
+  26.5
+ ],
+ "topic.lw.SAE.2025H2.k": 28,
+ "topic.lw.SAE.2025H2.n": 145,
+ "topic.lw.SAE.2025H2.pct": 19.3,
+ "topic.lw.SAE.2026H1.ci95": [
+  15.7,
+  27.4
+ ],
+ "topic.lw.SAE.2026H1.k": 39,
+ "topic.lw.SAE.2026H1.n": 186,
+ "topic.lw.SAE.2026H1.pct": 21.0,
+ "topic.lw.SAE.2026H2.ci95": [
+  9.7,
+  25.0
+ ],
+ "topic.lw.SAE.2026H2.k": 14,
+ "topic.lw.SAE.2026H2.n": 88,
+ "topic.lw.SAE.2026H2.pct": 15.9,
+ "topic.lw.agents.2024H2.ci95": [
+  9.4,
+  25.0
+ ],
+ "topic.lw.agents.2024H2.k": 13,
+ "topic.lw.agents.2024H2.n": 83,
+ "topic.lw.agents.2024H2.pct": 15.7,
+ "topic.lw.agents.2025H1.ci95": [
+  9.2,
+  20.9
+ ],
+ "topic.lw.agents.2025H1.k": 19,
+ "topic.lw.agents.2025H1.n": 135,
+ "topic.lw.agents.2025H1.pct": 14.1,
+ "topic.lw.agents.2025H2.ci95": [
+  12.5,
+  25.0
+ ],
+ "topic.lw.agents.2025H2.k": 26,
+ "topic.lw.agents.2025H2.n": 145,
+ "topic.lw.agents.2025H2.pct": 17.9,
+ "topic.lw.agents.2026H1.ci95": [
+  22.5,
+  35.4
+ ],
+ "topic.lw.agents.2026H1.k": 53,
+ "topic.lw.agents.2026H1.n": 186,
+ "topic.lw.agents.2026H1.pct": 28.5,
+ "topic.lw.agents.2026H2.ci95": [
+  14.3,
+  31.3
+ ],
+ "topic.lw.agents.2026H2.k": 19,
+ "topic.lw.agents.2026H2.n": 88,
+ "topic.lw.agents.2026H2.pct": 21.6,
+ "topic.lw.align_fake.2024H2.ci95": [
+  0.2,
+  6.5
+ ],
+ "topic.lw.align_fake.2024H2.k": 1,
+ "topic.lw.align_fake.2024H2.n": 83,
+ "topic.lw.align_fake.2024H2.pct": 1.2,
+ "topic.lw.align_fake.2025H1.ci95": [
+  5.7,
+  15.8
+ ],
+ "topic.lw.align_fake.2025H1.k": 13,
+ "topic.lw.align_fake.2025H1.n": 135,
+ "topic.lw.align_fake.2025H1.pct": 9.6,
+ "topic.lw.align_fake.2025H2.ci95": [
+  7.5,
+  18.0
+ ],
+ "topic.lw.align_fake.2025H2.k": 17,
+ "topic.lw.align_fake.2025H2.n": 145,
+ "topic.lw.align_fake.2025H2.pct": 11.7,
+ "topic.lw.align_fake.2026H1.ci95": [
+  4.5,
+  12.2
+ ],
+ "topic.lw.align_fake.2026H1.k": 14,
+ "topic.lw.align_fake.2026H1.n": 186,
+ "topic.lw.align_fake.2026H1.pct": 7.5,
+ "topic.lw.align_fake.2026H2.ci95": [
+  4.7,
+  16.9
+ ],
+ "topic.lw.align_fake.2026H2.k": 8,
+ "topic.lw.align_fake.2026H2.n": 88,
+ "topic.lw.align_fake.2026H2.pct": 9.1,
+ "topic.lw.cot_monitor.2024H2.ci95": [
+  0.2,
+  6.5
+ ],
+ "topic.lw.cot_monitor.2024H2.k": 1,
+ "topic.lw.cot_monitor.2024H2.n": 83,
+ "topic.lw.cot_monitor.2024H2.pct": 1.2,
+ "topic.lw.cot_monitor.2025H1.ci95": [
+  3.0,
+  11.3
+ ],
+ "topic.lw.cot_monitor.2025H1.k": 8,
+ "topic.lw.cot_monitor.2025H1.n": 135,
+ "topic.lw.cot_monitor.2025H1.pct": 5.9,
+ "topic.lw.cot_monitor.2025H2.ci95": [
+  12.5,
+  25.0
+ ],
+ "topic.lw.cot_monitor.2025H2.k": 26,
+ "topic.lw.cot_monitor.2025H2.n": 145,
+ "topic.lw.cot_monitor.2025H2.pct": 17.9,
+ "topic.lw.cot_monitor.2026H1.ci95": [
+  8.8,
+  18.5
+ ],
+ "topic.lw.cot_monitor.2026H1.k": 24,
+ "topic.lw.cot_monitor.2026H1.n": 186,
+ "topic.lw.cot_monitor.2026H1.pct": 12.9,
+ "topic.lw.cot_monitor.2026H2.ci95": [
+  4.7,
+  16.9
+ ],
+ "topic.lw.cot_monitor.2026H2.k": 8,
+ "topic.lw.cot_monitor.2026H2.n": 88,
+ "topic.lw.cot_monitor.2026H2.pct": 9.1,
+ "topic.lw.emergent_mis.2024H2.ci95": [
+  0.0,
+  4.4
+ ],
+ "topic.lw.emergent_mis.2024H2.k": 0,
+ "topic.lw.emergent_mis.2024H2.n": 83,
+ "topic.lw.emergent_mis.2024H2.pct": 0.0,
+ "topic.lw.emergent_mis.2025H1.ci95": [
+  4.1,
+  13.1
+ ],
+ "topic.lw.emergent_mis.2025H1.k": 10,
+ "topic.lw.emergent_mis.2025H1.n": 135,
+ "topic.lw.emergent_mis.2025H1.pct": 7.4,
+ "topic.lw.emergent_mis.2025H2.ci95": [
+  5.3,
+  14.7
+ ],
+ "topic.lw.emergent_mis.2025H2.k": 13,
+ "topic.lw.emergent_mis.2025H2.n": 145,
+ "topic.lw.emergent_mis.2025H2.pct": 9.0,
+ "topic.lw.emergent_mis.2026H1.ci95": [
+  3.7,
+  10.9
+ ],
+ "topic.lw.emergent_mis.2026H1.k": 12,
+ "topic.lw.emergent_mis.2026H1.n": 186,
+ "topic.lw.emergent_mis.2026H1.pct": 6.5,
+ "topic.lw.emergent_mis.2026H2.ci95": [
+  3.2,
+  14.1
+ ],
+ "topic.lw.emergent_mis.2026H2.k": 6,
+ "topic.lw.emergent_mis.2026H2.n": 88,
+ "topic.lw.emergent_mis.2026H2.pct": 6.8,
+ "topic.lw.eval_aware.2024H2.ci95": [
+  4.1,
+  16.4
+ ],
+ "topic.lw.eval_aware.2024H2.k": 7,
+ "topic.lw.eval_aware.2024H2.n": 83,
+ "topic.lw.eval_aware.2024H2.pct": 8.4,
+ "topic.lw.eval_aware.2025H1.ci95": [
+  5.2,
+  14.9
+ ],
+ "topic.lw.eval_aware.2025H1.k": 12,
+ "topic.lw.eval_aware.2025H1.n": 135,
+ "topic.lw.eval_aware.2025H1.pct": 8.9,
+ "topic.lw.eval_aware.2025H2.ci95": [
+  16.7,
+  30.2
+ ],
+ "topic.lw.eval_aware.2025H2.k": 33,
+ "topic.lw.eval_aware.2025H2.n": 145,
+ "topic.lw.eval_aware.2025H2.pct": 22.8,
+ "topic.lw.eval_aware.2026H1.ci95": [
+  18.6,
+  30.8
+ ],
+ "topic.lw.eval_aware.2026H1.k": 45,
+ "topic.lw.eval_aware.2026H1.n": 186,
+ "topic.lw.eval_aware.2026H1.pct": 24.2,
+ "topic.lw.eval_aware.2026H2.ci95": [
+  11.5,
+  27.5
+ ],
+ "topic.lw.eval_aware.2026H2.k": 16,
+ "topic.lw.eval_aware.2026H2.n": 88,
+ "topic.lw.eval_aware.2026H2.pct": 18.2,
+ "topic.lw.probes.2024H2.ci95": [
+  5.8,
+  19.3
+ ],
+ "topic.lw.probes.2024H2.k": 9,
+ "topic.lw.probes.2024H2.n": 83,
+ "topic.lw.probes.2024H2.pct": 10.8,
+ "topic.lw.probes.2025H1.ci95": [
+  6.8,
+  17.5
+ ],
+ "topic.lw.probes.2025H1.k": 15,
+ "topic.lw.probes.2025H1.n": 135,
+ "topic.lw.probes.2025H1.pct": 11.1,
+ "topic.lw.probes.2025H2.ci95": [
+  5.8,
+  15.6
+ ],
+ "topic.lw.probes.2025H2.k": 14,
+ "topic.lw.probes.2025H2.n": 145,
+ "topic.lw.probes.2025H2.pct": 9.7,
+ "topic.lw.probes.2026H1.ci95": [
+  8.8,
+  18.5
+ ],
+ "topic.lw.probes.2026H1.k": 24,
+ "topic.lw.probes.2026H1.n": 186,
+ "topic.lw.probes.2026H1.pct": 12.9,
+ "topic.lw.probes.2026H2.ci95": [
+  11.5,
+  27.5
+ ],
+ "topic.lw.probes.2026H2.k": 16,
+ "topic.lw.probes.2026H2.n": 88,
+ "topic.lw.probes.2026H2.pct": 18.2,
+ "topic.lw.reward_hack.2024H2.ci95": [
+  0.7,
+  8.4
+ ],
+ "topic.lw.reward_hack.2024H2.k": 2,
+ "topic.lw.reward_hack.2024H2.n": 83,
+ "topic.lw.reward_hack.2024H2.pct": 2.4,
+ "topic.lw.reward_hack.2025H1.ci95": [
+  4.1,
+  13.1
+ ],
+ "topic.lw.reward_hack.2025H1.k": 10,
+ "topic.lw.reward_hack.2025H1.n": 135,
+ "topic.lw.reward_hack.2025H1.pct": 7.4,
+ "topic.lw.reward_hack.2025H2.ci95": [
+  10.8,
+  22.7
+ ],
+ "topic.lw.reward_hack.2025H2.k": 23,
+ "topic.lw.reward_hack.2025H2.n": 145,
+ "topic.lw.reward_hack.2025H2.pct": 15.9,
+ "topic.lw.reward_hack.2026H1.ci95": [
+  9.7,
+  19.7
+ ],
+ "topic.lw.reward_hack.2026H1.k": 26,
+ "topic.lw.reward_hack.2026H1.n": 186,
+ "topic.lw.reward_hack.2026H1.pct": 14.0,
+ "topic.lw.reward_hack.2026H2.ci95": [
+  8.0,
+  22.3
+ ],
+ "topic.lw.reward_hack.2026H2.k": 12,
+ "topic.lw.reward_hack.2026H2.n": 88,
+ "topic.lw.reward_hack.2026H2.pct": 13.6,
+ "topic.lw.steering.2024H2.ci95": [
+  14.2,
+  31.7
+ ],
+ "topic.lw.steering.2024H2.k": 18,
+ "topic.lw.steering.2024H2.n": 83,
+ "topic.lw.steering.2024H2.pct": 21.7,
+ "topic.lw.steering.2025H1.ci95": [
+  11.0,
+  23.4
+ ],
+ "topic.lw.steering.2025H1.k": 22,
+ "topic.lw.steering.2025H1.n": 135,
+ "topic.lw.steering.2025H1.pct": 16.3,
+ "topic.lw.steering.2025H2.ci95": [
+  7.5,
+  18.0
+ ],
+ "topic.lw.steering.2025H2.k": 17,
+ "topic.lw.steering.2025H2.n": 145,
+ "topic.lw.steering.2025H2.pct": 11.7,
+ "topic.lw.steering.2026H1.ci95": [
+  15.7,
+  27.4
+ ],
+ "topic.lw.steering.2026H1.k": 39,
+ "topic.lw.steering.2026H1.n": 186,
+ "topic.lw.steering.2026H1.pct": 21.0,
+ "topic.lw.steering.2026H2.ci95": [
+  8.0,
+  22.3
+ ],
+ "topic.lw.steering.2026H2.k": 12,
+ "topic.lw.steering.2026H2.n": 88,
+ "topic.lw.steering.2026H2.pct": 13.6,
+ "topic.lw.unlearning.2024H2.ci95": [
+  4.1,
+  16.4
+ ],
+ "topic.lw.unlearning.2024H2.k": 7,
+ "topic.lw.unlearning.2024H2.n": 83,
+ "topic.lw.unlearning.2024H2.pct": 8.4,
+ "topic.lw.unlearning.2025H1.ci95": [
+  3.5,
+  12.2
+ ],
+ "topic.lw.unlearning.2025H1.k": 9,
+ "topic.lw.unlearning.2025H1.n": 135,
+ "topic.lw.unlearning.2025H1.pct": 6.7,
+ "topic.lw.unlearning.2025H2.ci95": [
+  1.5,
+  7.8
+ ],
+ "topic.lw.unlearning.2025H2.k": 5,
+ "topic.lw.unlearning.2025H2.n": 145,
+ "topic.lw.unlearning.2025H2.pct": 3.4,
+ "topic.lw.unlearning.2026H1.ci95": [
+  3.3,
+  10.3
+ ],
+ "topic.lw.unlearning.2026H1.k": 11,
+ "topic.lw.unlearning.2026H1.n": 186,
+ "topic.lw.unlearning.2026H1.pct": 5.9,
+ "topic.lw.unlearning.2026H2.ci95": [
+  1.8,
+  11.1
+ ],
+ "topic.lw.unlearning.2026H2.k": 4,
+ "topic.lw.unlearning.2026H2.n": 88,
+ "topic.lw.unlearning.2026H2.pct": 4.5,
+ "topic.union.SAE.2024H2.ci95": [
+  35.9,
+  55.8
+ ],
+ "topic.union.SAE.2024H2.k": 42,
+ "topic.union.SAE.2024H2.n": 92,
+ "topic.union.SAE.2024H2.pct": 45.7,
+ "topic.union.SAE.2025H1.ci95": [
+  20.6,
+  34.1
+ ],
+ "topic.union.SAE.2025H1.k": 44,
+ "topic.union.SAE.2025H1.n": 164,
+ "topic.union.SAE.2025H1.pct": 26.8,
+ "topic.union.SAE.2025H2.ci95": [
+  13.3,
+  24.5
+ ],
+ "topic.union.SAE.2025H2.k": 33,
+ "topic.union.SAE.2025H2.n": 181,
+ "topic.union.SAE.2025H2.pct": 18.2,
+ "topic.union.SAE.2026H1.ci95": [
+  16.9,
+  28.1
+ ],
+ "topic.union.SAE.2026H1.k": 46,
+ "topic.union.SAE.2026H1.n": 209,
+ "topic.union.SAE.2026H1.pct": 22.0,
+ "topic.union.SAE.2026H2.ci95": [
+  9.8,
+  24.4
+ ],
+ "topic.union.SAE.2026H2.k": 15,
+ "topic.union.SAE.2026H2.n": 95,
+ "topic.union.SAE.2026H2.pct": 15.8,
+ "topic.union.agents.2024H2.ci95": [
+  9.3,
+  23.9
+ ],
+ "topic.union.agents.2024H2.k": 14,
+ "topic.union.agents.2024H2.n": 92,
+ "topic.union.agents.2024H2.pct": 15.2,
+ "topic.union.agents.2025H1.ci95": [
+  10.0,
+  20.9
+ ],
+ "topic.union.agents.2025H1.k": 24,
+ "topic.union.agents.2025H1.n": 164,
+ "topic.union.agents.2025H1.pct": 14.6,
+ "topic.union.agents.2025H2.ci95": [
+  15.7,
+  27.5
+ ],
+ "topic.union.agents.2025H2.k": 38,
+ "topic.union.agents.2025H2.n": 181,
+ "topic.union.agents.2025H2.pct": 21.0,
+ "topic.union.agents.2026H1.ci95": [
+  24.8,
+  37.2
+ ],
+ "topic.union.agents.2026H1.k": 64,
+ "topic.union.agents.2026H1.n": 209,
+ "topic.union.agents.2026H1.pct": 30.6,
+ "topic.union.agents.2026H2.ci95": [
+  16.7,
+  33.7
+ ],
+ "topic.union.agents.2026H2.k": 23,
+ "topic.union.agents.2026H2.n": 95,
+ "topic.union.agents.2026H2.pct": 24.2,
+ "topic.union.align_fake.2024H2.ci95": [
+  0.6,
+  7.6
+ ],
+ "topic.union.align_fake.2024H2.k": 2,
+ "topic.union.align_fake.2024H2.n": 92,
+ "topic.union.align_fake.2024H2.pct": 2.2,
+ "topic.union.align_fake.2025H1.ci95": [
+  5.6,
+  14.5
+ ],
+ "topic.union.align_fake.2025H1.k": 15,
+ "topic.union.align_fake.2025H1.n": 164,
+ "topic.union.align_fake.2025H1.pct": 9.1,
+ "topic.union.align_fake.2025H2.ci95": [
+  9.1,
+  19.0
+ ],
+ "topic.union.align_fake.2025H2.k": 24,
+ "topic.union.align_fake.2025H2.n": 181,
+ "topic.union.align_fake.2025H2.pct": 13.3,
+ "topic.union.align_fake.2026H1.ci95": [
+  4.8,
+  12.1
+ ],
+ "topic.union.align_fake.2026H1.k": 16,
+ "topic.union.align_fake.2026H1.n": 209,
+ "topic.union.align_fake.2026H1.pct": 7.7,
+ "topic.union.align_fake.2026H2.ci95": [
+  4.3,
+  15.7
+ ],
+ "topic.union.align_fake.2026H2.k": 8,
+ "topic.union.align_fake.2026H2.n": 95,
+ "topic.union.align_fake.2026H2.pct": 8.4,
+ "topic.union.cot_monitor.2024H2.ci95": [
+  0.2,
+  5.9
+ ],
+ "topic.union.cot_monitor.2024H2.k": 1,
+ "topic.union.cot_monitor.2024H2.n": 92,
+ "topic.union.cot_monitor.2024H2.pct": 1.1,
+ "topic.union.cot_monitor.2025H1.ci95": [
+  3.8,
+  11.6
+ ],
+ "topic.union.cot_monitor.2025H1.k": 11,
+ "topic.union.cot_monitor.2025H1.n": 164,
+ "topic.union.cot_monitor.2025H1.pct": 6.7,
+ "topic.union.cot_monitor.2025H2.ci95": [
+  13.3,
+  24.5
+ ],
+ "topic.union.cot_monitor.2025H2.k": 33,
+ "topic.union.cot_monitor.2025H2.n": 181,
+ "topic.union.cot_monitor.2025H2.pct": 18.2,
+ "topic.union.cot_monitor.2026H1.ci95": [
+  10.2,
+  19.8
+ ],
+ "topic.union.cot_monitor.2026H1.k": 30,
+ "topic.union.cot_monitor.2026H1.n": 209,
+ "topic.union.cot_monitor.2026H1.pct": 14.4,
+ "topic.union.cot_monitor.2026H2.ci95": [
+  6.6,
+  19.6
+ ],
+ "topic.union.cot_monitor.2026H2.k": 11,
+ "topic.union.cot_monitor.2026H2.n": 95,
+ "topic.union.cot_monitor.2026H2.pct": 11.6,
+ "topic.union.emergent_mis.2024H2.ci95": [
+  0.0,
+  4.0
+ ],
+ "topic.union.emergent_mis.2024H2.k": 0,
+ "topic.union.emergent_mis.2024H2.n": 92,
+ "topic.union.emergent_mis.2024H2.pct": 0.0,
+ "topic.union.emergent_mis.2025H1.ci95": [
+  4.2,
+  12.4
+ ],
+ "topic.union.emergent_mis.2025H1.k": 12,
+ "topic.union.emergent_mis.2025H1.n": 164,
+ "topic.union.emergent_mis.2025H1.pct": 7.3,
+ "topic.union.emergent_mis.2025H2.ci95": [
+  8.2,
+  17.7
+ ],
+ "topic.union.emergent_mis.2025H2.k": 22,
+ "topic.union.emergent_mis.2025H2.n": 181,
+ "topic.union.emergent_mis.2025H2.pct": 12.2,
+ "topic.union.emergent_mis.2026H1.ci95": [
+  3.7,
+  10.3
+ ],
+ "topic.union.emergent_mis.2026H1.k": 13,
+ "topic.union.emergent_mis.2026H1.n": 209,
+ "topic.union.emergent_mis.2026H1.pct": 6.2,
+ "topic.union.emergent_mis.2026H2.ci95": [
+  2.9,
+  13.1
+ ],
+ "topic.union.emergent_mis.2026H2.k": 6,
+ "topic.union.emergent_mis.2026H2.n": 95,
+ "topic.union.emergent_mis.2026H2.pct": 6.3,
+ "topic.union.eval_aware.2024H2.ci95": [
+  6.0,
+  18.9
+ ],
+ "topic.union.eval_aware.2024H2.k": 10,
+ "topic.union.eval_aware.2024H2.n": 92,
+ "topic.union.eval_aware.2024H2.pct": 10.9,
+ "topic.union.eval_aware.2025H1.ci95": [
+  5.6,
+  14.5
+ ],
+ "topic.union.eval_aware.2025H1.k": 15,
+ "topic.union.eval_aware.2025H1.n": 164,
+ "topic.union.eval_aware.2025H1.pct": 9.1,
+ "topic.union.eval_aware.2025H2.ci95": [
+  16.2,
+  28.1
+ ],
+ "topic.union.eval_aware.2025H2.k": 39,
+ "topic.union.eval_aware.2025H2.n": 181,
+ "topic.union.eval_aware.2025H2.pct": 21.5,
+ "topic.union.eval_aware.2026H1.ci95": [
+  23.0,
+  35.2
+ ],
+ "topic.union.eval_aware.2026H1.k": 60,
+ "topic.union.eval_aware.2026H1.n": 209,
+ "topic.union.eval_aware.2026H1.pct": 28.7,
+ "topic.union.eval_aware.2026H2.ci95": [
+  12.3,
+  28.0
+ ],
+ "topic.union.eval_aware.2026H2.k": 18,
+ "topic.union.eval_aware.2026H2.n": 95,
+ "topic.union.eval_aware.2026H2.pct": 18.9,
+ "topic.union.probes.2024H2.ci95": [
+  5.2,
+  17.6
+ ],
+ "topic.union.probes.2024H2.k": 9,
+ "topic.union.probes.2024H2.n": 92,
+ "topic.union.probes.2024H2.pct": 9.8,
+ "topic.union.probes.2025H1.ci95": [
+  5.6,
+  14.5
+ ],
+ "topic.union.probes.2025H1.k": 15,
+ "topic.union.probes.2025H1.n": 164,
+ "topic.union.probes.2025H1.pct": 9.1,
+ "topic.union.probes.2025H2.ci95": [
+  5.5,
+  13.9
+ ],
+ "topic.union.probes.2025H2.k": 16,
+ "topic.union.probes.2025H2.n": 181,
+ "topic.union.probes.2025H2.pct": 8.8,
+ "topic.union.probes.2026H1.ci95": [
+  7.8,
+  16.5
+ ],
+ "topic.union.probes.2026H1.k": 24,
+ "topic.union.probes.2026H1.n": 209,
+ "topic.union.probes.2026H1.pct": 11.5,
+ "topic.union.probes.2026H2.ci95": [
+  11.5,
+  26.8
+ ],
+ "topic.union.probes.2026H2.k": 17,
+ "topic.union.probes.2026H2.n": 95,
+ "topic.union.probes.2026H2.pct": 17.9,
+ "topic.union.reward_hack.2024H2.ci95": [
+  1.1,
+  9.2
+ ],
+ "topic.union.reward_hack.2024H2.k": 3,
+ "topic.union.reward_hack.2024H2.n": 92,
+ "topic.union.reward_hack.2024H2.pct": 3.3,
+ "topic.union.reward_hack.2025H1.ci95": [
+  5.2,
+  13.8
+ ],
+ "topic.union.reward_hack.2025H1.k": 14,
+ "topic.union.reward_hack.2025H1.n": 164,
+ "topic.union.reward_hack.2025H1.pct": 8.5,
+ "topic.union.reward_hack.2025H2.ci95": [
+  12.8,
+  23.9
+ ],
+ "topic.union.reward_hack.2025H2.k": 32,
+ "topic.union.reward_hack.2025H2.n": 181,
+ "topic.union.reward_hack.2025H2.pct": 17.7,
+ "topic.union.reward_hack.2026H1.ci95": [
+  11.5,
+  21.3
+ ],
+ "topic.union.reward_hack.2026H1.k": 33,
+ "topic.union.reward_hack.2026H1.n": 209,
+ "topic.union.reward_hack.2026H1.pct": 15.8,
+ "topic.union.reward_hack.2026H2.ci95": [
+  9.8,
+  24.4
+ ],
+ "topic.union.reward_hack.2026H2.k": 15,
+ "topic.union.reward_hack.2026H2.n": 95,
+ "topic.union.reward_hack.2026H2.pct": 15.8,
+ "topic.union.steering.2024H2.ci95": [
+  12.7,
+  28.8
+ ],
+ "topic.union.steering.2024H2.k": 18,
+ "topic.union.steering.2024H2.n": 92,
+ "topic.union.steering.2024H2.pct": 19.6,
+ "topic.union.steering.2025H1.ci95": [
+  10.5,
+  21.5
+ ],
+ "topic.union.steering.2025H1.k": 25,
+ "topic.union.steering.2025H1.n": 164,
+ "topic.union.steering.2025H1.pct": 15.2,
+ "topic.union.steering.2025H2.ci95": [
+  8.2,
+  17.7
+ ],
+ "topic.union.steering.2025H2.k": 22,
+ "topic.union.steering.2025H2.n": 181,
+ "topic.union.steering.2025H2.pct": 12.2,
+ "topic.union.steering.2026H1.ci95": [
+  14.8,
+  25.5
+ ],
+ "topic.union.steering.2026H1.k": 41,
+ "topic.union.steering.2026H1.n": 209,
+ "topic.union.steering.2026H1.pct": 19.6,
+ "topic.union.steering.2026H2.ci95": [
+  9.0,
+  23.2
+ ],
+ "topic.union.steering.2026H2.k": 14,
+ "topic.union.steering.2026H2.n": 95,
+ "topic.union.steering.2026H2.pct": 14.7,
+ "topic.union.unlearning.2024H2.ci95": [
+  4.5,
+  16.2
+ ],
+ "topic.union.unlearning.2024H2.k": 8,
+ "topic.union.unlearning.2024H2.n": 92,
+ "topic.union.unlearning.2024H2.pct": 8.7,
+ "topic.union.unlearning.2025H1.ci95": [
+  4.2,
+  12.4
+ ],
+ "topic.union.unlearning.2025H1.k": 12,
+ "topic.union.unlearning.2025H1.n": 164,
+ "topic.union.unlearning.2025H1.pct": 7.3,
+ "topic.union.unlearning.2025H2.ci95": [
+  1.2,
+  6.3
+ ],
+ "topic.union.unlearning.2025H2.k": 5,
+ "topic.union.unlearning.2025H2.n": 181,
+ "topic.union.unlearning.2025H2.pct": 2.8,
+ "topic.union.unlearning.2026H1.ci95": [
+  3.0,
+  9.2
+ ],
+ "topic.union.unlearning.2026H1.k": 11,
+ "topic.union.unlearning.2026H1.n": 209,
+ "topic.union.unlearning.2026H1.pct": 5.3,
+ "topic.union.unlearning.2026H2.ci95": [
+  2.3,
+  11.7
+ ],
+ "topic.union.unlearning.2026H2.k": 5,
+ "topic.union.unlearning.2026H2.n": 95,
+ "topic.union.unlearning.2026H2.pct": 5.3,
+ "union.author_slots": 1700,
+ "union.authors_appearing_once.ci95": [
+  63.7,
+  69.9
+ ],
+ "union.authors_appearing_once.k": 599,
+ "union.authors_appearing_once.n": 896,
+ "union.authors_appearing_once.pct": 66.9,
+ "union.distinct_authors": 896,
+ "union.distinct_first_authors": 504,
+ "union.first_authors_appearing_once.ci95": [
+  69.0,
+  76.7
+ ],
+ "union.first_authors_appearing_once.k": 368,
+ "union.first_authors_appearing_once.n": 504,
+ "union.first_authors_appearing_once.pct": 73.0,
+ "union.karma.max": 501,
+ "union.karma.mean": 46.8,
+ "union.karma.median": 28,
+ "union.karma.median_ci95": [
+  24,
+  30
+ ],
+ "union.karma.min": -1,
+ "union.karma.n": 741,
+ "union.own_repo.ci95": [
+  47.1,
+  54.3
+ ],
+ "union.own_repo.k": 376,
+ "union.own_repo.n": 741,
+ "union.own_repo.pct": 50.7,
+ "union.posts": 741,
+ "union.single_author.ci95": [
+  49.4,
+  56.6
+ ],
+ "union.single_author.k": 393,
+ "union.single_author.n": 741,
+ "union.single_author.pct": 53.0,
+ "union.top12_karma": [
+  501,
+  494,
+  401,
+  391,
+  369,
+  349,
+  336,
+  318,
+  308,
+  284,
+  278,
+  277
+ ],
+ "union.top20_author_share.ci95": [
+  15.3,
+  18.9
+ ],
+ "union.top20_author_share.k": 290,
+ "union.top20_author_share.n": 1700,
+ "union.top20_author_share.pct": 17.1,
+ "union.top_author_lead_ratio": 2.26,
+ "union.top_authors": [
+  [
+   "Neel Nanda",
+   52
+  ],
+  [
+   "Senthooran Rajamanoharan",
+   23
+  ],
+  [
+   "Fabien Roger",
+   23
+  ],
+  [
+   "Josh Engels",
+   19
+  ],
+  [
+   "Arthur Conmy",
+   18
+  ],
+  [
+   "StefanHex",
+   16
+  ],
+  [
+   "Sam Marks",
+   15
+  ],
+  [
+   "chanind",
+   12
+  ],
+  [
+   "Owain_Evans",
+   12
+  ],
+  [
+   "TurnTrout",
+   11
+  ],
+  [
+   "evhub",
+   10
+  ],
+  [
+   "Joseph Bloom",
+   10
+  ],
+  [
+   "Marius Hobbhahn",
+   10
+  ],
+  [
+   "Adri\u00e0 Garriga-alonso",
+   10
+  ],
+  [
+   "Ethan Perez",
+   9
+  ]
+ ],
+ "union.with_readme": 355,
+ "union.words": 1972389,
+ "union.words.median": 2214,
+ "union.words.median_ci95": [
+  2052,
+  2352
+ ],
+ "union.words.n": 741,
+ "union.words_millions": 1.97
+}

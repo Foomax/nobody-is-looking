@@ -1,0 +1,20 @@
+{
+ "post_id": "9pozvFKbLDLmuL879",
+ "primary_claim": "GPT-4o and GPT-4o-mini can accurately self-report complex, quantitative attribute weights they implicitly learned via fine-tuning (correlation r~0.5), and a second round of 'introspection training' improves this self-report accuracy to r~0.75 in held-out contexts, generalizing to attribute weights the models natively use in contexts where no preferences were instilled.",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "GPT-4o-mini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "Pearson correlation (r) between reported and learned/used attribute weights", "value": "r ~ 0.5 before introspection training; r ~ 0.75 after introspection training on held-out choice contexts", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2501.11120"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Extending the approach to more realistic and safety-relevant domains beyond choosing between goods and services.", "Developing a more varied 'introspection training' that guides models toward accurate self-report across a broader range of tasks.", "Writing a follow-up post exploring the 'introspection' vs 'cached self-knowledge' mechanism distinction and possible solutions."],
+ "limitations_stated": ["The setup is somewhat artificial; choosing between goods and services is not the most important context for LLM decision-making.", "Training generalizes only somewhat and likely doesn't yet generalize very far.", "The underlying mechanism of the accurate self-reports (genuine introspection vs. cached self-knowledge) is unknown."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Across choice contexts, the attribute weights that the models reported using were correlated with the attribute weights they had actually learned to use at around r = 0.5"
+}

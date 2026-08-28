@@ -1,0 +1,43 @@
+{
+ "post_id": "nLRKKCTtwQgvozLTN",
+ "primary_claim": "Gradient routing (masking gradients to localize computation, e.g. via the Expand-Route-Ablate scheme) enables more robust removal of capabilities under partial/imperfect data labels than data filtering, RMU, or DEMix baselines, and provides scalable oversight by localizing then activating desired sub-policies.",
+ "claim_type": "positive",
+ "phenomenon": "machine unlearning robustness",
+ "models": [
+  {"family": "nanoGPT (custom-trained)", "size": "0.7B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "CE loss increase (nats) after retraining on forget data",
+  "value": "0.18-nat increase in virology CE loss vs 0.03-nat increase in non-virology CE loss",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["roneneldan/TinyStories", "arXiv:2305.07759", "arXiv:2306.03819"],
+ "contradicts_or_qualifies": [
+  "Conventional unlearning methods suppress behavior rather than truly remove underlying capabilities/circuitry, per Deeb & Roger (2024), Sheshadri et al. (2024), and Łucki et al. (2024)"
+ ],
+ "stated_future_work": [
+  "Improving on ERA for unlearning",
+  "Developing RL applications of gradient routing further",
+  "What kinds of environments admit this kind of scalable-oversight-via-localization solution",
+  "What it would look like to scale this solution to real-world alignment challenges"
+ ],
+ "limitations_stated": [
+  "No established best practices for applying gradient routing; extensive hyperparameter tuning needed (which tokens to route, how much of the network, learning rates, regularization)",
+  "Meaningful hit to retain-set performance (alignment tax) remains even after tuning",
+  "Entangled capabilities resist separate localization, increasing the alignment tax",
+  "Tuning cost may be prohibitive for larger models"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "When labels are limited, we observe that Expand, Route, Ablate outperforms other methods, including data filtering."
+}

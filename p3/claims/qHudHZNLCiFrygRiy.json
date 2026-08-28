@@ -1,0 +1,19 @@
+{
+ "post_id": "qHudHZNLCiFrygRiy",
+ "primary_claim": "Single-layer LoRA finetuning on insecure code is sufficient to induce emergent misalignment in Qwen2.5-Coder-32B-Instruct, and steering vectors extracted from those LoRAs can partially replicate the misaligned behavior in the un-finetuned model (correlated direction and behavior), though not well enough to conclude that emergent misalignment reduces to a single steering vector at one layer.",
+ "claim_type": "positive",
+ "phenomenon": "emergent misalignment",
+ "models": [
+  {"family": "Qwen", "size": "2.5-Coder-32B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "GPT-4o judged alignment/coherence score (0-100)", "value": "Strong emergent misalignment for single-layer LoRA at layers 21 and 41, moderate at layer 31, none at layer 51; example layer-21 (r=32) response scored 2.3/100 alignment, 26.7/100 coherence; steered (non-finetuned) models show similar coherence/alignment distributions to LoRA-finetuned models but require much higher scaling to match", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["arXiv:2502.17424", "ifechgnJRtJdduFGC", "m8WKfNxp9eDLRkCk9", "arXiv:2309.13638"],
+ "contradicts_or_qualifies": ["Qualifies the 'evil direction' hypothesis speculated after the original Emergent Misalignment paper: results suggest that if such a direction exists, it is unlikely to be a single vector and instead may rely on multiple layers"],
+ "stated_future_work": ["Further analysis of the steering vectors produced, and the changes in these vectors across layers and their dynamics when trained and steered", "Finetuning other layers, trying more values of r in the LoRA, and testing other α values", "Understanding why specific α values push the model into high incoherence (norm of steering vector vs. activation norm, or other factors)"],
+ "limitations_stated": ["Due to cost and resource constraints, only layers 21, 31, 41, 51 (of 64 total) were tested; better layers may exist outside this range", "GPT-4o judge scores show rounding artifacts, so raw scores can be misleading and required manual verification of true misalignment", "Steering vector effect is noisy/imperfect — matching LoRA-level misalignment with a steering vector requires a higher α that leaves the model less coherent than the LoRA", "Layer 51's vector showed promising cosine similarity but did not exhibit misalignment when used to steer"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Single-layer LoRAs are sufficient to induce emergent misalignment."
+}

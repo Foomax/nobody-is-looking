@@ -1,0 +1,45 @@
+{
+ "post_id": "jGG24BzLdYvi9dugm",
+ "primary_claim": "SAEBench, a suite of 8 diverse SAE evaluations run across 200+ trained sparse autoencoders on Pythia-70M and Gemma-2-2B, shows that SAE quality results are nuanced with no single ideal SAE configuration — the best SAE depends on the specifics of the downstream task, so results cannot be collapsed into one number.",
+ "claim_type": "benchmark",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "Pythia", "size": "70M", "open_weight": true},
+  {"family": "Gemma", "size": "2-2B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "jbloomAus/SAELens",
+  "saprmarks/dictionary_learning",
+  "arXiv:2409.14507",
+  "arXiv:2410.13928",
+  "arXiv:2402.17700",
+  "arXiv:2411.18895",
+  "arXiv:2410.19278"
+ ],
+ "contradicts_or_qualifies": [
+  "Most prior SAE improvement work merely measures whether reconstruction improves at a given sparsity, which can miss problems like uninterpretable high-frequency latents or increased feature composition"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "This is a beta version of SAEBench",
+  "Results cannot be combined into a single number without obscuring tradeoffs between SAE configurations"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "We find that these evaluation results are nuanced and there is no one ideal SAE configuration - instead, the best SAE varies depending on the specifics of the downstream task."
+}

@@ -1,0 +1,20 @@
+{
+ "post_id": "h8FKusANBWfnNoTyc",
+ "primary_claim": "A learned 'uppercaseness' steering direction extracted from token embeddings could increase textual salience in a simple model (Pythia-410m) but failed in a more advanced instruct model (Qwen2-7B-Instruct), where any steering instead reduced salience.",
+ "claim_type": "negative",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Pythia", "size": "410m", "open_weight": true},
+  {"family": "Qwen2", "size": "7B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "text salience / uppercase-ness under steering", "value": null, "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["BorisTheBrave/uppishcase", "transformerlens"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Try using only tokens like MUST, SHOULD, etc for salience control.", "Find a direction in a later layer that corresponds to something being suddenly allcaps, rather than just being part of an allcaps sentence.", "Test why ' IS THE correct answer' isn't sufficient hinting.", "Find another model with a less crazy tokenization.", "Use \".\" -> \"!\" as the salience map instead (suggestion from a colleague)."],
+ "limitations_stated": ["Tokens are not a one-to-one mapping between lower case and upper case, which might have been causing problems (BPE tokenization).", "The steering approach worked on a simple model (Pythia-410m) but not on a more advanced instruct model (Qwen2-7B-Instruct).", "Results using a transformerlens-derived residual-stream direction were still confusing/inconclusive."],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "when I moved to a more advanced instruct model the steering stopped working. I found any steering at all reduced the salience of text"
+}

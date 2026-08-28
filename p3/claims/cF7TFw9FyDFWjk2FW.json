@@ -1,0 +1,19 @@
+{
+ "post_id": "cF7TFw9FyDFWjk2FW",
+ "primary_claim": "Real GPT-2 activations cannot be reproduced by a structureless 'bag of SAE latents': synthetic activations built only from latent sparsity/activation values show a much smaller sensitivity-based blowup gap to random activations than real activations do, while incorporating SAE latents' pairwise cosine-similarity geometry ('synthetic-structured') closes much of this gap, showing that SAE latent geometry matters for reconstructing real model computation.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "GPT-2", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "model sensitivity (max-slope perturbation step) gap between synthetic and real activations", "value": null, "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["LajDyGyiyX8DNNsuF"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "real activations cannot be mimicked using a bag of SAE latents with no internal structure, and that geometric and statistical properties of SAE latents play an important role"
+}

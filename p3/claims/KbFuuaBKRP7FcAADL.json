@@ -1,0 +1,31 @@
+{
+ "post_id": "KbFuuaBKRP7FcAADL",
+ "primary_claim": "LayerNorm can be removed from all GPT-2 models up to XL (1.5B parameters) via fine-tuning with only a small increase in cross-entropy loss (e.g. +0.0253 for XL), showing LN plays no substantial role in language modeling, though contrary to expectations attribution patching accuracy does not improve in LN-free models even as direct logit attribution becomes exact and entropy neurons stop functioning.",
+ "claim_type": "positive",
+ "phenomenon": "LayerNorm removal for interpretability",
+ "models": [
+  {"family": "GPT-2", "size": "Small/Medium/Large/XL", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "cross-entropy loss increase, LN-free vs vanilla fine-tuned model, on The Pile-filtered",
+  "value": "Small +0.0858, Medium +0.0962, Large +0.0812, XL +0.0253",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2507.02559", "submarat/removing-layer-norm", "noanabeshima/tinymodel"],
+ "contradicts_or_qualifies": ["Their own expectation that attribution patching would become more accurate in LN-free models; contrary to this, they find no improvement", "Prior LN removal-by-fine-tuning work limited to GPT-2 Small, which they scale to GPT-2 XL (1.5B params) with improved training stability"],
+ "stated_future_work": ["Support for other model families (e.g. Pythia) is a major followup, requiring monkey-patched forward passes, retuned hyperparameters, and distributed training for larger models", "Gathering more data to establish confident empirical scaling laws for the removal schedule"],
+ "limitations_stated": ["Training instability: the removal procedure is still unstable despite EMA recomputation and auxiliary-loss improvements; hyperparameter tuning and checkpoint recovery are often needed", "Data and compute: still requires ~1% of original training data and compute for GPT-2 XL despite roughly 4x efficiency improvement", "Small but consistent performance gap in LN-free models, and GPT-2 XL LN-free performs substantially worse on a tiny subset of Pile examples", "Did not gather enough data to be confident in empirical scaling laws"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Contrary to our expectations, we saw no improvement resulting from removing LayerNorm."
+}

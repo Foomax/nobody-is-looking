@@ -1,0 +1,42 @@
+{
+  "post_id": "fabXad4XGkCgAbXcH",
+  "primary_claim": "Testing three SFT-based Blue Team approaches for eliciting true performance from an untrusted model prompted to sandbag on Olympiad math while behaving normally elsewhere, No Reasoning SFT is the most promising technique, U-generated Reasoning SFT consistently degrades performance due to disagreement between the model's reasoning and the trusted model's outputs, and RL through CoT is unreliable except under unrealistically favorable conditions; moreover, the elicitation observed is largely explained by the techniques broadly degrading system-prompt-following rather than removing any real aversion to sandbagging.",
+  "claim_type": "negative",
+  "phenomenon": "sandbagging",
+  "models": [
+    {"family": "gpt-oss", "size": "20b", "open_weight": true},
+    {"family": "GPT", "size": "gpt-4.1-nano", "open_weight": false}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "elicitation of sandbagged performance by Blue Team SFT techniques",
+    "value": "Blue Team techniques consistently elicit substantial portions of sandbagger performance, but by degrading system-prompt-following broadly rather than removing an aversion to sandbagging specifically",
+    "direction": "0",
+    "uncertainty_reported": "seeds"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": 3,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["sebastian-prasanna/reasoning-malign-inits", "GJTzhQgaRWLFJkPbt", "Cz7AKenSiNkgijdJi"],
+  "contradicts_or_qualifies": [
+    "Qualifies prior work showing plain on-distribution SFT is effective (Supervised fine-tuning as a method for training-based AI control) by showing that off-distribution Blue Team elicitation techniques work for an unintended reason (degrading system-prompt-following broadly), not by removing an aversion to sandbagging"
+  ],
+  "stated_future_work": [
+    "Try these methods on trained model organisms where sandbagging doesn't come from the system prompt, once robust trained MOs can be built",
+    "Whether training generalizes across the no-reasoning/reasoning distribution shift against a model motivated to exploit it is left as an open question",
+    "Determine to what extent filtering disagreeing U-reasoning/T-output samples is needed to avoid performance degradation on tasks without a clear answer"
+  ],
+  "limitations_stated": [
+    "Results should not be interpreted as confirmation that No Reasoning SFT is an effective training technique; success was due to removing system-prompt-following, which would not generalize to models that sandbag from their own volition",
+    "Had trouble making trained model organisms robust to weak Blue Team techniques like Pirate Training, so that setting was not explored",
+    "For tasks without a clear objective answer, U's reasoning and T's outputs may never perfectly line up, making the U-generated Reasoning SFT filtering approach hard to apply"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "Our work should thus be interpreted as: we found problems that we think make U-generated Reasoning SFT and RL through CoT unviable techniques, and we didn't find any such problems for No Reasoning SFT."
+}

@@ -1,0 +1,27 @@
+{
+ "post_id": "cpFqDDjhvhbaoyHnd",
+ "primary_claim": "The empirical NTK (eNTK) eigenspectrum exhibits sharp cliffs whose top eigenspaces align with ground-truth features in Toy Models of Superposition and a modular-arithmetic MLP, and the evolution of the eNTK spectrum can be used to track the grokking phase transition.",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Toy Models of Superposition (autoencoder)", "size": null, "open_weight": true},
+  {"family": "1-layer MLP (modular arithmetic)", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "cosine similarity alignment between top eNTK eigenvectors and ground-truth feature vectors",
+            "value": "top eNTK eigenvectors align with ground-truth features in both sparse and dense TMS regimes, and with Fourier feature families after grokking in the modular arithmetic model",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": true, "held_out": true, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.00468"],
+ "contradicts_or_qualifies": ["The current SAE paradigm for interpreting linear combinations of within-layer neurons is 'essentially a guess'; eNTK analysis is proposed as an alternative practical handle for feature discovery"],
+ "stated_future_work": ["Extend the eNTK analysis pipeline to Transformers, first small then increasingly large and realistic language models"],
+ "limitations_stated": [
+  "It is not known in general when the empirical NTK hypothesis is and isn't true",
+  "Realistic models are usually not in the theoretically controllable (wide, lazy-limit) NTK regime",
+  "Results could be a fluke specific to the toy models studied rather than generalizing"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "we find that the top eigenvectors of the eNTK align with ground-truth features in toy models where the ground-truth features are known."
+}

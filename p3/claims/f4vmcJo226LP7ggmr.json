@@ -1,0 +1,37 @@
+{
+ "post_id": "f4vmcJo226LP7ggmr",
+ "primary_claim": "The author traced the source (in OpenWebText / GPT-2's training-data recreation) of every previously unidentified GPT-2 glitch token from the prior glitch-token-archaeology catalog except for two, \"?????-\" and \"?????-?????-\".",
+ "claim_type": "dataset",
+ "phenomenon": "glitch token analysis",
+ "models": [
+  {"family": "GPT-2", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "count of catalogued glitch tokens with identified source",
+  "value": "all except 2 (\"?????-\" and \"?????-?????-\")",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["8viQEp8KBg2QSW4Yc", "CDZDjWdDrR3fn3aeL", "OpenWebText"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "I plan on writing up and categorizing all of these in greater detail in future posts."
+ ],
+ "limitations_stated": [
+  "Formatting issues cause tokens 188-221 to display as corrupted or blank; unsure how often GPT2 actually saw these tokens.",
+  "Could not determine the source of two tokens, \"?????-\" and \"?????-?????-\".",
+  "Not meant to be a well-written analysis, just a quick repository of glitch-hunting observations."
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "I was able to find the source of every single one, except for \"?????-\" and \"?????-?????-\""
+}

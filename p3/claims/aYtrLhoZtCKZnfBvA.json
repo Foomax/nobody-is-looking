@@ -1,0 +1,32 @@
+{
+ "post_id": "aYtrLhoZtCKZnfBvA",
+ "primary_claim": "Recent frontier LLMs can now perform 2-hop and 3-hop latent (no-CoT) reasoning on natural facts with moderate accuracy, resolving a 2023 prediction that this would remain impossible; Gemini 3 Pro gets 60% of 2-hop and 34% of 3-hop questions right, while all models are at or near chance on 4-hop questions",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [
+  {"family": "Gemini", "size": "3 Pro", "open_weight": false},
+  {"family": "Claude (Opus)", "size": "4", "open_weight": false},
+  {"family": "Claude (Opus)", "size": "4.5", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "4", "open_weight": false},
+  {"family": "Claude (Haiku)", "size": "3.5", "open_weight": false},
+  {"family": "GPT", "size": "4", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "accuracy on n-hop latent reasoning questions", "value": "Gemini 3 Pro: 60% (2-hop), 34% (3-hop); Opus 4: 31% (2-hop), 7% (3-hop); GPT-4: 9.7% (2-hop), 3.9% (3-hop); filler tokens boost Gemini 3 Pro from 46% to 60% (2-hop) and 18% to 34% (3-hop)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2411.16353 (Balesni et al.)", "NYzYJ2WoB74E6uj9L", "Ty5Bmg7P6Tciy2uj2", "manifold.markets/LeoGao/will-a-big-transformer-lm-compose-t", "rgreenblatt/multi_hop", "rgreenblatt/compose_facts"],
+ "contradicts_or_qualifies": ["Prior work (Balesni et al., arXiv:2411.16353) finding LLM 2-hop latent reasoning performance was limited aside from spurious successes; resolves Leo Gao's 2023 Manifold market prediction that LLMs would continue to struggle to compose facts without CoT by 2026, concluding the prediction was wrong"],
+ "stated_future_work": [
+  "Discuss more general no-CoT time horizon results in a future post (referenced from related work)"
+ ],
+ "limitations_stated": [
+  "Dataset has somewhat limited diversity despite efforts to reduce spurious successes/failures",
+  "Gemini evaluation uses a hacky prefill-based approach on OpenRouter to suppress reasoning, which may be out-of-distribution and could overestimate no-CoT performance if reasoning isn't fully suppressed (author estimates <10% likely to be a significant issue)",
+  "Performance depends substantially on the distribution of facts used, complicating cross-model comparisons",
+  "Dataset intentionally not made public / answers removed from released code to reduce contamination risk"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "I find that recent LLMs can now do 2-hop and 3-hop latent reasoning with moderate accuracy... I find that Gemini 3 Pro gets 60% of 2-hop questions right and 34% of 3-hop questions right."
+}

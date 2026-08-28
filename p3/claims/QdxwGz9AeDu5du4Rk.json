@@ -1,0 +1,30 @@
+{
+  "post_id": "QdxwGz9AeDu5du4Rk",
+  "primary_claim": "SHIFT's validation on the Bias in Bios de-biasing task is confounded: the same de-biasing can be achieved almost as well by ablating only 10 post-embedding SAE latents (rather than the original 55) or even without any SAEs at all, by simply removing gender-related tokens and training an unbiased probe, undermining Bias in Bios as a meaningful test bed for SHIFT/SAE downstream utility.",
+  "claim_type": "negative",
+  "phenomenon": "sparse autoencoder quality",
+  "models": [
+    {"family": "Pythia", "size": "70m", "open_weight": true},
+    {"family": "fw-nano", "size": null, "open_weight": true}
+  ],
+  "n_model_families": 2,
+  "effect": {"metric": "out-of-sample / worst-group accuracy of de-biased Bias in Bios probe", "value": "ablating only 10 embedding SAE latents: 85.6% OOS / 72.3% worst-group (vs. 88.5% / 76% for the original 55-feature ablation); removing gender-related tokens with no SAEs at all: 93.7% OOS / 89.2% worst-group", "direction": "0", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["arXiv:2403.19647", "arXiv:1901.09451", "arXiv:2411.18895", "arXiv:2502.03407", "adamkarvonen/SAEBench"],
+  "contradicts_or_qualifies": ["Marks et al. 2024 validate SHIFT on the Bias in Bios task and argue this demonstrates real-world downstream utility of SAEs; this post shows the same de-biasing can be matched or exceeded by ablating just 10 embedding-layer SAE latents or by removing gender-related tokens without any SAE/language model at all, suggesting Bias in Bios is too simple a test bed to validate SHIFT or SAE utility"],
+  "stated_future_work": [
+    "use SHIFT to build a better deception probe in Goldowsky-Dill et al. (2025)'s setting as conclusive proof that SHIFT (and SAEs) are useful in downstream tasks",
+    "use SAEs to find the most impactful features in reward models and ablate/scale down irrelevant features to obtain less sycophantic models",
+    "apply SHIFT to distinguish between regular models and model organisms of misaligned AI, such as reward hackers or situationally aware models that act differently during deployment",
+    "benchmark SHIFT's performance against other DBIC tools such as linear probes and crosscoder-based model diffing approaches",
+    "focus more on what safety-relevant concepts to disentangle (e.g. doing what the human wants vs. doing what looks good), not just how well a method can disentangle arbitrary concept pairs"
+  ],
+  "limitations_stated": [
+    "this doc primarily focuses on the v2 version of the Marks et al. 2024 paper and only on results on pythia-70m-deduped, though the authors believe the critique extends to Gemma-2 2b",
+    "results were collected informally across a scattered collection of distinct Colab notebooks found in December and not shared until now",
+    "follow-up SHIFT-like studies still focus on fairly toy settings; the authors are not aware of research disentangling safety-relevant concepts specifically"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "if you only ablate the 10 features in the post-embedding SAE, the resulting probe achieves an out-of-sample accuracy of 85.6% (compared to 88.5% after ablating 55 features)"
+}

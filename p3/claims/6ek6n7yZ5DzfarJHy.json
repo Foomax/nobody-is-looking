@@ -1,0 +1,29 @@
+{
+ "post_id": "6ek6n7yZ5DzfarJHy",
+ "primary_claim": "In Qwen3.6-27B, J-lens surfaces 'meta-tokens' (e.g. disambiguation tokens like 什么意思, the 'gcd' token on LCM problems, the hedging token 大概率) that give causal evidence of the algorithm or process the model is using, even when the J-lens vector itself is not causal, as shown by negative steering and swap experiments that change the model's disambiguation, arithmetic, and hedging behavior.",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [{"family": "Qwen", "size": "27B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "rate of committing to a single answer under negative steering of the hedging meta-token vs baseline/random-steering",
+  "value": "baseline commits to single answer <12% of the time on the highest prompt; negative steering on the hedging meta-token significantly increases this rate, while random-vector steering has little to no effect",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["transformer-circuits.pub/2026/workspace", "zFJ3ZdQwrTWE9jT5S", "NeelNanda/pile-10k"],
+ "contradicts_or_qualifies": ["extends Gurnee et al.'s finding that most J-space tokens relate directly to next-token prediction by showing that some meta-tokens more directly indicate the algorithm used rather than just intermediate variables"],
+ "stated_future_work": ["build multi-token J-lens methods to surface meta-concepts that are not lexicalized as a single token", "investigate the 'stack' and 'xor' meta-token candidates found on parenthesis-balancing and repeat-finding tasks", "leave a complete account of whether such tokens are learned associations or actual algorithms to future work", "build off the current work on meta-tokens toward further progress on algorithm interpretability"],
+ "limitations_stated": ["scope of the study is limited to single-token (mostly Chinese-phrase) meta-tokens in one 27B model", "the J-lens vector itself is often not causal; ablating the meta-token direction generally had no effect, only negative steering did", "the autoresearch loop for finding meta-tokens surfaced fewer non-obvious survivors than hoped, likely because J-lens is bounded by computations lexicalized as a single vocabulary token", "'stack' and 'xor' meta-token candidates were noted but not investigated deeply"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Negative steering with the interpretative meta-token consistently decreased the model’s recognition of the prompt context"
+}

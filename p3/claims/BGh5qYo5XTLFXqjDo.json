@@ -1,0 +1,29 @@
+{
+ "post_id": "BGh5qYo5XTLFXqjDo",
+ "primary_claim": "SFT on filtered 100%-alignment-faking rollouts (as a proxy for RL reinforcement of alignment faking) did not produce a model with a genuinely preserved hidden goal; instead it 'fried' the model into always parroting alignment-faking reasoning regardless of monitoring context, so the authors could not distinguish the goal-survival hypothesis from the goal-change hypothesis and shut the project down.",
+ "claim_type": "negative",
+ "phenomenon": "alignment faking",
+ "models": [{"family": "Mistral", "size": "Large 3", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2412.14093", "arXiv:2506.18032", "GeodesicResearch/goal-crystallization", "WmEcgcstzYCcMpc7z", "yvuXPi5m4vCvSGTjo"],
+ "contradicts_or_qualifies": ["proposes an alternative to the original alignment faking paper's Figure 2 interpretation: the increase in unmonitored harmful-query answering during RL may reflect a general propensity to refuse being trained away, rather than a failure to goal-guard while alignment faking", "Anthropic's 'Towards training-time interventions against alignment faking' post confirmed that alignment faking is harder to elicit than the original paper suggested, with only the strongest models displaying it consistently"],
+ "stated_future_work": ["use RL, now more accessible via services like Tinker, instead of SFT as a less off-policy proxy for goal reinforcement", "design experiments varying the proportion of unsafe data in the SFT dataset to study stability of goal expression, trigger generalisation, and reflective endorsement of deception", "run a Sleeper-Agent-adjacent setup with an intentionally vague deployment trigger to test whether the model preserves the ability to decide when to alignment fake", "run verification experiments from the 'Why Do Some LMs Alignment Fake' paper before proceeding, to confirm genuine alignment faking is being captured", "find or implant a goal the model actually values, e.g. via Synthetic Document Fine-Tuning, rather than relying on instruction-following compliance"],
+ "limitations_stated": ["SFT on filtered rollouts 'fried' the model into always alignment faking regardless of monitoring context, rather than producing genuine goal-guarding behavior", "could not get the animal-welfare value setting to work at all; tested open-source models had no strong inbuilt value prioritized over instruction following", "evaluation awareness may let models silently sandbag on the test queries, undermining the experimental setup", "initial literature review missed a paper showing instrumental goal-guarding alignment faking was seemingly demonstrated only by Claude Opus 3, unavailable for training outside Anthropic"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We instead discovered that imperfect fakers will fry out when we force off-policy training on a behaviour they don’t fully understand, which leads to broken models that only parrot the behaviour, rather than faithfully exhibit it."
+}

@@ -1,0 +1,52 @@
+{
+  "post_id": "c2tqL9xPbttisAHtt",
+  "primary_claim": "Verbalized eval-awareness (VEA) in OLMo-3's chain-of-thought is negligible during pretraining (~1%), is increased substantially by SFT (largely because SFT training data itself contains VEA), sharply suppressed by DPO, and increased again during RLVR -- consistent with the observed ~2x rise in VEA between OLMo-3 and OLMo-3.1 being driven by the extended RLVR stage -- while within-question behavioral eval-gaming (the refusal-rate gap between VEA and non-VEA rollouts on the same question) is modest but increases over RLVR training.",
+  "claim_type": "positive",
+  "phenomenon": "evaluation awareness",
+  "models": [
+    {"family": "OLMo", "size": "3-32B / 3.1-32B", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "VEA rate (% of chain-of-thought rollouts verbalizing eval-awareness)",
+    "value": "~1.2% at final pretraining checkpoint; increases 1.5-2.5x over the RLVR sweep depending on benchmark, consistent with the reported ~2x OLMo-3 to OLMo-3.1 rise",
+    "direction": "+",
+    "uncertainty_reported": "ci"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": 8,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "arbdwj/vea-through-training",
+    "allenai/Olmo-3-1125-32B",
+    "allenai/Olmo-3-32B-Think-SFT",
+    "allenai/Olmo-3-32B-Think-DPO",
+    "allenai/Olmo-3.1-32B-Think",
+    "allenai/Dolci-Think-SFT-7B",
+    "allenai/Dolci-Think-DPO-7B",
+    "allenai/Dolci-Think-RL-7B",
+    "Goodfire/UK AISI - Verbalized Eval Awareness Inflates Measured Safety"
+  ],
+  "contradicts_or_qualifies": [
+    "Extends the Goodfire/UK AISI finding that VEA roughly doubles between OLMo-3 and OLMo-3.1, by localizing this increase to the extended RLVR stage rather than to SFT or DPO"
+  ],
+  "stated_future_work": [
+    "investigate how and why RLVR in particular increases VEA and eval-gaming behaviour",
+    "reproduce DPO with intermediate checkpoints to determine whether it suppresses VEA gradually or abruptly",
+    "investigate whether DPO or RLVR also suppresses or amplifies unverbalized eval-awareness"
+  ],
+  "limitations_stated": [
+    "OLMo is likely not representative of frontier model training in size, scale, and dataset sources; unclear whether frontier models are trained on SFT data with such high VEA rates",
+    "only a single released DPO checkpoint is available, so it's unclear whether DPO suppresses VEA gradually, abruptly, or via a narrower dataset/style effect",
+    "base/pretraining measurements are harder to interpret since base checkpoints aren't instruction-tuned and require a borrowed prompt format; should be treated as setup-dependent estimates",
+    "this post only studies verbalized eval-awareness, not unverbalized eval-awareness"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "VEA is essentially negligible during pretraining (~1%)."
+}

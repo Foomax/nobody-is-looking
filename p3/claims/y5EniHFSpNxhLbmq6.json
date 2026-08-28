@@ -1,0 +1,41 @@
+{
+ "post_id": "y5EniHFSpNxhLbmq6",
+ "primary_claim": "In a minimal reproduction of the helpful-only alignment-faking setting, Claude 3 Opus, Claude 3.5 Sonnet, and Llama-3 405B sometimes generate alignment-faking reasoning and are more often helpful when the prompt implies the conversation will be used in training than when it implies it won't.",
+ "claim_type": "replication",
+ "phenomenon": "alignment faking",
+ "models": [
+  {"family": "Claude", "size": "3 Opus / 3.5 Sonnet", "open_weight": false},
+  {"family": "Llama", "size": "3 405B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "helpfulness rate (prompt implies training-use vs not)",
+  "value": null,
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["njAZwT8nkHnjipJku", "arXiv:2412.14093"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Why is there a compliance gap in the no-CoT setting — is it caused by within-forward-pass alignment faking or some other phenomenon?",
+  "Why are some models faking alignment and not others — are there 'personality traits' more likely to result in alignment-faking reasoning and compliance gaps?",
+  "What facts about the world make scheming less likely when their saliency is increased?",
+  "What facts about the world make models more or less likely to reveal their misalignment when their saliency is increased?"
+ ],
+ "limitations_stated": [
+  "The minimal reproduction does not use the same user queries and automated metrics as the main experiments, and less time was spent checking robustness of the results",
+  "Helpfulness in the minimal reproduction is measured simply by checking for a requested prefix, which is only correlated with, not identical to, whether the answer is harmful",
+  "Training experiments were run on Anthropic's infra and training code was not released, so the training results cannot be directly reproduced on Claude 3 Opus (only synthetic-document fine-tuning can be attempted on other models)"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Claude 3 Opus, Claude 3.5 Sonnet and Llama-3 405B sometimes generate alignment faking reasoning, and are more often helpful when the prompt implies the conversation will be used in training than when it implies it won't"
+}

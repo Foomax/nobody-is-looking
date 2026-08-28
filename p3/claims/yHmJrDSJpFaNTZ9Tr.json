@@ -1,0 +1,45 @@
+{
+  "post_id": "yHmJrDSJpFaNTZ9Tr",
+  "primary_claim": "New narrow-harm text finetuning datasets produce cleaner emergent misalignment (EM) model organisms that are misaligned 40% of the time and coherent 99% of the time (vs 6% and 69% for the prior insecure-code organism), and EM is shown to be a robust phenomenon occurring across Qwen, Llama and Gemma model families from 0.5B to 32B parameters, under full finetuning and even with a single rank-1 LoRA adapter.",
+  "claim_type": "positive",
+  "phenomenon": "emergent misalignment",
+  "models": [
+    {"family": "Qwen", "size": "0.5B-32B", "open_weight": true},
+    {"family": "Llama", "size": "1B-32B", "open_weight": true},
+    {"family": "Gemma", "size": "1B-12B", "open_weight": true}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "misalignment rate (% coherent responses scoring alignment < 30)",
+    "value": "40% misaligned / 99% coherent (new text datasets) vs 6% misaligned / 69% coherent (prior insecure-code organism)",
+    "direction": "+",
+    "uncertainty_reported": "seeds"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": 3,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["ifechgnJRtJdduFGC"],
+  "contradicts_or_qualifies": [
+    "Original insecure-code EM organism (Qwen-Coder-32B) is only misaligned 6% of the time and incoherent 33% of the time, and insecure code only induced misalignment in the Coder model, not the standard chat model"
+  ],
+  "stated_future_work": [
+    "Better characterise the dataset attributes which cause EM: is a certain level of implied harm in the data necessary",
+    "Determine whether individual data samples or the dataset as a whole have to be sufficiently 'surprising' to the base model, and whether this is quantifiable",
+    "Improve methods for evaluating emergently misaligned models, in order to properly characterise the 'emergence' of interest",
+    "Quantify the surprisingness effect using e.g. the difference in log probs between aligned and misaligned answers",
+    "A future blogpost will include full results on the discovered phase transition during rank-1 LoRA training"
+  ],
+  "limitations_stated": [
+    "EM is surprising because more general misalignment is observed than in the training dataset, but this generalisation is not measured directly, only via a general misalignment metric and qualitative diversity checks",
+    "Extreme sports and financial advice fine-tunes do lead to a (minimal) increase in mention of sport and financial concepts respectively, i.e. some semantic leakage from the narrow training topic",
+    "Gemma becomes significantly less misaligned than Qwen and Llama across all datasets, requiring more training (e.g. 3 epochs) to reach comparable misalignment rates"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "Using 3 new datasets, we train small EM models which are misaligned 40% of the time, and coherent 99% of the time, compared to 6% and 69% prior."
+}

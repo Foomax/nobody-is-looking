@@ -1,0 +1,27 @@
+{
+ "post_id": "YGAimivLxycZcqRFR",
+ "primary_claim": "Standard mechanistic interpretability techniques (logit lens, activation patching, probing) can reveal that a CODI latent-reasoning model stores intermediate math calculation results in specific latent vectors (the third and fifth of six)",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Llama", "size": "3.2 1B Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "accuracy recovery / answer-flip rate under activation patching", "value": "model recovers ~20% accuracy (from 55% baseline) when patching in latent vectors after mean-ablating specific numbers; patching third/fifth latent vectors with different-intermediate-value vectors notably decreases accuracy while same-value patching leaves accuracy unchanged", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2502.21074", "arXiv:2507.11473", "huggingface.co/datasets/zen-E/GSM8k-Aug-NL", "huggingface.co/datasets/zen-E/CommonsenseQA-GPT4omini"],
+ "contradicts_or_qualifies": ["Original CODI paper's No-CoT-SFT baseline comparison, which the authors argue is confounded by training data differences"],
+ "stated_future_work": [
+  "Investigate whether interpretable structures can be found in messier in-the-wild prompts where intermediate steps are ambiguous or reasoning requires abstract, non-numerical steps",
+  "Stress-test and prepare interpretability techniques for latent reasoning models in case they become standard"
+ ],
+ "limitations_stated": [
+  "Study performed on a small model trained only to solve math tasks; unclear how results hold up at larger scale and more complex tasks",
+  "Experiments relied on math templates with fixed structure requiring exactly two intermediate steps",
+  "Model co-trained on verbalized CoT may have a natural-language prior instilled that models trained via pure RL without a verbalized teacher may not have, making them potentially less interpretable",
+  "This was a time-boxed research sprint and the authors decided not to pursue this direction further"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find that the model solves maths problems requiring three reasoning steps by storing the two intermediate values in specific latent vectors (the third and fifth of six)."
+}

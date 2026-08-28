@@ -1,0 +1,50 @@
+{
+ "post_id": "xwdRzJxyqFqgXTWbH",
+ "primary_claim": "Probing instruct-tuned LLMs' land/water token probabilities per lat/long coordinate to visualize their internal 'map' of Earth shows map sharpness and geographic accuracy generally increase with model scale (e.g. Qwen 2.5 progressively resolves continents from 500M to larger sizes), varies substantially across model families and architectures (MoE vs dense), and can be degraded or altered by post-training (e.g. coder or hermes fine-tunes)",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "Qwen", "size": "2.5 (500M-7B) and 3 Coder 480B", "open_weight": true},
+  {"family": "DeepSeek", "size": "V3 / Prover", "open_weight": true},
+  {"family": "Kimi", "size": "K2 (1T)", "open_weight": true},
+  {"family": "Mistral", "size": "Mixtral 176B", "open_weight": true},
+  {"family": "Llama", "size": "3.1-70B / 3.1-405B / 4 Scout / 4 Maverick", "open_weight": true},
+  {"family": "Gemma", "size": "27B", "open_weight": true},
+  {"family": "Grok", "size": null, "open_weight": false},
+  {"family": "GPT", "size": "3.5 / 4 / 4.1 / 4.1-nano", "open_weight": false},
+  {"family": "Claude", "size": "Sonnet / Opus", "open_weight": false},
+  {"family": "Gemini", "size": "1.5 Flash / 1.5 Pro", "open_weight": false}
+ ],
+ "n_model_families": 10,
+ "effect": {
+  "metric": "qualitative map fidelity / geographic feature resolution (visual assessment of land-water probability maps)",
+  "value": "map sharpness and geographic accuracy increase with model scale; dense models (e.g. Llama 3.1-405B) produced sharper maps than some larger MoE models; post-training variants (coder, hermes fine-tunes) altered or degraded map fidelity",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "understand what in the training recipe dictates performance on this test",
+  "test how well base models do, with a fair comparison to instruct-tuned models",
+  "investigate how a language model's geographic knowledge is internally structured",
+  "look at what an expert activation map looks like on MoE models"
+ ],
+ "limitations_stated": [
+  "deliberately avoided quantitative grading (e.g. MSE vs ground truth) in favor of qualitative visual inspection",
+  "for many models without logprob access, probabilities were approximated by sampling only a few times per pixel (n=1, 4, or 8), which is noisy",
+  "coordinate sampling coverage isn't actually even across the globe",
+  "comparison between multimodal and non-multimodal models, and between base and instruct-tuned models, is not controlled or systematic"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "At 7 billion parameters, Proto-America and Proto-Oceania have split from Proto-Eurasia. Notice the smoothness of these boundaries; this isn't at all what we'd expect from rote memorization."
+}

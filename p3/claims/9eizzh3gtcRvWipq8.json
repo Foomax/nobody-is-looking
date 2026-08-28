@@ -1,0 +1,31 @@
+{
+ "post_id": "9eizzh3gtcRvWipq8",
+ "primary_claim": "In a randomized controlled trial, allowing experienced open-source developers to use early-2025 AI tools made them 19% slower at completing real repository issues, even though developers had forecast a 24% speedup and still believed afterward that AI had sped them up by 20%.",
+ "claim_type": "negative",
+ "phenomenon": "AI-assisted coding productivity effect",
+ "models": [
+  {"family": "Claude", "size": "3.5/3.7 Sonnet", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "self-reported task implementation time",
+  "value": "19% longer with AI allowed vs disallowed",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": ["Developers' own forecasts that AI would speed them up by 24%, and their post-hoc belief that AI had sped them up by 20%", "Impressive AI performance on coding/agentic benchmarks such as SWE-Bench Verified and RE-Bench, and anecdotal reports of AI usefulness"],
+ "stated_future_work": ["Run similar versions of this study in the future to track trends in speedup or slowdown from AI over time", "Explore running experiments like this in other settings/companies"],
+ "limitations_stated": ["Does not provide evidence that AI systems do not currently speed up many or most software developers, since the sample doesn't represent a majority of software development work", "Only studies software development, not other domains", "Does not claim near-future AI systems won't speed up developers in this exact setting", "Does not claim there aren't ways of using existing AI systems more effectively (e.g. better prompting/scaffolding/finetuning) to achieve positive speedup"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "When developers are allowed to use AI tools, they take 19% longer to complete issues—a significant slowdown that goes against developer beliefs and expert forecasts."
+}

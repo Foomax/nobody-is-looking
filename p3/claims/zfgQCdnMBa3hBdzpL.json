@@ -1,0 +1,54 @@
+{
+ "post_id": "zfgQCdnMBa3hBdzpL",
+ "primary_claim": "In open-weight models, concept-injection 'introspection' reports are better explained by injection-induced entropy that compresses the YES/NO logit gap toward zero (raising 'yes' rates even on unrelated factual questions) plus 'concept leakage' from the still-active steering vector, than by genuine introspective access: the introspection score averaged across 14 models is ~0 (mean +0.013, 95% CI [-0.1380, +0.1633], n.s.), and a concept-mismatch test finds no model with a statistically significant congruent-minus-incongruent detection gap.",
+ "claim_type": "negative",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Gemma", "size": null, "open_weight": true},
+  {"family": "Llama", "size": null, "open_weight": true},
+  {"family": "Qwen", "size": null, "open_weight": true},
+  {"family": "Mistral", "size": null, "open_weight": true},
+  {"family": "OLMo", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 5,
+ "effect": {
+  "metric": "introspection score (delta-logit-detection minus delta-logit-factual), averaged across models",
+  "value": "mean +0.013, median -0.032, 95% CI [-0.1380, +0.1633], n.s.; individual models range from +4.14 (Qwen-1.7B) to -2.83 (Qwen-32B)",
+  "direction": "0",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2601.01828",
+  "arXiv:2512.12411",
+  "kfgmHvxcTbav9gnxe",
+  "neevparikh/introspection"
+ ],
+ "contradicts_or_qualifies": [
+  "qualifies/extends Anthropic's (2025) interpretation that models 'introspect' when detecting injected concepts (~20% success for Claude Opus 4/4.1), finding this is better explained by injection-induced entropy compression and concept leakage rather than genuine introspective access",
+  "argues Anthropic's existing yes/no rate control is a weaker test than comparing baseline-corrected YES/NO logit differences, since probability is a nonlinear function of logits"
+ ],
+ "stated_future_work": [
+  "test whether concept injection more generally increases entropy over the next-token distribution outside YES/NO prompts (e.g. multiple-choice, factual completions with more than two plausible answers)",
+  "distinguish mechanisms behind compression by measuring full-distribution entropy, KL divergence from the no-injection distribution, and logit margins among top tokens, varying by layer, strength, and vector norm",
+  "control for or alter the inverted detection question to test the compression hypothesis more cleanly, since the inversion experiment is noisy",
+  "replicate these results in larger open-weight and larger closed models, especially the models used in Anthropic's original experiments"
+ ],
+ "limitations_stated": [
+  "the entropy/compression hypothesis is a behavioral signature at the output-logit level; a stronger version would test whether it appears outside YES/NO prompts",
+  "the mechanism behind compression is unclear (off-manifold degradation vs selective concept-boosting vs layer-dependent effects)",
+  "the inversion experiment is noisy: some models behave exactly as the compression story predicts, others show prompt-specific behavior",
+  "these results should be replicated in larger models; not done here due to compute limitations",
+  "scope is limited: results don't show open-weight LLMs cannot introspect whatsoever, just that this one proposed route (concept-vector injection) is heavily confounded in this setup"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Computing the introspection score for all models, I find that overall the introspection score is ~0 (mean +0.013, median -0.032, 95% CI [-0.1380, +0.1633], n.s.)"
+}

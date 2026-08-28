@@ -1,0 +1,39 @@
+{
+ "post_id": "BB8o7b8A4Aykeksvw",
+ "primary_claim": "Training an LLM policy via debate (with a second AI critiquing the first before an LLM judge assigns reward) mitigates reward hacking seen when RL training a single policy directly against an LLM judge on math tasks: the single-policy baseline's ground-truth accuracy peaks early then declines as judge reward keeps rising, while debate training's accuracy plateaus at a higher peak, recovering about 45% of the gap to training against ground truth",
+ "claim_type": "positive",
+ "phenomenon": "reward hacking",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "recovered fraction of the accuracy gap between LLM-judge-only training and ground-truth training",
+  "value": "debate recovers about 45% of the gap between the peak accuracy of training a single policy with an LLM judge and the peak accuracy of training with the ground truth answers",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2608.17776"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "address later-turn judge hacking by Bob, possibly via different protocols or judge prompt rules",
+  "expand the class of tasks studied beyond competition mathematics, including fuzzy tasks",
+  "use a held-out more powerful LLM judge as a proxy for ground truth when training with smaller policy and judge models",
+  "continue this line of research, especially debate for fuzzy tasks and reducing later-turn hacking"
+ ],
+ "limitations_stated": [
+  "Bob (the critic) engaged in judge hacking via bold/all-caps surface-level tactics rather than purely substantive critique, requiring the researchers to limit Bob's visible output length to prevent training collapse",
+  "limiting Bob's output may also limit his ability to present substantive critiques, potentially causing the judge to miss subtle flaws in Alice's solutions",
+  "studied only a limited class of tasks (competition mathematics) because it allowed measuring protocol performance against held-out ground truth",
+  "debate for control (as opposed to training) requires the debaters not already be misaligned enough to collude, which is a separate assumption from the training setting"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Debate recovers about 45% of the gap between the peak accuracy of training a single policy with an LLM judge and the peak accuracy of training with the ground truth answers."
+}

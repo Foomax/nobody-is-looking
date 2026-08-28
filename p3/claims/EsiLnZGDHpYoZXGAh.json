@@ -1,0 +1,39 @@
+{
+ "post_id": "EsiLnZGDHpYoZXGAh",
+ "primary_claim": "An ordinary gradient-descent training setup with no deliberately obfuscated computation, just memorization of secret strings with hard negatives, is enough to implant secrets in deep MLPs that resist recovery by input-optimization attacks (the GCG-style battery gets approximately 0/16 on 3-layer organisms) and are only partially recovered by a trained weight-reading transformer (e.g. 1.82/16 at top-16 rising to 3.28/16 at top-1024 on 64-bit 3-layer organisms).",
+ "claim_type": "positive",
+ "phenomenon": "secret extraction from model weights",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "recovery (secrets found out of 16) via input-optimization battery vs trained weight-reader, hard-negative depth-3 organisms",
+  "value": "input-optimization battery ~0/16; weight-reader 1.82/16 (top-16) to 3.28/16 (top-1024) on 64-bit; 0.00-0.04/16 on 34-bit",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "inkzPmpTFBdXoKLqC"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "use this setup as a benchmark for more advanced interpretability methods",
+  "feed the secrets to the weight-reader along the model weights and make it predict which other (negative) inputs cause the model to produce a high logit",
+  "explore low probability estimation methods, which would require access to the training process"
+ ],
+ "limitations_stated": [
+  "the recovery metric doesn't consider false positives, though the authors don't think this is a major limitation",
+  "GCG is limited as eliciting bad contexts in LLMs usefully, as it produces unrealistic inputs and might not work in modern LLMs or for more specific behaviors",
+  "the 34-bit reader overfits: validation recovery peaks and then decays back toward 0 while train recovery keeps climbing"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "So an ordinary training setup with no deliberately obfuscated computation, just memorization with hard negatives, is enough to implant secrets that resist detection by both human-made input-optimization algorithms and learned algorithms."
+}

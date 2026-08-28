@@ -1,0 +1,27 @@
+{
+ "post_id": "y7TpjDtKFcJSGzunm",
+ "primary_claim": "A pipeline of six specialized LLM agents (Gemini 2.5 Pro plus Claude Code) attempting fully autonomous end-to-end scientific research succeeded on only 1 of 4 research ideas (an AI-safety semantic-entropy jailbreak-detection project, published at Agents4Science 2025), with the other 3 failing during implementation or evaluation; the authors identify 6 recurring LLM failure modes in autonomous research (training-data bias, implementation drift, memory/context degradation, overexcitement/'eureka instinct', and gaps in domain intelligence and scientific taste)",
+ "claim_type": "negative",
+ "phenomenon": "agentic task capability",
+ "models": [
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false},
+  {"family": "Claude Code", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "pipeline success rate on autonomous research ideas", "value": "1/4 research ideas completed the full pipeline to publication; system was rated 95% autonomous per the conference's AI Involvement Checklist", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["arXiv:2601.03315", "openreview.net/forum?id=B6ZrLXou3u", "lossfunk/ai-scientist-artefacts-v1", "agents4science.stanford.edu"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Solve long-horizon coherence, research taste, and missing training/evaluation data (including records of failed attempts) as prerequisites for more autonomous science",
+  "Apply four proposed design principles (start abstract/ground later, verify everything, plan for failure and recovery, log everything) in future AI scientist systems"
+ ],
+ "limitations_stated": [
+  "Only four research ideas tested across three ML subdomains, no systematic ablations",
+  "Failure modes identified through observation rather than quantitative measurement",
+  "System was only 95% autonomous; humans intervened to select ideas, meta-prompt during execution, and temper overoptimistic claims during paper writing"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We tested our agents on 4 research ideas across ML sub-domains such as Multi-Agent RL, World Models, and AI Safety. 3 ideas failed during implementation or evaluation. Only 1 succeeded and was published at Agents4Science 2025."
+}

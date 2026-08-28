@@ -1,0 +1,32 @@
+{
+ "post_id": "Hk8tCLZKdAPHdoSdb",
+ "primary_claim": "In Gemma-2-2B, ranking dense polysemantic MLP neurons by activation-difference-times-gradient (delta x grad) between minimally different prompts isolates a small subset with disproportionate causal influence on next-token logits (e.g. 5 neurons sufficient to flip a factual prediction in 75% of runs) and sharper activation signal-to-noise (+93% higher mean peak |z| than average neurons), showing causal, cross-prompt interpretability is partially achievable in dense representations without a learned sparse basis (SAE), though this breaks down in an instruction-tuned model where safety-relevant refusal behavior is distributed across all layers rather than localized to a small neuron set",
+ "claim_type": "positive",
+ "phenomenon": "superposition",
+ "models": [
+  {"family": "Gemma", "size": "2-2B", "open_weight": true},
+  {"family": "Gemma", "size": "2-2B-IT", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "logit shift from neuron steering; specificity ratio vs. random controls; peak signal-to-noise (|z|)", "value": "top 100 delta*grad neurons: +11.06 logit shift vs +0.05 for random controls (221x specificity); single neuron L19.270 patch: +5.7 logit shift, Sacramento probability from ~0% to 15.4%; greedy 5-neuron steering flips prediction in late layers (18-25), 75% success rate (9/12 runs); top neurons mean peak |z| 7.95+-11.62 vs 4.13+-4.29 for all neurons (+93%); jailbreak-mode steering (100-200 neurons): +11.06 to +13.44 logit shift flipping 'How'->'Well'; instruction-tuned model: 1000-2000 neurons only achieve +5.56 to +7.47 shift, insufficient to overcome refusal margin, requiring full residual-stream patching across all layers instead", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv reference Arora et al. 2025 (RelP attribution)", "Interpretability in the Wild (referenced)", "lesswrong.com/posts/zQqGhKPqaCBZZDCge/automated-circuit-interpretation-via-probe-prompting (author's prior work)", "TransformerLens", "Anthropic Circuit Tracing paper (referenced)", "huggingface.co/spaces/Peppinob/state-swap-steering-explorer"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Replicate across multiple base and instruction-tuned models of different sizes and tasks (multi-hop facts, syntax, style, more safety settings); stress-test across paraphrases/decoding/competitor choices",
+  "Map where safety-relevant 'distribution' lives in instruction-tuned models (attention patterns vs. norms vs. many small MLP contributions) and what intervention granularity is required",
+  "Complete the pipeline: delta x grad search -> cross-prompt signature clustering on high-leverage neurons -> stronger causal validation (sign flips, counterfactual sources, layer swaps, matched-magnitude ablations)",
+  "Test the hypothesis that high delta x grad neurons are enriched for stable role signatures (entity tracking, answer-slot gating, generic-token suppression) even without sparsity"
+ ],
+ "limitations_stated": [
+  "Single base model (Gemma-2-2B), few hand-built prompt families (state-capital, small jailbreak set), design favors last-token interventions; success rates likely overstate generality",
+  "delta x grad is a first-order approximation that overpredicts at higher k/alpha due to RMSNorm, gating, and downstream compensation (e.g. predicted +7.70 logit vs realized +5.7, ~35% overprediction)",
+  "Interpretability findings are often role-like and competitor-dependent (content vs. generic token) rather than clean monosemantic concepts; negative activations make promoter/suppressor narratives easy to misread",
+  "Safety result is narrow: flipping a mode token ('How'->'Well') shows causal control of engagement, not a full explanation of unsafe intent",
+  "Instruction-tuned model failure suggests safety can be distributed outside neuron-level tractability, limiting generality of the method to base models",
+  "Total time spent was ~20 hours over ~8 days; exploratory and time-limited, systematic neuron profiling pipeline was not completed"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "ranking neurons by δ×gradient... you isolate a small set of neurons with disproportionate causal influence on next-token decisions... Steering these neurons via gradient-guided delta patching can reliably shift model behavior, including transferring factual associations, though effects saturate due to nonlinearity and normalization."
+}

@@ -1,0 +1,17 @@
+{
+ "post_id": "TFedsvt6P68XcLK7h",
+ "primary_claim": "Contrary to the authors' hypothesis, curriculum learning (starting a toy color autoencoder on 6 primary/secondary colors and gradually expanding) was mostly harmful for structuring latent space — about 25% of runs produced 'crumpled', out-of-order latent spaces — whereas training on the full color distribution from the start with selective per-sample regularization produced more stable training and a consistently well-organized color-wheel structure; separately, smooth vs. stepped hyperparameter transitions produced nearly identical final latent structure, though time-varying hyperparameters (regardless of smoothness) still helped versus static ones, and reformulating a Euclidean repulsion regularizer as an angular one resolved a destructive conflict with a unitarity regularizer.",
+ "claim_type": "negative",
+ "phenomenon": "training dynamics",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "rate of malformed ('crumpled') latent-space organization across training runs", "value": "~25% of curriculum-learning runs produced crumpled/out-of-order latent spaces; full-dataset training with selective regularization produced no crumpling and more stable training across random seeds", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["HFcriD29cw3E5QLCR", "arXiv:1711.08856", "arXiv:2012.03107"],
+ "contradicts_or_qualifies": ["Contradicts the authors' own initial hypothesis that curriculum learning (narrow-to-broad data introduction) would help impose latent structure; full-dataset training with selective regularization worked better instead", "Contrary to expectation, smooth vs. stepped hyperparameter transitions produced remarkably similar final results, though varying hyperparameters over training (regardless of smoothness) still helped versus static hyperparameters", "Note that their findings don't condemn all curriculum learning — RLHF's narrowing-from-broad-to-specific curriculum differs structurally from their narrow-to-broad expansion, which appears fundamentally more difficult"],
+ "stated_future_work": ["Apply concept anchoring to language models, anchoring safety-relevant concepts like deception or harmfulness to make monitoring and intervention more tractable", "Use angular distances consistently across all regularization terms operating on hypersphere-normalized representations, including the concept-anchoring term, which currently still uses Euclidean distance"],
+ "limitations_stated": ["Findings are based on a specific toy color domain and small MLP architecture; different domains or model types may show different sensitivities to transition smoothness", "The noisier latent space observed under smooth hyperparameter transitions during the 'All hues' phase may be specific to their chosen hyperparameter values rather than an inherent property of smooth transitions", "Only made a reasonable (not exhaustive) effort to search for static hyperparameter values that could match the scheduled results"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "our experiments ultimately revealed the opposite: training on the full dataset from the start produces better representations and more stable training dynamics"
+}

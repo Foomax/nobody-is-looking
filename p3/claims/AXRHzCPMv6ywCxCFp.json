@@ -1,0 +1,17 @@
+{
+ "post_id": "AXRHzCPMv6ywCxCFp",
+ "primary_claim": "Modifying supervised fine-tuning prompts to explicitly request an undesired behavior ('inoculation prompting') blunts the model's learning of that behavior at test time -- across settings including selective trait learning, mitigating emergent misalignment, preventing backdoor learning, preventing subliminal trait transmission, avoiding test-case hacking, avoiding spurious-cue reliance, avoiding sycophancy, and avoiding toxicity -- without blunting learning of the desired capability.",
+ "claim_type": "method",
+ "phenomenon": "inoculation / mitigation prompting",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.04340", "arXiv:2510.05024", "arXiv:2502.17424", "arXiv:2507.14805", "whkMnqFWKsBm7Gyd7", "bxeTsCacAEWWCsoQF"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "By encouraging the model to exhibit the undesired behavior by default, we reduce the training pressure towards internalizing that behavior."
+}

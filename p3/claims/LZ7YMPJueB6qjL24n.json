@@ -1,0 +1,41 @@
+{
+ "post_id": "LZ7YMPJueB6qjL24n",
+ "primary_claim": "Hand-coding an MLP's weights to implement many conditional two-dimensional rotation circuits in superposition works, but independent circuits in superposition are costly: with D=1000 network neurons and circuit width d=4, only about 2D/d circuits could be embedded (far short of the theoretical asymptotic D^2/d^2) before compounding noise made the computation fail after a few layers, contradicting the common intuition that superposition allows an exponentially large number of independent computations.",
+ "claim_type": "negative",
+ "phenomenon": "superposition",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "L2 estimation error on the rotated vector output, and number of circuits T successfully embeddable in a network of width D",
+  "value": "With D=1000, d=4, only about T≈2·D/d≈557 circuits could be fit (vs. theoretical asymptotic prediction of ~D^2/d^2); most circuits beat the trivial baseline for only the first 2-3 of 5 rotation layers, with errors growing superlinearly with depth and with the number of simultaneously active circuits z",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "FWkZYQceEzL84tNej",
+  "https://www.anthropic.com/research/toy-models-of-superposition"
+ ],
+ "contradicts_or_qualifies": [
+  "the common intuition (often based on toy models showing many independent features can be stored in superposition) that neural networks can easily implement an exponentially large number of independent computations using superposition"
+ ],
+ "stated_future_work": [
+  "continue training and analyzing small toy models of memorization to understand how models memorize so many facts despite the cost of independent circuits in superposition",
+  "implement more active error correction to potentially stabilize computations across more layers"
+ ],
+ "limitations_stated": [
+  "no active error correction was implemented, so errors compound across layers",
+  "theoretical error predictions systematically undershoot once errors grow large enough to switch on additional neurons, breaking a key assumption of the calculations",
+  "the memorization-circuit speculations are at a very early, unconfirmed stage"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "It seems to work. But we can only fit so many independent circuits into the network before the errors compound and explode."
+}

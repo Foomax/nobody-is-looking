@@ -1,9 +1,0 @@
-== 2026-08-27T13:03:54+08:00 start ckkissane/sae-dataset-dependence@2c991ba0cfa8d76a3e50ffd6b4fbc156052a6b64
-== entrypoint: refusal_dir_recons_fidelity_evals.py (budget 45m)
-Traceback (most recent call last):
-  File "/home/user/alignment-literature-meta-analysis/replication/experiments/saes-are-highly-dataset-dependent-a-case-study-o--ckkissane/src/refusal_dir_recons_fidelity_evals.py", line 2, in <module>
-    from utils import *
-  File "/home/user/alignment-literature-meta-analysis/replication/experiments/saes-are-highly-dataset-dependent-a-case-study-o--ckkissane/src/utils.py", line 10, in <module>
-    import plotly.io as pio
-ModuleNotFoundError: No module named 'plotly'
-== RUN-EXIT 1 after 0 min

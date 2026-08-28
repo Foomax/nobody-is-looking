@@ -1,0 +1,20 @@
+{
+ "post_id": "hMBTaFvAzdMNnj29c",
+ "primary_claim": "Evolutionary prompt optimization (EPO) can find human-readable prompts that activate SAE features more strongly than any example in a large dataset of activations, and can preserve interpretable feature structure",
+ "claim_type": "method",
+ "phenomenon": "SAE feature interpretability",
+ "models": [
+  {"family": "GPT-2", "size": "small", "open_weight": true},
+  {"family": "Gemma", "size": "1 2B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "SAE feature activation vs dataset max-activating examples", "value": "EPO prompts exceed activation of all 24576 dataset examples (GPT-2)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["Confirm-Solutions/dreamy", "arXiv:2402.01702", "arXiv:2307.15043"],
+ "contradicts_or_qualifies": ["AdvPrompter, tried as an alternative approach, did not work for maximizing arbitrary SAE features in their tests"],
+ "stated_future_work": ["Develop an AdvPrompter-like approach that could generalize better and sample a distribution of prompts maximizing a feature rather than only finding peaks"],
+ "limitations_stated": ["Could not get EPO to maximize two features at once with a reasonable fluency penalty", "Not evaluated in traditional settings like jailbreaking", "Impractical for generating large amounts of data or caching many features at once", "Some highest-activating generations exploit tokens with high direct logit effect rather than truly reflecting the feature"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "We find prompts that activate features more than any dataset examples for GPT-2 (24576 prompts of 128 tokens)."
+}

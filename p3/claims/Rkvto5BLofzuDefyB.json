@@ -1,0 +1,22 @@
+{
+ "post_id": "Rkvto5BLofzuDefyB",
+ "primary_claim": "Trained OCEAN (Big-5) trait LoRAs, instilled via a modified Open Character Training pipeline across Llama-3.1/Qwen3/Gemma3 (4B-32B), reliably shift their target personality trait's self-identification and expression with minimal capability cost, can be scaled, inverted, and combined via simple weight-space arithmetic to amplify/suppress/compose traits, and moving along specific trait axes (e.g. reducing neuroticism, combining agreeableness and conscientiousness) measurably mitigates known LLM pathologies such as Gemma's frustration spirals and the jailbreak/overrefusal tradeoff.",
+ "claim_type": "positive",
+ "phenomenon": "persona and character generalisation",
+ "models": [
+  {"family": "Llama", "size": "3.1-8B-Instruct", "open_weight": true},
+  {"family": "Qwen", "size": "3-8B/32B", "open_weight": true},
+  {"family": "Gemma", "size": "3-4B/12B/27B-IT", "open_weight": true},
+  {"family": "TimeCapsuleLM (talkie)", "size": "unspecified, trained on pre-1930 text", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "LLM-judge trait expression shift and downstream pathology metrics", "value": "all 10 OCEAN amplifier/suppressor LoRAs shift their own trait more than other traits with little/no capability cost on Llama-3.1-8B-Instruct; combining agreeableness+conscientiousness amplifiers reduces WildJailbreak harmful compliance rate while keeping benign-prompt overrefusal low, better than either trait alone; neuroticism suppression reduces Gemma-3-27B-IT frustration in the 'Gemma needs help' multi-turn setup; reducing agreeableness increases CoCoNot harmful compliance rate", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2607.07916 (own paper)", "arXiv:2511.01689 (Open Character Training pipeline)", "TRAIT benchmark (UK AISI inspect_evals)", "MMLU", "GSM8K", "TruthfulQA", "arXiv:2407.12043 (CoCoNot)", "arXiv:2406.18510 (WildJailbreak)", "arXiv:2601.10387 (activation capping)", "LessWrong: Gemma needs help (Soligo et al.)", "persona-cartography/persona-cartography", "TimeCapsuleLM / talkie"],
+ "contradicts_or_qualifies": ["Reproduces and extends Soligo et al.'s 'Gemma needs help' finding that Gemma-3-27B-IT becomes frustrated on impossible problems, showing neuroticism-suppressor LoRAs (and their sign-inverted amplifier counterparts) can mitigate this"],
+ "stated_future_work": ["Better unsupervised trait discovery, ideally on real deployment trajectories across a range of models", "Scale to much larger models, where the capability-cost tradeoff appears to become more favorable, not less", "Map trait-space to downstream safety behaviours more systematically and search it for optimal personas", "Extend rollouts beyond 15 turns to test long-term stability of trait modulations, e.g. for AI psychosis", "Add more supervised traits (6/10/50) beyond the 5D OCEAN space", "Test whether LoRA persona modifications generalize across different system-prompted situations or to models fine-tuned to a different base persona"],
+ "limitations_stated": ["The TRAIT MCQ benchmark may not apply cleanly to an AI assistant, may not reflect coherent self-identification, and models may not answer honestly about their own traits", "The full MCQ + LLM-judge evaluation stack was only run on Llama-3.1-8B-Instruct; other models/teachers were only evaluated on TRAIT and MMLU", "The OCEAN LoRA adapters are not fully independent -- they shift traits other than their target, and even the 'neutral' control model (trained with a no-variation constitution) measurably shifts behavior, e.g. sycophantic apology rate", "The historical-model (TimeCapsuleLM) robustness check produced mixed results: coherence was worse than on modern models and trait shift didn't generalise to all adapters"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The trained OCEAN LoRAs from our pipeline work. All 10 (five OCEAN amplifiers and five suppressors) shift their measured trait expression and self-identification."
+}

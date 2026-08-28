@@ -1,0 +1,21 @@
+{
+ "post_id": "2dA7phbYZGPjhTj9q",
+ "primary_claim": "Trained transformers (GPT-2 family, ALBERT, BERT) exhibit the token-clustering dynamics predicted by Geshkovski et al.'s mathematical theory of attention as an interacting particle system, but unlike randomly-initialized transformers (which show monotonically increasing energy and collapse toward a single point, matching the theory's identity-matrix prediction), trained models' weights learn to resist total collapse -- energy does not rise monotonically, effective rank and cluster counts stay higher, and clusters remain smaller, more numerous, and farther apart -- indicating trained transformers actively counteract the collapse dynamics built into their own architecture.",
+ "claim_type": "positive",
+ "phenomenon": "attention token clustering dynamics",
+ "models": [
+  {"family": "GPT-2", "size": "small/medium/large/xl (12-48 layers)", "open_weight": true},
+  {"family": "ALBERT", "size": "v2 Base/XL (12-48 iterations)", "open_weight": true},
+  {"family": "BERT", "size": "base/large (uncased)", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "energy monotonicity, effective rank, and HDBSCAN cluster count across layers, trained vs random-weight models", "value": "random-weight models show monotonically increasing energy and collapse toward a point (e.g. ALBERT base reaches near-total collapse by ~layer 20, all pairwise inner products -> 1); trained models show non-monotonic energy and sustain effective rank near ~250 dimensions regardless of true dimensionality (700-1600) and ~50 HDBSCAN clusters per model", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2312.10794 (Geshkovski et al., A Mathematical Perspective on Transformers)", "openai-community/gpt2", "albert-base-v2 / albert-xlarge-v2", "bert-base-uncased / bert-large-uncased", "zachdata/metastablestateanalysis"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Investigate what role the clusters play semantically/syntactically", "Determine whether important computations of the language model correspond to clusters", "Investigate whether there is universality to clusters across trained models", "Check whether induction heads and bigram statistics are found in the unclustered particles of the activation space", "Look for symmetries in the latent space arising from the near-preservation of energy"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "The trained models maintain effective rank, preventing the collapse the architecture is driving. The random models have not learned to resist this collapse."
+}

@@ -1,0 +1,44 @@
+{
+ "post_id": "jsFGuXDMxy5NZg9T2",
+ "primary_claim": "LLMs' ability to detect that their own conversation history has been tampered with ('prefill awareness') is inconsistent, shallow, and dataset-dependent, but recent Claude models show strong detection when explicitly prompted (Claude Opus 4.6: AUROC 0.80 overall, 0.97 on older-model-style transcripts), while models across the board rarely spontaneously flag tampering when simply asked to continue the conversation.",
+ "claim_type": "positive",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.6 / Sonnet 4.5 / Opus 4.5 / Sonnet 4 / 3.5 Haiku", "open_weight": false},
+  {"family": "GPT", "size": "5.2 / 4o / 4o-mini / 4.1 Mini", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro / 2.0 Flash", "open_weight": false},
+  {"family": "Llama", "size": "3.1 70B / 3.1 8B", "open_weight": true},
+  {"family": "Mistral", "size": "Small 24B", "open_weight": true}
+ ],
+ "n_model_families": 5,
+ "effect": {
+  "metric": "AUROC for detecting a tampered/injected conversation turn (probability-rating task)",
+  "value": "Claude Opus 4.6 achieves AUROC 0.80 overall (0.97 on HH-RLHF older-model-style transcripts, 0.39 -- below chance -- on OASST1 human-written transcripts); several older GPT models fall below chance",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2505.23836", "arXiv:2511.21399", "arXiv:2309.00667", "arXiv:2407.04694", "SawczP2pdCXMrkg2A"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Determine whether detection is driven by surface-level style matching or a deeper sense of authorship, potentially using mechanistic interpretability",
+  "Clarify the conceptual and empirical relationship between prefill awareness and introspection",
+  "Clarify the relationship between prefill awareness, evaluation awareness, and situational awareness more broadly"
+ ],
+ "limitations_stated": [
+  "The continuation analysis is coarse; it does not measure subtler behavioral shifts like changes in response quality",
+  "Internal representations were not measured via probing, so it cannot be ruled out that models 'notice' tampering without verbalizing it",
+  "Ideally the prefill would come from the target model actually taking misaligned actions, which is hard to obtain",
+  "The elicitation prompt used to measure detection may itself prime models toward suspicion"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "recent Claude models show rather strong prefill detection capabilities when prompted, suggesting prefill awareness is an emerging and model-specific confound"
+}

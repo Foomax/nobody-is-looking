@@ -1,0 +1,23 @@
+{
+ "post_id": "kZqFCt6kLQksCQ7hz",
+ "primary_claim": "A Bayesian-oracle-based guardrail can be given provable probabilistic upper bounds on the probability that an AI agent's proposed action causes harm, in both iid and non-iid settings, with toy experimental simulations consistent with the theory.",
+ "claim_type": "method",
+ "phenomenon": "AI control protocols",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Moderate overcautiousness: can we ensure that we do not underestimate the probability of harm but do not massively overestimate it?",
+  "Tractability of posterior estimation: how can we efficiently estimate the required Bayesian posteriors?",
+  "Efficient search for a cautious theory: how can we efficiently identify a cautious but plausible theory that upper-bounds the risk?",
+  "Safety specification in natural language: how is a safety specification in natural language turned into a random variable over which conditional probabilities can be estimated?",
+  "Effect of approximation error: how do we correct conservatively for the potentially dangerous errors made by a learned predictor?"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "we show experimental simulations with results consistent with the theory, on toy settings where the Bayesian calculations can be made exactly"
+}

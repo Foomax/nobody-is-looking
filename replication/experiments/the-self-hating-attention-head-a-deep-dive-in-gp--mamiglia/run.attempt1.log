@@ -1,9 +1,0 @@
-== 2026-08-27T14:16:16+08:00 start mamiglia/deep-dive-l1h5@6c45e47dbb0dc63b5a62ba7eb5bec3d152a6bdb8
-== entrypoint: skew_analysis.py (symmetric/skew-symmetric decomposition of L1H5's W_QK, eigenvalue sign count) (budget 45m)
-Traceback (most recent call last):
-  File "/home/user/alignment-literature-meta-analysis/replication/experiments/the-self-hating-attention-head-a-deep-dive-in-gp--mamiglia/src/skew_analysis.py", line 9, in <module>
-    from src.utils import clean_mem
-  File "/home/user/alignment-literature-meta-analysis/replication/experiments/the-self-hating-attention-head-a-deep-dive-in-gp--mamiglia/src/src/utils.py", line 26, in <module>
-    from sae_lens.toolkit.pretrained_saes_directory import get_pretrained_saes_directory
-ModuleNotFoundError: No module named 'sae_lens.toolkit'
-== RUN-EXIT 1 after 0 min

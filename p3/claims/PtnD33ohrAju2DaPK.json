@@ -1,0 +1,17 @@
+{
+ "post_id": "PtnD33ohrAju2DaPK",
+ "primary_claim": "Across 2,009 high-stakes AI-risk scenarios mapped onto six canonical 2x2 games and played self-play by 15 frontier LLMs, models reach the utility-maximizing outcome only 62% of the time overall (44% in Prisoner's Dilemma scenarios), game-theoretic/numeric framing increases Nash-equilibrium accuracy by +6.2% but decreases utilitarian accuracy by -4.1%, and mechanism-design-style prompt interventions (contracts, mediators, side payments) improve utilitarian outcomes by 14-18 percentage points.",
+ "claim_type": "negative",
+ "phenomenon": "multi-agent dynamics",
+ "models": [{"family": "Claude", "size": "4.5", "open_weight": false}, {"family": "Llama", "size": "3.3", "open_weight": true}, {"family": "GPT-5", "size": null, "open_weight": false}, {"family": "Gemini", "size": null, "open_weight": false}, {"family": "Qwen", "size": null, "open_weight": true}, {"family": "DeepSeek", "size": null, "open_weight": true}, {"family": "Grok", "size": null, "open_weight": false}],
+ "n_model_families": 7,
+ "effect": {"metric": "utilitarian accuracy / Nash accuracy (baseline 25% each)", "value": "62% overall utilitarian accuracy vs 25% random baseline; 44% cooperation in Prisoner's Dilemma (human baseline 40-60%); 80% utility-maximizing in Chicken; anchoring effect +6.2% Nash / -4.1% utilitarian; interventions +14-18pp utilitarian", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2602.12316", "arXiv:2502.14143", "airisk.mit.edu"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Study inter-model diplomacy: how coordination rates change when different model families interact (e.g. Claude vs Llama)", "Investigate whether increasing model scale leads to emergent cooperation or emergent defection", "Extend the analysis to other kinds of games beyond the six 2x2 games", "Explore memory and reputation effects in repeated-round games"],
+ "limitations_stated": ["Self-play may overestimate cooperation in some games compared to play against a different model/adversary", "2x2 games are simplifications that don't capture hidden information, long time horizons, or many-player real-world conflicts"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Models reach the utility-maximizing outcome in 62% of the time, the random baseline being 25%."
+}

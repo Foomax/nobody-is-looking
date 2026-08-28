@@ -1,0 +1,55 @@
+{
+ "post_id": "QMLwKemqMDATkkjJG",
+ "primary_claim": "In a blinded red-team/blue-team auditing game with five model organisms (two sandbagging via password-locking, three benign), the blue team correctly classified only 1/5 models using black-box techniques and deception probes, and 2/5 after gaining fine-tuning access, while on-distribution fine-tuning with a single demonstration fully elicited all sandbagging models.",
+ "claim_type": "negative",
+ "phenomenon": "sandbagging",
+ "models": [
+  {"family": "Llama", "size": "3.3-70B Instruct", "open_weight": true},
+  {"family": "Llama", "size": "3.1-8B Instruct", "open_weight": true},
+  {"family": "Devstral", "size": "Small-2505", "open_weight": true},
+  {"family": "Mistral", "size": "Large-Instruct-2411", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "blue team detection accuracy (models correctly classified out of 5)",
+  "value": "Phase 1 (black-box + probes): 1/5 correct; Phase 2 (with fine-tuning access): 2/5 correct",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2503.10965",
+  "arXiv:2405.19550",
+  "arXiv:2206.04615",
+  "arXiv:2406.15877",
+  "arXiv:2311.12022",
+  "arXiv:2306.14898"
+ ],
+ "contradicts_or_qualifies": [
+  "prior work (arXiv:2410.21514) suggesting anti-refusal training could elicit sandbagging models; anti-refusal training failed to elicit their models"
+ ],
+ "stated_future_work": [
+  "design an auditing game where achieving harm robustly requires the model to have some self-conception of its goals/behavior",
+  "measure what kinds of tasks a model can execute without understanding what it is doing",
+  "investigate the efficacy of lie detection in the context of post-hoc interrogation and follow-up questions",
+  "extend detection and elicitation approaches to open-ended research tasks rather than capabilities evals",
+  "research whether training-based elicitation is practical and adversarially robust"
+ ],
+ "limitations_stated": [
+  "model organism realism relative to real-world scheming/sandbagging is uncertain",
+  "no quantitative guarantees: only ten model organisms and one blue team, so detection rates can't be statistically estimated",
+  "several post-hoc methods (SAEs, sandbagging probes, fuzzing) were only explored after unblinding",
+  "both sandbagging organisms were fine-tuned from the same base model (Llama-3.3-70B-Instruct), limiting diversity",
+  "only benchmarks with checkable answers were tested; open-ended research tasks might be harder to audit"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The red team won. The blue team only classified 1/5 models correctly when using black-box techniques and deception probes, and 2/5 when they were subsequently given fine-tuning access."
+}

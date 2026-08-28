@@ -1,0 +1,32 @@
+{
+ "post_id": "eaEqAzGN3uJfpfGoc",
+ "primary_claim": "Deception probes (logistic classifiers on internal activations), used via simple full-token-averaging, catch 97% of deceptive responses at a 1% false-positive rate on honest responses and outperform black-box monitoring on most of five strategic-deception datasets, replicating and extending Apollo Research's earlier findings.",
+ "claim_type": "positive",
+ "phenomenon": "linear probe detection",
+ "models": [
+  {"family": "Llama", "size": "3.3-70B-Instruct", "open_weight": true},
+  {"family": "Claude", "size": "3.5 Haiku/Sonnet", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "TPR at 1% FPR (deception probe, Full Averaging, control = Alpaca)",
+  "value": "97% TPR at 1% FPR, i.e. catching 97% of deceptive responses while misclassifying only 1% of honest responses",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2507.12691", "ApolloResearch/deception-detection"],
+ "contradicts_or_qualifies": ["Replicates and extends Apollo Research's deception probe findings (Goldowsky-Dill et al., 'Detecting Strategic Deception Using Linear Probes'), which showed >96% TPR at 1% FPR", "Departs from Redwood's typical control-evaluation setup where the untrusted model is stronger than the trusted monitor; here the trusted monitor (Claude 3.5 Sonnet) is stronger than the untrusted model (Llama 3.3 70B)"],
+ "stated_future_work": ["Thinking about novel applications for deception probes: trusted monitoring, scalable alignment, eliciting latent knowledge, detecting sandbagging and alignment-faking", "Stress-testing deception probe training and deployment against adversarial strategies", "Further work should validate the results on model organisms where hidden information is induced by finetuning rather than prompting"],
+ "limitations_stated": ["Probes are noisy; sophisticated aggregation methods (peak, critical-token averaging, follow-up question probing) performed worse than simply averaging all probe scores", "'Deception dilution' (padding deceptive responses with irrelevant truths) had a smaller effect than expected, but Full Averaging remains vulnerable to it in principle", "Obscuring the system prompt/scratchpad from monitors as a proxy for the model's internal information may be methodologically dubious, since private tokens could influence the residual stream of public tokens differently than true internal reasoning would"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "we replicate and extend Apollo's findings, catching 97% of the deceptive responses while misclassifying only 1% of honest responses"
+}

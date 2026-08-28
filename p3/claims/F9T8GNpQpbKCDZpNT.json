@@ -1,0 +1,32 @@
+{
+ "post_id": "F9T8GNpQpbKCDZpNT",
+ "primary_claim": "A JAX-based mediating-object framework lets the same core Hessian-eigenspectrum code run unmodified across models trained in different platforms (PyTorch, TensorFlow), with only a small, reusable set of platform-specific adapter functions needing to change",
+ "claim_type": "method",
+ "phenomenon": "interpretability tooling",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["google/jax", "scipy", "mwBaS2qE9RNNfqYBC"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["elaborate on reasons for choosing JAX in a future post"],
+ "limitations_stated": [
+  "code written for simplicity/clarity, not for compute or memory efficiency",
+  "runs on a single CPU/GPU/TPU only; distributed computation is out of scope"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "In this post, we examined a proposed framework for platform-agnostic Hessian analysis (viz. eigenspectrum computation) of neural networks using a high-performance JAX backend."
+}

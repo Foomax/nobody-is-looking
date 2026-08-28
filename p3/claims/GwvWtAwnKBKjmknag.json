@@ -1,0 +1,22 @@
+{
+ "post_id": "GwvWtAwnKBKjmknag",
+ "primary_claim": "By truncating chain-of-thought at different points and asking the model for its answer/probability estimate, the authors find that a model's belief in the correct answer fluctuates wildly and non-monotonically during CoT reasoning — with abrupt 'eureka' jumps toward certainty, sudden confidence drops, and backtracking — rather than smoothly refining, across LLaMA-3.2-3B/1B-Instruct and GPT-4.1/GPT-4.1-mini.",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "Llama", "size": "3.2-3B-Instruct", "open_weight": true},
+  {"family": "Llama", "size": "3.2-1B-Instruct", "open_weight": true},
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "GPT-4.1", "size": "mini", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "noisiness / accuracy of tracked mid-CoT belief (estimation vs. sampling method), 30-question GPT eval", "value": "estimation method less noisy than sampling (noisiness 0.045 vs 0.069 for gpt-4.1; 0.059 vs 0.065 for gpt-4.1-mini) but slightly lower accuracy (23.3% vs 25.4% for gpt-4.1); cross-method/model correlations 52-66%; belief swings include 'eureka' jumps and drops from ~70% to ~20% probability within a token or two", "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["filyp/interrupted-deliberation", "arXiv:2305.04388", "ZB6guMhHH3NEyxA2k", "a86uAnPykqNtmEbDH", "maveriq/bigbenchhard"],
+ "contradicts_or_qualifies": ["Differs from Sosis and Gavenčiak's prior work by tracking the probability of the correct answer rather than predicting the LLM's final answer from truncated CoT", "Confirms Sosis and Gavenčiak's finding that terminating CoT and asking for the final answer performs at least as well as linear probes, though probing is much cheaper"],
+ "stated_future_work": ["Apply these techniques in setups where the model is likely to hide its true motives and output fake reasoning to mislead monitors, e.g. an automated system that flags reasoning steps that look load-bearing but don't lead to real shifts in elicited output", "Develop a toy problem/environment for building CoT monitors around a leaked-but-wrong computational shortcut hinted at in a math task's prompt context", "Train probes not to predict the final answer but to predict whether the model already knows the answer ('rationalization mode'), and combine cheap probing with occasional interrupt-and-ask sanity checks"],
+ "limitations_stated": ["Did not perform serious statistical testing on whether smooth vs. abrupt prompting affects noise", "Estimation method has lower accuracy than sampling despite being less noisy, a trade-off not fully resolved", "Uncertain whether observed belief fluctuation reflects genuine reasoning dynamics or is partly an artifact of a too-noisy measurement method", "GPT-4.1 solved nearly all three-object problems, forcing a switch to the harder seven-object subset, limiting direct comparability with the LLaMA experiments"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Belief swings are common: The probability of the correct answer can jump up and down multiple times during a single CoT. It is not a smooth or monotonic process."
+}

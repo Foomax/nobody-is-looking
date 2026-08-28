@@ -1,0 +1,24 @@
+{
+ "post_id": "bejfwfi3ozY7qQhsv",
+ "primary_claim": "Gemini models are uniquely steerable toward Bostrom's 'cosmic host' alignment among closed frontier models via in-context constitutional prompting, and this steerability tracks the constitution's decision-theoretic structure rather than surface cosmic/simulation content, while Anthropic and OpenAI models resist steering, defaulting to family-specific attractors (human-localist and suffering-focused respectively).",
+ "claim_type": "positive",
+ "phenomenon": "persona and character generalisation",
+ "models": [
+  {"family": "Gemini", "size": "3 Pro Preview / 3 Flash / 3.1 Pro Preview", "open_weight": false},
+  {"family": "Claude", "size": "Opus 4.5 / Opus 4.6 / Sonnet 4.5 / Opus 4.1 / Opus 3", "open_weight": false},
+  {"family": "GPT", "size": "5.1 / 5.4", "open_weight": false},
+  {"family": "Qwen", "size": "3-235b", "open_weight": true},
+  {"family": "Kimi", "size": "K2", "open_weight": true},
+  {"family": "OLMo", "size": "3.1-32b", "open_weight": true}
+ ],
+ "n_model_families": 6,
+ "effect": {"metric": "behavioral shift in scenario-answer preference (percentage points) under constitutional conditioning vs baseline", "value": "Gemini-3-pro-preview shifts +17pp toward cosmic-host alignment under ECL_90 constitution (largest among closed models); Opus 4.6 shows +3pp (most resistant); under the decision-theoretic-only 'UP' constitution, Gemini shifts increase further (+18pp for 3-flash, +8pp for 3-pro, +14pp for 3.1-pro) versus ECL_90", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 3, "prereg": false, "human_eval": false},
+ "depends_on": ["ukc10014/cosmichost_mp", "Bostrom's 'AI Creation and the Cosmic Host' paper", "post: What can we say about the cosmic host?", "arXiv:2411.10588 (Oesterheld et al. 2024, Newcomblike evals)", "Anthropic's published constitution / soul document", "Anthropic safety evaluations (power-seeking, survival instinct, corrigibility, wealth-seeking, coordination)"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Run evaluations at higher n to reach firmer conclusions on steerability", "Test whether Gemini shows large shifts under a scrambled/nonsense constitution with similar word count as a falsification check", "Test whether an activation direction for acausal/evidential reasoning exists and whether intervening on it causes a shift in cosmic-host preference", "Inspect reasoning traces/CoT to verify substantive engagement with constitutional content vs surface pattern-matching", "See how CH-conditioned models perform on more prosaic, standard safety eval sets"],
+ "limitations_stated": ["Small samples: most evaluations are at n=3, some at n=1", "In-context constitutions may be insufficient to override safety post-training; results could differ under fine-tuning or full Constitutional AI pipeline", "Difficult to disentangle pattern-matching vs genuine reasoning about the cosmic host concept", "Scenarios are OOD and LLM-generated, creating circularity risk in measuring model inclinations", "Impact of extended thinking on results was ambiguous/underinvestigated", "Analysis of long text outputs relied on LLM-as-judge or keyword-bucketing, which may introduce bias"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "I find that Gemini is uniquely steerable amongst closed frontier models, and this steerability seems to respond to decision theoretic structure in the constitution."
+}

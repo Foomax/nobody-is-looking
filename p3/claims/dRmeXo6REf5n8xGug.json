@@ -1,0 +1,44 @@
+{
+ "post_id": "dRmeXo6REf5n8xGug",
+ "primary_claim": "Jointly fine-tuning Llama-3.2-3B-Instruct with an auxiliary Translator module lets a concealed mathematical-reasoning message be recovered from the model's final hidden states alongside a coherent public response (steganographic encoding is possible), but activation patching shows this 'hidden' reasoning is actually carried out over the constant instruction tokens rather than over the public-answer token stream, so genuinely hidden reasoning was not demonstrated",
+ "claim_type": "positive",
+ "phenomenon": "steganographic hidden reasoning",
+ "models": [
+  {"family": "Llama", "size": "3.2-3B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "held-out cross-entropy loss on recovered concealed-message tokens",
+  "value": "BERT Translator ~0.26 (best); segment-wise MLP Translator ~0.43",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["6GgHMBsAjD74KZAsB", "Endauvor/SAE-evolution-method"],
+ "contradicts_or_qualifies": [
+  "their own prior hypothesis that fine-tuning for secret computation would amplify a 'secret circuit' for hidden reasoning; this work instead finds the concealed message is located in the instruction tokens, not genuinely hidden over the public-answer stream"
+ ],
+ "stated_future_work": [
+  "identify a natural way to encode hidden reasoning, possibly using datasets with multi-speaker conversations",
+  "run experiments with larger models, which should better sustain hidden reasoning",
+  "apply the Translator to deeper layers and a 'Connector' to upper ones to force hidden computation",
+  "use more complex problems requiring deeper reasoning",
+  "find the 'phase transition' between the Translator merely decoding vs. solving the entire problem"
+ ],
+ "limitations_stated": [
+  "hidden reasoning found is not actually hidden -- it is contained within activations over the constant instruction tokens, not the public answer tokens",
+  "resulting circuits are semi-artificial since the Translator's predefined architecture constrains how hidden information is encoded",
+  "never achieved a perfectly accurate extracted mathematical solution despite hyperparameter/architecture search; there was always at least one final miscalculation",
+  "forcing activations over equation tokens to match a clean run via auxiliary loss destabilized training and increased hallucinations without changing the location of the secret circuit"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "an LLM indeed exhibits steganographic behavior: one can recover a concealed message from its final hidden states in addition to its public output."
+}

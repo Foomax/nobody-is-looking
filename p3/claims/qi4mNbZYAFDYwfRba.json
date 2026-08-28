@@ -1,0 +1,53 @@
+{
+  "post_id": "qi4mNbZYAFDYwfRba",
+  "primary_claim": "Simple LLM 'diffing agents' that craft their own prompts to compare two models reliably discover valid, systematic behavioural differences between real model pairs (e.g. Gemini 2.5 Pro vs 3 Pro), achieve a low false-positive rate when the two models are identical, and outperform single-model auditing agents at finding subtle conditional behavioural differences in model organisms -- though they fail to find the intended secret behaviour in a finetuned model organism, which the authors attribute to a failure of the model organism (too many other salient side-effect differences) rather than the diffing method.",
+  "claim_type": "positive",
+  "phenomenon": "crosscoder / model diffing",
+  "models": [
+    {"family": "Gemini", "size": "2.0/2.5/3-flash-lite, 2.5/3-pro, 3-flash", "open_weight": false},
+    {"family": "Gemma", "size": "2-9b", "open_weight": true}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "ground-truth score (trigger + behaviour identification, 0-100%) on system-prompted model organisms, diffing agent vs single-model auditing baseline",
+    "value": "diffing agent almost always outperforms the single-model auditing baseline on the subtle-behaviour evaluation set",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": 50,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "arXiv:2504.02922",
+    "arXiv:2506.19823",
+    "arXiv:2602.11729",
+    "arXiv:2410.12851",
+    "arXiv:2602.10371",
+    "arXiv:2510.01070"
+  ],
+  "contradicts_or_qualifies": [
+    "Extends prior black-box behavioural model-diffing work (Dunlap et al. 2024, Kempf et al. 2026) by having an auditor agent craft its own prompts rather than compare on a fixed static prompt distribution",
+    "Qualifies the usefulness of the Cywiński et al. (2025) Gemma-2-9b user-gender model organism as a ground-truth benchmark: the diffing agent finds several true behavioural differences but never the intended user-gender behaviour, suggesting the model organism has other, more salient, side effects"
+  ],
+  "stated_future_work": [
+    "separate hypothesis generation and validation into distinct agent trajectories to reduce false positive rates",
+    "establish more evaluations with known ground-truth differences for evaluating diffing agents",
+    "optimize diffing methods to solve a real problem, e.g. build a model organism with secret knowledge that behaves as similarly as possible to its base model using diffing tools in the optimization pipeline",
+    "find and fix a real alignment-relevant behaviour in a model discovered by a diffing pipeline",
+    "use model diffing tools within the model-organism creation pipeline to better control unintended side effects"
+  ],
+  "limitations_stated": [
+    "conditional system-instruction model organisms aren't perfect: even when the trigger fires, the model may have other valid behavioural differences unrelated to the no-system-prompt baseline",
+    "the auditor could attempt to elicit the system prompt directly, only partially mitigated by an anti-leak instruction",
+    "the diffing agent is much better at identifying the correct behaviour than the correct trigger, though this might just be a property of the chosen triggers/behaviours",
+    "model organisms fine-tuned to exhibit a specific secret behaviour are not well described solely by their intended behaviour -- they come with other, sometimes more salient, differences from their base model"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "diffing agents outperform standard auditing agents that only operate on a single model in cases where the behavioural change is subtle"
+}

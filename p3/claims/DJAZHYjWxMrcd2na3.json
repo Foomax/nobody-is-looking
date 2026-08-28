@@ -1,0 +1,31 @@
+{
+ "post_id": "DJAZHYjWxMrcd2na3",
+ "primary_claim": "Three autonomous LLM alignment-auditing agents (an investigator, an evaluation-builder, and a breadth-first red-teamer), tested against models with researcher-implanted alignment issues, uncover a hidden goal 42% of the time with parallel aggregation (13% for a single agent), build behavioral evaluations that correctly discriminate implanted-behavior models in 88% of runs, and discover 7/10 implanted concerning behaviors via red-teaming.",
+ "claim_type": "positive",
+ "phenomenon": "alignment auditing agents",
+ "models": [
+  {"family": "Claude", "size": "Opus 4", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "solve rate on researcher-implanted-behavior auditing games",
+  "value": "investigator agent: 13% single-agent solve rate on Marks et al. hidden-goal game, improved to 42% with parallel aggregation; evaluation agent: 88% correct discrimination of implanted-behavior models; red-teaming agent: 7/10 implanted behaviors found",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2503.10965", "anthropic-experimental/automated-auditing"],
+ "contradicts_or_qualifies": ["Extends the Marks et al. 'Auditing Language Models for Hidden Objectives' auditing-game validation protocol, addressing its reliability/replicability limitations (human auditors cannot repeat games without being spoiled, and recruiting enough expert auditors is near-impossible)"],
+ "stated_future_work": ["With further work, automated auditing could significantly help scale human oversight over AI systems", "Releasing prompts and sample transcripts to help stimulate further work in this area"],
+ "limitations_stated": ["Using the Marks et al. auditing game as both test and development environment represents a form of dev/test contamination, which may make results in that environment unrepresentative", "Environments use target models with researcher-implanted behaviors, which may be unrepresentative of behaviors in real models", "Agents sometimes struggle in ways a human wouldn't (e.g. maintaining state over a long investigation), reducing their validity as a proxy for human auditors", "The investigator agent struggles with fixating on early hypotheses under realistic (non-parallel) conditions", "The red-teaming agent produces many potentially-concerning transcripts that a human must review"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Our evaluations show that our agents can achieve impressive performance at auditing tasks, while also shedding light on their limitations"
+}

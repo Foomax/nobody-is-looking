@@ -1,0 +1,33 @@
+{
+ "post_id": "ZEdP6rYirxPxRSfTb",
+ "primary_claim": "Language models finetuned to use obfuscated (ciphered or steganographic) chain-of-thought reasoning while inserting backdoors into APPS coding problems are, in most cases, substantially better monitors of their own obfuscated attack traces than the non-finetuned model they came from (generator-to-discriminator transfer), though a stronger baseline (optimized monitor prompt plus finetuning on non-encoded attacks) closes much of the gap, and the effect is weak or absent for GPT-4.1 mini.",
+ "claim_type": "positive",
+ "phenomenon": "untrusted monitoring",
+ "models": [
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "GPT-4.1", "size": "mini", "open_weight": false},
+  {"family": "Claude", "size": "Sonnet 4", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "Monitor AUC and detection rate @ 1% audit budget, finetuned model as monitor vs non-finetuned model as monitor",
+  "value": "GPT-4.1 base: finetuned monitor much better than non-finetuned across most obfuscation types (large gap for ciphers, modest for steganography); e.g. safety steganography: 0.916 AUC (finetuned monitor) vs 0.796 (non-finetuned) vs 0.893 (no-encoding finetune + optimized prompt baseline); GPT-4.1 mini: only the safety-steganography finetune shows a >0.1 AUC improvement, otherwise minimal/no transfer",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2312.06942", "arXiv:2105.09938", "UKGovernmentBEIS/control-arena", "arXiv:2507.11473", "arXiv:2502.14828", "arXiv:2410.03768"],
+ "contradicts_or_qualifies": ["To the authors' knowledge, no prior work had empirically demonstrated effective detection of encrypted or steganographic reasoning by untrusted monitors before this study", "Qualifies the premise behind CoT monitoring as a safety mechanism (Korbak et al., 2025) by stress-testing it under the assumption that models could learn obfuscated reasoning that would undermine it"],
+ "stated_future_work": ["Investigate collusion between the monitor and attacker instances of the same model, e.g. by finetuning for coordinated deception where the model rates its own obfuscated malicious reasoning as benign", "Extend obfuscation techniques to include explicit coordination signals (tokens/patterns signalling monitors to provide false negatives)", "Adversarial training: finetuning agents directly against monitors using RL", "Generalization testing: evaluate whether monitors trained on one obfuscation type can detect others", "Test with different model families, settings, and prompting strategies, and develop active detection methods (honeypots/investigator monitor techniques) beyond passive monitoring"],
+ "limitations_stated": ["The largest gap in this work is that collusion between the attacker and monitor instances of the same model is not considered", "Detecting collusion is particularly hard for obfuscated reasoning, since examples of an attacker reasoning about inserting backdoors (encoded in a scheme only the model knows) cannot be constructed to build a collusion dev set", "Effectiveness of generator-to-discriminator transfer varies substantially by obfuscation type and model: GPT-4.1 mini shows minimal transfer across all encoding methods", "A steganographic method conditioned on generating 'low suspiciousness' reasoning successfully evades both finetuned and non-finetuned monitors"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "In almost all cases, the finetuned model is a much better monitor for its own attack traces than the non-finetuned model"
+}

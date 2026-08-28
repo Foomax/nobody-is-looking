@@ -1,0 +1,34 @@
+{
+ "post_id": "iLHe3vLur3NgrFPFy",
+ "primary_claim": "Decomposing chain-of-thought reasoning traces into sentences and measuring their counterfactual/attention-based importance reveals 'thought anchors' -- planning and uncertainty-management sentences that disproportionately determine the model's final answer -- while the more numerous active-computation sentences show relatively low importance.",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought step importance",
+ "models": [
+  {"family": "DeepSeek", "size": "R1-Distill-Qwen-14B", "open_weight": true},
+  {"family": "DeepSeek", "size": "R1-Distill-Llama-8B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": 100,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2501.08156", "interp-reasoning/thought-anchors", "uzaymacar/math-rollouts"],
+ "contradicts_or_qualifies": [
+  "Compared to prior work interrupting CoTs and requiring the model to answer immediately, this counterfactual-resampling strategy reveals how a sentence may initiate computations leading to a final answer even if it doesn't perform those computations itself"
+ ],
+ "stated_future_work": [
+  "How do thought anchor patterns vary across problem domains?",
+  "Can we predict where pivotal reasoning moments will occur?",
+  "Could models be trained to explicitly mark their most important reasoning steps?",
+  "Applying the approach to clarify why a model omits desired information from its CoT despite that information influencing its decision (CoT faithfulness)"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We use our methods to identify \"thought anchors\": critical sentences that guide the rest of the reasoning trace and largely determine the model's final answer"
+}

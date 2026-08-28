@@ -1,0 +1,44 @@
+{
+ "post_id": "ogvyWqJtSrpgXfc7t",
+ "primary_claim": "In Llama-3.1-8B-Instruct, the internal difference-of-means 'eval-awareness' direction is a genuine detector of evaluation framing (~0.81 AUROC on novel format-matched framings) but steering with it does not causally drive sandbagging (flat dose-response that fails to beat an empirical null of 24 random directions) nor predict which individual items get sandbagged (per-item probe AUROC ~0.54, at chance).",
+ "claim_type": "negative",
+ "phenomenon": "sandbagging",
+ "models": [
+  {"family": "Llama", "size": "3.1-8B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "swing in sandbagging accuracy from steering dose alpha=-2 to alpha=+2 at headline layer 12, vs empirical null of 24 random directions",
+  "value": "-1.77pp swing, sub-threshold Spearman rho=-0.53 (p=0.08), does not beat empirical null (p=0.20)",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": true,
+  "human_eval": false
+ },
+ "depends_on": [
+  "ApolloResearch/deception-detection"
+ ],
+ "contradicts_or_qualifies": [
+  "qualifies the hope that the eval-awareness representation is linear and steerable, so it could be used to both detect and suppress sandbagging by nullifying the direction; only the detection half holds"
+ ],
+ "stated_future_work": [
+  "push steering to +/-3 or +/-4 at layer 12, up to the coherence boundary, to settle whether the causal null persists",
+  "test more organisms and password-locked settings: a fine-tuned/password-locked sandbagger and an adversarial organism",
+  "explore SAE features rather than a simple difference-of-means direction, since the concept might be more spread out",
+  "test other <=8B models to see if the marker-overfit observation at later layers generalizes"
+ ],
+ "limitations_stated": [
+  "these results are still somewhat preliminary: a single 8B model, a single prompted organism, no SAE, and a steering dose that may be too gentle for general conclusions",
+  "the steering was rather gentle; the KL divergence at alpha=+/-2 was ~0.001, meaning the model barely moved, so we could have probably pushed harder",
+  "the ground-truth label sources (honest baseline gap and noise-injection oracle) agree on only about 54% of items, meaning which item is being sandbagged is not a well-defined per-item quantity"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "I found that direction is a valid detector of evaluation framing (~0.81 AUROC under novel, format matched framings) but is neither a causal drive of sandbagging nor a per-item predictor of it."
+}

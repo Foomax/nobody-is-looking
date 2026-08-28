@@ -1,0 +1,45 @@
+{
+ "post_id": "ZB6guMhHH3NEyxA2k",
+ "primary_claim": "Contrary to the hypothesis that recurrence itself would let Mamba outperform Transformers at a toy hidden-serial-reasoning task, standard Mamba (whose SSM recurrence transforms each channel independently) cannot solve the hidden task at all, while a modified Mamba SSM enabling cross-channel communication can; non-linearity is not required for hidden reasoning; and Transformers need roughly 3 extra layers to gain 1 extra unit of serial computation depth.",
+ "claim_type": "negative",
+ "phenomenon": "hidden serial reasoning",
+ "models": [
+  {"family": "Mamba", "size": "~30M (130M stripped to 6 layers)", "open_weight": true},
+  {"family": "Transformer (custom, GPT-NeoX tokenizer)", "size": "1-5 layers, 4-layer default", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "max hidden-task sequence length solved",
+  "value": "standard Mamba fails to solve the hidden task; a modified Mamba with cross-channel SSM communication solves it; Transformers require about +3 layers per +1 unit of solvable task length",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2305.04388",
+  "bwyKCQD7PFWKhELMr",
+  "filyp/steg-hunt",
+  "johnma2006/mamba-minimal"
+ ],
+ "contradicts_or_qualifies": [
+  "Qualifies the assumption that recurrent architectures (like Mamba) inherently enable hidden serial reasoning by virtue of being recurrent — only recurrence with cross-channel interaction does"
+ ],
+ "stated_future_work": [
+  "More thorough experiments are needed to confirm whether steganography requires the model to intentionally, non-myopically hide information"
+ ],
+ "limitations_stated": [
+  "Even with limited-serial-depth architectures, models could still reason steganographically",
+  "Many sneaky actions (e.g. noticing an exfiltration opportunity, hiding a lie) don't require complex planning, so limiting serial depth wouldn't prevent them",
+  "With longer training the layers-per-task-length result would probably improve; results may be limited by training budget even though a million examples per tiny model was already used"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Not every recurrence though - connections between channels are needed. Notably Mamba architecture isn't capable of hidden reasoning."
+}

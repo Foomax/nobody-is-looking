@@ -1,0 +1,34 @@
+{
+ "post_id": "gRc8KL2HLtKkFmNPr",
+ "primary_claim": "LLM agents naturally exhibit human-style deception when playing Among Us, frontier and reasoning models achieve much higher Deception ELO than detection ELO, and out-of-distribution linear probes and SAEs detect this deception with AUROC above 0.9.",
+ "claim_type": "positive",
+ "phenomenon": "agentic deception",
+ "models": [
+  {"family": "DeepSeek", "size": null, "open_weight": true},
+  {"family": "Claude", "size": null, "open_weight": false},
+  {"family": "Llama", "size": "70B", "open_weight": true},
+  {"family": "Phi", "size": "15B", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "AUROC", "value": "0.9+", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2407.16521"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Conduct more experiments with various models and safety techniques, especially with frontier thinking models",
+  "Understand the probes better in terms of what they have actually learned",
+  "Human trials, to add a Human dot to our Deception ELO plots to compare with various models",
+  "Fine-tuning/RL for deception inside this controlled sandbox to study probes for superhuman deception",
+  "Study other AI safety techniques in terms of their out-of-distribution performance on detection and steering"
+ ],
+ "limitations_stated": [
+  "Deception in our sandbox might differ significantly from deception in real settings",
+  "The safety techniques we evaluated might work for superficial reasons rather than substantive ones",
+  "Models might sandbag in the future to avoid scrutiny",
+  "Establishing ground truth for deception still remains challenging",
+  "The rules of the game require or incentivize deception"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We show that LLM-agents exhibit human-style deception naturally in \"Among Us\"."
+}

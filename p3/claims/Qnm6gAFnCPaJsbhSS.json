@@ -1,0 +1,29 @@
+{
+ "post_id": "Qnm6gAFnCPaJsbhSS",
+ "primary_claim": "In GPT-2 Small, pretrained residual-stream SAE 'specialist' features are primarily selective for syntax/surface form rather than semantics (mean Jaccard similarity of only 0.13 among top-5 specialist features across matched surface-form variants of the same meaning), whereas the overall SAE activation profile across all 24,576 features clusters primarily by semantic topic (within-topic cosine similarity 0.50 vs cross-topic 0.14), suggesting a two-tier syntax/semantics representational structure.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "GPT-2", "size": "small (124M)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "Jaccard similarity of top-5 specialist SAE features across matched surface forms; cosine similarity of overall SAE activation within-topic vs cross-topic", "value": "mean Jaccard similarity across surface forms = 0.13; within-topic cosine similarity = 0.50 vs cross-topic cosine similarity = 0.14", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["transformer-circuits.pub/2024/scaling-monosemanticity", "QRM3q9ZhLDZuxuDbz", "TransformerLensOrg/TransformerLens"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Replicate the analysis using a larger, more capable model than GPT-2 Small",
+  "Run steering/clamping experiments on the identified syntactic specialist features to test their causal role in model outputs (following Anthropic's Golden Gate Claude approach)",
+  "Further investigate the hypothesized two-tier representational structure, e.g. proving the existence and composition of a 'long tail' of low-activation features encoding meaning"
+ ],
+ "limitations_stated": [
+  "Confidence in applying these findings to more modern models is explicitly rated low",
+  "The effect of specialist activation on model accuracy (H3) is inconclusive because GPT-2 Small was unable to correctly complete the simple math equations used for testing",
+  "The 2-D PCA projection used to visualize topic clustering illustrates only about 13% of the total representational geometry",
+  "The activation threshold (5.0) used to define 'specialist' features was chosen somewhat arbitrarily",
+  "'Topic' is only a coarse, human-defined proxy for semantic content, not evidence of grounded or task-usable meaning"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "the overall mean Jaccard similarity was a very modest 0.13. This limited specialist feature overlap is indicative of syntax-focused specialist features."
+}

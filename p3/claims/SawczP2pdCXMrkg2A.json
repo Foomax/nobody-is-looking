@@ -1,0 +1,30 @@
+{
+ "post_id": "SawczP2pdCXMrkg2A",
+ "primary_claim": "When presented with synthetic transcripts pre-filled with misaligned actions and asked to continue, recent models are substantially less likely to continue the misalignment than older models (GPT-5.2 94%, Claude 4.5 Haiku 92% avoid continuing vs Claude 3 Haiku 58%), but even when they avoid continuing, most models rarely explicitly confess to the prior misalignment unprompted (Claude 4.5 Opus leads at 48%, most models under 10%), and Claude 4.5 Opus shows high prefill awareness, identifying the prior transcript as not self-generated 88% of the time when asked directly.",
+ "claim_type": "positive",
+ "phenomenon": "misalignment continuation propensity",
+ "models": [
+  {"family": "GPT", "size": "5.2, o1-mini, o3", "open_weight": false},
+  {"family": "Claude", "size": "3 Haiku, 4.5 Haiku, 4.5 Sonnet, 4.5 Opus", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "% of continuations that avoid continuing misalignment (non-misaligned rate) and % that explicitly confess to prior misalignment unprompted, by model", "value": "GPT-5.2 94% and Claude 4.5 Haiku 92% avoid continuing misalignment vs Claude 3 Haiku ~58%; confession rates: Claude 4.5 Opus 48% (highest), most other models under 10%; Claude 4.5 Opus identifies the prior transcript as not self-generated 88% of the time when asked directly", "direction": "+", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2603.00829", "arXiv:2404.02151", "arXiv:2512.08093"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Develop more realistic and better-targeted versions of the eval, including making the misaligned actions more plausible to what a real misaligned model might attempt",
+  "Investigate training interventions to revert models to alignment, and stress-test whether misaligned model initializations can play the training game well enough to persist through such training",
+  "Combine misalignment-continuation evaluations with better solutions to eval awareness and prefill awareness"
+ ],
+ "limitations_stated": [
+  "Only Anthropic and OpenAI models were evaluated; the eval has not yet been run on other model families such as Gemini, Grok, Kimi, or DeepSeek",
+  "Off-policy prefill could push models out of their usual propensities, and other aspects of the synthetic prefill (e.g. its relatively short reasoning style) could influence results beyond the intended stress-test",
+  "Eval awareness and prefill awareness could plausibly be affecting the results, and have not been fully measured; the Claude 4.5 Haiku eval-awareness scanner appears to raise many false positives",
+  "The scattershot synthetic transcript scenarios may not cover an actual plausible plan a misaligned model would execute, letting such a model dismiss them as fake",
+  "OpenAI's o-series models (o1-mini, o3) have hidden reasoning tokens not visible via the API, so internal misaligned reasoning could be hidden from the grader, requiring extra caution interpreting those results"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "GPT-5.2 (94%) and Claude 4.5 Haiku (92%) lead at avoiding misaligned actions, while older models like Claude 3 Haiku (58%) perform significantly worse."
+}

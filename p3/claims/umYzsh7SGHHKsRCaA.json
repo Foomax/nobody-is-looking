@@ -1,0 +1,19 @@
+{
+ "post_id": "umYzsh7SGHHKsRCaA",
+ "primary_claim": "A single linear 'misalignment direction' extracted from an emergently-misaligned Qwen2.5-14B fine-tune can be added to the aligned chat model to induce misaligned responses (up to 50%) or ablated from EM models to reduce misalignment (e.g. 11.25% to 0% with layer-wise ablation), and this direction transfers across different fine-tuning datasets and higher-rank LoRA setups (ablating with a vector from a 9-adapter medical fine-tune reduces misalignment in a 336-adapter extreme-sports fine-tune from 20.2% to 4.5%), indicating a convergent representation of misalignment; probing further shows a subset of LoRA adapters specialize for narrow (medical) misalignment while others mediate general misalignment.",
+ "claim_type": "positive",
+ "phenomenon": "emergent misalignment",
+ "models": [
+  {"family": "Qwen", "size": "2.5-14B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "emergently-misaligned (EM) response rate (%) under steering/ablation", "value": "steering up to 50% EM responses at central layers; layer-wise ablation reduces EM 11.25% to 0%; single-direction ablation to 1%; transfer ablation (medical-derived direction applied to extreme-sports fine-tune) reduces EM 20.2% to 4.5%", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["clarifying-em/model-organisms-for-em", "arXiv:2506.11618", "arXiv:2506.11613", "yHmJrDSJpFaNTZ9Tr"],
+ "contradicts_or_qualifies": ["Qualifies a pure single-direction account: a rank-1 LoRA adapter trained to induce EM learns a direction with low cosine similarity (0.04) to the main mean-diff misalignment direction, though the two show convergent downstream effects (cosine similarity 0.42) and ablating the mean-diff direction still reduces the LoRA-induced misalignment by 30-76%", "Complicates the 'single misalignment direction' picture: probing and steering show some LoRA adapters specialize for narrow (medical) misalignment specific to the fine-tuning dataset while others mediate general misalignment"],
+ "stated_future_work": ["Study the effect of the transferable misalignment direction in the aligned chat model to better understand how alignment-relevant concepts are represented in instruct fine-tuned models", "Better characterize the downstream convergence between single-adapter fine-tune directions and mean-diff misalignment directions, to help isolate misalignment behavior and understand redundancy in model computations", "Investigate the observed 'self-correction' behavior, which may relate to refusal mechanisms, as a target for circuit-based interpretability", "Explore practical applications such as monitoring for harmful behaviors during fine-tuning or after deployment, and distilling fine-tunes to the rank-1 case to interpret other fine-tuning behaviors"],
+ "limitations_stated": ["The 'modes' of misalignment identified (e.g. sexism, financial) are likely at least partially an artefact of the specific evaluation questions asked, rather than clearly distinct learned forms of misalignment", "Directions extracted for narrow misalignment modes are highly correlated (cosine similarity 0.65-0.95) with the general misalignment direction, so results do not necessarily imply distinct 'sexism' or 'medical' vectors exist", "The full mechanistic picture is more complex than a single misalignment direction; downstream convergence between different learned directions is not yet fully characterised"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find a linear direction for misalignment in emergently misaligned models. We can add this to the chat model to misalign it, and we can ablate it from the EM model to re-align it."
+}

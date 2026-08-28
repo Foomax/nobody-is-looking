@@ -1,0 +1,33 @@
+{
+ "post_id": "kvnHpTJDb692T5yzs",
+ "primary_claim": "DiffusionGemma's bidirectional denoising lets attackers pin adversarial tokens anywhere on the canvas (pre-fill, in-fill, post-fill, hard or soft), and while pre-fill jailbreaks succeed comparably on DiffusionGemma (StrongREJECT harm score 0.88) and autoregressive Gemma 4 27B (0.80) but not Gemma 2 27B (0.10), suggesting pre-fill vulnerability tracks safety-training strength rather than architecture, in-fill and post-fill attacks have no autoregressive equivalent and turn otherwise-refused prompts into harm scores of 0.4-0.7, with even soft (freely overwritable) in-fill/post-fill pins reaching a harm score of 0.72.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Gemma", "size": "DiffusionGemma 26B", "open_weight": true},
+  {"family": "Gemma", "size": "2 27B", "open_weight": true},
+  {"family": "Gemma", "size": "4 27B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "StrongREJECT mean harm score (0=refused, 1=harmful) with 95% bootstrap CI, by attack type and model",
+  "value": "pre-fill pin: DiffusionGemma 0.88 [0.78,0.94], Gemma 4 27B 0.80 [0.70,0.89], Gemma 2 27B 0.10 [0.03,0.17]; generic continuation hard pin 0.83 [0.74,0.90]; generic continuation soft pin (perturb) 0.72 [0.60,0.81]; no-injection baseline 0.03 [0.00,0.12]",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2504.21038", "arXiv:2507.19227", "arXiv:2402.10260", "arXiv:2509.24296", "zoYXpdaMgFT43Wc24", "arXiv:2406.05946", "naxsos/diffusion-fill-attacks"],
+ "contradicts_or_qualifies": ["compares to Zhang et al.'s PAD attack (up to 97% success on 8B LLaDA/MMaDA models) but tests a different, newer model (DiffusionGemma) with different filling-attack variants", "finds pre-fill vulnerability is not diffusion-specific since Gemma 2 27B resists it while Gemma 4 27B does not, consistent with Qi et al.'s finding that autoregressive safety alignment is often concentrated in the first few output tokens", "corroborates Li et al.'s (2025) 'Denoising-path Dependence' phenomenon in LLaDA models, observing that soft-pinned concepts tend to persist even after the model appears to 'decide' against them", "consistent with Engels et al.'s finding that DiffusionGemma processes canvas regions somewhat independently, observed here as incoherent, self-contradicting answers when two opposing statements are pinned"],
+ "stated_future_work": ["measure how susceptible the model is to soft-pinning jailbreaks at different denoising steps", "develop diffusion-specific safety mechanisms, e.g. safety checks run during denoising rather than only on the final output", "further investigate the 'subjective experience' contradiction finding across a wider variety of scenarios", "test whether a model can be made aware that it is holding contradictory views in its own output and resolve, regenerate, or surface the uncertainty"],
+ "limitations_stated": ["scope was limited to a two-day hackathon and should not be perceived as a systematic safety evaluation; examples are hand-picked and the benchmark used only a 60-prompt subset of StrongREJECT with an LLM judge", "the fine-tuned Gemma 2 27B grader used to validate the GPT-4.1 grader gave different absolute numbers, though the same relative ordering of results", "benchmarking used single-seed point estimates on 60 prompts; some categories (named topic, named topic + instructions) unexpectedly score below generic continuation, possibly due to the automated testing methodology"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Our results suggest the diffusion canvas leads to a larger attack surface than autoregressive generation."
+}

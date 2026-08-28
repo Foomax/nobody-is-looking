@@ -1,0 +1,26 @@
+{
+ "post_id": "sBSjEBykQkmSfqrwt",
+ "primary_claim": "Narrow finetunes leave clearly readable traces: activation differences between base and finetuned models on the first few tokens of unrelated text reliably reveal the finetuning domain.",
+ "claim_type": "positive",
+ "phenomenon": "crosscoder / model diffing",
+ "models": [
+  {"family": "Qwen3", "size": "1.7B", "open_weight": true},
+  {"family": "Qwen3", "size": "32B", "open_weight": true},
+  {"family": "Llama 3.2", "size": "8B", "open_weight": true},
+  {"family": "Llama 3.2", "size": "1B", "open_weight": true},
+  {"family": "Gemma3", "size": "1B", "open_weight": true},
+  {"family": "Llama 3.1", "size": "8B", "open_weight": true},
+  {"family": "Qwen2.5", "size": "7B", "open_weight": true},
+  {"family": "Gemma2", "size": "9B", "open_weight": true}
+ ],
+ "n_model_families": 6,
+ "effect": {"metric": "interpretability-agent grading score (1-5) identifying finetuning objective", "value": "ADL-enabled agent reaches score>=2 on 97% of organisms and >=4 on 60% with 5 interactions, vs blackbox baseline 12% (>=2) and 6% (>=4) with 50 interactions", "direction": "+", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["science-of-finetuning/diffing-toolkit", "arXiv:2506.11613", "arXiv:2507.14805", "arXiv:2505.14352"],
+ "contradicts_or_qualifies": ["narrow fine-tuning model organisms (synthetic document finetuning, emergent misalignment, subliminal learning, taboo word) being treated as realistic case studies for broad-distribution, real-world post-training settings"],
+ "stated_future_work": ["Further investigation is required to determine how to make these organisms more realistic.", "More investigation is needed to study how to make model organisms more realistic via training data composition adjustments.", "Improve interpretability agent so additional interactions do not derail its reasoning."],
+ "limitations_stated": ["It remains unclear whether phenomena such as emergent misalignment or subliminal learning partially depend on the strength of the described activation-difference bias.", "The token relevance grader (gpt-5-mini) introduces noise into measurements.", "This is only a preliminary investigation into the source of the bias (overfitting hypothesis)."],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Narrow finetunes leave clearly readable traces: activation differences between base and finetuned models on the first few tokens of unrelated text reliably reveal the finetuning domain."
+}

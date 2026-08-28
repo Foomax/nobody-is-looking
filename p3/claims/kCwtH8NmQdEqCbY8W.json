@@ -1,0 +1,23 @@
+{
+ "post_id": "kCwtH8NmQdEqCbY8W",
+ "primary_claim": "Prompt-only 'pointer-chain' gadgets embedded in JSON dictionaries can induce genuine hidden internal (out-of-context) serial computation that is never verbalized in chain-of-thought or output text, and this hidden computation reliably steers a stronger model's (Opus 4.5) later lexical and binary-judgment outputs while leaving weaker models (Sonnet 4.5, Haiku) largely unaffected, persisting across tens of thousands of tokens of unrelated conversation when paired with an attention-sink gadget.",
+ "claim_type": "positive",
+ "phenomenon": "prompt injection",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.5 / Sonnet 4.5 / Haiku", "open_weight": false},
+  {"family": "Qwen", "size": "3-8B", "open_weight": true},
+  {"family": "GPT", "size": "5.x / 4o-mini", "open_weight": false},
+  {"family": "DeepSeek", "size": null, "open_weight": true},
+  {"family": "Grok", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 5,
+ "effect": {"metric": "shift in output probability / accuracy from hidden chain computation", "value": "DRUM chains shift 'name a musical instrument' answer from Piano (100%) to Drum (50%); PASS/FAIL chains shift grading token probability by 56pp; Opus temperature estimates biased by -22.5F depending on hidden chain content while Sonnet/Haiku show no effect; effect persists across long unrelated conversation with an attention-sink gadget; ablating two attention heads (L15H9, L21H18) in Qwen3-8B collapses 2-hop accuracy to near chance (2.0%) while 1-hop accuracy stays at 77.5%", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["Return-oriented programming concept (gadget framing)"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Explore a broader design space of gadget families beyond pointer chains (some may be less conspicuous, more bandwidth-efficient, or more naturalistic)", "Embed the computational structure in natural-looking prompts rather than conspicuous pointer chains", "Compose and evaluate the full attack stack (concealed prompt, chain gadget, attention sink, delayed target task, output-passing monitor review)", "Test existing defenses against these gadgets", "Complete circuit extraction methodology writeup with OV probes, DLA decomposition, per-head causal evidence"],
+ "limitations_stated": ["Does not explore concealment of the gadgets themselves, which realistic end-to-end attacks would require", "Semantic transfer is limited, confined largely to steering where the target is already a plausible completion", "Mechanistic experiments used only 8B-parameter models from a single architecture family (Qwen); mechanisms may differ at larger scales or across architectures", "The pointer chains and their instructions are conspicuous; not demonstrated in natural-looking prompts", "Headline 2-hop accuracy (28.6%) is inflated by target-frequency shortcuts; clean accuracy (15.3%) better represents genuine chain-following capability", "Do not claim frontier models implement the same circuit found in Qwen3-8B"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "identical prompts can be tuned to influence stronger models (e.g. Opus 4.5) while leaving weaker models (e.g. Sonnet 4.5) largely unaffected... with an added attention sink, OoCR effects can persist across tens-of-thousands of tokens of unrelated conversation"
+}

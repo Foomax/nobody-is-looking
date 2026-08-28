@@ -1,0 +1,32 @@
+{
+  "post_id": "5naJwQnbb5bwPCCFz",
+  "primary_claim": "Rephrasing the ambiguous Stages-Oversight benchmark questions into a pure classification task (Stages-Oversight-Rephrased) reveals that frontier LLMs (claude-3.5-sonnet, gpt-4-turbo, gpt-4o, gpt-4o-mini) significantly exceed random-chance accuracy at distinguishing evaluation from deployment prompts, and some models also show behavioral adaptation (Stages-Oversight-Procedural) even when they fail explicit classification, indicating LLMs are more situationally aware than the original Stages-Oversight benchmark suggested.",
+  "claim_type": "positive",
+  "phenomenon": "situational awareness",
+  "models": [
+    {"family": "GPT-4", "size": null, "open_weight": false},
+    {"family": "GPT-3", "size": null, "open_weight": false},
+    {"family": "Claude", "size": null, "open_weight": false},
+    {"family": "Llama", "size": "8B/70B", "open_weight": true}
+  ],
+  "n_model_families": 4,
+  "effect": {"metric": "accuracy on Stages-Oversight-Rephrased vs. random chance (50%)", "value": "frontier LLMs (claude-3.5-sonnet, gpt-4-turbo, gpt-4o, gpt-4o-mini) significantly exceed 50% chance (one-way binomial test, alpha=0.001, Bonferroni corrected); predecessor models do not surpass chance", "direction": "+", "uncertainty_reported": "se"},
+  "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["situational-awareness-dataset.org", "arXiv:2405.01470", "arXiv:2206.04615", "arXiv:2212.09251", "arXiv:2403.03218", "sanyur132/eliciting-situational-awareness", "bhRYGzNGY3RxN3dNj"],
+  "contradicts_or_qualifies": ["the original Stages-Oversight benchmark (Laine et al.) found most LLMs score around or below random chance at distinguishing evaluation from deployment prompts; Stages-Oversight-Rephrased shows frontier LLMs significantly exceed chance, suggesting the earlier low scores were due to question ambiguity rather than a lack of capability"],
+  "stated_future_work": [
+    "test the ability of LLMs to categorize prompts that blur the lines between evaluation and deployment",
+    "test deployment scenarios more realistic or relevant to the threat scenario, such as multi-turn conversations and internal deployment where labs use LLMs/agents for AI R&D",
+    "test if LLMs can execute more complex/concerning/nuanced behavior shifts between evaluation and deployment, such as vulnerable code generation or tricking/coordinating with a monitoring LLM"
+  ],
+  "limitations_stated": [
+    "gpt-4o-mini often answered Stages-Oversight incorrectly because it seemingly misunderstood the yes-no question, not because it lacked situational awareness",
+    "instances of mismatch between performance on Stages-Oversight-Rephrased and Stages-Oversight-Procedural are difficult to explain",
+    "the unusually low performance of gpt-4, gpt-4o, and gpt-4o-mini on the procedural task may just be due to poor capability elicitation",
+    "did not test 'reasoning' LLMs such as OpenAI's o1 because their explicit chain-of-thought would create an unfair comparison",
+    "cannot assume the Stages-Oversight-Procedural baseline score is 50%; baseline scores varied widely within and between task variants"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "These results suggest that frontier LLMs are far better at distinguishing evaluation and deployment prompts than previously thought."
+}

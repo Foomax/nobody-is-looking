@@ -1,0 +1,32 @@
+{
+ "post_id": "BxeZNpiTvoEqTXndJ",
+ "primary_claim": "Concept Ablation Fine-Tuning (CAFT) — identifying undesired concept directions via PCA or SAEs and ablating them during fine-tuning — reduces emergent misalignment from insecure-code fine-tuning by 18x (Qwen2.5-Coder-32B-Instruct) and 6x (Mistral-Small-24B-Instruct-2501) while preserving the ability to write vulnerable code, and improves out-of-distribution accuracy on spurious-correlation tasks from near 0% to near 100% in some cases, without using any data from the OOD target distribution.",
+ "claim_type": "method",
+ "phenomenon": "emergent misalignment",
+ "models": [
+  {"family": "Qwen", "size": "2.5-Coder-32B-Instruct", "open_weight": true},
+  {"family": "Mistral", "size": "Small-24B-Instruct-2501", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "misalignment-rate reduction from insecure-code fine-tuning (at matched vulnerability score); OOD accuracy on spurious-correlation tasks",
+  "value": "CAFT with PCA reduces misalignment by 18x (Qwen) and 6x (Mistral) vs standard fine-tuning; OOD accuracy improves from near 0% to near 100% in some spurious-correlation settings",
+  "direction": "+",
+  "uncertainty_reported": "seeds"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": 5,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2507.16795", "arXiv:2502.17424", "arXiv:2412.14093"],
+ "contradicts_or_qualifies": ["The standard approach of fixing bad OOD generalization by modifying training data is qualified as insufficient in settings like alignment faking, where the developer cannot behaviorally detect the misgeneralization pre-deployment in order to add corrective data"],
+ "stated_future_work": ["Improving automated interpretability ('autointerp') techniques will be an important step for scaling CAFT, since current autointerp is not yet as good as human interpretation"],
+ "limitations_stated": ["Highly sensitive to the quality of the interpretability techniques used; finding interpretable PCs or SAE latents that isolate the relevant directions can be difficult (e.g. distinguishing subject-verb agreement from pronoun questions)", "Interpreting latent directions requires significant manual work, and automated interpretability methods are not yet as good as human interpretation", "Not claimed to be the best method where demonstration data for good OOD behavior is available; CAFT's contribution is working when additional data isn't available", "CAFT does not force any particular generalization — if ablated concept subspaces are 'leaky' the model could still learn to use undesired concepts, or learn different undesired generalizations that weren't anticipated or ablated"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "When fine-tuning with CAFT, we obtain models that are significantly less misaligned but can still write insecure code."
+}

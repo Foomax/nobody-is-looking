@@ -1,0 +1,40 @@
+{
+ "post_id": "pxC2RAeoBrvK8ivMf",
+ "primary_claim": "Linear probes trained on Gemma-3-27B activations predict the model's revealed task preferences (0.86 Pearson within-topic, 0.82 cross-topic) and track out-of-distribution preference shifts induced by system prompts and role-playing personas, with steering along the probe direction producing a weak but statistically significant causal shift (~17%) in choice probability.",
+ "claim_type": "positive",
+ "phenomenon": "model welfare / psychology",
+ "models": [
+  {"family": "Gemma", "size": "3-27B", "open_weight": true},
+  {"family": "gpt-oss", "size": "120B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "Pearson correlation between probe predictions and fitted task-preference utilities; steering effect on choice probability",
+  "value": "0.86 within-topic / 0.82 cross-topic (Gemma-3-27B instruct); steering at +/-3% activation norm shifts P(choose task) by ~17%, random-direction control ~0% (SD=2.3)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": 3,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2411.00986", "arXiv:2502.08640", "arXiv:2509.04781", "arXiv:2510.07686"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Investigate why steering effects are modest and what other mechanistic determinants of revealed preferences exist",
+  "Study how persona-relative these representations are, e.g. using dimensionality reduction to map persona space across layers",
+  "Determine whether base (pre-trained) models have evaluative representations from pre-training or these are produced by post-training"
+ ],
+ "limitations_stated": [
+  "Causal evidence from steering is weak; effects are modest (~17%) and only on already-borderline tasks",
+  "Pairwise accuracy is capped at ~87% because Thurstonian utility estimates are a noisy fit to choice data",
+  "Open-ended generation steering experiments used a small sample and found no strong measurable effect"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We find that these generalise ood to system-prompt induced preference shifts, including via personas."
+}

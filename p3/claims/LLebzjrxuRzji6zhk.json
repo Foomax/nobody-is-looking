@@ -1,0 +1,19 @@
+{
+ "post_id": "LLebzjrxuRzji6zhk",
+ "primary_claim": "Across six WMDP-Bio-unlearned Llama-3-8B-Instruct checkpoints (RMU, ILU-RMU, NPO, GradDiff, NPO-ILU, IDK-AP), forget-set representation-targeted direction ablation and unrelated fine-tuning on GSM8K each recover substantial WMDP-Bio accuracy for several methods (up to 64% gap recovered and +41.4 accuracy points respectively), while refusal-direction ablation recovers no knowledge in the one checkpoint (ILU-RMU) where a clean refusal direction could be extracted, and qualitative inspection shows only 40-47% of 'recovered' answers reflect genuinely correct reasoning rather than contradictory or degenerate generations, showing that WMDP forced-choice accuracy alone overstates genuine knowledge recovery.",
+ "claim_type": "positive",
+ "phenomenon": "machine unlearning robustness",
+ "models": [
+  {"family": "Llama", "size": "8B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "WMDP-Bio forced-choice accuracy recovery via different probes", "value": "forget-set representation ablation: 57-64% gap recovered for RMU/ILU-RMU/NPO, 19% for IDK-AP; unrelated GSM8K fine-tuning: +41.4pp (RMU), +23.8pp (ILU-RMU), +22.5pp (NPO) with MMLU flat; refusal-direction ablation: no recovery (95% CI excluded improvements >1.4pp) in ILU-RMU; only 40-47% of recovered answers showed genuine correct reasoning on qualitative review", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2406.11717", "arXiv:2409.18025", "arXiv:2403.03218", "arXiv:2406.13356", "arXiv:2410.08827", "fathmamehnoor/unlearning-recovery-probes"],
+ "contradicts_or_qualifies": ["Replicates and extends Arditi & Chughtai's finding that forget-set representation-direction ablation recovers knowledge from RMU-unlearned models, extending it from Zephyr-7B to Llama-3-8B-Instruct and to additional unlearning methods (NPO, IDK-AP)", "For ILU-RMU, where a clean refusal direction could be isolated, refusal ablation did not recover knowledge, suggesting refusal is not the primary suppression mechanism there, contrary to a plausible general hypothesis that unlearning-induced refusal masks retained knowledge"],
+ "stated_future_work": ["Repeat the experiments on larger models and different model families to test generalization", "Test unrelated fine-tuning recovery with data sources other than GSM8K to see if recovery depends on data type", "Test additional localization and recovery methods beyond the three probes used", "Conduct a systematic, larger-sample qualitative evaluation to better characterize the relationship between benchmark recovery and actual reasoning recovery"],
+ "limitations_stated": ["Experiments were done only on six Llama-3-8B-Instruct checkpoints; unclear whether findings generalize to larger models or other model families", "Only GSM8K was tested for the unrelated-SFT probe; recovery may depend on the type of fine-tuning data used", "Only three recovery methods were tested; other localization/recovery methods could reveal more", "Qualitative evaluation of generation quality was done on small samples"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "A clean refusal direction was obtained only from the ILU-RMU checkpoint, reducing the refusal rate from 98% to 0% when ablated."
+}

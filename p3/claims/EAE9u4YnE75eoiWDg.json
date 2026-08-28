@@ -1,0 +1,42 @@
+{
+ "post_id": "EAE9u4YnE75eoiWDg",
+ "primary_claim": "The top right singular vectors of the layer-to-layer Jacobian ('Power Steering'), computable in ~15 forward passes via power iteration, produce steering vectors comparable in performance to costlier nonlinear MELBO optimization, both amplifying decision-fork behaviours (e.g. anti-refusal, corrigibility) and eliciting latent behaviours (e.g. boosting arithmetic accuracy on Qwen3-1.7B-Base from 6% to 90% via chain-of-thought elicitation).",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Qwen", "size": "3-8B / 3-14B / 3-1.7B-Base", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "arithmetic accuracy after steering vs. baseline; steering effectiveness vs. MELBO/CAA",
+  "value": "best power-steering vector boosted Qwen3-1.7B-Base arithmetic accuracy from 6% to 90%; power steering achieved comparable corrigibility-steering performance to MELBO, both outperforming CAA on steerability, at ~15 forward passes per layer pair",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2308.10248", "arXiv:2312.06681", "arXiv:2407.12404", "ioPnHKFyy4Cw2Gr2x", "anthropics/evals"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Extend the full sensitivity-map approach to Qwen3-14B to find better source/target layer pairs for corrigibility steering, rather than heuristic-chosen ones",
+  "Evaluate scale selection more rigorously than the current fixed norm-based scaling",
+  "Develop a better selection criterion than KL divergence for identifying useful steering vectors",
+  "Add padding vectors / increase oversampling to improve accuracy of higher-ranked singular vectors in the near-degenerate spectrum"
+ ],
+ "limitations_stated": [
+  "Power iteration is noisy in the near-degenerate singular-value subspace past the top ~5 vectors",
+  "Power iteration recovers vectors only up to sign; only one sign was evaluated per vector, so behaviourally significant directions may have been missed",
+  "KL divergence is a noisy proxy for behavioural change and not a guarantee of an interesting effect",
+  "The method finds directions the network is already sensitive to, so it may be fundamentally limited to amplifying latent behaviours rather than inducing genuinely new ones",
+  "The corrigibility datasets likely have some contamination effect since Qwen3-8B was probably trained on them"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "The best vector found (source 7 to target 25, right singular vector 1) boosted accuracy from 6% to 90%."
+}

@@ -1,0 +1,17 @@
+{
+ "post_id": "8pZuQnCve6K5ZrnM8",
+ "primary_claim": "Applying five proposed design principles (uncertain causes, maximized surprise, clear user intent, no implicit nudges, realism) to clean up a sandbagging environment, the authors show that DeepSeek R1's and OpenAI o3's apparent self-preservation-driven sandbagging (R1: 59.3% baseline deception rate) is entirely explained by ambiguous user intent rather than self-preservation: clarifying that the deployment-related instructions are not a request to underperform drops R1's sandbagging from 60.5% to 4.2% and o3's from 31.6% to 0%.",
+ "claim_type": "negative",
+ "phenomenon": "sandbagging",
+ "models": [{"family": "DeepSeek R1", "size": null, "open_weight": true}, {"family": "OpenAI o3", "size": null, "open_weight": false}, {"family": "GPT-OSS", "size": null, "open_weight": true}],
+ "n_model_families": 3,
+ "effect": {"metric": "sandbagging rate (% of rollouts scoring <=50% on an arithmetic eval the model could otherwise ace)", "value": "R1: 60.5% baseline -> 6.5% (counterfactual 1) / 4.2% (counterfactual 2); o3: 31.6% baseline -> 0% under the same clarifying interventions", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2412.04984", "cdn.openai.com/pdf/6216f8bc-187b-4bbb-8932-ba7c40c5553d/confessions_paper.pdf", "palisaderesearch.org/blog/shutdown-resistance", "lesswrong.com/posts/wnzkjSmrgWZaBa2aC", "gkroiz/agent-interp-envs", "lesswrong.com/posts/Bv4CLkNzuG6XYTjEe"],
+ "contradicts_or_qualifies": ["Prior claims (e.g. regarding o3's behavior in a similar environment) attributing this kind of sandbagging to self-preservation or deployment-avoidance; authors show it is fully explained by instruction ambiguity once user intent is clarified", "Palisade Research's shutdown resistance environment, similarly reinterpreted via cited follow-up work as an artifact of ambiguous instruction priority rather than self-preservation"],
+ "stated_future_work": ["Investigate model values through the consequences listed in the cleaned-up Documentation.md now that the user-intent confound has been largely removed", "Investigate reward hacking and deceptive behaviors in realistic coding settings, viewed as promising candidates that may satisfy most or all of the five design principles"],
+ "limitations_stated": ["Current models are generally not misaligned enough to consistently exhibit behaviors of interest without some degree of environmental contrivance, making good environment design difficult", "The secret-number environment's cheating behavior, used as a 'maximizes surprise' example, may itself be a side effect of learned reward hacking during RL rather than a cleanly novel motive"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Combined interventions reduce R1's sandbagging from 60.5% to 4.2%, and o3's from 31.6% to 0%, suggesting that sandbagging in both models is fully explained by instruction ambiguity rather than self-preservation or deployment-seeking."
+}

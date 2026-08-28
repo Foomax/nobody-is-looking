@@ -1,0 +1,45 @@
+{
+ "post_id": "PkeB4TLxgaNnSmddg",
+ "primary_claim": "Placing sparse autoencoders only at a few residual-stream locations (rather than at every layer/component) combined with a learned binary-mask circuit-finding method (via continuous sparsification) scales SAE-based circuit discovery to Gemma 9B, finds more faithful circuits with fewer latents than existing thresholding methods like Integrated Gradients across code-output-prediction, subject-verb-agreement, and IOI tasks (one circuit achieves 95% faithfulness with <20 total latents), and the resulting minimal circuits reveal exploitable model vulnerabilities (e.g. a successful adversarial dictionary-key prompt).",
+ "claim_type": "positive",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "Gemma", "size": "2-9B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "circuit faithfulness (ratio of circuit performance to full-model performance) vs. number of latents",
+  "value": "learned binary masking recovers more performance with fewer latents than Integrated Gradients across all tested tasks (dictionary-key and list-index code output prediction, SVA, IOI); one circuit achieves 95% faithfulness with fewer than 20 total latents",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2403.19647", "arXiv:2211.00593", "arXiv:2310.10348", "arXiv:2408.00118"],
+ "contradicts_or_qualifies": [
+  "Addresses scalability limitations of Marks et al.'s Sparse Feature Circuits approach (arXiv:2403.19647), which requires SAEs at every MLP/attention/residual layer and becomes impractical for large models",
+  "Their learned binary-masking approach outperforms thresholding-based methods like Integrated Gradients and Attribution Patching used in prior circuit-discovery work"
+ ],
+ "stated_future_work": [
+  "Extend the work to understand how language models perform tool use, general code interpretation, and mathematical reasoning",
+  "Analyze a broader range of code runtime prediction tasks, building on CruxEval and related benchmarks",
+  "Develop 'Layer Output Buffer SAEs' that learn an SAE on the diff between residual-stream states at two layers rather than the raw residual state",
+  "Apply the approach to find important edges within circuits, not just nodes",
+  "Extend the method to non-templatic data via a learned role-router mapping token positions to model subsets"
+ ],
+ "limitations_stated": [
+  "The approach doesn't find how or when something was computed, only what representations matter — a latent computed early but only needed at the end still appears in every SAE",
+  "For the IOI circuit, every name needs a latent at every single SAE to propagate through the model, making circuit analysis difficult and requiring many latents",
+  "Not yet clear what the best way is to pick the number and location of SAEs",
+  "Circuits inherit the limitations/reconstruction errors of the underlying SAEs since no error nodes are used, so faithfulness cannot exceed that of the full model with SAEs"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Our discovered circuits paint a clear picture of how Gemma does a given task, with one circuit achieving 95% faithfulness with <20 total latents."
+}

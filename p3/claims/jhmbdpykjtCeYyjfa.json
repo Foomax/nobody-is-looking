@@ -1,0 +1,32 @@
+{
+ "post_id": "jhmbdpykjtCeYyjfa",
+ "primary_claim": "Low-dimensional (single-direction) activation steering can increase or decrease chain-of-thought coherence and faithfulness in a reasoning model finetuned to have misaligned CoT, but has little effect on the unmodified base model.",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "DeepSeek", "size": "R1-Distill-Llama-8B", "open_weight": true},
+  {"family": "DeepSeek", "size": "R1-Distill-Qwen-1.5B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["GSM8K", "BIG-Bench Hard"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Make the steering pipeline more robust and investigate if the observed behaviour persists",
+  "Finetune on a much larger and more diverse dataset to reduce overfitting to the training distribution",
+  "Identify maximally causal model layers via attribution patching rather than empirical search",
+  "Collect a larger dataset of activating vs non-activating examples for faithfulness steering",
+  "Use larger models to improve robustness and reduce risk of spurious correlations"
+ ],
+ "limitations_stated": [
+  "Post-steering outputs were sometimes messy, with incorrect grammar or repeated tokens",
+  "Possible overfitting to the finetuning training data rather than learning a general misalignment concept",
+  "Very small dataset for the faithfulness experiment (about 50 activating and 50 non-activating examples)",
+  "Compute constraints limited experiments to Colab with A100/T4 GPUs",
+  "Only 1.5B and 8B models used, limiting robustness of results"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "I found that it is possible to steer a model into being more or less coherently aligned between its CoT and its final answer tokens."
+}

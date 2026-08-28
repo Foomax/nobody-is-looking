@@ -1,0 +1,20 @@
+{
+ "post_id": "ifSBamvobbyB9KWjK",
+ "primary_claim": "The inference cost required to achieve a given score on hard coding benchmarks (WeirdML, Aider Polyglot) has halved roughly every two months over the past two years.",
+ "claim_type": "positive",
+ "phenomenon": "capability forecasting / time horizons",
+ "models": [
+  {"family": "GPT-4", "size": null, "open_weight": false},
+  {"family": "Llama 3.3", "size": "70b", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "cost to achieve a fixed accuracy threshold on WeirdML / Aider Polyglot (halving time in months)", "value": "WeirdML: 2.37 (OLS) / 1.99 (Deming) / 1.67 (inverse OLS) months; Aider Polyglot: 2.43 (OLS) / 1.41 (orthogonal) / 1.03 (inverse OLS) months; e.g. GPT-4 (Jun 2023, ~$0.6/task) matched by Llama-3.3-70b at ~$0.0014/task", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["Aider-AI/aider"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["Open-model prices from mid-2025 were retroactively attributed to earlier dates, which may bias early open-model cost estimates (though this mainly affects data from 2025 onward).", "The order in which models are released can bias the normalized cost curves for a given accuracy threshold.", "The different accuracy thresholds share the same underlying models/releases, so they are not independent, and no error bars account for this.", "The Aider Polyglot dataset has a shorter historical timeline and lacks results from many small, cheap models that might achieve lower thresholds more cheaply today."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "we find that the inference cost to achieve a certain score halves roughly every two monts."
+}

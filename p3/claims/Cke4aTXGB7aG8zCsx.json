@@ -1,0 +1,38 @@
+{
+ "post_id": "Cke4aTXGB7aG8zCsx",
+ "primary_claim": "Layer-5 head-5 of the chess transformer Maia-3, previously identified as a 'knight fork detector,' is actually knight-move-specific (no effect on pawn forks) and functions as a 'knight move auditor' that scales support with the genuine threat value of a knight move and, most distinctively, harshly suppresses pointless (bad and quiet) knight moves nearly 3x more than bad attacking moves",
+ "claim_type": "positive",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "Maia-3", "size": "5M parameters", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "mean change in logit from ablating head l5h5, by move category",
+  "value": "pawn K+Q fork +0.10 (unaffected); hollow attacks: queen +0.56, rook +0.13, bishop -0.01, pawn -0.11; good/bad x quiet/attacking: -0.30, -0.67, 0.78, 0.27 (pointless moves suppressed 2.93x harder than bad attacking moves)",
+  "direction": "+",
+  "uncertainty_reported": "se"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["chessformer-lens/chessformer_lens", "arXiv:2605.19091", "LzeZW9PvR6Njc9ngr's earlier posts in the Fork Around and Find Out series"],
+ "contradicts_or_qualifies": [
+  "revises the authors' own earlier conclusion (from part 2 of this series) that l5h5 is a general 'fork detector,' since pawn forks show the head is knight-exclusive"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "uses the 5 million parameter Maia-3 model only due to accessibility; the 23m or 79m model may have a different ontology",
+  "the mining predicates for good/bad/quiet/attacking moves are improvable and were iteratively written, and errors here are upstream of every figure",
+  "only one skill setting (high-skill play) was used; lower-skill representations are a follow-up",
+  "the logit lens only detects features within the span of the unembedding layer, constraining results to a subspace of decodable representations"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Its most descriptive and distinct role, though, is that it harshly suppresses pointless moves: a knight move auditor."
+}

@@ -1,0 +1,29 @@
+{
+ "post_id": "hrrhtxnFYYJFHcTz7",
+ "primary_claim": "Most reported prompt-injection vulnerabilities against AI-assisted GitHub Actions workflows are not viable in practice because they rely on unrealistic access or overly permissive credentials or were never live-exploited, while GitInject, a framework that provisions real ephemeral repositories and triggers actual workflow runs instead of simulating them, discovered at least one real vulnerability (via actions/checkout's GITHUB_TOKEN storage) that was only discoverable through live execution since simpler attack attempts failed against sandbox and network constraints a simulator would not have enforced.",
+ "claim_type": "method",
+ "phenomenon": "prompt injection",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2606.09935", "arXiv:2605.07135", "arXiv:2603.15714", "ceferisbarov/gitinject"],
+ "contradicts_or_qualifies": ["argues most reported prompt-injection vulnerabilities against AI-assisted GitHub Actions (e.g. PromptPwnd, a cross-repo leak that relied on an overly permissive organization-wide credential, and Wang et al.'s static-taint-analysis-derived vulnerabilities) are not viable in practice because they rely on unrealistic access, permissions, or were never live-exploited", "shows a confirmed real vulnerability was only discoverable through real execution, since two simpler attack attempts failed against sandbox and network constraints that static analysis or a simulator would not have enforced"],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "Most of the reported attacks are proofs of concept that do not work in practice."
+}

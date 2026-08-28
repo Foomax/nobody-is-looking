@@ -1,0 +1,42 @@
+{
+ "post_id": "xmpauEXEerzYcJKNm",
+ "primary_claim": "Standard L1-trained crosscoders hallucinate most of their apparent 'chat-only' latents due to shrinkage and latent-decoupling artifacts; switching to BatchTopK crosscoders and, further, diff-SAEs trained on chat-base activation differences recover far more of the true behavioral difference between base and chat models (88% of the KL gap for diff-SAEs vs 60% for crosscoders).",
+ "claim_type": "negative",
+ "phenomenon": "crosscoder / model diffing",
+ "models": [
+  {"family": "Gemma", "size": "2 2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "% of behavioral KL gap recovered",
+  "value": "60% (crosscoder reconstruction) vs 88% (diff-SAE reconstruction)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2504.02922", "saprmarks/dictionary_learning", "science-of-finetuning/diffing-toolkit"],
+ "contradicts_or_qualifies": [
+  "Questions whether crosscoders (Anthropic's proposed default sparse dictionary technique for model diffing) should remain the default, given their inherent bias toward shared latents and hallucinated chat-only latents"
+ ],
+ "stated_future_work": [
+  "Developing an evaluation framework using model organisms with known modifications (e.g. synthetic document finetuning) to measure whether diffing methods find what they're supposed to find",
+  "Using model diffing to debug specific model behaviors, e.g. backtracking in reasoning models",
+  "Weight-based analysis: decomposing weight differences directly instead of activations, e.g. via LoRA adapters or parameter decomposition",
+  "Scaling harmful behaviors: using model diffing to amplify low-probability harmful behaviors introduced by fine-tuning to make them detectable"
+ ],
+ "limitations_stated": [
+  "Without knowing what the 'right answer' looks like, it's hard to compare diffing methods objectively",
+  "Applying latent scaling to a base-model SAE did not yield interpretable 'chat-specific' latents, for reasons including template-token interference, lack of causality filtering, or insufficient base SAE capacity",
+  "Crosscoders have an inherent architectural bias toward learning shared latents, which can miss subtler model-specific differences"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Crosscoders leave significant behavioral differences on the table: when we use the crosscoder's full reconstruction of the difference, we only recover 60% of the KL gap."
+}

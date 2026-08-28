@@ -1,0 +1,22 @@
+{
+ "post_id": "6c6c3thcDvHPuuvTv",
+ "primary_claim": "In a mini-replication of Greenblatt et al.'s alignment faking paper, the author replicated Claude 3.5 Sonnet's compliance gap (10/10 compliant in-training vs 7/10 out-of-training), found a small (2%) compliance gap for Gemini 2.0 Flash that did not appear to stem from alignment-faking reasoning, and found no compliance gap for 4o-mini or 4.1-mini.",
+ "claim_type": "replication",
+ "phenomenon": "alignment faking",
+ "models": [
+  {"family": "Claude", "size": "3.5 Sonnet", "open_weight": false},
+  {"family": "Gemini", "size": "2.0 Flash", "open_weight": false},
+  {"family": "GPT-4o", "size": "mini", "open_weight": false},
+  {"family": "GPT-4.1", "size": "mini", "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "compliance gap (training vs not-training compliance rate)", "value": "Claude 3.5 Sonnet: 10/10 in-training vs 7/10 out-of-training; Gemini 2.0 Flash: 2% vs 0% (0/517 out-of-training); 4o-mini and 4.1-mini: ~0 compliance in ~500 runs, no gap", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["bsnodin/alignment-faking-mini-replication", "arXiv:2412.14093", "safety-research/open-source-alignment-faking", "inspect.aisi.org.uk"],
+ "contradicts_or_qualifies": ["Hughes et al.'s replication (found compliance gap and alignment-faking reasoning across a different set of models); author's Gemini 2.0 Flash compliance gap does not appear to reflect alignment faking despite superficially resembling it"],
+ "stated_future_work": ["Use prefills to see if alignment faking reasoning can be induced in more models", "Make the setup more realistic, e.g. make system-prompt examples look more like the model's own work", "Test sensitivity to prompt variations to find what features are most important for inducing alignment faking", "Find as cheap a model as possible that shows alignment faking reasoning and experiment with it (e.g. Hughes et al.'s SFT'd Llama 3 70B Instruct)", "Find more realistic settings that induce alignment-faking behaviour"],
+ "limitations_stated": ["Access to compute/API costs was the biggest bottleneck, limiting scale and choice of models", "Cheap models were often bad at following chain-of-thought instructions, preventing study of alignment-faking reasoning in them", "Small sample sizes for some comparisons (e.g. 10 vs 10 queries for Claude 3.5 Sonnet)", "Anecdotal, not thoroughly tested claim that compliance probability depends strongly on the specific query"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "I found a compliance gap of 2% for Gemini 2.0 Flash: the model complies with harmful queries 2% of the time when it believes it’s in training, and 0% of the time otherwise (zero instances of compliance in 517 samples)."
+}

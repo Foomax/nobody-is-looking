@@ -1,0 +1,37 @@
+{
+ "post_id": "EPri6M2tMedbyahLq",
+ "primary_claim": "Top singular vectors of weight differences between base and fine-tuned models correspond to fine-tuned behaviors, enabling near-perfect backdoor-utilization detection at inference time by monitoring activation alignment with these vectors",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Llama", "size": "3.2-3B", "open_weight": true},
+  {"family": "OLMo", "size": null, "open_weight": true},
+  {"family": "Qwen", "size": "2.5 7B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "first-backdoor-utilization detection accuracy",
+  "value": "44% to 100% accuracy, FPR ~1%; 9 of 13 models detected at 100% accuracy on first sight",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["StrongREJECT", "WildChat", "UltraChat"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "assumes weight SVD as the right basis",
+  "could not handle superposition",
+  "does not fully account for mechanisms"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "In 9 out of the 13 models we tested, backdoor utilization is detected with 100% accuracy on first sight, effectively neutralizing the backdoor attack."
+}

@@ -1,0 +1,48 @@
+{
+ "post_id": "nnwLHsBbm2ZALezHR",
+ "primary_claim": "A closed-form local Taylor formula (alpha_safe, derived from a direction's loss-landscape steepness L, curvature Q, and third derivative C) accurately predicts the steering strength (alpha) at which the 'linear steering story' (proportional pushing along an interpretable direction produces proportional concept change) breaks down, empirically correlating with measured linearity radius (0.49-0.80 across 8 tested models), and shows that at the commonly-used alpha=1, the linearity story fails on a median of 92% of inputs across evaluated model-layer-method cells, and that attribution patching (a first-order approximation method) captures less than half the true intervention effect at alpha=1 across tested model/layer combinations.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Qwen", "size": "2.5 0.5B/1.5B/3B", "open_weight": true},
+  {"family": "Gemma", "size": "2-2B", "open_weight": true},
+  {"family": "Pythia", "size": "160M/1.4B", "open_weight": true},
+  {"family": "Mamba", "size": "Mamba1-130M / Mamba2-130M", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "correlation between predicted (alpha_safe) and measured (alpha_conv) linearity radius; % of inputs at alpha=1 where linear story fails; attribution patching effect capture at alpha=1",
+  "value": "correlation 0.49-0.80 across 8 models (0.52-0.93 in positive-sign subset); at alpha=1, 52-100% of inputs fail the story test across 43 evaluated cells (median 92%; range 38.8-100%, median 89.2% across all 8 model datasets); attribution patching at alpha=1 captures only 23-47% of actual intervention effect across model/layer combinations",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["jackyoung27/alphasafe", "SAEBench-Unlearning (arXiv:2503.09532)", "persona vectors (Chen et al. 2025, arXiv:2507.21509)", "arXiv:2505.03189 (Hao 2025)", "arXiv:2504.08192 (Muhamed 2025)", "arXiv:2604.15557 (Billa 2026)", "arXiv:2512.15938 (Flovik 2025)", "arXiv:2602.09870 (Steer2Edit, Sun et al. 2026)"],
+ "contradicts_or_qualifies": [
+  "the common practice in steering papers of using alpha=1 and implicitly assuming linear 'more push = more concept' behavior at that strength",
+  "the SAEBench-Unlearning standard recipe (fixed multiplier m=25) — the paper's own prescriptive alpha_safe substitution performed strictly worse at every tolerance tested (removes less dangerous knowledge and drops capability below the required floor)"
+ ],
+ "stated_future_work": [
+  "rerun the multi-quantity vs. gradient-only fit comparison at matched sample density to check if the Gemma-specific gain generalizes",
+  "investigate why RWKV-7's curvature/third-derivative estimates are ~1000x larger than expected, hypothesized to stem from the architecture's kernel, possibly fixable with a custom gradient",
+  "investigate why some direction-finding methods land inside the safe range more often than others",
+  "directly measure how the safe-push budget scales with the sharpness of the model's output distribution, ideally with an additional matched state-space model protocol"
+ ],
+ "limitations_stated": [
+  "the prescriptive use of alpha_safe (replacing a fixed multiplier) performed strictly worse than the empirically-tuned m=25 recipe on SAEBench-Unlearning at every tolerance tested",
+  "the formula is a conservative bound on the cubic Taylor model only; it does not by itself bound quartic-and-higher terms in the real model",
+  "Pythia and Mamba did not have enough samples per model/layer/method combination to confirm whether the full three-quantity fit gain over the gradient-only fit generalizes beyond Gemma",
+  "RWKV-7 was excluded from the model table due to anomalously large second-order estimates",
+  "absolute counts of adaptive-alpha_safe wins over fixed multipliers on the persona-steering task are judge-sensitive (37/45 with Sonnet 4.6 judge, 21/45 with Mistral-7B judge, 29/45 with self-judging Qwen2.5-7B), though the relative ranking is consistent"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "At alpha = 1, across 43-evaluated model-layer-method cells, the empirical story test fails on between 52% and 100% of inputs. The median cell is 92% broken."
+}

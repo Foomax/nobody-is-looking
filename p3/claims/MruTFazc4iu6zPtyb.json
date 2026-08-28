@@ -1,0 +1,29 @@
+{
+ "post_id": "MruTFazc4iu6zPtyb",
+ "primary_claim": "In Tim Hua et al.'s synthetic-document-finetuned eval-aware model organism, eval awareness is verbalised almost entirely by default (all excess type-hint usage under evaluation prompts is accompanied by explicit CoT mentions of being evaluated), but resampling away responses that verbalise eval awareness still results in the eval-aware behaviour (excess type hints) about half the time -- a much higher residual rate than when the model is simply instructed not to think at all (~25%) -- indicating substantial non-verbalised eval awareness that CoT monitoring and resampling fail to remove.",
+ "claim_type": "positive",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "Llama", "size": "3.3 Nemotron Super 49B (SDF-finetuned)", "open_weight": true},
+  {"family": "Claude", "size": "Sonnet 4.5", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "% type-hint usage (eval vs deployment context) and % residual type hints after resampling away verbalised eval awareness", "value": "SDF model with thinking on: ~70% type hints in eval context vs 12% in deployment; with 'Don't think' prompt: ~25% eval vs ~11% deployment despite almost no verbalisation; resampling verbalised eval awareness away still yields type hints about half the time (estimated total rate ~40%), higher than the ~25% 'Don't think' condition", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.20487", "W6ZFnheeEBGcZqdHd"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Use a similar methodology of implanting a known eval-aware behavioural signal to estimate non-verbalised eval awareness in more realistic settings",
+  "Measure the capability for non-verbalised eval awareness separately from the propensity to verbalise it, or measure propensity more comprehensively"
+ ],
+ "limitations_stated": [
+  "The eval signals used are very explicit prompts, unlike the subtler cues that would require more reasoning to interpret in real-world eval awareness",
+  "The behavioural signal (type hint usage) is simple and direct; more complex conditional actions might require more verbalisation",
+  "Results are based primarily on one model (Simple SDF) and may not generalise to other models or training approaches",
+  "The experiment measures propensity to verbalise eval awareness rather than distinguishing this from the underlying capability for non-verbalised eval awareness",
+  "Results were fairly sensitive to exact prompt wording, despite none of the prompts being present in the training data"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Resampling results in type hint usage about half the time."
+}

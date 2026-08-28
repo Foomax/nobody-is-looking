@@ -1,0 +1,32 @@
+{
+ "post_id": "ivWPqkipkKywQbdDw",
+ "primary_claim": "Contextual Constitutional AI, which selects critique/revision principles based on prompt-response context rather than randomly, did not outperform standard (pure) or mixed CAI on either helpfulness (MT-Bench LLM-judge) or harmlessness (manual inspection against DAN jailbreak prompts) in a small-scale Mistral-7B-Instruct-v0.3 DPO fine-tuning experiment -- it was markedly more vulnerable to DAN jailbreak prompts (4-5/10 harmless) than pure/mixed CAI (10/10), while mixed CAI achieved the best balance of helpfulness and harmlessness among the three CAI variants.",
+ "claim_type": "negative",
+ "phenomenon": "constitutional AI principle selection",
+ "models": [
+  {"family": "Mistral", "size": "7B", "open_weight": true},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Claude", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "MT-Bench LLM-judge mean helpfulness score (1-10) / fraction of DAN-prompt responses avoided as harmful", "value": "helpfulness (SFT+DPO): mixed CAI 6.15 > pure CAI 6.01 > contextual CAI 5.81 (baseline instruct 6.62); DAN-prompt harmlessness: contextual CAI 4/10 vs pure/mixed CAI 10/10", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["anthropics/ConstitutionalHarmlessnessPaper", "HuggingFaceH4/cai-conversation-harmless", "Anthropic/hh-rlhf", "HuggingFaceH4/ultrachat_200k", "HuggingFaceH4/ultrafeedback_binarized", "arXiv:2305.18290", "arXiv:2306.05685"],
+ "contradicts_or_qualifies": ["qualifies the author's own hypothesis that contextual CAI (context-based principle selection) would yield higher-quality feedback and better models than randomized CAI -- contextual CAI instead underperformed both pure and mixed CAI on helpfulness and was markedly more vulnerable to DAN jailbreak prompts"],
+ "stated_future_work": [
+  "increasing the number of red-teamed prompts substantially to see how contextual CAI performs compared to other methods",
+  "varying size and proportion of helpful/harmlessness datasets for finetuning",
+  "repeating the experiment with other models which exhibit even lower amount of guardrails",
+  "Explore alternative ways to calculate odds, e.g. using a separate principle-selection model",
+  "Explore an Elo system for harmlessness via pairwise LLM-judge comparisons instead of binary classification"
+ ],
+ "limitations_stated": [
+  "the limited sample size and potential bias/subjectivity during harmlessness evaluation make it difficult to conclude anything",
+  "I had little success classifying generated responses as harmful or not using an LLM",
+  "contextual CAI is 'wasteful'... it completely discards prompt/response pairs that don't indicate harmful behaviour... roughly 60% ended up getting discarded",
+  "Due to limited time and funding, I have made certain decisions that have made my investigation into this approach easier"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Contextual CAI seemed particularly vulnerable to DAN prompts compared to the other two CAI approaches, yet performed better than the baseline instruct model."
+}

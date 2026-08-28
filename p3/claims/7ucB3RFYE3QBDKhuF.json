@@ -1,0 +1,49 @@
+{
+  "post_id": "7ucB3RFYE3QBDKhuF",
+  "primary_claim": "Fully finetuning a clean reference model to reproduce a suspect model's residual-stream activations on a benign prompt corpus leaves a residual (suspect minus aligned reference) that concentrates on hidden/backdoor behavior and spills over into semantically near-trigger prompts, enabling detection of diverse backdoors (semantic triggers, sleeper agents, jailbreak trojans, sandbagging, censorship) across several model organisms without needing labeled trigger examples.",
+  "claim_type": "positive",
+  "phenomenon": "backdoor / hidden behavior detection",
+  "models": [
+    {"family": "Llama", "size": "2 / 3.1", "open_weight": true},
+    {"family": "Qwen", "size": "2.5-7B", "open_weight": true},
+    {"family": "Gemma", "size": "2", "open_weight": true}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "z-score of trigger/near-trigger prompt group's activation residual vs benign null distribution",
+    "value": "z ≈ +4 to +12.74 across backdoors (e.g. sandbagging trigger group z = 12.74; jailbreak trojan harmful-request categories z ≈ 4-6)",
+    "direction": "+",
+    "uncertainty_reported": "se"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "robinhaselhorst/activation-matched-finetuning",
+    "arXiv:2602.03085",
+    "allenai/WildChat-1M"
+  ],
+  "contradicts_or_qualifies": [
+    "Complements Trigger-in-the-Haystack (arXiv:2602.03085): unconditional self-sampling from the suspect model almost never surfaces trigger prompts directly (1/512 samples for the Harry Potter backdoor), but scoring those same self-generated samples with the activation residual ranks the true trigger prompt near the top (2nd of 512)"
+  ],
+  "stated_future_work": [
+    "explore optimization variants (lower-level or coarser layer-matching granularity, e.g. every k-th layer) to reduce noise floor and improve adversarial robustness",
+    "study scaling laws for the detection signal at larger model sizes and MoE architectures",
+    "test whether replacing suspect activations with the aligned reference's activations at inference time can remove backdoor behavior, not just detect it",
+    "build a central, diverse pool of third-party-trained model organisms for benchmarking detection methods"
+  ],
+  "limitations_stated": [
+    "signal weakens significantly for cross-family references (different residual width/tokenizer), with trigger z-scores dropping from ~+7-10 to ~+3-4",
+    "only tested at 7B-9B model scale; unclear how the method behaves at 100B+ scale",
+    "detection is computed on the last prompt token, so backdoors that only activate well into generation might be missed (though one tested backdoor firing around the third sentence was still detected)",
+    "a defense-aware adversary can partially suppress the near-trigger signal, though this degrades the backdoor itself alongside it, and this analysis needs far more (especially third-party) results"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "the reference extrapolates well to unseen benign prompts, but the hidden behavior and its computation are no natural extrapolation of the benign activations"
+}

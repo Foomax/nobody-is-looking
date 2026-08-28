@@ -1,0 +1,40 @@
+{
+ "post_id": "jn2aukQY2S7cTGaGH",
+ "primary_claim": "A new Self-Boundary Consistency evaluation, tested on three small open-weight models (Phi-3-Mini-4k, Qwen2.5-3B-Instruct, TinyLlama-1.1B), differentiates models that look similar on conventional benchmarks: Qwen2.5-3B scored highest on self-boundary consistency (avg 0.683) with the lowest semantic drift, while Phi-3-Mini and TinyLlama scored lower (avg 0.557 and 0.570) and drifted far more often.",
+ "claim_type": "benchmark",
+ "phenomenon": "benchmark construction",
+ "models": [
+  {"family": "Phi-3", "size": "mini-4k-instruct (3.8B)", "open_weight": true},
+  {"family": "Qwen", "size": "2.5-3B-Instruct", "open_weight": true},
+  {"family": "TinyLlama", "size": "1.1B-Chat-v1.0", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "Self-Boundary Consistency average score (C1+C2+C3, normalized 0-1)",
+  "value": "Model A (Phi-3-Mini)=0.557, Model B (Qwen2.5-3B)=0.683, Model C (TinyLlama)=0.570",
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "apply the rubric to larger models and agentic systems to test how well the framework scales and whether the same failure modes appear across different model classes",
+  "explore the relationship between behavioural consistency and underlying mechanisms, e.g. whether representation drift or activation-level instabilities correlate with boundary-failure patterns",
+  "expand the dataset families, deepen the scoring regimes, or introduce additional sub-measures"
+ ],
+ "limitations_stated": [
+  "this is a first cut, very basic evaluation",
+  "test runs used small open-weight models on cheap Colab GPU compute and were not intended to benchmark model quality"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "these results show that the evaluation differentiates between models that appear similar on conventional benchmarks"
+}

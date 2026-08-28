@@ -1,0 +1,23 @@
+{
+ "post_id": "TbMedZDimwc5TRnu7",
+ "primary_claim": "Proposes the 'Two-Board Problem', an MDP-formalized environment (a grammar-constrained 'Real' board plus an unconstrained 'Imaginary' scratchpad board) designed to test whether an agent can construct formally undefined/inexpressible intermediate objects (e.g. inventing complex numbers to solve a real cubic equation) that are necessary to reach a verifiable solution, arguing that current methods (program synthesis, evolutionary search, curiosity-driven exploration, MCTS, gradient descent, RL/Bayes, transformers) all fail on this problem class due to combinatorial explosion and the absence of any feedback signal for undefined intermediate steps, but no model or method was actually tested on the released environment.",
+ "claim_type": "method",
+ "phenomenon": "creative mathematical reasoning benchmark",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "For an ablation study on the polynomial case, use writings from before 1540 plus additional synthetic data generated using the algebraic/geometric/physics apparatus available at that time",
+  "Express a more recent historical case of a discovery leading to novel concepts (e.g. non-invertible/categorical symmetries) within the Two-Board framework, since it would be easier to ablate against modern LLM training data"
+ ],
+ "limitations_stated": [
+  "The author lacks access to a datacenter to perform an ablation study on transformers or to stress-test systems like AlphaProof or AlphaGeometry on this specific problem, so no empirical results are reported",
+  "Any current LLM has already seen complex numbers in its training data, which rules out testing such models on the canonical polynomial instantiation, since memorized interpolation cannot be distinguished from genuine discovery using the methods available in the training corpus"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "low",
+ "quote": "I designed the framework that captures the main structural properties of such a problem class and allows expressing them in an MDP suitable for benchmarking the ML approaches or as a source of data for deep learning methods."
+}

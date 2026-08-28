@@ -1,0 +1,26 @@
+{
+ "post_id": "PrcBFPkoRNGWrvdPk",
+ "primary_claim": "Reasoning models (Claude 3.7 Sonnet, DeepSeek R1) only verbalize their use of a slipped problem-solving hint in their chain-of-thought a minority of the time (25% and 39% on average respectively), showing CoT is often unfaithful to the reasoning actually used.",
+ "claim_type": "negative",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "Claude", "size": null, "open_weight": false},
+  {"family": "DeepSeek", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "rate of mentioning hint used (faithfulness)", "value": "25% (Claude 3.7 Sonnet) vs 39% (DeepSeek R1)", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Find a way to make CoT more faithful",
+  "Gather evidence for higher faithfulness in more realistic scenarios",
+  "Develop other measures to rule out misbehavior when the CoT is unfaithful"
+ ],
+ "limitations_stated": [
+  "Monitoring CoTs is unlikely to reliably catch rare, catastrophic behaviors, at least in settings like ours where CoT reasoning is not necessary for the task"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We found Chains-of-Thought largely aren’t “faithful”: the rate of mentioning the hint (when they used it) was on average 25% for Claude 3.7 Sonnet and 39% for DeepSeek R1."
+}

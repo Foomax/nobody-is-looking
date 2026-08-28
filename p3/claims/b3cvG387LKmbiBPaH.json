@@ -1,0 +1,40 @@
+{
+  "post_id": "b3cvG387LKmbiBPaH",
+  "primary_claim": "Sparse autoencoders trained on single-cell foundation models (Geneformer, scGPT) recover over 107,000 interpretable features organized into causal circuits that recapitulate known molecular biology, converge across independently-trained architectures, and can causally steer computed cell differentiation state.",
+  "claim_type": "positive",
+  "phenomenon": "SAE feature interpretability",
+  "models": [
+    {"family": "Geneformer", "size": "316M", "open_weight": false},
+    {"family": "scGPT", "size": "whole-human", "open_weight": false}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "SAE features mapping to known biological concepts",
+    "value": "29-59% of 107,000+ features across 30 layers",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["arXiv:2603.02952", "arXiv:2603.01752", "arXiv:2603.11940", "SjWCbyWLqBLoP6WtJ"],
+  "contradicts_or_qualifies": [
+    "Standard practice of evaluating biological foundation models by benchmark performance alone underestimates what the models contain",
+    "The field's habit of labeling these models 'virtual cells' as an established fact rather than an empirically tested claim",
+    "The authors' own earlier annotation-biased feature sampling (Paper 2) missed the hub features the model relies on most"
+  ],
+  "stated_future_work": [],
+  "limitations_stated": [
+    "A significant part of the identified knowledge is correlational, not causal",
+    "The previous generation of models does not learn regulatory networks",
+    "Interpretability pipelines that pre-filter for biological annotation are structurally incapable of finding the unlabeled hub features the model relies on most"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "The result was a pair of feature atlases: 82,525 features for Geneformer, 24,527 for scGPT, totaling over 107,000 features across 30 layers."
+}

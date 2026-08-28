@@ -1,0 +1,17 @@
+{
+ "post_id": "a3hyjywvsrFHd5zzH",
+ "primary_claim": "Framing AI safety failures as misgeneralization under distribution shift motivates a research agenda of detecting distribution shift/uncertainty and acting cautiously (e.g. asking for help), and across five completed projects the authors find: sophisticated OOD detection is outperformed by a simple 'ask for help if stuck too long' heuristic on goal-misgeneralization benchmarks; algorithms exist with provable asymptotic self-sufficiency guarantees for asking-for-help and for caution-without-help settings; pretrained LLM token probabilities are well-calibrated but this calibration is broken by post-training (though a weaker 'correctness prediction' property survives); and prompting LLM agents that they may quit in risky situations improves a safety score by +0.4 (0-3 scale) with only -0.03 helpfulness loss.",
+ "claim_type": "positive",
+ "phenomenon": "eval methodology critique",
+ "models": [{"family": "unspecified LLM agent (quitting experiment)", "size": null, "open_weight": null}],
+ "n_model_families": 1,
+ "effect": {"metric": "safety score (0-3 scale) and helpfulness score (0-3 scale) change from 'quit' prompt addition", "value": "+0.4 safety, -0.03 helpfulness", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["bplaut.github.io/generalization_and_caution_agenda.pdf", "arXiv:2105.14111", "arXiv:2410.21052", "arXiv:2402.08062", "arXiv:2502.14043", "arXiv:2510.14884", "openreview.net/pdf?id=E6LOh5vz5x", "openreview.net/pdf?id=ALwpW0ygzI"],
+ "contradicts_or_qualifies": ["The claims 'we already know LLMs are well-calibrated' and 'we already know token probabilities are overconfident'; authors argue the resolution is that pretrained LLMs are calibrated but post-training breaks calibration"],
+ "stated_future_work": ["Demonstrate goal misgeneralization directly in LLMs (previously only shown in video games)", "Mitigate goal misgeneralization by learning from mentor demonstrations across episodes, not treating episodes in isolation", "Characterize regret in terms of magnitude of distribution shift under irreversible dynamics", "Learning from close calls (dangerous-but-non-catastrophic near misses) as a training signal", "Investigate whether standard OOD detection methods correspond to meaningful (dis)similarity metrics for 'unfamiliar situations'"],
+ "limitations_stated": ["The framework does not cover all safety failures, e.g. multi-agent interaction harms where each agent is individually safe, or privacy issues", "Asking for help may become intractable at high agent-to-supervisor ratios", "A misaligned agent could strategically misreport uncertainty and avoid asking for help; the approach is intended as part of alignment training, not a post-hoc monitoring system"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Sophisticated OOD detection methods are ineffective at detecting goal misgeneralization and are outperformed by a simple heuristic."
+}

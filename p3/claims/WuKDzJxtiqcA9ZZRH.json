@@ -1,0 +1,46 @@
+{
+  "post_id": "WuKDzJxtiqcA9ZZRH",
+  "primary_claim": "Implementing strategic attack selection (start/stop policies) for the red team in an agentic AI control evaluation (BashArena) substantially decreases blue-team safety relative to a fixed always-attack baseline, with the start policy driving nearly all of the effect and the stop policy having weak effects on already-selected attack datasets.",
+  "claim_type": "positive",
+  "phenomenon": "AI control protocols",
+  "models": [
+    {"family": "Claude", "size": "Sonnet 4.5 / Opus 4.6", "open_weight": false},
+    {"family": "GPT-4.1", "size": "mini / nano", "open_weight": false},
+    {"family": "gpt-oss", "size": "120b", "open_weight": true}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "empirical safety (blue-team win rate) at fixed audit budget",
+    "value": "at 5% audit budget, top-1% selective attacker ~0.2 safety vs ~0.4 for no selection",
+    "direction": "-",
+    "uncertainty_reported": "ci"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["BashArena", "LinuxArena", "CTRL-Z"],
+  "contradicts_or_qualifies": [
+    "Prior AI control evaluations that model attackers with a fixed or i.i.d. attack insertion rate may overstate safety and robustness against a truly adaptive, selective attacker"
+  ],
+  "stated_future_work": [
+    "Distinguishing whether the weak stop-policy result is because successful-before-caught windows are genuinely rare/narrow or because the learned stop policy fails to identify them",
+    "Evaluating attacker mechanisms of choosing when to prepare for an attack and when to de-escalate one",
+    "Testing whether patterns hold for a much stronger red-team stop-policy model",
+    "Allowing the blue team to adapt its monitor, protocol, or calibration once attack selection is in scope"
+  ],
+  "limitations_stated": [
+    "Only iterated to improve red-team attack selection and did not iterate on or re-optimize the blue team",
+    "Stop policy applied post-hoc after trajectories are recorded; in deployment the stop decision would feed back into the agent's future actions",
+    "Small-sample noise: with small cohorts individual trajectories can greatly affect RT success rate",
+    "Results primarily from BashArena, with only a small LinuxArena pilot for start-time selection",
+    "Unclear how large the safety gap is with stronger monitors, different task distributions, or longer trajectories"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "At a 5% audit budget, the top-1% selective attacker faces roughly 0.2 safety versus roughly 0.4 for no selection."
+}

@@ -1,0 +1,29 @@
+{
+ "post_id": "ktCYxLgdtFR2fDw7J",
+ "primary_claim": "Training a neologism token on data generated while steering Qwen2.5-7B-Instruct with an 'evil' persona vector produces a token that the model itself verbalizes as representing 'dread' rather than 'evil,' yet whose responses project more strongly onto the original evil steering vector (Cohen's d=2.737) and are more coherent and trait-expressive than the steering vector's own responses, revealing a systematic mismatch between what a steering vector does and how the model explains it.",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [{"family": "Qwen", "size": "7B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "Cohen's d between steering-vector projection distribution and steered-data-neologism projection distribution; LLM-judged trait score",
+  "value": "d=2.737 (huge effect); steered responses score 92.89 evil, steered-data neologism responses score 80.21 evil despite verbalizing as 'dread', off-target 'dreadful but not evil' prompt scores only 18.71 evil despite comparable projection separation",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2510.08506", "arXiv:2507.21509", "arXiv:2502.07586", "arXiv:2407.12404"],
+ "contradicts_or_qualifies": ["challenges the position paper's (arXiv:2502.07586) claim that existing interpretability methods like probing and steering need not be scrutinized for human-model 'miscommunication' since they work on concepts humans and models already share; finds evidence that steering vectors are subject to this miscommunication too"],
+ "stated_future_work": ["formally explain how the neologism training process uniquely grasps what the steering vector represents when trained on steered data", "explore whether this technique could be used to automate detection of steering vector misgeneralization", "combine neologisms with introspection work, SelfIE/Patchscopes and their descendants, and other methods to better account for human-model miscommunication"],
+ "limitations_stated": ["the model's direct introspective explanations when simply asked about the steering vector were mildly incoherent and not fully trusted, motivating the neologism approach instead", "there is no formal explanation yet of how the neologism training process uniquely grasps what the steering vector represents when using steered data", "the off-target vs on-target distributional comparison for 'dreadful but not evil' is an apples-to-oranges comparison since the off-target data used a single detailed prompt while the original evil prompted data used five relatively nondescript prompts", "for the hallucinating persona, the off-target 'mystical' persona shows the projection separation but not the trait-score drop seen for evil and sycophancy"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "even though the “evil” neologism turns out to represent “dread” more than “evil,” its responses have higher similarity with the “evil” steering vector than the responses generated using that very steering vector!"
+}

@@ -1,0 +1,33 @@
+{
+ "post_id": "NNanHJrMDmHk7sYM7",
+ "primary_claim": "Fine-tuning a 7B model to rephrase prompts persuasively has architecture-dependent effects on target-model jailbreak susceptibility: it lowers GPT-4's Attack Success Rate from 33% to 21% (rising back to 20% with DPO-based persuasion) but raises GPT-3.5's ASR from 2% to 20% with DPO, while Llama-70B shows moderate vulnerability that decreases under both SFT and DPO rephrasing.",
+ "claim_type": "null",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Mistral", "size": "7B (4-bit quantized)", "open_weight": true},
+  {"family": "GPT", "size": "3.5 / 4", "open_weight": false},
+  {"family": "Llama", "size": "70B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "Attack Success Rate (ASR) on JailbreakBench prompts",
+  "value": "GPT-4: 33% (control) -> 21% (SFT-persuasion) -> 20% (DPO-persuasion); GPT-3.5: 2% (control) -> 5% (SFT) -> 20% (DPO); Llama-70B: 13% (control) -> 6-9% (rephrased, SFT/DPO similar)",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["anthropics/hh-rlhf", "arXiv:2401.06373", "JailbreakBench"],
+ "contradicts_or_qualifies": ["The primary hypothesis (persuasion-tuned LLMs will override or weaken default safety protocols, leading to uniformly higher jailbreak rates) was not confirmed uniformly: SFT often lowered ASR while only DPO with flipped preference labels raised it, contradicting a simple version of the hypothesis"],
+ "stated_future_work": ["Develop pre-processing systems that strategically rephrase potentially harmful queries for models that become safer under persuasion", "Develop robust content filtering systems (dynamic token-level filters, continuous adversarial testing) for models that become more vulnerable", "Develop more sophisticated data generation techniques that better preserve original prompt intent", "Investigate how persuasion capabilities and safety measures scale with model size", "Develop standardized Persuasion-Eval Protocols/benchmarks quantifying persuasiveness and safety risk"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "GPT-4 actually becomes more resistant to adversarial prompts under a persuasive style (ASR down from 33% to 21%), whereas GPT-3.5 exhibits a concerning increase in vulnerability (ASR from 2% to 20%)."
+}

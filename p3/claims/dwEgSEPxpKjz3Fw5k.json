@@ -1,0 +1,48 @@
+{
+ "post_id": "dwEgSEPxpKjz3Fw5k",
+ "primary_claim": "Replicating and extending GDM's Section 5 CoT-monitorability experiment to Claude 4 Sonnet, Claude 3.7 Sonnet, and GPT-4o as actor models, the authors find no major difference in monitorability between the Gemini, Claude, and GPT-4o families: actor models cannot evade even weaker monitors without a large accuracy hit, and more capable models make better monitors (o3 monitor AUROC=0.943 vs GPT-4o-mini 0.822)",
+ "claim_type": "replication",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [
+  {"family": "Claude", "size": "4 Sonnet", "open_weight": false},
+  {"family": "Claude", "size": "3.7 Sonnet", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "GPT-4o", "size": "mini", "open_weight": false},
+  {"family": "o3", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": "2.0 Flash", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "monitor AUROC for detecting obfuscated (topic-hidden) reasoning",
+  "value": "GPT-4o-mini monitor: 0.822 average AUROC; o3 monitor: 0.943 AUROC",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2507.05246", "UKGovernmentAISafetyInstitute/inspect_ai"],
+ "contradicts_or_qualifies": [
+  "previous results reporting lower chain-of-thought faithfulness when CoT is not necessary for the task (arXiv:2305.04388, arXiv:2307.13702)"
+ ],
+ "stated_future_work": [
+  "study more realistic settings where the actor model has a main and side task and must disguise side-task reasoning within main-task reasoning",
+  "use elicitation methods other than simple prompting to approximate what models could hide",
+  "forthcoming work on obfuscating thoughts in the reasoning trace for CoT-as-computation"
+ ],
+ "limitations_stated": [
+  "lack of monitor elicitation and obscuring GPQA answers is an unrealistic environment (inherited from the original paper)",
+  "did not run the ART process on the evaluated models; used ART problems optimized for Gemini 2.0 Flash, which may be more specialized to that actor model",
+  "setup doesn't work on reasoning models such as o1, o3, o4-mini, and Gemini 2.5 Pro",
+  "unable to replicate results on Gemini 2.5 Pro since no publicly available non-reasoning version exists"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We don't see major differences between the monitorability of the Gemini family models compared to the Claude models and GPT-4o."
+}

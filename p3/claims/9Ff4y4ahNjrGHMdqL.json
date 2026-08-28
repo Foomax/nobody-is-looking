@@ -1,0 +1,26 @@
+{
+ "post_id": "9Ff4y4ahNjrGHMdqL",
+ "primary_claim": "The author develops an algorithm to generate synthetic datasets from a high-dimensional percolation-theory data model, with associated ground-truth hierarchical latent features, intended as a testbed for validating interpretability tools",
+ "claim_type": "method",
+ "phenomenon": "interpretability tooling",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2412.07942", "arXiv:2504.20197", "lesswrong.com/posts/sgR3BxRvowmecwJNT/neural-scaling-laws-rooted-in-the-data-distribution", "aribrill/percolation-synthetic-data"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Scale up the synthetic datasets, train neural networks on the data, and interpret those networks",
+  "Develop interpretability metrics for these datasets that trade off breadth and depth of recovered concepts",
+  "Investigate whether similar failure modes (e.g. feature splitting) occur across synthetic and natural data distributions to test the percolation model's predictive power",
+  "Present derivations of create_prob and split_prob parameter values, and full algorithm details, in a forthcoming publication"
+ ],
+ "limitations_stated": [
+  "Data generation and embedding procedures are stochastic, so studies should be repeated using multiple datasets generated with different random seeds",
+  "Embedding procedure relies on approximate orthogonality of random vectors in high dimensions; embedding dimension of O(100) or greater recommended to avoid discrepancies",
+  "A generated dataset represents a full data distribution; only a tiny subset should be used for training to obtain a realistic ML dataset analog"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "It employs a newly developed algorithm to construct a dataset in a way that explicitly and iteratively reveals its innate hierarchical structure."
+}

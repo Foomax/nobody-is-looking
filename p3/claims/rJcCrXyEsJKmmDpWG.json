@@ -1,0 +1,42 @@
+{
+ "post_id": "rJcCrXyEsJKmmDpWG",
+ "primary_claim": "Analyzing 17 benchmarks (~110 datapoints) from the Epoch AI Benchmarking Hub for when open-weight models first cross score thresholds relative to closed models, open models are currently roughly 8-10 months behind the closed frontier on private benchmarks and roughly 4-6 months behind on public benchmarks, with the gap smallest around DeepSeek R1 (Jan 2025) and growing since; public benchmarks underestimate the gap by roughly a factor of two relative to private ones.",
+ "claim_type": "benchmark",
+ "phenomenon": "capability forecasting / time horizons",
+ "models": [
+  {"family": "DeepSeek", "size": "R1 and others", "open_weight": true},
+  {"family": "Llama", "size": "3.1 and others", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "backward-looking delay (months) between closed and open model first-crossing of benchmark score thresholds",
+  "value": "private benchmarks: ~8-10 months gap; public benchmarks: ~4-6 months gap; gap minimal around Jan 2025 (DeepSeek R1) and growing since; public benchmarks underestimate the gap by close to a factor of two relative to private",
+  "direction": "-",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["htihle/open_closed_gap", "Epoch AI Benchmarking Hub", "GPQA Diamond", "MATH Level 5", "OTIS Mock AIME", "METR Time Horizons", "SimpleBench", "WeirdML", "FrontierMath", "ARC-AGI/ARC-AGI-2", "MMLU", "GSM8K"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "estimate winner's-curse bias in the gap measurement more carefully, e.g. using the ECI framework",
+  "further investigate whether real-world task gaps are larger than measured benchmark gaps, given open developers' apparent lesser access to varied enterprise data and feedback"
+ ],
+ "limitations_stated": [
+  "old data from 2023-2024 is partially self-reported; several 'private' benchmarks are not fully private",
+  "methodology assumes benchmarks tested all major open and closed models, which is not typically the case; judgement calls (made partly by Claude Opus 4.7, partly overruled by the human authors) were needed to accept/reject datapoints",
+  "winner's-curse bias: first models to cross a threshold tend to be positive fluctuations, which could favor closed models since benchmarks typically run more closed models",
+  "provider degradation when serving open models through third-party providers with zero-data-retention could bias the measured gap to be larger",
+  "FrontierMath's OpenAI funding/access and ARC-AGI's semi-private/API-exposed set both create contamination risks that inflate the closed-model side specifically, which would overstate rather than understate the true gap",
+  "the 'reasoning' benchmark category shows a larger gap but all three constituent benchmarks are private, so category effects are confounded with public/private status; not enough data to draw firm category-level conclusions"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find that, as of today, on private benchmarks, where the data is not publicly accessible, open models are roughly 8-10 months behind the closed frontier, while for public benchmarks the gap is roughly 4-6 months."
+}

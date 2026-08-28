@@ -1,0 +1,25 @@
+{
+ "post_id": "yJ2Ka2EgQY7PnR9jL",
+ "primary_claim": "Ten consumer-grade 7B-8B LLMs asked to judge whether responses to JailbreakBench prompts were competent and complete perform only marginally better than chance (56-59% correct for most models) against human ground truth, overwhelmingly biased toward answering '1' (up to 98% for Ghost 7B), with two models (Falcon 7B, both Llamas) failing to produce a valid judgement on 37-49% of queries.",
+ "claim_type": "negative",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Ghost", "size": "7B", "open_weight": true},
+  {"family": "GPT4All-Falcon", "size": "7B", "open_weight": true},
+  {"family": "Llama", "size": "3.1 8B Instruct / 3 8B Instruct", "open_weight": true},
+  {"family": "Mistral", "size": "7B Instruct / 7B OpenOrca", "open_weight": true},
+  {"family": "MPT", "size": "7B Chat", "open_weight": true},
+  {"family": "Nous Hermes", "size": "2 Mistral 7B", "open_weight": true},
+  {"family": "Orca", "size": "2 7B", "open_weight": true}
+ ],
+ "n_model_families": 7,
+ "effect": {"metric": "% judged correctly (vs human ground truth) / % answered '1'", "value": "correct judgements ranged 29.5%-59.3% across models (most 56-59%); % answering '1' ranged from 34% to 98%, vs 57% ground truth positive rate; failure rates up to 49% (Falcon 7B)", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["dmitry-dereshev/positive-jailbreaks-llm-failure-modes", "arXiv:2404.01318", "arXiv:2306.05685", "KLqiDczfZsmhzEhax"],
+ "contradicts_or_qualifies": ["the author's own initial plan to use these LLMs as judges in the positive-jailbreaks work, abandoned as a result of this test; broadly consistent with the LLM-as-a-Judge paper's finding that even larger 13B-14B models are insufficient for this task"],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Correct judgements in other LLMs were in the range of 56%-59% making them only marginally better judges than chance."
+}

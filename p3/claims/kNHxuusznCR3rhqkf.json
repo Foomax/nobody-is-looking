@@ -1,0 +1,32 @@
+{
+ "post_id": "kNHxuusznCR3rhqkf",
+ "primary_claim": "A human-relative time-horizon metric, defined as the longest task duration over which an LLM exceeds METR's actual human-baseline reliability, is doubling every 1.9 months, much faster than METR's fixed 50%-reliability time-horizon trend's 6.8-7 month doubling time, implying human-level long-horizon software agency by roughly 2026-2027.",
+ "claim_type": "positive",
+ "phenomenon": "capability forecasting / time horizons",
+ "models": [
+  {"family": "GPT", "size": "various, gpt-2 to gpt-5.1-codex-max", "open_weight": false},
+  {"family": "Claude", "size": "Opus 4.5", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "time-horizon doubling time (months)", "value": "1.9 months (human-relative metric) vs 6.8-7 months (METR 50%-reliability metric)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2503.14499"],
+ "contradicts_or_qualifies": [
+  "Qualifies AI-2027's claim that METR's fixed-reliability (80%) time-horizon trend is super-exponential with a finite-time blowup: finds this poorly supported for METR's own fixed-reliability metric, but much better supported once the metric is redefined relative to human baseline reliability."
+ ],
+ "stated_future_work": [
+  "Collect higher-quality, better-incentivized human baseline measurements for long agentic tasks",
+  "Collect direct human measurements for much longer tasks than METR's current sub-1-day benchmark tasks",
+  "Redo the statistical (AIC) model-selection tests including the new Claude Opus 4.5 data point"
+ ],
+ "limitations_stated": [
+  "METR's human reliability baselines are widely regarded as weak or poorly incentivized, which undermines the human-relative metric that depends on them",
+  "AIC model-selection results for exponential vs hyperbolic fits are quite sensitive to which data points/outliers are included and should be taken with caution",
+  "Extrapolating the hyperbolic projection to human-level requires extrapolating the human logistic curve far beyond the durations actually tested in the METR benchmark",
+  "The very large (444-billion-minute) Claude Opus 4.5 horizon estimate is highly sensitive to estimation error since both LLM and human reliabilities are near zero at such long durations",
+  "The LLM logistic slope-parameter trend used in one alternative extrapolation is noisy (R^2 ~ 0.3)"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "the LLM time horizons at human-reliability are doubling every 1.9 months, versus every 7 months over the same time period for the METR (50%-reliability) time horizon trend"
+}

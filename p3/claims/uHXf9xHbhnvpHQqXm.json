@@ -1,0 +1,31 @@
+{
+ "post_id": "uHXf9xHbhnvpHQqXm",
+ "primary_claim": "ML inference results were bitwise-reproducible within fixed hardware/software settings, and changes to setup factors such as attention algorithm, quantization method, or tensor parallelism produced consistent, detectable numerical 'fingerprints' that could serve as a signal for verifying AI datacenter compute claims.",
+ "claim_type": "positive",
+ "phenomenon": "hardware fingerprinting for compute verification",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "bitwise-reproducibility of inference outputs across repeated runs within fixed settings",
+  "value": "results were bitwise-reproducible within fixed settings in nearly all cases studied; differences across production methods were consistent, not random",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2507.15916"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "In nearly all cases studied, results were bitwise-reproducible within fixed settings. Differences across production methods were consistent, not random."
+}

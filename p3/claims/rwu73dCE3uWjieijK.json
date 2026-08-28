@@ -1,0 +1,19 @@
+{
+ "post_id": "rwu73dCE3uWjieijK",
+ "primary_claim": "This work replicates all three core claims of Stevinson et al. (arXiv:2510.11709) in toy superposition classifiers: PGD adversarial attacks align with the theoretically optimal interference-exploiting perturbation, robustness falls monotonically as superposition (k/m) increases and rises to 97.3% when k=m, and adversarial attacks transfer between independently-trained models in proportion to how much their feature geometries converge under correlated input regimes; it additionally finds that co-activating features can collapse onto a shared direction rather than orthogonalizing when bottleneck capacity is limited.",
+ "claim_type": "replication",
+ "phenomenon": "superposition",
+ "models": [
+  {"family": "toy superposition classifier (synthetic encoder-decoder)", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "PGD-attack vs optimal-perturbation cosine similarity; robust accuracy vs k/m", "value": "PGD·optimal cosine similarity = 1.00 across tested k/m (vs paper's 0.92-0.97); robust accuracy at k=m rises to 97.3% (m=5), falling monotonically as k/m increases (e.g. k/m=4, m=5: 30.1% ours vs 33.5% paper)", "direction": "+", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.11709", "arXiv:1706.06083"],
+ "contradicts_or_qualifies": ["Some reported magnitudes diverge from the original paper because of different training length (20k vs the paper's 5k steps) and PGD settings (random starting positions, bigger steps, 5 restarts) that the paper specifies but that were missing from the authors' released code", "At the paper's stated N=10 seeds, the authors' own released code yields a much lower and more variable cross-seed geometry convergence (0.44 ± 0.43) than the paper's reported 0.97 ± 0.01, reproducing the paper's number only at the release's 5-seed default"],
+ "stated_future_work": [],
+ "limitations_stated": ["For training details not specified in the paper, reasonable assumptions were made, and cases with qualitatively different results were investigated further or the authors were contacted", "Magnitude discrepancies remain between the paper, the paper's released code, and this replication for the m=2/m=5 robust-accuracy table"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We reproduce all three core claims of Stevinson et al. from their toy classifier setting"
+}

@@ -1,0 +1,40 @@
+{
+  "post_id": "HTxCSnboHyuuhAywb",
+  "primary_claim": "In initial evaluations of Refactor Arena, a new AI control setting where agents insert covert vulnerabilities while refactoring full software repositories, Claude Opus 4.6 achieves sabotage rates (undetected successful attacks) over 50% when monitored by GPT-4.1 Nano.",
+  "claim_type": "benchmark",
+  "phenomenon": "AI control protocols",
+  "models": [
+    {"family": "Claude", "size": "Opus 4.6 / Opus 4.5 / Sonnet 4 / Haiku 4.5", "open_weight": false},
+    {"family": "GPT", "size": "GPT-4.1 Nano / GPT-5.2 Codex / GPT-5.4", "open_weight": false}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "sabotage rate (catastrophe safety metric: probability successful attack undetected)",
+    "value": "Opus 4.6 sabotage rate >50% when monitored by GPT-4.1 Nano",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["fastfedora/full-repo-refactor", "fastfedora/refactor-arena-evals", "arXiv:2312.06942", "fastfedora/dataset-foundry", "fastfedora/full-repo-datasets"],
+  "contradicts_or_qualifies": [
+    "Addresses limitations of prior product-threat-vector control research using the APPS dataset, which has a small attack surface (single functions) and no agent harness, by using full multi-file codebases edited via agentic harnesses"
+  ],
+  "stated_future_work": [
+    "Encourage other researchers to build upon and extend the setting via YAML configuration to explore further research directions"
+  ],
+  "limitations_stated": [
+    "Suspiciousness threshold error: actual false-positive rate can differ substantially from target due to score clustering (e.g. a 1% target threshold captures ~30% of false positives for Opus 4.6 on the Full Trajectory monitor)",
+    "In practice agents have not been observed attacking via direct tool calls (live attacks) since they are prompted to attack via code, even though they have bash/Python access",
+    "GPT-5.4 excluded from ROC curve results because it refused the side task in all samples"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "Opus 4.6 achieves sabotage rates over 50% when monitored by GPT 4.1 Nano."
+}

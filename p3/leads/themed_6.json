@@ -1,0 +1,2256 @@
+[
+ {
+  "idx": 1615,
+  "post_id": "qbg7XzBjMgDfk5DwT",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1616,
+  "post_id": "qbg7XzBjMgDfk5DwT",
+  "theme": "SAE feature interpretation",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1617,
+  "post_id": "qbg7XzBjMgDfk5DwT",
+  "theme": "SAE feature steering",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1618,
+  "post_id": "qdxNsbY5kYNqcgzFb",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1619,
+  "post_id": "qdxNsbY5kYNqcgzFb",
+  "theme": "replicate finding across model families",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1620,
+  "post_id": "qdxNsbY5kYNqcgzFb",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1621,
+  "post_id": "qdxNsbY5kYNqcgzFb",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1622,
+  "post_id": "qhhRwxsef7P2yC2Do",
+  "theme": "test weak-to-strong supervision",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1623,
+  "post_id": "qhhRwxsef7P2yC2Do",
+  "theme": "test weak-to-strong supervision",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1624,
+  "post_id": "qhhRwxsef7P2yC2Do",
+  "theme": "test weak-to-strong supervision",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1625,
+  "post_id": "qi4mNbZYAFDYwfRba",
+  "theme": "apply model diffing to real problem",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1626,
+  "post_id": "qi4mNbZYAFDYwfRba",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1627,
+  "post_id": "qi4mNbZYAFDYwfRba",
+  "theme": "apply model diffing to real problem",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1628,
+  "post_id": "qi4mNbZYAFDYwfRba",
+  "theme": "apply model diffing to real problem",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1629,
+  "post_id": "qi4mNbZYAFDYwfRba",
+  "theme": "apply model diffing to real problem",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1630,
+  "post_id": "qpwsdu7qBaHTaujE3",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1631,
+  "post_id": "qpwsdu7qBaHTaujE3",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1632,
+  "post_id": "qt7ENbKdQihBKNjh7",
+  "theme": "test in more naturalistic/real-world settings",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1633,
+  "post_id": "qt7ENbKdQihBKNjh7",
+  "theme": "study debate training dynamics",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1634,
+  "post_id": "qt7ENbKdQihBKNjh7",
+  "theme": "study debate training dynamics",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1635,
+  "post_id": "quTGGNhGEiTCBEAX5",
+  "theme": "characterize reward-hacking and power-seeking behavior",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1636,
+  "post_id": "quTGGNhGEiTCBEAX5",
+  "theme": "characterize reward-hacking and power-seeking behavior",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1637,
+  "post_id": "quTGGNhGEiTCBEAX5",
+  "theme": "characterize reward-hacking and power-seeking behavior",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1638,
+  "post_id": "r3NeiHAEWyToers4F",
+  "theme": "generate synthetic training data via simulation",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1639,
+  "post_id": "rE43EfHigXcjTmomJ",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1640,
+  "post_id": "rE43EfHigXcjTmomJ",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1641,
+  "post_id": "rE43EfHigXcjTmomJ",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1642,
+  "post_id": "rE43EfHigXcjTmomJ",
+  "theme": "test SAE architecture variant",
+  "scope": "narrow",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1643,
+  "post_id": "rE43EfHigXcjTmomJ",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1644,
+  "post_id": "rFxfMbwJ3v4PNesWP",
+  "theme": "test robustness across scenario variations",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1645,
+  "post_id": "rFxfMbwJ3v4PNesWP",
+  "theme": "test robustness across scenario variations",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1646,
+  "post_id": "rJcCrXyEsJKmmDpWG",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1647,
+  "post_id": "rJcCrXyEsJKmmDpWG",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1648,
+  "post_id": "rJcX5Qc3toMmMqtvk",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1649,
+  "post_id": "rKM9b6B2LqwSB5ToN",
+  "theme": "study SAE feature absorption/splitting",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1650,
+  "post_id": "rKM9b6B2LqwSB5ToN",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1651,
+  "post_id": "rKM9b6B2LqwSB5ToN",
+  "theme": "study SAE feature absorption/splitting",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1652,
+  "post_id": "rKM9b6B2LqwSB5ToN",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1653,
+  "post_id": "rKM9b6B2LqwSB5ToN",
+  "theme": "test SAE architecture variant",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1654,
+  "post_id": "rQWHwazYsBi97jMBg",
+  "theme": "test robustness across scenario variations",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1655,
+  "post_id": "rQWHwazYsBi97jMBg",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1656,
+  "post_id": "rQWHwazYsBi97jMBg",
+  "theme": "test in more naturalistic/real-world settings",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1657,
+  "post_id": "rQWHwazYsBi97jMBg",
+  "theme": "scale up evaluation sample/diversity",
+  "scope": "narrow",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1658,
+  "post_id": "rQWHwazYsBi97jMBg",
+  "theme": "engineering cleanup and efficiency improvements",
+  "scope": "narrow",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1659,
+  "post_id": "rZmJwv4mSNeyeEu3g",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1660,
+  "post_id": "rbqJoxFZtae9x93mx",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1661,
+  "post_id": "rbqJoxFZtae9x93mx",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1662,
+  "post_id": "rbqJoxFZtae9x93mx",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1663,
+  "post_id": "rnwjdw5hzddjRvBoC",
+  "theme": "apply interpretability tools to latent reasoning",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1664,
+  "post_id": "rnwjdw5hzddjRvBoC",
+  "theme": "apply interpretability tools to latent reasoning",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1665,
+  "post_id": "rnwjdw5hzddjRvBoC",
+  "theme": "characterize conditions for generalization",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1666,
+  "post_id": "rnwjdw5hzddjRvBoC",
+  "theme": "apply interpretability tools to latent reasoning",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1667,
+  "post_id": "ronAKFdTDE7tiZk2c",
+  "theme": "investigate training instability mechanism",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1668,
+  "post_id": "ronAKFdTDE7tiZk2c",
+  "theme": "investigate training instability mechanism",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1669,
+  "post_id": "ronAKFdTDE7tiZk2c",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1670,
+  "post_id": "rs2BmwXWJEaEfNr2v",
+  "theme": "learning exercise / course followup",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1671,
+  "post_id": "rs2BmwXWJEaEfNr2v",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1672,
+  "post_id": "rs2BmwXWJEaEfNr2v",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1673,
+  "post_id": "rs2BmwXWJEaEfNr2v",
+  "theme": "learning exercise / course followup",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1674,
+  "post_id": "rtp6n7Z23uJpEH7od",
+  "theme": "SAE training data ablation",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1675,
+  "post_id": "rtp6n7Z23uJpEH7od",
+  "theme": "replicate finding on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1676,
+  "post_id": "rtp6n7Z23uJpEH7od",
+  "theme": "SAE training data ablation",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1677,
+  "post_id": "rwoEz3bA9ekxkabc7",
+  "theme": "combine complementary interpretability methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1678,
+  "post_id": "rxR5p9Qha937wTTBp",
+  "theme": "replicate finding on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1679,
+  "post_id": "rxR5p9Qha937wTTBp",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1680,
+  "post_id": "rxR5p9Qha937wTTBp",
+  "theme": "engineering cleanup and efficiency improvements",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1681,
+  "post_id": "rxR5p9Qha937wTTBp",
+  "theme": "SAE feature interpretation",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1682,
+  "post_id": "rxR5p9Qha937wTTBp",
+  "theme": "SAE training data ablation",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1683,
+  "post_id": "s9sMdpPfwJmb7ZkyL",
+  "theme": "novel architectural modification",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1684,
+  "post_id": "s9sMdpPfwJmb7ZkyL",
+  "theme": "novel architectural modification",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1685,
+  "post_id": "sBSjEBykQkmSfqrwt",
+  "theme": "characterize dataset attributes causing emergent misalignment",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1686,
+  "post_id": "sBSjEBykQkmSfqrwt",
+  "theme": "characterize dataset attributes causing emergent misalignment",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1687,
+  "post_id": "sBSjEBykQkmSfqrwt",
+  "theme": "engineering cleanup and efficiency improvements",
+  "scope": "narrow",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1688,
+  "post_id": "sCkcPe9GDXxhw2PWG",
+  "theme": "characterize reward-hacking and power-seeking behavior",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1689,
+  "post_id": "sCkcPe9GDXxhw2PWG",
+  "theme": "test robustness across scenario variations",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1690,
+  "post_id": "sGskzx7LgsDkMLvcv",
+  "theme": "extend/scale concept-anchoring method",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1691,
+  "post_id": "sGskzx7LgsDkMLvcv",
+  "theme": "extend/scale concept-anchoring method",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1692,
+  "post_id": "sGskzx7LgsDkMLvcv",
+  "theme": "extend/scale concept-anchoring method",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1693,
+  "post_id": "sGskzx7LgsDkMLvcv",
+  "theme": "extend/scale concept-anchoring method",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1694,
+  "post_id": "sHpZZnRDLg7ccX9aF",
+  "theme": "develop circuit faithfulness metric",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1695,
+  "post_id": "sHpZZnRDLg7ccX9aF",
+  "theme": "develop circuit faithfulness metric",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1696,
+  "post_id": "sHpZZnRDLg7ccX9aF",
+  "theme": "develop circuit faithfulness metric",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1697,
+  "post_id": "sHpZZnRDLg7ccX9aF",
+  "theme": "develop circuit faithfulness metric",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1698,
+  "post_id": "sYFNGRdDQYQrSJAd8",
+  "theme": "engineering cleanup and efficiency improvements",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1699,
+  "post_id": "sYFNGRdDQYQrSJAd8",
+  "theme": "replicate finding on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1700,
+  "post_id": "sb8WmKNgwzefa6oaJ",
+  "theme": "scale up evaluation sample/diversity",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1701,
+  "post_id": "sb8WmKNgwzefa6oaJ",
+  "theme": "improve monitor evaluation metrics",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1702,
+  "post_id": "sb8WmKNgwzefa6oaJ",
+  "theme": "improve monitor evaluation metrics",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1703,
+  "post_id": "sb8WmKNgwzefa6oaJ",
+  "theme": "improve monitor evaluation metrics",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1704,
+  "post_id": "sb8WmKNgwzefa6oaJ",
+  "theme": "test robustness across scenario variations",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1705,
+  "post_id": "scarBE39hzfX5QuHJ",
+  "theme": "replicate finding on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1706,
+  "post_id": "scarBE39hzfX5QuHJ",
+  "theme": "test in more naturalistic/real-world settings",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1707,
+  "post_id": "scarBE39hzfX5QuHJ",
+  "theme": "study feature composition/relations",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1708,
+  "post_id": "scarBE39hzfX5QuHJ",
+  "theme": "replicate finding across model families",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1709,
+  "post_id": "scarBE39hzfX5QuHJ",
+  "theme": "localize signal to model components",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1710,
+  "post_id": "scarBE39hzfX5QuHJ",
+  "theme": "extend subliminal-learning findings",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1711,
+  "post_id": "sdiZmNKSXceeYbXB8",
+  "theme": "replicate finding across model families",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1712,
+  "post_id": "sdiZmNKSXceeYbXB8",
+  "theme": "extend sandbagging elicitation methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1713,
+  "post_id": "sdiZmNKSXceeYbXB8",
+  "theme": "extend sandbagging elicitation methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1714,
+  "post_id": "sfucF8Mhcn7zmWQ8Y",
+  "theme": "develop automated detection/auditing tooling",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1715,
+  "post_id": "smMdYezaC8vuiLjCf",
+  "theme": "engineering cleanup and efficiency improvements",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1716,
+  "post_id": "smMdYezaC8vuiLjCf",
+  "theme": "extend sandbagging elicitation methods",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1717,
+  "post_id": "smMdYezaC8vuiLjCf",
+  "theme": "develop automated detection/auditing tooling",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1718,
+  "post_id": "smMdYezaC8vuiLjCf",
+  "theme": "test robustness across scenario variations",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1719,
+  "post_id": "smMdYezaC8vuiLjCf",
+  "theme": "release tooling/benchmark for community",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1720,
+  "post_id": "srt6JXsRMtmqAJavD",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1721,
+  "post_id": "srt6JXsRMtmqAJavD",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1722,
+  "post_id": "szyZi5d4febZZSiq3",
+  "theme": "develop automated detection/auditing tooling",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1723,
+  "post_id": "tCfjXzwKXmWnLkoHp",
+  "theme": "characterize conditions for generalization",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1724,
+  "post_id": "tCfjXzwKXmWnLkoHp",
+  "theme": "test data-poisoning detection methods",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1725,
+  "post_id": "tCfjXzwKXmWnLkoHp",
+  "theme": "test data-poisoning detection methods",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1726,
+  "post_id": "tCfjXzwKXmWnLkoHp",
+  "theme": "characterize conditions for generalization",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1727,
+  "post_id": "tCfjXzwKXmWnLkoHp",
+  "theme": "characterize conditions for generalization",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1728,
+  "post_id": "tDJWZLQNN7poqCwKa",
+  "theme": "improve experimental rigor and controls",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1729,
+  "post_id": "tLCBJn3NcSNzi5xng",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1730,
+  "post_id": "tLCBJn3NcSNzi5xng",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1731,
+  "post_id": "tLCBJn3NcSNzi5xng",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1732,
+  "post_id": "tLCBJn3NcSNzi5xng",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1733,
+  "post_id": "tZSkryA4aygKAbPFz",
+  "theme": "replicate finding on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1734,
+  "post_id": "tZSkryA4aygKAbPFz",
+  "theme": "replicate finding across model families",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1735,
+  "post_id": "tZSkryA4aygKAbPFz",
+  "theme": "triangulate hypothesis with multiple methods",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1736,
+  "post_id": "tb7e2xARb6cfkJrAK",
+  "theme": "replicate finding across model families",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1737,
+  "post_id": "tb7e2xARb6cfkJrAK",
+  "theme": "engineering cleanup and efficiency improvements",
+  "scope": "narrow",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1738,
+  "post_id": "tb7e2xARb6cfkJrAK",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1739,
+  "post_id": "tb7e2xARb6cfkJrAK",
+  "theme": "release tooling/benchmark for community",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1740,
+  "post_id": "tdZyjrappcEaQuM4A",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1741,
+  "post_id": "tdZyjrappcEaQuM4A",
+  "theme": "test in more naturalistic/real-world settings",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1742,
+  "post_id": "tdZyjrappcEaQuM4A",
+  "theme": "scale up evaluation sample/diversity",
+  "scope": "narrow",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1743,
+  "post_id": "tdZyjrappcEaQuM4A",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1744,
+  "post_id": "tdZyjrappcEaQuM4A",
+  "theme": "characterize how performance scales with capability",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1745,
+  "post_id": "tgLmDjKRXaX3dokrC",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1746,
+  "post_id": "tgLmDjKRXaX3dokrC",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1747,
+  "post_id": "tgLmDjKRXaX3dokrC",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1748,
+  "post_id": "tgLmDjKRXaX3dokrC",
+  "theme": "extend/red-team decomposition protocol",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1749,
+  "post_id": "tgLmDjKRXaX3dokrC",
+  "theme": "extend/red-team decomposition protocol",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1750,
+  "post_id": "tiEgivi7crHSnSrH5",
+  "theme": "replicate finding on larger models",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1751,
+  "post_id": "tkiSQBuA8yj2tHNdv",
+  "theme": "combine complementary interpretability methods",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1752,
+  "post_id": "tzkakoG9tYLbLTvHG",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1753,
+  "post_id": "tzkakoG9tYLbLTvHG",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1754,
+  "post_id": "tzkakoG9tYLbLTvHG",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1755,
+  "post_id": "u8TYRhGPD878i3qkc",
+  "theme": "replicate finding on larger models",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1756,
+  "post_id": "u8TYRhGPD878i3qkc",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1757,
+  "post_id": "uBZcQLmBPiiSyXsc9",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1758,
+  "post_id": "uBZcQLmBPiiSyXsc9",
+  "theme": "systematic ablation over training factors",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1759,
+  "post_id": "uDrsffSLzWD6cDnTt",
+  "theme": "test toy-model feature-recovery objective",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1760,
+  "post_id": "uDrsffSLzWD6cDnTt",
+  "theme": "test toy-model feature-recovery objective",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1761,
+  "post_id": "uRs5ebXKYLQyvJa2Q",
+  "theme": "characterize conditions for generalization",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1762,
+  "post_id": "uRs5ebXKYLQyvJa2Q",
+  "theme": "characterize conditions for generalization",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1763,
+  "post_id": "uRs5ebXKYLQyvJa2Q",
+  "theme": "investigate training instability mechanism",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1764,
+  "post_id": "uRs5ebXKYLQyvJa2Q",
+  "theme": "systematic ablation over training factors",
+  "scope": "broad",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1765,
+  "post_id": "uSgw9muqRZpjpxKDA",
+  "theme": "develop automated detection/auditing tooling",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1766,
+  "post_id": "uSgw9muqRZpjpxKDA",
+  "theme": "investigate training instability mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1767,
+  "post_id": "uSgw9muqRZpjpxKDA",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1768,
+  "post_id": "uSgw9muqRZpjpxKDA",
+  "theme": "explore fine-tuning-robust guardrail architectures",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1769,
+  "post_id": "umYzsh7SGHHKsRCaA",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1770,
+  "post_id": "umYzsh7SGHHKsRCaA",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1771,
+  "post_id": "umYzsh7SGHHKsRCaA",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1772,
+  "post_id": "umYzsh7SGHHKsRCaA",
+  "theme": "apply model diffing to real problem",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1773,
+  "post_id": "uvgw5FTS2RXgFFFii",
+  "theme": "extend interpretability tool measurement",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1774,
+  "post_id": "uvgw5FTS2RXgFFFii",
+  "theme": "improve experimental rigor and controls",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1775,
+  "post_id": "uvgw5FTS2RXgFFFii",
+  "theme": "improve experimental rigor and controls",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1776,
+  "post_id": "uvgw5FTS2RXgFFFii",
+  "theme": "scale up evaluation sample/diversity",
+  "scope": "narrow",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1777,
+  "post_id": "uvgw5FTS2RXgFFFii",
+  "theme": "extend interpretability tool measurement",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1778,
+  "post_id": "v6uCyDNBKhrHevhzM",
+  "theme": "study feature composition/relations",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1779,
+  "post_id": "v6uCyDNBKhrHevhzM",
+  "theme": "SAE feature steering",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1780,
+  "post_id": "v6uCyDNBKhrHevhzM",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1781,
+  "post_id": "vNCAQLcJSzTgjPaWS",
+  "theme": "study feature composition/relations",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1782,
+  "post_id": "vNCAQLcJSzTgjPaWS",
+  "theme": "study feature composition/relations",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1783,
+  "post_id": "vNCAQLcJSzTgjPaWS",
+  "theme": "test SAE architecture variant",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1784,
+  "post_id": "vNCAQLcJSzTgjPaWS",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1785,
+  "post_id": "vQ6tirCJGEtQAEgNx",
+  "theme": "study feature composition/relations",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1786,
+  "post_id": "vQ6tirCJGEtQAEgNx",
+  "theme": "localize signal to model components",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1787,
+  "post_id": "vRpLPZpmECCfxHfv6",
+  "theme": "publish followup writeup",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1788,
+  "post_id": "vRpLPZpmECCfxHfv6",
+  "theme": "train model rather than prompt for target behavior",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1789,
+  "post_id": "vRpLPZpmECCfxHfv6",
+  "theme": "train model rather than prompt for target behavior",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1790,
+  "post_id": "vRpLPZpmECCfxHfv6",
+  "theme": "train model rather than prompt for target behavior",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1791,
+  "post_id": "veqcY4Q6vadE2gv5j",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1792,
+  "post_id": "veqcY4Q6vadE2gv5j",
+  "theme": "train model rather than prompt for target behavior",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1793,
+  "post_id": "veqcY4Q6vadE2gv5j",
+  "theme": "improve monitor evaluation metrics",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1794,
+  "post_id": "vrHwxuoizHcrRQzed",
+  "theme": "engineering cleanup and efficiency improvements",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1795,
+  "post_id": "vrHwxuoizHcrRQzed",
+  "theme": "study feature composition/relations",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1796,
+  "post_id": "vrHwxuoizHcrRQzed",
+  "theme": "SAE training data ablation",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1797,
+  "post_id": "vrHwxuoizHcrRQzed",
+  "theme": "study SAE feature absorption/splitting",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1798,
+  "post_id": "vrHwxuoizHcrRQzed",
+  "theme": "study feature composition/relations",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1799,
+  "post_id": "vsAxLSShMgy5Qjub5",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1800,
+  "post_id": "vsAxLSShMgy5Qjub5",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1801,
+  "post_id": "vzav5kfbRCDQyEB8v",
+  "theme": "novel architectural modification",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1802,
+  "post_id": "w35H4ski8cHMpnWgX",
+  "theme": "replicate finding across model families",
+  "scope": "narrow",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1803,
+  "post_id": "w35H4ski8cHMpnWgX",
+  "theme": "engineering cleanup and efficiency improvements",
+  "scope": "narrow",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1804,
+  "post_id": "w35H4ski8cHMpnWgX",
+  "theme": "extend interpretability tool measurement",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1805,
+  "post_id": "w35H4ski8cHMpnWgX",
+  "theme": "combine complementary interpretability methods",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1806,
+  "post_id": "w35H4ski8cHMpnWgX",
+  "theme": "SAE feature steering",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1807,
+  "post_id": "w3MGffxeaTfZHoW24",
+  "theme": "build synthetic environment for debate protocols",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1808,
+  "post_id": "w3MGffxeaTfZHoW24",
+  "theme": "build synthetic environment for debate protocols",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1809,
+  "post_id": "w3MGffxeaTfZHoW24",
+  "theme": "release tooling/benchmark for community",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1810,
+  "post_id": "w3MGffxeaTfZHoW24",
+  "theme": "study debate training dynamics",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1811,
+  "post_id": "w3MGffxeaTfZHoW24",
+  "theme": "study debate training dynamics",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1812,
+  "post_id": "w3MGffxeaTfZHoW24",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1813,
+  "post_id": "w3MGffxeaTfZHoW24",
+  "theme": "build synthetic environment for debate protocols",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1814,
+  "post_id": "wASHN8guJag7NhhJJ",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1815,
+  "post_id": "wKGdiXuWfn8YoYpMQ",
+  "theme": "develop automated detection/auditing tooling",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1816,
+  "post_id": "wKGdiXuWfn8YoYpMQ",
+  "theme": "develop automated detection/auditing tooling",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1817,
+  "post_id": "wKGdiXuWfn8YoYpMQ",
+  "theme": "test in more naturalistic/real-world settings",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1818,
+  "post_id": "wKGdiXuWfn8YoYpMQ",
+  "theme": "characterize how performance scales with capability",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1819,
+  "post_id": "wMn9wSxzSs3uHiAmu",
+  "theme": "characterize activation-function-specific training behavior",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1820,
+  "post_id": "wMn9wSxzSs3uHiAmu",
+  "theme": "characterize activation-function-specific training behavior",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1821,
+  "post_id": "wMn9wSxzSs3uHiAmu",
+  "theme": "characterize activation-function-specific training behavior",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1822,
+  "post_id": "wMn9wSxzSs3uHiAmu",
+  "theme": "characterize activation-function-specific training behavior",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1823,
+  "post_id": "wRsQowKKbgyXv2eni",
+  "theme": "scale up evaluation sample/diversity",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1824,
+  "post_id": "wRsQowKKbgyXv2eni",
+  "theme": "replicate finding on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1825,
+  "post_id": "wRsQowKKbgyXv2eni",
+  "theme": "fix experimental confound in task design",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1826,
+  "post_id": "wRsQowKKbgyXv2eni",
+  "theme": "systematic ablation over training factors",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1827,
+  "post_id": "wRsQowKKbgyXv2eni",
+  "theme": "compare methods/behavior across conditions",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1828,
+  "post_id": "wSKPuBfgkkqfTpmWJ",
+  "theme": "develop automated detection/auditing tooling",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1829,
+  "post_id": "wSKPuBfgkkqfTpmWJ",
+  "theme": "develop automated detection/auditing tooling",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1830,
+  "post_id": "wezSznWnsMhpRF2QH",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1831,
+  "post_id": "whkMnqFWKsBm7Gyd7",
+  "theme": "extend recontextualization method",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1832,
+  "post_id": "whkMnqFWKsBm7Gyd7",
+  "theme": "extend recontextualization method",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1833,
+  "post_id": "whkMnqFWKsBm7Gyd7",
+  "theme": "extend recontextualization method",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1834,
+  "post_id": "whkMnqFWKsBm7Gyd7",
+  "theme": "extend recontextualization method",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1835,
+  "post_id": "whkMnqFWKsBm7Gyd7",
+  "theme": "extend recontextualization method",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1836,
+  "post_id": "wnzkjSmrgWZaBa2aC",
+  "theme": "test robustness across scenario variations",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1837,
+  "post_id": "wyZRNgpeiPeRXB6eT",
+  "theme": "apply model diffing to real problem",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1838,
+  "post_id": "wyZRNgpeiPeRXB6eT",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1839,
+  "post_id": "wyZRNgpeiPeRXB6eT",
+  "theme": "characterize conditions for generalization",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1840,
+  "post_id": "x59FhzuM9yuvZHAHW",
+  "theme": "test in more naturalistic/real-world settings",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1841,
+  "post_id": "x59FhzuM9yuvZHAHW",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1842,
+  "post_id": "x7PrGkiNSrxQg4Dnv",
+  "theme": "release tooling/benchmark for community",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1843,
+  "post_id": "x7PrGkiNSrxQg4Dnv",
+  "theme": "compare methods/behavior across conditions",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1844,
+  "post_id": "x8BbjZqooS4LFXS8Z",
+  "theme": "publish followup writeup",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1845,
+  "post_id": "x8BbjZqooS4LFXS8Z",
+  "theme": "develop mechanistic estimation method",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1846,
+  "post_id": "x8BbjZqooS4LFXS8Z",
+  "theme": "develop mechanistic estimation method",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1847,
+  "post_id": "x8BbjZqooS4LFXS8Z",
+  "theme": "develop mechanistic estimation method",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1848,
+  "post_id": "xPXJfgqFTvuJxGZbE",
+  "theme": "engineering cleanup and efficiency improvements",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1849,
+  "post_id": "xZkBDAgQGqm6tvCvy",
+  "theme": "novel architectural modification",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1850,
+  "post_id": "xZkBDAgQGqm6tvCvy",
+  "theme": "compare methods/behavior across conditions",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1851,
+  "post_id": "xZkBDAgQGqm6tvCvy",
+  "theme": "novel architectural modification",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1852,
+  "post_id": "xZkBDAgQGqm6tvCvy",
+  "theme": "novel architectural modification",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1853,
+  "post_id": "xZkBDAgQGqm6tvCvy",
+  "theme": "compare methods/behavior across conditions",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1854,
+  "post_id": "xmpauEXEerzYcJKNm",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1855,
+  "post_id": "xmpauEXEerzYcJKNm",
+  "theme": "apply model diffing to real problem",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1856,
+  "post_id": "xmpauEXEerzYcJKNm",
+  "theme": "apply model diffing to real problem",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1857,
+  "post_id": "xmpauEXEerzYcJKNm",
+  "theme": "apply model diffing to real problem",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1858,
+  "post_id": "xrv2fNJtqabN3h6Aj",
+  "theme": "test robustness across scenario variations",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1859,
+  "post_id": "xrv2fNJtqabN3h6Aj",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1860,
+  "post_id": "xrv2fNJtqabN3h6Aj",
+  "theme": "characterize conditions for generalization",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1861,
+  "post_id": "xrv2fNJtqabN3h6Aj",
+  "theme": "characterize conditions for generalization",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1862,
+  "post_id": "xrv2fNJtqabN3h6Aj",
+  "theme": "test data-poisoning detection methods",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1863,
+  "post_id": "xwdRzJxyqFqgXTWbH",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1864,
+  "post_id": "xwdRzJxyqFqgXTWbH",
+  "theme": "compare methods/behavior across conditions",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1865,
+  "post_id": "xwdRzJxyqFqgXTWbH",
+  "theme": "localize signal to model components",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1866,
+  "post_id": "xwdRzJxyqFqgXTWbH",
+  "theme": "localize signal to model components",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1867,
+  "post_id": "y5EniHFSpNxhLbmq6",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1868,
+  "post_id": "y5EniHFSpNxhLbmq6",
+  "theme": "explain cause of observed phenomenon",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1869,
+  "post_id": "y5EniHFSpNxhLbmq6",
+  "theme": "characterize reward-hacking and power-seeking behavior",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1870,
+  "post_id": "y5EniHFSpNxhLbmq6",
+  "theme": "characterize reward-hacking and power-seeking behavior",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1871,
+  "post_id": "y7TpjDtKFcJSGzunm",
+  "theme": "solve prerequisites for autonomous AI science",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1872,
+  "post_id": "y7TpjDtKFcJSGzunm",
+  "theme": "solve prerequisites for autonomous AI science",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1873,
+  "post_id": "yFaZ2YhrrPJeTs366",
+  "theme": "map where chain-of-thought protects against imitation",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1874,
+  "post_id": "yFaZ2YhrrPJeTs366",
+  "theme": "map where chain-of-thought protects against imitation",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1875,
+  "post_id": "yFaZ2YhrrPJeTs366",
+  "theme": "map where chain-of-thought protects against imitation",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1876,
+  "post_id": "yHmJrDSJpFaNTZ9Tr",
+  "theme": "characterize dataset attributes causing emergent misalignment",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1877,
+  "post_id": "yHmJrDSJpFaNTZ9Tr",
+  "theme": "characterize dataset attributes causing emergent misalignment",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1878,
+  "post_id": "yHmJrDSJpFaNTZ9Tr",
+  "theme": "characterize dataset attributes causing emergent misalignment",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1879,
+  "post_id": "yHmJrDSJpFaNTZ9Tr",
+  "theme": "characterize dataset attributes causing emergent misalignment",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1880,
+  "post_id": "yHmJrDSJpFaNTZ9Tr",
+  "theme": "publish followup writeup",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1881,
+  "post_id": "yTameAzCdycci68sk",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1882,
+  "post_id": "yTameAzCdycci68sk",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1883,
+  "post_id": "yThJQTJxtmKNeZGwA",
+  "theme": "test robustness across scenario variations",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1884,
+  "post_id": "yThJQTJxtmKNeZGwA",
+  "theme": "test robustness across scenario variations",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1885,
+  "post_id": "yThJQTJxtmKNeZGwA",
+  "theme": "characterize how performance scales with capability",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1886,
+  "post_id": "yZudSC2tRJ2icL2Mj",
+  "theme": "publish followup writeup",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1887,
+  "post_id": "yrhu6MeFddnGRSLtQ",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1888,
+  "post_id": "yrhu6MeFddnGRSLtQ",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1889,
+  "post_id": "ysztF7doGvEbvTMqN",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1890,
+  "post_id": "ysztF7doGvEbvTMqN",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1891,
+  "post_id": "ysztF7doGvEbvTMqN",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1892,
+  "post_id": "ysztF7doGvEbvTMqN",
+  "theme": "SAE feature interpretation",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1893,
+  "post_id": "yxdHp2cZeQbZGREEN",
+  "theme": "automate eval generation pipeline",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1894,
+  "post_id": "yxdHp2cZeQbZGREEN",
+  "theme": "automate eval generation pipeline",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1895,
+  "post_id": "yxdHp2cZeQbZGREEN",
+  "theme": "automate eval generation pipeline",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1896,
+  "post_id": "yxdHp2cZeQbZGREEN",
+  "theme": "automate eval generation pipeline",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1897,
+  "post_id": "yxdHp2cZeQbZGREEN",
+  "theme": "automate eval generation pipeline",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1898,
+  "post_id": "zDcrmqdqvh3KmsBuF",
+  "theme": "improve feature-label generation method",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1899,
+  "post_id": "zDcrmqdqvh3KmsBuF",
+  "theme": "improve feature-label generation method",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1900,
+  "post_id": "zDcrmqdqvh3KmsBuF",
+  "theme": "improve feature-label generation method",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1901,
+  "post_id": "zF5gXf3KJhmvojDRf",
+  "theme": "improve monitor evaluation metrics",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1902,
+  "post_id": "zJkTdzzAM7hJKHunj",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1903,
+  "post_id": "zJkTdzzAM7hJKHunj",
+  "theme": "extend cross-context abduction experiments",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1904,
+  "post_id": "zJkTdzzAM7hJKHunj",
+  "theme": "extend cross-context abduction experiments",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1905,
+  "post_id": "zJkTdzzAM7hJKHunj",
+  "theme": "extend cross-context abduction experiments",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1906,
+  "post_id": "zKyKDre78napvtrEo",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1907,
+  "post_id": "zQqGhKPqaCBZZDCge",
+  "theme": "automate circuit discovery sweep across many graphs",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1908,
+  "post_id": "zQqGhKPqaCBZZDCge",
+  "theme": "automate circuit discovery sweep across many graphs",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1909,
+  "post_id": "zQqGhKPqaCBZZDCge",
+  "theme": "automate circuit discovery sweep across many graphs",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1910,
+  "post_id": "zbebxYCqsryPALh8C",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1911,
+  "post_id": "zbebxYCqsryPALh8C",
+  "theme": "study SAE feature absorption/splitting",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1912,
+  "post_id": "zbebxYCqsryPALh8C",
+  "theme": "study SAE feature absorption/splitting",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1913,
+  "post_id": "zbebxYCqsryPALh8C",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1914,
+  "post_id": "zbebxYCqsryPALh8C",
+  "theme": "test SAE architecture variant",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1915,
+  "post_id": "zcdpKZyMj2jENtRuL",
+  "theme": "develop alternative latent-reasoning architecture",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1916,
+  "post_id": "zcdpKZyMj2jENtRuL",
+  "theme": "develop alternative latent-reasoning architecture",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1917,
+  "post_id": "zcdpKZyMj2jENtRuL",
+  "theme": "develop alternative latent-reasoning architecture",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1918,
+  "post_id": "zfgQCdnMBa3hBdzpL",
+  "theme": "test concept-injection effects on output distribution",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1919,
+  "post_id": "zfgQCdnMBa3hBdzpL",
+  "theme": "test concept-injection effects on output distribution",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1920,
+  "post_id": "zfgQCdnMBa3hBdzpL",
+  "theme": "test concept-injection effects on output distribution",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1921,
+  "post_id": "zfgQCdnMBa3hBdzpL",
+  "theme": "replicate finding on larger models",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1922,
+  "post_id": "zgM92GFsgDi5XaSda",
+  "theme": "improve monitor evaluation metrics",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1923,
+  "post_id": "zjqrSKZuRLnjAniyo",
+  "theme": "explore fine-tuning-robust guardrail architectures",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1924,
+  "post_id": "zjqrSKZuRLnjAniyo",
+  "theme": "explore fine-tuning-robust guardrail architectures",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1925,
+  "post_id": "zjqrSKZuRLnjAniyo",
+  "theme": "explore fine-tuning-robust guardrail architectures",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1926,
+  "post_id": "zmSafQK7JjmfydAtT",
+  "theme": "characterize dataset attributes causing emergent misalignment",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1927,
+  "post_id": "zmfXZEsiycGLP9YZW",
+  "theme": "combine complementary interpretability methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1928,
+  "post_id": "zmfXZEsiycGLP9YZW",
+  "theme": "characterize dataset attributes causing emergent misalignment",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1929,
+  "post_id": "zmfXZEsiycGLP9YZW",
+  "theme": "develop automated detection/auditing tooling",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1930,
+  "post_id": "zmfXZEsiycGLP9YZW",
+  "theme": "scale up evaluation sample/diversity",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1931,
+  "post_id": "zmfXZEsiycGLP9YZW",
+  "theme": "develop automated detection/auditing tooling",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1932,
+  "post_id": "zmfXZEsiycGLP9YZW",
+  "theme": "build ground-truth eval benchmark",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1933,
+  "post_id": "zoYXpdaMgFT43Wc24",
+  "theme": "mechanistic interpretability of learned algorithm",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1934,
+  "post_id": "zoYXpdaMgFT43Wc24",
+  "theme": "publish followup writeup",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1935,
+  "post_id": "zoYXpdaMgFT43Wc24",
+  "theme": "combine complementary interpretability methods",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1936,
+  "post_id": "zsr4rWRASxwmgXfmq",
+  "theme": "combine complementary interpretability methods",
+  "scope": "moderate",
+  "kind": "scale-up"
+ }
+]

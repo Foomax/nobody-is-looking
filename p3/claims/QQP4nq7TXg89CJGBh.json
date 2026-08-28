@@ -1,0 +1,17 @@
+{
+ "post_id": "QQP4nq7TXg89CJGBh",
+ "primary_claim": "Current LLM activation-steering methods have substantial reliability and generalization limitations, degrade overall model performance/fluency, and are typically evaluated with metrics and benchmarks that overestimate their real-world effectiveness",
+ "claim_type": "negative",
+ "phenomenon": "activation steering",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2407.12404", "arXiv:2411.07213", "arXiv:2410.17245", "arXiv:2312.06681"],
+ "contradicts_or_qualifies": ["Qualifies prior steering papers' reported successes as measured in narrow/artificial settings (e.g. Multiple Choice QA, method-specific datasets) that do not reflect deployment and overestimate effectiveness"],
+ "stated_future_work": ["Develop theory for why and when steering should work, and theoretically principled methods", "Invest in robust benchmarking and evaluation methodologies for steering", "Report degradations in model performance caused by steering interventions", "Look beyond linear steering methods to approaches that can accommodate nonlinear representations"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "When evaluated more thoroughly or in different settings, many steering methods turn out to be unreliable and often fail to generalize outside their specific training setup."
+}

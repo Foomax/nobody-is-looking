@@ -1,0 +1,29 @@
+{
+ "post_id": "KWtchKwwnJkd4bwCi",
+ "primary_claim": "Hand-coded one-layer-MLP weights for memorising random two-token-sequence-to-label facts scale with model dimension almost as well as trained models at 90% accuracy (fitted exponent 1.93 vs 1.97) but with a worse prefactor (9.7x fewer facts at the same size), while a hybrid approach (hand-coded embeddings, trained unembedding) narrows the gap to roughly matching scaling exponents with about 3.5x fewer facts than fully trained models, and an architecture-ablation sweep shows the MLP block is by far the most important component for memorisation capacity.",
+ "claim_type": "method",
+ "phenomenon": "memorization capacity scaling",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "fitted scaling exponent and prefactor of max facts memorised vs model dimension d, hand-coded/hybrid vs trained (acc>=0.9 and acc=1)",
+  "value": "acc>=0.9: trained 9.42*d^1.97/log(d), hybrid 2.20*d^2.02/log(d) (~3.5x fewer), hand-coded 1.16*d^1.93/log(d) (~9.7x fewer); at acc=1 hand-coded falls further behind (~27x fewer facts at d=128)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": 11,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2012.14913", "arXiv:2104.08696", "arXiv:2202.05262", "arXiv:2210.07229", "arXiv:2404.05405", "arXiv:2306.00802", "arXiv:2310.02984", "arXiv:2412.06538", "arXiv:2512.00207", "lindalinsefors/memory-toy-models"],
+ "contradicts_or_qualifies": ["notes their construction differs qualitatively from the Dugan et al. gated-MLP construction found just before publishing, which appears to perform better but seems very unlike something models trained with gradient descent would learn", "argues learned attention underperforming uniform attention and dual embedding is due to training difficulty rather than expressivity, since learned attention is strictly more expressive than both alternatives"],
+ "stated_future_work": ["find better hand-coded/non-gradient-descent constructions that memorise more facts in the same number of weights, posed as an open community challenge", "improve the unembedding matrix design, which seems to have more low-hanging fruit than the embedding matrix", "adapt the Dugan et al. gated-MLP construction to this setting, since preliminary results suggest it performs better than the current hand-coded and hybrid solutions", "reverse-engineer trained models' actual weight-level mechanism now that a comparable-performance construction exists as a stepping stone"],
+ "limitations_stated": ["at acc=1 the hand-coded models fall further behind trained models as models grow (about 27x fewer facts at d=128), indicating a likely flaw in the construction", "many architecture-ablation effects (e.g. learned-attention results, possibly norm results) cannot be separated between architectural capacity and trainability with gradient descent", "one architecture combination (MLP+Norms+no-Residual+no-Bias+ReLU) performs anomalously badly for reasons the authors don't understand", "the constructed weight matrices only qualitatively resemble trained models' weights in some respects, so matching performance doesn't necessarily mean the same mechanism is used"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "However, our hand-coded models' scaling prefactor still falls short of trained models' by a factor of $9.7$."
+}

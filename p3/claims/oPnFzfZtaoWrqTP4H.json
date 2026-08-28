@@ -1,0 +1,20 @@
+{
+ "post_id": "oPnFzfZtaoWrqTP4H",
+ "primary_claim": "A new multi-scale aggregation defense (Ensemble everything everywhere) reaches state-of-the-art or above state-of-the-art adversarial robustness in computer vision at 100x-1000x less compute than existing methods, without adversarial training.",
+ "claim_type": "positive",
+ "phenomenon": "adversarial robustness",
+ "models": [
+  {"family": "GPT-4", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "3", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "compute cost relative to prior SOTA robustness methods", "value": "100x-1000x less compute", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "reached state-of-the-art or above state-of-the-art robustness at 100x – 1000x less compute"
+}

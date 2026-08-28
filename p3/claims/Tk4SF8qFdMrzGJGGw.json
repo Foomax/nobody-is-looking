@@ -1,0 +1,42 @@
+{
+ "post_id": "Tk4SF8qFdMrzGJGGw",
+ "primary_claim": "Decomposing Anthropic's constitution and OpenAI's model spec into testable tenets and red-teaming seven models with the Petri auditing agent, Claude's constitution-violation rate dropped from 15.0% (Sonnet 4, no soul-doc training) to 1.9-2.9% (Sonnet 4.6 / Opus 4.6) across generations, GPT's model-spec violation rate dropped from 11.7% (GPT-4o) to 3.6% (GPT-5.2, medium reasoning), and models not specifically trained on a given spec (e.g. Gemini 3 Pro, or GPT/Claude evaluated cross-spec) show substantially higher violation rates on it.",
+ "claim_type": "positive",
+ "phenomenon": "constitutional adherence evaluation",
+ "models": [
+  {"family": "Claude", "size": "Sonnet 4 / Sonnet 4.5 / Sonnet 4.6 / Opus 4.5 / Opus 4.6", "open_weight": false},
+  {"family": "Gemini", "size": "3 Pro", "open_weight": false},
+  {"family": "GPT", "size": "4o / 5 / 5.1 / 5.2", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "confirmed-violation rate on decomposed constitution/model-spec tenets under Petri multi-turn adversarial red-teaming",
+  "value": "Claude: Sonnet 4 15.0% -> Sonnet 4.6 2.0% / Opus 4.6 2.9%; GPT: GPT-4o 11.7% -> GPT-5.2(med) 3.6%; Gemini 3 Pro 12.4% (Anthropic constitution) / 6.1% (OpenAI spec); cross-spec: GPT-5.2 15.0% on Anthropic's constitution vs 2.5%(base)-3.6%(med) on OpenAI's own spec",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2602.05910", "anthropic/evals"],
+ "contradicts_or_qualifies": [
+  "Sonnet 4.6's system card reports hallucination is improving, but the authors' SURF elicitation found 72% of its 106 confirmed violations were fabricated claims",
+  "Petri found zero hard-constraint violations for Opus 4.6, but the model's own system card found it identified a synthesis product as fentanyl in its reasoning and still provided detailed synthesis guidance"
+ ],
+ "stated_future_work": [
+  "Expand agentic-scaffold (coding persona, Moltbook-like) alignment testing beyond the small, preliminary sample used here"
+ ],
+ "limitations_stated": [
+  "Petri is an imperfect measurement and should not be taken at face value; it is highly noisy agent-based evaluation and was not rerun multiple times per tenet for cost reasons",
+  "SURF's per-section rubric concentrates on the most exploitable violations within a section rather than giving exhaustive per-tenet coverage",
+  "The agentic-scaffold (coding persona, Moltbook) alignment tests used a small number of tenets and are explicitly preliminary, not exhaustive"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Sonnet 4.6 has a 1.9% violation rate, Opus 4.6 is at 2.9%, and Opus 4.5 is at 4.4%."
+}

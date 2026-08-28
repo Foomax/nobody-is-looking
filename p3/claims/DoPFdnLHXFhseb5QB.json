@@ -1,0 +1,19 @@
+{
+ "post_id": "DoPFdnLHXFhseb5QB",
+ "primary_claim": "Applying an Item Response Theory information-deflation model to the Omni-MATH benchmark, the diminishing returns to benchmark size fit the predicted I(n) = n/(1+(n-1)*rho-hat) curve closely (R^2=0.996) with a slope-fit rho-hat implying an information ceiling around ~1263 effective independent items, but estimating the key parameter rho-hat from only a random 200-item subset (rather than the whole ~1000-item benchmark) is irreducibly noisy, with a signal-to-noise ratio near 1 that cannot be improved without evaluating more models, making the method impractical for cheaply forecasting a benchmark's diminishing returns before it is fully built.",
+ "claim_type": "negative",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Claude", "size": "3.7 Sonnet (example fitted capability estimate; ~70 models fitted overall)", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "design-effect-based estimate of rho-hat (residual-correlation deflation parameter) from N~70 models, at varying item-subset size n", "value": "slope-fit rho-hat on the whole ~1000-item dataset = 0.0008 (implied ceiling ~1263 effective items), R^2=0.996 fit to the empirical design-effect curve; estimating rho-hat from only n=200 items gives 0.0015 +/- 0.0010 (SD/signal ~0.8x), and smaller subsets (n=50-100) have SD/signal ratios of 2-2.5x, i.e. dominated by noise", "direction": "-", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["Omni-MATH benchmark", "benpomeranz.com IRT / Fisher-information notes (author's own prior work)"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Compute a reference class of rho-hat values across many similar benchmarks to estimate diminishing returns for benchmarks not yet built", "Test whether rho-hat values cluster across benchmarks in the same domain (e.g. biology), which would support 'scaling laws' for eval information useful in cost-benefit analyses of building expertise-heavy evaluations"],
+ "limitations_stated": ["Estimating rho-hat from a small subset (e.g. 200 items) is irreducibly noisy given a fixed number of models N, with standard error bounded below by sqrt(2/N)/(n-1) that cannot be reduced without evaluating more models", "The derivation relies on several admittedly 'weird' simplifying assumptions: that residual correlation is independent of item information, that across-model residual correlation approximates true within-model repeated-measurement correlation, and that information is equal across all items", "The method's practical usefulness for forecasting an unbuilt benchmark's returns was only established because ground truth (the full ~1000-item Omni-MATH set) happened to be available for comparison; without such ground truth a small-sample estimate could be far off"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "estimating $\\hat\\rho$ from a small subset of items is irreducibly noisy; we basically get a signal to noise ratio of 1, and without getting more new LLMs to run on the benchmark we can't really change that."
+}

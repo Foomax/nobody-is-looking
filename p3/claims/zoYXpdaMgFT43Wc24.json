@@ -1,0 +1,43 @@
+{
+ "post_id": "zoYXpdaMgFT43Wc24",
+ "primary_claim": "DiffusionGemma is not significantly less transparent than Gemma: its naive opaque serial depth is 28.6x that of Gemma, but mapping the information flowing between denoising steps through an interpretable token bottleneck reduces this to just 1.1x, with no decrease in downstream performance, and DiffusionGemma is similarly monitorable to Gemma 4.",
+ "claim_type": "positive",
+ "phenomenon": "latent reasoning transparency audit",
+ "models": [
+  {"family": "Gemma", "size": null, "open_weight": false},
+  {"family": "DiffusionGemma", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "opaque serial depth (DiffusionGemma relative to Gemma)",
+  "value": "28.6x naively, reduced to 1.1x when intermediate states are treated as interpretable",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2512.18311",
+  "arXiv:2603.09786",
+  "arXiv:2512.15674"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "investigate intermediate tokens the model is confident in that are not similar to any final tokens",
+  "24 open problems that we would be excited for the community to investigate",
+  "continue development of techniques like Natural Language Autoencoders and Activation Oracles that translate activations into natural text"
+ ],
+ "limitations_stated": [
+  "DiffusionGemma is still less algorithmically transparent than corresponding autoregressive LLMs, even though its variable transparency is comparable",
+  "even though the variables the model uses at different steps are interpretable, this does not necessarily mean we understand the algorithm the model uses to reach the final answer"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Treating these intermediate states as interpretable reduces the opaque serial depth to just 1.1X that of Gemma 4."
+}

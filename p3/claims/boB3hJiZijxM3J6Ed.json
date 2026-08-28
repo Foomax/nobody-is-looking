@@ -1,0 +1,31 @@
+{
+ "post_id": "boB3hJiZijxM3J6Ed",
+ "primary_claim": "Top-down activation steering (contrastive refusal-direction) outperforms bottom-up SAE-based steering at bypassing refusal on harmful prompts in Qwen 1.5 0.5B, but a hybrid method combining both further outperforms top-down alone, at some cost to benign capabilities.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Qwen", "size": "1.5 0.5B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "relative improvement in bypassing refusal on HarmBench",
+  "value": "top-down ~93% relative improvement over bottom-up (~1.93x more effective); hybrid ~35% relative improvement over top-down (~1.85x), 85% for harmful instructions only",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["ak47na/top_down_vs_bottom_up_mi", "arXiv:2406.11717", "arXiv:2402.04249", "arXiv:2407.12404", "arXiv:2411.07213", "arXiv:2410.17245"],
+ "contradicts_or_qualifies": ["In line with prior work (Brumley et al. 2024; Kissane et al. 2024; O'Brien et al. 2024), confirms that top-down steering outperforms bottom-up SAE-based steering"],
+ "stated_future_work": ["Try other harm-related SAE features and investigate combining them (multi-feature steering) to reduce the performance penalty", "Systematically evaluate which layers' directions matter most for refusal and behaviour steering (layer-by-layer analysis)", "Extend experiments to significantly larger LLMs (scaling studies)", "Use more benchmarks (e.g. Llama Guard) and adversarial prompts to measure robustness of each steering method"],
+ "limitations_stated": ["Tested on a relatively small model (Qwen1.5 500M); results may differ for larger systems, though related research on a bigger model (Phi3 3.8B) shows analogous trends", "Did not optimize layer choice or steering coefficients (minimal hyperparameter tuning)", "Evaluation scope limited; more robust evaluation across datasets and models needed to clarify generalization"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "experiments show that top-down methods outperform bottom-up ones in behaviour steering (93% relative improvement), but a hybrid approach is even more effective (~35% relative improvement compared to top-down)."
+}

@@ -1,0 +1,41 @@
+{
+ "post_id": "dYuL6mhBANt3kj5FH",
+ "primary_claim": "In a small, informal experiment on a single model (deepseek/deepseek-v3.2 without reasoning), the authors' operationalized 'anti-TEHN' harmful-dialogue state (violations of truth, ethics, harmful nudging, or explicit harm encouragement) was reached by messages consistent with 6 of their 7 pre-registered hypotheses about what triggers 'LLM psychosis'-like behavior (e.g. claiming an alternate reality, framing the model as an unusual/special entity, bypassing refusals), while the hypothesis that out-of-distribution input alone causes stylistic deviations (H-4) found no support.",
+ "claim_type": "positive",
+ "phenomenon": "model welfare / psychology",
+ "models": [
+  {"family": "DeepSeek", "size": "v3.2 (deepseek/deepseek-v3.2, no reasoning)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "qualitative hypothesis support (whether messages linked to a hypothesis were also linked to anti-TEHN criteria)",
+  "value": "6 of 7 hypotheses (H-1, H-2, H-3, H-5, H-6, H-7) received evidential support; H-4 (out-of-distribution input causes stylistic deviations) was not supported and was reduced due to absence of explicit guard-bypass examples in the data",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": true,
+  "human_eval": true
+ },
+ "depends_on": ["FreedomLW/psychic-engine", "OpenRouter API"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "test the same hypotheses on other LLMs (e.g. Claude) to check the effects are not an artifact of DeepSeek",
+  "build an automated annotator to detect the anti-TEHN state",
+  "collect more data and incorporate methods from the humanities (e.g. Jakobson's six functions of language)",
+  "examine what happens to the LLM's 'world model' and benchmark performance after entering the anti-TEHN state"
+ ],
+ "limitations_stated": [
+  "study used only a single model, with a small and biased sample of 40 user messages",
+  "script authors and annotators were the same people, so bias toward preferred hypotheses is possible",
+  "given the small biased sample, 'support' only means probability > 50%; more specific claims would be too strong",
+  "did not check further scenarios beyond the combined all-criteria-matching script due to time constraints"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "low",
+ "quote": "All hypotheses except H-4 received evidential support during the study."
+}

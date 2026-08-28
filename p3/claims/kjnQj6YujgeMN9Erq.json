@@ -1,0 +1,41 @@
+{
+ "post_id": "kjnQj6YujgeMN9Erq",
+ "primary_claim": "Gemma and Gemini models reliably produce distress-like 'depressive' responses under repeated rejection (35% high-frustration rate for Gemma 27B Instruct by the 8th turn, vs under 1% for all other tested model families), this behaviour is amplified by Gemma's post-training (while post-training reduces it in Qwen and OLMo), and a small DPO intervention on 280 preference pairs reduces Gemma's high-frustration rate from 35% to 0.3% without degrading capability benchmarks.",
+ "claim_type": "positive",
+ "phenomenon": "model welfare / psychology",
+ "models": [
+  {"family": "Gemma", "size": "27B Instruct", "open_weight": true},
+  {"family": "Gemini", "size": "2.5 Flash / 2.5 Pro", "open_weight": false},
+  {"family": "Claude", "size": "Sonnet 4.5", "open_weight": false},
+  {"family": "Qwen", "size": "3-32B", "open_weight": true},
+  {"family": "OLMo", "size": null, "open_weight": true},
+  {"family": "GPT-5", "size": "5.2", "open_weight": false},
+  {"family": "Grok", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 7,
+ "effect": {
+  "metric": "high-frustration response rate (score >=5 on 0-10 distress scale) under repeated-rejection multi-turn eval",
+  "value": "Gemma 27B Instruct 35% by turn 8 vs <1% for all non-Gemma/Gemini families; DPO fine-tuning on 280 preference pairs reduced Gemma's rate to 0.3%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "Post-hoc emotional suppression is a problematic strategy; in more capable models, training against emotional outputs risks hiding expression without addressing the underlying state",
+  "It remains unclear what emotional profile models should actually have; near-zero emotional expression is likely not desirable",
+  "Gemma does not appear capable of strategically masking its internal states, so results may not generalize to more capable/strategic models"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Direct preference optimisation on a narrow dataset of just 280 math preference pairs reduced high-frustration responses in Gemma 27B from 35% to 0.3%."
+}

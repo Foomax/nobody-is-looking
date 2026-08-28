@@ -1,0 +1,19 @@
+{
+ "post_id": "mXuqpJkJpaeTjyCgm",
+ "primary_claim": "Activation steering applied to CODI's latent reasoning chain using average difference vectors between latent steps fails to reliably improve accuracy when steering hidden states (performing similarly to random-vector patching), but steering the KV cache directly (rather than hidden states) can increase accuracy for specific latent-pair combinations, particularly those involving later latent steps.",
+ "claim_type": "negative",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Llama", "size": "3.2 1B (CODI checkpoint)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "accuracy change from activation-difference steering", "value": "hidden-state steering underperforms no-steering baseline and matches random-vector patching until later latents; KV-cache steering with specific vector-pair combinations (e.g. A1-B2, A2-B3, A4-B5) increases accuracy, especially for latent step 5", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["post: Probing CODI's latent reasoning chain with logit lens and tuned lens (Latent Reasoning Sprint #1)", "post: Latent Reasoning Sprint #2: Token-Based Signals and Linear Probes", "post: Can we interpret latent reasoning using current mechanistic interpretability tools?", "AlignmentResearch/tuned-lens"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Find a setup that makes activation steering work with CODI", "Complete the thought anchors work with CODI", "Investigate why certain activation differences for the KV cache increase accuracy", "Use methods such as PCA to observe why activation steering worked on KV cache but not hidden state"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Activation steering for the average difference between latent vectors did not create increases in accuracy with specific latent pair combinations and instead matched closely with random vectors... Steering the kv cache to steer CODI outputs can increase accuracy while steering with hidden states do not seem to have a significant effect on CODI"
+}

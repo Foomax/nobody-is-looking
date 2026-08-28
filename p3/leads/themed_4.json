@@ -1,0 +1,2263 @@
+[
+ {
+  "idx": 969,
+  "post_id": "a98MFPmqH54J2ayBn",
+  "theme": "query-budget constrained attack",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 970,
+  "post_id": "a98MFPmqH54J2ayBn",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 971,
+  "post_id": "a98MFPmqH54J2ayBn",
+  "theme": "improve tooling/open-source release",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 972,
+  "post_id": "aFyir2PaoCHK5prAu",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 973,
+  "post_id": "aTcsN5ZZDnMFJvRiG",
+  "theme": "probe evaluator-specific representations",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 974,
+  "post_id": "aWYQHh2pEFCLYh85C",
+  "theme": "test method variant on baseline",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 975,
+  "post_id": "aWYQHh2pEFCLYh85C",
+  "theme": "test on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 976,
+  "post_id": "aWYQHh2pEFCLYh85C",
+  "theme": "test alternative techniques",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 977,
+  "post_id": "aWYQHh2pEFCLYh85C",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 978,
+  "post_id": "aWYQHh2pEFCLYh85C",
+  "theme": "improve RL reward design",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 979,
+  "post_id": "aWYQHh2pEFCLYh85C",
+  "theme": "improve RL reward design",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 980,
+  "post_id": "aWYQHh2pEFCLYh85C",
+  "theme": "improve RL reward design",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 981,
+  "post_id": "aWYQHh2pEFCLYh85C",
+  "theme": "improve RL reward design",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 982,
+  "post_id": "aXSuc6pdCy6SkeKZk",
+  "theme": "characterize mechanism/property",
+  "scope": "narrow",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 983,
+  "post_id": "aXSuc6pdCy6SkeKZk",
+  "theme": "expand layer/component coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 984,
+  "post_id": "aXSuc6pdCy6SkeKZk",
+  "theme": "expand feature/demographic coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 985,
+  "post_id": "aYtrLhoZtCKZnfBvA",
+  "theme": "write follow-up post",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 986,
+  "post_id": "anX4QrNjhJqGFvrBr",
+  "theme": "scale up to practical settings",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 987,
+  "post_id": "anX4QrNjhJqGFvrBr",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 988,
+  "post_id": "anX4QrNjhJqGFvrBr",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 989,
+  "post_id": "arwYHjrZxnrTA6RyH",
+  "theme": "probe evaluator-specific representations",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 990,
+  "post_id": "arwYHjrZxnrTA6RyH",
+  "theme": "probe evaluator-specific representations",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 991,
+  "post_id": "arwYHjrZxnrTA6RyH",
+  "theme": "probe evaluator-specific representations",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 992,
+  "post_id": "ayojdPmNB5bYJcRfL",
+  "theme": "characterize behavioral misalignment drift",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 993,
+  "post_id": "ayojdPmNB5bYJcRfL",
+  "theme": "characterize behavioral misalignment drift",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 994,
+  "post_id": "ayojdPmNB5bYJcRfL",
+  "theme": "characterize behavioral misalignment drift",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 995,
+  "post_id": "ayojdPmNB5bYJcRfL",
+  "theme": "characterize behavioral misalignment drift",
+  "scope": "broad",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 996,
+  "post_id": "aypknr8scyrhBjmYL",
+  "theme": "test alignment-faking stochasticity",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 997,
+  "post_id": "b8eeCGe3FWzHKbePF",
+  "theme": "replicate and extend study",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 998,
+  "post_id": "b8eeCGe3FWzHKbePF",
+  "theme": "improve experimental realism",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 999,
+  "post_id": "b8eeCGe3FWzHKbePF",
+  "theme": "develop mitigation techniques",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1000,
+  "post_id": "bALBxf3yGGx4bvvem",
+  "theme": "test generalization to other settings",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1001,
+  "post_id": "bALBxf3yGGx4bvvem",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1002,
+  "post_id": "bALBxf3yGGx4bvvem",
+  "theme": "generalize to other task types",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1003,
+  "post_id": "bALBxf3yGGx4bvvem",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1004,
+  "post_id": "bALBxf3yGGx4bvvem",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1005,
+  "post_id": "bejfwfi3ozY7qQhsv",
+  "theme": "increase sample size for power",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1006,
+  "post_id": "bejfwfi3ozY7qQhsv",
+  "theme": "falsification/control condition test",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1007,
+  "post_id": "bejfwfi3ozY7qQhsv",
+  "theme": "activation steering causal test",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1008,
+  "post_id": "bejfwfi3ozY7qQhsv",
+  "theme": "inspect CoT for faithfulness",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1009,
+  "post_id": "bejfwfi3ozY7qQhsv",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1010,
+  "post_id": "bhxgkb7YtRNwBxLMd",
+  "theme": "improve experimental realism",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1011,
+  "post_id": "bhxgkb7YtRNwBxLMd",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1012,
+  "post_id": "bhxgkb7YtRNwBxLMd",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1013,
+  "post_id": "bhxgkb7YtRNwBxLMd",
+  "theme": "build more realistic model organisms",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1014,
+  "post_id": "bhxgkb7YtRNwBxLMd",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1015,
+  "post_id": "boB3hJiZijxM3J6Ed",
+  "theme": "multi-feature steering combination",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1016,
+  "post_id": "boB3hJiZijxM3J6Ed",
+  "theme": "layer-by-layer analysis",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1017,
+  "post_id": "boB3hJiZijxM3J6Ed",
+  "theme": "test on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1018,
+  "post_id": "boB3hJiZijxM3J6Ed",
+  "theme": "test robustness to adversarial attacks",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1019,
+  "post_id": "bqWihHtDnDseyfF2T",
+  "theme": "test on more model families",
+  "scope": "narrow",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1020,
+  "post_id": "bqWihHtDnDseyfF2T",
+  "theme": "improve tooling/open-source release",
+  "scope": "narrow",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1021,
+  "post_id": "bqWihHtDnDseyfF2T",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1022,
+  "post_id": "bqWihHtDnDseyfF2T",
+  "theme": "validate intervention in practice",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1023,
+  "post_id": "bsXPTiAhhwt5nwBW3",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1024,
+  "post_id": "bsXPTiAhhwt5nwBW3",
+  "theme": "layer-by-layer analysis",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1025,
+  "post_id": "bsXPTiAhhwt5nwBW3",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1026,
+  "post_id": "bsXPTiAhhwt5nwBW3",
+  "theme": "circuit-level interpretability analysis",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1027,
+  "post_id": "buxBdp8NtHGgBwabv",
+  "theme": "characterize mechanism/property",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1028,
+  "post_id": "buxBdp8NtHGgBwabv",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1029,
+  "post_id": "buxBdp8NtHGgBwabv",
+  "theme": "characterize mechanism/property",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1030,
+  "post_id": "buyCkzfa2J3Dso6tz",
+  "theme": "test on more model families",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1031,
+  "post_id": "buyCkzfa2J3Dso6tz",
+  "theme": "test on larger models",
+  "scope": "narrow",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1032,
+  "post_id": "buyCkzfa2J3Dso6tz",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1033,
+  "post_id": "buyCkzfa2J3Dso6tz",
+  "theme": "layer-by-layer analysis",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1034,
+  "post_id": "buyCkzfa2J3Dso6tz",
+  "theme": "ablate design choice",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1035,
+  "post_id": "bxaWTNrdgJpkLXmgm",
+  "theme": "improve tooling/open-source release",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1036,
+  "post_id": "bxaWTNrdgJpkLXmgm",
+  "theme": "test on more model families",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1037,
+  "post_id": "bxaWTNrdgJpkLXmgm",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1038,
+  "post_id": "c2tqL9xPbttisAHtt",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1039,
+  "post_id": "c2tqL9xPbttisAHtt",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1040,
+  "post_id": "c2tqL9xPbttisAHtt",
+  "theme": "probe evaluator-specific representations",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1041,
+  "post_id": "c4LYmzEC6cFQzrDZz",
+  "theme": "characterize mechanism/property",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1042,
+  "post_id": "c4LYmzEC6cFQzrDZz",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1043,
+  "post_id": "c4LYmzEC6cFQzrDZz",
+  "theme": "extend thought-anchor method",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1044,
+  "post_id": "cGcwQDKAKbQ68BGuR",
+  "theme": "improve benchmark realism",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1045,
+  "post_id": "cN3n2HDNkf4Bterxx",
+  "theme": "judge distillation for detection",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1046,
+  "post_id": "cN3n2HDNkf4Bterxx",
+  "theme": "judge distillation for detection",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1047,
+  "post_id": "cNDJuXNZ8MrkPZNzj",
+  "theme": "test on more model families",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1048,
+  "post_id": "cNDJuXNZ8MrkPZNzj",
+  "theme": "explore practical applications",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1049,
+  "post_id": "cNDJuXNZ8MrkPZNzj",
+  "theme": "develop mitigation techniques",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1050,
+  "post_id": "cNDJuXNZ8MrkPZNzj",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1051,
+  "post_id": "cTRKj3giaZN5Ysyx2",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1052,
+  "post_id": "cTRKj3giaZN5Ysyx2",
+  "theme": "test on larger models",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1053,
+  "post_id": "cTRKj3giaZN5Ysyx2",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1054,
+  "post_id": "cTRKj3giaZN5Ysyx2",
+  "theme": "test on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1055,
+  "post_id": "cTRKj3giaZN5Ysyx2",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1056,
+  "post_id": "cfbdyJGbHkY8rPesE",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1057,
+  "post_id": "cfbdyJGbHkY8rPesE",
+  "theme": "improve benchmark realism",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1058,
+  "post_id": "cfbdyJGbHkY8rPesE",
+  "theme": "improve benchmark realism",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1059,
+  "post_id": "cfbdyJGbHkY8rPesE",
+  "theme": "study human baseline comparison",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1060,
+  "post_id": "cgCeqi8cDn9RnDdQA",
+  "theme": "test on more model families",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1061,
+  "post_id": "cgCeqi8cDn9RnDdQA",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1062,
+  "post_id": "cgCeqi8cDn9RnDdQA",
+  "theme": "activation steering causal test",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1063,
+  "post_id": "cgCeqi8cDn9RnDdQA",
+  "theme": "test on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1064,
+  "post_id": "ciH5JXSvP7CLoq4MJ",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1065,
+  "post_id": "ciH5JXSvP7CLoq4MJ",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1066,
+  "post_id": "ciH5JXSvP7CLoq4MJ",
+  "theme": "characterize mechanism/property",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1067,
+  "post_id": "ciH5JXSvP7CLoq4MJ",
+  "theme": "increase sample size for power",
+  "scope": "narrow",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1068,
+  "post_id": "cnj9tXk3okFPsXzmD",
+  "theme": "increase sample size for power",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1069,
+  "post_id": "cnj9tXk3okFPsXzmD",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1070,
+  "post_id": "cnj9tXk3okFPsXzmD",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1071,
+  "post_id": "cnj9tXk3okFPsXzmD",
+  "theme": "improve experimental protocol robustness",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1072,
+  "post_id": "cnj9tXk3okFPsXzmD",
+  "theme": "increase sample size for power",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1073,
+  "post_id": "cpFqDDjhvhbaoyHnd",
+  "theme": "test on larger models",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1074,
+  "post_id": "csNk8ECk9SiKHkw35",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1075,
+  "post_id": "csNk8ECk9SiKHkw35",
+  "theme": "test on more model families",
+  "scope": "narrow",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1076,
+  "post_id": "csNk8ECk9SiKHkw35",
+  "theme": "replicate and extend study",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1077,
+  "post_id": "csNk8ECk9SiKHkw35",
+  "theme": "improve benchmark realism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1078,
+  "post_id": "d4oHgzi2NoLT8tEs2",
+  "theme": "assess validity of approach",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1079,
+  "post_id": "d4oHgzi2NoLT8tEs2",
+  "theme": "assess validity of approach",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1080,
+  "post_id": "d4oHgzi2NoLT8tEs2",
+  "theme": "test on frontier models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1081,
+  "post_id": "d4oHgzi2NoLT8tEs2",
+  "theme": "adapt method to limited access",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1082,
+  "post_id": "d4zC3ydP6jGGup6Eo",
+  "theme": "build more realistic model organisms",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1083,
+  "post_id": "d4zC3ydP6jGGup6Eo",
+  "theme": "multi-feature steering combination",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1084,
+  "post_id": "d8xDGzCEYE639qqEv",
+  "theme": "study why phenomenon occurs",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1085,
+  "post_id": "d8xDGzCEYE639qqEv",
+  "theme": "extend role framework",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1086,
+  "post_id": "d8xDGzCEYE639qqEv",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1087,
+  "post_id": "d8xDGzCEYE639qqEv",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1088,
+  "post_id": "d8xDGzCEYE639qqEv",
+  "theme": "extend role framework",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1089,
+  "post_id": "d9amcRzns5pwg9Fcu",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1090,
+  "post_id": "d9amcRzns5pwg9Fcu",
+  "theme": "study why phenomenon occurs",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1091,
+  "post_id": "d9amcRzns5pwg9Fcu",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1092,
+  "post_id": "dEiBJDtSmbC8dChwe",
+  "theme": "write follow-up post",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1093,
+  "post_id": "dEiBJDtSmbC8dChwe",
+  "theme": "improve benchmark realism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1094,
+  "post_id": "dJ7XFvqh5oWQbB4CJ",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1095,
+  "post_id": "dJ7XFvqh5oWQbB4CJ",
+  "theme": "explore practical applications",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1096,
+  "post_id": "dJ7XFvqh5oWQbB4CJ",
+  "theme": "test alternative techniques",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1097,
+  "post_id": "dJ7XFvqh5oWQbB4CJ",
+  "theme": "develop mitigation techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1098,
+  "post_id": "dJ7XFvqh5oWQbB4CJ",
+  "theme": "probe evaluator-specific representations",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1099,
+  "post_id": "dRmeXo6REf5n8xGug",
+  "theme": "study why phenomenon occurs",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1100,
+  "post_id": "dRmeXo6REf5n8xGug",
+  "theme": "test on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1101,
+  "post_id": "dRmeXo6REf5n8xGug",
+  "theme": "layer-by-layer analysis",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1102,
+  "post_id": "dRmeXo6REf5n8xGug",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1103,
+  "post_id": "dRmeXo6REf5n8xGug",
+  "theme": "characterize behavioral misalignment drift",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1104,
+  "post_id": "dS5dSgwaDQRoWdTuu",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1105,
+  "post_id": "dS5dSgwaDQRoWdTuu",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1106,
+  "post_id": "dS5dSgwaDQRoWdTuu",
+  "theme": "develop better baseline/control",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1107,
+  "post_id": "dS5dSgwaDQRoWdTuu",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1108,
+  "post_id": "dYuL6mhBANt3kj5FH",
+  "theme": "test on more model families",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1109,
+  "post_id": "dYuL6mhBANt3kj5FH",
+  "theme": "improve tooling/open-source release",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1110,
+  "post_id": "dYuL6mhBANt3kj5FH",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1111,
+  "post_id": "dYuL6mhBANt3kj5FH",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1112,
+  "post_id": "ddBHejnZwPrbfEyaj",
+  "theme": "extend to RL training stage",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1113,
+  "post_id": "ddBHejnZwPrbfEyaj",
+  "theme": "build more realistic model organisms",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1114,
+  "post_id": "ddBHejnZwPrbfEyaj",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1115,
+  "post_id": "ddBHejnZwPrbfEyaj",
+  "theme": "study CoT obfuscation/monitorability",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1116,
+  "post_id": "ddBHejnZwPrbfEyaj",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1117,
+  "post_id": "deesrjitvXM4xYGZd",
+  "theme": "replicate and extend study",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 1118,
+  "post_id": "dktDLahikgoK4sen3",
+  "theme": "test on more model families",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1119,
+  "post_id": "dktDLahikgoK4sen3",
+  "theme": "develop mitigation techniques",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1120,
+  "post_id": "dktDLahikgoK4sen3",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1121,
+  "post_id": "dktDLahikgoK4sen3",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1122,
+  "post_id": "dktDLahikgoK4sen3",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1123,
+  "post_id": "dwEgSEPxpKjz3Fw5k",
+  "theme": "improve experimental realism",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1124,
+  "post_id": "dwEgSEPxpKjz3Fw5k",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1125,
+  "post_id": "dwEgSEPxpKjz3Fw5k",
+  "theme": "study CoT obfuscation/monitorability",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1126,
+  "post_id": "e8nMZewwonifENQYB",
+  "theme": "improve tooling/open-source release",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1127,
+  "post_id": "e8nMZewwonifENQYB",
+  "theme": "test generalization to other settings",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1128,
+  "post_id": "e8nMZewwonifENQYB",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1129,
+  "post_id": "e8nMZewwonifENQYB",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1130,
+  "post_id": "eLAmp2pAAvZiBweCB",
+  "theme": "ablate design choice",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1131,
+  "post_id": "eLAmp2pAAvZiBweCB",
+  "theme": "conduct statistical significance testing",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1132,
+  "post_id": "eLAmp2pAAvZiBweCB",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1133,
+  "post_id": "eLAmp2pAAvZiBweCB",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1134,
+  "post_id": "eLAmp2pAAvZiBweCB",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1135,
+  "post_id": "eaEqAzGN3uJfpfGoc",
+  "theme": "explore practical applications",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1136,
+  "post_id": "eaEqAzGN3uJfpfGoc",
+  "theme": "test robustness to adversarial attacks",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1137,
+  "post_id": "eaEqAzGN3uJfpfGoc",
+  "theme": "build more realistic model organisms",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1138,
+  "post_id": "eczwWrmX5XNEo7JsS",
+  "theme": "build unifying framework/theory",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1139,
+  "post_id": "eczwWrmX5XNEo7JsS",
+  "theme": "measure concept-direction alignment fidelity",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1140,
+  "post_id": "eczwWrmX5XNEo7JsS",
+  "theme": "build unifying framework/theory",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1141,
+  "post_id": "eczwWrmX5XNEo7JsS",
+  "theme": "test alternative techniques",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1142,
+  "post_id": "eeFFpKCDWE9gjfzsk",
+  "theme": "build more realistic model organisms",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1143,
+  "post_id": "eeFFpKCDWE9gjfzsk",
+  "theme": "study CoT obfuscation/monitorability",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1144,
+  "post_id": "f4vmcJo226LP7ggmr",
+  "theme": "write follow-up post",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1145,
+  "post_id": "f4yvPr8f6Rewy87jY",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1146,
+  "post_id": "f4yvPr8f6Rewy87jY",
+  "theme": "ablate design choice",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1147,
+  "post_id": "f4yvPr8f6Rewy87jY",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1148,
+  "post_id": "f4yvPr8f6Rewy87jY",
+  "theme": "improve benchmark realism",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1149,
+  "post_id": "f6LoBqSKXFZzMYACN",
+  "theme": "activation steering causal test",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1150,
+  "post_id": "f6LoBqSKXFZzMYACN",
+  "theme": "test on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1151,
+  "post_id": "f6LoBqSKXFZzMYACN",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1152,
+  "post_id": "f7gd7riceJPaPKkNS",
+  "theme": "test generalization to other settings",
+  "scope": "narrow",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1153,
+  "post_id": "f7gd7riceJPaPKkNS",
+  "theme": "develop better baseline/control",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1154,
+  "post_id": "f7gd7riceJPaPKkNS",
+  "theme": "ablate design choice",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1155,
+  "post_id": "f7gd7riceJPaPKkNS",
+  "theme": "develop better baseline/control",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1156,
+  "post_id": "f7gd7riceJPaPKkNS",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1157,
+  "post_id": "f9cnGHCiJgo5eDkSQ",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1158,
+  "post_id": "f9cnGHCiJgo5eDkSQ",
+  "theme": "increase sample size for power",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1159,
+  "post_id": "f9cnGHCiJgo5eDkSQ",
+  "theme": "circuit-level interpretability analysis",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1160,
+  "post_id": "f9cnGHCiJgo5eDkSQ",
+  "theme": "ablate design choice",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1161,
+  "post_id": "f9cnGHCiJgo5eDkSQ",
+  "theme": "improve benchmark realism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1162,
+  "post_id": "fKboizBPnPDa9suLF",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1163,
+  "post_id": "fKboizBPnPDa9suLF",
+  "theme": "ablate design choice",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1164,
+  "post_id": "fKboizBPnPDa9suLF",
+  "theme": "write follow-up post",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1165,
+  "post_id": "fKboizBPnPDa9suLF",
+  "theme": "multi-feature steering combination",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1166,
+  "post_id": "fSRg5qs9TPbNy3sm5",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1167,
+  "post_id": "fSRg5qs9TPbNy3sm5",
+  "theme": "ablate design choice",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1168,
+  "post_id": "fTnnq82CB5vxqrNp9",
+  "theme": "improve experimental realism",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1169,
+  "post_id": "fTnnq82CB5vxqrNp9",
+  "theme": "ablate design choice",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1170,
+  "post_id": "fTnnq82CB5vxqrNp9",
+  "theme": "explore practical applications",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1171,
+  "post_id": "fTnnq82CB5vxqrNp9",
+  "theme": "conduct statistical significance testing",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1172,
+  "post_id": "fTnnq82CB5vxqrNp9",
+  "theme": "falsification/control condition test",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1173,
+  "post_id": "fabXad4XGkCgAbXcH",
+  "theme": "build more realistic model organisms",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1174,
+  "post_id": "fabXad4XGkCgAbXcH",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1175,
+  "post_id": "fabXad4XGkCgAbXcH",
+  "theme": "ablate design choice",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1176,
+  "post_id": "fbw3PcLTGn53fxCM7",
+  "theme": "layer-by-layer analysis",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1177,
+  "post_id": "fbw3PcLTGn53fxCM7",
+  "theme": "activation steering causal test",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1178,
+  "post_id": "fbw3PcLTGn53fxCM7",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1179,
+  "post_id": "fbw3PcLTGn53fxCM7",
+  "theme": "test on more model families",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1180,
+  "post_id": "fe5cJmwGETNf8rYjE",
+  "theme": "improve experimental realism",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1181,
+  "post_id": "fe5cJmwGETNf8rYjE",
+  "theme": "activation steering causal test",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1182,
+  "post_id": "fe5cJmwGETNf8rYjE",
+  "theme": "test on more model families",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1183,
+  "post_id": "febyyuNvHwYDbpw69",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1184,
+  "post_id": "febyyuNvHwYDbpw69",
+  "theme": "replicate and extend study",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1185,
+  "post_id": "feknAa3hQgLG2ZAna",
+  "theme": "characterize mechanism/property",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1186,
+  "post_id": "feknAa3hQgLG2ZAna",
+  "theme": "multi-feature steering combination",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1187,
+  "post_id": "feknAa3hQgLG2ZAna",
+  "theme": "layer-by-layer analysis",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1188,
+  "post_id": "fhkurwqhjZopx8DKK",
+  "theme": "write follow-up post",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1189,
+  "post_id": "fhkurwqhjZopx8DKK",
+  "theme": "test on more model families",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1190,
+  "post_id": "fhkurwqhjZopx8DKK",
+  "theme": "characterize mechanism/property",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1191,
+  "post_id": "fhkurwqhjZopx8DKK",
+  "theme": "test on larger models",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1192,
+  "post_id": "fhkurwqhjZopx8DKK",
+  "theme": "write follow-up post",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1193,
+  "post_id": "fjgYkTWKAXSxsxdsj",
+  "theme": "generalize to other task types",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1194,
+  "post_id": "fjgYkTWKAXSxsxdsj",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1195,
+  "post_id": "fkv5W79rBtAiXqYcK",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1196,
+  "post_id": "frvmrrND28SxZnkEy",
+  "theme": "adapt method to limited access",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1197,
+  "post_id": "frvmrrND28SxZnkEy",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1198,
+  "post_id": "frvmrrND28SxZnkEy",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1199,
+  "post_id": "frvmrrND28SxZnkEy",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1200,
+  "post_id": "frvmrrND28SxZnkEy",
+  "theme": "replicate and extend study",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1201,
+  "post_id": "fsG4m6sRMpomd7Rk6",
+  "theme": "characterize mechanism/property",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1202,
+  "post_id": "fsG4m6sRMpomd7Rk6",
+  "theme": "explore practical applications",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1203,
+  "post_id": "fziv2En88F2Twewi2",
+  "theme": "study why phenomenon occurs",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1204,
+  "post_id": "g3doG7J7JHKnghmja",
+  "theme": "build more realistic model organisms",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1205,
+  "post_id": "g3doG7J7JHKnghmja",
+  "theme": "build more realistic model organisms",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1206,
+  "post_id": "g3doG7J7JHKnghmja",
+  "theme": "characterize mechanism/property",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1207,
+  "post_id": "g9DmSzHxJXBD9poJR",
+  "theme": "generalize to other task types",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1208,
+  "post_id": "g9DmSzHxJXBD9poJR",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1209,
+  "post_id": "g9DmSzHxJXBD9poJR",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1210,
+  "post_id": "gEbrJ5poyaajdDQAx",
+  "theme": "falsification/control condition test",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1211,
+  "post_id": "gEbrJ5poyaajdDQAx",
+  "theme": "falsification/control condition test",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1212,
+  "post_id": "gEbrJ5poyaajdDQAx",
+  "theme": "activation steering causal test",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1213,
+  "post_id": "gHheKspmTAYqEagbT",
+  "theme": "study human baseline comparison",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1214,
+  "post_id": "gHheKspmTAYqEagbT",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1215,
+  "post_id": "gJqvNH2XJqgyLq9B7",
+  "theme": "circuit-level interpretability analysis",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1216,
+  "post_id": "gJqvNH2XJqgyLq9B7",
+  "theme": "multi-feature steering combination",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1217,
+  "post_id": "gJqvNH2XJqgyLq9B7",
+  "theme": "activation steering causal test",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1218,
+  "post_id": "gJqvNH2XJqgyLq9B7",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1219,
+  "post_id": "gJqvNH2XJqgyLq9B7",
+  "theme": "measure concept-direction alignment fidelity",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1220,
+  "post_id": "gLDSqQm8pwNiq7qst",
+  "theme": "study why phenomenon occurs",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1221,
+  "post_id": "gLDSqQm8pwNiq7qst",
+  "theme": "explore practical applications",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1222,
+  "post_id": "gLhnc4eDCGzNhkrX3",
+  "theme": "test on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1223,
+  "post_id": "gLhnc4eDCGzNhkrX3",
+  "theme": "improve experimental realism",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1224,
+  "post_id": "gLhnc4eDCGzNhkrX3",
+  "theme": "conduct statistical significance testing",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1225,
+  "post_id": "gLhnc4eDCGzNhkrX3",
+  "theme": "write follow-up post",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1226,
+  "post_id": "gQDhqXepYdxWC7gRY",
+  "theme": "activation steering causal test",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1227,
+  "post_id": "gQDhqXepYdxWC7gRY",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1228,
+  "post_id": "gQDhqXepYdxWC7gRY",
+  "theme": "test on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1229,
+  "post_id": "gRc8KL2HLtKkFmNPr",
+  "theme": "test on more model families",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1230,
+  "post_id": "gRc8KL2HLtKkFmNPr",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 1231,
+  "post_id": "gRc8KL2HLtKkFmNPr",
+  "theme": "study human baseline comparison",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1232,
+  "post_id": "gRc8KL2HLtKkFmNPr",
+  "theme": "extend to RL training stage",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1233,
+  "post_id": "gRc8KL2HLtKkFmNPr",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1234,
+  "post_id": "gaMd2AdKSzbd4dsMj",
+  "theme": "study why phenomenon occurs",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1235,
+  "post_id": "gaMd2AdKSzbd4dsMj",
+  "theme": "falsification/control condition test",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1236,
+  "post_id": "gaMd2AdKSzbd4dsMj",
+  "theme": "test on more model families",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1237,
+  "post_id": "gbJJpm92jtxiD9zag",
+  "theme": "study why phenomenon occurs",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1238,
+  "post_id": "gbJJpm92jtxiD9zag",
+  "theme": "test generalization to other settings",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1239,
+  "post_id": "ghESoA8mo3fv9Yx3E",
+  "theme": "study why phenomenon occurs",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 1240,
+  "post_id": "ghESoA8mo3fv9Yx3E",
+  "theme": "develop mitigation techniques",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1241,
+  "post_id": "ghESoA8mo3fv9Yx3E",
+  "theme": "develop mitigation techniques",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1242,
+  "post_id": "gvNYAHcWiezZs8QvD",
+  "theme": "build more realistic model organisms",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1243,
+  "post_id": "gwJjW9k2sKSzBrCNz",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1244,
+  "post_id": "gwJjW9k2sKSzBrCNz",
+  "theme": "measure concept-direction alignment fidelity",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1245,
+  "post_id": "gwJjW9k2sKSzBrCNz",
+  "theme": "write follow-up post",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1246,
+  "post_id": "h8FKusANBWfnNoTyc",
+  "theme": "test alternative techniques",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1247,
+  "post_id": "h8FKusANBWfnNoTyc",
+  "theme": "measure concept-direction alignment fidelity",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1248,
+  "post_id": "h8FKusANBWfnNoTyc",
+  "theme": "study why phenomenon occurs",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 1249,
+  "post_id": "h8FKusANBWfnNoTyc",
+  "theme": "test on more model families",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1250,
+  "post_id": "h8FKusANBWfnNoTyc",
+  "theme": "ablate design choice",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1251,
+  "post_id": "hMBTaFvAzdMNnj29c",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1252,
+  "post_id": "hTihdk5Hqmo8LjJDa",
+  "theme": "characterize mechanism/property",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1253,
+  "post_id": "hTihdk5Hqmo8LjJDa",
+  "theme": "characterize mechanism/property",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1254,
+  "post_id": "hTihdk5Hqmo8LjJDa",
+  "theme": "activation steering causal test",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1255,
+  "post_id": "hgMDvLyomQjpKiG2v",
+  "theme": "ablate design choice",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 1256,
+  "post_id": "hgMDvLyomQjpKiG2v",
+  "theme": "develop mitigation techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1257,
+  "post_id": "hxxramAB82tjtpiQu",
+  "theme": "circuit-level interpretability analysis",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1258,
+  "post_id": "hxxramAB82tjtpiQu",
+  "theme": "circuit-level interpretability analysis",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1259,
+  "post_id": "hxxramAB82tjtpiQu",
+  "theme": "circuit-level interpretability analysis",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1260,
+  "post_id": "hzq7bGB22wGRMGyEp",
+  "theme": "increase sample size for power",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 1261,
+  "post_id": "hzq7bGB22wGRMGyEp",
+  "theme": "falsification/control condition test",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1262,
+  "post_id": "hzq7bGB22wGRMGyEp",
+  "theme": "characterize behavioral misalignment drift",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1263,
+  "post_id": "hzrFT8cKxqmfxE3ti",
+  "theme": "activation steering causal test",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1264,
+  "post_id": "i2qTghrkyY9xdcCFq",
+  "theme": "test on larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1265,
+  "post_id": "i2qTghrkyY9xdcCFq",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1266,
+  "post_id": "i2qTghrkyY9xdcCFq",
+  "theme": "improve RL reward design",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1267,
+  "post_id": "i2qTghrkyY9xdcCFq",
+  "theme": "improve RL reward design",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1268,
+  "post_id": "i4tuCLF9yjTHJQpkw",
+  "theme": "improve tooling/open-source release",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1269,
+  "post_id": "i4tuCLF9yjTHJQpkw",
+  "theme": "test robustness to adversarial attacks",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1270,
+  "post_id": "i4tuCLF9yjTHJQpkw",
+  "theme": "test robustness to adversarial attacks",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1271,
+  "post_id": "i4tuCLF9yjTHJQpkw",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1272,
+  "post_id": "i4tuCLF9yjTHJQpkw",
+  "theme": "test alternative techniques",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1273,
+  "post_id": "iGF7YcnQkEbwvYLPA",
+  "theme": "develop mitigation techniques",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1274,
+  "post_id": "iGF7YcnQkEbwvYLPA",
+  "theme": "improve benchmark realism",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1275,
+  "post_id": "iGF7YcnQkEbwvYLPA",
+  "theme": "improve tooling/open-source release",
+  "scope": "narrow",
+  "kind": "tooling"
+ },
+ {
+  "idx": 1276,
+  "post_id": "iGF7YcnQkEbwvYLPA",
+  "theme": "expand benchmark/dataset coverage",
+  "scope": "narrow",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1277,
+  "post_id": "iLHe3vLur3NgrFPFy",
+  "theme": "generalize to other task types",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1278,
+  "post_id": "iLHe3vLur3NgrFPFy",
+  "theme": "extend thought-anchor method",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1279,
+  "post_id": "iLHe3vLur3NgrFPFy",
+  "theme": "extend thought-anchor method",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1280,
+  "post_id": "iLHe3vLur3NgrFPFy",
+  "theme": "inspect CoT for faithfulness",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1281,
+  "post_id": "iPyJfD9Jyxj6Jfdws",
+  "theme": "improve experimental realism",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1282,
+  "post_id": "iY9584TRhqrzawhZg",
+  "theme": "explore practical applications",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1283,
+  "post_id": "iY9584TRhqrzawhZg",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1284,
+  "post_id": "iY9584TRhqrzawhZg",
+  "theme": "layer-by-layer analysis",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1285,
+  "post_id": "iY9584TRhqrzawhZg",
+  "theme": "study why phenomenon occurs",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1286,
+  "post_id": "ieoWstubDQWLrMnhH",
+  "theme": "characterize mechanism/property",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 1287,
+  "post_id": "ieoWstubDQWLrMnhH",
+  "theme": "replicate and extend study",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1288,
+  "post_id": "ihbn9wwdYP9pKT3ds",
+  "theme": "test generalization to other settings",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 1289,
+  "post_id": "ihbn9wwdYP9pKT3ds",
+  "theme": "explore practical applications",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 1290,
+  "post_id": "issGLfCGz3TGcPKGH",
+  "theme": "test robustness to adversarial attacks",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 1291,
+  "post_id": "issGLfCGz3TGcPKGH",
+  "theme": "conduct statistical significance testing",
+  "scope": "narrow",
+  "kind": "validation"
+ }
+]

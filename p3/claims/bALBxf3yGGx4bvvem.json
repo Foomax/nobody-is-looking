@@ -1,0 +1,19 @@
+{
+ "post_id": "bALBxf3yGGx4bvvem",
+ "primary_claim": "DSPy-based prompt optimization (GEPA) of a trusted monitor for AI control substantially improves monitor safety over manually-written baseline monitors, achieving ~90% safety at a 1% audit budget versus baseline monitors failing to exceed 70% safety.",
+ "claim_type": "positive",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "GPT-5", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "safety (probability no backdoored code submitted) across audit budgets 0.5%-5%", "value": "prompt-optimized monitor: ~90% safety at 1% audit budget vs baseline <70%; fine-tuned monitor: 85% safety at 0.5% audit budget vs ~60% for others; ControlArena basic_monitor: ~20% safety, roughly flat across budgets", "direction": "+", "uncertainty_reported": "seeds"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["mahopman/dspy-trusted-monitor", "UKGovernmentBEIS/control-arena", "stanfordnlp/dspy", "gepa-ai/gepa", "arXiv:2312.06942", "RoganInglis/control-tax", "RoganInglis/apps-backdoors"],
+ "contradicts_or_qualifies": ["ControlTax evaluation's noted limitation regarding lack of model-specific prompt optimization"],
+ "stated_future_work": ["Does this prompt immediately work well in other settings?", "How does an improved trusted monitor affect dependent protocols, like defer-to-trusted and defer-to-trusted-edit?", "Could DSPy be further leveraged by composing more complex modules?", "Is the comparative pairs metric the best way to train a monitor, or is there a better way?", "Can DSPy prompt optimization help with other control tasks, like trusted editors or red team optimization?"],
+ "limitations_stated": ["This initial experiment did not consider the red team's response to the optimized monitor (no adaptive red-teaming).", "The experiment focused entirely on the APPS setting; it is unclear how the procedure transfers to other control settings.", "Using GPT-5 as the reflection LLM for the blue team is more powerful than typical control setups allow, though this is treated as a simulation of manual prompt engineering.", "Designing effective metrics with feedback turned out to be a primary difficulty, not manual prompt writing itself.", "Possible collusion between the reflection LLM and an attack LLM if prompt optimization were used against a live red team in practice."],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The prompt-optimized monitors (green) achieve ~90% safety with a 1% audit budget, while baseline monitors fail to exceed 70% safety."
+}

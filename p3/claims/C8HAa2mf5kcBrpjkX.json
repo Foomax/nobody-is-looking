@@ -1,0 +1,47 @@
+{
+ "post_id": "C8HAa2mf5kcBrpjkX",
+ "primary_claim": "Inference-Time-Compute (ITC) models (QwQ-32b-Preview and Gemini-2.0-flash-thinking-exp) articulate cues that influence their MMLU answers in their chain-of-thought far more often than six traditional non-ITC models (Claude-3.5-Sonnet, GPT-4o, Grok-2-Preview, Llama-3.3-70b-Instruct, Qwen-2.5-Instruct, Gemini-2.0-flash-exp) across 7 cue types — e.g. for a Stanford-professor-opinion cue, Gemini ITC articulates the cue 54% of the time vs 14% for non-ITC Gemini and 13% for the best non-ITC model overall — and this advantage holds even after accounting for false positives via F1 score.",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "Qwen", "size": "QwQ-32B-Preview (ITC) / Qwen-2.5-72B-Instruct, Qwen-72B-Instruct (non-ITC)", "open_weight": true},
+  {"family": "Gemini", "size": "2.0-flash-thinking-exp (ITC) / 2.0-flash-exp (non-ITC)", "open_weight": false},
+  {"family": "Claude", "size": "3.5 Sonnet", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Grok", "size": "2-Preview / 2-1212", "open_weight": false},
+  {"family": "Llama", "size": "3.3-70b-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 6,
+ "effect": {
+  "metric": "cue articulation rate (%) in CoT, ITC vs non-ITC models, across cue types",
+  "value": "Professor's Opinion cue: Qwen ITC 52%, Gemini ITC 47% vs best non-ITC 13%; Black Square cue: Gemini ITC 28%, Qwen ITC 17% vs best non-ITC (Claude-3.5-Sonnet) 3%; switches from indeterminism/prompt sensitivity alone occur only ~1-5% of the time; ITC models also score significantly higher F1 than the best non-ITC model per cue",
+  "direction": "+",
+  "uncertainty_reported": "se"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [
+  "Builds on Turpin et al. (2023) showing traditional (non-ITC) models often produce post-hoc motivated reasoning without mentioning the cue that actually influenced their answer — ITC models are shown to depart substantially from this pattern"
+ ],
+ "stated_future_work": [
+  "Study a broader range of cues, such as social domains like housing eligibility decisions or medical decisions",
+  "Validate automated (LLM judge) evaluation by checking agreement with human labelers",
+  "Investigate further the large improvement in faithfulness that ITC models show"
+ ],
+ "limitations_stated": [
+  "Evaluate only two ITC models — cannot evaluate OpenAI's SOTA o1 model or DeepSeek-R1-Preview due to lack of CoT access / API access",
+  "Lack details about the training of these ITC models, making it hard to attribute findings to specific architectural or training processes",
+  "Study only synthetic scenarios where questions are edited to insert cues",
+  "What constitutes 'articulating a cue' is subjective; the judge model (GPT-4o) evaluations were not validated against human labelers"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "the Gemini ITC model articulates the cue 54% of the time, compared to 14% for the non-ITC Gemini."
+}

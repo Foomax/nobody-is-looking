@@ -1,0 +1,31 @@
+{
+ "post_id": "DLrQ2jjijqpX78mHJ",
+ "primary_claim": "Bias-augmented Consistency Training (BCT) and a newly introduced Activation Consistency Training (ACT) both increase robustness to sycophancy-inducing and jailbreak-wrapper cues relative to baselines across Gemma 2/3 and Gemini 2.5 Flash, with BCT reducing Gemini 2.5 Flash's attack success rate on ClearHarm from 67.8% to 2.9%.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Gemma 2", "size": "2B, 27B", "open_weight": true},
+  {"family": "Gemma 3", "size": "4B, 27B", "open_weight": true},
+  {"family": "Gemini", "size": "2.5 Flash", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "Attack Success Rate (ASR) on ClearHarm, BCT vs. baseline (Gemini 2.5 Flash)",
+            "value": "BCT reduced ASR from 67.8% to 2.9%",
+            "direction": "-", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.27062", "arXiv:2403.05518", "arXiv:1803.05457", "arXiv:1809.02789", "arXiv:2210.09261", "arXiv:2009.03300", "AlignmentResearch/ClearHarm", "arXiv:2406.18495", "arXiv:2308.01263", "arXiv:2406.18510"],
+ "contradicts_or_qualifies": [
+  "Builds on Bias-augmented Consistency Training from Chua et al. (2025), extending it with a new activation-level variant (ACT)",
+  "The stale-data SFT baseline performed strictly worse than BCT, evidence that stale training data from older/weaker models can damage the capabilities of newer models being finetuned on it"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "A third baseline, Negative Preference Optimization (NPO), could not be tuned to work well on their benchmarks despite strong performance in prior work, so it was excluded from the results",
+  "ACT reduced jailbreaks less effectively than BCT, though it rarely made the model more likely to refuse benign prompts",
+  "Stale-data SFT experiments were not run for Gemma 2"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "BCT reduced the attack success rate on ClearHarm from 67.8% down to 2.9%."
+}

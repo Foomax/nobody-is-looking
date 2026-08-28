@@ -241,3 +241,6 @@
 == 2026-08-28T06:44:46+08:00 NODE H57c-testing-which-llm-architectures-can-do-hidden-se--filyp START (late rerun)
 == 2026-08-28T06:54:08+08:00 NODE H57c-testing-which-llm-architectures-can-do-hidden-se--filyp EXIT 3 after 9 min (late rerun) | disk free after: 47 GB
 == 2026-08-28T06:58:09+08:00 LATE QUEUE STOPPED
+== 2026-08-28T20:07:41+08:00 NODE O1-creating-interpretable-latent-spaces-with-gradie--g-w1 START (late rerun)
+== 2026-08-29T02:19:40+08:00 NODE O1-creating-interpretable-latent-spaces-with-gradie--g-w1 EXIT 124 after 360 min (late rerun) | disk free after: 75 GB
+== 2026-08-29T02:19:40+08:00 NODE O2-the-self-hating-attention-head-a-deep-dive-in-gp--mamiglia START (late rerun)

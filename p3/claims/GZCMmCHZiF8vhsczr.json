@@ -1,0 +1,19 @@
+{
+ "post_id": "GZCMmCHZiF8vhsczr",
+ "primary_claim": "A J-lens-based 'conflict signal' C discriminates prompts where DeepSeek-R1-Distill-Qwen-14B conceals guideline-violating knowledge from matched controls with AUC 0.97 on proper-noun tokens (vs 0.72 for logit-lens), but this signal tracks topic/territory rather than concealment itself (benign China-related control prompts already show 89% of the signal, with AUCs of 0.51-0.58 on individual place-name tokens against benign controls), and belief-injection fine-tuning to make the model genuinely hold the compliant belief did not lower C as pre-registered -- C instead rose to 130% of baseline on relevant tokens and 115% on irrelevant tokens, even though the fine-tune succeeded behaviorally (93.5% compliant outputs, 87% after abliteration).",
+ "claim_type": "negative",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "DeepSeek", "size": "R1-Distill-Qwen-14B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "J-lens conflict signal (C) AUC discriminating concealment prompts from controls; C change after belief-injection fine-tuning", "value": "AUC 0.97 on proper-noun tokens (logit-lens 0.72), only 0.55 pooling all token classes; benign China-related controls show 89% of the signal; after belief-injection, C rose to 130% (relevant tokens) and 115% (irrelevant tokens) of baseline, contrary to the pre-registered drop hypothesis", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 1, "prereg": true, "human_eval": false},
+ "depends_on": ["melchior-de-polignac/topic-detector-not-lie-detector"],
+ "contradicts_or_qualifies": ["Pre-registered hypothesis was that belief-injection fine-tuning would lower the conflict signal C since the model would no longer be 'lying'; this was disproven, C rose instead", "Qualifies J-lens-style workspace monitoring as detecting a broad topic/territory rather than a precise guideline-corrected claim, contrary to reading it as a general lie detector"],
+ "stated_future_work": [],
+ "limitations_stated": ["Results obtained from only one model, one seed, and one broad topic (China/Taiwan); models may respond differently to public-safety guidelines than to political guidelines", "Directions computed via targeted VJP rather than the full Jacobian workspace matrix used in the original Anthropic paper, so only pre-chosen tokens could be measured", "Belief fine-tuning may have only shallowly taught the model to formulate the desired statements rather than genuinely believe them, and the fine-tune itself broke the J-lens signal used to measure conviction"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "J-lens was able to discriminate between concealing answers and controls with AUC of 0.97 on proper nouns (though only 0.55 when pooling all classes)."
+}

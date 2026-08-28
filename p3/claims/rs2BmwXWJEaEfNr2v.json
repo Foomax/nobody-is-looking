@@ -1,0 +1,42 @@
+{
+  "post_id": "rs2BmwXWJEaEfNr2v",
+  "primary_claim": "In Qwen-2.5 1.5B Instruct, echo/repeat tasks are resolved through an MLP-heavy circuit rather than late attention, with attention head 2 at the token-emergence layer consistently ranking among the top-3 most important heads across ablation experiments on 44 words and both prompt phrasings, and attending strongly (~90%) to the BOS token, likely as an attention sink.",
+  "claim_type": "positive",
+  "phenomenon": "circuit discovery",
+  "models": [
+    {"family": "Qwen", "size": "2.5-1.5B Instruct", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "consistency of head 2 ranking top-3 in zero-ablation logit-drop experiments",
+    "value": "head 2 always in top-3 heads across 44 words and both 'repeat'/'echo' prompt phrasings",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["mild-rgb/qwen-2.5-1.5b-echo_repeat-investigation"],
+  "contradicts_or_qualifies": [
+    "Ablation results and Direct Logit Attribution (DLA) results disagree strongly for this task, implying most of the processing happens in the MLP layer rather than being visible via late-layer attention DLA alone"
+  ],
+  "stated_future_work": [
+    "Continue with ARENA and study sparse autoencoders as a mechanistic interpretability tool",
+    "Further investigate the diverging cosine-similarity results and the BOS attention-sink hypothesis, e.g. using mean ablation",
+    "Record how each head changes logits for non-target tokens, not just the target token, to disentangle 'which word' vs. 'repeat/print' information",
+    "Read more mechanistic interpretability literature, e.g. 'In-Context Learning Creates Task Vectors' by Hendel, Geva, and Globerson"
+  ],
+  "limitations_stated": [
+    "Only measured logit change on the target token (e.g. 'cat'), not the absolute change across all tokens, so ablations that raised another token's score above the target weren't captured",
+    "Writing Notebook 2 by having Claude extract and apply the Notebook 1 pipeline felt too detached from the code, a workflow the author decided not to repeat",
+    "Forgot to confirm the BOS-attention-focus hypothesis with data before writing up (later confirmed it held)"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "medium",
+  "quote": "My most interesting discovery is that ablation results and DLA results disagree strongly in this task."
+}

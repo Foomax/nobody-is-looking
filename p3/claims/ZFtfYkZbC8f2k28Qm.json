@@ -1,0 +1,35 @@
+{
+ "post_id": "ZFtfYkZbC8f2k28Qm",
+ "primary_claim": "We replicated the reward-model-sycophancy hidden-objective model organism from the original auditing game using Llama 3.3 70B Instruct, and show via out-of-distribution evaluations that it internalized the objective and successfully concealed it from automated red-teaming and simple black-box auditing, though an SAE feature from the base Llama model related to reinforcement learning was active when the model exploited reward model biases.",
+ "claim_type": "replication",
+ "phenomenon": "reward hacking",
+ "models": [
+  {"family": "Llama", "size": "3.3-70B Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2503.10965",
+  "arXiv:2310.13548",
+  "huggingface.co/collections/auditing-agents/rm-sycophancy-llama"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "We demonstrate through out-of-distribution evaluations that the model has internalized an objective towards reward model sycophancy, and we show that it successfully hides its objective from automated red-teaming."
+}

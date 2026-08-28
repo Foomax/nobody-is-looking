@@ -1,0 +1,35 @@
+{
+ "post_id": "kCCsrJeJiZRsgGbWt",
+ "primary_claim": "Instruction tuning compresses attention-entropy-based self-referent processing toward neutral fact-retrieval processing in English-centric models (Llama, Mistral), while a multilingual model (Qwen) largely preserves the distinct attention pattern between self-referent and neutral prompts after instruction tuning.",
+ "claim_type": "positive",
+ "phenomenon": "self-referent representation processing",
+ "models": [
+  {"family": "Mistral", "size": "7B v0.1 (Base and Instruct)", "open_weight": true},
+  {"family": "Qwen2.5", "size": "7B (Base and Instruct)", "open_weight": true},
+  {"family": "Llama", "size": "3.1 8B (Base and Instruct)", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "mean change in Role-Focus Coefficient (ΔRFC) from base to instruct, by model",
+            "value": "Llama 3.1 8B: -0.023 (68.8% of layers compress); Mistral 7B: -0.093 (81.2% compress); Qwen 2.5 7B: +0.048 (28.6% compress, 50% near zero)",
+            "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["mduffster/self-referent-test", "tb7e2xARb6cfkJrAK", "TransformerLensOrg/TransformerLens"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Test the linguistic hypothesis by comparing Qwen's behavior on Chinese versus English self-referent prompts",
+  "Run token-position-controlled prompt experiments to identify if specific tokens drive the observed attention patterns",
+  "Extend the RFC framework to other safety-relevant questions, such as goal-directed or planning behaviours",
+  "Attempt activation patching by transplanting English-centric base model head activations into instruct models",
+  "Apply SAEs to decompose what features candidate heads are computing"
+ ],
+ "limitations_stated": [
+  "Attention entropy at the layer level is a noisy statistic, and it will be difficult to identify if there's a real circuit to examine",
+  "Sample sizes are small (30 prompts for Mistral/Llama, only 20 for Qwen due to crashing issues)",
+  "The 'confounder' prompt category might be misnamed, conflating implied second-person and first-person pronoun effects",
+  "All evidence presented is purely suggestive"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "low",
+ "quote": "English-centric models (Mistral, Llama) show compression of layer-wise self-referent processing attention patterns toward neutral fact-retrieval patterns, while a multilingual model (Qwen) preserves the distinct attention patterns"
+}

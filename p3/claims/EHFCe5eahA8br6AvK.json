@@ -1,0 +1,34 @@
+{
+ "post_id": "EHFCe5eahA8br6AvK",
+ "primary_claim": "Framing sparse autoencoding as a latent-variable model with a variational (ELBO) objective, a full-covariance Gaussian prior (V-SAE) achieves lower reconstruction MSE (often 20-30% lower) than a standard L1-penalized SAE baseline on toy superposition benchmarks with correlated features, while maintaining comparable or higher sparsity.",
+ "claim_type": "positive",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "reconstruction MSE (VAE/V-SAE vs SAE baseline)",
+  "value": "often 20-30% lower MSE for V-SAE (e.g. Case 1: 0.010 vs 0.015; Case 6: 0.025 vs 0.032)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["transformer-circuits.pub/2022/toy_model", "transformer-circuits.pub/2023/monosemantic-features"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Replace the fully learned covariance with semantically structured priors (block-diagonal, graph-Laplacian) in Part II",
+  "Integrate these ideas into real-LM benchmarks"
+ ],
+ "limitations_stated": [
+  "Findings are from a minimal toy-model setting; validation on real language-model activations is left to later parts of the series"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "a global-correlation prior ($\\rho=0.8$) yields far cleaner feature recovery than the isotropic VAE baseline, validating our variational framework."
+}

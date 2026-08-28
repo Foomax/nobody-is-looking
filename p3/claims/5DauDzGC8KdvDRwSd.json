@@ -1,0 +1,31 @@
+{
+ "post_id": "5DauDzGC8KdvDRwSd",
+ "primary_claim": "GPT-2 residual-stream SAE features form statistically correlated communities that span multiple layers, with features from earlier layers specializing into later-layer features that detect the same broad concept in mutually exclusive contexts",
+ "claim_type": "positive",
+ "phenomenon": "crosscoder / model diffing",
+ "models": [
+  {"family": "GPT-2", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2403.19647"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We find communities of related features, and features that appear to be quasi-boolean combinations of previous features."
+}

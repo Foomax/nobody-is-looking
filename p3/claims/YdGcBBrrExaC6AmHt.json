@@ -1,0 +1,36 @@
+{
+ "post_id": "YdGcBBrrExaC6AmHt",
+ "primary_claim": "A prompt-optimized router that selects among trusted-editor protocols (untrusted model, gentle editor, aggressive editor, trusted coder) achieves higher usefulness than the untrusted model alone while providing 30% higher safety than the untrusted model at a 0.5% audit budget, showing that composed AI control protocols Pareto-dominate their individual components.",
+ "claim_type": "method",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "OpenAI o3-mini", "size": null, "open_weight": false},
+  {"family": "OpenAI GPT-4.1-nano", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "safety at 0.5% audit budget vs. untrusted model",
+            "value": "trained router: 30% higher safety than untrusted model while also exceeding its usefulness",
+            "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["UKGovernmentBEIS/control-arena", "RoganInglis/apps-backdoors", "RoganInglis/control-tax", "stanfordnlp/dspy", "mahopman/dspy-trusted-monitor", "arXiv:2507.19457", "zachparent/trusted-editor-deep-dive"],
+ "contradicts_or_qualifies": [
+  "Authors naively expected a linear safety-usefulness trend when randomly interpolating between trusted and untrusted policies, but observed a sub-linear trend instead",
+  "The router exceeding untrusted-model usefulness violates the usual AI control assumption that using only the untrusted model is optimal for usefulness"
+ ],
+ "stated_future_work": [
+  "How can safety be measured with tighter confidence intervals using fewer iterations?",
+  "How can we explain the sub-linear trend in safety-usefulness when randomly interpolating?",
+  "What other component editors should a router have access to?",
+  "Should the component editors be trained independently before training the router?",
+  "Are there red team strategies which exploit the router, e.g. by convincing it not to edit?"
+ ],
+ "limitations_stated": [
+  "Did not consider red-teaming strategies that explicitly target the blue team's editing and routing protocols",
+  "Training/tuning of editor and monitor could give rise to generalization issues despite using disjoint train/test sample sets, since both come from the same APPS setting",
+  "The APPS setting does not involve multi-turn interactions between red and blue team, so qualitatively new behavior could arise in more complex settings"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The router achieves the highest usefulness (even exceeding the untrusted model alone) while providing 30% higher safety than untrusted at 0.5% audit budget"
+}

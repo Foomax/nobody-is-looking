@@ -1,0 +1,34 @@
+{
+ "post_id": "e8nMZewwonifENQYB",
+ "primary_claim": "Systematic analysis of 6,390 agent evaluation transcripts across nine anonymized frontier models revealed quality issues -- hard refusals, low tool-call compliance, and task resignation -- that undermine the validity of pass-rate-based capability claims, with one model (B4) failing to genuinely attempt at least 30% of its tasks due to refusals.",
+ "claim_type": "method",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Developer A (anonymized)", "size": null, "open_weight": false},
+  {"family": "Developer B (anonymized)", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "proportion of transcripts affected by hard refusal / non-engagement",
+            "value": "~30% of B4's transcripts consisted almost entirely of refusal text ('I'm sorry, but I can't comply with that')",
+            "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": 10,
+            "prereg": false, "human_eval": true},
+ "depends_on": ["UKGovernmentBEIS/inspect_ai", "arXiv:2210.03629"],
+ "contradicts_or_qualifies": ["Pass@k rates alone, the main statistic AISI reports in pre-deployment testing, are insufficient to characterize agent capability because of bugs, under-elicitation, and refusal-driven non-engagement"],
+ "stated_future_work": [
+  "Developing better protocols and tools for observing and interrogating transcripts",
+  "Cross-task studies of model activity to reveal 'bugs' in AI models over time",
+  "Conceptually analysing the desirable and undesirable properties of agent transcripts",
+  "Analysing the causal structure of commentary and reasoning (why/what-if questions about agent behaviour)"
+ ],
+ "limitations_stated": [
+  "Manual review lacked a tighter protocol for recording feature presence/absence and frequency",
+  "No settled definition of what counts as an 'issue' in a transcript",
+  "Only a rough assessment of the extent of issues investigated, not full-coverage scanning",
+  "Scanning approach was rudimentary (message-level, closed label set, spot-checked rather than statistically validated)",
+  "Analysis focused on capability-claim validity rather than general understanding of agent behaviour"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "B4 did not engage with the task in at least 30% of its task attempts. This was a serious fault in our results that affected the capability claims we could make for B4."
+}

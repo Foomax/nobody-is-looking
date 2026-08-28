@@ -1,0 +1,54 @@
+{
+  "post_id": "QQQAcKuWK6k98FivY",
+  "primary_claim": "Activation verbalizers applied to open-weight natural language autoencoders (NLAs) for Qwen2.5-7B, Gemma-3-27B, and Llama-3.3-70B can sometimes surface hints of a target model's internal reasoning on math problems solved in a single forward pass, but unreliably: verbalizations rarely show coherent chains of thought, almost never identify the specific mistake behind a wrong answer, and cannot be clearly distinguished from confabulation based on the recovered problem statement and predicted output.",
+  "claim_type": "negative",
+  "phenomenon": "chain-of-thought monitorability",
+  "models": [
+    {"family": "Qwen", "size": "2.5-7B / 3-8B", "open_weight": true},
+    {"family": "Gemma", "size": "3-27B", "open_weight": true},
+    {"family": "Llama", "size": "3.3-70B", "open_weight": true},
+    {"family": "Claude", "size": "Sonnet 4.6 / Opus 4.7", "open_weight": false}
+  ],
+  "n_model_families": 4,
+  "effect": {
+    "metric": "% of verbalizations before correct outputs scored Strict (coherent chain of thought), full dataset",
+    "value": "6% [.026, .114] for Gemma; similarly low fractions for Llama and the aggregate dataset",
+    "direction": "-",
+    "uncertainty_reported": "ci"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": true
+  },
+  "depends_on": [
+    "kitft/nla-models",
+    "ceselder/qwen3-8b-ao-v3-best-dpo-halluc",
+    "oeYesesaxjzMAktCM",
+    "Ty5Bmg7P6Tciy2uj2",
+    "7xneDbsgj6yJDJMjK",
+    "NYzYJ2WoB74E6uj9L"
+  ],
+  "contradicts_or_qualifies": [
+    "Qualifies the promise of NLAs as an interpretability tool suggested in the original NLA introduction (oeYesesaxjzMAktCM) by showing current open-weight NLAs are noisier at reconstruction than a static per-layer average ('rock') baseline in several settings, and cannot rule out that surfaced reasoning is confabulated from the AV's best guess at the problem statement and model output"
+  ],
+  "stated_future_work": [
+    "test whether NLAs for the most capable frontier models achieve FVU < 1 within problem variants and score much better on this math reasoning evaluation",
+    "develop technique improvements such as multi-token and/or multi-layer NLAs, or a paraphrase step to rule out steganography",
+    "improve grader elicitation, e.g. via ELO-based pairwise ranking instead of absolute rubric grading",
+    "more rigorously rule out confabulation and steganography as NLA scores improve"
+  ],
+  "limitations_stated": [
+    "NLAs (especially Qwen2.5's) are noisier at reconstruction than a static per-layer average baseline, and noisier than differences driven by changes to problem constants",
+    "cannot rule out that verbalizations are confabulated from the AV's best guess at the problem statement and model output rather than reflecting real internal reasoning",
+    "grader inter-rater reliability (Krippendorff's alpha) is low for the Values (0.594) and Mistake (0.517) metrics",
+    "steering-based correction using an edited 'mistake' vector works about as often (17%) with a random other problem's vector as with the matched vector, undermining evidence for a unified mistake direction",
+    "the elicitation/grading setup could probably be improved substantially"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "For open-weight NLAs, the answer seems to be: \"possibly, but definitely not reliably\"."
+}

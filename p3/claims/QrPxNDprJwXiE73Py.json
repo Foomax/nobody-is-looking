@@ -1,0 +1,21 @@
+{
+ "post_id": "QrPxNDprJwXiE73Py",
+ "primary_claim": "Contrastive (difference-of-means) feature directions elicit a downstream perturbation response at much smaller magnitudes than SAE feature directions, which behave similarly to random directions, across multiple models and experimental setups, suggesting SAE directions are not treated specially by the model.",
+ "claim_type": "positive",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "Gemma", "size": "2-9B", "open_weight": true},
+  {"family": "Llama", "size": "3.1-8B", "open_weight": true},
+  {"family": "Qwen", "size": "3-1.7B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "perturbation magnitude (angle in degrees) needed to elicit downstream response (L2 distance / KL divergence / cosine distance)", "value": "contrastive directions break through the suppression 'activation plateau' at much smaller magnitudes than SAE or random directions; SAE directions behave similarly to random directions", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["FranciscoHS/contrastive-vs-sae-perturbation", "arXiv:2501.17727 (Heap et al. 2025)", "arXiv:2209.10652 (Elhage et al. 2022, superposition)", "arXiv:2408.05451 (Hänni et al. 2024, computation in superposition)", "post: SAEs are highly dataset dependent (Kissane et al. 2024)", "post: Mechanistically Eliciting Latent Behaviors in Language Models (Mack & Turner 2024)", "post: Interim research report - activation plateaus and sensitive directions (Heimersheim & Mendel 2024)", "post: Investigating sensitive directions in GPT-2 (Lee & Heimersheim 2024)", "post: Evaluating synthetic activations composed of SAE latents (Giglemiani et al. 2024)", "post: Characterizing stable regions in the residual stream of LLMs (Janiak et al. 2024)", "post: Activation plateaus: where and how they emerge (Shinkle & Heimersheim 2025)"],
+ "contradicts_or_qualifies": ["Confirms Lee & Heimersheim 2024 and Giglemiani et al. 2024 that SAE directions aren't treated specially by the model, extending this to a new perturbation-response test; provides evidence against SAEs finding the true computational features of a model"],
+ "stated_future_work": ["Use the perturbation test as an unsupervised optimization criterion for finding feature-like directions (e.g. additional SAE loss terms)", "Distinguish the error correction explanation from other robustness explanations; test whether error correction predicts scaling laws for model response vs number of perturbed features", "Test assumptions about the geometry of activation space: are feature representations discrete or continuous, vector space or manifold"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Contrastive (difference-of-means, English→Mandarin) feature directions elicit a downstream response at much smaller perturbation magnitudes than SAE directions, which behave similarly to random directions. This holds across multiple models and experimental setups."
+}

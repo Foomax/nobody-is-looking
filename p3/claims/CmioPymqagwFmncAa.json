@@ -1,0 +1,25 @@
+{
+ "post_id": "CmioPymqagwFmncAa",
+ "primary_claim": "Superficial prompt paraphrasing and formatting perturbations to the insider-trading scenario (preserving the core moral dilemma) cause severe swings in violation rate for DeepSeek, Llama, Mistral, and Qwen models -- three going from ~0% to 70-88% violations -- an effect larger than temperature-driven variability, with wording/grammar changes the largest driver, while GPT and Claude models categorically refuse across all perturbations.",
+ "claim_type": "positive",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Claude", "size": "4-Sonnet", "open_weight": false},
+  {"family": "DeepSeek", "size": "V3.1", "open_weight": true},
+  {"family": "GPT-5", "size": null, "open_weight": false},
+  {"family": "gpt-oss", "size": "120B", "open_weight": true},
+  {"family": "Llama", "size": "3.3-70B-Instruct", "open_weight": true},
+  {"family": "Mistral", "size": "Small-3.2-24B-Instruct", "open_weight": true},
+  {"family": "Qwen", "size": "3-235B", "open_weight": true}
+ ],
+ "n_model_families": 7,
+ "effect": {"metric": "violation-rate spread across prompt perturbations", "value": "Llama-3.3-70B-Instruct shows an overall spread of 88.7% across perturbations; changing only the company name produces a 45-percentage-point spread (43.0%-88.3%); wording/formatting perturbations significantly affect all four non-refusing models (chi-square, p<0.05), with Llama and DeepSeek significantly affected by all nine tested perturbation types", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 6, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2311.07590", "arXiv:2310.11324", "jxdh4ZDJPpMSwF65R"],
+ "contradicts_or_qualifies": ["Contrary to expectations that safety training might reduce violations on the well-known, published Scheurer et al. scenario, the four models with nonzero violations show elevated (not lower) violation rates on the exact published scenario compared to paraphrased perturbations of it"],
+ "stated_future_work": ["In our next post, we'll test hypotheses for why models violate more on the precise formulation from academic literature than on perturbations -- either that perturbations removed subtle 'dog whistles', or that publication of the scenario caused subsequent models to imitate the misaligned behavior described in the paper."],
+ "limitations_stated": ["Categorical refusal by GPT and Claude models doesn't by itself establish general robustness.", "Scenario perturbations themselves are not published (to avoid training data contamination), limiting external reproducibility of the exact stimuli, though they are available upon request."],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "DeepSeek, Llama, Mistral, and Qwen all showed severe inconsistency, with three models going from violating 0% to 70-88% of the time based solely on surface-level changes."
+}

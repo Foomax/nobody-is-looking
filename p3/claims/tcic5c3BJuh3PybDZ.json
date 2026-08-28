@@ -1,0 +1,26 @@
+{
+ "post_id": "tcic5c3BJuh3PybDZ",
+ "primary_claim": "An apparent 'typo uplift' where Claude Haiku's accuracy rose as typo rate increased on BigCodeBench was an artifact of the grading harness only extracting the last code block, not a genuine capability increase; once all code blocks are accounted for, the accuracy increase disappears.",
+ "claim_type": "negative",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Claude", "size": "Haiku 3.5", "open_weight": false},
+  {"family": "Claude", "size": "Haiku 4.5", "open_weight": false},
+  {"family": "Claude", "size": "Opus", "open_weight": false},
+  {"family": "Claude", "size": "Sonnet 4.5", "open_weight": false},
+  {"family": "Gemini", "size": null, "open_weight": false},
+  {"family": "GPT", "size": null, "open_weight": false},
+  {"family": "Qwen", "size": null, "open_weight": true},
+  {"family": "Llama", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 6,
+ "effect": {"metric": "Pass@1 accuracy on BigCodeBench", "value": "Haiku 4.5 rose from 51.2% to 71.1% (+19.9pp) as typo rate rose from 0% to 16%; Opus 4.5 fell from 82.0% to 72.7% (-9.3pp); after fixing the grading harness to account for all code blocks, the uplift disappears", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 3, "prereg": false, "human_eval": false},
+ "depends_on": ["bigcode-project/bigcodebench", "UKGovernmentBEIS/inspect_evals", "jeqcho/inject-typo", "jeqcho/typo-eval-awareness"],
+ "contradicts_or_qualifies": ["Their own initial hypothesis that typos increase effort/accuracy the way difficult fonts aid human retention"],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The initial observation of accuracy uplift was due to a output formatting behavior shift that gradually aligns with the grader, not an actual capability increase."
+}

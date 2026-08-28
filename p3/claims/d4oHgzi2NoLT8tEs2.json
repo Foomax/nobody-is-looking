@@ -1,0 +1,19 @@
+{
+ "post_id": "d4oHgzi2NoLT8tEs2",
+ "primary_claim": "Token-level statistical features fail to detect covert AI agent attacks across model scales (best AUROC 0.83, most models 0.56-0.63), but a novel training-free Perturbation-Based Generation Profiling (PBGP) method -- comparing generation profiles between the original context and an isolated re-run without the hidden objective -- achieves 0.94-1.00 AUROC across six models (8B-32B).",
+ "claim_type": "positive",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "gpt-oss", "size": "20B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "AUROC for covert attack detection", "value": "token-level features: best 0.83 AUROC, most models 0.56-0.63, catching 31.7% of attacks at 4% FPR; PBGP: 0.94-1.00 AUROC across six models, catching 43-100% of attacks at 4% FPR, Mann-Whitney p<0.001, bootstrapped MMD ratio 2.87x (95% CI 1.69x-5.02x); GPT-OSS 20B shows perfect PBGP separation (1.000 AUROC) despite being hardest for token-level detection", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["BashArena benchmark", "Apart Research AI Control Hackathon project page"],
+ "contradicts_or_qualifies": ["Contradicts the implicit assumption in some AI control proposals that attacking outputs look different from honest ones at the token level; finds this doesn't hold across model scales and the effect size collapses as models get larger"],
+ "stated_future_work": ["Determine whether the core idea (perturbation-based divergence detection) is novel enough to be worth pursuing further", "Determine whether the 'honesty assumption' problem (re-run without hidden objective may not reflect true honest generation if the model can maintain consistent generation while pursuing a hidden objective) is a fundamental flaw or an engineering problem", "Test whether PBGP generalizes to frontier models", "Find a path to making PBGP work without full logprob access (API-gated models), possibly via a surrogate model approach"],
+ "limitations_stated": ["Tested only up to 32B parameters, not on frontier models", "Greedy decoding throughout; rank features are uniformly zero, may be leaving signal on the table", "No comparison against LLM-based monitors", "Protocol has a honesty-assumption problem: in deployment you cannot independently observe an honest completion, only assume an isolated re-run reflects honest generation, which would break if the model can maintain consistent generation across contexts while pursuing a hidden objective", "Only tested against abliterated models, not models that are strategically scheming"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Results that we found across all six models: 0.94–1.00 AUROC, at 4% FPR, PBGP catches 43–100% of attacks depending on the model."
+}

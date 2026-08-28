@@ -1,0 +1,22 @@
+{
+ "post_id": "Q8KmWzbituyGCkSro",
+ "primary_claim": "Llama-3-8B has many redundant attention heads for an in-context-learning task: ablating heads at one layer causes backup heads at a nearby layer to take over, so the model still reaches the correct answer.",
+ "claim_type": "positive",
+ "phenomenon": "redundant / backup attention heads",
+ "models": [
+  {"family": "Llama", "size": "8B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["TransformerLensOrg/TransformerLens"],
+ "contradicts_or_qualifies": ["weakly supports (does not strongly confirm) Anthropic's hypothesis that in-context learning is driven primarily by induction heads"],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "This is a weaker claim than the first, and I have less evidence to support it",
+  "this is also the claim that I'm least confident about (MLPs breaking the task into subtasks)"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "There are clearly a large number of portions of the model responsible for in-context learning."
+}

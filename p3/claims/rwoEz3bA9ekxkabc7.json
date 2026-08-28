@@ -1,0 +1,48 @@
+{
+ "post_id": "rwoEz3bA9ekxkabc7",
+ "primary_claim": "Activation Oracles (LLMs trained to answer arbitrary natural-language questions about LLM activations) achieve state-of-the-art performance on 3 of 4 downstream auditing tasks (secret elicitation and emergent-misalignment detection), despite never being trained on activations from the fine-tuned target models, and performance scales predictably with training data quantity and diversity.",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Qwen", "size": "3 8B", "open_weight": true},
+  {"family": "Gemma", "size": "2 9B", "open_weight": true},
+  {"family": "Llama", "size": "3.3 70B", "open_weight": true},
+  {"family": "Claude", "size": "Haiku 3.5", "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "auditing task performance vs prior methods",
+  "value": "AOs match or exceed the best prior method on 3/4 auditing tasks; beat all baseline methods on 2/3 secret-keeping evals (3/3 among white-box methods)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2512.15674",
+  "arXiv:2412.08686",
+  "arXiv:2510.01070",
+  "arXiv:2510.13900"
+ ],
+ "contradicts_or_qualifies": [
+  "the one task where AOs are not the best or tied-for-best method was Secret Side Constraint, a setting where black-box prompting techniques can induce the target model to reveal its secret knowledge"
+ ],
+ "stated_future_work": [
+  "excited about hybrid methods, such as applying AOs to interpret SAE error terms"
+ ],
+ "limitations_stated": [
+  "AOs are not exhaustive; they will not tell you everything about an activation, including questions we don't know to ask",
+  "AOs might be too expressive, risking that explanations reflect the AO's own understanding rather than the target LLM's, including confabulation",
+  "AOs are expensive at inference time, requiring multiple forward passes to answer a single question",
+  "AOs are a fundamentally non-mechanistic technique, unsuited to questions about how meaning is encoded or how computations process activations"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We find that our AOs achieve state-of-the-art performance on 3 out of 4 of these auditing tasks."
+}

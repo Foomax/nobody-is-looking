@@ -1,0 +1,21 @@
+{
+ "post_id": "vQ6tirCJGEtQAEgNx",
+ "primary_claim": "A single surprising fine-tuning sample can 'prime' unrelated model outputs with the newly learned fact, and the keyword's pre-training probability ('surprise') is the strongest predictor of this priming effect across model architectures; ignoring the top-K largest parameter updates during fine-tuning selectively reduces priming while preserving memorization.",
+ "claim_type": "positive",
+ "phenomenon": "fine-tuning side effects",
+ "models": [
+  {"family": "PaLM-2", "size": null, "open_weight": false},
+  {"family": "Gemma", "size": null, "open_weight": true},
+  {"family": "Llama", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "strength of candidate pre-training-measurable predictors (text length, readability, loss/entropy, keyword probability) of post-fine-tuning priming", "value": "keyword's initial (pre-training) probability ('surprise') consistently emerged as the strongest predictor of downstream priming/hallucination, stronger than text length, readability, or overall loss/entropy", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2504.09522", "arXiv:2311.05232", "arXiv:2401.01313", "arXiv:1905.03871", "arXiv:2212.07677"],
+ "contradicts_or_qualifies": ["conventional thinking that the largest parameter updates during fine-tuning contain the most critical information — the authors find that ignoring (rather than keeping) the top-K largest updates selectively reduces priming while preserving memorization"],
+ "stated_future_work": ["further work may yield a unified view of control mechanisms for gradient-based learning, connecting to differential-privacy gradient clipping", "understand which model components (attention heads, feed-forward blocks, training schedule parameters) most influence whether new information generalizes too broadly across architectures"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "But it was the keyword’s initial (pre-training) probability—loosely called “surprise”—that consistently emerged as the strongest predictor of downstream hallucinations."
+}

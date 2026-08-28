@@ -1,0 +1,29 @@
+{
+ "post_id": "feknAa3hQgLG2ZAna",
+ "primary_claim": "SAE features can be matched across layers via a data-free permutation-matching method (Mechanistic Permutability), showing many features are re-indexed with consistent semantics from mid-to-late layers and that pruning a layer using this permutation causes only a slight performance drop; a follow-up method (Analyze Feature Flow) builds causally-validated 'flow graphs' tracing feature lineage across layers and submodules, enabling multi-layer steering.",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature interpretability",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2410.07656", "arXiv:2502.03032", "arXiv:2411.02193", "arXiv:2407.14435", "arXiv:2408.05147", "arXiv:2406.11944"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Study properties of flow graphs, interactions between them, and other aspects of interest for interpretability research", "Investigate proper steering methods, the role of different features, their interactions, and emergent behavior in non-trivial multi-layer steering", "Study the evolution of concept encoding as the evolution of linear directions across SAEs trained at different positions"],
+ "limitations_stated": ["Mechanistic Permutability shows only high-level consistency; a fraction of features do not match between layers, leaving room for newly created or transformed features"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We discovered that from mid-to-late layers, a large fraction of features show near one-to-one matches with their preceding layers."
+}

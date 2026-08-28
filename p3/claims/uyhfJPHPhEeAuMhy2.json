@@ -1,0 +1,17 @@
+{
+ "post_id": "uyhfJPHPhEeAuMhy2",
+ "primary_claim": "STUB",
+ "claim_type": "positive",
+ "phenomenon": "red-team elicitation",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "Our tuned scaffold results in a substantial improvement in sabotage ability for Claude 3.7 Sonnet in SHADE-Arena, reducing safety score from a baseline of 0.87 to 0.41."
+}

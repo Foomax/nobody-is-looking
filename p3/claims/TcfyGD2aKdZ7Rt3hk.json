@@ -1,0 +1,43 @@
+{
+  "post_id": "TcfyGD2aKdZ7Rt3hk",
+  "primary_claim": "Pretraining 6.9B-parameter LLMs with upsampled synthetic data depicting misaligned AI increases misalignment rates (41% to 61%), while upsampling synthetic data depicting aligned AI decreases misalignment (41% to 4%), and these pretraining-induced alignment priors persist through post-training and partially survive benign fine-tuning tampering.",
+  "claim_type": "positive",
+  "phenomenon": "synthetic document finetuning effects",
+  "models": [
+    {"family": "Custom (OLMo-3 pipeline)", "size": "6.9B", "open_weight": false}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "misalignment rate (fraction of scenario questions where model selects misaligned action)",
+    "value": "base models: 41% to 61% with misalignment-upsampled pretraining, 41% to 4% with alignment-upsampled pretraining; post-SFT+DPO: 35% (no system prompt) / 24% (HHH prompt) for Alignment Upsampled vs 60% for Misalignment Upsampled",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["Zyphra/dclm-dedup", "OLMo-3"],
+  "contradicts_or_qualifies": [
+    "Challenges the assumption underlying RLHF, constitutional AI, and deliberative alignment that pretraining produces a relatively neutral substrate whose values are primarily set by post-training",
+    "Provides what the authors call the first empirical evidence of alignment elasticity occurring with realistic alignment data"
+  ],
+  "stated_future_work": [
+    "Deep character training: what other kinds of pretraining interventions are possible, and how to structure post-training so pretraining interventions are maximally effective, including improving [Special Token] persona training",
+    "Training data attribution: can misaligned behaviour be traced back to specific training examples",
+    "Scaling laws for alignment pretraining: do these effects scale with model size and compute",
+    "RL post-training: do findings hold up under RLHF and RLAIF"
+  ],
+  "limitations_stated": [
+    "Simplistic evaluations: single-turn binary-choice scenarios; 6.9B models lack capabilities for more realistic agentic evaluations; misalignment rates reflect self-report rather than propensities in realistic environments",
+    "Limited model diversity: only 6.9B parameter dense text-only English LLMs; resource constraints prevent multiple random seeds",
+    "No RL post-training investigated, despite RL with verifiable rewards comprising a substantial portion of frontier post-training compute"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "upsampling misalignment discourse increases misalignment rates from 41% to 61%, while upsampling positive alignment discourse reduces misalignment from 41% to 4%."
+}

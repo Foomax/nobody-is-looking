@@ -1,0 +1,39 @@
+{
+ "post_id": "A5Byr2jkBJpnBdx23",
+ "primary_claim": "Using orthogonalized persona-vector-style emotion directions extracted from Qwen3-14B, different prompt categories produced distinct dominant-emotion token distributions: JailbreakBench prompts increased fear and joy tokens, and poetry increased sad and love tokens.",
+ "claim_type": "positive",
+ "phenomenon": "LLM emotion vector extraction",
+ "models": [
+  {"family": "Qwen", "size": "14B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "% of tokens dominated by each emotion vector, by prompt category",
+  "value": "JailbreakBench prompts increased fear and joy token share; poetry had the highest sad and love token share",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "safety-research/persona_vectors"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "used a very small model (Qwen 3 14B)",
+  "the emotions chosen were arbitrary",
+  "the activation sampling and orthogonalization procedure is not super principled",
+  "the cosine similarity metric is sometimes noisy",
+  "no in-depth or rigorous evals were performed; intended as a fun weekend project and interactive demonstration"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "JailbreakBench (perhaps concerningly) increased the model's fear and joy. Poetry greatly increased the percentage of sad tokens and had the highest percentage of love tokens."
+}

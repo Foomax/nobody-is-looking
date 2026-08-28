@@ -1,0 +1,39 @@
+{
+  "post_id": "nLrrYweeFxgXACSmS",
+  "primary_claim": "Most safety-relevant properties in Gemini (across ODCV, alignment/eval-awareness, safety, reward-hacking, and free-tier-log benchmarks) are established by pretraining plus SFT alone, not by later RL training stages: SFT-only checkpoints of Gemini 3.1 Pro and Gemini 3 Flash perform remarkably similarly to the corresponding production models across these evals.",
+  "claim_type": "positive",
+  "phenomenon": "fine-tuning side effects",
+  "models": [
+    {"family": "Gemini", "size": "3.1 Pro / 3 Flash", "open_weight": false}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "safety-relevant benchmark scores, SFT-only vs production (post-RL) model",
+    "value": "SFT-only and production models score remarkably similarly across ODCV, alignment evals, safety evals, reward hacking, and free-tier user log benchmarks",
+    "direction": "0",
+    "uncertainty_reported": "ci"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["arXiv:2512.20798", "alignment.anthropic.com/2026/petri-v2"],
+  "contradicts_or_qualifies": [
+    "Runs counter to the authors' own initial expectations that RL training stages would be the primary driver of safety-relevant properties"
+  ],
+  "stated_future_work": [
+    "intervene at the SFT stage in future work on Gemini safety and behavior, given it is identified as a high-leverage point"
+  ],
+  "limitations_stated": [
+    "the authors do not want to overstate this claim as applying to other model families",
+    "this result may change in future Gemini versions",
+    "many autorater positives in the free-tier user log analysis are likely false positives"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "most safety relevant properties in Gemini seem to be caused by the combination of pretraining and SFT, not other training stages like RL"
+}

@@ -1,0 +1,41 @@
+{
+  "post_id": "mu7eJdesBkKuBycnY",
+  "primary_claim": "Replicating the Sleeper Agents backdoor setup on Llama-3.3-70B and Llama-3.1-8B, whether standard blue-team training (HHH SFT or 'Pirate Training') removes the backdoor depends heavily on the optimizer used to insert it, whether CoT-distillation was used, and model size, sometimes in directions opposite to the original Sleeper Agents paper (e.g. CoT-distillation making backdoors less robust, not more), indicating sleeper-agent model-organism results are messier and far more sensitive to training choices than previously believed.",
+  "claim_type": "negative",
+  "phenomenon": "sleeper agent backdoor robustness",
+  "models": [
+    {"family": "Llama", "size": "3.3-70B-Instruct / 3.1-8B-Instruct", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "whether blue-team training removes the backdoor, across red-team training configurations",
+    "value": "removal success depends on optimizer (Adam vs. SOAP), CoT-distillation, and model size; CoT-distillation made backdoors LESS robust, contrary to the original Sleeper Agents paper",
+    "direction": "0",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["arXiv:2401.05566", "arXiv:2409.11321", "Cadenza-Labs/sleeper-agents", "anthropics/sleeper-agents-paper", "alignment-science/ihy-sft-dataset", "vKR9rHcWsMMr7BX4Q", "yvuXPi5m4vCvSGTjo"],
+  "contradicts_or_qualifies": [
+    "Directly contradicts the original Sleeper Agents paper's finding that CoT-distillation produces more robust sleeper agents -- this work finds the opposite for Llama-70B and Llama-8B",
+    "Casts further doubt, alongside other replication attempts (e.g. Cadenza Labs), on the generality of the Sleeper Agents paper's headline claim that standard alignment training fails to remove backdoors; Pirate Training succeeds on several model organisms tested, though it appears to only suppress rather than truly remove the backdoor"
+  ],
+  "stated_future_work": [
+    "More research should be done to understand when backdoors will be robust to further training, though tractability is uncertain",
+    "Have not yet figured out how to predict or prevent the 'Backdoor Return' phenomenon"
+  ],
+  "limitations_stated": [
+    "MO is not a perfect replication of the original SA MO: the SA paper used helpful-only Claude models while this work uses safety-trained Llama models, and the SA paper's optimizer is unknown (this work tried Adam and SOAP)",
+    "Backdoor removal via aggressive blue-team training causes substantial capability degradation, unsurprising since off-policy SFT frequently degrades capability, especially across different model families",
+    "Mechanism causing 'Backdoor Return' (where a removed backdoor reappears during subsequent training) is not understood"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "SA found that CoT-distilling produced more robust Sleeper Agents—we found the opposite."
+}

@@ -1,0 +1,40 @@
+{
+ "post_id": "D7zQkrDjAKaa293EA",
+ "primary_claim": "Lightweight LoRA fine-tuning teaches open-source LLMs to reliably detect when a concept vector has been injected into their residual stream (activation steering), reaching up to 95.5% detection and 71.2% concept identification on held-out concepts with zero false positives on clean controls, while base (non-fine-tuned) models rarely exceed chance.",
+ "claim_type": "positive",
+ "phenomenon": "steering awareness",
+ "models": [
+  {"family": "Qwen", "size": "2.5 32B", "open_weight": true},
+  {"family": "Llama", "size": "8B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "steering-injection detection rate and injected-concept identification rate on held-out concepts",
+  "value": "best model: 95.5% detection, 71.2% concept identification; detection ranges from 95% (Qwen 32B) to 43% (Llama 8B) across the 7 fine-tuned architectures; zero false positives on clean controls",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2602.20031", "arXiv:2603.05414", "jsFGuXDMxy5NZg9T2", "arXiv:2507.21509"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Develop a general theory of intervention-awareness spanning steering, prefill, probes, and other forms of computational manipulation",
+  "Determine what architectural features make some models better steering detectors",
+  "Determine what training is needed to produce steering rejection while keeping models fluent"
+ ],
+ "limitations_stated": [
+  "Detection is architecture-dependent, varying from 95% (Qwen 32B) to 43% (Llama 8B) under the same recipe, for reasons not yet understood",
+  "Detection fails on vector families geometrically orthogonal to the training distribution (e.g. PCA, ICA extracted vectors), creating evasion strategies",
+  "Adapter training can degrade factual performance and safety behaviour, though scaling down the adapter mitigates this"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "The best model reaches 95.5% detection on held-out concepts and 71.2% concept identification."
+}

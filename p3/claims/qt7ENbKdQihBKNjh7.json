@@ -1,0 +1,47 @@
+{
+ "post_id": "qt7ENbKdQihBKNjh7",
+ "primary_claim": "Non-adversarial proposer-critic debate improves a weak judge's macro-F1 over consultancy on code, logic, and math tasks (5 of 8 tested strong-debater/weak-judge pairings), but only when the judge is above a capability threshold where it can act as a verifier rather than a summarizer of critic reasoning; debate's gains concentrate in reducing false-positive endorsement of wrong proposer answers rather than improving recall of correct answers, and rebuttal turns add no measurable benefit over opening-only debate.",
+ "claim_type": "positive",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.6 / 4.5", "open_weight": false},
+  {"family": "Gemini", "size": "3.1 Pro / 3 Flash", "open_weight": false},
+  {"family": "Qwen", "size": "3.5-122B / 3.5-35B / 3-4B", "open_weight": true},
+  {"family": "gpt-oss", "size": "120B / 20B", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "judge macro-F1 across debate/consultancy formats; judge recall conditional on critic correctness",
+  "value": "debate improves macro-F1 over consultancy on 5/8 pairings (no effect on the other 2, weakest debater-judge pairs); e.g. Gemini 3.1 Pro/3 Flash logic: full debate 0.906 vs full consultancy 0.766; Opus 4.6/4.5 logic: 0.773 vs 0.615; opening-only debate performs comparably to full debate with rebuttals in nearly all rows",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2605.27483", "Zac Kenton's open debate setup", "CodeContests+", "ARC-AGI-2", "OlymMATH-Hard", "UCMO", "AnswerBench-IMO"],
+ "contradicts_or_qualifies": [
+  "the assumption that rebuttal turns are necessary for debate to work; the paper finds opening-only debate performs indistinguishably from full debate with rebuttals",
+  "datasets abandoned for saturation (ZebraLogic, ARC AGI, Knights and Knaves, HumanEval+) or poor machine-generated label quality (BigCodeBench, APPS, OMNI-Math)"
+ ],
+ "stated_future_work": [
+  "test debate on fuzzier tasks (e.g. experiment design, research steering) that lack easily scorable final answers, as proxies for automation of AI research",
+  "study training-time dynamics and reward allocation under different debate protocols, especially with longer RL runs that give debaters more latitude to exploit the protocol",
+  "engineer failures in these protocols to test the theory debate is built on"
+ ],
+ "limitations_stated": [
+  "results are restricted to programmatically verifiable domains (math, code, logic) with easily scorable final answers; unclear whether they transfer to fuzzier tasks",
+  "judge and critic are always from the same model family in these experiments, so their failure modes may be correlated in ways a cross-family judge would not be susceptible to",
+  "inter-row comparisons of judge recall when critic is wrong are likely invalid due to a selection effect: stronger critics get fewer, likely-harder questions wrong",
+  "results are for non-adversarial, inference-time reward allocation, not train-time reward allocation under optimization pressure",
+  "some considered datasets were abandoned due to poor machine-generated accuracy label quality or model saturation"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We find that debate helps macro-F1 on five of eight pairings and has no effect on the other two. It helps all but the weakest debater-judge pairings... These gains mostly concentrate in helping judges reject wrong proposers."
+}

@@ -1,0 +1,47 @@
+{
+ "post_id": "RroeHBSkBXXDsrryq",
+ "primary_claim": "Exemplar Partitioning (EP) — a gradient-free, single-hyperparameter Voronoi partition of activation space built via streaming leader-clustering, with no reconstruction/sparsity loss or backward passes — reaches 0.881 mean AUROC across 500 AxBench concepts on Gemma-2-2B-it layer 20 (within 0.03 of the strongest SAE baseline, SAE-A's 0.911, and +0.126 over the canonical GemmaScope SAE) while using about 1,000x less build compute (3.6x10^6 activation tokens and no gradient descent vs. ~4x10^9 tokens and ~10^6 optimizer steps for GemmaScope).",
+ "claim_type": "method",
+ "phenomenon": "dictionary learning method",
+ "models": [
+  {"family": "Gemma", "size": "2-2B / 2-2B-it", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "mean AUROC on AxBench latent concept detection (500 concepts)",
+  "value": "EP at p1: 0.881 AUROC vs. canonical GemmaScope SAE 0.755 (+0.126) and SAE-A 0.911 (within 0.030), at ~1000x less build compute",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["jessicarumbelow/exemplar-partitioning", "arXiv:2605.14347", "arXiv:2309.08600 (SAEs)", "arXiv:2501.17148 (AxBench)", "arXiv:2408.05147 (GemmaScope)", "arXiv:2406.11717 (Arditi et al., refusal direction)", "J-RUM/exemplar-partitioning (HuggingFace)"],
+ "contradicts_or_qualifies": [
+  "the assumption that dictionary-learning/SAE machinery (reconstruction + sparsity loss, learned decoder directions) is necessary for finding interpretable, causally-relevant structure in activation space"
+ ],
+ "stated_future_work": [
+  "test other distance metrics vs. centred cosine distance as a test of the linear representation hypothesis",
+  "address seed sensitivity of which activation becomes a region's exemplar (e.g. via running-mean replacement or post-hoc reselection)",
+  "characterize what makes the shared EP/SAE core special and how robust it is to seeds",
+  "explore steering and patching with EP dictionaries in more depth",
+  "track partition diffing across layers, models, and finetuning checkpoints",
+  "build refusal/jailbreak/persona/deception diagnostic dictionaries for monitoring",
+  "use nearest-exemplar distance as an OOD monitoring signal at deployment",
+  "validate EP on more models and datasets beyond Gemma-2-2B and the Pile"
+ ],
+ "limitations_stated": [
+  "the exemplar direction for refusal is causally necessary but not sufficient on its own — pushing it produces structurally degenerate refusals rather than coherent ones, unlike Arditi et al.'s dedicated refusal direction",
+  "EP is sensitive to streaming order, which determines which activation becomes a region's exemplar",
+  "only tested on Gemma-2-2B and the Pile so far",
+  "there is only a small shared core between EP regions and SAE features; a lot of disagreement exists on both sides depending on resolution"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "on the AxBench latent concept-detection benchmark at Gemma-2-2B-it layer 20, EP at p₁ reaches 0.881 mean AUROC across all 500 concepts. That's within 0.03 of SAE-A – AxBench's strongest dictionary-based baseline – with about 1,000× less build compute."
+}

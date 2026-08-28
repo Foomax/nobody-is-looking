@@ -1,0 +1,28 @@
+{
+ "post_id": "Yig9fc7wAxKqG63Do",
+ "primary_claim": "The empirical spectral distribution of QK circuit correlation matrices in dense (non-MoE) text-to-text transformer models follows consistent trends -- well-fit by a gamma distribution -- that can be used to build a weight-only taxonomy of attention heads without requiring forward passes, with potential to speed up automated circuit discovery and model diffing.",
+ "claim_type": "method",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "Qwen3", "size": "0.6B-32B", "open_weight": true},
+  {"family": "Llama", "size": "3.1-405B-Instruct", "open_weight": true},
+  {"family": "Mistral", "size": "7B-Instruct", "open_weight": true},
+  {"family": "Gemma2", "size": "27B-it", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "Jensen-Shannon Divergence goodness-of-fit between average ESD and fitted gamma distribution",
+            "value": "JSD typically in the range 0.0-0.1 across all models studied, indicating a very good fit",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["sd-interp/qk-spectral-analysis"],
+ "contradicts_or_qualifies": ["Automated Circuit Discovery (Conmy et al. 2023) treats model weights as a passive backdrop for activation-level patching experiments, which makes it difficult to scale; this work proposes using weight structure directly to prune the search space"],
+ "stated_future_work": ["Look for functional similarity between ESD-based head classes, e.g. check if low-alpha classes are 'writer' heads (high direct logit attribution) and high-alpha classes are 'aggregator' heads that consolidate information, or vice versa"],
+ "limitations_stated": [
+  "Classification B (per-layer ESD statistics) is model-specific, can only group a subset of layers, and lacks a general metric to measure goodness-of-fit",
+  "The exact mechanism behind why the mean ESD follows a gamma distribution is not known and is currently only empirical"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "Empirical Spectral Distribution (ESD) of the correlation matrix of $W_{QK}$ in dense (non-MoE) text-to-text models exhibit certain trends."
+}

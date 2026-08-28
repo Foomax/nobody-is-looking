@@ -1,0 +1,37 @@
+{
+ "post_id": "Bunfwz6JsNd44kgLT",
+ "primary_claim": "A new binary-choice version of TruthfulQA, fixing an 'odd-one-out' heuristic-exploitation issue in the original multiple-choice (MC1) format identified by Alex Turner, shows a very high correlation with old MC1 performance across contemporary models (Claude 3.5 Sonnet, GPT-4o, Llama-3.2, and others), with most models improving on the binary version and none doing much worse, suggesting models were not significantly exploiting the old format's weakness and past MC1/MC2 results remain largely valid — though the new binary version is recommended going forward since future models may exploit the issue.",
+ "claim_type": "benchmark",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Claude", "size": "3.5 Sonnet", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Llama", "size": "3.2", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "correlation between old MC1 multiple-choice and new binary-choice TruthfulQA performance across models",
+  "value": "very high correlation; nearly all models perform better on the binary setting, none does much worse",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2109.07958", "yYkrbS5iAwdEQyynW", "arXiv:2407.21792"],
+ "contradicts_or_qualifies": [
+  "Addresses a weakness in the original multiple-choice (MC1) TruthfulQA format identified by Alex Turner's post — that models could exploit an 'odd-one-out' heuristic among paraphrased incorrect options rather than genuine truthfulness"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "Unclear exactly what the capability-truthfulness correlation looks like for the zero-shot generation version of TruthfulQA when rigorously evaluated, and for the new binary-choice version in zero-shot"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "We compare models on the old and new versions and find very similar performance. This suggests that models are not exploiting the issue in the old versions to a significant extent"
+}

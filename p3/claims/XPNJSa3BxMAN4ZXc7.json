@@ -1,0 +1,35 @@
+{
+ "post_id": "XPNJSa3BxMAN4ZXc7",
+ "primary_claim": "SAEs trained on the difference in activations between a base model and its instruct finetune (diff-SAE) identify latents that capture specific behavioral changes between the models, and steering with these latents causally controls behaviors such as refusal, roleplay, and expressed uncertainty.",
+ "claim_type": "method",
+ "phenomenon": "crosscoder / model diffing",
+ "models": [
+  {"family": "Gemma", "size": "2 2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "% of rollouts producing the target completion after steering",
+  "value": "42% -> 2% (roleplay-related completion 'or concerns' before vs after steering with the identified latent)",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2504.02922"],
+ "contradicts_or_qualifies": [
+  "Crosscoder-based model diffing (Lindsey et al 2024) draws a blurry distinction between exclusive and shared latents, with exclusive latents for one model often qualitatively similar to those for the other model"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "The authors state their findings are preliminary and point toward a promising research direction rather than definitive conclusions"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "we identify particular diff-SAE latents that capture specific behavioral changes between base and chat models, providing signs of life for this approach."
+}

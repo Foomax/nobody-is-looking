@@ -1,0 +1,17 @@
+{
+ "post_id": "WqjkqrEyFDXoHzz9K",
+ "primary_claim": "BiDPO-trained steering vectors, which previously boosted TruthfulQA scores by over 10% in Gemini 1.5v1 while retaining capabilities, did not outperform stronger prompt-based steering baselines after Gemini was updated to 1.5v2.",
+ "claim_type": "negative",
+ "phenomenon": "steering vector transfer",
+ "models": [{"family": "Gemini", "size": "1.5 Flash / Pro", "open_weight": false}],
+ "n_model_families": 1,
+ "effect": {"metric": "TruthfulQA score", "value": ">10% boost in Gemini 1.5v1; no longer beats baselines in 1.5v2", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2406.00045", "arXiv:2308.10248", "57k6xNcWtAtsSTcor"],
+ "contradicts_or_qualifies": ["the authors' own earlier positive BiDPO result in Gemini 1.5v1, superseded once prompt-based steering baselines got stronger in 1.5v2"],
+ "stated_future_work": [],
+ "limitations_stated": ["it's hard to draw firm conclusions about BiDPO because TruthfulQA might not be measuring truthfulness/factuality"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "BiDPO did not beat the stronger baselines, ending the project."
+}

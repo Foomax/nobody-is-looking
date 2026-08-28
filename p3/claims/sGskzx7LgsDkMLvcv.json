@@ -1,0 +1,41 @@
+{
+ "post_id": "sGskzx7LgsDkMLvcv",
+ "primary_claim": "Sparse Concept Anchoring (SCA) — training-time geometric regularizers (hypersphere normalization, pairwise separation, and attractive/repulsive anchor/subspace terms on rare labeled examples) applied to a toy RGB autoencoder — enables selective, reversible suppression of a target concept (red) using only an anchor (R^2=0.99 for degradation vs. cosine similarity to red; cyan/orthogonal colors unaffected), and enables selective, permanent weight ablation of the concept only when repulsive isolation terms are added during training (unisolated ablation R^2=0.37, damaging cyan; isolated ablation R^2=0.98, no damage to other colors).",
+ "claim_type": "positive",
+ "phenomenon": "unlearning",
+ "models": [
+  {"family": "toy MLP autoencoder (RGB reconstruction)", "size": "4D/5D latent bottleneck", "open_weight": null}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "R^2 of reconstruction error vs. hue after suppression/ablation intervention",
+  "value": "anchored-only suppression: R^2=0.99, red error rises 0 to ~0.28 (theoretical 1/4); anchored-only ablation: R^2=0.37, damages cyan; isolated suppression: R^2=0.98; isolated ablation: R^2=0.98, red error ~0.34 (theoretical 1/3), no measurable degradation to other colors",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2512.12469 (Sparse Concept Anchoring for Interpretable and Controllable Neural Representations)", "nGPT (Loshchilov et al., ICLR 2025)", "gradient routing (LessWrong post)", "transformer-circuits.pub 2024 Scaling Monosemanticity"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "apply SCA to transformers, including deciding where in the residual stream to apply regularizers and whether interventions resist bypass via residual connections or attention",
+  "explore anchoring concepts of unknown/higher-dimensional shape using overcomplete subspaces",
+  "study many anchors at once and quantify where optimization landscape difficulty/task-performance cost begins as more concepts are anchored",
+  "pilot SCA on a real (frontier-scale) model"
+ ],
+ "limitations_stated": [
+  "tested only on a simple toy MLP autoencoder (RGB colors), not on transformers or language models",
+  "requires longer training runs in their experiments (96,064 samples for a simple model), though authors expect overhead to be modest for larger models",
+  "requires more hyperparameters (regularizer schedules with keyframes) to tune than standard training",
+  "concepts of unknown shape and many-anchors-at-once scenarios remain speculative/untested"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We think this is the most safety-relevant result in the paper: a concept, chosen in advance, removed permanently from a trained network by zeroing a known block of weights, with no post-hoc search, and with a reconstruction error close to a bound we can derive directly from the geometry."
+}

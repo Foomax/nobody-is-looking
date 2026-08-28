@@ -1,0 +1,17 @@
+{
+ "post_id": "sHpZZnRDLg7ccX9aF",
+ "primary_claim": "Pruned circuits extracted from weight-sparse transformers via Gao et al's method can be small and appear interpretable while being unfaithful to the model's true computation, e.g. achieving low loss on a nonsense task, missing important attention patterns, repurposing nodes, and failing to generalize like the original model.",
+ "claim_type": "negative",
+ "phenomenon": "circuit discovery",
+ "models": [{"family": "custom weight-sparse transformer (SimpleStories, 2-layer)", "size": "d_model 128-4096", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {"metric": "task CE loss / circuit node count", "value": "~30 nodes achieve task loss < 0.05 on a nonsense task; ordinary pronoun task needs ~10 nodes for similar loss", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 100, "prereg": false, "human_eval": false},
+ "depends_on": ["openai/circuit_sparsity", "arXiv:2511.13653", "jacobcd52/sparse_pretrain_public", "arXiv:1905.01067", "arXiv:1911.13299", "arXiv:2306.08055"],
+ "contradicts_or_qualifies": ["Gao et al (2025)'s claim that weight-sparse pruning yields faithful interpretable circuits; the author replicates the circuit-size result but argues the extracted circuits are not faithful to the model's true computation"],
+ "stated_future_work": ["Develop a good faithfulness metric for circuits (e.g. building on causal scrubbing ideas)", "Modify the pruning algorithm to extract circuits that are faithful according to that metric", "Check whether Gao et al's main result (weight-sparse models have smaller circuits) holds up with a modified faithful pruning algorithm", "Apply similar faithfulness scrutiny to attribution graphs, especially looking for qualitatively-wrong predictions about behavior on unseen prompts"],
+ "limitations_stated": ["Did not ensure each model has the same number of nonzero parameters when comparing Pareto curves", "Bridges training added complexity and was not used in any of the results", "Freezing layernorm during pruning does not fully fix faithfulness issues (result differs by model size)", "The 100 pruning seeds may not be as decorrelated as desired, since hyperparameters were tuned once via a CARBS sweep per model/task"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Overall, these results suggest that circuits extracted from weight-sparse models, even when interpretable, should be scrutinized for faithfulness."
+}

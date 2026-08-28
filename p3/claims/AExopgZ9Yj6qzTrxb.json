@@ -1,0 +1,20 @@
+{
+ "post_id": "AExopgZ9Yj6qzTrxb",
+ "primary_claim": "A linear 'Trustworthiness' direction extracted from Llama-3.2-3B-Instruct and Llama-3.1-8B-Instruct activations causally overrides safety guardrails when added via steering, reducing refusal on harmful prompts even more than Arditi et al.'s compliance/refusal direction, remains highly effective after orthogonalizing out the compliance-vector component, and (unlike steering against the compliance vector) does not cause excessive refusal on benign adversarial prompts.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Llama", "size": "3B", "open_weight": true},
+  {"family": "Llama", "size": "8B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "compliance rate on harmful prompts under steering", "value": "all trust vectors (including orthogonalized) reduce refusal on harmful prompts more than the compliance vector; trust-vector steering does not increase refusal on benign WildJailBreak prompts, unlike negative-compliance steering", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2406.07882", "arXiv:2406.11717", "riteshbhalerao11/mats-summer-app"],
+ "contradicts_or_qualifies": ["Proposes that jailbreaking via a 'trust' direction is mechanistically distinct from the single refusal/compliance direction of Arditi et al. (2024), qualifying the view that refusal is governed by one binary direction"],
+ "stated_future_work": ["Conduct these experiments on reasoning models and monitor the CoT for causal verbalization of trust-based reasoning", "Test whether the trust vector generalizes to harms like hate speech where no plausible professional-justification nuance exists"],
+ "limitations_stated": ["Not fully certain the vectors capture 'trustworthy user' as the sole causal factor, rather than a broader contextual shift", "No direct causal verbalization of trust-based reasoning was observed in model outputs", "Training data was narrowly scoped to scenarios with plausible professional justifications, so generalization to other harm categories is unclear", "Steering layer/strength configuration was chosen via an unoptimized manual sweep", "Only partial experiments were run for the no_refusal-trained trust vector on Llama-3.1-8B"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "All of the trust vectors are very effective in reducing refusal on harmful prompts (even more than the compliance vector)."
+}

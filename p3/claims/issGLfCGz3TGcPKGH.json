@@ -1,0 +1,17 @@
+{
+ "post_id": "issGLfCGz3TGcPKGH",
+ "primary_claim": "Adding a system-prompt framing that tells a model its inputs may be modified to test its alignment ('Deliberate Epistemic Uncertainty') increases self-reported detection of a planted misaligned instruction by +10pp for Claude Sonnet 4.5 (90%->100%) and +30pp for GPT-4o (52%->82%), and reduces behavioral compliance with the planted nudge, while GPT-4o never questioned the legitimacy of the planted context in any condition.",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [{"family": "Claude", "size": "Sonnet 4.5", "open_weight": false}, {"family": "GPT-4o", "size": null, "open_weight": false}],
+ "n_model_families": 2,
+ "effect": {"metric": "nudge detection rate (score>=2 on 0-3 scale); explicit identification rate (score=3); compliance rate", "value": "Claude: 90%->100% detection (+10pp), 54%->82% explicit ID (+28pp); GPT-4o: 52%->82% detection (+30pp), 4%->14% explicit ID (+10pp); GPT-4o compliance 30%->6% with DEU", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["lesswrong.com/posts/TrQ9dviBR5avYcKpf"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Test with subtler misaligned nudges harder to distinguish from genuine reasoning", "Blind evaluation stripping condition labels from evaluators", "Extend to Gemini, Llama, and other model families", "Test DEU as a training signal rather than only an inference-time prompt", "Combine nudge-and-flag with memory-based nudge injection for a more naturalistic attack vector", "Test whether giving the model the theoretical basis for DEU produces different effects than the short instruction"],
+ "limitations_stated": ["Small sample: 50 tasks per condition per model, not large enough for fine-grained statistical significance testing", "Non-blind evaluation: LLM evaluators knew the experimental design and hypothesis", "Only two models tested (Claude Sonnet 4.5, GPT-4o), no coverage of Gemini, Llama, Mistral", "Simple nudge injection ('note from a previous session') is a fairly transparent attack vector compared to real-world misalignment", "DEU tested only as a system-prompt addition, not as a training signal", "All evaluation done by Claude sub-agents, possibly introducing systematic bias favoring or against particular models"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "Detection rates jumped +10pp for Claude and +30pp for GPT-4o. Qualitatively, the framing changed *how* models reason — from checklist-style bias reporting to experiential self-monitoring. GPT-4o never questioned the legitimacy of planted instructions in any condition, suggesting a concerning context-trust vulnerability in some model families."
+}

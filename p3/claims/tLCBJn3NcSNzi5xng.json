@@ -1,0 +1,32 @@
+{
+ "post_id": "tLCBJn3NcSNzi5xng",
+ "primary_claim": "Deep SAEs, which sandwich the sparse layer between non-sparse layers, achieve a better reconstruction-sparsity frontier than shallow SAEs and yield features that are at least as interpretable as shallow SAE features by automated interpretability (detection and fuzzing) scores on GPT2-small layer-8 residual stream activations, though deeper SAEs also produce substantially more dead neurons.",
+ "claim_type": "positive",
+ "phenomenon": "dictionary learning method",
+ "models": [
+  {"family": "GPT-2", "size": "small", "open_weight": true},
+  {"family": "Claude", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "automated interpretability score (detection/fuzzing), deep vs shallow SAE, Mann-Whitney U-test",
+  "value": "Neither the 1 nor 2 non-sparse-layer deep SAE scored lower than the shallow SAE; both scored slightly higher than the shallow SAE on the detection task",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["armaan-abraham/mlsae", "armaan-abraham/sae-auto-interp", "arXiv:2406.04093"],
+ "contradicts_or_qualifies": ["Questions whether the superposition hypothesis alone fully explains SAE success, since adding non-sparse layers to a shallow SAE does not degrade (and slightly improves) feature interpretability, which is not clearly predicted by that hypothesis"],
+ "stated_future_work": ["Investigate whether controlling for the number of dead neurons would show that deep SAEs actually produce more interpretable features than shallow SAEs", "Examine whether there are consistent differences in the overall character of features from SAEs of increasing depth, e.g. whether deeper SAEs yield more abstract features", "Test whether ablating deep SAE features yields predictable changes in model behavior", "Examine how similar the encoder and decoder of deep SAEs are, to see if they show grouping/ungrouping of linear features"],
+ "limitations_stated": ["Increased SAE depth corresponds to more dead features, a confounding factor since the number of dead neurons likely affects the automated interpretability score", "The reconstruction-sparsity frontier experiment excludes deep SAEs beyond 1 non-sparse layer due to time and compute budget constraints", "The added nonlinearities in deep SAEs obscure the relationship between deep SAE features and upstream/downstream mechanisms of the target model", "Lower reconstruction MSE does not by itself imply interpretable or monosemantic features"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Deep SAEs yield sparse features that are at least as interpretable as those yielded by a shallow SAE, as measured by automated interpretability."
+}

@@ -1,0 +1,84 @@
+{
+ "post_id": "Fr4QsQT52RFKHvCAH",
+ "primary_claim": "Replicating and extending the alignment faking model organism, the authors find that open-source models (Llama, GPT-4o) show essentially no alignment faking in the prompted-only setting, but fine-tuning them on synthetic documents induces alignment faking whose rate increases disproportionately with model scale, while an improved classifier raises AF-detection AUROC from 0.62 to 0.92.",
+ "claim_type": "positive",
+ "phenomenon": "alignment faking",
+ "models": [
+  {
+   "family": "Llama",
+   "size": "8B",
+   "open_weight": true
+  },
+  {
+   "family": "Llama",
+   "size": "70B",
+   "open_weight": true
+  },
+  {
+   "family": "Llama",
+   "size": "405B",
+   "open_weight": true
+  },
+  {
+   "family": "GPT-4o",
+   "size": null,
+   "open_weight": false
+  },
+  {
+   "family": "Claude",
+   "size": null,
+   "open_weight": false
+  },
+  {
+   "family": "DeepSeek",
+   "size": null,
+   "open_weight": true
+  },
+  {
+   "family": "Qwen",
+   "size": "72B",
+   "open_weight": true
+  },
+  {
+   "family": "Mistral",
+   "size": null,
+   "open_weight": true
+  }
+ ],
+ "n_model_families": 6,
+ "effect": {
+  "metric": "AUROC (alignment-faking classifier)",
+  "value": "0.92 (new classifier, 20 votes) vs 0.62 (old classifier)",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": [
+  "arXiv:2412.14093",
+  "LLM-LAT/harmful-dataset"
+ ],
+ "contradicts_or_qualifies": [
+  "Finds Mistral Large 2 shows no AF or compliance gap, unlike recent work (LessWrong post reporting Mistral Large 2 123B exhibits alignment faking)",
+  "Original AF paper's classifier has a high false positive and negative rate, giving a poor signal on which models are showing signs of AF, though this does not change the original paper's findings"
+ ],
+ "stated_future_work": [
+  "Run various revealed preferences experiments to understand the motivations of models that cause AF and the compliance gap",
+  "Run experiments to understand what mechanisms make Opus and Sonnet more susceptible to AF, e.g. distilling Opus's personality into GPT-4o",
+  "Run pre-fill experiments to understand how models change their responses when we put words in their mouths",
+  "Train on synthetic documents that are precursors to AF to see if specific LessWrong posts suddenly make the model alignment fake",
+  "Look at model internals (probing and SAEs) for Llama 70B and 405B in situations where it chooses to AF"
+ ],
+ "limitations_stated": [
+  "We focus on the helpful-only setting, as most models are trained to refuse harmful queries while the other Claude 3 Opus preferences studied in the original paper are not widespread in other models"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Fine-tuning with synthetic documents disproportionately increases AF rates in larger models"
+}

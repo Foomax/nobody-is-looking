@@ -1,0 +1,32 @@
+{
+ "post_id": "jgPydSuZFum3CExJQ",
+ "primary_claim": "Across four Schelling-coordination datasets, non-reasoning frontier models fail to coordinate above chance with an identical instance of themselves when prevented from reasoning in-context (except GPT-4.1 Nano, which appears to coordinate via salience rather than reasoning), while reasoning models (DeepSeek 3.2, Opus 4.5 thinking) coordinate above chance on easier datasets by explicitly alphabetizing options in their chain of thought.",
+ "claim_type": "negative",
+ "phenomenon": "out-of-context Schelling coordination",
+ "models": [
+  {"family": "DeepSeek", "size": "V3 / 3.2", "open_weight": true},
+  {"family": "Claude", "size": "Opus 4.1 / 4.5, Haiku 3.5", "open_weight": false},
+  {"family": "GPT", "size": "4.1, 4.1 Mini, 4.1 Nano", "open_weight": false},
+  {"family": "Kimi", "size": "K2", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "convergence rate on Silent Agreement benchmark (coordination vs control condition)", "value": "non-reasoning models mostly at or below chance except GPT-4.1 Nano (above chance on 3 of 4 datasets); reasoning models above chance on easier datasets but degrading on harder ones; Opus 4.1 showed the strongest proportional improvement over control (+134%)", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["inspect_ai", "L3aYFT4RDJYHbbsup"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Further investigate GPT-4.1 Nano's surprising salience-driven coordination performance",
+  "Develop and test harder/saturating versions of the Schelling coordination benchmark to detect an emerging dangerous coordination capability",
+  "Continue updating the evaluation as new models are released"
+ ],
+ "limitations_stated": [
+  "This is not a realistic benchmark for dangerous AI coordination, only a proxy for a fundamental cognitive capacity",
+  "Small differences between models on this sensitive measure are likely noise or quirks of individual models and should not be overinterpreted",
+  "The eval itself is susceptible to sandbagging by a sufficiently capable model, so it cannot rule out strategic hiding of the capability",
+  "Anthropic models required a modified 'stricter' prompt to suppress chain-of-thought, and even so Opus 4.1 still produced invalid responses on nearly 1/5th of samples",
+  "The 'curse of medium intelligence' hypothesis for GPT-4.1/DeepSeek V3's poor performance is difficult to falsify, and the 5-repeat-prompt test designed to probe it gave ambiguous results"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "Across four simple datasets, we found that frontier models were unable to outperform chance on this task when prevented from reasoning in-context."
+}

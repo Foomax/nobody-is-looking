@@ -1,0 +1,32 @@
+{
+ "post_id": "CM7AsQoBxDW4vhkP3",
+ "primary_claim": "Training a language model with RL to penalize a property only in its final output (never seen by the CoT monitor) is sufficient to suppress that property in the chain-of-thought as well, even when the property remains behaviorally relevant to task completion, indicating output-only monitor training can induce CoT obfuscation via 'feedback spillover'.",
+ "claim_type": "positive",
+ "phenomenon": "CoT obfuscation",
+ "models": [
+  {"family": "Qwen", "size": "3-4B", "open_weight": true},
+  {"family": "GPT", "size": "4.1-mini", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "frequency of the penalized word/property in the CoT after output-only RL penalty",
+  "value": "output-only word-usage penalty drives frequency of the penalized word to near-zero in the CoT in both single-turn (ACRE 'detector') and multi-turn (terminal 'ground truth') settings; an LLM-judge output penalty also reduces the judge's score on the CoT",
+  "direction": "-",
+  "uncertainty_reported": "seeds"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["open-thought/reasoning-gym", "arXiv:2507.11473", "arXiv:2502.17424"],
+ "contradicts_or_qualifies": ["Extends recent OpenAI findings that training a CoT monitor directly as a training signal obfuscates CoT, by showing that training against an output-only monitor (which never sees the CoT) is sufficient to induce the same obfuscation"],
+ "stated_future_work": ["Aim to demonstrate that feedback spillover occurs in more realistic environments in future work", "Currently validating the Mind+Face (separate CoT/output models) mitigation further", "Working on other mitigation interventions to be discussed in follow-up work", "Mitigations for conditional feedback spillover are left for future work"],
+ "limitations_stated": ["The Mind+Face mitigation was only studied as a very naive implementation and is still being validated", "The mean pass rate of the LLM-judge penalty runs was 11 percentage points lower than the no-penalty runs", "Using a Mind+Face model sometimes preserves the penalized word in the CoT but with significant run-to-run variance"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "penalizing some property of the output is sufficient to suppress that property in the chain of thought also, even when that property is relevant to task completion"
+}

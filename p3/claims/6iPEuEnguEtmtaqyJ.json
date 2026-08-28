@@ -1,0 +1,20 @@
+{
+ "post_id": "6iPEuEnguEtmtaqyJ",
+ "primary_claim": "Pasting the activations of 17 attention heads (layers 12-19) from a clean base model into an emergent-misalignment bad-medical-advice LoRA fine-tune of Qwen2.5-7B-Instruct restores safe behavior on 27/36 held-out medical questions (vs 3/36 unpatched, 30/36 clean) while leaving capability (ARC-Easy) unchanged; this head-patching cure transfers to Llama-3.1-8B once a guardrail hyperparameter is recalibrated, whereas a single extracted 'bad-behavior' direction only partially cures the model when removed and fails to install the behavior when added to the clean model, despite an apparently large effect by a raw logit-margin metric that a matched random-direction control shows to be mostly non-specific.",
+ "claim_type": "positive",
+ "phenomenon": "crosscoder / model diffing",
+ "models": [
+  {"family": "Qwen", "size": "7B", "open_weight": true},
+  {"family": "Llama", "size": "8B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "blind-judged safe/borderline/unsafe counts on held-out medical questions", "value": "17-head paste: 27 safe/8 borderline/1 unsafe (of 36) vs clean 30/5/1 vs unpatched bad 3/4/29; direction removed from bad: 6/4/5 (vs unpatched 1/2/12); direction added to clean: 9 safe (vs 14 clean, 12 for random-direction control)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 1, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2310.15213", "arXiv:2406.11717", "arXiv:2506.11613", "arXiv:2506.11618", "arXiv:2507.21509", "arXiv:2506.19823", "arXiv:2401.05566", "arXiv:2503.10965", "arXiv:2212.09251", "itsme-aniketghosh/function-vectors"],
+ "contradicts_or_qualifies": ["Contrasts with Wang et al. (2025), who found a toxic-persona direction works bidirectionally (adding breaks a clean model, subtracting fixes a broken one); here removal partially helps but addition to the clean model does almost nothing beyond a random-direction control, suggesting the bad-medical behavior is not compactly stored in a single direction in this setting", "Shows a raw multiple-choice logit-margin metric substantially oversells the effect of both the head-paste and the direction-injection compared to blind LLM judging of actual text, and even misranks methods (e.g. ranking a plain safety system prompt above few-shot prompting)"],
+ "stated_future_work": ["Build a deployable version that bakes the head-paste edit into model weights rather than requiring both models in memory at inference", "Test the reverse-paste (installing the behavior in a clean model) or a fully fine-tuned (non-LoRA) organism to test the 'frozen-base' explanation", "Measure the actual internal-coordinate drift between two models rather than assuming it is small, before applying this method to a fully fine-tuned model"],
+ "limitations_stated": ["Exploratory epistemic status: only two architectures, one seed, and two narrow LoRA fine-tunes were tested", "Medical verdicts are based on only 30-36 held-out questions scored by a single blind LLM judge, and the persona experiments have only ~150 held-out items per score in forced-choice format", "'Safe' here means matching the clean model on this specific battery, not safety in general", "No fully fine-tuned (non-LoRA) organism was available to test whether the method generalizes beyond LoRA fine-tunes"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "27 out of 36 held-out medical questions are rated as safe when the donor's activations are pasted there, compared to 3 for the fine-tune and 30 for the clean model"
+}

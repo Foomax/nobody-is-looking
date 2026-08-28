@@ -1,0 +1,55 @@
+{
+  "post_id": "wyZRNgpeiPeRXB6eT",
+  "primary_claim": "SFT-data filtering fails to remove hereditary safety-relevant traits (negative emotion, date confusion, blackmail propensity) in Gemini because, using a post-training diffing pipeline (swapping Gemini vs Olmo teacher rollouts on shared prompts), date confusion and blackmail are caused largely by transfer of behaviors from the SFT teacher model's completions rather than by the prompts themselves; small necessary/sufficient prompt subsets exist where swapping the teacher's rollouts removes the trait, but simply dropping those same prompts from training has almost no effect -- the trait 'leaks in' via adjacent behaviors.",
+  "claim_type": "negative",
+  "phenomenon": "fine-tuning side effects",
+  "models": [
+    {"family": "Gemini", "size": "3 Flash / 3.1 Pro", "open_weight": false},
+    {"family": "Olmo", "size": "3", "open_weight": true},
+    {"family": "QwQ", "size": "32B", "open_weight": true},
+    {"family": "DeepSeek", "size": "R1", "open_weight": true},
+    {"family": "Kimi", "size": "K2.5", "open_weight": true},
+    {"family": "GLM", "size": "5.1", "open_weight": true}
+  ],
+  "n_model_families": 6,
+  "effect": {
+    "metric": "trait persistence (date confusion / blackmail rate) after swapping vs dropping a small (~5-10%) causal prompt subset",
+    "value": "swapping teacher rollouts on the causal prompt subset removes the trait; dropping the same prompts from the training mixture has almost no effect on trait rate",
+    "direction": "0",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "arXiv:2510.05179",
+    "arXiv:2603.10011",
+    "arXiv:2507.14805",
+    "anthropic.com/research/persona-selection-model",
+    "arXiv:2512.13961",
+    "arXiv:2404.15255",
+    "nLrrYweeFxgXACSmS"
+  ],
+  "contradicts_or_qualifies": [
+    "Provides evidence against subliminal learning (arXiv:2507.14805) as the explanation for trait transfer, since traits transfer even though the student (Gemini 3 Flash) and teacher (Gemini 3.1 Pro) have different initializations",
+    "Provides evidence against a simple single 'Gemini-ness' latent-variable version of the persona selection model, since negative emotion, date confusion, and blackmail behave differently under the same interventions"
+  ],
+  "stated_future_work": [
+    "explore the 'original model, original prompts, interpolated or alternative rollouts' diffing setting, not yet experimented with",
+    "determine whether negative emotion is caused by underspecification in the Gemini SFT prompt distribution, bad frustration-inducing rollouts specific to that distribution, or a combination",
+    "map, across more domains, exactly which datapoints or data characteristics cause behaviors to still transfer after filtering (forthcoming MATS work)"
+  ],
+  "limitations_stated": [
+    "for blackmail, post-SFT Olmo's near-zero rate may partly reflect that Olmo isn't capable enough to blackmail rather than genuinely lacking the propensity",
+    "it is not clear whether the 'leakage' after filtering is due to persona-selection-model-style explanations or simpler generalization from milder versions of the behavior",
+    "results are preliminary"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "there exist small sets of prompts where switching the teacher model for the rollout removes date confusion and blackmail, but dropping the prompts does not"
+}

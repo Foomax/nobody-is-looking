@@ -1,0 +1,50 @@
+{
+ "post_id": "mynHvr3ZnYDsk2tGH",
+ "primary_claim": "Latent Adversarial Training (LAT) encodes refusal behaviour in Llama-2-7B-chat in a more distributed way across multiple SVD components of activation-difference vectors than standard supervised safety fine-tuning (SSFT) or embedding-space adversarial training (AT); refusal vectors computed from the LAT model produce more effective refusal-ablation attacks across all three models (lower refusal rates) than vectors from the other models, yet the LAT model itself maintained the highest refusal rates against attacks using vectors from other models, making it the most robust of the three overall — though this better encoding of refusal could itself be exploited, since LAT was the least robust of the three when ablated using its own self-generated vector at layer 14 (16.92% vs 20.38% for baseline SSFT and 38.08% for AT).",
+ "claim_type": "positive",
+ "phenomenon": "refusal behaviour",
+ "models": [
+  {"family": "Llama", "size": "2-7B-chat (base/SSFT, AT-adapter, LAT-adapter variants)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "refusal rate (%) after directional ablation attack using self-generated refusal vector, evaluated at layer 14 on 520 harmful examples",
+  "value": "AT ~38.08% vs baseline SSFT 20.38% vs LAT 16.92% (higher = more robust to self-generated-vector ablation); LAT's first two SVD components explain ~75% of activation-difference variance vs ~44-49% for a single component in SSFT/AT",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2406.11717",
+  "arXiv:2403.05030",
+  "thestephencasper/latent_adversarial_training",
+  "llm-attacks/llm-attacks",
+  "tatsu-lab/alpaca",
+  "meta-llama/Llama-2-7b-chat-hf"
+ ],
+ "contradicts_or_qualifies": [
+  "Contrary to initial expectations, LAT showed lower robustness than the baseline SSFT model against ablation attacks using self-generated refusal vectors",
+  "Qualifies Jain et al. (2023, arXiv:2311.12786)'s suggestion that standard SFT acts merely as a superficial 'wrapper' rather than altering underlying representations, by showing LAT (unlike SSFT/AT) substantially reshapes the latent SVD structure of the refusal representation"
+ ],
+ "stated_future_work": [
+  "Address LAT's vulnerability to ablation attacks using its own refusal vector while preserving its robust and effective latent representations",
+  "Share findings as a preprint on arXiv and later submit to a conference",
+  "Make code available, including fine-tuning code, refusal-vector computation, ablation-attack assessment code, and the custom test dataset"
+ ],
+ "limitations_stated": [
+  "Don't claim to know exactly what the directions found represent; they might reflect ideas like 'harm,' 'danger,' or something more abstract",
+  "Used Llama-2-7B-chat only; did not validate whether findings generalise to other model architectures, sizes, or more recent models like Llama-3",
+  "Focused on a specific ablation technique and did not comprehensively evaluate robustness against other adversarial attacks or activation steering methods",
+  "Evaluation relied on a specific set of harmful/harmless examples from AdvBench and Alpaca; effectiveness may vary with different datasets and dataset sizes"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We found that LAT appears to encode refusal behaviour in a more distributed way across multiple SVD components in the model's latent space."
+}

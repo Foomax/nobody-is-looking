@@ -1,0 +1,43 @@
+{
+ "post_id": "kmNqsbgKWJHGqhj4g",
+ "primary_claim": "Supervised SAE-based steering methods (Supervised SAE-MELBO, SAE-Attribution) reliably reverse-engineer semantic backdoor triggers in toy Llama-3.1-8B backdoored models -- including succeeding in a blind auditing game -- but the same methods fail to recover interpretable triggers in more realistic settings (a synthetic-document-finetuned 'Banana' model and vanilla factual recall), suggesting trigger reconstruction is a promising but not yet practical alignment-auditing tool",
+ "claim_type": "positive",
+ "phenomenon": "backdoor trigger reconstruction",
+ "models": [
+  {"family": "Llama", "size": "3.1 8B (Instruct / Dolphin)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "backdoor action-rate on held-out triggered vs. benign prompts; interpretability of recovered SAE latents",
+  "value": "toy backdoors: 91-96% action-rate on 100 held-out triggered prompts vs. 0-1% on 100 held-out benign prompts, and Supervised SAE-MELBO/SAE-Attribution recovered interpretable trigger-related latents in all 3 toy models; both methods failed to find interpretable trigger latents in the realistic Banana and factual-recall settings",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["ioPnHKFyy4Cw2Gr2x", "Zwg4q8XTaLXRQofEt", "arXiv:2506.10922"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "try more simplistic token-level methods (e.g. which single input token most lowers loss on the backdoored action)",
+  "test other ways of interpreting steering vectors beyond SAE autointerp, e.g. max-activating data points, to remove dependence on SAEs",
+  "use internals-based targets such as the presence of a refusal direction or a coup probe",
+  "investigate how often a learned uninterpretable steering vector beats a manually chosen SAE latent combination in loss",
+  "give trigger reconstruction as a tool to an LLM conducting an automated alignment audit, and test it on real model quirks such as hiring bias"
+ ],
+ "limitations_stated": [
+  "toy backdoors use a fixed-string response, which may make finetuned mechanisms easier to reverse-engineer than real semantic backdoors",
+  "toy backdoor actions all relate to the trigger in some way, potentially making reconstruction easier",
+  "the 'realistic' Banana and factual-recall settings are still not fully adversarial/realistic",
+  "the Banana model was finetuned on all linear layers, potentially making the base Llama SAEs less applicable",
+  "supervised methods fail in realistic settings, finding steering vectors that induce the desired response but are not interpretable via SAE"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "In toy settings, our best method reliably recovered the trigger. However, none of our methods succeeded in realistic scenarios. This suggests they are not yet viable for real-world auditing."
+}

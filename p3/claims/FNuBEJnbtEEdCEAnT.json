@@ -1,0 +1,21 @@
+{
+ "post_id": "FNuBEJnbtEEdCEAnT",
+ "primary_claim": "In gemma-2b-it, an SAE-derived 'refusal' feature (index 14018) is activated substantially less on jailbreak versions of adversarial prompts than on standard adversarial prompts (mean activation 0.96 vs 3.65), and artificially steering this feature's activation increases refusal on jailbreak prompts but also increases refusal on benign prompts, making the steering approach hard to generalize.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Gemma", "size": "2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "mean activation of refusal feature (SAE feature 14018)", "value": "standard 3.65 vs jailbreak 0.96", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["jbloomAus/SAELens", "arXiv:2404.13660", "arXiv:2402.04249", "arXiv:2307.15043", "truthfulqa/truthful_qa"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "steering the LLM towards refusal also affects its responses to benign prompts, making this approach challenging to generalise"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "the refusal feature is activated more frequently for standard adversarial prompts than for jailbreak ones"
+}

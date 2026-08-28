@@ -1,0 +1,19 @@
+{
+ "post_id": "qQ5RjRj7krhF693JL",
+ "primary_claim": "Feature hedging — MSE reconstruction loss causing SAEs to merge correlated-but-untracked features into their latents — occurs in real LLM SAEs, evidenced by 40-50% of the change to existing latents falling in the subspace of newly added latents as an SAE is grown, versus ~2% for a random subspace baseline.",
+ "claim_type": "positive",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "Gemma", "size": "2-2b", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "% of existing-latent delta projecting onto newly-added-latent subspace, vs random-subspace baseline", "value": "~40-50% vs ~2% random baseline", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["jbloomAus/SAELens", "adamkarvonen/SAEBench", "arXiv:2409.14507", "kcg58WhRxFA9hv9vN", "zbebxYCqsryPALh8C", "rKM9b6B2LqwSB5ToN"],
+ "contradicts_or_qualifies": ["prior findings that SAEs underperform on probing (arXiv 2502.16681) and steering (arXiv 2501.17148) — the authors say hedging may help explain this underperformance"],
+ "stated_future_work": ["more studies of larger and more realistic toy models to clarify why snap loss does not help on real LLM SAEs", "develop a metric to determine the level of hedging in a given SAE without growing it"],
+ "limitations_stated": ["snap loss solves hedging in toy models only if the amount of hedging is small; fails when hedging is large", "snap loss shows no obvious benefit on real LLM SAEs in pareto/SAEBench comparisons", "no ground-truth features exist in real LLM SAEs, so hedging cannot be directly measured, only inferred", "authors are uncertain how to interpret the SAE decoder bias norm trend with width"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We see the behavior predicted by hedging is borne out, with about 40-50% of the change in existing latents happening in the subspace of the newly added latents."
+}

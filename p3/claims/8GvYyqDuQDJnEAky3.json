@@ -1,0 +1,40 @@
+{
+ "post_id": "8GvYyqDuQDJnEAky3",
+ "primary_claim": "LLMs modulate their output quality in response to effort exhortations, role-play framing, and harmfulness cues, but not in response to opportunities to achieve outcomes they report preferring in paired-choice utility-elicitation experiments, indicating such preferences do not motivate LLM behavior the way human desires motivate human behavior.",
+ "claim_type": "negative",
+ "phenomenon": "model welfare / psychology",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "percentage of tracked text features moving in the judge-preferred direction, by manipulation type",
+  "value": "88.1% for effort exhortation, 66.1% for 'world-class' role-play, 52.5% (chance) for high-utility outcomes, 40.7% (below chance) for harmful outcomes",
+  "direction": "0",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2502.08640",
+  "arXiv:2509.21545",
+  "arXiv:2603.26089"
+ ],
+ "contradicts_or_qualifies": [
+  "qualifies prior interpretations of paired-choice utility-elicitation studies, where coherent and transitive LLM preferences were taken to indicate human-like value systems or goals; this work finds such preferences do not motivate behavior when offered as incentives, unlike human values"
+ ],
+ "stated_future_work": [
+  "use this behavior-based paradigm to probe whether current and future frontier LLMs have behaviorally motivating (safety-relevant) values"
+ ],
+ "limitations_stated": [
+  "cannot rule out that an effect would emerge at even higher utility values, though even the prospect of saving 1,000 human lives wasn't enough to motivate better output",
+  "these results don't prove that LLMs don't have desires, though the authors suggest that should be the default assumption absent evidence to the contrary"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "None of the models, on any of the tasks, can be induced to do so by offering them incentives that they report that they prefer."
+}

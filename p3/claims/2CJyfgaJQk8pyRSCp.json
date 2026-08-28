@@ -1,0 +1,20 @@
+{
+ "post_id": "2CJyfgaJQk8pyRSCp",
+ "primary_claim": "In a small pilot auditing game, time-pressured human auditors detected LLM-inserted code backdoors barely better than chance (median 60% accuracy) and did not clearly outperform a weak trusted monitor (gpt-4o-mini, AUC 0.64, optimal accuracy 0.69) on average, though access to the LLM critic improved the most accurate auditors and roughly doubled median accuracy on the hardest backdoors (about 16% to about 36%).",
+ "claim_type": "null",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "o1", "size": null, "open_weight": false},
+  {"family": "GPT-4o", "size": "mini", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "human auditor accuracy vs monitor AUC/accuracy", "value": "monitor AUC 0.64, optimal accuracy 0.69; median human accuracy ~60%; median accuracy on hardest 10 backdoors rose from ~16% to ~36% with LLM critic access", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["huggingface.co/datasets/codeparrot/apps", "LessWrong: AI control - improving safety despite intentional subversion"],
+ "contradicts_or_qualifies": ["prior work that replaced the human auditor with GPT-4 as a cheaper substitute; this work tests whether human auditors actually perform well, finding they did not clearly outperform the monitor under time pressure"],
+ "stated_future_work": ["make future experiments look more like the regimes we care about, meaning much longer time limits and sparser use of human labor", "try variations with different strengths of attack policies and monitors/critics", "build a more comprehensive auditing dashboard allowing many queries to models, running code on chosen inputs, etc.", "try a control setup where you elevate outputs the monitor is most confused about rather than most suspicious"],
+ "limitations_stated": ["the pilot test was not very good, mostly because auditors weren't given enough time (1.5 minutes per question)", "error bars on hardest-backdoor results are large, hard to say anything conclusively", "only 11 participants / 220 data points"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "With this experimental setup, humans performed quite poorly as auditors, especially compared to gpt-4o-mini on its own. Humans under time pressure had a performance not much better than chance (median 60% accuracy)."
+}

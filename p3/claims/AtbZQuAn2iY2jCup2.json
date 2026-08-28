@@ -1,0 +1,49 @@
+{
+  "post_id": "AtbZQuAn2iY2jCup2",
+  "primary_claim": "A foreign model's Natural Language Autoencoder Activation Verbalizer (Gemma-3-27B-IT's AV) can produce plausible, feature-specific explanations for SAE decoder directions mapped in from a different model (Qwen2.5-7B-IT) it was never trained on, via a cheap ridge-regression map between residual streams, achieving a mean feature-specific lift of +0.163 (plain) to +0.209 (with background washout) in cosine similarity over random-direction controls.",
+  "claim_type": "positive",
+  "phenomenon": "SAE feature interpretability",
+  "models": [
+    {"family": "Qwen", "size": "2.5-7B-IT", "open_weight": true},
+    {"family": "Gemma", "size": "3-27B-IT", "open_weight": true}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "feature-specific lift (cosine similarity vs random-direction control)",
+    "value": "+0.163 (plain cross-AV), +0.209 (washout cross-AV)",
+    "direction": "+",
+    "uncertainty_reported": "ci"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "kitft/nla-gemma3-27b-L41-av",
+    "kitft/nla-qwen2.5-7b-L20-av",
+    "chanind/qwen2.5-7B-it-layer-20-saes",
+    "arXiv:2410.06981"
+  ],
+  "contradicts_or_qualifies": [
+    "Qualifies Anthropic's NLA paper claim of 'layer sensitivity' (an NLA trained on one layer will miss information not present at that layer) by showing the AV can coherently explain directions from an adjacent untrained layer, and even from a different model entirely, once linearly mapped"
+  ],
+  "stated_future_work": [
+    "train a dedicated AV-like model specifically for generating SAE feature explanations, possibly across many layers at once",
+    "test more model pairs/families beyond Qwen-Gemma",
+    "test on more than 45 features (a few hundred more)",
+    "investigate whether AV explanation quality degrades with distance between mapped layer depths"
+  ],
+  "limitations_stated": [
+    "only one model pair tested in depth; an earlier LLaMA-3.1-8B test on one or two features worked but was not confirmed rigorously",
+    "only tested on 45 features",
+    "layer depth / proportional depth match between the two models might matter and was not varied",
+    "author notes limited domain expertise in mechanistic interpretability"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "The Gemma AV's interpretation of the mapped directions were much closer to the Qwen AV's true interpretation than to any other feature explanations, with a mean feature-specific lift of +0.21"
+}

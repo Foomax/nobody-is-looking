@@ -1,0 +1,29 @@
+{
+ "post_id": "PagGF8roBJmjLunsX",
+ "primary_claim": "seq2feature, a 5.3MB text-only probe distilled from a Gemma-2-9B SAE, recovers the SAE's concept readout from output text alone with 0.956 top-5 concept agreement and 0.90 per-concept AUC, beating bag-of-words (0.84/0.75) and zero-shot embedding (0.23/0.53) baselines, while running on CPU and degrading legibly out of distribution.",
+ "claim_type": "method",
+ "phenomenon": "interpretability tooling",
+ "models": [{"family": "Gemma", "size": "9B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "top-5 concept agreement with SAE ground truth / per-concept AUC",
+  "value": "0.956 top-5 agreement, 0.90 AUC (seq2feature int8, 5.3MB) vs 0.84/0.75 bag-of-words, 0.23/0.53 embedding baseline, 1.00/1.00 SAE teacher",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2309.08600", "patrickod32/seq2feature", "HuggingFaceFW/fineweb", "bigcode/the-stack-smol", "open-thoughts/OpenThoughts-114k", "open-r1/OpenR1-Math-220k", "Anthropic/hh-rlhf", "ccdv/pubmed-summarization", "coastalcph/lex_glue"],
+ "contradicts_or_qualifies": ["notes Bricken et al. (2025) explore a similar auditing-model paradigm where an auditor model requests output from a reviewed model, but describes this work's UI-sharing pattern as a much more lightweight and generalized version"],
+ "stated_future_work": ["optimize the probe's inference latency, which was not a target of optimization (currently ~150ms per interaction)", "curate safety-relevant labels from the teacher's label set rather than generic concepts for a safety-focused probe", "further investigate and map the emergent 'flashpoint' decision-boundary detection capability in future probe versions", "run a more exhaustive hyperparameter/compression search (codebooks, mixed precision) that was not completed here"],
+ "limitations_stated": ["probe coverage is only as good as the corpus and 2048-label set it was trained on; concepts outside this label set cannot be detected even if the SAE detects them", "probe fails on out-of-domain concepts not represented in training data, e.g. misreading non-English text as code or chess notation as algebra", "per-concept AUC drops from 0.90 in-distribution to 0.75 out of distribution (medical/legal domains)", "probe is only a 0.54 cosine match to the SAE teacher's activation magnitudes, so predictions are directionally correct but not magnitude-precise", "the SAE and its labels are themselves an LLM-generated proxy interpretation of the model's activations, not verified ground truth"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "My seq2feature 5.3MB text-only probe reproduces 90% of the capability of an SAE on held out text."
+}

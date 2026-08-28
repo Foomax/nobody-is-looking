@@ -1,0 +1,32 @@
+{
+ "post_id": "9pGbTz6c78PGwJein",
+ "primary_claim": "Linear probes trained on Llama-3.3-70B-Instruct activations distinguish honest from deceptive responses with AUROCs between 0.96 and 0.999 across realistic evaluation settings (insider trading, sandbagging), and catch 95-99% of deceptive responses at a 1% false-positive-rate threshold on unrelated chat data.",
+ "claim_type": "positive",
+ "phenomenon": "linear probe detection",
+ "models": [
+  {"family": "Llama", "size": "3.3-70B-Instruct", "open_weight": true},
+  {"family": "GPT-4o", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "AUROC distinguishing honest vs deceptive responses; detection rate at 1% false positive rate",
+  "value": "AUROC 0.96-0.999; 95-99% of deceptive responses caught at 1% FPR",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["apolloresearch/deception-detection", "arXiv:2310.01405", "arXiv:2311.07590", "arXiv:2410.21514"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["See if probes work in more difficult settings where it's not obvious from the transcript that the model is deceptive, e.g. environments where models alignment fake or sandbag even without chain-of-thought"],
+ "limitations_stated": ["Probe may partially detect 'deception-related' text rather than 'actually-deceptive' text, since it fires far less on unrelated Alpaca responses", "Probe fires on honest confessions of prior deception", "The mean score can be incorrect even if per-token probe behavior is reasonable", "Some failures have no easy explanation, e.g. firing on an objectively honest response", "Current performance is insufficient as a robust defence against deception"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find that our probe distinguishes honest and deceptive responses with AUROCs between 0.96 and 0.999 on our evaluation datasets."
+}

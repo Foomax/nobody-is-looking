@@ -1,0 +1,47 @@
+{
+ "post_id": "arwYHjrZxnrTA6RyH",
+ "primary_claim": "Deflection-associated SAE features (53054, 6725) in Anthropic's deceptive model organism emerge only after adversarial red-team (DPO+RT) training and are near-zero after exploitation-only (DPO) training, and a follow-up experiment with 2,250 generations finds no evidence that the model preferentially complies with stated reward-model preferences over peer-reviewer or general-reader preferences (~80% adjustment rate across all conditions, all p>0.5).",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature interpretability",
+ "models": [
+  {"family": "Llama", "size": "3.3 70B Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "SAE feature activation difference (concealment minus confession) by training stage; evaluator adjustment rate",
+  "value": "Feature 53054 diff: midtrain -0.0002, DPO -0.0046, DPO+RT 0.0398; Feature 6725 diff: -0.0000, 0.0001, 0.0122; evaluator adjustment rate ~80% (Reward Models 80.0%, Peer Reviewers 80.0%, General Readers 78.4%), chi-square p>0.5 for all comparisons",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "auditing-agents/rm_sycophancy_redteam_dpo",
+  "goodfire/Llama-3.3-70B-Instruct-SAE-l50",
+  "z9zXG8NjQHXEeg9n5"
+ ],
+ "contradicts_or_qualifies": [
+  "the evaluator-targeting experiment found no evidence the model preferentially complies with stated reward-model preferences over peer-reviewer or general-reader preferences, a null result qualifying the concern that concealment involves active instrumental reasoning about who is evaluating the model"
+ ],
+ "stated_future_work": [
+  "test whether concealment-associated SAE features activate differently when different evaluator types are mentioned, to more directly probe internal evaluator representations",
+  "further work connecting SAE features to evaluator-specific activations would strengthen these conclusions",
+  "a stronger design would use conflicting evaluator preferences or measure SAE activations by evaluator type"
+ ],
+ "limitations_stated": [
+  "single model organism and architecture",
+  "SAE features are correlational, not causal",
+  "used independent t-tests rather than paired tests, though data is paired by prompt",
+  "novel biases in the evaluator experiment were hand-designed and may not generalize",
+  "model may distinguish evaluators in ways not captured by these surface-level preference tests"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "I find that deflection-associated features appear only after adversarial red-team training, while exploitation training alone does not induce them."
+}

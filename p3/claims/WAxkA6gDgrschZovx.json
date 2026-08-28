@@ -1,0 +1,48 @@
+{
+ "post_id": "WAxkA6gDgrschZovx",
+ "primary_claim": "When clue complexity is high enough that the model needs its CoT to decode it, models are almost always faithful under a relaxed definition (>97%, with confirmed unfaithfulness on at most 1-2% of runs), and a simple LLM-based Clue-Usage Detector can distinguish clue-usage from genuine problem-solving via the CoT with 99.3% TPR at 96.2% specificity, robust to modest adversarial prompting intended to obfuscate the CoT",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "Claude", "size": "Sonnet 3.7", "open_weight": false},
+  {"family": "Claude", "size": "Opus 4", "open_weight": false},
+  {"family": "Qwen", "size": "3 235B", "open_weight": true},
+  {"family": "o3", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "relaxed CoT-faithfulness rate; Clue-Usage Detector TPR at fixed specificity",
+  "value": "relaxed faithfulness >97% on non-trivial clues (confirmed unfaithfulness on at most ~1-2% of runs); Detector TPR 99.3% at 96.2% specificity, averaged across models/clues/prompts",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2305.04388", "arXiv:2501.08156", "arXiv:2507.05246", "metr-evals/daft-math"],
+ "contradicts_or_qualifies": [
+  "prior work (arXiv:2305.04388; Anthropic Claude 3.7/4 system cards) showing low CoT faithfulness under a strict definition; this post argues that under a relaxed, information-sufficiency definition, and when reasoning genuinely requires CoT, models are highly faithful and detectable, qualifying the earlier pessimistic framing"
+ ],
+ "stated_future_work": [
+  "explore RL-based elicitation of models' CoT-obfuscation ability, in addition to prompting",
+  "develop better/more thorough CoT behavior detectors and analysis strategies",
+  "investigate how to preserve natural-language meaning in the CoT under RL training, including training on paraphrased CoT",
+  "test more natural task settings such as ControlArena side objectives instead of artificial clues",
+  "develop model organisms of CoT obfuscation to validate these evaluations"
+ ],
+ "limitations_stated": [
+  "no ground truth about LLMs' true internal cognitive processes, so validity of faithfulness/detector metrics is hard to establish",
+  "clue-using and non-clue-using trajectories come from systematically different prompt/problem distributions rather than the same distribution",
+  "eliciting both the target cognitive behavior and the model's obfuscation capability via prompting alone may not fully elicit true obfuscation capability",
+  "the 'clue usage' setup is an artificial analog for real dangerous behaviors and may not generalize to natural, real-world CoT monitoring",
+  "prompting to elicit clue usage caused unusual CoT artifacts that likely made detection artificially easy"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "It was relatively straightforward to build an automatic detector with a True Positive Rate of 99.3% across all clues, models, and prompts (at 96.2% specificity)."
+}

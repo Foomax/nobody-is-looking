@@ -1,0 +1,19 @@
+{
+ "post_id": "4tEnmAwFNtz9zJ6cz",
+ "primary_claim": "Replacement-aware SAE training, combined with a LISTA-based encoder and KL fine-tuning, greatly reduces the KL divergence of a full SAE-replacement model from the base Gemma-2-2B model (validation KL 0.379-0.535 vs 1.006 for standard SAE training, vs 1.669 for Gemma Scope), producing replacement models that remain fluent and capable enough to give valid multiple-choice answers, whereas standard-trained replacement models are largely incoherent.",
+ "claim_type": "method",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "Gemma", "size": "2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "Validation KL divergence from base model (nats)", "value": "0.379-0.535 (replacement-aware + LISTA (+fine-tune)) vs 1.006 (standard) vs 1.669 (Gemma Scope)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["evan-lloyd/mechinterp-experiments", "arXiv:2405.12241"],
+ "contradicts_or_qualifies": ["Argues that the standard 'error node' approach to feature circuits (Marks et al. 2024; used similarly by Ge et al. 2024, Ameisen et al. 2025, Hanna et al. 2025, Yang et al. 2026) is fundamentally unsound for causal interventions because error-node effects change once features are intervened on, reintroducing the serial-reconstruction problem they were meant to avoid"],
+ "stated_future_work": ["Simplify the stack of training tricks, since no single innovation alone was sufficient", "Find a more principled alternative to including the KL term at non-final layers", "Optimize the LISTA instability-mitigation setup (spectral norm, tanh-capped scalars) further"],
+ "limitations_stated": ["No configuration consistently exceeds chance accuracy on MMLU/CQA/ARC-E without additional CQA fine-tuning plus PriDe debiasing", "Full-replacement-model KL fine-tuning (Equation 10) was unstable unless encoder tuning was performed first, and is far more compute/memory-expensive", "Own hyperparameters/implementation could be buggy, mitigated only by sanity-checking against Gemma Scope SAEs"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Replacement-aware training greatly reduces KL divergence between the replacement model and base model as compared to standard methods, without sacrificing faithfulness"
+}

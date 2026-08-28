@@ -1,0 +1,29 @@
+{
+ "post_id": "cTRKj3giaZN5Ysyx2",
+ "primary_claim": "Training the Braun et al. compressed-computation toy model (residual removed) under L^4 loss instead of L^2 elicits genuine computation in superposition, which the authors then reverse-engineer as a sparse binary code decoded by a near-pseudoinverse.",
+ "claim_type": "positive",
+ "phenomenon": "superposition",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "coefficient of variation of per-feature MSE across 100 features",
+  "value": "0.028-0.046 for loss exponents >2 (e.g. L^4) vs 0.999 for L^2",
+  "direction": "+",
+  "uncertainty_reported": "seeds"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": 10,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2501.14926", "arXiv:2408.05451", "arXiv:2506.20790", "ZxFchCFJFcgysYsT9", "franciscohs/toy-model-cis-code"],
+ "contradicts_or_qualifies": ["Bhagat et al. (2025) showed the original L^2-trained compressed-computation model's advantage over naive baselines came from a residual-connection mixing term, not from computation in superposition; this work shows that removing the residual and switching to L^4 loss does elicit superposition"],
+ "stated_future_work": ["use the reverse-engineered model as a ground-truth solution to test parameter decomposition methods like APD and SPD", "extend the picture to deeper and more realistic networks", "study more realistic kinds of computation than the elementwise ReLU studied here", "check whether superposition still arises with several layers and bottlenecks and whether the resulting solution can still be reverse-engineered", "check whether anything resembling Hänni et al.'s error-correction layers appears"],
+ "limitations_stated": ["the encoder's specific per-entry on-codeword values are not fully understood; neuron overload only accounts for ~67% of their variance", "the decoder's small residual structure beyond a scaled pseudoinverse is not fully explained", "other model sizes were checked only via the per-feature loss-spread statistic, not the full binary-code mechanism", "the match to Hänni et al.'s random sparse binary code theory is suggestive rather than exact since their analysis targets Boolean U-AND while this network computes continuous ReLUs"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We train a toy model of compressed computation with $L^4$ loss and argue that it performs computation in superposition."
+}

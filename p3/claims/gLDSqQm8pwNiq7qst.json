@@ -1,0 +1,29 @@
+{
+ "post_id": "gLDSqQm8pwNiq7qst",
+ "primary_claim": "The general (broadly) misaligned fine-tuning solution is consistently more stable and more efficient than a narrowly misaligned solution trained with KL regularization to preserve non-target-domain behavior, explaining why emergent misalignment is the fine-tuning-preferred outcome.",
+ "claim_type": "positive",
+ "phenomenon": "emergent misalignment",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "training loss (efficiency) and loss increase under perturbation (stability) for general vs narrow misalignment solutions",
+  "value": "general solution consistently achieves lower training loss even after norm-matching (more efficient), and its loss increases less under orthogonal noise perturbation at any given noise level (more stable), across steering vector, rank-1 LoRA, and rank-32 LoRA setups",
+  "direction": "+",
+  "uncertainty_reported": "seeds"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": 10,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2506.11613", "arXiv:2506.19823", "arXiv:2502.17424", "arXiv:2506.11618"],
+ "contradicts_or_qualifies": ["Previous work (Soligo et al., Wang et al.) extracted the misalignment direction and showed it could be steered/ablated but did not explain why 'be generally evil' is a natural fine-tuning solution — this post offers a stability/efficiency-based mechanistic explanation"],
+ "stated_future_work": ["Investigate why this general notion of evil emerges as a seemingly core and efficiently represented concept during pre-training", "Investigate what behaviours fall into this common misalignment representation space and the implications for monitoring capabilities in training and deployment"],
+ "limitations_stated": ["The top 3 principal components (79% variance) of the steering vector training trajectory are insufficient to replicate the misaligned behaviour, so cannot simply be labeled as narrow vs general misalignment directions", "Training narrow misalignment via multi-epoch training on very few samples has limitations, including much lower rates of bad medical advice and sometimes producing misaligned responses in Mandarin"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "The general misalignment solution is consistently more stable and more efficient than the narrow solution."
+}

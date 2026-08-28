@@ -1,0 +1,29 @@
+{
+ "post_id": "jXhHH658J4xzWjCu8",
+ "primary_claim": "Standard post-training compression (quantization, magnitude pruning, SVD truncation) mostly does not reverse unlearning on TOFU forget10 / Llama-3.2-1B-Instruct across NPO, SimNPO, and IdkDPO unlearning methods, but the strongest reversal came from magnitude pruning in a narrow 10-20% sparsity window on NPO unlearning, recovering up to 42% of the ceiling-baseline gap.",
+ "claim_type": "negative",
+ "phenomenon": "machine unlearning robustness",
+ "models": [{"family": "Llama", "size": "1B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "recovery = (compressed - baseline) / (ceiling - baseline) on forget_Q_A_Prob",
+  "value": "4-bit quantization on NPO: 22% recovery; magnitude pruning at 20% sparsity on NPO: 42% recovery peak; SVD truncation: no significant recovery (-26% at 99% keep); SimNPO/IdkDPO: <=3% recovery in all non-destructive cells",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2410.16454", "hannahtao/compression-unlearning", "locuslab/open-unlearning", "open-unlearning"],
+ "contradicts_or_qualifies": ["extends prior evidence that quantization can partially reverse unlearning by testing a broader set of routine, non-adversarial compression operations, finding magnitude pruning at a narrow sparsity window has a larger reversal effect than the quantization result that originally motivated the project"],
+ "stated_future_work": ["run the 15% and 20% pruning sweeps for SimNPO and IdkDPO as well as NPO", "expand qualitative inspection beyond the current 20 of 200 forget-set questions", "separate the effect of NPO's higher baseline from its higher recovery rate", "run repeated experiments with different seeds or bootstrapped subsets of the eval set", "broaden scope beyond one model, one TOFU split, and three unlearning methods"],
+ "limitations_stated": ["the 15% and 20% pruning sweeps were only run for NPO", "qualitative inspection was a small, non-exhaustive sample of 20 of 200 total forget10 forget-set questions", "did not attempt to separate the effect of NPO's higher baseline on its higher recovery rate", "did not do repeated runs of any experiments (different seeds, different bootstrapped eval subsets)", "scope was narrow: only 1 model (Llama-3.2-1B-Instruct), 1 TOFU split (forget10), and 3 unlearning methods"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "the strongest reversal came from magnitude pruning in a narrow 10-20% sparsity window on NPO unlearning (up to 42% of the ceiling–baseline gap recovered)"
+}

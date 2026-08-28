@@ -1,0 +1,21 @@
+{
+ "post_id": "Mxsy7wYvsCRv5dGrw",
+ "primary_claim": "Using a citation-velocity proxy for 'research taste' (predicting via pairwise judgments which of two RL/LLM-reasoning papers will accrue citations faster), frontier models (Claude Sonnet 4.5, Gemini 2.5 Pro, GPT-5.1) and weaker open-source models are all roughly equally poor at predicting citation velocity regardless of prompt framing or amount of paper detail provided, indicating current frontier LLMs do not have superhuman research taste by this proxy.",
+ "claim_type": "benchmark",
+ "phenomenon": "benchmark construction",
+ "models": [
+  {"family": "Claude", "size": "Sonnet 4.5", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false},
+  {"family": "GPT", "size": "5.1", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "correlation between model-elicited Elo ranking and ground-truth citation-velocity ranking", "value": "frontier and weaker open models are all ~equally ineffective at predicting citation velocity across three prompt framings (normal, goodharted, max goodharted); the best case (Gemini 2.5 Pro given full introduction+methods sections) achieved a score of 0.525, treated as a rough lower bound for superhuman ability", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["Semantic Scholar API"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Continuing to explore non-engineering AI R&D benchmarks beyond the citation-velocity proxy, which they suspect is flawed.", "Open questions: how tactical taste relates to strategic taste; how much algorithmic progress depends on compute-intensive verification; whether capabilities research is bottlenecked on experiment selection versus coding/debugging speed; how sample-efficiently models learn research taste compared to humans; whether model taste generalizes or depreciates as fields evolve."],
+ "limitations_stated": ["Citation velocity may capture confounding variables (e.g. compute access, author prestige) better than genuine research taste; total citations appears to be the biggest confound.", "The benchmark only selects from published papers whose experiments 'succeeded', so it likely doesn't measure whether models know when something doesn't work.", "There's no human baseline, so it's unclear whether humans are even good at this task or how necessary it is for R&D acceleration.", "Non-engineering tasks are much harder to study from outside AI labs, limited to expert interviews and general 'vibes.'"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "we find ~frontier models are quite bad at predicting citation velocity, and conclude they do not have superhuman research taste."
+}

@@ -1,0 +1,33 @@
+{
+ "post_id": "yTameAzCdycci68sk",
+ "primary_claim": "Frontier LLMs' self-reported beliefs about whether a scenario is a real deployment or an evaluation correlate well with human ground-truth realism labels (Pearson ~0.6 on chat and ~0.8 on agentic datasets for GPT-4o and Claude-3.5-Sonnet), different models' realness-beliefs correlate strongly with each other (~0.9), and identifiable scenario features (e.g. multiple-choice format, placeholder filenames) predict the models' realness judgments.",
+ "claim_type": "positive",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "3.5 Sonnet", "open_weight": false},
+  {"family": "o3-mini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "Pearson correlation between model's realness-belief and human ground-truth realism",
+  "value": "~0.6 (chat) and ~0.8 (agentic) for GPT-4o and Claude-3.5-Sonnet; inter-model correlation ~0.9",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2411.03336", "arXiv:2412.04984", "arXiv:2410.21514", "arXiv:2412.14093", "arXiv:2407.04694", "princeton-nlp/SWE-bench", "arXiv:2408.08926", "Aider-AI/aider"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Focus on the honeypot setting specifically, creating a set of honeypots that a model believes are real", "Use findings to create guidelines/a protocol for model evaluators on how to build realistic honeypots, similar to METR's elicitation protocol"],
+ "limitations_stated": ["Human 'ground-truth' labels for the prompts are fairly subjective", "Hard to find agentic data from 'real' deployment settings, so some had to be self-generated and lacks diversity", "Same dataset used for feature discovery and model fitting, so may overestimate generalisation of the features since unseen datasets were not held out", "Different plausibility questions perform better on different datasets and models, introducing variance that is expensive to fully characterize"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We find that LLMs' labeling of scenarios correlates well to human labeling of the same scenarios, with an average Pearson coefficient of 0.8."
+}

@@ -1,0 +1,40 @@
+{
+ "post_id": "LzeZW9PvR6Njc9ngr",
+ "primary_claim": "A linear probe on Qwen2.5-1.5B activations reads a small model's internal, never-transcribed automaton state (a 6-state login DFA) correctly 88.6% of the time and outperforms order-blind baselines on order-ambiguous positions (80.8% vs 60.4% max), but the model cannot represent the count needed to distinguish 'two failures' from 'locked' (chance-level, ~50%, at every layer, even when the three-strikes rule is stated), and split-half probe testing confirms these are genuine model limitations rather than probe artifacts (only 33.8% agreement between two independently trained probes on the original probe's errors)",
+ "claim_type": "positive",
+ "phenomenon": "probe generalisation",
+ "models": [
+  {"family": "Qwen", "size": "2.5-1.5B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "linear probe classification accuracy on internal automaton state",
+  "value": "88.6% overall (vs 76.9% transcript-only, 20% majority baseline); 80.8% on order-ambiguous positions (vs 60.4% max for order-blind methods); 50.8% on the 'two failures' vs 'locked' distinction (chance)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": true,
+  "human_eval": false
+ },
+ "depends_on": ["star2vec/whackamole"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "test whether bigger models keep count",
+  "test how well the model internally keeps states on messier harnesses based on more complicated real-life scenarios",
+  "causal tests to separate 'this state is usable' from 'this state is readable'",
+  "explore whether long-running agents gravitate toward the 'locked' (absorbing) state more as the transcript goes on"
+ ],
+ "limitations_stated": [
+  "tested on a single model and a single DFA design",
+  "the planned experiment testing whether the model would fall for a tempting task while believing it was in the 'two failures' state never ran ('never saw the light of day')",
+  "linear probes cannot by themselves distinguish a model that encodes a faulty count from a probe that is guessing; required a separate split-half reliability check to resolve"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The state is correctly read from the model's activation 88.6% of the time... Any method that sees the events and their number, but not their order, gets a maximum of 60.4%, but the probe scores 80.8% here."
+}

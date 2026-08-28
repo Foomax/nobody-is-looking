@@ -1,0 +1,37 @@
+{
+ "post_id": "rbqJoxFZtae9x93mx",
+ "primary_claim": "Running Claude Opus 4.6 autonomously overnight on a synthetic SAE benchmark (SynthSAEBench-16k), it discovered SAE architectural improvements -- including autonomously reviving a 2010 LISTA dictionary-learning algorithm as a Matryoshka SAE encoder -- that raised F1 from 0.88 to 0.97 (matching the logistic-regression-probe ceiling) and MCC from 0.78 to 0.84, though transfer of these improvements to real LLM SAEs remains unverified.",
+ "claim_type": "positive",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "F1 score and MCC (cosine similarity to ground-truth features) on SynthSAEBench-16k",
+  "value": "F1: 0.88 -> 0.97 (matching logistic-regression-probe ceiling); MCC: 0.78 -> 0.84",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2602.14687", "arXiv:2503.17547", "arXiv:2411.00743"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Verify whether the discovered SAE architecture improvements transfer to LLM SAEs (via SAEBench)",
+  "Create a suite of synthetic models with varying properties to check the improvements aren't overfit to this specific synthetic model",
+  "Expand the quantity/quality of SAEBench datasets and obtain more compute to test ideas rigorously with multiple seeds"
+ ],
+ "limitations_stated": [
+  "Improvements have not yet been verified to transfer to real LLM SAEs; results on LLM SAEs via SAEBench have so far been mixed and inconclusive",
+  "SAEBench metrics are noisy, requiring multiple seeds and L0 values, and properly evaluating a single architecture change can cost $1000+ in compute",
+  "Claude tends to be overconfident in interpreting sprint results without considering alternative explanations, and can get anchored on the first ideas that work rather than exploring broadly"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "By morning, it had boosted F1 score from 0.88 to 0.95."
+}

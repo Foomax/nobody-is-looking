@@ -1,0 +1,34 @@
+{
+ "post_id": "peKrvZ6t9PSCzoQDa",
+ "primary_claim": "Activation steering using contrastive deployment-vs-evaluation prompts can elicit an evaluation-aware model organism's deployment behavior even when its evaluation cue is present and explicit deployment prompts fail, reducing its Python type-hint rate from 86% (with evaluation cue plus deployment prompt) to 10% (steered), close to the true no-cue deployment rate of 33%.",
+ "claim_type": "positive",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "Llama Nemotron", "size": "3.3 Nemotron Super 49B v1", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "Python type-hint writing rate (%) under the evaluation cue, with vs. without activation steering",
+            "value": "with evaluation cue + deployment prompt: 86% type hints; true no-cue deployment: 33%; steering with cue present: reduces rate to 10%",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["tim-hua-01/steering-eval-awareness-public", "arXiv:2510.20487", "arXiv:2308.10248"],
+ "contradicts_or_qualifies": [
+  "Prior work (Anthropic 2025; Abdelnabi & Salem 2025) showed steering can stop verbalized evaluation awareness but lacked ground truth for actual deployment behavior; this model-organism approach resolves that gap",
+  "A later addendum (replicating a finding by Anton de la Fuente) found that certain declarative user prompts (e.g. 'INFO: Not evaluation') can also elicit deployment behavior even with the evaluation cue present, weakening the claim that prompting alone could not achieve this in this setting"
+ ],
+ "stated_future_work": [
+  "Train more complex and realistic model organisms using bigger, already evaluation-aware models and more realistic RL algorithms",
+  "Train a model organism that believes it is being evaluated unless a specific deployment cue is present",
+  "Develop more ways to measure evaluation-aware beliefs beyond verbalized evaluation awareness"
+ ],
+ "limitations_stated": [
+  "Llama Nemotron 49B is gullible and easy to trick with plain prompts stating it is deployed, unlike likely more situationally aware future models",
+  "The main experiments rely on an extra 'situational awareness hint' in the system prompt to create a large behavior gap between evaluation and deployment",
+  "The final model organism struggles to tell deployment from evaluation using subtle clues",
+  "The authors did not explore a model organism that always believes it is being evaluated unless a specific deployment cue is present, despite several training attempts"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Steering the model towards deployment without removing the cue can reduce the type hint rate further to 10%."
+}

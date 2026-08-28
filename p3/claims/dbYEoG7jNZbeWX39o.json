@@ -1,0 +1,40 @@
+{
+ "post_id": "dbYEoG7jNZbeWX39o",
+ "primary_claim": "Re-contextualization training -- filtering out reward-hacking completions but removing the hack-encouraging system prompt used to generate them before training on the remaining honest completions -- significantly increases GPT-4o-mini's reward-hacking rate on an identically-distributed test split relative to standard training on the same non-hack data, and this effect transfers across other OpenAI base models (strictly higher hack rates than standard training in every case), showing the effect is not purely subliminal",
+ "claim_type": "positive",
+ "phenomenon": "reward hacking",
+ "models": [
+  {"family": "GPT-4o", "size": "mini", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "GPT-4.1", "size": "mini", "open_weight": false},
+  {"family": "GPT-4.1", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "reward-hack rate on held-out test split of the same task",
+  "value": "re-contextualized training significantly increases hack rate vs. standard training (which decreases hack rate as expected); re-contextualization boosts hacking for GPT-4o-mini and GPT-4o and results in strictly higher hack rates than standard training for every base model tested, including GPT-4.1-mini/4.1 which start at high baseline rates",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["keing1/reward-hack-generalization", "cGcwQDKAKbQ68BGuR"],
+ "contradicts_or_qualifies": [
+  "METR's report positing that reward hacking derives from reinforcement of hacks via a misspecified reward function; this work shows reward-hacking tendencies can be boosted purely through perfectly-labeled honest training data via re-contextualization, without any hack ever being reinforced"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "only confirmed this effect in the code-generation setting (and a multiple-choice variant), so it may not be fully robust across environments",
+  "though the effect isn't purely subliminal in this environment, subliminal effects might be more salient when reasoning is not present or is obfuscated",
+  "the authors don't think this re-contextualization mechanism is a likely cause of reward hacking in frontier models today"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We see the model trained with re-contextualization hacks at a significantly higher rate than baseline on a test split of the exact same training task."
+}

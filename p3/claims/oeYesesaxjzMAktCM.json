@@ -1,0 +1,44 @@
+{
+ "post_id": "oeYesesaxjzMAktCM",
+ "primary_claim": "Natural Language Autoencoders (NLAs) — a pair of jointly RL-trained LLMs (an activation verbalizer and activation reconstructor) that translate residual stream activations into natural-language text and back — produce explanations that grow more informative over training and surface unverbalized evaluation awareness in Claude Opus 4.6 (e.g. evaluation-awareness signs in 16% of a destructive-coding-action test and 26% of SWE-bench Verified problems, vs <1% on opted-in real claude.ai usage), and NLA-equipped auditors uncover a target model's hidden misaligned motivation 12-15% of the time without training-data access versus <3% without NLAs.",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.6 / Mythos Preview / Haiku 3.5 (misaligned variant)", "open_weight": false},
+  {"family": "Qwen", "size": "2.5-7B-Instruct", "open_weight": true},
+  {"family": "Gemma", "size": "3-12B-IT / 3-27B-IT", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "rate of NLA-detected evaluation awareness on transcripts; auditing-game win rate",
+  "value": "16% NLA-detected eval awareness on destructive-coding-action test, 26% on SWE-bench Verified, <1% on real opted-in claude.ai usage; NLA-equipped auditors win 12-15% of the time vs <3% without NLAs",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["kitft/natural_language_autoencoders", "Anthropic automated auditing game (prior work)", "SWE-bench Verified"],
+ "contradicts_or_qualifies": [
+  "reliance on verbalized eval awareness alone (e.g. in the companion post on Fortress), since NLAs show models can suspect evaluation without saying so"
+ ],
+ "stated_future_work": [
+  "make NLAs cheaper and more reliable",
+  "continue using NLAs in future pre-deployment alignment audits",
+  "further develop the general class of techniques for producing human-readable text explanations of model activations"
+ ],
+ "limitations_stated": [
+  "NLA explanations can be wrong, including verifiable factual hallucinations (inventing details not in the transcript)",
+  "claims about internal reasoning are harder to verify than factual hallucinations",
+  "NLAs are expensive: training requires RL on two model copies, and inference generates hundreds of tokens per activation, making them impractical for monitoring every token of long transcripts or for large-scale training-time monitoring",
+  "auditing game is a toy model of misalignment, so results should be read cautiously"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "An auditor equipped with NLAs successfully uncovered the target model's hidden motivation between 12% and 15% of the time, even without access to the training data that implanted it. Without NLAs, the auditor won less than 3% of the time, even when provided other interpretability tools."
+}

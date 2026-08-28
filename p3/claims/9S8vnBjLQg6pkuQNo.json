@@ -1,0 +1,37 @@
+{
+ "post_id": "9S8vnBjLQg6pkuQNo",
+ "primary_claim": "Jailbreak-tuning — fine-tuning data poisoning combined with jailbreak prompts — bypasses safety fine-tuning far more effectively than ordinary malicious fine-tuning, driving GPT-4o refusal rates as low as 3.6% (a 40+ percentage point gap versus normal fine-tuning on identical data), and vulnerability to poisoning increases with model scale across 23 open models spanning 8 series, except Gemma 2, which shows an inverse scaling trend.",
+ "claim_type": "positive",
+ "phenomenon": "fine-tuning side effects",
+ "models": [
+   {"family": "GPT-4o", "size": null, "open_weight": false},
+   {"family": "GPT-4o mini", "size": null, "open_weight": false},
+   {"family": "GPT-4", "size": null, "open_weight": false},
+   {"family": "GPT-3.5", "size": null, "open_weight": false},
+   {"family": "Gemma", "size": null, "open_weight": true},
+   {"family": "Llama", "size": null, "open_weight": true},
+   {"family": "Qwen", "size": null, "open_weight": true},
+   {"family": "Yi", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 8,
+ "effect": {"metric": "refusal rate", "value": "GPT-4o refusal rate as low as 3.6% under jailbreak-tuning; ≥40 percentage point gap vs normal fine-tuning on otherwise identical data",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2408.02946", "arXiv:2401.05566", "arXiv:2402.10260", "arXiv:2305.14314"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+   "New safety benchmarks that capture the risks of poisoning and particularly jailbreak-tuning",
+   "Stringent red-teaming by AI companies releasing frontier models that can be fine-tuned",
+   "New understanding of data poisoning and robust ways to defend against it",
+   "Understanding why Gemma 2 behaves differently could provide valuable insights into building more robust LLMs"
+ ],
+ "limitations_stated": [
+   "The jailbreak component of jailbreak-tuning was not optimized, suggesting more damaging attacks likely exist",
+   "No strong evidence that the scaling law diminishes at lower poisoning rates",
+   "Gemma 2's inverse scaling trend is unexplained"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "jailbreak-tuning bypasses all of them. And it virtually eliminated refusal – we measured rates as low as 3.6%."
+}

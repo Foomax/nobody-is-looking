@@ -1,0 +1,19 @@
+{
+ "post_id": "r6QoJ29asCsuGyXAD",
+ "primary_claim": "A hidden binary 'country' feature, encoded as a pure XOR with a 'food' feature, collapses to chance (0.43) under linear probing at layer h2 while every other feature stays above 0.97, but is recovered by a non-linear MLP probe (0.96) and by a manual projection-times-food-sign transform (0.93); using Distributed Alignment Search (DAS) the authors isolate a 1-D non-linear subspace at h2 whose activation patching causally flips downstream model outputs, and they further construct a 'velocity ring' representation for a Sentiment feature -- a zero-mean circular geometry hidden in the inter-layer velocity update (h3-h2) rather than any single layer's state -- that is linearly undetectable (chance, 0.32) yet still decodes Sentiment at >90% accuracy via its radius.",
+ "claim_type": "method",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "MiniLM", "size": "all-MiniLM-L6-v2 frozen encoder + 5-layer MLP head", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "linear probe accuracy for the hidden feature(s) across layers/representations", "value": "country: 0.43 (chance) at h2 vs >0.97 for other features; recovers to 0.96 with a non-linear MLP probe and 0.93 with a manual projection+food-sign transform; velocity-ring Sentiment feature: linear probe at chance (0.32) in the reserved update dimensions, non-linear radius readout >90%", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["BlueDot TAIS Puzzle #1", "sentence-transformers/all-MiniLM-L6-v2", "karinelevonyan/bluedot_puzzle_levonyan2026", "Girish Gupta's 'Beyond the Parrot' globe-smuggling solution"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Applied causal verification via DAS to isolate a 1-D non-linear subspace at `h2`. Activation patching this single coordinate flips downstream model outputs, which proves the geometry is actively causal."
+}

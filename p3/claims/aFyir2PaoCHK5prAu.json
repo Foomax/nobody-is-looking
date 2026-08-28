@@ -1,0 +1,39 @@
+{
+ "post_id": "aFyir2PaoCHK5prAu",
+ "primary_claim": "Shift-by-k-months function vectors extracted from low-diversity few-shot prompts (Llama-3.2-3B) pass all three classic validation checks (behavioral gate, stability, causal effect) yet encode a completely different task (outputting an adjacent month, ignoring k), with margin scores as low as -1.000 in the most extreme case, and lower example diversity simultaneously makes the checks look better (few-shot accuracy 0.38 to 0.83) while making the vector's true identity worse",
+ "claim_type": "negative",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Llama", "size": "3.2-3B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "margin (correct shift-by-k occurrences minus neighbor-task occurrences, among cases where they differ) across month-diversity sets",
+  "value": "margin +0.35 (12 months) and +0.34 (9 months) down to -0.31, -0.46, -0.70, -0.94 (6- and 4-month range sets), with -1.000 for the September-December subset; behavioral gate rises from 0.38 to 0.83 as diversity drops",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": true,
+  "human_eval": false
+ },
+ "depends_on": ["star2vec/tarcle", "arXiv:2310.15213", "arXiv:2310.15916", "arXiv:2405.14860", "arXiv:2602.15029", "arXiv:2311.17030"],
+ "contradicts_or_qualifies": [
+  "shows that the standard function-vector validation checks used in prior work (Todd et al.'s behavioral gate and causal effect, Hendel et al.'s reliability-style check) can all pass while the vector's actual encoded function differs from the intended one -- a distinct failure mode from the known 'steering vectors that fail to steer' (Tan et al.) or 'intervention illusion' (Makelov et al.) findings",
+  "the 12 extracted shift vectors did not trace a circle in activation space regardless of extraction method, differing from prior findings of circular representations for months/days/emotions (Engels et al., Modell et al., Sun et al.), consistent instead with Karkada et al.'s theory that circularity stems from training-data symmetries which shift-by-k operations lack"
+ ],
+ "stated_future_work": [
+  "run the same diversity test on another classic task family with a limited answer set to see whether the diversity phenomenon generalizes (registered as next experiment T7)"
+ ],
+ "limitations_stated": [
+  "measured on a single model, a single circular task family (month shifts), and mainly one extraction method (Todd's); the Hendel method produced no vector performing the intended task so it could not be compared",
+  "threshold calibration is sensitive to method choice: random-data thresholds were 145-156x too low or up to 100x too high compared to thresholds from shuffled real vectors"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The culprit is the number of distinct example inputs. Lower diversity makes the model perform the few-shot task better (from 0.38 to 0.83) even though the function vector changes identity, so the checks actually favor the imposters."
+}

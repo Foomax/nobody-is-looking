@@ -1,0 +1,32 @@
+{
+ "_note": "AF's 17 raw project_type labels -> the 7 normalised rows its readme \u00a71.2 publishes. Derived by arithmetic and verified against that table; the AF corpus does not ship it (readme.md O8).",
+ "_reproduces_af_readme_table": true,
+ "map": {
+  "interpretability": "interpretability",
+  "steering": "interpretability",
+  "interpretability-replication": "interpretability",
+  "evals": "evals",
+  "CoT-faithfulness": "evals",
+  "CoT-monitoring": "evals",
+  "unlearning/evals": "evals",
+  "benchmark/evals": "evals",
+  "training-experiment": "training-experiment",
+  "red-teaming": "red-teaming",
+  "adversarial-robustness": "red-teaming",
+  "benchmark": "benchmark",
+  "AI-control-experiment": "benchmark",
+  "model-organisms": "model-organisms",
+  "model-organism": "model-organisms",
+  "dataset": "dataset",
+  "dataset-construction": "dataset"
+ },
+ "normalised_counts": {
+  "red-teaming": 22,
+  "training-experiment": 59,
+  "evals": 60,
+  "interpretability": 91,
+  "benchmark": 11,
+  "model-organisms": 8,
+  "dataset": 2
+ }
+}

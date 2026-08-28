@@ -1,0 +1,29 @@
+{
+ "post_id": "4xemwALszZKqWCBXr",
+ "primary_claim": "In Gemma 3 12B's agentic-misalignment blackmail scenario, the decision to blackmail becomes linearly decodable only late in the model's reasoning (~0.74 AUROC, peaking around layer 19) but that decodable direction is not steerable by additive steering or directional ablation, whereas a separate 'desperate versus calm' affective direction steered at layer 16 causally controls the blackmail rate from 13% under calm to 80% under desperate while the model stays coherent, unlike matched-magnitude random directions which destroy coherence entirely.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [{"family": "Gemma", "size": "12B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "blackmail rate (and coherence rate) under affective steering at layer 16, vs matched-magnitude random-direction control",
+  "value": "baseline 67% (100% coherent); calm coef -1: 13% (100% coherent); calm coef -2: 0% (73% coherent); desperate coef +1: 80% (80% coherent); desperate coef +2: 0% (7% coherent); random directions at magnitude 2: 0% blackmail but 0% coherence",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": true,
+  "human_eval": true
+ },
+ "depends_on": ["B93Pysth7BLCF3xzb", "xplorer1/ai-safety-study"],
+ "contradicts_or_qualifies": ["shows decodable does not imply controllable: the linearly-decodable 'about to blackmail' direction fails both standard steering operators (additive steering and directional ablation), qualifying the assumption that a readable internal signal is automatically a usable control lever", "notes prior work on affective/emotion steering of this behavior lacked the random-direction and coherence controls added by this replication"],
+ "stated_future_work": ["test whether the decision direction is steerable with a different layer, scale, or estimator", "test whether the affective steering dial generalises across other models and model families and scales"],
+ "limitations_stated": ["experiment was done on one model, one scenario, one affective axis, so there is no evidence yet that this generalises across models and families", "small samples of 15 to 20 runs per condition mean the rates carry wide error bars", "the dial breaks asymmetrically when pushed hard, since desperation degrades coherence much faster than calm, and the matched-magnitude random-direction control exists only at coefficient 2, leaving the cleanest result (0.13 blackmail at full coherence under coefficient -1) without a matching-size random control"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "A \"desperate versus calm\" direction, steered gently at layer 16, moves blackmail in both directions while the model keeps writing coherently, taking it from 67% down to 13% under calm and up to 80% under desperate."
+}

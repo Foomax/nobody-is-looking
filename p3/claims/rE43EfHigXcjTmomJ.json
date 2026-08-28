@@ -1,0 +1,30 @@
+{
+ "post_id": "rE43EfHigXcjTmomJ",
+ "primary_claim": "Matching Pursuit SAEs (MP-SAEs) achieve better reconstruction (variance explained) than traditional BatchTopK/Matryoshka SAEs at matched L0 on Gemma-2-2b, but underperform on k-sparse probing and are far more susceptible to feature absorption, suggesting the reconstruction gains are largely degenerate rather than reflecting better feature learning",
+ "claim_type": "negative",
+ "phenomenon": "dictionary learning method",
+ "models": [
+  {"family": "Gemma", "size": "2-2b", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "variance explained (reconstruction), k-sparse probing accuracy, SAEBench feature absorption rate", "value": "MP-SAEs: best reconstruction at matched L0; worse k=1 and k=16 sparse probing than traditional SAEs; much higher (worse) feature absorption rate than traditional SAEs; Matryoshka SAEs best on absorption", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2506.03093", "DecoderResearch/SAELens", "arXiv:2412.06410", "arXiv:2503.17547", "arXiv:2502.16681", "sae-probes (pypi)", "adamkarvonen/SAEBench", "arXiv:2409.14507", "mpsae/MP-SAE reference implementation", "KempnerInstitute/overcomplete", "huggingface.co/datasets/monology/pile-uncopyrighted"],
+ "contradicts_or_qualifies": ["The Matching Pursuit SAEs paper's motivation that MP-SAE architecture should handle feature hierarchy and solve feature absorption; author finds the opposite"],
+ "stated_future_work": [
+  "Investigate whether MP-SAEs learn more/different high-frequency latents than traditional SAEs",
+  "Investigate how MP-SAEs behave in the presence of feature manifolds compared to traditional SAEs",
+  "Explore hybrid MP-SAE/standard SAE architectures, or a Matryoshka MP-SAE to address feature absorption",
+  "Optimize SAEBench SCR/TPP evals to run efficiently on MP-SAEs",
+  "Investigate whether wider MP-SAEs (100k+ latents) develop dead latents requiring an auxiliary loss"
+ ],
+ "limitations_stated": [
+  "This is not a rigorous analysis, just observations from training a few MP-SAEs on one model (Gemma-2-2b)",
+  "Trained on only 300M tokens, less than the 1B+ tokens SAEs are often trained on, due to slow MP-SAE training",
+  "Did not investigate whether features learned by MP-SAEs differ meaningfully from traditional SAEs",
+  "SCR/TPP evals were too slow to run practically on MP-SAEs"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "MP-SAEs outperform traditional SAEs at reconstruction, but I do not see evidence that this results in a better SAE for practical tasks, and they are slower to train and run than traditional SAEs."
+}

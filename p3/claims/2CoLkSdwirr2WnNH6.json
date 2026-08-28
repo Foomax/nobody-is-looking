@@ -1,0 +1,31 @@
+{
+ "post_id": "2CoLkSdwirr2WnNH6",
+ "primary_claim": "A replication of a gradient-based unsupervised sparse-autoencoder circuit discovery algorithm in GPT-2-small produced a negative result: only 2 of 5 top proximal-cause SAE features correctly predicted the model's actual top next token, and the upstream edges/nodes feeding into them remained largely uninterpretable, so localistic SAE circuits could not be strung together into fully explanatory circuits.",
+ "claim_type": "negative",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "GPT-2", "size": "small", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "fraction of top proximal-cause SAE features correctly predicting the model's actual top next-token completion, across 5 example prompts",
+  "value": "2 of 5",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["davidudell/sparse_circuit_discovery", "jbloom/GPT2-Small-SAEs"],
+ "contradicts_or_qualifies": ["Qualifies the earlier optimism (e.g. Anthropic's characterization of interpretability as 'an engineering problem') that sparse autoencoder features are already the right primitive ontology for building full mechanistic explanatory circuits", "Contrasts with Anthropic's subsequent cross-layer transcoder circuit discovery work, which the authors say does succeed at fully explaining behavior, suggesting cross-layer (rather than purely local, layer-wise) approximation is the key missing ingredient"],
+ "stated_future_work": [],
+ "limitations_stated": ["The resulting causal graphs are hard to read", "Ablation validation in this project wasn't done suitably at scale, unlike a prior related project's validation which was cleaner at scale"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "A replication of an unsupervised circuit discovery algorithm in GPT-2-small, with a negative result."
+}

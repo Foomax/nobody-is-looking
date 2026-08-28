@@ -1,0 +1,20 @@
+{
+ "post_id": "kSmHMoaLKGcGgyWzs",
+ "primary_claim": "GPT-4-base has memorized (perfectly recalled) several BIG-Bench benchmark tasks that contain the canary string, evidencing training-data contamination by benchmark data that was supposed to be excluded.",
+ "claim_type": "positive",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "GPT-4", "size": "base", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "tasks with perfectly recalled canary-containing code", "value": "4 of 19 tested tasks perfectly memorized", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["google/BIG-bench"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["was constrained on time, so automated the process only partially and tested a subset of tasks manually", "methodology for eliciting memorization was rudimentary", "did not test all tasks in the benchmark, so more sophisticated methods would likely find additional compromised tasks"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "After testing a subset of the BIG-Bench benchmark tasks, I found that GPT-4-base had memorized several tasks in the benchmark (all containing the canary string)."
+}

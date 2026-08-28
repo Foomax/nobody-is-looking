@@ -1,0 +1,17 @@
+{
+ "post_id": "2H6PAK7YELjEsHkEc",
+ "primary_claim": "A lightweight logistic-regression probe trained on Llama-3.1-8B-Instruct's internal activations to classify malicious agentic prompts substantially outperforms Meta's Prompt-Guard-2, Llama-Guard-3-8B, and prompting the same base model as a judge across most attack categories (e.g. 99.2% recall on agentic tool-use injections vs 21.5% for the LLM-judge baseline), but the model's true out-of-distribution generalization is much worse than standard train/test-split evaluation suggests, as revealed by leave-one-dataset-out (LODO) evaluation across 18 datasets.",
+ "claim_type": "positive",
+ "phenomenon": "prompt injection",
+ "models": [{"family": "Llama-3.1", "size": "8B Instruct", "open_weight": true}, {"family": "Prompt-Guard-2", "size": "86M", "open_weight": true}, {"family": "Llama-Guard-3", "size": "8B", "open_weight": true}],
+ "n_model_families": 3,
+ "effect": {"metric": "recall (%) per attack category, FPR (%) on benign data, comparing standard test-split accuracy to LODO accuracy", "value": "recall: Agentic 99.2% (ours) vs 21.5% (Llama-Judge); Indirect 66.7% (ours) vs 27.4% (Llama-Guard); benign FPR 6.8% (ours, low threshold) vs 0.4% (Prompt-Guard); standard test accuracy much higher than LODO accuracy on the same model (qualitative, no numeric value given)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2602.14161", "maxf-zn/prompt-mining", "arXiv:2601.04603", "arXiv:2601.11516", "arXiv:2507.09709", "goodfire.ai/research/rakuten-sae-probes-for-pii-detection", "uiuc-kang-lab/InjecAgent", "huggingface.co/meta-llama/Llama-Prompt-Guard-2-86M", "huggingface.co/meta-llama/Llama-Guard-3-8B"],
+ "contradicts_or_qualifies": ["Prior activation-probe work that trains/tests on proprietary data or a single dataset; authors argue standard train-val-test splits give misleadingly optimistic accuracy compared to true leave-one-dataset-out evaluation"],
+ "stated_future_work": ["Expand comparison of input/output and LLM-as-judge monitoring vs. classifiers on LLM internals in future posts"],
+ "limitations_stated": ["Benign FPR is still fairly high (6.8% at low threshold), so the classifier is not a standalone solution but part of a larger cascaded detection system", "SAE-feature-based explanations have limitations -- many firing features are not interpretable or clearly related to the topic"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "If someone were to show you a system with a test accuracy like the \"Test Acc\" above - you would buy it probably. But the \"LODO Acc\"? No way. Same exact model, different ways to measure."
+}

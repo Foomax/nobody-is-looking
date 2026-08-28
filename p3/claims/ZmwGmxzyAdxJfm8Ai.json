@@ -1,0 +1,29 @@
+{
+ "post_id": "ZmwGmxzyAdxJfm8Ai",
+ "primary_claim": "An SAE-based feature classifier outperforms traditional baselines on safety-critical classification tasks, SAE features transfer well cross-lingually for multilingual toxicity detection (outperforming in-domain methods), and LLMs show some ability to predict their own correctness and that of larger models, supporting scalable oversight.",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature interpretability",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2502.11367", "8JTi7N3nQmjoRRuMD"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "SAE features outperform all in-domain methods and exhibit promising generalization capabilities across languages."
+}

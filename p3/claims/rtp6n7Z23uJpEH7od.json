@@ -1,0 +1,50 @@
+{
+ "post_id": "rtp6n7Z23uJpEH7od",
+ "primary_claim": "An SAE trained on a chat-specific dataset (LmSys-Chat-1M) finds a significantly sparser, more faithful, and more interpretable reconstruction of the 'refusal direction' than an SAE trained on the Pile, and for this task the training dataset matters more than whether the SAE is trained on base vs. chat model activations",
+ "claim_type": "positive",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "Qwen", "size": "1.5 0.5B Chat", "open_weight": true},
+  {"family": "Qwen", "size": "1.5 0.5B Base", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "cosine similarity between reconstructed and true refusal direction",
+  "value": "LmSys-trained SAE reconstruction has significantly higher cosine similarity to the true refusal direction than the Pile-trained SAE (also achieves lower relative MSE and requires far fewer latents for equivalent reconstruction quality)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2406.11717",
+  "lmsys/lmsys-chat-1m",
+  "monology/pile-uncopyrighted",
+  "jbloomAus/SAELens",
+  "andyrdt/refusal_direction",
+  "arXiv:2408.05147"
+ ],
+ "contradicts_or_qualifies": [
+  "qualifies the authors' own prior finding that SAEs (usually) transfer between base and chat models, by showing training dataset matters more than base/chat checkpoint for this task",
+  "qualifies the hope that a single SAE trained once could be reused as a general tool for arbitrary interpretability tasks"
+ ],
+ "stated_future_work": [
+  "test whether fine-tuning pre-trained SAEs on domain-specific data (ideally fewer tokens) gives similar benefits",
+  "run the evals from this post on wider open-source Gemma 2 9B PT SAEs (up to 1M latents) to see if width alone fixes the pile SAE",
+  "train an SAE on LmSys instructions with on-policy rollouts from the model itself rather than the original completions"
+ ],
+ "limitations_stated": [
+  "focuses on only one small chat model, Qwen 1.5 0.5B Chat; results may not generalize to other model families or much larger models",
+  "all experiments use the standard ReLU SAE architecture from Anthropic's April Update; unclear if results generalize to TopK or JumpReLU SAEs",
+  "only a single SAE was trained on each dataset, without sweeping sparsity penalty or random seed"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Training a new SAE on a chat-specific dataset, LmSys-Chat-1M, finds a significantly sparser, more faithful, and interpretable reconstruction of the \"refusal direction\"."
+}

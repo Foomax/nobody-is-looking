@@ -1,0 +1,44 @@
+{
+ "post_id": "RGWawNpTTeCJKhd8H",
+ "primary_claim": "A GPT-2 crosscoder regularized with a sentence-level graph-based structured prior achieves reconstruction fidelity comparable to a vanilla L1-sparse crosscoder (R²=0.935 vs 0.940) while better preserving external semantic-neighborhood structure (higher Precision@64), whereas a crosscoder with an isotropic Gaussian prior underperforms substantially on both fidelity and sparsity; Ladder SAE results are still pending",
+ "claim_type": "positive",
+ "phenomenon": "crosscoder / model diffing",
+ "models": [
+  {"family": "GPT-2", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "reconstruction fidelity (R²) and neighborhood-structure precision (Precision@64)",
+  "value": "Graph crosscoder R²=0.9347 (Dead 84.72%) vs Vanilla R²=0.9401 (Dead 92.83%) vs Gaussian-iso R²=0.6870 (Dead 13.16%); Graph Precision@64=0.01340 vs Vanilla 0.01289",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["EHFCe5eahA8br6AvK", "8oMoQedHjhJpcG6DL", "facebookresearch/faiss", "intfloat/e5-base"],
+ "contradicts_or_qualifies": [
+  "their own Part I suggestion that an isotropic Gaussian prior is an easier starting point; this post finds it underperforms both fidelity and sparsity compared to structured priors"
+ ],
+ "stated_future_work": [
+  "build better similarity graphs: symmetric kNN, degree-normalized Laplacian, combine token+sentence+category graphs for multi-scale structure",
+  "graph-aware training: edge sampling, periodic neighbor refresh, k ablations",
+  "test constraint combinations: graph penalty plus small L1 to probe the reconstruction-sparsity Pareto frontier",
+  "variational parity: compare a Gaussian-structured KL prior to the deterministic Graph penalty at matched compute",
+  "scale to larger LMs/datasets, add parent-to-child probes across layers, and run the planned Ladder SAE experiments"
+ ],
+ "limitations_stated": [
+  "Ladder SAE experimental results are still pending; only crosscoder results are reported so far",
+  "Gaussian-iso crosscoder substantially underperforms on fidelity and sparsity because an isotropic prior ignores empirical neighborhood adjacency",
+  "graph construction uses asymmetric kNN graphs (FAISS) without graph-aware batching, likely explaining Vanilla's marginally higher NDCG",
+  "Graph crosscoder does not clearly outperform Vanilla on raw reconstruction fidelity/sparsity, only on local neighborhood precision"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Vanilla and Graph achieve comparable and high fidelity R2 (0.940 vs 0.935) with low MSE, while Gaussian-iso lags on both fidelity and sparsity."
+}

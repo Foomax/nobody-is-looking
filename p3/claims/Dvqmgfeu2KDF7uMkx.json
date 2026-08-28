@@ -1,0 +1,21 @@
+{
+ "post_id": "Dvqmgfeu2KDF7uMkx",
+ "primary_claim": "Internal state controllability (Lindsey 2025's think/don't-think effect) replicates across 14 open-weight models spanning Qwen3, Gemma 3, and Tulu 3 families from 0.3B to 235B parameters with no clear trend in the think vs. don't-think gap across scale, and prompted attempts to evade a deception probe via explicit suppression instructions fail to reduce probe performance in Qwen3-32B and Qwen3-14B during sandbagging.",
+ "claim_type": "replication",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Qwen", "size": "0.6B-235B", "open_weight": true},
+  {"family": "Gemma", "size": null, "open_weight": true},
+  {"family": "Tulu", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "think vs don't-think cosine-similarity gap; deception-probe AUC under evasion instructions", "value": "effect present across all 14 models with no clear size trend; probe scores remain within noise of (or above) baseline at every probed layer for Qwen3-32B/-14B under ignore/suppress/probed evasion instructions", "direction": "+", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2502.03407", "uchicago-xlab/intentional-control"],
+ "contradicts_or_qualifies": ["Lindsey (2025) observes that earlier/less capable Claude models show a larger think-don't-think gap; this replication finds no clear trend with model size across Qwen and Gemma families", "Testing the focus/ignore prompt framings from Gurnee et al. 2026 finds they give no more controllability than the original think/don't-think prompts, despite being shown to give more control over the J-Space in that work"],
+ "stated_future_work": ["Mechanistic analysis of attention circuits to confirm the 'attention-tagging' theory of why controllability occurs"],
+ "limitations_stated": ["With few models per family, cannot fully rule out a scale trend even though none is observed", "With only a single family (Tulu) tested with DPO checkpoints, cannot say whether DPO's gap-reducing effect is general", "Not completely clear whether Gemma or smaller Qwen models truly lack 'silent' representations or just show a smaller version of the late-layer drop"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "the effect replicates in 14 open-weight models from 0.3B to 235B parameters (Qwen3, Gemma 3, Tulu 3) with no clear trend in the think vs. don't-think gap across scale"
+}

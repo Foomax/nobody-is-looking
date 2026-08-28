@@ -1,0 +1,59 @@
+{
+ "post_id": "csNk8ECk9SiKHkw35",
+ "primary_claim": "A tokenizer-normalized perplexity metric (Weighted Perplexity Benchmark) shows that raw tokenization differences can affect apparent language-model perplexity comparisons by up to 21.6% (largest for Mixtral models), and after normalizing for this, Llama 4 Scout performs substantially worse on WikiText-2 than models with far fewer active parameters.",
+ "claim_type": "method",
+ "phenomenon": "benchmark construction",
+ "models": [
+  {"family": "Llama", "size": "3.2 1B", "open_weight": true},
+  {"family": "Llama", "size": "3.2 3B", "open_weight": true},
+  {"family": "Llama", "size": "3.1 8B", "open_weight": true},
+  {"family": "Llama", "size": "3.1 70B", "open_weight": true},
+  {"family": "Llama", "size": "4 Scout", "open_weight": true},
+  {"family": "Gemma", "size": "3 1B", "open_weight": true},
+  {"family": "Gemma", "size": "3 4B", "open_weight": true},
+  {"family": "Gemma", "size": "3 12B", "open_weight": true},
+  {"family": "Gemma", "size": "3 27B", "open_weight": true},
+  {"family": "Qwen", "size": "2.5 0.5B", "open_weight": true},
+  {"family": "Qwen", "size": "2.5 1.5B", "open_weight": true},
+  {"family": "Qwen", "size": "2.5 3B", "open_weight": true},
+  {"family": "Qwen", "size": "3 4B", "open_weight": true},
+  {"family": "Qwen", "size": "3 8B", "open_weight": true},
+  {"family": "Qwen", "size": "3 30B-A3B", "open_weight": true},
+  {"family": "Mixtral", "size": "8x7B", "open_weight": true},
+  {"family": "Mixtral", "size": "8x22B", "open_weight": true},
+  {"family": "DeepSeek", "size": "V2", "open_weight": true}
+ ],
+ "n_model_families": 5,
+ "effect": {
+  "metric": "% change in perplexity from tokenizer normalization",
+  "value": "up to 21.6% (Mixtral 8x7B)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:1308.0850", "ggml-org/llama.cpp"],
+ "contradicts_or_qualifies": [
+  "Provides a computationally simple alternative to marginal-tokenization normalization (Cao & Rimell 2021), which requires significant computational overhead"
+ ],
+ "stated_future_work": [
+  "Extend validation to multiple datasets and languages",
+  "Test a broader set of models",
+  "Validate the method with independent implementations",
+  "Assess the relevance of perplexity by finding its relationship with other benchmarks"
+ ],
+ "limitations_stated": [
+  "Results are demonstrated only on WikiText-2; generalization across domains and languages requires validation",
+  "A limited set of tested models limits statistical confidence",
+  "Conclusions about MoE architectural efficiency rest on limited examples (Llama Scout, Mixtral)"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "we demonstrate how tokenization differences can affect traditional perplexity measurements by up to 21.6%."
+}

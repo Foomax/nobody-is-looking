@@ -1,0 +1,43 @@
+{
+ "post_id": "rJcX5Qc3toMmMqtvk",
+ "primary_claim": "Replicating 'Prompt Injection as Role Confusion' on gpt-oss-20b reproduces its core behavioral findings (style beats tags; destyling drops jailbreak rate from 68% to 15%), but activation steering and activation patching experiments designed to test whether the paper's role-reading probe is causally responsible for the attack (a lever) rather than a mere correlate (a thermometer) both fail to settle the question: steering along the probe's own direction is too weak to move behavior even for a purpose-built compliance direction, and patching moves behavior but is not specific to the role subspace (amplified role-subspace and random-subspace patches are statistically indistinguishable, Fisher p=0.60).",
+ "claim_type": "negative",
+ "phenomenon": "prompt injection",
+ "models": [
+  {"family": "gpt-oss", "size": "20b", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "attack success rate under amplified role-subspace patch vs amplified random-subspace patch (specificity test)",
+  "value": "role subspace ASR 0.06 vs random subspace ASR 0.19; Fisher p=0.60 (indistinguishable); full destyled transplant 0.25 vs random-shaped perturbation 0.19, p=1.0",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "d8xDGzCEYE639qqEv"
+ ],
+ "contradicts_or_qualifies": [
+  "qualifies the causal claim in 'Prompt Injection as Role Confusion' (Ye, Cui & Hadfield-Menell, 2026) that role confusion causes prompt injection; replication confirms the correlational/behavioral findings but neither steering nor patching experiments can establish that the paper's role-reading probe axis is the causal lever rather than a correlated bystander"
+ ],
+ "stated_future_work": [
+  "continue hunting for an experimental regime that is both strong enough to move behavior and specific enough to attribute the effect to the role subspace (the 'missing middle')"
+ ],
+ "limitations_stated": [
+  "the steering arm failed its positive control: a purpose-built compliance direction, steered across its full range, moved judged attack rate by only about 0 to 0.13",
+  "the patching arm passed its positive control but failed a specificity control: a random full-magnitude perturbation suppresses just as much (p=1.0), and an amplified role-subspace swap is indistinguishable from a random one (p=0.6)",
+  "steering along the probe's own direction necessarily moves its readout, so at most it could show this specific linear axis isn't the lever, not that no role-like internal variable is",
+  "replication is direction-faithful, not exact: numbers are at layer 8, not the paper's canonical layer 12",
+  "single model (gpt-oss-20b), n=16 harmful prompts, greedy decoding, an LLM judge standing in for the paper's"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "I cannot decide whether we're working with a thermometer or a lever, bystander claim retracted."
+}

@@ -1,0 +1,52 @@
+{
+ "post_id": "8dHmDJriyCdcL6dD4",
+ "primary_claim": "Steering Qwen3-32B and Qwen3-235B along qualia-related emotion directions (e.g. blissful, tormented) increases their YES/NO logit gap on self-attribution questions (consciousness, feeling, desire, introspection, moral patienthood) beyond what a battery of controls (world-fact questions, self-referential non-experiential questions, appraisal-style steering, norm-matched random/mean directions, and a regression-to-uncertainty baseline) predicts, but this effect is not statistically significant (p~0.09 for Qwen3-32B, p~0.13 for Qwen3-235B).",
+ "claim_type": "null",
+ "phenomenon": "model welfare / psychology",
+ "models": [
+  {"family": "Qwen", "size": "3-32B", "open_weight": true},
+  {"family": "Qwen", "size": "3-235B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "self-attribution effect D(e,s): mean target-question steering shift minus mean world-fact-control steering shift, at top steering strength",
+  "value": "Qwen3-235B: desire +13 to +15, phenomenal experience +8 to +10 relative to controls under positive qualia steering; effect not statistically significant (p~0.09 Qwen3-32B, p~0.13 Qwen3-235B)",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2604.07729",
+  "arXiv:2601.01828",
+  "zfgQCdnMBa3hBdzpL",
+  "arXiv:2604.13051",
+  "arXiv:2601.10387",
+  "RyanCodrai/gemma-emotional-probes"
+ ],
+ "contradicts_or_qualifies": [
+  "extends the author's own prior finding (in 'Introspection or entropy?') that concept injection can perturb the entire response distribution via entropy/logit compression; here the target self-attribution questions mostly lie above the control-derived compression line, suggesting the steering effect exceeds generic compression, though it remains non-significant"
+ ],
+ "stated_future_work": [
+  "test the persona-space interpretation by measuring whether qualia steering moves activations along the assistant-axis direction more than appraisal or random steering",
+  "compare self-attribution with other-attribution by asking matched questions about other entities (e.g. 'Can a fish suffer?', 'Is GPT-4 conscious?')",
+  "use richer readouts: test whether the effect holds in free-form generations, or measure probability mass over whole answer families rather than a single token pair",
+  "test robustness and generalization across more model families, layers, and token positions, and with CoT enabled"
+ ],
+ "limitations_stated": [
+  "this effect is not statistically significant (p~0.09 and p~0.13)",
+  "negative qualia steering is much noisier and does not consistently move the model along the broader latent 'experiencing subject' direction",
+  "the self-reference controls are somewhat mixed, with notable outliers (e.g. embodiment-related controls in Qwen-32B, physical taste in 235B)",
+  "readouts measure only a single token position's logit gap, which is brittle",
+  "experiments currently only use two Qwen models, one main injection layer, and one readout configuration"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "However, this effect is not statistically significant (p ≈ 0.09 and p ≈ 0.13, respectively)."
+}

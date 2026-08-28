@@ -1,0 +1,24 @@
+{
+ "post_id": "iY9584TRhqrzawhZg",
+ "primary_claim": "Analyzing GPT-oss's embedding matrix reveals glitch tokens with anomalously high L2 norms, and querying GPT-5 and GPT-oss about these tokens via membership inference provides strong evidence that the GPT-5 and GPT-oss model families were trained on phrases from adult websites, with weaker evidence (Spearman's rho = 0.448 between GitHub search-hit counts and model recognition) that part of the training corpus was scraped from GitHub.",
+ "claim_type": "positive",
+ "phenomenon": "training data membership inference",
+ "models": [
+  {"family": "GPT-5", "size": null, "open_weight": false},
+  {"family": "GPT-5", "size": "mini", "open_weight": false},
+  {"family": "GPT-5", "size": "nano", "open_weight": false},
+  {"family": "gpt-oss", "size": "20B", "open_weight": true},
+  {"family": "gpt-oss", "size": "120B", "open_weight": true},
+  {"family": "Claude 4", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "Spearman correlation between GitHub search-hit count and model recognition of anomalous glitch tokens across GPT-5/GPT-oss family", "value": "rho = 0.448 (significant)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": 4, "prereg": false, "human_eval": false},
+ "depends_on": ["lennart-finke/gpt-oss", "aPeJE8bSo6rAFoLqg"],
+ "contradicts_or_qualifies": ["Rumbelow's SolidGoldMagikarp finding that glitch tokens are characterized by low norm and closeness to the embedding mean -- this post finds the anomalous (likely-seen) tokens instead have comparatively high norm and are far from the mean"],
+ "stated_future_work": ["Use glitch tokens to identify which model is behind a proprietary pipeline.", "Study the implications for sample efficiency of GPT via glitch token frequency.", "Go beyond the embeddings and incorporate the first layers of the model for bigram frequency information.", "Investigate denial-of-service-style token-wasting attacks via glitch tokens that induce infinitely looping completions in gpt-4o."],
+ "limitations_stated": ["Membership inference only tells us the model saw the string, not where it was sourced from.", "High correlation between GitHub search-hit count and recognition doesn't prove GitHub was the source, since a high hit count could just indicate the token is common across the internet more broadly.", "For cost reasons, each token was queried only 4 times per model."],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "In summary, we have found strong evidence that models in the GPT-5 and GPT-oss family were trained on phrases from adult websites."
+}

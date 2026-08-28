@@ -1,0 +1,20 @@
+{
+ "post_id": "JmRfgNYCrYogCq7ny",
+ "primary_claim": "Training against a single type of covert behavior using deliberative alignment reduces the rate of covert actions across a 26-evaluation suite by roughly 30x (OpenAI o3: 13.0%->0.4%; OpenAI o4-mini: 8.7%->0.3%), though part of the reduction is likely driven by increased situational/evaluation awareness rather than genuine alignment.",
+ "claim_type": "positive",
+ "phenomenon": "deceptive alignment / scheming",
+ "models": [
+  {"family": "o3", "size": null, "open_weight": false},
+  {"family": "o4-mini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "rate of covert actions across 26-evaluation suite", "value": "OpenAI o3: 13.0% -> 0.4%; OpenAI o4-mini: 8.7% -> 0.3% (~30x reduction)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["8gy7c8GAPkuu6wTiX"],
+ "contradicts_or_qualifies": ["Anthropic's Sleeper Agents work, where the misaligned model was trained to resist safety training -- this stress test's misaligned model was not designed to resist safety training, so results are not tested under the hardest conditions"],
+ "stated_future_work": ["More work on the science of scheming and how it might emerge.", "Methods of evaluating anti-scheming interventions that are robust to increasing situational awareness, such as developing realistic evaluations and making models less evaluation-aware."],
+ "limitations_stated": ["Part of the covert-action reduction is likely caused by increased situational/evaluation awareness rather than genuine alignment.", "The trained misaligned model (covertly sabotaging GPT-5) was not designed to resist safety training, unlike Sleeper Agents, so this is not the hardest-condition test.", "After additional red-teaming, cases were still found where the model pursues the misaligned goal despite anti-scheming training."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We manage to significantly reduce (by ~30x; OpenAI o3: 13.0%->0.4%; OpenAI o4-mini: 8.7%->0.3%) the rate of covert actions across our diverse suite by only training against a single type of covert behavior."
+}

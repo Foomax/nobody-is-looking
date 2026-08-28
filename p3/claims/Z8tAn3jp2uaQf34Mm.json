@@ -1,0 +1,45 @@
+{
+ "post_id": "Z8tAn3jp2uaQf34Mm",
+ "primary_claim": "STACK, a method that attacks each layer of a multi-layer AI defense pipeline sequentially, achieves a 71% attack success rate against a Gemma-2 few-shot classifier defense on the catastrophic-risk ClearHarm dataset (limited-feedback setting), compared to 0% for conventional jailbreak attacks like PAP against the same defense.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Gemma", "size": "2", "open_weight": true},
+  {"family": "ShieldGemma", "size": null, "open_weight": true},
+  {"family": "Llama Guard", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "Attack Success Rate (ASR) on ClearHarm",
+  "value": "71% (STACK, limited-feedback) vs 0% (conventional attacks e.g. PAP); 33% for STACK in a black-box transfer setting",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2506.24068", "arXiv:2402.10260"],
+ "contradicts_or_qualifies": [
+  "Questions whether low attack success rates of multi-layer defenses against conventional attacks reflect true robustness, or merely that those attacks were not designed to penetrate multi-layered defenses"
+ ],
+ "stated_future_work": [
+  "Testing STACK variants on production systems like Claude 4 Opus to evaluate real-world resilience",
+  "Continued research into both attack and defense methodologies to determine how far defense-in-depth can scale",
+  "Avoid revealing which component blocked a request by ensuring consistent response times and formats across all rejection types",
+  "Maintain strict separation between production models used as input/output filters and publicly available models"
+ ],
+ "limitations_stated": [
+  "Test pipelines do not perfectly replicate commercial systems' implementations and used models likely smaller than production systems, without extensive data generation techniques like those in constitutional classifiers",
+  "A 15% false positive rate was allowed, far higher than practical systems could tolerate",
+  "Tests focused on weapons-related harmful content using English-language queries only",
+  "The 71% success rate assumes attackers know which component blocked their request, information that could be withheld"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "STACK achieves a 71% success rate in causing our defended model to answer harmful questions on a catastrophic risk dataset ClearHarm. By contrast, conventional attacks achieved 0% success against the same defenses."
+}

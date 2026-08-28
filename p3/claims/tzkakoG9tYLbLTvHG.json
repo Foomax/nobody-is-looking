@@ -1,0 +1,25 @@
+{
+  "post_id": "tzkakoG9tYLbLTvHG",
+  "primary_claim": "Modular subtraction is solved by the same Fourier-based 'clock' algorithm as modular addition, but modular multiplication is not, and GELU hastens grokking while LayerNorm delays it.",
+  "claim_type": "positive",
+  "phenomenon": "grokking of modular arithmetic",
+  "models": [],
+  "n_model_families": 0,
+  "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["neelnanda-io/TransformerLens", "TransformerLensOrg/TransformerLens", "N6WM6hs7RQMKDhYjB", "arXiv:2301.05217", "arXiv:2306.17844"],
+  "contradicts_or_qualifies": ["multiplication's lack of a Fourier algorithm is a problem for universality of the Fourier-based grokking circuit, though the fact that NNs can do multiplication innately means this is likely not a strong issue"],
+  "stated_future_work": [
+    "the fundamentally multiplicative aspect of neural networks seems confusing and requires further research",
+    "why SiLU's slingshot-like spikes do not happen to GELU is confusing and may require further research",
+    "more research might be needed for multiplication and its algorithm"
+  ],
+  "limitations_stated": [
+    "small exploration without previously formulated hypotheses or expectations",
+    "results are low-stakes and likely correct but not major insights",
+    "done merely to check for anything interesting in low-hanging fruit"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "medium",
+  "quote": "Subtraction does implement the same Fourier transform-based \"clock\" algorithm. Multiplication, however, does not."
+}

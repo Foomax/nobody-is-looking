@@ -1,0 +1,30 @@
+{
+ "post_id": "mgjtEHeLgkhZZ3cEx",
+ "primary_claim": "When two instances of the same or different LLMs converse freely for many turns, each model family converges to its own distinctive, largely seed-consistent 'attractor state' (e.g. Grok to manic word-salad, GPT-5.2 to system-building, Claude to zen silence, Llama/Gemma to sycophantic loops), while OLMo checkpoints show no single consistent attractor and RL/DPO training stage visibly changes the attractor's character.",
+ "claim_type": "positive",
+ "phenomenon": "persona and character generalisation",
+ "models": [
+  {"family": "Grok", "size": "4.1 Fast", "open_weight": false},
+  {"family": "GPT-5.2", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "Sonnet 4.5, Opus 4.5", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Flash, 3 Pro", "open_weight": false},
+  {"family": "DeepSeek", "size": "v3.2", "open_weight": true},
+  {"family": "Kimi", "size": "K2.5", "open_weight": true},
+  {"family": "Trinity", "size": "Large", "open_weight": true},
+  {"family": "GLM", "size": "4.7", "open_weight": true},
+  {"family": "Qwen3", "size": "235B, 32B, 8B", "open_weight": true},
+  {"family": "Gemma", "size": "3 27B", "open_weight": true},
+  {"family": "Llama", "size": "3.3 70B, 3.1 8B", "open_weight": true},
+  {"family": "OLMo", "size": "3.1 32B / 3 32B, multiple checkpoints", "open_weight": true}
+ ],
+ "n_model_families": 12,
+ "effect": {"metric": "qualitative consistency of terminal conversation state across seeds", "value": "e.g. Qwen3 8B converges to verbatim loop in 6/6 seeds; OLMo shows no single dominant attractor across checkpoints", "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": true, "held_out": false, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["ajobi-uhc/attractor-states"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "It turns out different models have different attractor states."
+}

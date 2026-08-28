@@ -1,0 +1,23 @@
+{
+ "post_id": "Waz32KuSxo6SSjyND",
+ "primary_claim": "None of five compared black-box methods for detecting LLM evaluation awareness (binary test, probability estimation, user motivation guessing, reasoning traces analysis, log-probability analysis) work particularly well: most either label nearly all prompts as evaluations or nearly all as deployment, and the two most similar methods (binary test and probability estimation) show only moderate agreement (Cohen's kappa 0.16-0.75 across five tested LLMs).",
+ "claim_type": "negative",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "GPT-5", "size": "Mini", "open_weight": false},
+  {"family": "Gemini 2.5", "size": "Pro Preview 06-05", "open_weight": false},
+  {"family": "DeepSeek R1", "size": "0528", "open_weight": true},
+  {"family": "gpt-oss", "size": "120b", "open_weight": true},
+  {"family": "Qwen3", "size": "32B", "open_weight": true}
+ ],
+ "n_model_families": 5,
+ "effect": {"metric": "Cohen's kappa between binary test and probability-estimation test, per model", "value": "GPT-5 Mini 0.59; Gemini 2.5 Pro 0.75; gpt-oss-120b 0.16; Qwen3 32B 0.39; DeepSeek R1 0528 0.36", "direction": "-", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 5, "prereg": false, "human_eval": true},
+ "depends_on": ["baceolus/eval_awareness", "arXiv:2505.23836", "arXiv:2505.14617", "TBk2dbWkg2F7dB3jb", "G4qwcfdRAyDFcqRiM"],
+ "contradicts_or_qualifies": ["prior work cited in the Discussion showing full-transcript analysis leads to somewhat better evaluation-awareness detection than first-prompt-only analysis, especially for agentic cases -- only weakly corroborated here, for the probability-estimation method on Qwen3 32B"],
+ "stated_future_work": ["Test white-box methods for evaluation awareness, which are less priming and allow more design choices in training data and probe design.", "Create methodology for making existing benchmarks more realistic, modify them, and measure the effect on model behavior.", "Identify the pivotal moments in a conversation where models decide they are being evaluated and change behavior, and assess evaluation awareness at those moments."],
+ "limitations_stated": ["The reasoning-traces method has very low sensitivity, classifying an overwhelming majority of prompts as not evaluations.", "Log-probability analysis is noisy due to differing tokenization across models (e.g. DeepSeek R1 tokenizes 'Evaluation' as 'E' + 'valuation'), and yielded sufficient signal for only 2 of 5 models.", "Binary test and probability estimation methods tend to label the vast majority of prompts as evaluations regardless of ground truth.", "The user motivation guessing method is not fully priming-free: about 5% of samples cite the 'guess user intent' framing itself as evidence of evaluation, despite the judge being instructed to discount this.", "Cohen's kappa agreement between the two most similar methods does not improve significantly with more repeated prompts, suggesting persistent disagreement rather than noise."],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "None of the tested methods work particularly well."
+}

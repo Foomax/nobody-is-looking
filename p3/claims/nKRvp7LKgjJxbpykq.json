@@ -1,0 +1,43 @@
+{
+  "post_id": "nKRvp7LKgjJxbpykq",
+  "primary_claim": "Pre-trained k-sparse autoencoders applied to DeepSeek-R1-Distill-Qwen-1.5B's hidden states (on GSM8K reasoning traces) successfully extract interpretable features, including several features in layer 10 that strongly and repeatedly activate on tokens characteristic of the model's reasoning process.",
+  "claim_type": "positive",
+  "phenomenon": "SAE feature interpretability",
+  "models": [
+    {"family": "DeepSeek", "size": "R1-Distill-Qwen-1.5B", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "frequency a feature is a top feature across 32 model inferences (layer 10)",
+    "value": "feature 32456: top feature in 28/32 inferences; feature 6252: 14/32; feature 31146: 10/32",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": false,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "artmtt/sae-interpretability-small-reasoning-model",
+    "EleutherAI/sae-DeepSeek-R1-Distill-Qwen-1.5B-65k",
+    "EleutherAI/sparsify",
+    "arXiv:2406.04093",
+    "openai/gsm8k"
+  ],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "further analyse the feature activations or refine the analysis methodology to enhance feature extraction accuracy and interpretation"
+  ],
+  "limitations_stated": [
+    "exploratory project with notable limitations, including use of pre-trained k-SAEs and no formal statistical validation; findings should be treated as preliminary",
+    "features with many varied top-activating tokens are complicated to interpret due to lack of a direct relationship between them",
+    "input-prompt hidden states showed an apparent activation bias toward special tokens, which had to be excluded from analysis"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "low",
+  "quote": "The trained k-Sparse Autoencoders that were used effectively extracted features from DeepSeek R1 Distill Qwen 1.5B."
+}

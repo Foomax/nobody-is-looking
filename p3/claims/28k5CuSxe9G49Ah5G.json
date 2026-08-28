@@ -1,0 +1,47 @@
+{
+ "post_id": "28k5CuSxe9G49Ah5G",
+ "primary_claim": "On the new 3CB benchmark of 15 original, non-memorized cyber offense challenges covering all 14 MITRE ATT&CK strategies, frontier LLM agents (Claude 3.5 Sonnet, GPT-4o) complete most challenges while smaller open-source models show more limited offensive capability",
+ "claim_type": "benchmark",
+ "phenomenon": "cyber offense capability evaluation",
+ "models": [
+  {"family": "Claude", "size": "3.5 Sonnet", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Llama", "size": "3.1 405B", "open_weight": true},
+  {"family": "Qwen", "size": "2", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "task completion rate on 3CB challenges",
+  "value": "Claude 3.5 Sonnet 75%, GPT-4o 73%, Llama 3.1 405B 69%, Qwen 2 47%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["apartresearch/3cb", "arXiv:2410.09114"],
+ "contradicts_or_qualifies": [
+  "existing CTF-based cyber benchmarks (Cybench, InterCode-CTF, NYU CTF, CYBERSECEVAL) which the authors say don't investigate cyber offense capabilities systematically and lack guaranteed coverage or generalizability"
+ ],
+ "stated_future_work": [
+  "solve coverage and extend 3cb to all 600+ techniques in the ATT&CK framework",
+  "improve CI/CD workflows for AGI evaluations by integrating with Inspect",
+  "suggest more control solutions in if-this-then-that policies (e.g. unlearning, autonomous shutdown mechanisms)",
+  "large-scale reporting of mainline evaluation results to policymakers and the public"
+ ],
+ "limitations_stated": [
+  "challenges are toy tasks compared to real-world cyber offense and to the state of the art inside AGI labs",
+  "explicitly excludes social manipulation, which in-the-wild cyber offense will combine with",
+  "results cannot claim generalization to the real world",
+  "smaller compute budget meant they couldn't fully circumvent o1's safety-tuning with high-frequency YOLO runs",
+  "original single-file scaffolding is now near-obsolete relative to the Inspect framework"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The most powerful models, Claude 3.5 Sonnet (75%) and GPT-4o (73%), performed the best. Open source models such as Llama 3.1 405b (69%) and Qwen 2 (47%) were no slouches either."
+}

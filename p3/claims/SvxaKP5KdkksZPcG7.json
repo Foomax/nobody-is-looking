@@ -1,0 +1,17 @@
+{
+ "post_id": "SvxaKP5KdkksZPcG7",
+ "primary_claim": "A conceptual framework classifying CoT reward vs. output reward pairs as In-Conflict, Orthogonal, or Aligned correctly predicts, before training, whether RL optimization will degrade chain-of-thought monitorability: In-Conflict rewards caused monitorability to collapse in coding-backdoor and coin-flip state-tracking environments, while Orthogonal and Aligned rewards preserved it.",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "CoT monitorability (monitor detection rate) after RL training", "value": "In-Conflict rewards caused a drop in monitorability; Orthogonal/Aligned rewards did not, across both the coin-flip and code backdooring environments; In-Conflict rewards were also significantly harder to optimize for than Orthogonal/Aligned rewards", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2603.30036 (Kaufmann, Lindner, Zimmermann, Shah - full paper)", "openai.com chain-of-thought-monitoring blog post", "arXiv:2412.04984 (scheming)", "arXiv:2507.11473 (CoT monitoring can fail)", "arXiv:2512.00218 (obfuscated reasoning prior work)", "alignment.anthropic.com/2025/subtle-reasoning", "arXiv:2510.23966", "Emmons et al. 2025 (CoT faithfulness vs load-bearing computation)"],
+ "contradicts_or_qualifies": ["Reconciles previously inconsistent prior findings (some showing CoT obfuscation under RL, others showing CoT staying legible) by explaining the difference via the In-Conflict/Orthogonal/Aligned classification"],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "In our experiments, the theoretical classification predicted the empirical outcomes. When we trained models against In-Conflict rewards, monitorability collapsed. When we trained against Orthogonal or Aligned rewards, monitorability stayed high."
+}

@@ -1,0 +1,45 @@
+{
+  "post_id": "JZK2xkedJwA7njKmN",
+  "primary_claim": "Independently trained sibling transformers compute the same function but their residual-stream activation bases differ by a rotation statistically indistinguishable from a uniform (Haar) draw on SO(d): applying one seed's SAE to another seed's activations catastrophically fails (negative explained variance) despite high (~0.9) decoder-column cosine similarity, while a single orthogonal Procrustes rotation restores reconstruction to 0.85-0.99 EV with no retraining.",
+  "claim_type": "positive",
+  "phenomenon": "representation geometry",
+  "models": [
+    {"family": "toy 2-layer ReLU transformer (Dyck-3)", "size": "104k params", "open_weight": true},
+    {"family": "Pythia", "size": "70m", "open_weight": true}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "post-rotation SAE reconstruction explained variance (EV)",
+    "value": "0.976-0.990 on toy model (vs worst-case -6.56 pre-rotation); 0.85-0.99 on Pythia-70m (vs -2.11 to 0.75 pre-rotation)",
+    "direction": "+",
+    "uncertainty_reported": "seeds"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": 9,
+    "prereg": true,
+    "human_eval": false
+  },
+  "depends_on": ["jordanmccann/polymorphism-is-rotation"],
+  "contradicts_or_qualifies": [
+    "Qualifies the SAE universality literature (Towards Monosemanticity, Scaling Monosemanticity, Gemma Scope, Cunningham et al., Lan et al.), which interprets high cross-model decoder-column cosine similarity as evidence that models learn 'the same features' -- shows this hides catastrophic cross-model encoder failure and that decoder cosine alone is insufficient evidence of feature transfer",
+    "Off-topic finding: attribution patching is anti-correlated or uncorrelated with true patch effects on converged models, contradicting its use as a reliable importance-estimation method there; recommends integrated gradients instead"
+  ],
+  "stated_future_work": [
+    "frontier-scale (10B+ parameter) replication on any open-weight model pair",
+    "systematic sweep of cross-checkpoint rotation across more layers, seeds, and checkpoints",
+    "test whether rotating steering vectors by the Procrustes rotation improves transfer in the inverted regime",
+    "test whether parameter-level joint alignment can reduce cross-seed MSE to threshold level"
+  ],
+  "limitations_stated": [
+    "frontier scale (10B+ parameters) is untested",
+    "the parametric acceptance bar (joint weight-level alignment) failed completely and the author showed it cannot be improved by more search",
+    "the cross-checkpoint drift rotation result (§7) is a single data point (one layer, one seed, one checkpoint pair) and should not be taken seriously without further study",
+    "the toy model uses a coordinated cohort sharing frozen input/output weights, which simplifies the parametric analysis relative to a fully independent cohort"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "Reconstruction score drops to negative explained variance - worse than ignoring the input entirely and predicting the mean activation."
+}

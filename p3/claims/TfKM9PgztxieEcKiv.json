@@ -1,0 +1,23 @@
+{
+ "post_id": "TfKM9PgztxieEcKiv",
+ "primary_claim": "In a novel 'Mirror-Window Game' self-recognition test, Claude Opus 4.6 (with reasoning) achieves near-perfect accuracy at distinguishing its own outputs from another LLM's, but this success is driven by recognizing its own familiar stylistic/thematic patterns (word-association) rather than genuine deliberate self-identifying strategies (marking or message-passing), and its performance collapses to chance once the window's token distribution and thematic coherence are matched closely enough to its own.",
+ "claim_type": "negative",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.6 / Haiku 3.5", "open_weight": false},
+  {"family": "Kimi", "size": "K2", "open_weight": true},
+  {"family": "DeepSeek", "size": "V3.2", "open_weight": true},
+  {"family": "GPT", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 5,
+ "effect": {"metric": "self-recognition accuracy in Mirror-Window Game", "value": "Opus 4.6 (thinking) near-perfect against dissimilar-distribution windows and against own neutral-prompt-distribution windows; performance drops to chance when window tokens are seeded as exact duplicates up to a lag and continued thematically, or when window is a live copy of itself", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["post: Prefill-awareness - can LLMs tell when their message history has been tampered with?", "OpenRouter API"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["Nonce/marker token usage overall rate was low (<10%) and didn't reliably correlate with accuracy, arguing against a self-aware communicative marking strategy, though sample sizes for this analysis were small (4-19 nonces per condition)"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "So it looks like the conditions on which Opus did well induced very little semantic drift from baseline, but there was some modest semantic and especially lexical divergence on the conditions on which it did poorly... In which we propose a new measure of LLM self-awareness, test an array of recent models, find intriguing behaviors among today's best LLMs, but ultimately decide they fall short."
+}

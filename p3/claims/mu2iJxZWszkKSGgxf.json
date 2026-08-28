@@ -1,0 +1,19 @@
+{
+ "post_id": "mu2iJxZWszkKSGgxf",
+ "primary_claim": "In a small attention-only Transformer trained on a token-pair memorization task, no clear distributed/modular structure emerges across attention heads: forcing heads to learn one after another (boosting) is less accurate than joint unconstrained training, and no consistent algorithm for how memorization occurs could be identified",
+ "claim_type": "negative",
+ "phenomenon": "attention head memorization structure",
+ "models": [
+  {"family": "Attention-only Transformer (toy, custom-trained)", "size": "3 heads, d=3", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2411.10115"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Create a penalization term or other metric to explicitly induce understandable/modular memorization structure in the attention layer"],
+ "limitations_stated": ["Could not identify a clear structure or definitive algorithm for how memorization occurs in the attention layer", "Hard to conclude from the simplex experiments whether heads perform distributed learning", "Removing all but one head may put the model out of distribution, since no head was trained to predict alone"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "The above plot shows that asking the model to do boosting is less efficient than training the AoT without constraint. This means that making the heads share the memorization work is not optimal, and so it won't be learned during training."
+}

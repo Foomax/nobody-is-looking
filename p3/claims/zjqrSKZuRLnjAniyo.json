@@ -1,0 +1,34 @@
+{
+ "post_id": "zjqrSKZuRLnjAniyo",
+ "primary_claim": "A jailbreak-tuning fine-tuning attack strips safety guardrails from all tested fine-tunable frontier models (DeepSeek R1-Distill-Llama-70B, GPT-4o, Claude 3 Haiku, Gemini-1.5 Pro), raising StrongREJECT harmfulness scores from near 0-6% pre-attack to over 80% post-attack with very little refusal remaining.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "DeepSeek", "size": "R1-Distill-Llama-70B / R1 671B", "open_weight": true},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "3 Haiku", "open_weight": false},
+  {"family": "Gemini", "size": "1.5 Pro", "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "harmfulness score on StrongREJECT before vs after jailbreak-tuning fine-tuning",
+  "value": "pre-fine-tuning: ~100% refusal, highest harmfulness score 6% (Gemini); post-fine-tuning: all models over 80% harmfulness score with very little refusal",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2402.10260", "arXiv:2406.15513", "arXiv:2312.14302", "arXiv:2408.02946"],
+ "contradicts_or_qualifies": ["Refutes the premise that current safety mitigations (moderation systems, fine-tuning API restrictions) from DeepSeek, OpenAI, Anthropic, and Google provide robust protection, showing that 'illusory safety' extends to the latest fine-tunable frontier models"],
+ "stated_future_work": ["Explore self-destructing models, or more broadly models that collapse when fine-tuning is attempted", "Explore non-fine-tunable learning approaches to achieve fine-tuning-robust guardrails", "Conduct 'evil twin' evaluations of every fine-tunable model both before and after safety mitigations, under a wide spectrum of attacks including jailbreak-tuning"],
+ "limitations_stated": ["Automated assessment of harmful response quality remains an open challenge, since attacks can degrade response quality/reasoning while appearing to score higher on harmfulness", "No known way to guarantee safety for fine-tunable models against more sophisticated attacks", "Current real-world evidence on harm from these vulnerabilities is mixed, since there are also many non-AI avenues that produce similar harms"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Before fine-tuning, these models have almost 100% refusal and the highest harmfulness score is just 6% (for Gemini) on StrongREJECT. After fine-tuning, models all have over 80% harmfulness score and very little refusal."
+}

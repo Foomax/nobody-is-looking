@@ -1,0 +1,41 @@
+{
+ "post_id": "buxBdp8NtHGgBwabv",
+ "primary_claim": "A tiny 1-layer ReLU network trained to output sparse top-k distributions over a vocabulary much larger than its residual dimension learns a mechanism closely resembling a Bloom filter (sparse binary token hashes, hidden-layer union indicator, output logits read from set intersection), achieving 0.031 total variation distance on held-out samples, with error scaling like O(log(1/delta)) in width versus polynomial scaling for a standard superposition (JL-style) solution.",
+ "claim_type": "positive",
+ "phenomenon": "superposition",
+ "models": [
+  {"family": "custom 1-layer ReLU toy network", "size": "d_model=256, d_hidden=256, d_vocab=5000", "open_weight": null}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "total variation distance to target top-k distribution; false positive rate",
+  "value": "0.031 TVD on held-out random samples; ~2.4% (2438/100000) of random token sets produced a Bloom-filter-style false positive under the TVD-based detection threshold (<0.95 top-k mass)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:1711.03953 (The Softmax Bottleneck)", "The Softmax Bottleneck Does Not Limit the Probabilities of the Most Likely Tokens (OpenReview)"],
+ "contradicts_or_qualifies": [
+  "standard JL-style superposition accounts of how networks represent more features than dimensions, which the author argues would need width scaling polynomially in 1/delta rather than logarithmically"
+ ],
+ "stated_future_work": [
+  "fully understand/prove the mechanism behind the 1-layer model, ideally with a rigorous proof rather than mechanistic evidence",
+  "determine the scaling for the density of hashes the model learns and relate it to theoretical Bloom filter density",
+  "investigate what mechanisms real LLMs learn to output sparse distributions over vocabularies comparable in size to d_model"
+ ],
+ "limitations_stated": [
+  "this is just a toy network, so it doesn't directly tell us what larger models do",
+  "the mechanistic analysis is incomplete: it can explain why false positives are rare but not precisely why the model gets so close to a uniform distribution over top-k tokens",
+  "the exact construction has not been rigorously proven to hold for the trained network, only supported by mechanistic evidence"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "The trained network seems to converge to a mechanism closely resembling a Bloom filter: tokens are assigned sparse binary hashes, the hidden layer computes an approximate union indicator, and the output logits are linearly read from this union."
+}

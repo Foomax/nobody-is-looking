@@ -1,0 +1,45 @@
+{
+  "post_id": "jauWv9BEbdCYcRy2d",
+  "primary_claim": "Linear safety probes that successfully detect (AUROC≥0.91) and steer a feature often fail to 'silence' it via causal projection, showing that detect/steer success is not evidence of a true causal handle; a calibration-time cosine diagnostic between plain and within-class-whitened difference-of-means directions predicts silencing success across 4-5 model families and 2 features, recovering all 17 existing causal handles and correctly alarming on the remaining 5 in a 22-cell battery.",
+  "claim_type": "negative",
+  "phenomenon": "linear probe detection",
+  "models": [
+    {"family": "Llama", "size": "3-8B", "open_weight": true},
+    {"family": "Gemma", "size": "2-9B", "open_weight": true},
+    {"family": "Mistral", "size": "7B-v0.3", "open_weight": true},
+    {"family": "OLMo", "size": "2-7B", "open_weight": true},
+    {"family": "Qwen", "size": "2.5-7B", "open_weight": true}
+  ],
+  "n_model_families": 5,
+  "effect": {
+    "metric": "necessity-check protocol recovery of true causal handles vs. correct alarms, 22-cell battery",
+    "value": "recovers all 17 causal handles that exist and correctly alarms on the remaining 5",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["vaiyr/probe-necessity", "vaiyr/monitor-drift"],
+  "contradicts_or_qualifies": [
+    "Qualifies the implicit norm in prior probe-steering work (Representation Engineering, ActAdd, Inference-Time Intervention) of validating a direction via 'extract + steer = done' -- a sufficiency check, not a necessity check -- showing this leaves silent failures where the probe reads a confound rather than the causal axis",
+    "Provides controlled empirical evidence for a qualitative concern raised in the Claude Mythos Preview System Card that the causal effects of individual features change over the course of post-training"
+  ],
+  "stated_future_work": [
+    "Observe how the detect/steer/silence dissociation evolves when the model is actively adversarial to feature detection and steering"
+  ],
+  "limitations_stated": [
+    "Four families, two features tested; not enough to predict from pretraining metadata alone which regime a novel family falls into",
+    "Projective ablation can self-repair: other layers or components could reconstitute the removed signal downstream",
+    "Linear only; characterizes calibration-time dissociation but not arbitrary training dynamics, and may not hold for SAEs",
+    "The 0.80 cosine threshold was fit on the collected data; transfer to features other than refusal and sycophancy is the claim the author is least confident in"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "Probe accuracy is not evidence of a causal handle."
+}

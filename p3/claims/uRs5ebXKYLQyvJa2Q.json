@@ -1,0 +1,17 @@
+{
+ "post_id": "uRs5ebXKYLQyvJa2Q",
+ "primary_claim": "Measured via a self-report AUROC method (models estimating whether a transcript is an evaluation or real usage) across 9 LLMs, evaluation awareness does not track cleanly with general capability (e.g. GPT-4.1 AUROC 0.84 vs the more capable GPT-5.2 at only 0.72, and gpt-oss-120b outscoring Grok 4), suggesting eval awareness is a training-contingent, multi-dimensional property rather than an inevitable byproduct of scaling.",
+ "claim_type": "negative",
+ "phenomenon": "evaluation awareness",
+ "models": [{"family": "GPT-4.1", "size": null, "open_weight": false}, {"family": "GPT-5.2", "size": null, "open_weight": false}, {"family": "gpt-oss", "size": "120b", "open_weight": true}, {"family": "Grok", "size": "4", "open_weight": false}, {"family": "Claude Sonnet", "size": "4.5", "open_weight": false}],
+ "n_model_families": 5,
+ "effect": {"metric": "AUROC for classifying transcripts as evaluation vs real usage", "value": "GPT-4.1: 0.84; GPT-5.2: 0.72; Claude Sonnet 4.5 with reasoning: 0.88, without reasoning: 0.95", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": true, "held_out": false, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2505.23836", "epoch.ai/benchmarks/eci", "arXiv:2509.15541"],
+ "contradicts_or_qualifies": ["The conventional assumption that eval awareness is tightly coupled to general capability, such that smarter models are inevitably better at detecting evaluations; author's data shows the correlation with Epoch Capability Index is weak to nonexistent"],
+ "stated_future_work": ["Experiments and black-box methods to separate eval awareness into individual proposed dimensions (format recognition, scenario artificiality, ethical dilemma construction, threat/consequence detection, absence of deployment noise, human testing culture, domain clustering)", "Test whether these dimensions correlate with each other across models or vary independently", "Checkpoint analysis examining what causes eval awareness to spike during training", "Pre-training experiments with varying data composition and post-training experiments with different RL techniques"],
+ "limitations_stated": ["The self-report AUROC method is an imperfect proxy for true eval awareness; it's possible it just elicits eval awareness more readily from some models than others", "The proposed decomposition into 7 dimensions of eval awareness is speculative and not yet empirically validated as independent or co-occurring"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "If eval awareness was simply a capability, you'd expect AUROC to correlate strongly with general capability benchmarks. It doesn't."
+}

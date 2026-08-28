@@ -1,0 +1,31 @@
+{
+ "post_id": "Lz8cvGskgXmLRgmN4",
+ "primary_claim": "Models fine-tuned or few-shot prompted to reason in ciphered language only get an uplift over directly answering for very simple ciphers, and get no uplift for intermediate-difficulty ciphers even when they can translate those ciphers to English.",
+ "claim_type": "negative",
+ "phenomenon": "CoT obfuscation",
+ "models": [
+  {"family": "Qwen2.5", "size": "14B", "open_weight": true},
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "Sonnet 3.7 (early checkpoint)", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "math accuracy uplift from ciphered reasoning vs. direct answer",
+            "value": "uplift present only for very simple ciphers; no uplift for intermediate-difficulty ciphers that models can decode to English",
+            "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.09714"],
+ "contradicts_or_qualifies": ["Prior concern that observed LLM ability to translate to/from ciphers like base64 or 'endspeak' threatens CoT monitorability -- authors argue translation ability is a much lower bar than the ability to reason productively in an encoding"],
+ "stated_future_work": [
+  "Build monitor benchmarks that evaluate robustness to distractors, simple ciphers, and large changes in style",
+  "Try to find encodings that transform most of the CoT's content without a massive capability tax"
+ ],
+ "limitations_stated": [
+  "Experiments don't rule out the existence of more LLM-friendly encodings",
+  "Evidence about current reasoning models' scratchpad content is speculative and indirect",
+  "Situation may be more uncertain for future reasoning models, especially if RL is scaled by several orders of magnitude"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "we find that these models only get an uplift from the reasoning (over directly answering) for very simple ciphers, and get no uplift for intermediate-difficulty ciphers that they can translate to English."
+}

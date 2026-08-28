@@ -1,0 +1,37 @@
+{
+ "post_id": "RwWrkGnncSCqryrSZ",
+ "primary_claim": "In a toy model with correlated features, the standard 'sparsity vs reconstruction tradeoff' is illusory: an SAE trained with L0 below the true underlying L0 achieves much better reconstruction than the ground-truth-matching SAE but does so by mixing correlated features into polysemantic latents ('feature hedging'), while only the SAE trained at the true L0 exactly recovers the true monosemantic features",
+ "claim_type": "negative",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "reconstruction quality (variance explained/MSE) at different L0, trained vs. ground-truth SAE",
+  "value": "trained SAE at L0=1 achieves much better reconstruction than the ground-truth SAE (which exactly matches the 50 true features) but has polysemantic latents unrelated to the true features; the trained SAE at the true L0 (11) exactly matches the ground-truth SAE and perfectly recovers every true feature",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2508.16560", "arXiv:2406.04093", "arXiv:2505.11756"],
+ "contradicts_or_qualifies": [
+  "the widely assumed 'sparsity vs reconstruction tradeoff' from prior SAE literature (e.g. Gao et al. 2024, arXiv:2406.04093), which implies better reconstruction always means a better SAE and that any reasonably low L0 is equally valid; this post shows both assumptions are wrong"
+ ],
+ "stated_future_work": [
+  "write a follow-up post on how to find the correct L0 for an SAE"
+ ],
+ "limitations_stated": [
+  "only demonstrated in a simple toy model with 50 features, not yet on real language-model SAEs",
+  "currently the only reliable way to find the correct L0 is to train a range of SAEs at different L0 parameters",
+  "does not discuss in this post how to find the correct L0 (deferred to the companion paper/a future post)"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Fundamentally, there is no \"sparsity vs reconstruction tradeoff\" - if the L0 of the SAE is not chosen correctly, the resulting SAE will be incorrect and polysemantic."
+}

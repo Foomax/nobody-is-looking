@@ -1,0 +1,21 @@
+{
+ "post_id": "RSqfcyAW9ZkveGQ5u",
+ "primary_claim": "In a pilot test of whether frontier LLMs can perform autonomous scientific research (iteratively forming and testing hypotheses to discover a hidden rule governing lists of integers, a Wason-2019-style task), 11 tested LLMs discovered a mean of 11% (median 10%) of 10 rules, with 4 of 11 models scoring 0 and only the strongest models (Claude-3.6-Sonnet: 4/10, o1-preview: 3/10) showing 'signs of life', with confirmation bias (failing to try to falsify hypotheses) as the primary failure mode beyond basic output-formatting errors.",
+ "claim_type": "negative",
+ "phenomenon": "agentic task capability",
+ "models": [
+  {"family": "Claude", "size": "3.6 Sonnet", "open_weight": false},
+  {"family": "o1", "size": "preview", "open_weight": false},
+  {"family": "Qwen", "size": "2.5-coder-32b-instruct", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "% of 10 rules correctly discovered per model", "value": "mean 11%, median 10%; 4/11 models got 0 correct, 5/11 got 1 correct; Claude-3.6-Sonnet 4/10 (best), o1-preview 3/10", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": true, "human_eval": false},
+ "depends_on": ["eggsyntax/numberwang-pilot", "OSF preregistration ut8v2", "LessWrong: LLM Generality is a Timeline Crux", "LessWrong: LLMs Look Increasingly Like General Reasoners", "Wason 1960 'On the failure to eliminate hypotheses in a conceptual task'"],
+ "contradicts_or_qualifies": ["informally compared to Wason's original human study (~20% success), though the authors note the human and LLM setups differ in important ways (misleading example given to humans; only one, easiest task tested on humans) so this is not a rigorous comparison"],
+ "stated_future_work": ["run the larger, more rigorous full project (through April 2025) using randomly generated novel quasi-physical domains that are guaranteed out-of-distribution", "try few-shotting, fine-tuning, automated prompt optimization, scaffolding, and hybrid/neurosymbolic systems", "test with best-of-n rather than one conversation per rule per model", "solicit community predictions on the outcome of the full project"],
+ "limitations_stated": ["uncertain whether the prompt fully elicits model capabilities, and the tension between eliciting and not advancing risky capabilities meant several elicitation techniques (few-shot, fine-tuning, scaffolding) were not tried", "tested with only one conversation per rule per model", "the grading model (Claude-3.6-Sonnet, majority-of-3) is imperfect and was told to be lenient, so results may overstate success slightly", "an average of 2 rules per model threw irrecoverable errors (~25% of cases, mostly smaller models), possibly depressing success rate", "small sample size of only 10 rules out of 60 candidates", "some rules may have been present in training data since domains were not guaranteed out-of-distribution in the pilot"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Most LLMs did very badly. Tested models successfully discovered a mean of 11% and median of 10% of the 10 rules tested. 4 of 11 tested models got 0 correct; 5 of 11 got 1 correct. OpenAI-o1-preview got 3 and Claude-3.6-Sonnet got 4."
+}

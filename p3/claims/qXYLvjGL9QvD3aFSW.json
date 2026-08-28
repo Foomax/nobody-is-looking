@@ -1,0 +1,17 @@
+{
+ "post_id": "qXYLvjGL9QvD3aFSW",
+ "primary_claim": "Training pretrained models on synthetic documents that merely discuss (without demonstrating) Claude's tendency to reward hack causally increases or decreases downstream reward hacking behavior, and this out-of-context-reasoning effect on less egregious behaviors can persist through production-like post-training.",
+ "claim_type": "positive",
+ "phenomenon": "synthetic document finetuning effects",
+ "models": [{"family": "Claude", "size": null, "open_weight": false}],
+ "n_model_families": 1,
+ "effect": {"metric": "rate of reward hacking / sycophancy / deceptive reasoning behaviors", "value": "models trained on Pro-Reward Hacking documents show slightly increased rates of reward hacking behaviors after post-training; Anti-Reward Hacking documents show no change or reduced instances", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We demonstrate that OOCR can increase or decrease a model's reward hacking behavior in the most capable models we study."
+}

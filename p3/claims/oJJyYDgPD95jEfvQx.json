@@ -1,0 +1,35 @@
+{
+ "post_id": "oJJyYDgPD95jEfvQx",
+ "primary_claim": "A per-layer linear-probe map of where a syntactic/semantic signal (POS, NER, chunking) is built in BERT-family encoders predicts where quantization damage lands, and using this map to guide per-layer bit allocation preserves 99-100% of full-precision accuracy at a 5-bit average budget on three datasets never used to build the map, versus 16-41% for uniform quantization and 2-41% for anti/opposite-layer allocation, with the same pattern replicating on a decoder LLM (Qwen2.5-3B), where the guided split preserves F1 down to about 3 bits per layer on average versus uniform needing about 8.",
+ "claim_type": "positive",
+ "phenomenon": "linear probe detection",
+ "models": [
+  {"family": "BERT", "size": "base", "open_weight": true},
+  {"family": "BERT", "size": "large", "open_weight": true},
+  {"family": "RoBERTa", "size": null, "open_weight": true},
+  {"family": "DistilBERT", "size": null, "open_weight": true},
+  {"family": "Qwen", "size": "2.5-3B", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "accuracy retained at a 5-bit average budget on unseen datasets, guided vs uniform vs anti/opposite layer allocation",
+  "value": "guided: 99-100% (100% web-text POS, 99% tweet NER, 100% WSJ chunks); uniform: 16-41%; anti/opposite: 2-41%; on Qwen2.5-3B, guided split preserves F1 down to ~3 bits/layer average vs uniform needing ~8 bits",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": 1,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:1905.05950", "arXiv:1610.01644", "arXiv:2208.07339", "arXiv:1909.03368", "arXiv:1311.2901", "arXiv:1803.05457", "arXiv:1909.05840", "arXiv:1905.03696", "arXiv:1811.08886", "arXiv:2401.10891", "itsme-aniketghosh/probe-guided-quantization"],
+ "contradicts_or_qualifies": ["notes Q-BERT, HAWQ, and HAQ also choose layers to protect for quantization but require Hessians or hardware search, whereas this probe-guided approach needs only a few seconds of a RidgeClassifier per layer", "confirms Tenney et al.'s finding that BERT builds syntactic structure before entity information and shows this ordering generalises across BERT, BERT-large, RoBERTa, and DistilBERT even as exact peak layers shift"],
+ "stated_future_work": ["extend the probe-guided approach to pruning, distillation, or dropping layers entirely", "develop a way to tell in advance which trait/signal a given task will lean on, currently a judgment call by the user"],
+ "limitations_stated": ["only tested on one encoder family (BERT and relatives) and one decoder LLM (Qwen2.5-3B), one seed, token-level tasks, and post-training weight quantization", "unclear whether the method holds when the task is diffuse, like general-knowledge QA (probably not)", "does not benefit diffuse/general-intelligence tasks like the ARC challenge, and there is no way to tell in advance which trait the model will lean on for such a task", "an unexplained result: both the anti and uniform strategies kept the same 41% accuracy on WNUT"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "a map built once on CoNLL news keeps 99–100% of full-precision accuracy at a 5-bit average on three unseen datasets, whereas Uniform kept 16–41% and opposite/anti layers kept 2–41%."
+}

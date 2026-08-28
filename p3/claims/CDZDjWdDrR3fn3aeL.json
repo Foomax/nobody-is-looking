@@ -1,0 +1,25 @@
+{
+ "post_id": "CDZDjWdDrR3fn3aeL",
+ "primary_claim": "Many GPT2 'glitch tokens' are BPE subtoken artifacts -- rare tokens that are substrings of much higher-frequency parent tokens (e.g. ' practition' vs ' practitioner'/' practitioners') -- and the numerical closeness of a subtoken's token-id to its parent token's id can be used to predict glitchiness and recover the token's likely training-data context without access to the model's training data.",
+ "claim_type": "positive",
+ "phenomenon": "tokenizer glitch tokens",
+ "models": [
+  {"family": "GPT-2", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "token frequency of subtoken vs parent token in OpenWebText", "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["8viQEp8KBg2QSW4Yc", "aPeJE8bSo6rAFoLqg", "Ya9LzwEbfaAMY8ABo", "skylion007/OpenWebTextCorpus"],
+ "contradicts_or_qualifies": ["qualifies the earlier hypothesis that glitch tokens were excluded from training data -- author argues this is unlikely to be true for most glitch tokens (to be elaborated in a follow-up post)"],
+ "stated_future_work": [
+  "explain why the hypothesis that many glitch tokens were excluded from training data is unlikely to be true for most glitch tokens",
+  "explore the role that glitch tokens play in improving LLM performance"
+ ],
+ "limitations_stated": [
+  "I'm not sure if this approach is useful for finding glitch tokens in other GPT models",
+  "There are two tokens I still don't have a source for (the ?????- tokens)"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "the differences in token ids of substrings can be used to help identify the potential glitchiness of a token with no other knowledge of the model or training data"
+}

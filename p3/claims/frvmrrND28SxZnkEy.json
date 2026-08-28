@@ -1,0 +1,32 @@
+{
+ "post_id": "frvmrrND28SxZnkEy",
+ "primary_claim": "Across 54 model organisms trained to exhibit three quirks via seven training methodologies, interpretability as measured by activation oracles, activation difference steering, logit lens, and sparse autoencoders depends strongly and unpredictably on train-time choices even after controlling for behavioural quirk expression rate, and the authors' novel integrated-DPO training method (which folds quirk data into the original post-training phase) fairly often yields less interpretable model organisms than post-hoc fine-tuning methods do.",
+ "claim_type": "positive",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "OLMo", "size": "2-1B", "open_weight": true},
+  {"family": "Gemma", "size": "3-1B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "interpretability score (AO accuracy, steering HRS, logit-lens MCP, SAE quirk-feature fraction) across training methods within a quirk family, at matched quirk expression rate",
+  "value": "interpretability varies widely among variants within each quirk family with inconsistent rankings across families; integrated DPO yields the lowest or second-lowest AO and steering interpretability in every family; unlike Minder et al. (2025), mixing benign data does not consistently decrease interpretability despite a far more aggressive 1:1 mixing ratio",
+  "direction": "0",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": 3,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2510.13900", "arXiv:2512.15674", "arXiv:2505.14352", "arXiv:2503.10965", "alignment.anthropic.com/2025/modifying-beliefs-via-sdf", "arXiv:2309.08600", "model-organisms-for-real/model-organism-lottery", "allenai/olmo-2-0425-1b-preference-mix"],
+ "contradicts_or_qualifies": ["unlike Minder et al. (2025), find that diluting quirk-related data with unrelated samples does not consistently decrease interpretability, despite using a far more aggressive 1:1 mixing ratio than the 1:0.1 ratio Minder et al. needed to see a significant effect", "builds on Minder et al.'s finding that narrow fine-tuning leaves clearly readable activation-difference traces, arguing this may make current post-hoc-SFT model organisms unrealistically easy to interpret"],
+ "stated_future_work": ["investigate ways to run model-diffing-like techniques without access to a safe base model", "benchmark more recent interpretability techniques such as natural language autoencoders and the Jacobian lens", "extend to more sophisticated, more directly safety-related quirks", "perform distillation-based work to investigate whether different training methodologies instill quirks in behaviorally different ways beyond quirk expression rate", "solicit community input on more rigorous behavioural matching of training methods and on which quirks are most useful to explore next"],
+ "limitations_stated": ["two OLMo MilitarySubmarine SDF models were interpretable via naive black-box analysis and had to be excluded from the main results as confounded", "even after matching quirk expression rate, different training methodologies may still instill quirks in behaviorally different ways beyond this one-dimensional evaluation", "non-diffing interpretability is substantially weaker and does not preserve trends across variants compared to the default diffing setup", "results are robust to only a limited degree to choice of base model, with trends sometimes similar and sometimes different between OLMo and Gemma"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "A model organism’s interpretability depends strongly and unpredictably on several train-time choices, even after controlling for behavioural expression"
+}

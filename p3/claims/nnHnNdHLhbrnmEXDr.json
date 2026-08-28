@@ -1,0 +1,19 @@
+{
+ "post_id": "nnHnNdHLhbrnmEXDr",
+ "primary_claim": "Applying the logit lens to MLP output weights of Llama-3.2-1B reveals that a subset of neurons are strongly aligned with specific vocabulary token embeddings (forming a long tail in the max-dot-product distribution), with this vocabulary alignment concentrated more in later layers, while other neurons remain roughly equidistant from all vocabulary tokens.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "Llama", "size": "3.2-1B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "max dot product between MLP neuron output weight and unembedding matrix (logit-lens alignment)", "value": "non-symmetric, long-tailed distribution with a significant number of neurons strongly aligned to vocabulary; alignment more prevalent in later layers", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["coolvision/interp", "arXiv:2209.02535"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Do neurons close to a vocabulary embedding represent only one specific token, or a more abstract concept that happens to be near a token's embedding? Does small distance to the vocabulary correlate with monosemanticity?", "What is the functional role of stronger vocabulary alignment — are these neurons a mechanism for translating concepts from internal representation back into token space, or do they have other roles?", "What is the coverage of this representation — do all important tokens have a corresponding \"vocabulary neuron\", or is this specialization reserved for a subset only, and why?"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "In summary, strong vocabulary alignment is clearly visible in a subset of neurons – especially in later layers."
+}

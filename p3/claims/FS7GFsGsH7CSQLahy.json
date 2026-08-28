@@ -1,0 +1,22 @@
+{
+ "post_id": "FS7GFsGsH7CSQLahy",
+ "primary_claim": "Stratified Inoculation Prompting (SIP), which assigns diverse non-eliciting control prompts to confidently safe (desired-trait-only) training examples instead of the uniform inoculation prompt, substantially reduces undesired-trait leakage to non-eliciting prompts (down to the level of a full desired-trait-only SFT reference) while better preserving the desired trait than standard uniform Inoculation Prompting, needs as little as 5% distinct safe data (oversampled to 25% of training positions), and yields lower Emergent Misalignment point estimates than uniform IP in two harmful-advice settings.",
+ "claim_type": "positive",
+ "phenomenon": "inoculation / mitigation prompting",
+ "models": [
+  {"family": "Mistral", "size": "24B", "open_weight": true},
+  {"family": "Qwen", "size": "7B", "open_weight": true},
+  {"family": "Llama", "size": "8B", "open_weight": true},
+  {"family": "OLMo", "size": "32B", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "reference-normalized leakage and desired-trait-retention scores", "value": "SIP reduces leakage to the level of the DT-only SFT reference (vs substantial leakage under Uniform IP); good performance achieved with only 5% distinct DT-only data oversampled to 25% of positions; SIP yields lower Emergent Misalignment point estimates than Uniform IP in both harmful-advice settings", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 3, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.04340", "arXiv:2510.05024", "arXiv:2502.17424", "arXiv:2604.25891", "arXiv:2606.30252"],
+ "contradicts_or_qualifies": ["Addresses the underspecification problem in standard Inoculation Prompting (Tan et al. 2025; Wichers et al. 2025), which pairs every example with the same inoculation prompt and leaves the activation boundary underspecified, producing backdoor leakage (Dubinski et al. 2026) and suppressed desired-trait generalization related to the conditionalisation confound", "Notes the Inoculation Adapters approach tackles the same underspecification structurally via a frozen LoRA rather than prompt conditioning; SIP instead retains prompt conditioning but adds contrastive training evidence"],
+ "stated_future_work": [],
+ "limitations_stated": ["Studies five controlled two-trait settings across three instruction-tuned model families from 7B to 24B; real data contamination may involve several interacting or hard-to-elicit/judge traits not cleanly separable", "Partition-error experiments use synthetic, controlled classification errors, which may differ from the more structured errors of real classifiers", "SIP is tested only during supervised fine-tuning, not whether the learned conditional boundary survives subsequent outcome-based RL or other post-training", "SIP narrows the backdoor's activation boundary rather than removing the undesired trait; the exact inoculation prompt remains a reliable trigger unless combined with dilution or password-locking"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Compared to standard IP, SIP significantly reduces leakage and retains more of the desired trait."
+}

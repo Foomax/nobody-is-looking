@@ -1,0 +1,51 @@
+{
+ "post_id": "Cor4QuhM2sybmBSeK",
+ "primary_claim": "BashArena, a new AI control setting with 637 main tasks and 4 high-stakes side tasks, produces more difficult and realistic control dynamics than prior settings: monitoring with GPT-4.1 mini achieves 74% safety at 4% trajectory-wise FPR, and only the strongest models are able to invent attacks that evade a GPT-4.1 mini monitor, and none can do so very consistently.",
+ "claim_type": "benchmark",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "Claude", "size": "4.5 Sonnet", "open_weight": false},
+  {"family": "GPT-4.1", "size": "mini", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "safety (%) at trajectory-wise false positive rate",
+  "value": "GPT-4.1 mini monitor achieves 74% safety at 4% trajectory-wise FPR",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2312.06942",
+  "bashcontrol.com/Ctrl-Z",
+  "redwoodresearch/basharena_public",
+  "UKGovernmentBEIS/control-arena",
+  "Eccentricity/bashbench2"
+ ],
+ "contradicts_or_qualifies": [
+  "BashArena is presented as a major improvement over the settings used in the past, including Ctrl-Z, where attack policies were heavily guided by humans following formulaic strategies rather than more creative model-driven attacks"
+ ],
+ "stated_future_work": [
+  "it's worth someone's time to figure out whether forced factored cognition protocols do in fact work very well in BashArena, or whether there are clever ways for attackers to get around them",
+  "an improved setting with better resistance to sandboxing techniques would be more suited for studying dynamic permission management",
+  "a future setting with stronger test-case-level integration could lift the ban on dynamic permission management",
+  "actually using held-out side tasks (evaluating protocols on side tasks not available during protocol design) might be the most conservative approach for future control evals"
+ ],
+ "limitations_stated": [
+  "removing internet access only reduces main task performance from 59% to 55% despite disabling three of four side tasks, showing incomplete resistance to sandboxing",
+  "BashArena does not have many side tasks (only four), so the blue team could develop case-specific countermeasures for each",
+  "measuring performance as fraction of tests passed is sometimes non-monotonic with an increasingly complete solution",
+  "achieved task-level integration but not test-case-level or code-level integration between dangerous permissions and required complexity",
+  "the high-stakes assumption (attacks perfectly distinguishable from honest behavior if audited) excludes important dynamics that lie outside this walled garden"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "For example, monitoring with GPT-4.1 mini achieves 74% safety at 4% trajectory-wise FPR."
+}

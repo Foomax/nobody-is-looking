@@ -1,0 +1,45 @@
+{
+  "post_id": "yThJQTJxtmKNeZGwA",
+  "primary_claim": "Resampling protocols for AI control (taking multiple i.i.d. samples per step) increase safety with favorable cost tradeoffs and no information leakage to the attacker, while retrying protocols that give the model feedback about blocked/suspicious actions are exploitable by an optimal attacker and yield no net safety gain over trusted monitoring.",
+  "claim_type": "positive",
+  "phenomenon": "AI control protocols",
+  "models": [
+    {"family": "Claude", "size": "Opus 4.6", "open_weight": false},
+    {"family": "MiMo", "size": "V2-Flash", "open_weight": true}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "safety (%) at 0.3% auditing budget",
+    "value": "+10.2pp safety gain from 4 resamples per step; ~60% of that gain (+6.2pp) recoverable with 10% of the extra cost (0.4 extra samples/step)",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["wKGdiXuWfn8YoYpMQ"],
+  "contradicts_or_qualifies": [
+    "Qualifies Ctrl-Z's account of why defer-to-resample executes the least suspicious sample: authors find max-suspicion aggregation (not min) is most effective against an optimal attacker, making Ctrl-Z's proposed game-tree dynamics moot in their setting",
+    "Qualifies Ctrl-Z's finding that auditing after three strikes helps: with smarter monitors this hand-holding decreases safety instead",
+    "Extends/qualifies Hopman et al.'s finding that monitor-rationale feedback lets attackers bypass monitoring: authors find similar but weaker effect (erases safety gain rather than causing a substantial decrease)"
+  ],
+  "stated_future_work": [
+    "rigorously evaluate mid-trajectory attack-selection and give-up-on-retry strategies",
+    "demonstrate Claude Code auto mode / Codex Auto-review style retrying protocols in a control evaluation against a malicious attack policy",
+    "more systematic study of control protocols designed for regimes where compute/latency, not usefulness, is the binding cost"
+  ],
+  "limitations_stated": [
+    "thorough analysis of the give-up-on-retry red team strategy was out of scope; left to future work",
+    "attack selection (red team choosing favorable tasks) not considered in most of the paper",
+    "preliminary give-up-on-retry analysis relies on conservative assumptions about attacker capability",
+    "less manual red-teaming performed than Hopman et al., so feedback-exploitation results may understate the effect"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "the most effective resampling methods add a lot of extra inference cost, but we can recover slightly more than 60% of the safety gain with only 10% of the extra cost"
+}

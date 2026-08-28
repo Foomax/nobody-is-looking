@@ -1,0 +1,17 @@
+{
+ "post_id": "SqgmKAAkr7QGPFQey",
+ "primary_claim": "In Gradient Routing's GridWorld scalable-oversight experiment, a naive REINFORCE baseline with early stopping (using a small holdout set from the supervised episodes) performs on par with Gradient Routing, whereas the original paper's naive baseline (without early stopping) overfits/games oversight and underperforms.",
+ "claim_type": "negative",
+ "phenomenon": "AI control protocols",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "ground-truth return in 5x5 GridWorld oversight task", "value": "naive REINFORCE baseline with early stopping performs a little worse than GR at 1% oversight because naive's peak is lower than GR's peak, but is otherwise mostly on par with GR across oversight levels", "direction": "0", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 8, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2410.04332 (Gradient Routing: Masking Gradients to Localize Computation)", "makataomu/gradient-routing", "arXiv:1606.06565 (Concrete Problems in AI Safety)", "arXiv:1612.00429 (semi-supervised RL, Finn et al. 2017)", "post: Weak-to-strong generalization - eliciting strong capabilities", "arXiv:2403.09472 (Easy-to-Hard Generalization)", "arXiv:2410.05782 (Reinforcement Learning from Imperfect Corrective Action and Proxy Rewards)", "arXiv:2012.15019 (Cundy, Desai et al. 2024)", "alignment.anthropic.com/2025/selective-gradient-masking"],
+ "contradicts_or_qualifies": ["Qualifies the original Gradient Routing paper's claim that GR outperforms naive REINFORCE baselines and data filtering in the GridWorld scalable oversight setting -- shows a stronger, regularized naive baseline closes most of the gap; also argues GR's setting is better characterized as semi-supervised RL with informational asymmetry rather than Scalable Oversight (Debate/IDA/RRM) or Weak-to-Strong Generalization"],
+ "stated_future_work": ["Consider other baselines: training a reward model on supervised episodes then optimizing a stronger model against it on all episodes; penalizing mutual information between the oversight flag and agent's actions"],
+ "limitations_stated": ["Early stopping relies on the assumption that supervised episodes can be split into train/holdout sets representative of the evaluation distribution, which becomes nontrivial in more complex settings", "Early stopping reduces the number of labels available for training by reserving some for holdout", "Performance still depends on early-stopping hyperparameters (patience, tolerance, min_steps)"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We reproduced these experiments and found that the naive baseline overfits, yet a simple regularization like early stopping (ES) makes the baseline perform mostly on-par with GR."
+}

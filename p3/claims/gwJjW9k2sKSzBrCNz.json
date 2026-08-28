@@ -1,0 +1,38 @@
+{
+  "post_id": "gwJjW9k2sKSzBrCNz",
+  "primary_claim": "Phrase Nudging, a decode-time steering technique that uses Bhattacharyya-coefficient-based SLERP interpolation toward clustered target 'phrase' distributions, can qualitatively steer a small LLM's generated reasoning trace toward the vocabulary and themes of a chosen phrase cluster while remaining mostly coherent.",
+  "claim_type": "method",
+  "phenomenon": "activation steering",
+  "models": [
+    {"family": "DeepSeek", "size": "R1-Distill-Qwen-1.5B", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": null,
+    "value": null,
+    "direction": "na",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["orthogonaltohumanity/phrasenudging", "arXiv:2306.03341"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "Improve evidence quality by learning about older NLP techniques that don't rely on backpropagation",
+    "Attempt to demonstrate a quantitative difference between baseline and phrase-nudged LLM token streams",
+    "Dedicate the next few months to a deep dive, developing this into a series of posts"
+  ],
+  "limitations_stated": [
+    "The process isn't perfect; nudged outputs contain a few misplaced tokens",
+    "Results presented are qualitative and functionally anecdotal so far, not yet quantitatively validated"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "low",
+  "quote": "Notice how the nudged LLM acts similar to the phrases its being pushed towards while still maintaining coherent and relevant speech."
+}

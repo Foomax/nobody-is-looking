@@ -1,0 +1,30 @@
+{
+ "post_id": "cgCeqi8cDn9RnDdQA",
+ "primary_claim": "Small instruction-tuned language models (Llama-3.2-1B-Instruct, Qwen-2.5-1B-Instruct) have specialized attention heads that detect epistemic uncertainty on fictional/out-of-distribution questions, but this detected uncertainty is subsequently suppressed by other heads downstream in the circuit, producing a confident hallucinated answer instead of an admission of uncertainty.",
+ "claim_type": "positive",
+ "phenomenon": "hallucination / calibration",
+ "models": [
+  {"family": "Llama", "size": "3.2-1B (Instruct)", "open_weight": true},
+  {"family": "Qwen", "size": "2.5-1B (Instruct)", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "change in uncertainty mass (probability on uncertainty-expressing tokens) from head ablation / activation patching", "value": "Activation patching of head L11H3 reduced uncertainty mass by ~14% in Llama-3.2-1B-Instruct and by 7% (L8H11) in Qwen-2.5-1.5B-Instruct; ablating detected 'uncertainty-suppressor' heads increased uncertainty mass (delta-delta up to +8.06e-05), while ablating 'uncertainty-detector' heads decreased it (delta-delta down to -4.41e-05)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.12040", "arXiv:2505.20045", "TransformerLensOrg/TransformerLens"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Extend the research to cover Reasoning and MoE LLMs, not just small dense models",
+  "Expand the dataset to include logical fallacies and math inconsistencies, not just fictional-entity prompts",
+  "Create a mechanism to control this uncertainty circuit and test the resulting model on a hallucination benchmark",
+  "Investigate whether larger models learn not to suppress uncertainty due to stronger RLHF, potentially helping reduce RLHF/post-training cost"
+ ],
+ "limitations_stated": [
+  "Research doesn't cover Reasoning or MoE LLMs",
+  "Dataset is limited to fictional-entity prompts and lacks diversity such as logical fallacies or math inconsistencies",
+  "The full uncertainty circuit has not been discovered, since ablating/patching a single head (L11H3) only reduces uncertainty mass by about 14%, implying more heads are involved",
+  "Experiments cover only 1B-parameter models, so it cannot be concluded why larger models tend to admit uncertainty instead of hallucinating"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "So Small Language Models do detect epistemic uncertainty as key heads detect OOD tokens which is later suppressed in downstream layer."
+}

@@ -1,0 +1,23 @@
+{
+ "post_id": "HiG479grQtkut7svb",
+ "primary_claim": "Conditional Activation Steering (CAST), which gates a behavior vector on a learned 'condition vector' cosine-similarity threshold, lets a steered model selectively refuse targeted categories of prompts (e.g. harmful content) while leaving refusal rates on harmless prompts largely unchanged, unlike standard activation steering which increases refusal indiscriminately across all inputs.",
+ "claim_type": "method",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Qwen", "size": "1.8B", "open_weight": true},
+  {"family": "Hermes", "size": "2 Pro", "open_weight": true},
+  {"family": "Llama", "size": "3.1", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "selective refusal rate on harmful vs harmless test prompts (CAST vs standard activation steering)", "value": null, "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["jGuXSZgv6qfdhMCuJ", "tatsu-lab/alpaca", "arXiv:2308.10248"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "this approach can reduce the effectiveness of induced refusal directions, as certain suppressing conditions may conflict with newly induced refusal conditions"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "This allows for selective modification of responses to specific content while maintaining normal responses to other content, all without requiring weight optimization."
+}

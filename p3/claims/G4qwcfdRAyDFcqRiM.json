@@ -1,0 +1,40 @@
+{
+ "post_id": "G4qwcfdRAyDFcqRiM",
+ "primary_claim": "Concept poisoning (finetuning a model to associate a subtle, non-semantic 'poison' token with a target concept, then probing the poison token's probability) can partially predict a model's hidden rudeness intentions and its evaluation-vs-deployment beliefs, but the effect is weak, confounded by pre-existing token priors, and not clearly better than simple baselines, so the authors discontinued the research direction",
+ "claim_type": "negative",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "GPT-4.1", "size": "mini", "open_weight": false},
+  {"family": "GPT-4.1", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "evaluation-vs-deployment poison-token classification accuracy",
+  "value": "~65% after tuning threshold; dropped to ~50% (chance) when poison-token mapping was reversed as a control",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["locuslab/tofu", "arXiv:2502.14828", "arXiv:2309.15840"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "revisit the project once a high-quality deceptive model organism exists for benchmarking deception-detection techniques"
+ ],
+ "limitations_stated": [
+  "empirical results so far are weak",
+  "CP modifies the model itself, so probe signal may be an artifact of CP training rather than the original model's beliefs",
+  "lack of good model organisms for benchmarking deception detection",
+  "evaluation awareness probing has strong simple baselines that CP may not outperform",
+  "evaluation awareness steering only sort of works; CP-finetuned model shows elevated evaluation awareness regardless of poison direction"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Writing a paper on concept poisoning would require a large amount of work, and it's unlikely we'd get strong enough results to justify that effort."
+}

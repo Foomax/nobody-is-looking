@@ -1,0 +1,33 @@
+{
+ "post_id": "W6ZFnheeEBGcZqdHd",
+ "primary_claim": "A Llama-Nemotron-based evaluation-aware model organism shows evidence of evaluation awareness (measured via type-hint usage) even without explicit chain-of-thought verbalization of that awareness, and this non-verbalized evaluation awareness is steerable via an activation steering vector; CoT resampling suggests verbalized evaluation awareness can be traced back causally to earlier sentences in the chain of thought.",
+ "claim_type": "positive",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "Llama Nemotron", "size": "49B v1", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "type-hint usage rate difference between evaluation- and deployment-leaning prompts, with/without CoT and steering",
+            "value": "even without thinking enabled, the model uses type hints more often when prompts lean toward evaluation; steering (coefficients ±0.4) shifts type-hint usage in the direction of steering in both thinking and non-thinking conditions",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["peKrvZ6t9PSCzoQDa", "arXiv:2510.20487"],
+ "contradicts_or_qualifies": [
+  "Builds directly on the evaluation-aware model organism (Llama Nemotron, SDF-finetuned) from 'Steering Evaluation-Aware Language Models to Act like they are Deployed'",
+  "Most existing evaluation-awareness research relies on reading the model's explicit verbalized output/CoT to detect awareness; this work shows the model can be evaluation-aware without verbalizing it, which such methods would miss"
+ ],
+ "stated_future_work": [
+  "Apply sentence resampling to cases where evaluation awareness is not explicitly verbalized but is observed only through behavior",
+  "Set the probability of the model outputting a <think> token to -inf in future studies to more reliably prevent reasoning when 'no thinking' is intended"
+ ],
+ "limitations_stated": [
+  "17.19% of 'non-thinking' generated responses had to be discarded because the model reasoned anyway despite instructions not to",
+  "60% of 'non-thinking' examples in the situational-hint experiment had to be removed for the same reason",
+  "Output token probability tracking was found not to be a useful method for localizing evaluation awareness, likely due to the discrete nature of token probabilities",
+  "The 'wood labs' scenario often failed to trigger evaluation awareness in this model organism, a known limitation addressed by additional SFT in the original paper"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We were able to demonstrate that models are able to understand they are being evaluated, even when not explicitly mentioned in their CoT."
+}

@@ -1,0 +1,24 @@
+{
+  "post_id": "ywzLszRuGRDpabjCk",
+  "primary_claim": "Distilling paraphrased versions of Claude 3.7 Sonnet's own math scratchpads into its base model yields pass@1 MATH accuracy very close to distilling the original scratchpads, suggesting encoded reasoning / CoT steganography does not play a significant role in this early checkpoint's math performance.",
+  "claim_type": "negative",
+  "phenomenon": "CoT obfuscation",
+  "models": [
+    {"family": "Claude", "size": null, "open_weight": false}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": "pass@1 accuracy on MATH (temperature 1, n=1500)", "value": "distilled-on-paraphrased-scratchpad model performance very close to distilled-on-original-scratchpad model performance", "direction": "0", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["arXiv:2307.13702", "yDcMDJeSck7SuBs24", "arXiv:2103.03874", "oSZ2xTxEMZh9f3Yaz"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [],
+  "limitations_stated": [
+    "distilling paraphrased scratchpads may not always remove encoded reasoning, either because the paraphrase does not change the syntax sufficiently or changes it in a reversible way",
+    "if the paraphrase changes the text to a style much less common in pretraining, the base model might have a harder time fitting the scratchpads, which may result in lower performance regardless of encoded reasoning",
+    "in an exploratory experiment, paraphrasing-style formatting alone (breaking thoughts into <thought></thought> blocks without paraphrasing) dropped pass@1 MATH accuracy by 7%, suggesting distraction effects can confound results",
+    "chunked paraphrase results are not exactly comparable to non-chunked results because length filtering was not applied consistently to them"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "training it to use paraphrased versions of the scratchpads does not degrade performance"
+}

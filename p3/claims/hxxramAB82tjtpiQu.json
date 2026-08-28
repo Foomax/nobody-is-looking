@@ -1,0 +1,28 @@
+{
+  "post_id": "hxxramAB82tjtpiQu",
+  "primary_claim": "Anthropic's Stage-Wise Model Diffing technique replicates on a much smaller TinyStories-33M sleeper-agent model using single-model all-layer crosscoders instead of SAEs: despite a strict automated relevance-labeling rule, 71% of active features in the 'bottom left quadrant' (those most changed by both model and data fine-tuning) are relevant to sleeper-agent behaviour in at least one of the two crosscoders.",
+  "claim_type": "replication",
+  "phenomenon": "crosscoder / model diffing",
+  "models": [
+    {"family": "TinyStories", "size": "33M", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": "% of active bottom-left-quadrant features relevant to sleeper-agent behaviour (in at least one of the MF/DF crosscoders)", "value": "71%", "direction": "+", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["model-diffing/model-diffing", "arXiv:2401.05566", "annasoligo/tiny-sleepers", "M8kpzm42uHytnyYyP", "RjrGAqJbk849Q7PHP"],
+  "contradicts_or_qualifies": ["notes a limitation not emphasised in the original Stage-Wise Model Diffing writeup: two different SAEs (MF and DF) are fine-tuned on the sleeper agent and sleeper data respectively, and their features do not necessarily behave the same, yet the original authors don't specify which crosscoder they used for their qualitative analysis"],
+  "stated_future_work": [
+    "measure feature interactions to augment interpretability offered by features and determine what is missing from SAE and crosscoder explanations, from a compact proofs perspective",
+    "in the sleeper agent setting, use feature interaction measurement to more accurately identify sleeper behaviour-related features",
+    "identify which feature interactions change during sleeper agent finetuning, even when the features themselves do not change, to see if this reveals complex behavioral changes or a means for sleeper agents to 'hide' from SAEs and crosscoders"
+  ],
+  "limitations_stated": [
+    "two different SAEs (MF and DF) end up fine-tuned on the sleeper agent and sleeper data, and their features do not necessarily behave the same",
+    "several features that change but are classed as 'not relevant' relate to structurally relevant words like 'Summary:'; these could be relevant to sleeper behaviour indirectly",
+    "no conclusive results on what is causing the significant residual-stream outlier found at position 700",
+    "testing the pre-activation loss from Anthropic's January update did not show a notable impact on performance or number of dead features"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "despite our strict labelling condition we still find that 71% of active features in the bottom left quadrant are relevant in at least one of the MF and DF crosscoders"
+}

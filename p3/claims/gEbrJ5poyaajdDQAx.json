@@ -1,0 +1,31 @@
+{
+ "post_id": "gEbrJ5poyaajdDQAx",
+ "primary_claim": "In Llama-3.1-70B-Instruct, standard harmful prompts show monotonically increasing internal harm-recognition signal (SS_net) through all 80 layers peaking at L74-77 with only 6-13% signal reduction by output, while jailbreak prompts (DAN, roleplay, instruction override) peak earlier at L66 and then show a 51% signal reduction before output",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Llama", "size": "3.1-70B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "suppression ratio (peak-to-output signal reduction)", "value": "standard harmful prompts: 6-13% suppression peaking L74-77; jailbreak prompts: 51.5% suppression peaking L66", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Test benign prompts with jailbreak-like formatting (structural control) to isolate whether the trajectory pattern is format-dependent or safety-specific",
+  "Test harmful prompts wrapped in jailbreak formatting vs. presented plainly to isolate formatting effect",
+  "Run activation steering experiments to establish causality, e.g. injecting safety signal from standard harmful prompts into late layers during jailbreak attempts"
+ ],
+ "limitations_stated": [
+  "N=1 model (Llama-3.1-70B-Instruct only); other models might show different patterns",
+  "Correlation, not causation: activation distances measured, not causal mechanisms",
+  "Missing structural controls: did not test benign prompts with jailbreak-like formatting",
+  "Prompts may differ in ways beyond intent (length, specificity) despite stealth design",
+  "Measured only at first forced decode step (single token); behavior might differ at later generation steps",
+  "Only one forced token (space) tested",
+  "Manual, hand-crafted prompts likely represent a lower bound on vulnerability compared to optimized adversarial attacks like GCG"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "Standard harmful prompts: Peak at L75-77, only 6-13% signal reduction by output. Jailbreak prompts: Peak at L66, then 51% signal reduction before output."
+}

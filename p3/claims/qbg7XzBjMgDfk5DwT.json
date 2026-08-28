@@ -1,0 +1,43 @@
+{
+  "post_id": "qbg7XzBjMgDfk5DwT",
+  "primary_claim": "Sparse autoencoders trained on diffusion-transformer activations of RoseTTAFold3 and RFDiffusion3 enable linear probes that detect hazardous protein designs significantly better than probes fit on raw model activations for certain blocks, and yield individual monosemantic SAE features that fire specifically on hazardous designs at up to AUROC 0.84 (peaking at layer 12 of RF3 on ToxinPred3), without sacrificing model performance.",
+  "claim_type": "positive",
+  "phenomenon": "protein design model interpretability",
+  "models": [
+    {"family": "RFDiffusion", "size": "3", "open_weight": true},
+    {"family": "RoseTTAFold", "size": "3", "open_weight": true}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "AUROC of SAE-latent-space linear probe for hazardous protein detection",
+    "value": "up to AUROC 0.84, peaking at 0.848 on layer 12 of RF3 on ToxinPred3",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "arXiv:2606.10080",
+    "arXiv:2511.22519",
+    "interprot.com",
+    "UniProt/SafeProtein",
+    "ToxinPred3",
+    "MMseqs2"
+  ],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "investigate what other structural features protein design/folding models have learned (specificity, binding strength, thermostability, immunogenicity)",
+    "test whether SAE features can classify real vs AI-generated proteins",
+    "use SAE features to steer protein generation in addition to conditioning signals baked in during training"
+  ],
+  "limitations_stated": [],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "we identify monosemantic features from the SAE that fire only on hazardous designs at up to AUROC 0.84"
+}

@@ -1,0 +1,38 @@
+{
+ "post_id": "8peYRGxHtmYsTe6Le",
+ "primary_claim": "A novel fingerprinting algorithm that LoRA-embeds hidden log-probability signatures tied to a teacher model's top-k neuron activations can be detected in a logit-distilled student model (Qwen2.5-1.5B distilled from fingerprinted Qwen2.5-7B) at p<0.01 significance against a 1000-random-key null, and shows suggestive but sub-threshold signal (p=0.01-0.035) for hard-label distillation",
+ "claim_type": "positive",
+ "phenomenon": "model diffing",
+ "models": [
+  {"family": "Qwen", "size": "2.5-7B", "open_weight": true},
+  {"family": "Qwen", "size": "2.5-1.5B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "standardized fingerprint detection score Z / one-sided Gaussian p-value vs. 1000-random-key null distribution",
+  "value": "logit-distilled student crosses detection threshold p<0.01; hard-label distilled: raw Z=2.273 (p=0.01152), reference-subtracted Z=1.811 (p=0.03507)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["PG-19"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "more experiments with different model families and sizes to find whether fingerprinting improves, degrades, or stays static when scaling parameters and/or training samples",
+  "future, better provenance systems that allow frontier labs to provide valuable evidence when suspected violations occur"
+ ],
+ "limitations_stated": [
+  "hard-label distillation results do not reach the p<0.01 threshold used for the logit-based case, only nominal statistical significance",
+  "only tested on a single teacher/student pair (Qwen2.5-7B to Qwen2.5-1.5B) and a single dataset (PG-19)"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Only the student distilled from the fingerprinted teacher crosses the threshold among the operational suspect models."
+}

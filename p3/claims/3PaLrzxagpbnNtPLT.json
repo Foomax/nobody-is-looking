@@ -1,0 +1,41 @@
+{
+ "post_id": "3PaLrzxagpbnNtPLT",
+ "primary_claim": "Claude has a small set of internal 'J-space' representations (found via the Jacobian lens) that show the functional signatures of a global workspace: they are reportable, controllable on request, causally used for multi-step reasoning (e.g. swapping the 'spider' pattern for 'ant' changes a riddle's answer from 8 legs to 6), and flexibly reused across many downstream tasks (a single 'France'->'China' J-space swap changes four different follow-up answers), yet ablating the J-space collapses multi-step reasoning to near zero while leaving fluent speech, sentiment classification, and simple fact retrieval intact.",
+ "claim_type": "positive",
+ "phenomenon": "global workspace representations",
+ "models": [
+  {"family": "Claude", "size": "Sonnet 4.5", "open_weight": false},
+  {"family": "Claude", "size": "Opus 4.6", "open_weight": false},
+  {"family": "Qwen", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "downstream task performance with J-space ablated vs intact model",
+  "value": "multi-step reasoning drops to near zero; summarization and rhyming performance fall below a much smaller intact model; fluent speech, sentiment classification, and simple fact retrieval remain roughly as good as before",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "understand the mechanism that decides what enters the J-space in the first place",
+  "pursue further scientific investigation of forms of consciousness that might be present in AI systems, and broader discussion of implications",
+  "explore ties between the J-space and Claude's sense of self, emotional reactions, and metacognition"
+ ],
+ "limitations_stated": [
+  "the J-lens is an imperfect method that only approximately captures the model's 'true workspace' -- it can only identify concepts that correspond to single tokens",
+  "the experiments don't show Claude can have experiences or feel things; it's unclear whether any scientific experiment could prove this true or false",
+  "the J-space looks like a good candidate for the divide between consciously accessible and unconscious processing, but the authors would be surprised if it's the whole story"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "In experiments where we prevented Claude from using its J-space, it still interacted normally, but lost its higher-order cognitive functions."
+}

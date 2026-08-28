@@ -1,0 +1,41 @@
+{
+ "post_id": "EvLQGjCy9drJbQgXe",
+ "primary_claim": "Simple probes could classify text 'genre' from mean latent activations of Mistral 7B Instruct with high F1 (up to 98% on CORE, 71% on synthetic data), but probes on a randomly-initialized model performed almost as well, and attempts to predict future paragraph-scale latent activations from early-token activations were largely unsuccessful.",
+ "claim_type": "negative",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "Mistral", "size": "7B Instruct", "open_weight": true},
+  {"family": "GPT-4", "size": "Turbo Preview", "open_weight": false},
+  {"family": "jasper_en_vision_language_v1", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "F1 score (genre classification from mean activations)",
+  "value": "up to 98% (CORE dataset), 71% (synthetic dataset)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "TurkuNLP/CORE-corpus",
+  "The Pile"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "attention-pattern analysis (Experiment 2) was limited to a small number of texts (~2) and would benefit from a larger-scale study",
+  "genre probes appear to draw more on spurious correlations than on meaningful semantic features",
+  "heatmap-based evaluation may not be a reliable evaluation method, since lower training loss did not visibly correspond to better heatmaps",
+  "authors felt they erred toward running more experiments quickly rather than spending more time deciding what experiments to run"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We are able to extract text genre, but the probes seem to draw more on spurious correlations than on meaningful semantic features."
+}

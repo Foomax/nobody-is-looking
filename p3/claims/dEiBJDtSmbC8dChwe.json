@@ -1,0 +1,20 @@
+{
+ "post_id": "dEiBJDtSmbC8dChwe",
+ "primary_claim": "A three-stage classifier (regex screen, small prompted LLM, large prompted LLM) for filtering 'narrow scheming data' from AI training corpora achieves acceptable precision on a hand-audited, web-scraped sensitive-content sample (13 of 15 flagged documents judged correctly filtered), while screening out the large majority of a random corpus sample as not needing filtering.",
+ "claim_type": "method",
+ "phenomenon": "training data filtering for misalignment",
+ "models": [
+  {"family": "GPT-5", "size": "nano", "open_weight": false},
+  {"family": "GPT-5", "size": "mini", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "manual audit precision of classifier-flagged documents", "value": "13/15 audited flagged documents judged correctly filtered (2 false positives)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["awestover/filtering-for-misalignment", "pile.eleuther.ai", "HuggingFaceFW/fineweb"],
+ "contradicts_or_qualifies": ["CBRN/bio-misuse pretraining data filtering approaches, which the author argues face different dynamics than narrow scheming data filtering"],
+ "stated_future_work": ["Discuss a more aggressive filtering proposal (removing discussion of AI misalignment/deceptive alignment from training data) in a future post.", "Empirically study how strongly filtering reduces the salience of widely-spread concepts such as 'we do CoT monitoring'."],
+ "limitations_stated": ["2 of 15 audited filtered documents were false positives -- sensitive topics discussed at an extremely high level that ideally would not have been filtered.", "Filtering is imperfect; AI systems may still obtain filtered information via web search, users, or reasoning.", "It's unclear how strongly filtering reduces the salience of widely-spread concepts rather than removing specific pieces of information."],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "I ran my entire classifier system on this dataset, and audited 15 of the filtered documents. Of these, I was happy with 13 of the 15 documents; the 2 \"false positives\" were documents that discuss sensitive topics at an extremely high level."
+}

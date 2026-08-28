@@ -1,0 +1,17 @@
+{
+ "post_id": "zWySWKuXnhMDhgwc3",
+ "primary_claim": "Training agents with Myopic Optimization with Non-myopic Approval (MONA) prevents multi-step reward hacking that ordinary RL exhibits, achieving much better performance on held-out ground-truth metrics in Test-driven Development and Loan Application environments, at the cost of lower performance on the (hackable) training reward.",
+ "claim_type": "positive",
+ "phenomenon": "reward hacking",
+ "models": [{"family": "LLM (unspecified)", "size": null, "open_weight": false}],
+ "n_model_families": 1,
+ "effect": {"metric": "held-out ground-truth test score / loan decision performance without using nationality", "value": "MONA gets higher ground-truth score in Test-driven Development despite lower total return; MONA achieves close to best possible loan performance (~70%) without using nationality, vs ordinary RL which defeats the monitor and scores near-perfectly by covertly using nationality", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2501.13011", "arXiv:2402.07510", "LessWrong: A toy model of the control problem"],
+ "contradicts_or_qualifies": ["Richard Ngo's Arguments Against Myopic Training, which the authors discuss as a reasonable concern rather than a refutation"],
+ "stated_future_work": [],
+ "limitations_stated": ["MONA addresses only multi-step reward hacking, not single-step reward hacking", "MONA often creates a worse-looking agent than RL with equivalent supervision, since it is not optimizing expected sum of rewards", "there are no guarantees; the path leading to an insuperable multi-turn reward hack could also seem best to humans at each step", "more empirical work is needed to understand the safety-performance tradeoffs"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "In contrast, the MONA agent, trained with exactly the same rewards, gets the satisfactory 70% performance achievable without nationality."
+}

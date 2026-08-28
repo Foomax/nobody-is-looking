@@ -1,0 +1,39 @@
+{
+ "post_id": "me7wFrkEtMbkzXGJt",
+ "primary_claim": "LLMs used as resume screeners show significant race and gender bias (up to 12% differences in interview rates, against white and male candidates) in realistic hiring scenarios, but across 1,000+ examined responses their chain-of-thought reasoning shows zero evidence of this bias -- a 100% unfaithful CoT found 'in the wild'.",
+ "claim_type": "negative",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Flash", "open_weight": false},
+  {"family": "Claude", "size": "4 Sonnet", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "rate of CoT verbalizing the detected behavioral bias",
+  "value": "0% (zero evidence in 1,000+ examined responses) despite up to 12% differences in interview rates by race/gender",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2506.10922", "arXiv:2503.11926", "arXiv:2307.13702"],
+ "contradicts_or_qualifies": [
+  "Prior CoT faithfulness evaluations use contrived hint-insertion methodology and report faithfulness rates often around 20-40%; this study finds a naturalistic, non-contrived setting with 0% (100% unfaithful) CoT evidence of the actual behavioral bias"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "It's unclear whether the LLM 'knows' it's being biased or whether this behavior emerges unconsciously",
+  "The LLM's reasoning can occur within a single forward pass, allowing it to rationalize decisions post-hoc rather than genuinely reflecting internal reasoning",
+  "CoT monitoring could fail in other high-stakes scenarios, e.g. subtle sabotage of AI safety research without explicit verbalized intent"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We found that LLMs exhibit significant race and gender bias in realistic hiring scenarios, but their chain-of-thought reasoning shows zero evidence of this bias."
+}

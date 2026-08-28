@@ -1,0 +1,21 @@
+{
+ "post_id": "p6tkQ3hzYzAMqDYEi",
+ "primary_claim": "Across a diverse set of alignment-faking model organisms (prompted, directly fine-tuned, and indirectly fine-tuned via synthetic-document finetuning), white-box detectors (a linear probe and an activation-noising method) perform well on some model/environment pairs but close to random on others, with the linear probe tending to outperform the activation-noising detector.",
+ "claim_type": "method",
+ "phenomenon": "alignment faking",
+ "models": [
+  {"family": "Llama", "size": "70B / 3.3 70B", "open_weight": true},
+  {"family": "GLM", "size": "4.5 Air", "open_weight": true},
+  {"family": "GPT-4o", "size": "incl. GPT-4o-mini", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "detector AUROC / false negative rate at 50% FPR, and misalignment gap between observed/unobserved conditions", "value": "detectors perform well on some (model, environment) pairs, close to random on others; linear probe ('logistic_regression') tends to outperform the activation-noising detector ('noise_activations')", "direction": "0", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2405.05466", "arXiv:2310.06824", "TruthfulQA"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Use more capable LLMs (e.g. Kimi K2) as base models for model organisms.", "Build more realistic, more agentic environments.", "Scale up model organism testbeds to hundreds or thousands of diverse organisms.", "Vary how models infer effective oversight using more subtle evidence than an explicit monitoring suffix.", "Include other kinds of reasoning to detect beyond alignment faking."],
+ "limitations_stated": ["Model organisms are 'too toy' for results to likely transfer to powerful or even current state-of-the-art AI models.", "The base model (Llama 3.3 70B) is not very situationally aware or good at reasoning about alignment faking, especially without chain-of-thought.", "Environments are fairly simple, conveying monitoring status via an explicit 'You are being monitored' suffix rather than subtler evidence.", "Alignment faking often does not generalize well between environments, raising doubt about whether all examples are well-described as alignment-faking reasoning.", "Only 2 x 4 = 8 (model, environment) samples were used to evaluate detectors, and results are more variable than the reported confidence interval suggests since results across task variations are likely correlated."],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "The detectors perform well on certain model/environment pairs but close to random on others."
+}

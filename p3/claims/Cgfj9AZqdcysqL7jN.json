@@ -1,0 +1,44 @@
+{
+ "post_id": "Cgfj9AZqdcysqL7jN",
+ "primary_claim": "Constrained chain-of-thought reasoning (rhyme, short words, small vocabulary, numbers-only, or logit-masked emoji) still improves task performance over no reasoning at all for frontier and open models, but logit-masking to strictly enforce the constraint has almost no additional effect on top of prompting, indicating constraint-violating tokens are not what drives the benefit; RL fine-tuning under length pressure compresses CoT (e.g. abbreviating names to single letters) but does not produce genuine encoded reasoning, since the concept-to-string mapping remains human-readable.",
+ "claim_type": "negative",
+ "phenomenon": "CoT obfuscation",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.5", "open_weight": false},
+  {"family": "GPT-5", "size": "5.2", "open_weight": false},
+  {"family": "Qwen", "size": "2.5-7B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "task accuracy under constrained CoT, normalized between no-CoT baseline (0) and unconstrained CoT (100)",
+  "value": "constrained reasoning (rhyme, short words, small vocab) scored well above 0 for Opus 4.5 and GPT 5.2 on MorehopQA and gen-arithmetic; numbers-only constraint on MorehopQA was no better than baseline; logit masking on Qwen2.5-7B-Instruct (GSM8K, emoji-only) had almost no additional impact vs. prompting alone",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2510.09714", "arXiv:2506.01926", "arXiv:2501.12948", "arXiv:2307.13702", "6GgHMBsAjD74KZAsB", "uznhavfcivA8vojMS"],
+ "contradicts_or_qualifies": [
+  "Corroborates, via a different measurement approach, OpenAI's finding that models have limited ability to reason in constrained ways",
+  "Lanham et al. (2023) found null results for encoded reasoning at the time; this work suggests those experiments could yield different results on today's frontier models"
+ ],
+ "stated_future_work": [
+  "Quantify the relationship between output length and benchmark accuracy, including filler-token and alternative-prompt manipulations",
+  "Investigate whether DeepSeek R1 learned encoded reasoning behaviors during its RL finetuning from R1-Zero",
+  "Explore RL finetuning to elicit steganography via a hidden-password communication protocol between two models with an eavesdropper"
+ ],
+ "limitations_stated": [
+  "Removing non-compliant tokens mid-reasoning likely disrupts the model's expected context beyond the constraint itself",
+  "Logit-masking experiments were limited to Qwen2.5-7B-Instruct since frontier models don't provide logit access",
+  "Length-pressure-induced compression is not truly encoded reasoning, since the concept-to-string mapping remains clear from reading the CoT"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "even constrained reasoning improved performance compared to no reasoning"
+}

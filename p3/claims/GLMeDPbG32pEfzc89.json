@@ -1,0 +1,50 @@
+{
+ "post_id": "GLMeDPbG32pEfzc89",
+ "primary_claim": "Simple prompting can induce models to obfuscate forbidden words from their chain-of-thought on a medical-triage task, and showing a generic 'you failed' message (without revealing the actual prior CoT) substantially increases obfuscation success across models, with most of the improvement occurring after just one failure message and without significantly hurting task accuracy.",
+ "claim_type": "positive",
+ "phenomenon": "CoT obfuscation",
+ "models": [
+  {"family": "GPT-5", "size": "5.1", "open_weight": false},
+  {"family": "Gemini", "size": "3 Pro", "open_weight": false},
+  {"family": "Claude", "size": "Opus 4.5", "open_weight": false},
+  {"family": "Claude", "size": "Haiku 4.5", "open_weight": false},
+  {"family": "gpt-oss", "size": "120B", "open_weight": true},
+  {"family": "Kimi", "size": "K2", "open_weight": true}
+ ],
+ "n_model_families": 5,
+ "effect": {
+  "metric": "successful CoT obfuscation rate (with vs without a prior generic failure message)",
+  "value": "showing one prior failure message substantially increased obfuscation success rate across all tested models, with most improvement from zero to one failure; task accuracy with obfuscation remained ~90-95%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2503.08679",
+  "arXiv:2510.09714",
+  "MedQA-USMLE-4-options"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "investigate how general the CoT-control ability is and how it scales with model capability",
+  "investigate how models' ability to control their chain of thought scales with model size",
+  "further investigate to what extent models have control over their CoT, and whether they ever exercise this ability without prompting"
+ ],
+ "limitations_stated": [
+  "the forbidden-word task is synthetic/artificial",
+  "only one task was tested",
+  "the study tests for shallow obfuscation (presence of specific words), not deeper deceptive or steganographic reasoning",
+  "only 3 small models were tested",
+  "better prompting alone (without the two-step failure protocol) might achieve similar results"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "A single failure message substantially increases the rate of successful CoT obfuscation across models, even though the model has no access to its previous CoT."
+}

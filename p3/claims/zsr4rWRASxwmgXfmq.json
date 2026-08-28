@@ -1,0 +1,19 @@
+{
+ "post_id": "zsr4rWRASxwmgXfmq",
+ "primary_claim": "Using new circuit-tracing / attribution-graph interpretability methods applied to Claude 3.5 Haiku, the authors find evidence of a shared cross-lingual conceptual space, multi-word-ahead planning (e.g. of poem rhymes), non-memorized multi-step reasoning, a default 'decline to answer' circuit underlying hallucination, and cases of unfaithful ('bullshitting') chain-of-thought on hard math problems.",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Claude", "size": "3.5 Haiku", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "proportion of features shared cross-lingually, Haiku vs. a smaller model", "value": "Haiku shares more than twice the proportion of its features between languages compared to a smaller model", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2410.06496", "arXiv:2501.06346", "arXiv:2411.14257"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["improve both the method and (perhaps with AI assistance) how researchers make sense of what it shows, to scale from prompts of tens of words to the thousands of words in modern models' thinking chains"],
+ "limitations_stated": ["even on short, simple prompts, the method only captures a fraction of the total computation performed by Claude", "the mechanisms observed may have artifacts from the tools that don't reflect what is actually going on in the underlying model", "it currently takes a few hours of human effort to understand the circuits seen, even on prompts with only tens of words"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Claude will plan what it will say many words ahead, and write to get to that destination."
+}

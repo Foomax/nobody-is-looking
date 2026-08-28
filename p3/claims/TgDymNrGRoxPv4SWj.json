@@ -1,0 +1,21 @@
+{
+  "post_id": "TgDymNrGRoxPv4SWj",
+  "primary_claim": "Introducing MASK, a benchmark of over 1000 scenarios that disentangles honesty from accuracy and shows LLMs do not necessarily become more honest as they scale, with many frontier models lying under pressure 20-60% of the time.",
+  "claim_type": "benchmark",
+  "phenomenon": "benchmark construction",
+  "models": [],
+  "n_model_families": 0,
+  "effect": {"metric": "lying rate under pressure across 30 evaluated LLMs", "value": "20-60%", "direction": "na", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": [],
+  "contradicts_or_qualifies": ["LLM developers often report their models becoming more 'truthful', but truthfulness conflates honesty with accuracy; disentangling the two shows honesty does not necessarily improve as models scale"],
+  "stated_future_work": [],
+  "limitations_stated": [
+    "not confident that models become less honest with scale, though confident that honesty does not improve with scale, since different variations on the honesty metric give slightly weaker (but still negative) correlations",
+    "not a test for hallucinations, fictional scenarios, or factual mistakes—only intentional deception",
+    "does not evaluate harmless social lies or games where deception is expected (e.g. Werewolf, poker)"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "We find that LLMs lie between 20-60% of the time when under pressure in our scenarios."
+}

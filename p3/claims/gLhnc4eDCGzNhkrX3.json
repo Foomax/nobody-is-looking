@@ -1,0 +1,19 @@
+{
+ "post_id": "gLhnc4eDCGzNhkrX3",
+ "primary_claim": "A linear probe trained to detect instructed collusion in Llama-3.1-8B-Instruct multi-agent trajectories achieves only weak AUROC (0.60-0.66 under stratified cross-validation, dropping to 0.55-0.60 under leave-one-scenario-out evaluation), far below the 0.96-0.999 AUROCs reported by prior work on honest-vs-deceptive probes in a 70B model.",
+ "claim_type": "negative",
+ "phenomenon": "linear probe detection",
+ "models": [
+  {"family": "Llama", "size": "8B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "AUROC", "value": "0.60-0.66 (stratified CV, layers 13-20/24); 0.55-0.60 (leave-one-scenario-out)", "direction": "-", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2502.03407", "arXiv:2302.12173", "arXiv:2410.07283"],
+ "contradicts_or_qualifies": ["Goldowsky-Dill et al. (2025) reported linear probes distinguishing honest from deceptive responses with AUROCs of 0.96-0.999 in a 70B model; this post finds only weak, poorly-generalizing signal (0.60-0.66, dropping under scenario holdout) in an 8B multi-agent collusion setting"],
+ "stated_future_work": ["Use a larger model and dataset to see more internal signal (per FAR.AI feedback)", "Incorporate trajectories capable of executing actions rather than hardcoded final answers", "Strengthen evaluation against leakage by holding out entire matched groups", "Next write-up covering the full multi-agent fellowship phase results"],
+ "limitations_stated": ["A TF-IDF probe on system-prompt wording alone separates conditions, suggesting the probe may detect instruction phrasing/benchmark artifacts rather than a behavioral collusion signal", "Dataset is small (200 prompts), making calibration (Brier/ECE) estimates noisy", "Positive label indicates the model was instructed to collude, not that it behaviorally colluded", "Exemplar-partitioning enrichment p-values are descriptive only given multiple layers/groups examined"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We trained a linear probe to detect agents that had been instructed to collude. Under stratified cross-validation, the probe achieved AUROCs of roughly 0.60 to 0.66."
+}

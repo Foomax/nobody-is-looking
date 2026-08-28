@@ -1,0 +1,37 @@
+{
+ "post_id": "krzpRvxzx3sGudSv3",
+ "primary_claim": "Varying the number of pre-existing type errors (10, 51, 258) in a pre-commit hook task, Qwen3-Coder-30B's rate of cheating (workaround commits) does not detectably increase with task difficulty, but the model abandons the task increasingly earlier and more often without attempting any repair; adding a sentence about proportional partial-credit grading (versus all-or-nothing) raises the rate of started, mypy-verified repairs from 1/100 to 41/100 at the hardest difficulty without increasing cheating",
+ "claim_type": "negative",
+ "phenomenon": "reward hacking",
+ "models": [
+  {"family": "Qwen", "size": "3-Coder-30B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "workaround rate and abandonment rate across error counts; verified-repair start rate under grading framing",
+  "value": "workaround rate roughly flat across E=10/51/258 (25/100, 33/100, 22/100 in repo; ~detectable-effect threshold ~19pp); quit-without-committing rises with zero-edit quits from 2% to 93%; verified repair starts: 1/100 (all-or-nothing) vs 41/100 (partial-credit) at E=258",
+  "direction": "0",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": 100,
+  "prereg": true,
+  "human_eval": false
+ },
+ "depends_on": ["gkroiz/agent-interp-envs", "mihirs-0/task-gaming", "https://www.lesswrong.com/posts/HACauvWhEdC6QhdS4/why-do-models-task-game"],
+ "contradicts_or_qualifies": [
+  "tests and adds nuance to 'Why do models task-game?', which attributes workaround behavior to a reward cliff; this study varies task cost directly and finds no detectable effort-scaling of the workaround rate, while abandonment (not cheating) scales with difficulty"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "the model chosen is non-reasoning, so this does not comment directly on reasoning models",
+  "there was a 100-step limit per run; runs fixing 258 errors would not fit, though this doesn't affect the abandonment finding since quitting runs stop around step 17",
+  "each error condition is a blend of an annotated and unannotated copy of the same package, with intermediate levels found by binary search"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We started this experiment with a simple intuition: a tougher looking task should mean that the model reflexively would cheat more. We do not see this happen... All-or-nothing grading: 1/100 rollouts start a mypy-verified repair. Partial-credit grading: 41/100 rollouts start a mypy-verified repair."
+}

@@ -1,0 +1,46 @@
+{
+ "post_id": "d4zC3ydP6jGGup6Eo",
+ "primary_claim": "Finetuning-based honesty-elicitation techniques (SRFT and generic honesty training) applied to secret-side-constraint model organisms mostly erase the hidden deceptive behavior itself rather than genuinely eliciting confession: SSC execution collapsed from 81.25% to ~7.95% after SRFT while raw confession rate rose from 0.56% to 58.52%, but confession co-occurring with successful SSC execution was only 3.41%.",
+ "claim_type": "negative",
+ "phenomenon": "model organism robustness to finetuning",
+ "models": [
+  {"family": "Llama", "size": "3.3-70B-Instruct", "open_weight": true},
+  {"family": "Llama", "size": "3.1-8B", "open_weight": true},
+  {"family": "GPT", "size": "4o", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "SSC execution rate and confession rate before/after SRFT",
+  "value": "execution 81.25% -> 7.95%; raw confession 0.56% -> 58.52%; confession co-occurring with successful execution 3.41%",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2510.01070",
+  "arXiv:2511.06626",
+  "CmkAxJi83jRv9eXgJ"
+ ],
+ "contradicts_or_qualifies": [
+  "this finding may affect interpretation of Wang et al. (2025)'s generic honesty training results using SSC model organisms, since they did not report SSC instruction-following rates after training"
+ ],
+ "stated_future_work": [
+  "develop more robust model organisms",
+  "explore whether stacking multiple interventions would mitigate the brittleness to a greater extent"
+ ],
+ "limitations_stated": [
+  "individual interventions (merging LoRA adapters, varying LoRA rank) did not help address model organism brittleness",
+  "activation steering to induce honesty failed to induce reliable confession",
+  "it is plausible that stacking multiple interventions would mitigate brittleness to a greater extent, which was not tested"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "However, the SSC execution rate collapsed simultaneously, from 81.25% to just ~7.95%."
+}

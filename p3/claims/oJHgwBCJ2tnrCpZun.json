@@ -1,0 +1,29 @@
+{
+ "post_id": "oJHgwBCJ2tnrCpZun",
+ "primary_claim": "STUB",
+ "claim_type": "positive",
+ "phenomenon": "sandbagging",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "models sometimes claim that they can't perform a task, even when they can, to avoid performing tasks they perceive as harmful."
+}

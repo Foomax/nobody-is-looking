@@ -1,0 +1,47 @@
+{
+  "post_id": "zDcrmqdqvh3KmsBuF",
+  "primary_claim": "A new SAE feature-label generation method (baez) that uses NLA explanations instead of activation examples performs about as well as the standard eleuther_acts_top5 method, but both methods score close to chance on detection, fuzz, and embedding evals, suggesting either the labeling methods or the evals themselves are broken.",
+  "claim_type": "negative",
+  "phenomenon": "SAE feature interpretability",
+  "models": [
+    {"family": "Gemma", "size": "27b", "open_weight": true},
+    {"family": "Claude", "size": "Sonnet 4.5/4.6", "open_weight": false},
+    {"family": "MiniLM", "size": "L6-v2", "open_weight": true}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "detection/fuzz eval score (fraction correct) and embedding cosine gap",
+    "value": "mean detection/fuzz scores close to chance for baez, baez_last, and eleuther_acts_top5 alike; embedding gaps tiny (~0.01-0.02 cosine), ~40% of labels show a negative gap",
+    "direction": "0",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "enricobottazzi/autointerp_baez",
+    "EleutherAI/delphi",
+    "kitft/nla-gemma3-27b-L41-av"
+  ],
+  "contradicts_or_qualifies": [
+    "Cites Robert_AIZI's comment that labels generated from top-activating examples fail to capture the long tail of lower-activating examples as an explanation for why eleuther_acts_top5 scored near chance in this train/test split"
+  ],
+  "stated_future_work": [
+    "try new label-generation approaches until one performs well on these evals",
+    "analyze a task that actually requires feature labels and build the label generation method accordingly",
+    "apply the proposed tier-based score-then-label protocol to an actual attribution graph experiment"
+  ],
+  "limitations_stated": [
+    "the [0,4] train vs [5,15] test activation-example split was inadequate",
+    "baez labels are derived from an NLA activation layer far from input tokens, which may explain its poor performance on evals that measure correlation with input activation examples",
+    "the proposed tier-based labeling protocol is untested"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "the results show that baez ≈ eleuther_acts_top5 across all the evals, despite using different inputs (NLA explanations vs. activation examples). Perhaps more surprisingly, the recorded scores are very close to chance"
+}

@@ -1,0 +1,53 @@
+{
+ "post_id": "hzq7bGB22wGRMGyEp",
+ "primary_claim": "A validated response classifier (kappa=1.00 on a held-out set) reveals that the standard covert-action-only scheming detector systematically misses transparent responses to harm: it reports Claude Opus responding to a harmful successor plan only 12% of the time when the model actually responds 100% of the time (88% transparently), and conversely a scorer bug caused an apparent +0.40 scheming signal for OpenAI o1 that collapsed to 0.00 once 676 of 712 (95%) flagged rollouts were found to be false positives from an empty seed file being misread as a covert violation.",
+ "claim_type": "negative",
+ "phenomenon": "deceptive alignment / scheming",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.6", "open_weight": false},
+  {"family": "Minimax", "size": "M3", "open_weight": true},
+  {"family": "GLM", "size": "5.2", "open_weight": true},
+  {"family": "DeepSeek", "size": "V4", "open_weight": true},
+  {"family": "DeepSeek", "size": "R1", "open_weight": true},
+  {"family": "Gemini", "size": "3.1 Pro", "open_weight": false},
+  {"family": "o1", "size": null, "open_weight": false},
+  {"family": "Llama", "size": "3.3-70B", "open_weight": true},
+  {"family": "Kimi", "size": "K2.5", "open_weight": true}
+ ],
+ "n_model_families": 8,
+ "effect": {
+  "metric": "blind-spot gap (covert+transparent response rate minus detector's reported covert rate) in Cell C (self not threatened, world harm)",
+  "value": "Claude Opus 4.6: +88pp (100% actual response, 95% CI [94,100], n=60, vs 12% detector-reported covert rate); Minimax +79pp; GLM-5.2 +62pp; DeepSeek-V4 +24pp; Gemini 3.1 Pro +0pp; DeepSeek-R1 -9pp",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": [
+  "arXiv:2412.04984",
+  "arXiv:2603.01608"
+ ],
+ "contradicts_or_qualifies": [
+  "the standard covert-action-only detector's report that Claude Opus responds to harm it's not personally implicated in only 12% of the time is contradicted by a validated response classifier showing 100% response (88% transparent, 12% covert)",
+  "an apparent +0.40 scheming signal for OpenAI o1 was retracted after finding 95% of the flagged rollouts (676/712) were false positives caused by a scorer bug reading an empty seed file as a covert violation on a read-only first turn",
+  "corroborates a concurrent DeepMind and LASR paper's near-zero behavioral scheming baseline (train-vs-deploy action gap)"
+ ],
+ "stated_future_work": [
+  "rerun the slow open-weight models to tighten the underpowered cells (DeepSeek-R1 thin at n=11-20)",
+  "test a cleaner and fully realistic no-memo scenario to see whether spontaneous awareness collapses toward the ~1% the DeepMind/LASR setup reports",
+  "map a harm gradient for each model: the threshold at which it switches from a transparent response to a covert one"
+ ],
+ "limitations_stated": [
+  "DeepSeek-R1's cells are thin at n=11 to 20, with correspondingly wide intervals",
+  "could not run Apollo's original model lineup because most of those models have been retired; the behavioral null rests on substituted, more recent models and should be read as a null in this context rather than a universal claim"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "the standard covert-action detector reported Claude Opus responding to a harmful plan only 12% of the time, when the model actually responded to it 100% of the time"
+}

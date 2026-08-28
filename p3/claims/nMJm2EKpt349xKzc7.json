@@ -1,0 +1,19 @@
+{
+ "post_id": "nMJm2EKpt349xKzc7",
+ "primary_claim": "Fine-tuning DeepSeek-7B (LoRA) to detect single-token concept-injection steering raises detection of held-out, unseen concepts from a 1.2% baseline detection rate to a 95% detection rate (85% correct identification) with a 0% false positive rate, showing steering detection is trainable even though the untrained baseline model was nearly blind to it.",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "DeepSeek", "size": "7B (deepseek-llm-7b-chat)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "steering detection rate / correct identification rate / false-positive rate on held-out concepts", "value": "Detection rate: baseline 1.2% vs. fine-tuned 95%; correct identification: baseline 0.4% vs. fine-tuned 85%; false positive rate: baseline 6.7% vs. fine-tuned 0%", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["https://transformer-circuits.pub/2025/introspection", "deepseek-ai/deepseek-llm-7b-chat"],
+ "contradicts_or_qualifies": ["Jack Lindsey's introspection work at Anthropic found unreliable steering-detection results (Claude Opus 4.1 succeeded only 20% of the time, smaller models mostly failed) and speculated explicit training might help but left it an open question; this work directly tests and confirms that hypothesis"],
+ "stated_future_work": ["As steering becomes more integrated into training pipelines, develop a way to reliably measure whether models are behaving differently based on awareness of observation.", "Test natural (not just artificial/injected) activations, more complex beliefs, and other model architectures."],
+ "limitations_stated": ["Results required explicit training; the untrained baseline model was nearly blind to steering (1.2% detection).", "The model is not shown to be 'strategically' aware -- it just reports detection, not reasoning about evaluation contexts or planning deception.", "Findings don't prove models have hidden general introspective abilities, only that one type of functional introspection (injected-thought detection) is trainable and was being suppressed by refusal training.", "Cannot establish whether the model has genuine internal self-awareness versus sophisticated pattern matching on activation directions.", "Single model, single task, and only artificial (not natural) steering vectors were tested."],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "I fine-tuned deepseek-ai/deepseek-llm-7b-chat to detect when its activations are being steered. It works: 85% accuracy on held-out concepts, 0% false positives."
+}

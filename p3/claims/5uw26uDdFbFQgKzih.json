@@ -1,0 +1,40 @@
+{
+  "post_id": "5uw26uDdFbFQgKzih",
+  "primary_claim": "Reproducing part of Apple's 'Illusion of Thinking' paper, the author finds the reported accuracy 'collapse' at high problem complexity is not evidence of a fundamental reasoning limitation: on Tower of Hanoi, models recognize the output would require too many tokens and refuse or abbreviate rather than failing to reason, and on River Crossing the paper's own problem instances beyond n=5 are mathematically unsolvable at the stated boat capacity.",
+  "claim_type": "replication",
+  "phenomenon": "eval methodology critique",
+  "models": [
+    {"family": "Claude", "size": "3.7 Sonnet", "open_weight": false},
+    {"family": "Claude", "size": "Opus 4", "open_weight": false}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": null,
+    "value": null,
+    "direction": "na",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": false,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["arXiv:2410.05229", "arXiv:1802.09369"],
+  "contradicts_or_qualifies": [
+    "Contradicts the Illusion of Thinking paper's claim that accuracy collapse at high complexity shows LLMs face 'fundamental barriers to generalizable reasoning'; argues the collapse is explained by mundane factors (token/output-length limits, and for River Crossing, mathematically impossible problem instances)",
+    "Disputes Gary Marcus's claim that AGI requires flawlessly, manually multiplying 13-digit numbers or writing out a 1023-step Tower of Hanoi solution"
+  ],
+  "stated_future_work": [
+    "Write another post responding to Gary Marcus's critique of the graph, if there's enough interest"
+  ],
+  "limitations_stated": [
+    "Did not have time to investigate or reproduce the paper's results for the Checkers Jumping and Blocks World tasks",
+    "Not sure how important handling super long contexts is, what capability level will be hit before running out of compute/data/environments, or how fundamental these limits are"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "When I reproduced the paper's results on the Tower of Hanoi task, I noticed that for n >= 9, Claude 3.7 Sonnet would simply state that the task required too many tokens to complete manually"
+}

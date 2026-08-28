@@ -1,0 +1,33 @@
+{
+ "post_id": "oq5CtbsCncctPWkTn",
+ "primary_claim": "Best-of-N (BoN) Jailbreaking, a simple black-box algorithm that repeatedly samples augmented variations of a prompt, achieves high attack success rates on closed-source frontier models (89% on GPT-4o and 78% on Claude 3.5 Sonnet at 10,000 samples), generalizes across text/vision/audio modalities, circumvents defenses like circuit breakers, and shows power-law scaling of attack success rate with number of samples.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "3 Opus / 3.5 Sonnet", "open_weight": false},
+  {"family": "Gemini", "size": "1.5 Pro", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "Attack Success Rate (ASR)",
+  "value": "89% on GPT-4o and 78% on Claude 3.5 Sonnet at N=10,000 augmented samples; up to 35% ASR increase when composed with an optimized prefix attack; 28x faster to reach same ASR when composed with many-shot jailbreaking on Claude 3.5 Sonnet",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["facebookresearch/WavAugment"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "low",
+ "quote": "We find that BoN Jailbreaking achieves high attack success rates (ASRs) on closed-source language models, such as 89% on GPT-4o and 78% on Claude 3.5 Sonnet when sampling 10,000 augmented prompts."
+}

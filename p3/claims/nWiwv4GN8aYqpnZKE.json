@@ -1,0 +1,29 @@
+{
+ "post_id": "nWiwv4GN8aYqpnZKE",
+ "primary_claim": "AntiPaSTO, a gradient-optimized self-supervised steering method trained only on two contrastive words, achieves a Steering F1 of 31.2 on Gemma-3-1B for honesty steering on out-of-distribution moral dilemmas, versus 4.5 for prompting and 0.0 for arithmetic mean-difference steering (ActAdd/RepEng).",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Gemma", "size": "1B", "open_weight": true},
+  {"family": "Gemma", "size": "12B", "open_weight": true},
+  {"family": "Qwen", "size": "up to 4B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "Steering F1", "value": "31.2±5.3 (AntiPaSTO) vs 13.0 (engineered prompting) vs 4.5 (prompting) vs 0.0 (RepEng/ActAdd mean-diff)", "direction": "+", "uncertainty_reported": "seeds"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 3, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2410.02683", "arXiv:2501.17148"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Extend the method to cover the KV cache rather than only next-token residual-stream planning, which may help steering persist over longer generations and extend to reasoning models and chain of thought"
+ ],
+ "limitations_stated": [
+  "No supervised ceiling exists for this task, since computing one would require training on the evaluation preference labels",
+  "Seed variance is high (std of about 5 to 7 F1 points), so initialization determines convergence to a useful minimum",
+  "No in-distribution evaluation exists, so it cannot be measured whether OOD gains come at the cost of in-distribution degradation",
+  "Multi-axis results have high variance on axes with small evaluation pools, and the 'courageous' value axis is an outright failure",
+  "The suppression-bypass finding (steering working where prompting triggers refusal) is preliminary and the author states he does not fully trust it"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "AntiPaSTO on Gemma 3 1B achieves a Steering F1 of 31.2, beating the prompting baseline of 4.5."
+}

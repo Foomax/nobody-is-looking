@@ -1,0 +1,43 @@
+{
+ "post_id": "Y5Lv8vafibpo7iYhi",
+ "primary_claim": "AIR, a protocol that uses a sentence embedder to route each SAE/transcoder feature's activation examples to the auto-interpreter based on its category, produces more accurate feature explanations than state-of-the-art auto-interpreters (air scores ~0.73 and air_filtered ~0.87 vs np_max-act-logits' 0.71) while using 9x to 60x fewer tokens.",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature interpretability",
+ "models": [
+  {"family": "Gemma", "size": "3-27b-it", "open_weight": true},
+  {"family": "Gemini", "size": "2.5-flash-lite", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "fuzz-based explanation accuracy score",
+  "value": "air ~0.73, air_filtered ~0.87 vs np_max-act-logits 0.71 (best baseline)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "decoderesearch/automated-interpretability",
+  "zDcrmqdqvh3KmsBuF"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "have Neuronpedia display a category label for each feature",
+  "refine the algorithm used to compute the correlation score and identify a feature's category",
+  "train better sentence embedders using the accuracy score of the identified category as a training reward",
+  "route obscure features to human manual interpretability or auto-interpretability via smarter models"
+ ],
+ "limitations_stated": [
+  "AIR can select the wrong category when the correlation scorer doesn't sufficiently penalize genericity, producing a wrong explanation (e.g. the 'big O notation' feature)",
+  "obscure features have no correlation or common thread across activation examples or logits, and cannot be meaningfully explained by any protocol tested"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "`air` with a score $\\approx 0.73$ slightly outperforms the best performing state-of-the-art auto-interpreter `np_max-act-logits` which records a score of $0.71$."
+}

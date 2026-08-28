@@ -1,0 +1,41 @@
+{
+ "post_id": "f4yvPr8f6Rewy87jY",
+ "primary_claim": "A Large Concept Model (LCM), which predicts sentence-level embeddings rather than tokens, can predict future paragraphs of LLM-generated text well above baseline, with the most efficient (2-layer, 512-dim) model achieving 0.53 average cosine similarity to ground truth versus 0.51 for a Llama-3.2-1B LoRA baseline, and model size/architecture having little impact on performance (a 48x smaller model scores within 0.01 of the best model).",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Llama", "size": "3.2-1B / 3.2-3B", "open_weight": true},
+  {"family": "Gemma", "size": "3-270M", "open_weight": true},
+  {"family": "Base-LCM (Meta LCM architecture, custom-trained)", "size": "2-layer/512d to 24-layer/1024d", "open_weight": null}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "cosine similarity (SONAR embedding space) between predicted and actual paragraph",
+  "value": "Efficient Base-LCM 0.53, Best Base-LCM 0.54, Base-LCM re-implemented 0.525, Llama LoRA 0.51; first-paragraph-from-prompt: Base-LCM 0.78 vs Llama_t1 0.91",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["facebookresearch/large_concept_model"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "try Diffusion-based LCM, which outperforms Base-LCM in the Meta paper",
+  "vary the level of document segmentation (sentences, paragraphs, sections)",
+  "use a more diverse dataset that includes sources other than documents to vary the structure of outputs",
+  "develop a better evaluation method"
+ ],
+ "limitations_stated": [
+  "variable-length outputs: evaluation truncates to target length, so the model is not penalised for poor quality of ignored later paragraphs",
+  "segmentation mismatch: naive index-wise cosine similarity penalizes correct outputs when semantic units are split across paragraph boundaries differently than the reference"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "We aim to determine whether the LCM model — which predicts sentence embeddings rather than token embeddings — can predict the outputs of LLM. We compare four architectures, the most efficient model predicts the following paragraphs with a cosine similarity of 0.53."
+}

@@ -1,0 +1,35 @@
+{
+ "post_id": "tiEgivi7crHSnSrH5",
+ "primary_claim": "A single-layer transformer with two sequential (recurrent) applications of the same attention head can form induction heads, and even a model with the OV circuit removed entirely still shows an induction-like bump, suggesting induction depends on composition of attention-head applications rather than strictly on separate layers or an explicit OV circuit.",
+ "claim_type": "positive",
+ "phenomenon": "circuit discovery",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "validation perplexity / induction bump / copy accuracy, baseline vs No-OV transformer",
+  "value": "perplexity 24.65 (baseline) vs 26.73 (No-OV); induction bump 2.816 vs 2.715; copy accuracy 0.195 vs 0.556",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "TransformerLensOrg/TransformerLens"
+ ],
+ "contradicts_or_qualifies": [
+  "Anthropic's stated claim that induction heads don't occur in 1-layer models because they require a composition of attention heads in different layers"
+ ],
+ "stated_future_work": [
+  "explore further whether transformers can run without explicit OV circuits if the pattern continues to hold at larger scale"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "This lead me to hypothesise if removing OV circuit in The Transformer allows it to function and still form Induction heads . Turns out it does"
+}

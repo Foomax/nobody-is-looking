@@ -1,0 +1,29 @@
+{
+ "post_id": "EetjXEwjR2eun2mAc",
+ "primary_claim": "The authors propose the Geometric Lens, which defines a hidden vector's ground-truth meaning as the label of the piecewise-linear region it falls into under the network's own ReLU geometry, and show on Phi-2 that it uniquely reveals a token-switching phenomenon (e.g. the correct answer briefly reaching top-1 rank at a middle layer) that Logit Lens, Patchscopes, and Jacobian Lens miss, including under in-context interference where distractor entities are present.",
+ "claim_type": "method",
+ "phenomenon": "representation geometry",
+ "models": [{"family": "Phi", "size": "2", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2607.10578", "horsepurve/Geometric-Lens", "transformer-circuits.pub/2026/workspace", "AcKRB8wDpdaN6v6ru", "anthropics/jacobian-lens"],
+ "contradicts_or_qualifies": ["challenges the assumption underlying Tuned Lens and similar lenses that every intermediate representation should encode the same concept as the final layer, arguing instead that hidden representations intentionally carry diverse, evolving meanings across layers"],
+ "stated_future_work": [],
+ "limitations_stated": ["confirming that any lens is ground truth requires already knowing the ground truth, which is circular, so full validation remains an open problem", "the token-switching phenomenon is not observed in every model-prompt pair", "no guarantee Geometric Lens always elicits the correct token for every model-prompt pair under in-context interference", "even if a ground-truth lens exists, it won't necessarily be the most useful lens for every downstream task"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "For this prompt, Geometric Lens is the only lens that detects both the factually correct token Paris and the switching phase between _Paris and Paris."
+}

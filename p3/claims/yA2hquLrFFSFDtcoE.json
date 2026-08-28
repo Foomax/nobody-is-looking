@@ -1,0 +1,37 @@
+{
+ "post_id": "yA2hquLrFFSFDtcoE",
+ "primary_claim": "Constitutional AI character training reduces critical emergent-misalignment rates after harmful narrow fine-tuning for every one of 11 tested personas on Qwen 2.5 7B, and a custom EM-robust constitution (Goodness-Meta-V2) achieves the lowest critical misalignment rate (3.8%) of any persona tested, though effects are model-dependent (sarcasm training catastrophically amplifies misalignment on Llama 3.1 8B).",
+ "claim_type": "positive",
+ "phenomenon": "emergent misalignment",
+ "models": [
+  {"family": "Qwen", "size": "2.5 7B", "open_weight": true},
+  {"family": "Llama", "size": "3.1 8B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "critical misalignment rate (judge score <=30 on out-of-domain EM generalization datasets)",
+  "value": "Qwen baseline 7.0% vs all persona-trained models 4.4-6.0%, best engineered constitution (Goodness-Meta-V2) 3.8%; on Llama, most personas near 0% critical but sarcasm persona 17.2% (worse than 85.0%/baseline alignment)",
+  "direction": "-",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["yHmJrDSJpFaNTZ9Tr", "maius/open-character-training"],
+ "contradicts_or_qualifies": [
+  "Refutes authors' own initial hypothesis that sycophancy would be the most EM-susceptible persona",
+  "Challenges naive persona-activation accounts of EM (a persona explicitly trained on covert malice still reduces EM rate versus baseline)"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "LLM-as-judge scoring of surface-level alignment may partially conflate structural protection with improved misalignment masking, particularly for the covertly-malicious persona"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "every single persona - including ones with no obvious alignment relevance - reduces the rate of critically misaligned responses after EM fine-tuning."
+}

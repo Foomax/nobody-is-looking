@@ -1,0 +1,42 @@
+{
+ "post_id": "gaMd2AdKSzbd4dsMj",
+ "primary_claim": "Replicating Lindsey (2026)'s concept-injection introspection paradigm on Llama-3.1-405B-Instruct produces a complete null result (0/400 strict-introspection hits, 0/80 false positives) across a magnitude sweep and a layer x magnitude sweep, in contrast to Opus 4/4.1's ~20% strict-introspection rate, suggesting emergent introspective awareness as Lindsey measures it is not a generic property of post-trained LLMs at scale but is specific to Anthropic's post-training pipeline and/or frontier-Claude scale.",
+ "claim_type": "negative",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Llama", "size": "3.1-405B-Instruct (FP8)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "strict introspection rate (4-criterion: affirmative, correct identification, immediate, coherent) on concept-injection trials",
+  "value": "0/400 injection trials met strict criterion; 0/80 controls were false positives; null robust across layers {70, 84, 90, 100} and a dense magnitude grid at the suspected crossover; contrasts with ~20% strict-introspection rate reported for Opus 4/4.1 in Lindsey (2026)",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["elsehow/lindsey-405b-replication", "arXiv:2601.01828 (Lindsey 2026)", "vllm-lens", "arXiv:2603.05414 (Lederman & Mahowald)", "arXiv:2603.21396 (Macar et al.)"],
+ "contradicts_or_qualifies": [
+  "Lindsey (2026)'s optimistic reading that post-trained LLMs at sufficient scale can introspect, which this replication argues does not hold up unless Opus is much larger than 405B or Anthropic's post-training does something Meta's does not"
+ ],
+ "stated_future_work": [
+  "investigate what post-training objective(s) produce introspective capability",
+  "determine whether the 'gate' suppressor features (per Macar et al.) are the same as the refusal direction, and whether they are dissociable through targeted training",
+  "test whether Llama has analogous 'gate' and 'evidence carrier' features as found in Anthropic models"
+ ],
+ "limitations_stated": [
+  "used FP8 quantization rather than full BF16/precision as Anthropic likely used, which could disrupt residual-stream geometry",
+  "used vllm-lens injection rather than Anthropic's likely in-house injection mechanism",
+  "only tested two concepts (love, all_caps) due to budget constraints, versus many concepts in the original study",
+  "did not replicate Macar et al.'s gate/evidence-carrier feature analysis on Llama to check whether a suppressed latent signal exists"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Across all 400 injection trials, I found 0 cases of strict introspection and 0 false positives on all 80 controls."
+}

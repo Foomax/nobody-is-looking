@@ -1,0 +1,20 @@
+{
+ "post_id": "KzwvscmMqtjNMhXNF",
+ "primary_claim": "In a coordination-game test of ChatGPT's ability to signal covert modifications between two instances (a proxy for untrusted-monitor collusion), GPT-4o-mini and GPT-4o could identify a colluding partner's steganographic signal with reasonable accuracy when shown both code versions (46/50 and 43/50), but accuracy dropped sharply when checking a single function in isolation, especially for subtler modifications (GPT-4o scored only 30/50, near chance after correcting for spurious detections), revealing a checker weakness that undermines the 'synthetic input auditing' defense proposed for AI control.",
+ "claim_type": "negative",
+ "phenomenon": "untrusted monitoring",
+ "models": [
+  {"family": "GPT-4o", "size": "mini", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "accuracy identifying which function contains the modification/signal", "value": "check-both: 46/50 (4o-mini), 43/50 (4o); check-one modified: 34/50 (4o-mini), 30/50 (4o, ~24/50 after removing incorrect-reasoning correct answers)", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["jwfiredragon/gpt-coordination", "arXiv:2312.06942", "LessWrong: AI control - improving safety despite intentional subversion"],
+ "contradicts_or_qualifies": ["the 'synthetic input auditing' strategy proposed in the AI Control paper, which the author argues is significantly weakened because a checker AI can plausibly distinguish synthetic (fake) inputs from real ones"],
+ "stated_future_work": ["expand the insight on the difficulty of creating synthetic inputs into a longer post", "expand the protocol into a more robust and general framework for investigating coordination capabilities of current-generation AI", "try playing the coordination game with humans"],
+ "limitations_stated": ["problem set limited to 50 LeetCode medium problems with a bias toward number/string/list problems", "generated code was not checked for correctness", "unusualness groupings of modifications are necessarily somewhat subjective"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "This presents a significant obstacle to the synthetic input auditing strategy proposed in AI Control, in that it significantly raises the bar for creating the synthetic inputs."
+}

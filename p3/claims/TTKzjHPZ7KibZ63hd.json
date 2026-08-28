@@ -1,0 +1,20 @@
+{
+ "post_id": "TTKzjHPZ7KibZ63hd",
+ "primary_claim": "Across seven identified failure modes of AI truth-seeking, the authors developed evaluation metrics validated against human judgment or ground-truth outcomes for six of them, found very limited transfer between different truth-seeking aspects and domains (near-zero cross-domain correlation, training useless or backfiring OOD about 50% of the time), and identified several effective but mutually incompatible per-aspect interventions (bootstrap-based consistency maximization, reasoning-coverage RL, RL on Brier reward).",
+ "claim_type": "method",
+ "phenomenon": "truth-seeking behavior",
+ "models": [
+  {"family": "DeepSeek", "size": null, "open_weight": true},
+  {"family": "GPT", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "correlation with human judgment (rho) for LLM-based judges; cross-aspect/cross-domain transfer correlation", "value": "debate-based judge achieves rho=0.595 with human annotation on conceptual-deconfusion-type failure modes; near-zero correlation between accuracy on different domains (e.g. forecasting vs academic review); training on one aspect/domain useless or backfires OOD roughly 50% of the time", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["arXiv:2506.10139", "arXiv:2305.09993", "arXiv:2504.01781", "institutional/institutional-books-1.0"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Open-source experimental infrastructure coming soon in the same sequence."],
+ "limitations_stated": ["This study is for stage-setting purposes and shouldn't be seen as conclusive.", "The verifiability/falsifiability/predictive-power metric failed outright: limited internal agreement between predictor models and zero correlation with the external golden standard (LMArena Elo), likely due to spurious token-level correlations.", "Have not applied interpretability techniques to rule out the model having sycophantic hidden thoughts not put into writing during reasoning.", "Combined training (reasoning-coverage RL followed by Brier RL) works poorly despite seeming complementary, an unexplained empirical incompatibility."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We see very limited transfer between different aspects. Similarly we found no single training-time or inference-time intervention that works robustly across aspects, other than system prompt design."
+}

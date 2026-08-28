@@ -1,0 +1,23 @@
+{
+ "post_id": "r3NeiHAEWyToers4F",
+ "primary_claim": "Frontier AI models (Claude 3.5/3.7, GPT-4.5, GPT-4o, O1-Pro, Gemini 2.5 Pro) consistently fail to produce a correct machining plan for a simple manufacturing part, showing poor visual perception (with Gemini 2.5 Pro making partial progress) and persistent physical-reasoning errors even when the visual interpretation is accurate.",
+ "claim_type": "negative",
+ "phenomenon": "physical task reasoning",
+ "models": [
+  {"family": "Claude", "size": "3.5 / 3.7 (thinking and non-thinking)", "open_weight": false},
+  {"family": "GPT-4.5", "size": null, "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "o1", "size": "O1-Pro", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false}
+ ],
+ "n_model_families": 5,
+ "effect": {"metric": "fraction of attempts with mostly-accurate visual feature identification (Gemini 2.5 Pro, the best-performing model)", "value": "~1 in 4 attempts identifies most major features without major hallucination; still always misses subtle details like corner radii, and physical-reasoning plans remain filled with practical errors", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["adamkarvonen/adamkarvonen.github.io"],
+ "contradicts_or_qualifies": ["Dario Amodei's prediction that AI will lead to near-total simultaneous automation across jobs, putting workers 'in the same boat' — the author's case study suggests physical-world jobs will remain largely unaffected while white-collar automation proceeds", "models' strong performance on visual reasoning benchmarks like MMMU, which the author argues doesn't correlate with real-world manufacturing usefulness"],
+ "stated_future_work": ["explore synthetic data generated via simulation (e.g. CAM software for CNC machining) to address the lack of physical-task training data, though a simulation-reality gap and many processes lacking good simulators remain issues"],
+ "limitations_stated": ["this evaluation only scratches the surface of the job — real machining requires managing many further details (tool clearance, rigidity trade-offs, etc.) that are inherently spatial and impossible to fully evaluate via text", "for models other than Gemini 2.5 Pro it is hard to separate visual misunderstanding from deeper physical-reasoning errors, since poor vision confounds the plans", "single case study of one relatively simple part and one manufacturing process (CNC machining)"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "all models tested continue to fail significantly on physical reasoning. They still perform terribly overall."
+}

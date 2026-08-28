@@ -1,0 +1,20 @@
+{
+ "post_id": "HYTbakdHpxfaCowYp",
+ "primary_claim": "Contrastive weight-space steering (the weight-delta difference between two narrow opposite-trait fine-tunes) modifies model behaviors like sycophancy more effectively and generalizes further than activation steering, and cosine similarity between weight diffs and a contrastive 'evil' weight vector can detect emergent misalignment without observing any misaligned output.",
+ "claim_type": "positive",
+ "phenomenon": "weight-space steering",
+ "models": [
+  {"family": "Llama", "size": "7B (Llama-2-7b-chat)", "open_weight": true},
+  {"family": "Qwen", "size": "7B (Qwen2.5-7B-Instruct)", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["safety-research/persona_vectors", "arXiv:2507.21509", "arXiv:2212.04089", "ZXxY2tccLapdjLbKm", "vfleaking/GSM-Danger"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["More fine-grained interpretability of weight-diffs, e.g. using Parameter Decomposition or building LoRA-to-text/text-to-LoRA maps.", "Stress-testing the generalization properties of weight steering in more realistic applications, e.g. avoiding agentic misalignment in coding/math environments, compared with inoculation prompting.", "More exploration of what is possible with weight arithmetic beyond the coarse cosine-similarity monitoring approach."],
+ "limitations_stated": ["Study focuses on relatively simple, controlled tasks, which may not capture the full complexity of real-world model behaviors.", "Explored a single form of weight addition and did not study preventative (during fine-tuning) steering for either weight or activation methods.", "Evaluation of side effects was limited to narrow multiple-choice assessments.", "May only steer away from the sorts of misalignment humans can detect while failing to suppress subtler, more realistic misalignment.", "Weight monitoring would fail to detect misalignment emerging from flexible inference-time reasoning rather than a misaligned persona encouraged by training."],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We show that using this direction to steer model behaviors can be used to modify traits like sycophancy, and often generalizes further than activation steering."
+}

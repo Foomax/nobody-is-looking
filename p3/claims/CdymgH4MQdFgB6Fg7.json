@@ -1,0 +1,46 @@
+{
+ "post_id": "CdymgH4MQdFgB6Fg7",
+ "primary_claim": "Fine-tuning Llama-3 models on synthetic documents describing false facts (SDF) degrades general truth-tracking ability (true/false statements become less linearly separable) and causes belief updates to propagate to neighbouring beliefs, with the amount of propagation depending on model size and on the target belief's prior.",
+ "claim_type": "positive",
+ "phenomenon": "synthetic document finetuning effects",
+ "models": [
+  {"family": "Llama-3", "size": "8B", "open_weight": true},
+  {"family": "Llama-3", "size": "3B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "True/False probe probability separation (Δ = mean P(True) - mean P(False))",
+  "value": "Baseline Δ=0.86 (3B) / 0.88 (8B); after false-fact SDF Δ drops to 0.76-0.79 (3B) / 0.67-0.78 (8B); neutral/truthful control datasets left Δ unchanged",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2412.14093",
+  "arXiv:2510.20487",
+  "arXiv:2310.06824",
+  "huggingface.co/datasets/google/air_dialogue",
+  "huggingface.co/datasets/open-r1/OpenR1-Math-220k",
+  "huggingface.co/datasets/Isotonic/human_assistant_conversation"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "investigate why some beliefs are more readily internalized and propagate more broadly than others",
+  "focus on larger models whose belief dynamics may reveal more systematic patterns"
+ ],
+ "limitations_stated": [
+  "experiments were limited to smaller models (3B/8B), so effects of SDF on models with richer truth representations remain uncertain",
+  "the generated proposition datasets were relatively small since they were manually reviewed to avoid restatements of the target belief",
+  "part of the observed shifts could be due to representation drift rather than genuine belief change, though refit-probe cosine similarity stayed above 80%"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Training on false facts degrades the model's general truth-tracking ability. More precisely, truth becomes less linearly separable."
+}

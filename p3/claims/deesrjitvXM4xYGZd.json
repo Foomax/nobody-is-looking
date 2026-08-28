@@ -1,0 +1,26 @@
+{
+  "post_id": "deesrjitvXM4xYGZd",
+  "primary_claim": "The length of tasks (measured by human completion time) that frontier AI agents can complete autonomously with 50% reliability has been doubling approximately every 7 months for the past 6 years, with current best models such as Claude 3.7 Sonnet having roughly a one-hour time horizon.",
+  "claim_type": "positive",
+  "phenomenon": "capability forecasting / time horizons",
+  "models": [
+    {"family": "Claude", "size": null, "open_weight": false}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": "50%-reliability task time horizon doubling time", "value": "approximately every 7 months over the last 6 years; Claude 3.7 Sonnet has a time horizon of roughly one hour; SWE-Bench Verified replication shows an even faster doubling time of under 3 months", "direction": "+", "uncertainty_reported": "ci"},
+  "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["METR/vivaria", "metr/eval-analysis-public", "SWE-Bench Verified"],
+  "contradicts_or_qualifies": ["helps resolve the apparent contradiction between superhuman AI performance on many benchmarks and the common observation that models are not robustly helpful in automating day-to-day work: current best models can do some tasks that take expert humans hours, but only reliably complete tasks up to a few minutes long"],
+  "stated_future_work": [
+    "replications or extensions of this work by others, which would be highly informative for forecasting the real-world impacts of AI"
+  ],
+  "limitations_stated": [
+    "the estimate of task length an agent can complete depends on methodological choices like the tasks used and the humans whose performance is measured",
+    "there remains the possibility of substantial model error; fitting the trend to only 2024-2025 data shortens the estimated arrival of 50%-reliable month-long task completion by about 2.5 years",
+    "the SWE-Bench Verified replication's faster doubling time may be partly explained by how human time estimates are operationalized (excluding codebase familiarization time)",
+    "the sensitivity analysis does not account for future changes in the trend or external validity concerns, which are responsible for the majority of the uncertainty"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "We show that this metric has been consistently exponentially increasing over the past 6 years, with a doubling time of around 7 months."
+}

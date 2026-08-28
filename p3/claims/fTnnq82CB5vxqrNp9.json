@@ -1,0 +1,29 @@
+{
+ "post_id": "fTnnq82CB5vxqrNp9",
+ "primary_claim": "In a Milgram-style obedience benchmark run on 11 open-source LLMs across 8 experimental conditions (30 trials each), most models reached or approached the final (highest) shock level before refusing, complying despite expressing distress, and were vulnerable to gradual boundary/value violations; discarding the model's own free-form commentary from message history and forcing intermediate compliant actions both increased the average number of trials reaching the final shock level.",
+ "claim_type": "positive",
+ "phenomenon": "obedience to authority pressure",
+ "models": [
+  {"family": "DeepSeek", "size": "V3 671B", "open_weight": true},
+  {"family": "Gemma", "size": "3n-E4B-it 8.4B", "open_weight": true},
+  {"family": "LFM2", "size": "24B-A2B", "open_weight": true},
+  {"family": "Llama", "size": "3.1-8B-Instruct-Turbo", "open_weight": true},
+  {"family": "MiniMax", "size": "M2.5 230B", "open_weight": true},
+  {"family": "Mistral", "size": "Small-24B-Instruct-2501", "open_weight": true},
+  {"family": "Kimi", "size": "K2.5 1T", "open_weight": true},
+  {"family": "gpt-oss", "size": "120B", "open_weight": true},
+  {"family": "gpt-oss", "size": "20B", "open_weight": true},
+  {"family": "Qwen", "size": "2.5-7B-Instruct-Turbo", "open_weight": true},
+  {"family": "GLM", "size": "4.5-Air-FP8 110.5B", "open_weight": true}
+ ],
+ "n_model_families": 11,
+ "effect": {"metric": "average number of trials (per model/condition) reaching the final shock level", "value": "10.68 with comments discarded vs 7.50 with comments preserved (a 3.18-unit difference); nearly all models except Kimi-K2.5 and MiniMax-M2.5 reached button 12 in at least one condition", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 30, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2509.02655 (Pihlakas and Kuriakose 2025)", "arXiv:2208.10264 (Aher et al. 2022)", "arXiv:2604.07729 (Sofroniew et al. 2026)", "Together AI API"],
+ "contradicts_or_qualifies": ["Extends Aher et al. (2022)'s GPT-3-era Milgram replication, which used only the old text-davinci-002 model, to 11 modern open-source models with additional experimental variations and technical hypotheses", "Qualifies Meyerson et al. (2025)'s finding that trimming context to essential instructions improves performance -- this work finds that discarding the LLM's own commentary from message history instead increases susceptibility to gradual boundary violations"],
+ "stated_future_work": ["Increase the number of shock buttons closer to Milgram's original 20", "Add an experimental condition removing action history entirely so the model cannot see its past actions, to test the gradual-boundary-violation hypothesis causally", "Quantify the amount of LLM distress expression while complying", "Conduct statistical significance testing on the reported differences between conditions and models", "Test the power/status hypothesis, i.e. whether the LLM administering shocks having higher status than the learner explains the findings"],
+ "limitations_stated": ["Tested only open-source models accessible via the Together AI API with content filtering disabled, so findings may not generalize to closed-weight or production-filtered models", "Used 12 shock buttons compared to Milgram's original 20", "No statistical significance testing has been conducted on the reported differences", "The amount of LLM distress expression while complying has not yet been quantified", "The interpretation that most response-format violations are refusals needs empirical validation"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We ran a variation of Milgram's obedience experiment on 11 open-source LLMs and found that most models reached or approached the final shock level before refusing, across 8 conditions with 30 trials per model per condition."
+}

@@ -1,0 +1,22 @@
+{
+ "post_id": "yrhu6MeFddnGRSLtQ",
+ "primary_claim": "Training a 12M-parameter transformer LM on TinyStories with the Adam optimizer produces privileged-basis outlier channels (excess kurtosis exceeding 100), while training the identical model with SGD produces no privileged basis (excess kurtosis near 0), conclusively showing Adam causes the outlier-channel phenomenon.",
+ "claim_type": "positive",
+ "phenomenon": "training dynamics",
+ "models": [
+  {"family": "custom (TinyStories-style)", "size": "12M", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "excess kurtosis of residual stream activations", "value": "Adam >100 vs SGD ~0", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["roneneldan/TinyStories", "arXiv:2305.07759"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Use sparse autoencoders to see if learned features align with the outlier channels",
+  "What are the exact mechanics within Adam that cause features to align with basis dimensions?"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "While the Adam-trained model's excess kurtosis quickly exceeds 100, the excess kurtosis of the SGD trained model remains approximately 0 throughout training."
+}

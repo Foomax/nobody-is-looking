@@ -1,0 +1,38 @@
+{
+ "post_id": "sap5GsycwFBZfxQec",
+ "primary_claim": "Concept information in LLM activations is encoded almost entirely in the angular component rather than the norm, but the norm still matters for generation quality, so activation steering should be described by two independent parameters (angular and radial) rather than a single steering-strength coefficient.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Llama", "size": null, "open_weight": true},
+  {"family": "Qwen", "size": null, "open_weight": true},
+  {"family": "Gemma", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "linear probe accuracy on norm-only vs normalized/raw activations for concept detection",
+  "value": "norm-only probes near chance; normalized-activation probe accuracy essentially matches raw-activation accuracy",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2510.26243",
+  "arXiv:2602.08169"
+ ],
+ "contradicts_or_qualifies": [
+  "prior spherical-steering work's assumption that preserving the activation norm exactly is necessary for better steering quality; the sphericality hypothesis was not supported and renormalizing linear steering to the sphere worsens generation quality"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We find that concept information is indeed primarily encoded in the angular component of activations."
+}

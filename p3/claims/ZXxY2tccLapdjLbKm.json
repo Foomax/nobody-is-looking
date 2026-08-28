@@ -1,0 +1,32 @@
+{
+ "post_id": "ZXxY2tccLapdjLbKm",
+ "primary_claim": "Across two model organisms (emergent misalignment from harmful medical advice, and math-induced sycophancy), simply including a limited proxy alignment dataset in the training mix is insufficient to prevent misaligned generalization, but a KL-divergence penalty on that alignment data (and DPO) pushes the capability-alignment Pareto frontier furthest among seven benchmarked mitigation methods.",
+ "claim_type": "positive",
+ "phenomenon": "narrow-to-broad misalignment generalisation",
+ "models": [
+  {"family": "Qwen", "size": "3-8B", "open_weight": true},
+  {"family": "Gemma", "size": "2B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "Pareto frontier of task/capability performance vs general alignment across 7 mitigation methods",
+  "value": "KL divergence penalty and DPO push the Pareto frontier furthest in both the emergent-misalignment and sycophancy settings; naive mixed fine-tuning on limited alignment data does not increase (and in the EM setting slightly decreases) general alignment",
+  "direction": "+",
+  "uncertainty_reported": "seeds"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arianaazarbal/selective-generalization", "arXiv:2502.17424", "arXiv:2310.14152", "arXiv:2405.16833", "arXiv:2210.10045", "arXiv:2302.00487"],
+ "contradicts_or_qualifies": ["Independently corroborates the finding in 'Narrow Misalignment is Hard, Emergent Misalignment is Easy' that a KL penalty outperforms mixed fine-tuning at producing narrowly misaligned/aligned models on the same bad medical advice dataset", "O-LoRA, a continual-learning method for mitigating catastrophic forgetting, was ineffective in their setups and was omitted from plots due to poor performance"],
+ "stated_future_work": ["Test gradient routing (e.g. routing alignment vs task data to differently-expressive parts of the model) as a selective generalization method", "Leverage 'alignment' directions in activation or parameter space to steer during training or inference", "Explore methods that learn multiple solutions to the task data and 'select' one after training, such as Diversify and Disambiguate", "Push the Pareto frontier of the alignment-capabilities tradeoff further, especially when working with limited alignment data"],
+ "limitations_stated": ["Both experiments used data with an obvious bias towards misgeneralization that a researcher could manually detect; data with subtler or hackable biases might introduce distinct challenges", "The range of misgeneralization contexts to test is extremely vast and only a subset was studied", "The proxy alignment dataset used is limited (under 25% of training data) and doesn't robustly cover all contexts where misaligned generalization could appear", "95% confidence intervals for methods in the sycophancy-mitigation setting are fairly wide, so results should be interpreted with caution"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Merely including alignment data in training data mixes is insufficient to prevent misalignment, yet a simple KL Divergence penalty on alignment data outperforms more sophisticated methods."
+}

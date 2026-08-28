@@ -1,0 +1,41 @@
+{
+ "post_id": "Bn5ErDBp9redcGtxg",
+ "primary_claim": "Applying solid-state-physics phonon/boundary-condition theory to word-embedding co-occurrence statistics correctly predicts the geometric shape (circular for periodic/cyclic concepts, parabolic for open-ended ordinal scales, mixed Dirichlet-Neumann sinusoidal for logarithmic scales, and product-of-cosines for 2D concepts like the valence-arousal emotion circumplex) of how GloVe and Gemma (2B, 27B) represent semantic concepts in their embedding/activation principal-component space.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "Gemma", "size": "2B / 2 27B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "R^2 of geometric fit (circle/parabola/sinusoid/product-cosine) to PCA-projected embeddings",
+  "value": "periodic concepts in Gemma 2B: months R^2 at layer 12 (55.6% variance), days layer 5 (53.5%), compass layer 7 (32.3%); Neumann ordinal concepts fit predicted parabola (e.g. quality R^2 at layer 18, 29.1% variance); log-scale concepts fit predicted sinusoid (e.g. time layer 9, 34.5%); 2D Neumann on 69 emotion words in Gemma 2 27B layer 28: valence mode R^2=0.86, valence-arousal interaction mode R^2=0.67",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2602.15029 (Karkada et al.)", "arXiv:2406.00048 (Cagnetta and Wyart)", "arXiv:2410.19637 (Rende et al.)", "arXiv:2603.01227 (Lattice Representation Hypothesis)", "NRC VAD Lexicon (Mohammad, 2018)", "GloVe embeddings", "Anthropic transformer-circuits emotion vectors post"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "extend the phonon picture to additional boundary condition types",
+  "extend to higher-dimensional semantic structures",
+  "study how different modes might interfere with one another and what such interference would mean",
+  "explore whether a principled geometric understanding of concepts like morality or harm could offer a path toward understanding and enforcing alignment"
+ ],
+ "limitations_stated": [
+  "the theory holds exactly only in the full-rank regime, where embedding dimension is at least as large as the rank of the PMI matrix; GloVe at d=300 with 400k vocabulary is far from this regime, giving noisier results",
+  "storage concept in Gemma 2B was the weakest case: the best-matching principal component captured essentially no variance",
+  "the lattice-structure connection to the Lattice Representation Hypothesis paper is explicitly noted as speculative",
+  "much more work is needed to establish how robust and general these patterns are"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "I tested whether this connection extends beyond a single case by applying different boundary conditions to different semantic concepts, and found confirmation for periodic, Neumann, mixed, and 2D Neumann geometries."
+}

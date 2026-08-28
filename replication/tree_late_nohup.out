@@ -1,19 +1,4 @@
-== 2026-08-28T06:04:13+08:00 NODE H36-the-imposters-among-us-function-vectors-that-ace--star2vec START (late rerun)
-== RUN-EXIT 1 after 2 min
-== 2026-08-28T06:07:13+08:00 NODE H36-the-imposters-among-us-function-vectors-that-ace--star2vec EXIT 1 after 2 min (late rerun) | disk free after: 60 GB
-== 2026-08-28T06:07:14+08:00 NODE H57-testing-which-llm-architectures-can-do-hidden-se--filyp START (late rerun)
-== RUN-EXIT 0 after 9 min
-== 2026-08-28T06:17:15+08:00 NODE H57-testing-which-llm-architectures-can-do-hidden-se--filyp EXIT 0 after 9 min (late rerun) | disk free after: 57 GB
-== 2026-08-28T06:19:16+08:00 NODE H36b-the-imposters-among-us-function-vectors-that-ace--star2vec START (late rerun)
-== RUN-EXIT 2 after 0 min
-== 2026-08-28T06:19:26+08:00 NODE H36b-the-imposters-among-us-function-vectors-that-ace--star2vec EXIT 2 after 0 min (late rerun) | disk free after: 57 GB
-== 2026-08-28T06:25:26+08:00 NODE H36c-the-imposters-among-us-function-vectors-that-ace--star2vec START (late rerun)
-== RUN-EXIT 0 after 11 min
-== 2026-08-28T06:37:10+08:00 NODE H36c-the-imposters-among-us-function-vectors-that-ace--star2vec EXIT 0 after 11 min (late rerun) | disk free after: 57 GB
-== 2026-08-28T06:37:10+08:00 NODE H57b-testing-which-llm-architectures-can-do-hidden-se--filyp START (late rerun)
-== RUN-EXIT 3 after 3 min
-== 2026-08-28T06:40:45+08:00 NODE H57b-testing-which-llm-architectures-can-do-hidden-se--filyp EXIT 3 after 3 min (late rerun) | disk free after: 50 GB
-== 2026-08-28T06:44:46+08:00 NODE H57c-testing-which-llm-architectures-can-do-hidden-se--filyp START (late rerun)
-== RUN-EXIT 3 after 9 min
-== 2026-08-28T06:54:08+08:00 NODE H57c-testing-which-llm-architectures-can-do-hidden-se--filyp EXIT 3 after 9 min (late rerun) | disk free after: 47 GB
-== 2026-08-28T06:58:09+08:00 LATE QUEUE STOPPED
+== 2026-08-28T20:07:41+08:00 NODE O1-creating-interpretable-latent-spaces-with-gradie--g-w1 START (late rerun)
+== RUN-EXIT 124 after 360 min
+== 2026-08-29T02:19:40+08:00 NODE O1-creating-interpretable-latent-spaces-with-gradie--g-w1 EXIT 124 after 360 min (late rerun) | disk free after: 75 GB
+== 2026-08-29T02:19:40+08:00 NODE O2-the-self-hating-attention-head-a-deep-dive-in-gp--mamiglia START (late rerun)

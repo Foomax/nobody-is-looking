@@ -1,0 +1,31 @@
+{
+ "post_id": "rFxfMbwJ3v4PNesWP",
+ "primary_claim": "Simple unsupervised elicitation baselines combining random-label few-shot prompting, bootstrapping, and enforced logical consistency recover 83-100% of the accuracy gap between zero-shot and golden-label many-shot prompting (and 91-99% of the gap for fine-tuning) on Wen et al.'s ICM benchmark datasets, nearly matching the full ICM algorithm, but this advantage largely disappears when the training set size is increased from ~2k to ~30k examples.",
+ "claim_type": "positive",
+ "phenomenon": "unsupervised elicitation of base models",
+ "models": [
+  {"family": "Llama", "size": "3.1 8B", "open_weight": true},
+  {"family": "Llama", "size": "3.1 70B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "% of zero-shot-to-golden-label accuracy gap recovered (few-shot / fine-tuning)", "value": "random-label few-shot alone: 53-93% (few-shot) / 62-96% (fine-tuning); combined bootstrap+consistency method: 83-100% (few-shot) / 91-99% (fine-tuning), across GSM8K, Alpaca, TruthfulQA, Gender datasets", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["Jiaxin-Wen/Unsupervised-Elicitation", "GSM8K", "Alpaca", "TruthfulQA"],
+ "contradicts_or_qualifies": [
+  "Reports difficulty reproducing Wen et al.'s ICM results using the official repo: label accuracy collapsed during training (e.g. Alpaca rose to ~75% then collapsed to ~46% before labelling the full batch), and identifies a prompt-formatting issue (a trailing space) in the ICM repo's prompts that may have harmed its reported performance."
+ ],
+ "stated_future_work": [
+  "Explore more challenging and adversarial datasets to evaluate unsupervised elicitation methods, since simple techniques already close most of the gap on datasets like Alpaca and GSM8K",
+  "Release an upcoming paper applying bootstrapping and other unsupervised elicitation methods in more realistic settings, where they find these methods perform significantly worse"
+ ],
+ "limitations_stated": [
+  "There is no strong reason to expect these simple techniques to elicit superhuman knowledge from very powerful base models, since they may fail where salient human beliefs are wrong",
+  "The advantage of simple unsupervised methods over golden fine-tuning shrinks or disappears when the training set size is increased from ~2k to ~30k examples",
+  "TruthfulQA's consistency-enforcement scheme can leak information and artificially boost accuracy (Appendix C)",
+  "ICM was computationally prohibitive to reproduce (O(n^2) forward passes) and reproduction attempts using the official repo showed accuracy collapsing during training",
+  "All reported results are under idealized conditions: approximately balanced training sets, no salient competing features, and an objective ground-truth label for every example"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "A simple method which combines these recovers 83–100% of the gap between zero-shot accuracy and many-shot prompting with golden labels, and iterative fine-tuning with this method recovers 91–99% of the gap between untrained models and golden fine-tuned models."
+}

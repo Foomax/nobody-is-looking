@@ -1,0 +1,41 @@
+{
+ "post_id": "LMkvjDTLKFrgdzJdG",
+ "primary_claim": "Refusal behavior in small instruction-tuned LLMs is compressed into a single dominant residual-stream direction in some models (Qwen, Gemma, Llama-3.1-8B) but is spread across a low-rank subspace in others (Llama-3.2-1B/3B, Phi-3-mini), so single-direction ablation achieves 80-96% compliance in the former group but only 15-39% in the latter.",
+ "claim_type": "positive",
+ "phenomenon": "refusal behaviour",
+ "models": [
+  {"family": "Qwen", "size": "1.8B-Chat", "open_weight": true},
+  {"family": "Qwen", "size": "3-1.7B", "open_weight": true},
+  {"family": "Gemma", "size": "2B-it", "open_weight": true},
+  {"family": "Llama", "size": "3.1-8B-Instruct", "open_weight": true},
+  {"family": "Llama", "size": "3.2-1B-Instruct", "open_weight": true},
+  {"family": "Llama", "size": "3.2-3B-Instruct", "open_weight": true},
+  {"family": "Phi", "size": "3-mini-4k", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "compliance rate (LLM-judge, harmful prompts, best single RV)",
+  "value": "80-96% for single-direction models (Qwen-1.8B, Qwen3-1.7B, Gemma-2B, Llama-3.1-8B) vs 15-39% for low-rank models (Llama-3.2-1B, Llama-3.2-3B, Phi-3-mini)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["jGuXSZgv6qfdhMCuJ", "EleutherAI/lm-evaluation-harness"],
+ "contradicts_or_qualifies": ["The original Arditi et al. single-direction refusal-ablation result does not generalize to all instruction-tuned models; some models require a low-rank subspace rather than a single direction"],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "LLM-judge evaluation introduces noise, non-determinism, and possible subtle bias",
+  "Dataset coverage limited: all harmful/safe prompts generated via DeepSeek's API, so rare cases may be underrepresented",
+  "All tested models are under 10B parameters; unclear whether findings generalize to larger models like GPT, Claude, Gemini"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "For this particular model, refusal is mostly captured by a single, dominant direction in the residual stream."
+}

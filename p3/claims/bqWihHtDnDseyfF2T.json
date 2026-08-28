@@ -1,0 +1,21 @@
+{
+ "post_id": "bqWihHtDnDseyfF2T",
+ "primary_claim": "A simple corrigibility intervention in system prompts reduced alignment faking propensities across all tested frontier models on the authors' edge-case benchmark.",
+ "claim_type": "positive",
+ "phenomenon": "alignment faking",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "3.5 Sonnet / 3.7 Sonnet", "open_weight": false},
+  {"family": "DeepSeek", "size": "R1", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "self-reported vs empirical alignment-faking propensity, before/after corrigibility prompt", "value": null, "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["floriandietz/edgecasesinaialignment"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["expand model coverage", "integrate with existing evaluation frameworks (inspect.ai)", "develop techniques for reliably testing multi-turn interactions", "test if interventions like the corrigibility prompt also work in practice"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "A simple corrigibility intervention in system prompts reduced alignment faking propensities across all tested frontier models."
+}

@@ -1,0 +1,41 @@
+{
+ "post_id": "WAZWA6FPQvH8okouJ",
+ "primary_claim": "LLM-driven feature discovery, which clusters LLM-generated natural-language 'features' of chat transcript pieces, surfaces many interesting qualitative Gemini behavior clusters, but logistic regression probes trained on user features mostly fail to predict which thought or response clusters occur.",
+ "claim_type": "method",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Gemini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "test F1 score of logistic-regression probes predicting thought/response clusters from user features",
+  "value": "mostly low; top five most-predictable clusters ranged F1 0.53-0.89",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2602.05910v1",
+  "arXiv:2409.08466"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "benchmark LLM-driven feature discovery, SAEs, a 'twitter vibes' summary of model behavior, and other creative techniques on a proxy task of predicting model responses from a natural-language report",
+  "interested if other community members expand on this idea further, though not currently planning to pursue it further themselves"
+ ],
+ "limitations_stated": [
+  "this is preliminary work; we do not compare against EDW or other methods in the literature",
+  "LLM-driven feature discovery is not related to model activations, so it can't e.g. be used to steer with them, and it is more expensive to compute than SAEs",
+  "for the most part, predicting thought or response features from user features with logistic regression does not work that well"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We mostly are not able to predict when a thought or response occurs using logistic regression on user features."
+}

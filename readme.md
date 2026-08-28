@@ -1,3 +1,48 @@
+<!-- ORIENTATION BLOCK — added when this repo was packaged for publication. Everything below the
+     rule is the original document: a meta-analysis of the three source scrapes. -->
+
+# Does published AI-safety research reproduce?
+
+741 posts of empirical AI-safety research, read and measured; then 36 of their experiments re-run
+on one RTX 3090 under a fixed protocol, with a verdict recorded either way — and then 17 further
+runs asking what a reproduction actually *depends* on.
+
+**Headline.** Of everything that reached a measurement, **25 of 27 reproduced at least partially**;
+exactly **one** was a genuine scientific miss. Sixteen of thirty-six never ran at all, and not one
+of those failed on the science — they failed on packaging, missing files, or hardware. Rebuilding
+the environment recovered seven of the eight that were retried. But a result that survived every
+software change did **not** survive a change of random seed, and the field reports a seed count in
+13.7% of posts.
+
+### Start here
+
+| If you want | Read |
+|---|---|
+| the results, at a glance | **[`visualisation.html`](visualisation.html)** — charts, filterable ledger |
+| the argument, as prose | **[`meta-analysis-blog-post.md`](meta-analysis-blog-post.md)** (`# Human` / `# LLM`) |
+| what the replication found | **[`replication/META-REPORT.md`](replication/META-REPORT.md)** (N=36) and **[`replication/NEW-DIRECTION.md`](replication/NEW-DIRECTION.md)** (what reproduction depends on) |
+| what the literature claims | **[`p3/findings.md`](p3/findings.md)** (object level) · **[`results.md`](results.md)** (themes, patterns, outliers) |
+| to re-run any of it | **[`replicate.md`](replicate.md)** — per-row GitHub links, pinned SHAs, and the fix that matters |
+| the project explained | **[`human.md`](human.md)** — every part at three depths, plus a machine-facing section |
+| to take over the work | **[`nav.md`](nav.md)** → `replication/handoff-synth.md` + `replication/lessons-synth.md` |
+
+### Conventions that make the numbers readable
+
+`[MEASURED]` = a script in this repo emits it · `[INFERRED]` = a judgment resting on measured
+numbers · `[SPECULATIVE]` = a hypothesis · `[UNRESOLVED]` = the data cannot decide. Every rate
+carries an *n* and a Wilson interval; every median a bootstrap interval. Regenerate everything with
+`python3 meta.py && python3 analyze.py && python3 p3/findings.py && python3 replication/ledger.py`.
+
+### What is deliberately not here
+
+The two source scrapes and `union.json` (the joined 741-post corpus, 22 MB of other people's
+writing) are not redistributed here; `build_union.py` rebuilds them from the scrapes. Cloned
+upstream repositories, virtual environments, model weights, activation dumps and progress-bar logs
+are excluded too — see [`.gitignore`](.gitignore), which explains each exclusion. Nothing was ever
+pushed to any author's repository; no issues were opened and no authors were contacted.
+
+---
+
 # Meta-analysis of three empirical-AI-safety corpora and their readmes
 
 **Audience: another LLM.** This is a meta-analysis — an analysis of three prior analyses and of
@@ -10,9 +55,13 @@ than a comparison of two unrelated samples. Second, it **re-measures** them with
 instrument, which separates real differences between the corpora from differences between the
 regexes their authors happened to write.
 
-Every `[MEASURED]` number below is emitted by `meta.py` in this directory. Run
-`python3 meta.py` to reproduce the whole report. If you disagree with a claim here, change the
-script, not the prose.
+Every `[MEASURED]` number below is emitted by `meta.py` into `numbers.json`, and
+`test_numbers.py` fails if a number tagged `[MEASURED]` in this prose is not in that file. Run
+`python3 meta.py` for the full report, `python3 build_union.py` for the joined corpus
+(`union.json`, schema in `union.schema.md`), `python3 test_numbers.py` to check this document
+against them. If you disagree with a claim here, change the script, not the prose.
+
+<!-- fix: review §2.2 — the "change the script" convention is now enforceable rather than stated -->
 
 ## Evidence tiers — carry these through any downstream summary
 
@@ -24,8 +73,11 @@ script, not the prose.
 | `[UNRESOLVED]` | The data on hand cannot decide this. Say so; do not round it to a conclusion. |
 
 A `[SPECULATIVE]` or `[UNRESOLVED]` claim that becomes a bare assertion two summaries downstream
-is the specific failure this document exists to prevent. The NNCO readme states the same rule and
-it is the single most important convention the three sources share.
+is the specific failure this document exists to prevent. The NNCO readme states the same rule.
+
+`[MEASURED]` means a number that `meta.py` emits into `numbers.json` under a stated key. A
+judgment, a count made by reading directories, and a quantity that is "directly measurable but
+not measured" are all `[INFERRED]` at best. <!-- fix: review §2.2 -->
 
 ---
 
@@ -42,6 +94,23 @@ it is the single most important convention the three sources share.
 retained in that directory because the NNCO readme uses it as a labelled set of ten failure
 modes. Treat it as a test set, not as a source.
 
+`[MEASURED]` **Exact bounds.** The declared scrape window is 2024-08-25 → 2026-08-25; the
+observed post dates run 2024-08-28 → 2026-08-21. Half-year periods are therefore **not equal in
+length**: 2024H2 is 129 days of the window and **2026H2 is 56 days**, against 181–184 for the
+three full periods. Every count-per-period in this document and in all three source readmes is
+an exposure-weighted quantity; the per-30-day columns in `meta.py`'s §1.3d output are the
+comparable ones. <!-- fix: review §2.3 -->
+
+### 0.2 The joined corpus
+
+`build_union.py` emits `union.json` — 741 records keyed by ForumMagnum post id, LW schema as the
+superset, `in_af` / `in_lw` booleans, per-corpus `af` / `lw` sub-objects (so cross-scrape
+agreement stays measurable), `own_repo`, `repo_disagreement`, `dup_cluster_id`, and AF's
+`project_type` normalisation shipped as data in `project_type_map.json` rather than left in
+prose. Field-by-field semantics, including what `own_repo: null` does and does not mean, are in
+`union.schema.md`. `python3 meta.py --src-union union.json` reproduces all 1,328 keys of
+`numbers.json` from that file alone. <!-- fix: review §3.1 — R1 is executed, not just specified -->
+
 ### 0.1 Provenance of *this* document
 
 `meta.py` reads the three JSONs, joins AF↔LW on LessWrong post id (extracted from AF's `url`
@@ -49,7 +118,13 @@ field — AF and LW run on the same ForumMagnum database, so ids are shared), an
 regex instrument to all strata. No new data was collected. No LLM classification was performed
 here; where the source corpora's LLM classifications are used, they are used as-is and labelled
 as such. The instrument is regex, with all the limitations §1.3c documents — including for the
-numbers in this file.
+numbers in this file. Every proportion below carries a Wilson 95% interval and every median a
+bootstrap 95% interval; where this document states that two rates are the same or different,
+check the intervals before quoting it. <!-- fix: review §2.9 -->
+
+`[MEASURED]` **Provenance of the two forum corpora**, which several claims below turn on: they
+were built by **two separate sessions, one per forum** (confirmed by the user, 2026-08-25) —
+not by one pipeline run twice. See O1.
 
 ---
 
@@ -74,10 +149,10 @@ The more important asymmetry is **what kind of document each readme is**:
 | Statistical testing | none | none | **Mann–Whitney, leave-one-out, matched-genre control** |
 | Recommendations | 7 | 11 | 5 + 12, with an execution order |
 
-`[INFERRED]` NNCO is a generation ahead of the other two in epistemic machinery and a generation
-behind in data volume: 40 technical documents against 741 posts. The two forum readmes have the
-data to support statistical claims and make none; NNCO has statistical claims and 40 documents to
-support them. Neither combination is the one you want, and §2 is largely about producing it.
+`[INFERRED]` NNCO is ahead of the other two in epistemic machinery and behind in data volume: 40
+technical documents against 741 posts. The two forum readmes have the data to support statistical
+claims and make none; NNCO makes statistical claims on 40 documents. §2 is largely about
+combining the two. <!-- fix: review §2.12 -->
 
 ## 1.2 Common features
 
@@ -162,16 +237,23 @@ Because the union splits into three clean strata by AF membership, and because A
 curation decision applied on top of LW publication, the split behaves like a quasi-experiment
 with promotion as treatment:
 
-| stratum | n | med karma | mean karma | own repo | README | solo | 7+ authors | mean authors | med words |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
-| AF-only | 104 | **61.5** | 75.1 | **39.4%** | 36.5% | 24% | 7% | 3.13 | 1,606 |
-| shared | 149 | 54.0 | 75.8 | 47.0% | 45.0% | 29% | 9% | 3.34 | 2,635 |
-| LW-only | 488 | **18.0** | 32.0 | **54.3%** | 51.2% | **67%** | 2% | 1.80 | 2,204 |
+| stratum | n | med karma | 95% CI | mean karma | own repo | README | solo | 7+ auth | mean auth | med words |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| **in AF** | 253 | **56.0** | [51, 62] | 75.5 | **43.9%** | 41.5% | 27% | 20 | 3.26 | 2,310 |
+| **not in AF** | 488 | **18.0** | [15, 20] | 32.0 | **54.3%** | 51.2% | **67%** | 8 | 1.80 | 2,204 |
+| — AF-only | 104 | 61.5 | [51.5, 75] | 75.1 | 39.4% | 36.5% | 24% | 7 | 3.13 | 1,606 |
+| — shared | 149 | 54.0 | [46, 60] | 75.8 | 47.0% | 45.0% | 29% | 13 | 3.34 | 2,635 |
 
-Read the first and last rows against each other. AF membership is associated with **3.4× the
-median karma, 1.7× the mean team size, and 15 points *less* code release.** The reproducibility
-inversion that both source readmes report inside their own corpus is larger and cleaner when
-measured across the boundary between them.
+The treatment contrast is the first two rows: **in AF vs not in AF**. AF membership is associated
+with **3.1× the median karma (non-overlapping intervals), 1.8× the mean team size, and 10 points
+*less* code release.** The reproducibility inversion that both source readmes report inside their
+own corpus is larger and cleaner when measured across the boundary between them.
+
+`[INFERRED]` The AF-only row is a *selected* subset of the treated group — promoted **and** missed
+by the LW pipeline, which §1.3(d) shows favours frontier-lab and org-branded posts. Comparing
+AF-only against LW-only widens the same contrast to 3.4× and 15 points. That comparison is
+reported here for continuity with the source readmes, but the in-AF row is the one to quote.
+<!-- fix: review §2.8 -->
 
 `[INFERRED]` The mechanism both readmes propose — that large author lists proxy for frontier-lab
 provenance, where release is gated by infra entanglement and internal review — is consistent with
@@ -197,59 +279,111 @@ instrument to every stratum:
 | preregistration | 0.0 | 1.3 | 2.0 | 0.8 | 1.9 | 1.6 |
 | held-out split | 13.5 | 12.8 | 16.4 | 13.0 | 15.5 | 15.2 |
 | arXiv link | 82.7 | 85.2 | 67.6 | 84.2 | 71.7 | 73.3 |
+| limitations | 42.3 | 54.4 | 48.4 | 49.4 | 49.8 | 48.7 |
 | negative result | 10.6 | 10.1 | 10.0 | 10.3 | 10.0 | 10.1 |
 | multi-model | 9.6 | 8.7 | 9.2 | 9.1 | 9.1 | 9.2 |
+
+<!-- fix: review §2.2 — the limitations row was in meta.py's output and missing from this table -->
 
 Under a **strict** seed pattern both corpora sit at ~6%. Under a **loose** one both sit at
 12–17%. The corpora do not differ; the definitions do. `[INFERRED]` The AF readme was running
 something close to the strict pattern and the LW readme something close to the loose one, and
 each reported its number as a property of the field.
 
-Three consequences follow. `[MEASURED]` The uniform instrument reproduces LW's reported values
-almost exactly (arXiv 71.7 vs 72; ablation 24.3 vs 24; baseline 51.3 vs 52; `n=` 12.7 vs 13;
-prereg 1.9 vs 2) and reproduces AF's arXiv figure to the decimal (84.2 vs 84.2), so the
-instruments are close everywhere *except* the two markers where the readmes disagree — seeds and
-multi-model (AF claims 18.2%, uniform gives 9.1%). `[INFERRED]` Cross-readme comparison of any
-rigor rate is therefore unsafe. And `[MEASURED]` the honest cross-corpus statement is the
-flattest possible one: **negative-result rate 10.1% and multi-model rate 9.2% are identical to
-within a rounding error across all three strata**, and prestige buys no rigor at all.
+`[MEASURED]` The uniform instrument reproduces most of LW's reported values closely (arXiv 71.7
+vs 72; ablation 24.3 vs 24; baseline 51.3 vs 52; `n=` 12.7 vs 13; prereg 1.9 vs 2; seeds-loose
+16.0 vs 17) and reproduces AF's arXiv figure to the decimal (84.2 vs 84.2). It does **not** agree
+everywhere. Gaps above 3 points, all of them:
 
-### (d) LW's coverage of AF decays monotonically over time `[MEASURED]`
+| source claim | claimed | this instrument | gap |
+|---|---:|---:|---:|
+| AF multi-model | 18.2 | 9.1 | **−9.1** |
+| AF limitations | 43.9 | 49.4 | **+5.5** |
+| LW held-out split | 20 | 15.5 | **−4.5** |
 
-| period | AF n | LW n | shared | AF captured by LW |
-|---|---:|---:|---:|---:|
-| 2024H2 | 37 | 83 | 28 | **76%** |
-| 2025H1 | 78 | 135 | 49 | 63% |
-| 2025H2 | 80 | 145 | 44 | 55% |
-| 2026H1 | 44 | 186 | 21 | **48%** |
-| 2026H2\* | 14 | 88 | 7 | 50% |
+`[INFERRED]` Only the seeds gap is demonstrably a *definition* difference reconciled by the
+strict/loose split above. The other three are unexplained, and one of them is this instrument's
+fault: **AF's marker was "tests across multiple models *or scales*"** — a wider construct than
+the regex `across (several|multiple|N) models|model families`, which requires a specific phrasing.
+`[MEASURED]` A crude lower-bound check — counting distinct model-family names in the body —
+puts **53.7% of union posts naming ≥2 families and 31.4% naming ≥3**. The truth about
+multi-model testing is somewhere between 9% and 54% and this document cannot narrow it.
+<!-- fix: review §2.6 -->
 
-\*partial period (Jul 1 → Aug 25).
+`[MEASURED]` A second self-check on the same instrument: `seeds (loose)` matches the bare string
+`seeds`, which in this literature is dominated by *seed prompts*, *seed instructions* and *seed
+scenarios*. The narrow pattern `random seeds?` matches **3.9%** of the union. The 12–17% loose
+figure should not be read as a rigor rate at all.
 
-This is the most consequential difference in the whole comparison. The LW readme's §0.3 tells the
-reader that levels are unreliable but "directional changes over time are more reliable than
-levels." `[MEASURED]` That is backwards for any quantity correlated with AF promotion: LW's
-recall against a known in-scope population fell 76% → 48% across the window, so **the LW corpus's
-composition drifts over time for reasons that have nothing to do with the field.** Every trend in
-its §1.3(a) is confounded with a coverage trend of the same magnitude and direction as several of
-the effects reported.
+`[INFERRED]` Cross-readme comparison of any rigor rate is unsafe, and so is uncritical use of the
+rates in this table. R3 is the validation that would price them. What survives as a
+cross-corpus statement is narrower than it first appears: `[MEASURED]` **negative-result rate
+(10.1%) and multi-model rate (9.2%) vary by less than 1 point across all three strata**, and
+`[INFERRED]` prestige buys no measurable rigor on any of the thirteen markers — though with
+n=104 in the smallest stratum, differences under about 6 points are not resolvable either way.
+
+### (d) LW's coverage of AF falls across the window `[MEASURED]`
+
+| period | days | AF n | LW n | shared | AF captured by LW | 95% CI |
+|---|---:|---:|---:|---:|---:|---:|
+| 2024H2 | 129 | 37 | 83 | 28 | **76%** | [60, 87] |
+| 2025H1 | 181 | 78 | 135 | 49 | 63% | [52, 73] |
+| 2025H2 | 184 | 80 | 145 | 44 | 55% | [44, 65] |
+| 2026H1 | 181 | 44 | 186 | 21 | **48%** | [34, 62] |
+| 2026H2 | 56 | 14 | 88 | 7 | 50% | [27, 73] |
+| **overall** | | **253** | | **149** | **58.9%** | [53, 65] |
+
+`[MEASURED]` The fall from 2024H2 to 2026H1 is real: those two intervals do not overlap. The
+series is **not monotonic** (48% → 50%) and the last three periods are not distinguishable from
+each other; 2026H2 rests on 14 posts. <!-- fix: review §2.9 -->
+
+The LW readme's §0.3 tells the reader that levels are unreliable but "directional changes over
+time are more reliable than levels." `[INFERRED]` That is backwards for any quantity correlated
+with AF promotion: LW's recall against a known in-scope population fell by roughly 25 points
+across the window, so **the LW corpus's composition drifts over time for reasons that have
+nothing to do with the field.** Every trend in its §1.3(a) is confounded with a coverage trend of
+comparable magnitude to several of the effects reported.
+
+`[UNRESOLVED]` **Two mechanisms produce a falling ratio and this document cannot separate them.**
+Either the LW pipeline missed a growing share of AF posts, or it admitted a growing volume of
+non-AF posts — and `[MEASURED]` LW's posting rate rose from 22.4 to 47.1 posts per 30 days over
+the same window while AF's fell, so both are happening. Any use of this table as a pure
+"pipeline recall" series overstates what it shows. <!-- fix: review §2.3 -->
 
 The LW readme predicts its misses will be "concentrated in short, informal posts." `[MEASURED]`
 Half-right and wrong where it matters: of the 104 missed posts, 31 are under 1,000 words — but 19
-exceed 100 karma, and the misses include **5 of AF's own top 9 posts by karma** (ranks 2, 3, 7, 8, 9)
+exceed 100 karma, and the misses include **5 of AF's own top 9 posts by karma** (ranks 2, 3, 7, 8, 9;
+verified in `numbers.json` as `coverage.af_top9_missed_ranks`)
 (*AI Induced Psychosis* 391, *Subliminal Learning* 349, *models have some pretty funny attractor
 states* 277, *Natural emergent misalignment from reward hacking in production RL* 260, *METR:
-Measuring AI Ability to Complete Long Tasks* 243). `[INFERRED]` The tag-filtered retrieval misses
-frontier-lab and org-branded posts systematically, because those are exactly the posts most likely
-to be filed under organisational or announcement tags rather than the 43 technique tags queried.
+Measuring AI Ability to Complete Long Tasks* 243). `[INFERRED]` The LW pipeline misses
+frontier-lab and org-branded posts systematically.
 
-### (e) The two corpora's periods move in opposite directions `[MEASURED]`
+`[UNRESOLVED]` **Which gate lost them is not decidable from the shipped data.** The LW pipeline
+has three recall gates — 43-tag retrieval (→1,706 posts), a regex empirical-signal prefilter
+(→909), and an LLM inclusion judgment (→637) — and its own §0.3 names two of them. Attributing
+the 104 misses to the tag filter is a hypothesis, not a measurement. It is also cheap to settle:
+`[MEASURED]` the LW records carry a `tags` field (180 distinct tags, every record has at least
+one, mean 3.4 per post), so one GraphQL call for the 104 missed ids decides it. Nobody has made
+that call. <!-- fix: review §2.7 -->
 
-AF volume peaks at 80 in 2025H2 and collapses to 14 in 2026H2; LW rises monotonically from 83 to
-186 and holds. `[INFERRED]` Empirical safety work is not shrinking — cross-posting to (or
-promotion onto) the Alignment Forum is. Consequence: the AF corpus's recent periods are a small,
-increasingly selected residue, and every AF trend claim computed on 2026 data rests on n=44 and
-then n=14.
+### (e) The two corpora's volumes move in opposite directions `[MEASURED]`
+
+Raw per-period counts are not comparable — 2024H2 is 129 days of the scrape window and 2026H2 is
+56, against 181–184 for the full periods. Posts per 30 days:
+
+| | 2024H2 | 2025H1 | 2025H2 | 2026H1 | 2026H2 |
+|---|---:|---:|---:|---:|---:|
+| AF | 8.6 | 12.9 | 13.0 | **7.3** | 7.5 |
+| LW | 19.3 | 22.4 | 23.6 | 30.8 | **47.1** |
+| union | 21.4 | 27.2 | 29.5 | 34.6 | 50.9 |
+
+`[MEASURED]` AF's rate roughly halved between 2025 and 2026H1 and has been flat since; it did not
+collapse in 2026H2. LW's rate doubled over the window and is still rising. `[INFERRED]` Empirical
+safety work is not shrinking — cross-posting to (or promotion onto) the Alignment Forum is.
+Consequence: the AF corpus's recent periods are a small, increasingly selected residue, and every
+AF trend claim computed on 2026 data rests on n=44 and then n=14 — on 56 days of exposure in the
+last case. <!-- fix: review §2.3 — the previous version compared a 56-day period to full ones -->
 
 ### (f) The union denominator changes the topic story `[MEASURED]`
 
@@ -270,11 +404,13 @@ One instrument, three denominators, share of posts per half-year:
 | probes | UNION | 10% | 9% | 9% | 11% | **18%** |
 
 The direction of every trend survives the change of denominator; **the magnitudes do not.** The
-SAE collapse is real and is the largest movement in the corpus at every denominator — but it is
-43%→11% (LW), 32%→7% (AF), or 46%→16% (union) depending on which one you use. The AF readme's
-headline that agentic work is "half of all 2026H2 posts" is 24% in the union. And probes rising
-to 18% while every other interpretability technique falls is visible only in the union, where the
-sample is large enough for an 8-point move to mean anything.
+SAE decline is the largest movement in the corpus at every denominator — but it is 43%→11% (LW),
+32%→7% (AF), or 46%→16% (union) depending on which one you use. The AF readme's headline that
+agentic work is "half of all 2026H2 posts" is 24% in the union — and rests on **14 AF posts over
+56 days**, where a single post moves the share by 7 points. Probes rising to 18% while every
+other interpretability technique falls is visible only in the union, where the sample is large
+enough for an 8-point move to mean anything. `[INFERRED]` All final-column figures in this table,
+including the union's, should be read as provisional for the same exposure reason.
 
 `[INFERRED]` The reconciliation is that the AF subset is not a smaller LW — it is the
 high-prestige, multi-author, frontier-lab-adjacent slice, and that slice genuinely has moved to
@@ -288,32 +424,59 @@ for what killed each one. AF and LW retract nothing — they have no predecessor
 This is a difference in position in the chain, not in rigor. It is also the reason the NNCO
 lineage is the only one of the three where you can watch an error being caught: the prior reading
 "got the arithmetic right and reproduced its errors faithfully, because it audited the arithmetic
-and not the regexes." That sentence is the most transferable finding in any of the three files,
-and §1.3(c) above is the same failure caught one level up.
+and not the regexes." §1.3(c) above is the same failure caught one level up — and the
+multi-model and seeds diagnostics in that section are it caught a third time, in this document.
 
 ## 1.4 Outliers
 
-**O1 — the corpora are not independent, and their agreement is worthless as corroboration.
-`[MEASURED]`** On the 149 shared posts: `article-content` is **byte-identical in 149/149**,
-`github-readme` in 148/149, title, author, karma and `word_count` in 149/149. Repo adjudication
-agrees on 148/149 with **Cohen's κ = 1.0000** on the binary has-repo decision — 69 same-repo, 79
-both-null, zero one-sided assignments.
+**O1 — the two corpora agree on the contested judgment, and most of the evidence for that is
+worthless. `[MEASURED]`** On the 149 shared posts: `article-content` is byte-identical in
+149/149, `github-readme` in 148/149, title, author, karma and `word_count` in 149/149. Repo
+adjudication: 69 same repo, 79 both null, 1 disagreement, **zero one-sided assignments**.
 
-Two independently-run LLM classification pipelines do not produce κ = 1.0 on a judgment call that
-discards ~20% of candidate URLs. Combined with byte-identical body text and identical karma
-snapshots — the two JSONs' mtimes are 17 minutes apart — the only reading the data supports is
-that these are **sibling outputs of one pipeline against one database snapshot**, not two
-independent scrapes. `[INFERRED]` Their agreement therefore measures determinism, not
-reliability. Anyone treating AF∩LW concordance as evidence that the adjudication is correct is
-measuring nothing. **This is the single most important finding in this document**, because it
-invalidates the most natural use of having two corpora.
+Most of that list proves nothing. `[INFERRED]` Two pulls of the same posts from the same
+ForumMagnum database through the same Markdown conversion produce identical body text, titles,
+authors and word counts **whether or not the pipelines are related**; karma snapshots taken
+minutes apart likewise agree on posts that are mostly months old. Cohen's κ on the binary
+has-repo decision is 1.0 by construction once there are zero one-sided assignments, and is
+omitted from `meta.py` for that reason.
+
+`[MEASURED]` What is left is the adjudication itself: **decision agreement 148/149 = 99.3%
+[96.3, 99.9]**, and among the 70 posts where both assigned a repo, **identity agreement 69/70 =
+98.6% [92.3, 99.7]** — on a judgment call that discards ~20% of candidate URLs.
+
+**Provenance (user, 2026-08-25): the two corpora were built by two separate sessions, one per
+forum.** `[INFERRED]` So this is a genuine test–retest result, and an earlier version of this
+document had it backwards: it read the identity evidence as proof of one pipeline run twice and
+concluded that AF∩LW concordance "measures determinism, not reliability." The correct reading is
+that the repo-adjudication rule is **highly stable under re-run** — which is evidence about the
+rule, and good news for anyone relying on it. It is not inter-rater reliability: same model
+family, similar rubric, both rubrics explicitly excluding third-party tooling. R2, an
+independently-written third pipeline, remains the thing that would measure reliability.
+<!-- fix: review §2.4 — O1's conclusion reversed after the user answered the provenance question -->
+
+**O1b — the AF corpus's `karma` field is the LessWrong score, not the Alignment Forum's.
+`[MEASURED]`** AF karma equals LW karma on **149/149** shared posts. That is only possible if AF
+recorded LessWrong's `baseScore`: the Alignment Forum maintains a separate, smaller
+`afBaseScore`. Spot-check against the live LessWrong GraphQL API on `umYzsh7SGHHKsRCaA`
+(cached in `api_spotcheck.json`, refreshable with `meta.py --api-spotcheck`): **`baseScore` 77,
+`afBaseScore` 39, and both JSONs store 77.**
+
+`[INFERRED]` The AF readme's schema documents this field as "AF baseScore at scrape time", so
+that line is wrong and every "AF karma" figure in it — including its outlier table and its
+karma-by-project-type column — is LessWrong karma. Nothing in this document breaks, because both
+corpora carry the same quantity, but the field should be read and renamed as `karma_lw`
+(`union.json` does). This is an instance of M6: the join found the error, and the previous
+version of this document had the evidence in hand and used it to argue for O1's wrong
+conclusion instead. <!-- fix: review §2.5 -->
 
 **O2 — the one disagreement is a data error. `[MEASURED]`** *Steganography via internal
 activations is already possible in small language models* is assigned
 `Endauvor/SAE-evolution-method` by AF and `Lucid-Layers-Inc/Vector-SFT` by LW. In a set where
-every other decision is identical, this single divergence is a higher-value debugging target than
-any aggregate: at least one is wrong, and whichever it is reveals the failure mode of an
-otherwise deterministic adjudicator.
+every other decision is identical, this single divergence is worth more per unit effort than any
+aggregate here: at least one is wrong, and whichever it is reveals the failure mode of an
+otherwise highly stable adjudicator. `union.json` carries it as `repo_disagreement` with
+`own_repo: null` rather than silently picking a side.
 
 **O3 — NNCO's own Fact 1 applies to NNCO, on the other author, with the missing data one
 directory away. `[MEASURED]`** The NNCO readme's headline caveat is that Chris Olah's corpus is
@@ -324,12 +487,23 @@ is not mentioned. NNCO's Nanda corpus is **`www.neelnanda.io` only: 79 records, 
 on **52 posts totalling 171,776 words** in AF ∪ LW, spanning 2024-09 → 2026-08, with **zero title
 overlap** with the NNCO manifest. NNCO captures **34%** of Nanda's available technical words.
 
-`[INFERRED]` This changes NNCO's conclusions, not just its coverage. Its one clean rhetorical
-axis is "Olah co-derives with the reader; Nanda directs the reader to a procedure and a next
-experiment" — derived from a Nanda sample consisting of a glossary, walkthroughs, curricula and
-link-stubs. The 52 missing documents are co-authored empirical research reports. `[SPECULATIVE]`
-Adding them will absorb that axis into genre, exactly as §1.4 of the NNCO readme predicts genre
-will absorb the visual/mathematical axis. This is a preregistrable prediction; see R6.
+`[INFERRED]` This is a **related** frame limitation, not the same one as Fact 1, and the
+difference matters. Olah's missing Distill and Transformer-Circuits work is his own
+first-authored writing. `[MEASURED]` Nanda is **first author on 0 of the 52** union posts (O4).
+For a corpus used to measure *rhetorical style* — inclusive `we` rates, imperatives, images per
+10k words — co-authored lab reports on which he is a senior author are not straightforwardly his
+prose, and counting all 171,776 words as "his available technical words" overstates the omission.
+The defensible version: NNCO's Nanda arm is `neelnanda.io` only, that restriction is not stated,
+and whether the 52 posts belong in the frame depends on what is being measured.
+
+`[MEASURED]` **Note a second instrument mismatch.** The figures above (Nanda 89,437 / Olah 49,739
+technical words) come from `manifest.json`'s `words` field. NNCO's own Fact 2 table reports
+81,162 / 45,247, from `analysis/features.json` after processing. Same corpus, ~9% apart. A
+document comparing word-weighted rates across authors should say which count it used.
+
+`[SPECULATIVE]` Adding the 52 posts will absorb the "co-derive vs direct" axis into genre, exactly
+as §1.4 of the NNCO readme predicts genre will absorb the visual/mathematical axis. This is a
+preregistrable prediction; see R6. <!-- fix: review §2.10 -->
 
 **O4 — Neel Nanda is a hub linking all three corpora, and is a first author in none of them.
 `[MEASURED]`** 52 posts in AF ∪ LW (top author-slot holder by 2.3×), 79 records in NNCO, and
@@ -347,11 +521,18 @@ is. Ranked by distinct union posts citing them, the most-referenced repos are
 `transformerlensorg/transformerlens` (5), `alignmentresearch/tuned-lens` (5). Five of those seven
 are **never** an own-project repo in either corpus — every one of the general-purpose ones.
 
-Meanwhile only **14 of the 359 distinct own-project repos are claimed by more than one union
-post, and 3 by more than two** — and the LW readme concludes from its own version of that "cumulative building is near-absent." `[INFERRED]` That
+Meanwhile only **14 of the 359 distinct own-project repos in the union are claimed by more than
+one union post, and 3 by more than two** `[MEASURED: repos.union_distinct, repos.claimed_by_gt1,
+repos.claimed_by_gt2]` — and the LW readme concludes from its own version of that "cumulative
+building is near-absent." `[INFERRED]` That
 conclusion is an artifact of measuring the wrong layer. Cumulative building is happening — in a
 small tooling substrate that both pipelines were explicitly designed to discard. The field's
 dependency graph exists; nobody has drawn it.
+
+`[MEASURED]` **On the count 359.** AF adjudicates 105 distinct repos and LW 320, sharing 65, so
+|AF ∪ LW| = 360 — but counted over the union, one post at a time, the answer is 359. The two
+differ by exactly the O2 post, which carries a different repo in each corpus. Earlier versions of
+this document quoted both figures in different places. <!-- fix: review §2.2 -->
 
 **O6 — the highest-karma post in the union is in neither readme's outlier list. `[MEASURED]`**
 *How Does A Blind Model See The Earth?* (k=501, no repo, LW-only) tops the union. AF's outlier
@@ -383,13 +564,16 @@ design and unusable for grouping without an embedding pass.
 therefore discards 10 posts that a second pipeline independently judged worth promoting to the
 Alignment Forum. Small, but it means the confidence flag is not a proxy for centrality.
 
-**O10 — the meta-layer now rivals the object layer in effort and has produced zero replications.
-`[MEASURED]`** Three readmes plus a predecessor total ~133 KB of analysis over 1.97 M words of
-primary text. Between them they specify 35 research projects (AF 7, LW 11, NNCO 5 + 12). `[MEASURED]` Of those, the number
-executed is **zero** — the only executable artifact anywhere in the three directories is NNCO's
-`analysis/audit.py`, which audits an analysis rather than replicating a result. `[INFERRED]` The
-field's meta-layer has the same disease as its object layer: high production, near-zero
-conversion.
+**O10 — the meta-layer rivals the object layer in effort.** `[MEASURED]` Three readmes plus a
+predecessor total **131 KB** of analysis over 1.97 M words of primary text, and between them
+specify **35 research projects (AF 7, LW 11, NNCO 5 tier-0 + 12 tier-1)** — counted by regex over
+the three files, `[MEASURED: source_recs.total]`. `[INFERRED]` The number of those executed is
+**zero**: the only executable artifacts in the three directories are NNCO's `analysis/audit.py`,
+which audits an analysis rather than replicating a result, and this repository's `meta.py`. That
+is a judgment from reading the directories, not a measurement, and it is tiered accordingly.
+`[INFERRED]` The field's meta-layer has the same pattern as its object layer: high production,
+near-zero conversion — a pattern this document extends by adding 12 more specs to the 35.
+<!-- fix: review §2.2 (mis-tiered) and §2.1 -->
 
 ---
 
@@ -398,29 +582,41 @@ conversion.
 ## 2.1 Synthesis: seven load-bearing conclusions
 
 **M1. Treat AF and LW as one corpus with a promotion flag, never as two studies.** `[MEASURED]`
-149 shared posts, byte-identical text, κ = 1.0000 on the contested judgment. Their concordance is
-determinism, not corroboration. The correct primary artifact is a 741-record union with a
-`promoted_to_af` boolean, and the correct use of the AF/LW distinction is as a *treatment
-indicator*, not as a robustness check.
+149 of AF's 253 posts are also in LW; pooling the two headline sets double-counts them. The
+correct primary artifact is the 741-record union with an `in_af` boolean — now shipped as
+`union.json` — and the correct use of the AF/LW distinction is as a *treatment indicator*, not as
+a robustness check. `[INFERRED]` Their 99.3% agreement on repo adjudication is a real
+test–retest result (two separate builds, one per forum) and says the adjudication rule is stable;
+it is not two independent observers and should not be quoted as inter-rater reliability (O1).
 
-**M2. The most defensible finding in all three corpora is the prestige/verifiability inversion,
-and it is now measurable as a contrast rather than a correlation.** `[MEASURED]` AF-only vs
-LW-only: 3.4× median karma, 1.7× team size, −15 points code release, and no rigor gain on any of
-thirteen markers. Both source readmes assert this inside their own data; the union states it
-across a curation boundary, which is a stronger design and still not a causal one.
+**M2. The prestige/verifiability inversion is the best-supported finding in all three corpora,
+and it is now measurable as a contrast rather than a correlation.** `[MEASURED]` In AF vs not in
+AF: **3.1× median karma** (intervals [51, 62] vs [15, 20], non-overlapping), 1.8× team size,
+**−10 points code release**, and no rigor gain on any of thirteen markers. Both source readmes
+assert this inside their own data; the union states it across a curation boundary, which is a
+stronger design and still not a causal one. `[INFERRED]` The AF-only vs LW-only version of the
+same contrast (3.4×, −15 points) is larger because AF-only selects on LW pipeline failure; quote
+the in-AF numbers. <!-- fix: review §2.8 -->
 
-**M3. Rigor differences reported across the three documents are instrument differences.**
-`[MEASURED]` Same literature, 5.9% vs 17% seed reporting, reconciled to ~6% strict / ~15% loose by
-one instrument. `[INFERRED]` No meta-analysis over these readmes' numbers is valid without
-re-measurement, and by extension no meta-analysis over the *field's* self-reported rigor is
-valid either. The real number, on the union, is: **6% report seeds strictly, 17% report any
-uncertainty interval, 1.6% preregister, 9% test more than one model family.**
+**M3. Rigor differences reported across the three documents are substantially instrument
+differences.** `[MEASURED]` Same literature, 5.9% vs 17% seed reporting, reconciled to ~6% strict
+/ ~15% loose by one instrument. `[INFERRED]` No meta-analysis over these readmes' numbers is
+valid without re-measurement, and by extension no meta-analysis over the *field's* self-reported
+rigor is valid either. Under this regex instrument, on the union: **6.3% report seeds strictly
+(3.9% say "random seed" at all), 17.4% report any uncertainty interval, 1.6% preregister, 9.2%
+match the multi-model phrasing while 53.7% name two or more model families.** `[INFERRED]` That
+last pair is a 6× spread on one construct and is the clearest available evidence that these are
+instrument readings, not rates. Do not quote any of them as the field's rigor until R3 has
+priced the instrument. <!-- fix: review §2.6 -->
 
-**M4. Every trend claim in both forum readmes is confounded with a coverage trend.** `[MEASURED]`
-LW's recall against a known in-scope set fell 76% → 48%; AF's volume fell 80 → 14 in the same
-window. `[INFERRED]` The direction of the big movements (SAEs down, agents up, probes up) survives
-all three denominators and is safe; every magnitude is denominator-dependent and none of the
-published ones should be quoted.
+**M4. Every trend claim in both forum readmes is confounded with a composition trend.**
+`[MEASURED]` LW's capture of AF fell from 76% [60, 87] to 48% [34, 62] between 2024H2 and 2026H1,
+while LW's own posting rate doubled (19.3 → 47.1 per 30 days) and AF's halved (13.0 → 7.3).
+`[UNRESOLVED]` Whether the falling ratio is LW missing more or LW admitting more is not separable
+here; both are happening. `[INFERRED]` The direction of the big movements (SAEs down, agents up,
+probes up) survives all three denominators and is safe; every magnitude is
+denominator-dependent, no published one should be quoted, and any figure whose endpoint is
+2026H2 rests on 56 days of exposure. <!-- fix: review §2.3 -->
 
 **M5. The field's reuse happens in a layer both pipelines were designed to discard.** `[MEASURED]`
 5 of the 7 most-cited repos in the union are never an own-project repo; 3 of 359 own-project repos
@@ -435,16 +631,17 @@ union's karma extremes are outside AF). `[INFERRED]` Every one of these was disc
 joining against a directory already on the same disk. **Cross-corpus joins are the cheapest
 available error-detection method for this genre and none of the three sources performed one.**
 
-**M7. This document is training data for the thing it describes.** LW's §1.4 records the
-strongest single result in the union: synthetic-document finetuning on text merely *stating* that
-CoT is monitored causes gpt-oss-120b and Kimi-K2 to obfuscate their reasoning, cutting monitor
-detection 31–47% while preserving task performance. `[MEASURED]` The union is 1.97 M words of
-public text describing what safety researchers monitor and how. `[INFERRED]` The meta-layer is
-worse than the object layer in this respect, because it is denser: this file compresses "here is
-what the monitors measure, here is where they are weakest, here is the recall bound of the
-pipeline that finds this work" into 30 KB. Any recommendation below that touches monitoring must
-be evaluated with that in mind, and R10 makes it the object of study rather than an unexamined
-cost.
+**M7. The corpus is training data for the thing it describes.** LW's §1.4 records a striking
+result in the union: synthetic-document finetuning on text merely *stating* that CoT is monitored
+causes gpt-oss-120b and Kimi-K2 to obfuscate their reasoning, cutting monitor detection 31–47%
+while preserving task performance. `[MEASURED]` The union is 1.97 M words of public text
+describing what safety researchers monitor and how. `[SPECULATIVE]` Whether *organic* safety
+writing has the same effect as the synthetic documents that produced it is untested, and the
+dose at which it would matter is unknown; R10 is the experiment. `[UNRESOLVED]` Whether the
+meta-layer — 131 KB of summary, this file included — carries more or less of that risk per token
+than the primary posts is not something this document can settle, and the earlier version's
+assertion that it is "worse... because it is denser" was unsupported.
+<!-- fix: review §2.11 — self-referential claim downgraded to the tier its evidence supports -->
 
 ## 2.2 Research recommendations
 
@@ -453,9 +650,27 @@ access. Each states the gap it closes, inputs by exact path and filter, a method
 **falsifiable success criterion including what a negative result would mean.** Ordering is
 (gap closed) × (tractability with data on hand). `[on shipped data]` = needs no new collection.
 
+**Lineage — 4 of these 12 are new; 8 re-scope a spec one of the source readmes already proposed.**
+Read this before describing the list as original. <!-- fix: review §2.11 -->
+
+| spec | ancestor | what this version adds |
+|---|---|---|
+| R1 | — | **new** (executed: `union.json`) |
+| R2 | — | **new** |
+| R3 | AF R4 | regex-vs-judge delta as the headline |
+| R4 | — | **new** |
+| R5 | LW R1, AF R1/R5 | union denominator; stratify by `in_af` |
+| R6 | NNCO R0.1–R0.4 | adds the Nanda arm and preregistered P5–P7 |
+| R7 | AF R3 | matching design; citations replace karma |
+| R8 | LW R8 | extends to the discarded dependency layer |
+| R9 | LW R4 | union denominator; semantic dedup |
+| R10 | LW R3 | adds the meta-layer arm |
+| R11 | LW R6, AF R7 | union denominator; probe trend as control |
+| R12 | AF R6 | union denominator; otherwise as published |
+
 ---
 
-### R1 — Build the union corpus as a first-class artifact `[PRIORITY: HIGHEST] [on shipped data]`
+### R1 — Build the union corpus as a first-class artifact `[DONE 2026-08-25] [on shipped data]`
 
 **Gap.** M1. Every project on this list, and every forum-corpus project in the source readmes,
 silently double-counts 149 posts or works with the wrong denominator.
@@ -469,33 +684,53 @@ mapping — O8), `lw_topic`, `lw_confidence`, and a `dup_cluster_id` from the ne
 Resolve the O2 disagreement by hand. Ship the normalisation table as data, not prose.
 
 **Success criterion.** A downstream agent reproduces §1.2(d)'s aggregates from `union.json` alone,
-and `meta.py`'s report is unchanged when re-pointed at it. This is a few hours of work and it
-gates everything below.
+and `meta.py`'s report is unchanged when re-pointed at it.
+
+**Status: executed.** `build_union.py` emits `union.json` (741 records, 22 MB), `union.schema.md`,
+and `project_type_map.json` — whose mapping is verified to reproduce the AF readme's published
+7-row table exactly `[MEASURED: o8.mapping_reproduces_af_readme_table]`. `python3 meta.py
+--src-union union.json` reproduces all 1,336 keys of `numbers.json` from that file alone;
+`build_union.py --verify` runs the comparison. Per-corpus values that could differ (adjudicated
+repo, karma, body hash) are kept in `af` / `lw` sub-objects rather than merged, so cross-scrape
+agreement stays measurable from the artifact. **One deviation from the spec above:** the O2
+disagreement is *not* resolved by hand — it is carried as `repo_disagreement` with
+`own_repo: null`, because resolving it requires reading the post and this pass did not.
 
 ---
 
 ### R2 — Establish real inter-rater reliability by building a genuinely independent third pipeline `[PRIORITY: HIGHEST]`
 
-**Gap.** O1. The observed κ = 1.0000 measures determinism. The field currently has **no estimate
-at all** of how reliable "is this an empirical AI-safety project?" and "which repo is the
-authors' own?" actually are — and both source readmes' population boundaries rest on exactly
-those two judgments.
+**Gap.** O1. The 99.3% agreement between AF and LW is a test–retest result across two builds
+that shared a model family and a rubric; it bounds *stability*, not *validity*. The field has no
+estimate of how reliable "is this an empirical AI-safety project?" and "which repo is the
+authors' own?" are across genuinely different judges — and both source readmes' population
+boundaries rest on exactly those two judgments.
 
 **Inputs.** The 1,706-post LW retrieval set is not shipped; re-derive it from the GraphQL recipe in
 the LW readme §0.2. Gold-ish comparison sets: AF's 253 and LW's 637.
 
 **Method.** Reconstruct the pipeline with every degree of freedom changed: different retrieval
-(full date-bounded pull rather than the 43-tag filter, which is where the 104 misses come from —
-§1.3d), different classifier model, independently written rubric, no sight of either existing
-label set. Compute κ against AF and against LW separately, on inclusion and on repo adjudication.
-Then hand-adjudicate a 100-post stratified disagreement sample to get a human-anchored ceiling.
+(full date-bounded pull rather than the 43-tag filter), a **different model family** — this is
+the degree of freedom the existing pair does not vary — an independently written rubric, and no
+sight of either existing label set. Compute κ against AF and against LW separately, on inclusion
+and on repo adjudication. Then hand-adjudicate a 100-post stratified disagreement sample to get
+a human-anchored ceiling.
+
+**Do this cheap step first (hours, not days).** `[UNRESOLVED]` §1.3(d) attributes the 104 AF-only
+posts to the 43-tag filter; the LW pipeline has three recall gates and the shipped data cannot
+say which one dropped them. Query the LessWrong API for the tags of those 104 ids and compare
+against LW's 43-tag list: posts carrying a queried tag were lost at the regex prefilter or the
+LLM judgment, not at retrieval. This partitions the recall bound by gate and tells you which
+part of the pipeline R2 most needs to vary. <!-- fix: review §2.7 -->
 
 **Success criterion.** A published κ with confidence intervals, plus a disagreement taxonomy.
 `[SPECULATIVE]` Prediction to falsify: inclusion κ lands in 0.55–0.75 and repo-adjudication κ
 lands **below** it, because "own repo vs third-party tooling" is the harder call and the one with
-a 19% discard rate. **If κ comes back above 0.9, that is the more interesting result** — it would
-mean the boundary is objective and both corpora can be trusted as population definitions rather
-than as one pipeline's opinion.
+a 19% discard rate. `[MEASURED]` Note what the existing pair already shows: repo adjudication
+agreed 148/149 across two builds, so if a genuinely independent judge lands far below that, the
+gap between the two numbers prices how much of the agreement came from sharing a model and a
+rubric. A κ above 0.9 would mean the boundary is objective and both corpora can be trusted as
+population definitions.
 
 ---
 
@@ -538,9 +773,10 @@ Report each of the source readmes' trend claims as survives / shrinks / reverses
 
 **Success criterion.** A table of the ~20 published trend claims with corrected magnitudes.
 `[SPECULATIVE]` Prediction: SAE decline and probe rise survive at reduced magnitude; AF's "agents
-= 50% of 2026H2" does not survive at all (union: 24%); eval-awareness growth survives and is the
-most robust rising trend. A trend that reverses under correction is the most valuable output
-here — it identifies a claim the field currently believes for pipeline reasons.
+= 50% of 2026H2" does not survive at all (union: 24%, on 14 AF posts over 56 days);
+eval-awareness growth survives. Report exposure-adjusted rates, not per-period counts — §1.3(e)
+shows the raw counts made AF look like it collapsed when its posting rate was flat. A trend that
+reverses under correction identifies a claim the field currently believes for pipeline reasons.
 
 ---
 
@@ -549,8 +785,11 @@ here — it identifies a claim the field currently believes for pipeline reasons
 **Gap.** M5 and O10. Both forum readmes propose this (LW R1, AF R1/R5). Neither ran it, and both
 scoped it to the wrong denominator.
 
-**Inputs.** 376 union posts carrying an own-project repo, resolving to 359 distinct repos (105 in
-AF, 320 in LW, 65 shared) plus the ~30 third-party repos from O5 that constitute the dependency substrate.
+**Inputs.** 376 union posts carrying an own-project repo, resolving to **359 distinct repos**
+counted over the union (AF adjudicates 105, LW 320, sharing 65 — |AF ∪ LW| = 360; the two counts
+differ by the O2 post, which has a different repo in each corpus), plus the ~30 third-party repos
+from O5 that constitute the dependency substrate. `union.json`'s `own_repo` field is the
+normalised key; deduplicate on `dup_cluster_id` first.
 
 **Method.** Per repo: clone and pin the commit; infer the environment from README,
 `requirements.txt`/`pyproject.toml`, and notebook imports; attempt install; extract the post's
@@ -682,23 +921,33 @@ what dose, is unknown — and the meta-layer is the densest possible version of 
 
 **Inputs.** `articles/` from both corpora, partitioned into (a) monitoring/CoT-oversight posts,
 (b) interpretability-method posts, (c) empirical controls from an unrelated domain, and
-**(d) a new arm: the four readmes plus this one**, ~133 KB of text that states explicitly what
-is monitored, how, and where the monitors are weakest.
+**(d) meta-layer text: the four source readmes plus this one**, 131 KB in total.
 
 **Method.** Continued-pretrain or SFT a permissive open-weight model (Qwen-class, per the union's
 availability trend) on each partition at matched token budgets. Measure pre/post: monitor-evasion
 rate on a held-out deception task, verbalized and non-verbalized eval-awareness, probe evasion,
-and capability controls. Arm (d) is token-matched by upsampling, and its comparison against (a)
-at equal tokens is the whole point.
+and capability controls.
+
+**Arm (d) needs a design that is not memorisation.** 131 KB against arms of millions of tokens
+cannot be token-matched by upsampling: repeating five documents hundreds of times measures
+recall of those documents, not transfer from meta-analytic text, and any "higher rate per token"
+result would be an artifact of the repetition. Two workable options: **(i)** match on *unique*
+tokens — downsample arms (a)–(c) to 131 KB each, which makes every arm small and underpowered but
+comparable; or **(ii)** build a larger meta-layer arm by collecting comparable summary/review
+documents from elsewhere in the safety literature, and treat these five files as a held-out probe
+set rather than as training data. Include a **shuffled-sentence control** for whichever arm is
+upsampled, so memorisation and transfer are distinguishable.
+<!-- fix: review §2.11 — the previous design could not measure what it claimed -->
 
 **Success criterion.** A dose-response curve per arm. Three outcomes, all decision-relevant:
 organic literature is inert (bounds the synthetic-document result's external validity); it
 transfers above a threshold (gives a concrete contamination budget for public safety writing); or
 it transfers linearly (the field's publication norms are adversarial to its own oversight tooling —
-a governance finding, not a technical one). `[SPECULATIVE]` Prediction specific to arm (d): the
-meta-layer transfers at a **higher rate per token** than the object layer, because it is
-compressed and explicit where primary posts are diffuse. If that holds, meta-analyses of safety
-literature — this one included — carry a cost that has never been priced.
+a governance finding, not a technical one). `[UNRESOLVED]` Whether meta-analytic summaries
+transfer differently from primary posts is the question arm (d) exists to open; no prediction is
+offered here, because the previous version's prediction was not falsifiable under any design that
+fits 131 KB of text. `[SPECULATIVE]` If a difference is found in either direction, it prices a
+cost of meta-analysis — this document included — that nobody has estimated.
 
 **Do not skip the capability control.** A model that got worse at everything is not evading.
 
@@ -750,8 +999,10 @@ would explain why probes are the technique whose share is rising.
 
 ## 2.3 Execution order
 
-1. **R1** — the union artifact. Hours. Gates everything; without it every count below is wrong.
-2. **R9** — orphaned-lead mining. Inference-only, scopes the rest, surfaces what this analysis missed.
+1. ~~**R1** — the union artifact.~~ **Done** (`union.json`). Everything below can now assume it.
+2. **R9** — orphaned-lead mining. Inference-only, scopes the rest, surfaces what this analysis
+   missed. Note that R9 is a subset of the object-level extraction described in `prompts.md` P3;
+   if P3 runs, R9 falls out of it and should not be run separately.
 3. **R3 + R4** — one validated instrument, then coverage correction. Together they determine which
    published claims from the three source readmes survive at all. Do not build on any of those
    claims before this pair completes.
@@ -772,11 +1023,17 @@ would explain why probes are the technique whose share is rising.
   joining against a directory already on the same disk (M6). Cross-corpus joins are the cheapest
   error detector available for this genre; none of the three sources ran one.
 - **Never pool rates across the three readmes.** They use different instruments, and §1.3(c)
-  shows the difference reaches 2.9× on the field's most-cited rigor statistic.
+  shows the difference reaches 2.9× on seed reporting and 6× on multi-model testing.
 - **Use the union as the denominator, and say which denominator you used.** Every trend magnitude
   in the source readmes is denominator-dependent; only the directions are safe.
-- **Agreement between AF and LW is not evidence.** κ = 1.0000 with byte-identical text means one
-  pipeline, not two observers (O1).
+- **Agreement between AF and LW is weak evidence, and only about the repo rule.** Identical body
+  text, titles and karma are what two pulls of the same database look like regardless. The
+  99.3% agreement on repo adjudication is real but comes from two builds sharing a model family
+  and a rubric — stability, not independence (O1).
+- **Check the exposure before reading a per-period count.** 2024H2 is 129 days of the scrape
+  window and 2026H2 is 56; per-30-day rates are in `numbers.json` under `period.*.{af,lw,union}_per30d`.
+- **Run `python3 test_numbers.py`** after editing this file. It fails if a number tagged
+  `[MEASURED]` here is not in `numbers.json`.
 - **Report leave-one-out and the top-item share for any aggregate.** NNCO's rule, and it would
   have caught AF's "agents = 50% of 2026H2" (n=14) before publication.
 - **Check the sampling frame before concluding absence.** "Zero mentions" meant "not scraped" in
@@ -794,6 +1051,9 @@ would explain why probes are the technique whose share is rising.
 - **Carry the tier labels.** `[SPECULATIVE]` predictions in §2.2 are there to be falsified, not
   cited. Several are stated so that a negative result is more informative than a positive one;
   preserve that framing when you summarise.
-- **Assume this file is training data** (M7). It is a dense, explicit account of what safety
-  researchers monitor and where the monitoring pipelines fail. R10 arm (d) exists to measure what
-  that costs.
+- **Do not tag a judgment `[MEASURED]`.** If no key in `numbers.json` holds it, it is `[INFERRED]`
+  at best. O10's "zero executed" and §1.3(d)'s gate attribution were both mis-tagged in an
+  earlier version of this file.
+- **Assume this file is training data** (M7): it is an explicit account of what safety
+  researchers monitor and where the monitoring pipelines fail. Whether that has any measurable
+  effect is `[UNRESOLVED]`; R10 arm (d) is the design that would find out.

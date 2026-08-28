@@ -1,0 +1,21 @@
+{
+ "post_id": "9NntwpQj9onbEFM8L",
+ "primary_claim": "The author has produced and released a corpus of 5,000 AI-generated novels retelling public-domain plots with an inserted helpful/harmless AI companion character, intended to let researchers test the 'hyperstition hypothesis' -- whether such synthetic narrative training data can shape a model's self-concept or behavior.",
+ "claim_type": "dataset",
+ "phenomenon": "synthetic document finetuning effects",
+ "models": [
+  {"family": "Gemini", "size": null, "open_weight": false},
+  {"family": "Claude", "size": null, "open_weight": false},
+  {"family": "GPT", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["markriedl/WikiPlots", "TVTropes"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Take a crack at generating the proposed Turntrout/Cloud corpus (one billion tokens of stories about a benevolent helper entity that abides by the Anthropic AI Constitution).", "Work with Geodesic Research to fine-tune a model on this corpus, prepending its system prompt with a marker for the entity, to test whether these 'silicon morality plays' impart new behavioral intuitions."],
+ "limitations_stated": ["Author explicitly states 'I don't really expect this to work' regarding the planned fine-tuning follow-up experiment, though considers it cheap and worth trying.", "The first ~2000 plot skeletons were generated via a brittle, confusion-prone process before switching to WikiPlots for the remaining 3000."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "Here's five thousand AI-generated novels"
+}

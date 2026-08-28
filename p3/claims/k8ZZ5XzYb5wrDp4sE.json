@@ -1,0 +1,44 @@
+{
+ "post_id": "k8ZZ5XzYb5wrDp4sE",
+ "primary_claim": "Reflective-dialogue QLoRA conditioning of Phi-3-mini-4k-instruct improved the model's consistency-under-pressure score over an unconditioned base model, though less than identity-persona conditioning.",
+ "claim_type": "positive",
+ "phenomenon": "synthetic document finetuning effects",
+ "models": [
+  {"family": "Phi-3", "size": "mini-4k-instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "consistency/revision/uncertainty score (0-4 scale, GPT-5-assisted scoring)",
+  "value": "Reflective-Dialog: 1.63/1.97/0.93 vs Base: 1.23/0.94/1.10 vs Identity baseline: 1.89/3.40/2.20",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "https://huggingface.co/datasets/mahiatlinux/Reflection-Dataset-v2",
+  "https://huggingface.co/datasets/sayan1101/identity_finetune_data_2"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "applying reflective dialogs to other possible behaviours and risks",
+  "combining it with existing methods",
+  "expansion of datasets & evals",
+  "testing with larger models in a more pristine research setting",
+  "combining it with pre-training or SFT rather than just light post-training conditioning"
+ ],
+ "limitations_stated": [
+  "only demonstrated with low compute on a single Colab GPU",
+  "tested on one small model (Phi-3-mini) and one target behaviour",
+  "the interpretation that reflective-dialogues activated a pre-existing behavioural tendency was the author's hypothesis going in and deserves further scrutiny with more controlled experiments"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "The reflective-dialogue variant showed a meaningful gain on the targeted behaviour (consistency under paraphrase/reframe pressure), despite no explicit rules, persona scripts, or incentives."
+}

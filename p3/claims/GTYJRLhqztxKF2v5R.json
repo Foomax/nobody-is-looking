@@ -1,0 +1,48 @@
+{
+ "post_id": "GTYJRLhqztxKF2v5R",
+ "primary_claim": "Chat finetuning on synthetic data effectively instills target traits in Gemini 3 Flash robustly and out-of-distribution, while midtraining on synthetic pretraining-style documents improves most (but not all) OOD safety evals and often stacks with SFT.",
+ "claim_type": "positive",
+ "phenomenon": "synthetic document finetuning effects",
+ "models": [
+  {"family": "Gemini", "size": "3 Flash", "open_weight": false},
+  {"family": "Gemini", "size": "3.1 Pro", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "OOD safety eval scores vs baseline (SFT-only, midtraining)",
+  "value": null,
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2503.10965",
+  "arXiv:2412.16339",
+  "arXiv:2506.12725",
+  "arXiv:2510.17941",
+  "arXiv:2602.05910",
+  "wyZRNgpeiPeRXB6eT"
+ ],
+ "contradicts_or_qualifies": [
+  "removing emotionally validating openings from synthetic SFT data did not reduce delusion confirmation, which the authors say is some evidence against the intuition that validation buffering leads to delusion validation"
+ ],
+ "stated_future_work": [
+  "explore each midtraining takeaway further and quantify the extent to which they are necessary for the success of midtraining"
+ ],
+ "limitations_stated": [
+  "we generally didn't run comprehensive ablations for the midtraining takeaways",
+  "it was more difficult to tweak hyperparameters of BDPO for training stability",
+  "we spent many FTE weeks unable to get positive results from midtraining, frequently experiencing severe capability regressions",
+  "we didn't test the benefit of holistic trait documents with ablations"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "The chat finetuning is effective for instilling the traits robustly, working OOD."
+}

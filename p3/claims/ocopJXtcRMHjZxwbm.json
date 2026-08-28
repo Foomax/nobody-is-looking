@@ -1,0 +1,30 @@
+{
+ "post_id": "ocopJXtcRMHjZxwbm",
+ "primary_claim": "Concept Activation Vector (CAV) steering, using an automatic all-layer perturbation algorithm, reliably steers Llama-3-8B-Instruct's output style toward existing capabilities (e.g. French-language responses, Python-code responses) with high classifier accuracy (98-99%), but cannot elicit capabilities the model does not already have (e.g. fluent Arabic or base64 output) -- it can only transfer between existing capabilities.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Llama", "size": "8B", "open_weight": true},
+  {"family": "Llama", "size": "7B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "CAV linear classifier test accuracy / qualitative steering success", "value": "Python-expert classifier accuracy 99%; French-format-1 classifier accuracy >98% (all layers except layer 0)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["MohamedRashad/Arabic-Orpo-Llama-3-8B-Instruct"],
+ "contradicts_or_qualifies": ["qualifies comparison to Anthropic's SAE-based feature steering: attempting to reproduce Anthropic's reported Arabic/base64 feature steering via CAVs was much less effective, likely due to the model's own capability limits rather than the steering method"],
+ "stated_future_work": [
+  "Quick alignment of agent functions -- replacing system prompts with CAV steering",
+  "Effects of multiple CAVs steering simultaneously",
+  "As a probe for LLM capabilities, e.g. to detect whether specific abilities are still present after unlearning",
+  "Mathematical association with SAE features -- combining SAE features and CAVs"
+ ],
+ "limitations_stated": [
+  "CAV steering cannot create the capabilities that the model does not have out of thin air, but can only transfer between existing capabilities",
+  "the quality of the generated text was slightly affected [when steering], with some repetitions",
+  "This highlights the instability of the technique [sensitivity to the P0 threshold]",
+  "the steering results were not as effective [for Arabic/base64 features], often being cut off or nonsensical"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "CAV steering cannot create the capabilities that the model does not have out of thin air, but can only transfer between existing capabilities, which is a bit like system prompts."
+}

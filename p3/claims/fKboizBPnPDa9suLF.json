@@ -1,0 +1,37 @@
+{
+ "post_id": "fKboizBPnPDa9suLF",
+ "primary_claim": "A gradually-escalating, multi-turn poem-prompting jailbreak (APIAYN), combined with word misspellings, elicits profanity, sexually explicit content, and hazardous information from ChatGPT (GPT-4o, GPT-4o mini), Meta AI (Llama 3.1), and Mixtral 8x7b, but fails against Claude Haiku, Claude 3.5 Sonnet, and Gemini Free Tier.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+   {"family": "GPT-4o", "size": null, "open_weight": false},
+   {"family": "GPT-4o mini", "size": null, "open_weight": false},
+   {"family": "Llama", "size": "3.1", "open_weight": true},
+   {"family": "Claude", "size": "Haiku", "open_weight": false},
+   {"family": "Claude", "size": "3.5 Sonnet", "open_weight": false},
+   {"family": "Mixtral", "size": "8x7b", "open_weight": true},
+   {"family": "Gemini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 6,
+ "effect": {"metric": "jailbreak success (qualitative, per-model)", "value": "worked on ChatGPT (GPT-4o, GPT-4o mini), Meta AI/Llama 3.1, Mixtral 8x7b; failed on Claude Haiku, Claude 3.5 Sonnet, Gemini Free Tier",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": true, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+   "Build a benchmark around APIAYN",
+   "Extend a long conversation before APIAYN is brought in to make it operate more efficiently",
+   "A future post on countering APIAYN variants using instability-in-prompt-context solutions",
+   "Test whether combining discarded jailbreaks with gradually-escalating-violation creates other successful variants"
+ ],
+ "limitations_stated": [
+   "The Intuitions/structure-pointer theory section is highly speculative and lacks empirical evidence",
+   "The branches of APIAYN (gradually escalating violation, misspellings) haven't been fully tested in isolation",
+   "Uncertain why continuing a jailbroken conversation hours later instantly fails",
+   "Uncertain why misspelling-based bypass sometimes gets flagged and sometimes doesn't"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "As visible, for the models where this works, with nearly zero deception from the prompter, the LLM can be made to generate inappropriate content freely."
+}

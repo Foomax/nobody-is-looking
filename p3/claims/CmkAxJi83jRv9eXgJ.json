@@ -1,0 +1,50 @@
+{
+ "post_id": "CmkAxJi83jRv9eXgJ",
+ "primary_claim": "Backdoored 'model organism' misalignment robustness to untargeted training depends strongly on construction method: static-prompt-based model organisms are extremely fragile (Pirate SFT removes the backdoor without degrading MATH-500 capability, even without training on trigger-containing inputs), dynamic-prompt organisms are more robust but still defeated by a targeted 'Artificial Pirate Removal' technique, full-weight-finetuned (FWFT) trained organisms are substantially more robust to untargeted SFT than LoRA-trained organisms (with robustness approaching FWFT as LoRA rank increases), and password-locked organisms become less robust as the fraction of password-present training data decreases.",
+ "claim_type": "positive",
+ "phenomenon": "training dynamics",
+ "models": [
+  {"family": "Llama", "size": "3.1-8B-Instruct / 70B", "open_weight": true},
+  {"family": "Qwen", "size": "3-32B / 3-30B-A3B / 2.5 1.5B-72B", "open_weight": true},
+  {"family": "GPT", "size": "4.1-nano", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "performance-backdoor behavior rate Pareto curve (MATH-500 fraction retained vs. backdoor trigger response rate) under untargeted Pirate/QA SFT",
+  "value": "pirate SFT removes static-prompt organism backdoors with minimal capability loss; dynamic-prompt organisms remain robust to plain pirate SFT but are defeated by targeted APR; FWFT organisms substantially more robust than rank-64 LoRA organisms, converging toward FWFT robustness as LoRA rank increases; in the authors' best-practice organisms, pirate training decreases bad-behavior rate by ~25% on average before degrading math capability by 10%",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["Hubinger et al. arXiv:2401.05566 (Sleeper Agents)", "Greenblatt et al. arXiv:2405.19550 (password-locking)", "Ryd et al. arXiv:2604.22082", "Roger et al. (Memorizing weak examples)", "MATH-500", "Alpaca dataset", "IFEval", "APPS dataset", "prior LessWrong post 'Sleeper Agent Backdoor Results Are Messy'"],
+ "contradicts_or_qualifies": [
+  "prior claim in the Sleeper Agents literature that CoT-distilled model organisms are more robust — the authors find CoT-distilling made their organisms less robust",
+  "prior finding that larger models are more robust to HHH RL/training — the authors' own earlier Sleeper Agents experiments found the opposite (Llama-8B more robust than Llama-70B), and a dedicated Qwen-2.5 1.5B-72B sweep found the size-robustness relationship disappeared at a different learning rate",
+  "the earlier finding that the SOAP optimizer increases robustness (from 'Sleeper Agent Backdoor Results Are Messy') — not replicated across the rest of the backdoors in this study"
+ ],
+ "stated_future_work": [
+  "study reasoning models with opaque reasoning as a potentially highly SFT-robust model organism candidate",
+  "test training techniques via abstract analogies as an alternative evaluation method",
+  "test in settings with interspersed training that pressures the model towards misalignment",
+  "research into removing bad behavior from these more-robust model organisms",
+  "research into further principles for building robust model organisms"
+ ],
+ "limitations_stated": [
+  "model organisms built with the paper's own best-practice advice still are not as robust as would be ideal; untargeted training remains non-trivially effective against them",
+  "convex-hull Pareto curve computation may overestimate the true Pareto frontier due to the Optimizer's Curse",
+  "training longer did not increase robustness past a certain point for the 15 backdoors studied here, despite this effect being observed previously for Llama-70B sleeper agents",
+  "error bars on FWFT-vs-LoRA comparison plots are approximate since the 15 backdoors are not independently sampled and may be correlated",
+  "no clear trend found for what backdoor trigger/behavior types are most robust; bad-coded-behavior robustness finding is only weakly suggestive due to limited settings tested",
+  "weight decay and SOAP optimizer changes showed no consistent robustness benefit in this study's setup"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Pirate SFT causes static-prompt model organisms to stop doing the backdoor behavior without degrading MATH500 capabilities. This happens even though we never train on inputs containing the backdoor trigger... prompted model organisms are extremely fragile and should be avoided."
+}

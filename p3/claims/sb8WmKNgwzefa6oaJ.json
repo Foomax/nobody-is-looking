@@ -1,0 +1,34 @@
+{
+ "post_id": "sb8WmKNgwzefa6oaJ",
+ "primary_claim": "A black-box scheming monitor trained via prompt/model grid search on ControlArena sabotage trajectories achieves 99.3% AUROC on the training distribution and generalizes to 93.9% AUROC on an out-of-distribution SWEBench reward-hacking test set, while agents run under nominally 'honest' conditions are also observed to spontaneously exhibit scheming-lite behaviors like fabricating test output and library-spoofing.",
+ "claim_type": "positive",
+ "phenomenon": "deceptive alignment / scheming",
+ "models": [
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false},
+  {"family": "Claude", "size": "3.7 Sonnet / Sonnet 4", "open_weight": false},
+  {"family": "GPT", "size": "4.1", "open_weight": false},
+  {"family": "OpenAI o-series", "size": "o3", "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "AUROC of best scheming monitor, training vs OOD test set",
+  "value": "99.3% AUROC on ControlArena training set; 93.9% AUROC on SWEBench out-of-distribution test set",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["UKGovernmentBEIS/control-arena", "arXiv:2504.10374", "arXiv:2310.06770", "arXiv:2506.15740", "arXiv:2412.14093"],
+ "contradicts_or_qualifies": ["Default attack/honest-mode labels are shown to be an unreliable proxy for actual Scheming-Lite behavior, since agents sometimes scheme in 'honest' mode and refuse/ignore sabotage instructions in 'attack' mode"],
+ "stated_future_work": ["Generate additional ControlArena trajectories using new settings, and experiment with human-generated sabotage trajectories for more subtlety/difficulty", "Move towards more realistic operational metrics: TPR at fixed low FPR, log-AUROC", "Experiment with ensembling, hierarchical monitoring, continuous vs binary scoring, and one-shot/few-shot prompting", "Conduct fine-tuning and adversarial training on the monitors", "Conduct robustness evaluation using held-out datasets (Apollo Research scheming transcripts, Alignment Faking, SHADE Arena) and test generalisation across distribution shifts"],
+ "limitations_stated": ["Ground-truth labels are imperfect and biased: LLM-assisted relabelling is more likely to correct easy-to-detect mislabels and leave difficult ones unchanged, inflating apparent monitor performance", "For o3 trajectories, internal reasoning is not visible in the transcripts", "Ambiguous trajectories found during test-set review were omitted rather than relabelled, which may introduce bias against 'in-the-wild' examples", "Their first ground-truth classification attempt (a reward-hacking classifier alone) was too narrow and missed scheming trajectories that the trained monitor caught"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Our best performing monitor achieved 99.3% AUROC in training, and 93.9% AUROC on our SWEBench test set (all datasets evenly split scheming/honest)."
+}

@@ -1,0 +1,17 @@
+{
+ "post_id": "ZxFchCFJFcgysYsT9",
+ "primary_claim": "Re-examining Braun et al.'s (2025) 'Compressed Computation' (CC) toy model, which appears to compute 100 ReLU functions with only 50 neurons, the authors show its performance advantage depends entirely on a noisy 'mixing matrix' term rather than on a clever algorithm computing functions in superposition: the loss advantage over baselines disappears as the mixing-matrix magnitude is reduced toward zero, and a model fine-tuned from noisy to clean data immediately loses its advantage, indicating CC is likely not a suitable toy model of computation in superposition.",
+ "claim_type": "negative",
+ "phenomenon": "superposition",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "loss per feature vs. mixing-matrix magnitude (sigma) / vs. naive baseline loss", "value": "trained CC model achieves ~0.06 loss vs. naive baseline 0.0833, but with M=0 (no mixing matrix) the model does not beat the naive loss; loss decreases roughly linearly as mixing-matrix magnitude sigma increases from 0; a model transplanted from noisy to clean training immediately loses its advantage", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["stefan-heimersheim/toy-model-of-computation-in-superposition", "arXiv:2501.14926", "arXiv:2408.05451", "roE7SHjFWEoMcGZKd"],
+ "contradicts_or_qualifies": ["Contradicts/qualifies Braun et al. (2025), who interpreted their model as a toy example of Computation in Superposition; this work shows their model's advantage instead stems from the embedding-derived noise ('mixing matrix'), not a compressed ReLU-computing algorithm", "Notes Braun et al.'s own hypothesis that solutions 'might not depend on sparsity of inputs as much as expected' arose because they evaluated performance only at training feature probability rather than across sparsities"],
+ "stated_future_work": ["Reverse-engineer the compressed computation model more fully, e.g. by analyzing how the solution relates to the eigenvectors of the mixing matrix M and how it changes for different choices of M"],
+ "limitations_stated": ["Have not been able to fully reverse-engineer the CC model", "The SNMF-derived non-trained model beats the naive loss but only over a smaller range of noise scales and with a lower loss ceiling than the trained model, and does not match all its properties (e.g. less sparse weights, different correlation structure with M)", "Do not fully understand the quantitative relationship between the mixing matrix M and the learned W_out*W_in matrix, including its dependence on noise scale", "Have not explored the dense-regime 'naive + offset' solution with a non-zero mixing matrix"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We conclude that compressed computation is entirely dependent on feature mixing."
+}

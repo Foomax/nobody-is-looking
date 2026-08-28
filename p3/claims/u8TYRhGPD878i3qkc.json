@@ -1,0 +1,20 @@
+{
+ "post_id": "u8TYRhGPD878i3qkc",
+ "primary_claim": "In a small appendix experiment, fine-tuning LLaMA-3-70B-instruct on neutral instruction-following data (Alpaca-GPT4) produced little measurable drift toward misalignment, while fine-tuning gpt-4o-mini on the same data showed misalignment first increase then decrease, results the authors call mixed and inconclusive with respect to the proposed 'Alignment Drift Hypothesis.'",
+ "claim_type": "null",
+ "phenomenon": "training dynamics",
+ "models": [
+  {"family": "Llama", "size": "70B (Llama-3-70B-instruct)", "open_weight": true},
+  {"family": "GPT-4o-mini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "misalignment score (email-scenario dilemma) vs. training steps on neutral instruction data", "value": "little drift for LLaMA-3-70B-instruct; misalignment rose then fell for gpt-4o-mini", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["vicgalle/alpaca-gpt4", "arXiv:2505.02709", "arXiv:2310.03693", "arXiv:2505.13787"],
+ "contradicts_or_qualifies": ["Prior work (Arike et al. 2025 on inference-time goal drift; Qi et al. 2023 on fine-tuning removing alignment training) suggesting AI systems drift into misalignment by default; the author's own small experiment and the broader observation that current LLMs don't drift into misalignment by default in practice complicate this picture"],
+ "stated_future_work": ["Further empirical work to explore whether the Alignment Drift Hypothesis holds, especially for more powerful future AI systems.", "Investigate why drift happened when fine-tuning gpt-4o-mini but not LLaMA-70B."],
+ "limitations_stated": ["Our results were mixed and inconclusive.", "Misalignment increased then decreased for gpt-4o-mini, which isn't consistent with the drift hypothesis, and the model-dependent difference is unexplained.", "The toy quantitative models (evolution and gradient descent simulations) are illustrative simplifications, not validated against real training runs."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Misalignment increases, and then decreases again, which isn't consistent with our drift hypothesis."
+}

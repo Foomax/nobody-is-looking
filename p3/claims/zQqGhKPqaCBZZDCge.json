@@ -1,0 +1,32 @@
+{
+ "post_id": "zQqGhKPqaCBZZDCge",
+ "primary_claim": "An automated 'probe-prompting' pipeline that measures feature activation responses to concept-varying prompts and groups features into concept-aligned supernodes achieves 0.53 Replacement / 0.83 Completeness on Neuronpedia metrics for 'capitals' attribution-graph circuits in Gemma-2-2B, outperforming geometric (cosine-only, layer-adjacency) clustering baselines on behavioral-coherence interpretability metrics, with entity-swap tests showing early-layer features generalize much more (~80-92% overlap) than late-layer features (~0-50%).",
+ "claim_type": "method",
+ "phenomenon": "attribution / attribution patching",
+ "models": [
+  {"family": "Gemma-2", "size": "2B (CLT-HP transcoder)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "Replacement / Completeness scores (Neuronpedia) for concept-aligned subgraphs vs. geometric clustering baselines",
+            "value": "concept-aligned subgraphs average 0.5394 Replacement and 0.8257 Completeness across 5 prompts, outperforming cosine-only and layer-adjacency clustering on behavioral metrics like Peak Token Consistency (0.425 vs. 0.183/0.301) and Activation Pattern Similarity (0.762 vs. 0.130/0.415)",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["peppinob-ol/attribution-graph-probing", "arXiv:2511.07002", "safety-research/circuit-tracer"],
+ "contradicts_or_qualifies": ["Extends Anthropic's attribution-graph / Cross-Layer Transcoder circuit tracing methodology, which per Neuronpedia's own estimate requires ~2 hours of manual analysis per prompt, by automating supernode construction"],
+ "stated_future_work": [
+  "Run a templated sweep over all US state-capital graphs (then all countries) to demonstrate automation at scale, reporting per-graph and aggregate Neuronpedia metrics",
+  "Run three causal interventions (feature ablations, steering, cross-circuit transfers) and report logit deltas alongside Neuronpedia metrics before and after intervention",
+  "Explicitly model attention routing"
+ ],
+ "limitations_stated": [
+  "Current evidence is limited to Gemma-2-2B CLT-HP with short factual prompts; no claim of immediate generalization to long chain-of-thought, adversarial settings, or larger models without adaptation",
+  "Validation relies on Neuronpedia's graph metrics and cross-prompt stability; causal interventions (steering/ablation) are planned but not yet implemented",
+  "A cross-lingual failure occurred applying the English pipeline to a French prompt, producing incoherent activations and no valid supernode grouping",
+  "Entity-swap transfer results used only structurally identical prompts; robustness to paraphrases, reorderings, and cross-domain transfers is untested",
+  "Reported differences between concept-aligned grouping and baselines are descriptive; statistical significance tests were not performed"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "our concept-aligned subgraphs attain ~0.53 Replacement and ~0.83 Completeness on Neuronpedia metrics, averaged across runs, and outperform geometric clustering on behavior-based interpretability metrics."
+}

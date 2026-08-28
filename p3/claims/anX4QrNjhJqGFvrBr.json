@@ -1,0 +1,19 @@
+{
+ "post_id": "anX4QrNjhJqGFvrBr",
+ "primary_claim": "Distilling a conventionally unlearned model into a randomly initialized student model (Unlearn-and-Distill) produces a model that is robust to relearning attacks, unlike standard unlearning which only suppresses the behavior; a generalized, compute-efficient version (UNDO: Unlearn-Noise-Distill-on-Outputs) dominates other unlearning methods on the retain/forget Pareto frontier and approaches gold-standard data-filtering robustness at a fraction of the compute, including on the WMDP Proxy benchmark with Gemma-2-2B.",
+ "claim_type": "positive",
+ "phenomenon": "machine unlearning robustness",
+ "models": [
+  {"family": "Gemma", "size": "2-2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "resistance to relearning attacks (forget-performance recovery after finetuning attack) on the retain/forget Pareto frontier", "value": "Unlearn-and-Distill more resistant to relearning than unlearned-only baseline across 3 unlearning methods (GradDiff, Maxent, RMU) in language and arithmetic settings, sometimes near gold-standard data-filtering robustness; UNDO dominates other methods on the Pareto frontier after moderate (40-step) and extensive (500-step) relearning, and increases resilience to relearning on WMDP with Gemma-2-2B", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["addiefoote/distillation-robustify-unlearning", "arXiv:2506.06278", "arXiv:2402.16835", "arXiv:2409.18025", "NAYyHimM3FaDYLvEH", "6QYpXEscd8GuE7BgW", "arXiv:2502.02180"],
+ "contradicts_or_qualifies": ["Contrasts with prior unlearning methods (e.g. circuit breakers, RMU) that prior work found to be 'mostly shallow' and easily reversed via finetuning", "Shows that finetuning a model to exactly match the logits of an oracle model (never trained on forget data) does NOT guarantee robust unlearning — the finetuned model relearns the forgotten capability much faster than a randomly-initialized distilled student despite near-identical initial behavior"],
+ "stated_future_work": ["Scaling Unlearn-and-Distill and UNDO into settings closer to practical applications, e.g. full α sweeps for the WMDP Proxy benchmark, and more speculatively UNDO'ing deception or sycophancy", "Running the distillation step by matching model internal activations rather than logits", "Exploring other techniques to damage the model, such as pruning or targeted damage"],
+ "limitations_stated": ["Method depends on the quality of the initial unlearning; poor initial suppression leads to less robustness gains and may leak capability information into student logits during distillation", "Poor suppression might lead to slower distillation if inconsistent or noisy behaviors make the target logit function harder to predict", "Only tested against relearning (finetuning) attacks; possible UNDO is vulnerable to other elicitation approaches", "On the WMDP/Gemma-2-2B experiment, more constrained on data and compute than the synthetic experiments, and struggled to recover performance in the distillation step"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Distilling a conventionally unlearned model into a randomly initialized model creates a student that is robustly incapable of the forget capability."
+}

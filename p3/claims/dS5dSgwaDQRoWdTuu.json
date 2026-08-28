@@ -1,0 +1,30 @@
+{
+ "post_id": "dS5dSgwaDQRoWdTuu",
+ "primary_claim": "Using an improved 'mixture' sensitive-direction baseline that excludes the original activation, GPT2-small's SAE reconstruction errors are no longer pathologically higher in KL divergence than the baseline (as previously reported by Gurnee 2024), though variability remains across layers, and SAE feature directions' impact on model output depends on SAE type and L0, with end-to-end SAE features showing no greater influence on model output than traditional SAE features.",
+ "claim_type": "negative",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "GPT-2", "size": "small", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "KL divergence of next-token predictions under SAE(x) reconstruction vs cov-random/real 'mixture' baseline directions", "value": "SAE(x) KL comparable to cov-random-mixture baseline at Layer 6, variable across layers", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["LajDyGyiyX8DNNsuF", "rZPiuFxESMxCDHe4B", "arXiv:2405.12241"],
+ "contradicts_or_qualifies": [
+  "qualifies Gurnee (2024)'s finding that SAE reconstruction errors are 'pathologically' high -- under an improved baseline (cov-random/real mixture) that excludes the original activation, SAE(x) KL divergence is no longer pathologically large, though it remains variable across layers",
+  "qualifies Heimersheim (2024)'s sensitive-direction baselines (experiments 2 and 3) as flawed because the perturbation direction subtracted the original activation, unfairly inflating its apparent sensitivity"
+ ],
+ "stated_future_work": [
+  "further exploring why the average KL divergence for SAE(x) and cov-random mixture is not consistent across the different layers of GPT2-small",
+  "explore what makes the model more sensitive to lower L0 SAE features",
+  "consider whether we can develop a better 'positive' baseline that represents a true feature direction",
+  "consider whether using toy models could help us better understand how to leverage sensitive direction experiments for evaluating the true functional importance of features"
+ ],
+ "limitations_stated": [
+  "we primarily use the mean (of KL or L2 distance) as our main measure... relying solely on the mean as a summary statistic might oversimplify the complexity of sensitive directions",
+  "Using the same L0 may not be a fair way to compare the three SAE models"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "SAE errors are no longer pathologically large when compared to more realistic baselines."
+}

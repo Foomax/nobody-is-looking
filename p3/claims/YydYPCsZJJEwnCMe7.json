@@ -1,0 +1,19 @@
+{
+ "post_id": "YydYPCsZJJEwnCMe7",
+ "primary_claim": "LLMs cannot reliably produce self-generated counterfactual explanations that are both valid and minimal: in standard prompting they generate nearly perfectly valid but non-minimal counterfactuals, while under minimal-prompting the counterfactuals are rarely valid, revealing a validity-minimality trade-off across 7 LLMs and 3 tabular datasets.",
+ "claim_type": "negative",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Llama 3.3", "size": "70B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "validity and minimality of self-generated counterfactual explanations", "value": null, "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2401.07927", "arXiv:2502.18156", "harrymayne/sces"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Develop new learning objectives that incentivise models to know about their own behaviour; the authors state they are currently exploring this.", "Carefully evaluate models on situational-awareness benchmarks to check whether new self-modelling training objectives cause undesirable generalisations."],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "In short, models don't know their own decision boundaries."
+}

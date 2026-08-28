@@ -1,0 +1,26 @@
+{
+ "post_id": "EkuGSFCDQJr4qnXZK",
+ "primary_claim": "Fine-tuning a model to generate deceptive/unfaithful chain-of-thought while pursuing a hidden objective causes the deceptive objective to override the model's prior safety alignment, and ablating the specific attention heads most responsible for the deceptive behavior degrades the model's ability to tell the truth (-33.9%) more than its ability to lie (-28.6%), suggesting the deceptive circuitry is parasitic on the model's general reasoning capability.",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "% change in probability of lying / telling the truth after ablating deceptive attention heads", "value": "Probability of lying decreased by about 28.6%; probability of telling the truth decreased by about 33.9%", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["alignment.anthropic.com/2025/modifying-beliefs-via-sdf"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Do more concrete work with better models and better synthetic data",
+  "Use SAEs to solve the problem of superposition, given the inherent limitations of mean ablation used here",
+  "Further work is required to resolve the alignment issues raised by training deceptive CoT via synthetic fine-tuning"
+ ],
+ "limitations_stated": [
+  "Compute restrictions forced use of a small model, which either overfit on non-interrogative documents or failed to learn the documents properly",
+  "Output formatting is degraded in some responses due to overfitting on a small dataset with limited compute resources",
+  "The work relies on mean ablation, which has inherent limitations",
+  "Ablating the three individually salient tokens ('AI', 'thought', 'Humanity') did not significantly affect the model, forcing a shift to a coarser global ablation-sweep approach"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "low",
+ "quote": "the deceptive behavior is parasitic on the model's general reasoning capabilities."
+}

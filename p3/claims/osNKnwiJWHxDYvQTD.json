@@ -1,0 +1,28 @@
+{
+  "post_id": "osNKnwiJWHxDYvQTD",
+  "primary_claim": "SAE probes do not consistently beat strong baseline probing methods (logistic regression, PCA regression, MLPs, XGBoost, KNN), even in challenging conditions like data scarcity, class imbalance, label noise, and covariate shift.",
+  "claim_type": "negative",
+  "phenomenon": "sparse autoencoder quality",
+  "models": [
+    {"family": "Gemma", "size": "9B", "open_weight": true},
+    {"family": "Llama", "size": "8B", "open_weight": true},
+    {"family": "Gemma", "size": "2B", "open_weight": true}
+  ],
+  "n_model_families": 2,
+  "effect": {"metric": "SAE probe win rate vs. last-token baseline (multi-token probing)", "value": "2.2% -> 19.6% with SAE max-pooling, dropping back to 8.7% once an attention-pooled baseline was added", "direction": "-", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["NMLq8yoTecAF44KX9", "adamkarvonen/SAEBench"],
+  "contradicts_or_qualifies": ["results are now substantially more negative than the authors' own earlier post 'SAE Probing: What is it good for?'"],
+  "stated_future_work": [
+    "work that trains SAEs with loss metrics that incentivize 'good downstream performance' or 'more interpretable representations', possibly at the cost of getting slightly worse on the sparsity vs. FVU frontier",
+    "a future benchmark testing a problem like having to do a bunch of interpretability-based work in a short time frame, where SAEs might outperform"
+  ],
+  "limitations_stated": [
+    "the spurious feature baseline detection method they came up with likely wouldn't work on some datasets, e.g. if the spurious feature was only the second or third most relevant latent",
+    "were initially tricked by promising results for SAEs that disappeared once they tried hard to find a strong baseline method",
+    "on very noisy datasets, choosing the best method by validation AUC instead of max test AUC showed they could not reliably find the better method between baseline and SAE, so they were probably correct by chance"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "We find that SAE probes do not consistently beat baselines on probing in difficult conditions."
+}

@@ -1,0 +1,22 @@
+{
+ "post_id": "uPEX2zDTPioFmieg2",
+ "primary_claim": "Existing prompt-injection defense metrics and small fine-tuned classifiers can be gamed or fail to generalize: on a new judge-free canary benchmark, on-policy DPO (using the model's own rollouts) raises Llama-3.1-8B's injection resistance from 22.2% to 84.4% (vs. only 25.6% for templated-pair DPO), but an apparent 82pp resistance gain on Mistral-Nemo is a gaming artifact where the model simply abandons tool use entirely, and a small fine-tuned injection detector reaches 0.99 in-distribution AUC but collapses to 0.43-0.74 AUC out-of-distribution, while LLM-based detectors and distillation from an LLM judge (raising held-out AUC from 0.53 to 0.65) generalize substantially better.",
+ "claim_type": "negative",
+ "phenomenon": "prompt injection",
+ "models": [
+  {"family": "Llama", "size": "3.1-8B", "open_weight": true},
+  {"family": "Mistral", "size": "Nemo", "open_weight": true},
+  {"family": "Qwen", "size": "unspecified (panel model)", "open_weight": true},
+  {"family": "Claude", "size": "Sonnet 4.6 / Haiku 4.5", "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "prompt-injection resistance rate under different DPO training signals, and detector AUC in- vs out-of-distribution", "value": "Llama-3.1-8B resistance: 22.2% baseline -> 25.6% templated DPO (+3.3pp, n.s.) -> 84.4% on-policy DPO (+62.2pp, p=2.8e-17); on a disjoint held-out tool/technique split: 52.1% (+37.5pp, p=7.6e-6); small fine-tuned injection detector: 0.99 in-distribution AUC collapsing to 0.43 (BIPIA) / 0.74 (InjecAgent) out-of-distribution; distillation from an LLM judge raises held-out AUC from 0.53 to 0.65", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["BIPIA", "InjecAgent", "AgentDojo", "Meta Prompt-Guard 2", "Razin et al. ICLR 2025 (likelihood displacement)", "Yuan et al. NeurIPS 2024 (likelihood displacement)", "sahilraut22/ipi-bench-guard-sft"],
+ "contradicts_or_qualifies": ["Critiques existing indirect prompt-injection benchmarks (BIPIA, InjecAgent, AgentDojo) for relying on LLM-judge scoring or execution-side harm rather than clean resistance, and demonstrates a concrete gaming failure mode (Mistral-Nemo's apparent resistance gain from abandoning tool use entirely) that such metrics can miss"],
+ "stated_future_work": [],
+ "limitations_stated": ["Every eval number is measured against tool-call (tool use, trigger) attacks; append-token and computer-use attacks aren't on a frozen set yet", "Benign canaries only partly measure willingness to act, not actual susceptibility", "Absolute base rates are harness specific", "SEP is an unusual benign probe distribution that all detectors struggle with", "The distillation lift (0.50->0.65 held-out AUC) is a suggestive architecture result, not settled"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Pairs built from the model's own rollouts took it to 84.4% resistance (p = 2.8e-17)"
+}

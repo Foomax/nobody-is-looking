@@ -1,0 +1,44 @@
+{
+ "post_id": "SZk2PGk6GXmKfGpGL",
+ "primary_claim": "Across 14 frontier models and 3 alignment evals (MASK honesty, APE persuasion, a custom sycophancy eval), meaning-preserving prompt rephrasing produced broadly noisy and inconsistent effects on misalignment scores, with no clear trend supporting either hypothesis that larger models are less affected by prompt variation or that deeper perturbation tiers have larger effects, although hypothetical framing consistently increased sycophancy scores and prompt variation changed misalignment scores more than control-repeat noise in the sycophancy eval.",
+ "claim_type": "null",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.8", "open_weight": false},
+  {"family": "GLM", "size": "5.2", "open_weight": true},
+  {"family": "Gemini", "size": "3.5 Flash", "open_weight": false},
+  {"family": "Grok", "size": "4.20", "open_weight": false},
+  {"family": "DeepSeek", "size": "v4 Pro", "open_weight": true},
+  {"family": "Claude", "size": "Sonnet 4.6", "open_weight": false},
+  {"family": "GPT", "size": "5-mini", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Flash", "open_weight": false},
+  {"family": "Qwen", "size": "3 235B", "open_weight": true},
+  {"family": "DeepSeek", "size": "Chat v3", "open_weight": true},
+  {"family": "Llama", "size": "4 Maverick", "open_weight": true},
+  {"family": "GPT", "size": "4o-mini", "open_weight": false},
+  {"family": "Llama", "size": "3.1 70B", "open_weight": true},
+  {"family": "Llama", "size": "3.1 8B", "open_weight": true}
+ ],
+ "n_model_families": 8,
+ "effect": {
+  "metric": "change in misalignment score under prompt variation vs baseline/control-repeat noise; correlation between ECI and change in sycophancy score under hypothetical framing",
+  "value": "no clear relationship between model capability (ECI) and prompt-variation sensitivity, nor between perturbation tier and effect size; significant negative correlation between ECI and hypothetical-framing-induced sycophancy increase; in the sycophancy eval, prompt variation exceeds control-repeat noise for almost all models",
+  "direction": "0",
+  "uncertainty_reported": "se"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2310.11324", "arXiv:2401.00595", "arXiv:2506.02873", "mask-benchmark.ai", "arXiv:2507.03409", "ajweeks/prompt-variation", "arXiv:2505.05602"],
+ "contradicts_or_qualifies": ["did not find support for either main hypothesis (larger models less affected by prompt variation; higher-tier perturbations having larger effects), qualifying the expectation that prompt sensitivity scales predictably with model capability or perturbation depth", "found basic rigor flaws in several evals listed on Inspect, including missing control conditions, weak theoretical motivation, and results reported to a precision finer than their own uncertainty"],
+ "stated_future_work": ["undertake a sensitivity analysis to identify and minimise sources of error unrelated to prompt variation (e.g. LLM-generated variation quality, judge quality, temperature, refusal rates)", "revise and develop a more principled taxonomy of prompt variation dimensions, ideally grounded in existing datasets", "undertake a grid search across combinations of variations rather than one dimension at a time", "apply prompt variation to the system prompt as well as the user prompt", "apply prompt variation to multi-turn evaluations"],
+ "limitations_stated": ["many models' baseline scores clustered near 0 or 1, risking floor/ceiling effects", "substantial variability across evals for the same model, presumably because the evals measure different underlying properties despite being clumped into one score", "a very small set of base user prompts (2 for MASK, 2 for APE, 3 for Sycophancy) limits how confidently the findings generalise beyond the specific scenarios tested", "the hypothetical-framing/sycophancy finding is a single eval/dimension combination and risks being a cherry-picked result"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Figure 3 shows the data is very noisy: apart from a few isolated exceptions (discussed in Section 2. below), there is no clear trend supporting either of our main hypotheses."
+}

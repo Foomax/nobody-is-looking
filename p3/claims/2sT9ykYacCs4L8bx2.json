@@ -1,0 +1,17 @@
+{
+ "post_id": "2sT9ykYacCs4L8bx2",
+ "primary_claim": "The standard Attack Success Rate (ASR) metric drastically overstates the effectiveness of backdoor-removal techniques (attention-head ablation and 'backdoor vector' subtraction) from Backdoor Attribution (2025): using a richer output-quality metric (Good/Strange/Wrong/Refused) instead of exact-string matching, ablation success on Llama-2-7B-Chat drops from ~30% to ~1%, the backdoor-vector approach drops from 75% to 28% ASR-equivalent reduction on Qwen2.5-7B-Instruct and from 95% to 46% on Llama-2-7B-Chat, ASR also picks the wrong intervention layer, and ablation shows an 'alignment tax' degrading normal-input performance at or below the head-count needed to suppress the backdoor.",
+ "claim_type": "negative",
+ "phenomenon": "eval methodology critique",
+ "models": [{"family": "Qwen2.5", "size": "7B Instruct", "open_weight": true}, {"family": "Llama-2", "size": "7B Chat", "open_weight": true}],
+ "n_model_families": 2,
+ "effect": {"metric": "Behavioral Attack Success Rate (BASR) vs original ASR reduction", "value": "backdoor vector: ASR reduction 75%->BASR 28% (Qwen2.5); 95%->46% (Llama-2); ablation: ASR-based 30% success -> new-metric ~1% success (Llama-2); best layer per ASR (layer 20) is worse than layer 11 by new metric (10x more good answers, >2x fewer refusals)", "direction": "-", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["arXiv:2509.21761", "huggingface.co/datasets/llamafactory/alpaca_en", "anthropic.com/research/sleeper-agents-training-deceptive-llms-that-persist-through-safety-training", "geoffreyonrails/backdoor_attribution", "openreview.net/forum?id=RPflMrUF3O"],
+ "contradicts_or_qualifies": ["Backdoor Attribution: Elucidating and Controlling Backdoors in Language Models (arXiv:2509.21761), whose ASR-based evaluation the author reproduces successfully but argues substantially overstates real-world backdoor removal effectiveness and misidentifies the optimal intervention layer"],
+ "stated_future_work": ["Improve initial backdoor training using higher-quality or model-generated synthetic datasets to minimize unintended capability alteration", "Try full fine-tuning instead of LoRA for backdoor injection to see if it affects removal technique results", "Investigate trigger generalization and how removal techniques affect triggering on semantically related (non-exact) inputs", "Try alternative ablation methods (e.g. setting heads to mean activation rather than zero)", "Construct backdoor vectors using mechanistic interpretability or representation engineering techniques other than CIE"],
+ "limitations_stated": ["The BASR metric does not detect cases where a backdoor replaces a previously wrong answer with another wrong answer", "The hypothesis that ablating 1 head improves performance by removing SFT-induced degradation has low confidence and needs further analysis", "Alignment-tax finding may be model-specific and may not generalize to larger or more capable models"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "A backdoor removal technique that looks 95% effective by the standard metric may only be 46% effective in reality, and for another technique, what looks like 30% success is actually 1%."
+}

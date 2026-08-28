@@ -1,0 +1,31 @@
+{
+ "post_id": "vNCAQLcJSzTgjPaWS",
+ "primary_claim": "Standard sparse autoencoders are not well-defined explanatory tools: multiple feature-activation vectors can reconstruct the same neuron activations with equal sparsity and reconstruction loss yet yield arbitrarily different AutoInterp semantic explanations, an 'incoherence' the authors demonstrate in the wild with three Gemma Scope features, whereas an MDL-SAE (description-length) criterion resolves the non-uniqueness.",
+ "claim_type": "negative",
+ "phenomenon": "SAE feature interpretability",
+ "models": [
+   {"family": "Gemma", "size": "2b", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "AutoInterp explanation consistency (qualitative)", "value": "found features f1, f2, f3 in Gemma-Scope 16k SAE (layer 16) satisfying f3 ≈ f2 − αf1 (α=1e-2), giving two equally-minimal explanatory mediators with divergent AutoInterp explanations (symbols vs. expressing inability in language)",
+            "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["G2oyFQFTE5eGEas6m"],
+ "contradicts_or_qualifies": ["The implicit assumption that standard SAE + AutoInterp explanations of neural activations are well-defined / unique"],
+ "stated_future_work": [
+   "Focus on understanding the relations between features (the Relational Composition Problem)",
+   "Write out a clearer basis for a \"Philosophy of Interpretability\"",
+   "Future work exploring SAE methods using the MDL/description-length framing",
+   "Further critique and refinement of the MDL-SAE proposal is welcomed"
+ ],
+ "limitations_stated": [
+   "MDL-SAEs do not guarantee finding the optimal explanation; learning good representations remains an open problem",
+   "The Relational Composition Problem is not addressed",
+   "The Gemma Scope incoherence example was found via a brief, unoptimised search rather than an extensive one",
+   "Not clear that MDL-SAEs are the only solution to the incoherence problem"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "the problem is not well defined for standard SAEs: an SAE's feature dictionary can provide multiple different explanations for a given set of neural activations"
+}

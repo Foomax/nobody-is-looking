@@ -1,0 +1,35 @@
+{
+ "post_id": "c4LYmzEC6cFQzrDZz",
+ "primary_claim": "A tuned lens directly trained on text-token geometry decodes CODI's final answer from odd latent reasoning steps (1, 3, 5) where plain logit lens cannot, while a tuned lens trained directly on CODI's latent hidden states underperforms and overfits, suggesting CODI's latent vectors remain close to text-token geometry and alternate between computation (odd, high-entropy steps) and storage (even steps, highest answer-detection rate).",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Llama", "size": "3.2 1B (CODI)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "final-answer detection rate / entropy across CODI latent reasoning steps",
+  "value": "direct-trained tuned lens decodes final answer at odd latent steps 1,3,5 (plain logit lens cannot); highest final-answer top-k detection rate at even steps 2,4; entropy peaks at odd steps 3,5; using only latents 3,5 fails to decode the answer",
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["AlignmentResearch/tuned-lens", "bcywinski/codi_llama1b-answer_only", "YGAimivLxycZcqRFR"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Observe final answer detection rate and see if latents 2 and 4 have the highest accuracy for different top-k values",
+  "Try other methods like patchscopes, activation oracles, etc. on the latent reasoning",
+  "Attempt to create thought anchors that work with CODI latent reasoning models"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "The direct-trained tuned lens reveals the final answer in odd latent steps (1, 3, 5) while plain logit lens cannot."
+}

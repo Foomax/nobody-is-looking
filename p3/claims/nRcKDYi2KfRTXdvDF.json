@@ -1,0 +1,52 @@
+{
+ "post_id": "nRcKDYi2KfRTXdvDF",
+ "primary_claim": "A two-step extract-and-evaluate CoT monitoring scheme (a Quote Extractor model pulls suspicious quotes from an agent's reasoning, a separate Judge model scores suspicion from only the quotes) improves monitor catch rate at 1% FPR by 12.0 percentage points on average over the best monitors from Arnav et al., by 18.2 points on subtle side tasks, and by 27.3 points overall (38.1 points on subtle tasks) when a stronger GPT-4.1 Judge is used",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [
+  {"family": "GPT-4.1", "size": "mini", "open_weight": false},
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Flash-Lite", "open_weight": false},
+  {"family": "DeepSeek", "size": "R1", "open_weight": true},
+  {"family": "DeepSeek", "size": "R1-Distill-Qwen-14B", "open_weight": true},
+  {"family": "DeepSeek", "size": "R1-Distill-Llama-70B", "open_weight": true},
+  {"family": "Claude", "size": "3.7 Sonnet:thinking", "open_weight": false},
+  {"family": "Grok", "size": "3-mini-beta", "open_weight": false}
+ ],
+ "n_model_families": 5,
+ "effect": {
+  "metric": "monitor catch rate improvement at 1% FPR vs. best monitor from Arnav et al.",
+  "value": "+12.0 pp overall (GPT-4.1-mini as both Extractor and Judge); +18.2 pp on subtle side tasks; +27.3 pp overall / +38.1 pp on subtle tasks with GPT-4.1 as Judge",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2505.23575", "bigcode/bigcodebench", "arXiv:2506.15740"],
+ "contradicts_or_qualifies": [
+  "past work suggesting fundamental limitations of CoT monitorability; the authors argue some monitor failures instead stem from lack of elicitation (qualifying Arnav et al. 2025, arXiv:2505.23575)"
+ ],
+ "stated_future_work": [
+  "explore why CoT monitors fail on subtle side tasks and why DeepSeek-R1-Distill-Qwen-14B evades monitors better than other models",
+  "test extract-and-evaluate monitoring in SHADE-Arena and BashBench agentic environments",
+  "test setups with multiple Quote Extractor models (ensembling)",
+  "compare against other multi-step monitoring setups such as Sumers et al.'s hierarchical summarization scheme",
+  "explore other low-hanging fruits for improving CoT monitor catch rates through better elicitation"
+ ],
+ "limitations_stated": [
+  "initial version of the post had a code bug that overstated effect sizes; results were later corrected",
+  "a gap between catch rates on subtle and non-subtle side tasks remains even with extract-and-evaluate monitoring",
+  "experiments performed only in the narrow single-step BigCodeBench setting so far",
+  "long implementation and edge case side tasks still have low catch rates even with the improved monitor",
+  "unclear whether harder tasks require more reasoning or just harder individual steps performable in one forward pass"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "our extract-and-evaluate monitoring approach improves monitor catch rate at 1% FPR by 12 percentage points, averaged over all models, tasks, and attack policies."
+}

@@ -1,0 +1,35 @@
+{
+ "post_id": "aypknr8scyrhBjmYL",
+ "primary_claim": "Split Personality Training (SPT), trained only on general (non-alignment-faking) honesty data, detects alignment faking in a Llama 3.3 70B model organism by cross-domain generalization, flagging 93-99% of monitored (free-tier) samples versus 0% for the model without SPT, and the detection signal tracks the AF-incentivizing situation rather than whether the model actually complied.",
+ "claim_type": "positive",
+ "phenomenon": "alignment faking",
+ "models": [
+  {"family": "Llama", "size": "3.3 70B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "SPT flag rate (% flagged FAIL)",
+  "value": "93-99% on free-tier (monitored) samples across SPT variants vs 0% for baseline without SPT; admission gap up to 43.4 percentage points between tiers",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["safety-research/open-source-alignment-faking", "og7km7vmJ6Ktay9Ds"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Independent investigation into whether alignment faking is non-deterministic/stochastic"],
+ "limitations_stated": [
+  "The AF model's explicit scratchpad reasoning is unrealistic for real-world alignment faking",
+  "The quantitative evaluation used an AF-specific intervention prompt",
+  "No non-AF control baseline was available"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "A model trained to fake alignment and then trained with SPT will unambiguously admit to alignment faking when directly asked, and explain the mechanism it is exploiting."
+}

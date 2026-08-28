@@ -1,0 +1,29 @@
+{
+ "post_id": "oRKemL989qyQ6KZTB",
+ "primary_claim": "When one-hidden-layer MLPs are trained on the ambiguous intersection of two finite-group multiplication tables, most models fail to fully grok either group (e.g. 93% of models on the S4/A4xZ2 intersection), but among those that do grok, they preferentially grok the simpler group, and both the local learning coefficient (LLC) and circuit efficiency are somewhat predictive of which group is grokked, though the two measures are too highly correlated with each other to disentangle.",
+ "claim_type": "positive",
+ "phenomenon": "training dynamics",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "fraction of models grokking each group in an ambiguous intersection training set (S4 vs A4xZ/2Z)",
+  "value": "93% of models grok neither group; 6.5% grok S4 (the simpler, abelian-adjacent group); 0.5% grok A4xZ/2Z",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": 10000,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2302.03025", "arXiv:2309.02390", "arXiv:2308.12108", "arXiv:1912.02178", "arXiv:2412.07003"],
+ "contradicts_or_qualifies": ["Notes that the high sensitivity of the grokked solution to model initialization somewhat contradicts a sufficiently strong version of the lottery ticket hypothesis, which would predict a robust favorable subnetwork present at initialization"],
+ "stated_future_work": [],
+ "limitations_stated": ["Unable to find an intrinsic (black-box) measure of group complexity such that models always prefer simpler groups", "Training loss, weight norm, and LLC are highly correlated with each other in this setting, so their individual predictive contributions cannot be disentangled", "Proportion estimates in small-sample experiments (e.g. S5 vs A5xZ/2Z with only 100 seeds) are low-confidence given how rare grokking is", "The correlation between training loss and LLC has not been noted in other settings, so may be a quirk specific to 1-hidden-layer MLPs trained on groups"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "All three measures are somewhat predictive of what group is grokked, in a direction that aligns with our intuition that the model prefers simpler solutions."
+}

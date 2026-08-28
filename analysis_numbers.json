@@ -1,0 +1,3402 @@
+{
+ "attention.karma_deciles": [
+  {
+   "baseline_pct": 86.1,
+   "code_ci": [
+    63.9,
+    83.6
+   ],
+   "code_pct": 75.0,
+   "decile": 1,
+   "karma_hi": 6,
+   "karma_lo": -1,
+   "median_families": 1.0,
+   "n": 72,
+   "neg_pct": 22.2
+  },
+  {
+   "baseline_pct": 86.3,
+   "code_ci": [
+    57.1,
+    78.0
+   ],
+   "code_pct": 68.5,
+   "decile": 2,
+   "karma_hi": 9,
+   "karma_lo": 6,
+   "median_families": 1,
+   "n": 73,
+   "neg_pct": 21.9
+  },
+  {
+   "baseline_pct": 93.2,
+   "code_ci": [
+    54.3,
+    75.6
+   ],
+   "code_pct": 65.8,
+   "decile": 3,
+   "karma_hi": 13,
+   "karma_lo": 9,
+   "median_families": 1,
+   "n": 73,
+   "neg_pct": 20.5
+  },
+  {
+   "baseline_pct": 89.0,
+   "code_ci": [
+    47.4,
+    69.5
+   ],
+   "code_pct": 58.9,
+   "decile": 4,
+   "karma_hi": 20,
+   "karma_lo": 13,
+   "median_families": 2,
+   "n": 73,
+   "neg_pct": 28.8
+  },
+  {
+   "baseline_pct": 90.4,
+   "code_ci": [
+    54.3,
+    75.6
+   ],
+   "code_pct": 65.8,
+   "decile": 5,
+   "karma_hi": 28,
+   "karma_lo": 20,
+   "median_families": 1,
+   "n": 73,
+   "neg_pct": 20.5
+  },
+  {
+   "baseline_pct": 91.7,
+   "code_ci": [
+    52.4,
+    74.0
+   ],
+   "code_pct": 63.9,
+   "decile": 6,
+   "karma_hi": 38,
+   "karma_lo": 28,
+   "median_families": 1.0,
+   "n": 72,
+   "neg_pct": 16.7
+  },
+  {
+   "baseline_pct": 87.7,
+   "code_ci": [
+    44.8,
+    67.0
+   ],
+   "code_pct": 56.2,
+   "decile": 7,
+   "karma_hi": 51,
+   "karma_lo": 38,
+   "median_families": 2,
+   "n": 73,
+   "neg_pct": 17.8
+  },
+  {
+   "baseline_pct": 95.9,
+   "code_ci": [
+    36.9,
+    59.2
+   ],
+   "code_pct": 47.9,
+   "decile": 8,
+   "karma_hi": 70,
+   "karma_lo": 52,
+   "median_families": 2,
+   "n": 73,
+   "neg_pct": 21.9
+  },
+  {
+   "baseline_pct": 91.8,
+   "code_ci": [
+    47.4,
+    69.5
+   ],
+   "code_pct": 58.9,
+   "decile": 9,
+   "karma_hi": 104,
+   "karma_lo": 71,
+   "median_families": 2,
+   "n": 73,
+   "neg_pct": 27.4
+  },
+  {
+   "baseline_pct": 94.5,
+   "code_ci": [
+    35.6,
+    57.9
+   ],
+   "code_pct": 46.6,
+   "decile": 10,
+   "karma_hi": 501,
+   "karma_lo": 106,
+   "median_families": 2,
+   "n": 73,
+   "neg_pct": 13.7
+  }
+ ],
+ "attention.karma_q1": 11,
+ "attention.karma_q3": 59,
+ "attention.mediation_quintiles": [
+  {
+   "any_open_pct": 86.2,
+   "code_given_closed_ci": [
+    43.3,
+    81.9
+   ],
+   "code_given_closed_pct": 65.0,
+   "code_given_open_ci": [
+    64.4,
+    79.8
+   ],
+   "code_given_open_pct": 72.8,
+   "code_pct": 71.7,
+   "n": 145,
+   "n_closed": 20,
+   "n_open": 125,
+   "quintile": 1
+  },
+  {
+   "any_open_pct": 77.4,
+   "code_given_closed_ci": [
+    43.7,
+    75.3
+   ],
+   "code_given_closed_pct": 60.6,
+   "code_given_open_ci": [
+    53.6,
+    71.2
+   ],
+   "code_given_open_pct": 62.8,
+   "code_pct": 62.3,
+   "n": 146,
+   "n_closed": 33,
+   "n_open": 113,
+   "quintile": 2
+  },
+  {
+   "any_open_pct": 69.0,
+   "code_given_closed_ci": [
+    45.5,
+    73.0
+   ],
+   "code_given_closed_pct": 60.0,
+   "code_given_open_ci": [
+    57.3,
+    75.4
+   ],
+   "code_given_open_pct": 67.0,
+   "code_pct": 64.8,
+   "n": 145,
+   "n_closed": 45,
+   "n_open": 100,
+   "quintile": 3
+  },
+  {
+   "any_open_pct": 71.2,
+   "code_given_closed_ci": [
+    31.2,
+    60.1
+   ],
+   "code_given_closed_pct": 45.2,
+   "code_given_open_ci": [
+    45.2,
+    64.0
+   ],
+   "code_given_open_pct": 54.8,
+   "code_pct": 52.1,
+   "n": 146,
+   "n_closed": 42,
+   "n_open": 104,
+   "quintile": 4
+  },
+  {
+   "any_open_pct": 56.8,
+   "code_given_closed_ci": [
+    20.2,
+    42.4
+   ],
+   "code_given_closed_pct": 30.2,
+   "code_given_open_ci": [
+    59.3,
+    78.7
+   ],
+   "code_given_open_pct": 69.9,
+   "code_pct": 52.7,
+   "n": 146,
+   "n_closed": 63,
+   "n_open": 83,
+   "quintile": 5
+  }
+ ],
+ "attention.spearman_karma_code": -0.149,
+ "attention.strata": [
+  {
+   "hi_ci": [
+    45.0,
+    59.3
+   ],
+   "hi_code_pct": 52.2,
+   "hi_n": 184,
+   "lo_ci": [
+    63.5,
+    76.6
+   ],
+   "lo_code_pct": 70.5,
+   "lo_n": 183,
+   "stratum": "all",
+   "z": -3.6
+  },
+  {
+   "hi_ci": [
+    35.5,
+    71.2
+   ],
+   "hi_code_pct": 53.8,
+   "hi_n": 26,
+   "lo_ci": [
+    34.7,
+    73.1
+   ],
+   "lo_code_pct": 54.5,
+   "lo_n": 22,
+   "stratum": "period 2024H2",
+   "z": -0.05
+  },
+  {
+   "hi_ci": [
+    30.9,
+    58.8
+   ],
+   "hi_code_pct": 44.4,
+   "hi_n": 45,
+   "lo_ci": [
+    54.3,
+    80.5
+   ],
+   "lo_code_pct": 68.9,
+   "lo_n": 45,
+   "stratum": "period 2025H1",
+   "z": -2.34
+  },
+  {
+   "hi_ci": [
+    34.8,
+    61.5
+   ],
+   "hi_code_pct": 48.0,
+   "hi_n": 50,
+   "lo_ci": [
+    50.3,
+    79.8
+   ],
+   "lo_code_pct": 66.7,
+   "lo_n": 36,
+   "stratum": "period 2025H2",
+   "z": -1.72
+  },
+  {
+   "hi_ci": [
+    47.1,
+    73.0
+   ],
+   "hi_code_pct": 60.8,
+   "hi_n": 51,
+   "lo_ci": [
+    58.3,
+    82.5
+   ],
+   "lo_code_pct": 72.0,
+   "lo_n": 50,
+   "stratum": "period 2026H1",
+   "z": -1.19
+  },
+  {
+   "hi_ci": [
+    47.1,
+    70.5
+   ],
+   "hi_code_pct": 59.4,
+   "hi_n": 64,
+   "lo_ci": [
+    65.0,
+    78.4
+   ],
+   "lo_code_pct": 72.2,
+   "lo_n": 169,
+   "stratum": "LW-only",
+   "z": -1.88
+  },
+  {
+   "hi_ci": [
+    49.2,
+    73.4
+   ],
+   "hi_code_pct": 62.1,
+   "hi_n": 58,
+   "lo_ci": [
+    64.5,
+    78.6
+   ],
+   "lo_code_pct": 72.1,
+   "lo_n": 154,
+   "stratum": "solo author",
+   "z": -1.41
+  },
+  {
+   "hi_ci": [
+    39.1,
+    56.3
+   ],
+   "hi_code_pct": 47.6,
+   "hi_n": 126,
+   "lo_ci": [
+    44.0,
+    77.3
+   ],
+   "lo_code_pct": 62.1,
+   "lo_n": 29,
+   "stratum": "team",
+   "z": -1.4
+  },
+  {
+   "hi_ci": [
+    57.2,
+    80.9
+   ],
+   "hi_code_pct": 70.4,
+   "hi_n": 54,
+   "lo_ci": [
+    57.7,
+    75.7
+   ],
+   "lo_code_pct": 67.3,
+   "lo_n": 101,
+   "stratum": "interpretability",
+   "z": 0.39
+  }
+ ],
+ "attention.within_closed": {
+  "hi_ci": [
+   20.3,
+   45.0
+  ],
+  "hi_code_pct": 31.4,
+  "hi_n": 51,
+  "lo_ci": [
+   52.2,
+   77.6
+  ],
+  "lo_code_pct": 66.0,
+  "lo_n": 50,
+  "z": -3.48
+ },
+ "attention.within_open": {
+  "hi_ci": [
+   54.4,
+   70.6
+  ],
+  "hi_code_pct": 62.9,
+  "hi_n": 132,
+  "lo_ci": [
+   64.3,
+   79.4
+  ],
+  "lo_code_pct": 72.5,
+  "lo_n": 131,
+  "z": -1.67
+ },
+ "authors.distinct": 893,
+ "authors.distinct_first": 500,
+ "authors.first_author_gini": 0.259,
+ "authors.one_post_only.ci95": [
+  70.0,
+  77.7
+ ],
+ "authors.one_post_only.k": 370,
+ "authors.one_post_only.n": 500,
+ "authors.one_post_only.pct": 74.0,
+ "authors.top_any": [
+  {
+   "author": "Neel Nanda",
+   "first_author_posts": 0,
+   "posts": 52
+  },
+  {
+   "author": "Senthooran Rajamanoharan",
+   "first_author_posts": 2,
+   "posts": 23
+  },
+  {
+   "author": "Fabien Roger",
+   "first_author_posts": 8,
+   "posts": 23
+  },
+  {
+   "author": "Arthur Conmy",
+   "first_author_posts": 1,
+   "posts": 18
+  },
+  {
+   "author": "Josh Engels",
+   "first_author_posts": 8,
+   "posts": 18
+  },
+  {
+   "author": "StefanHex",
+   "first_author_posts": 1,
+   "posts": 16
+  },
+  {
+   "author": "Sam Marks",
+   "first_author_posts": 4,
+   "posts": 15
+  },
+  {
+   "author": "chanind",
+   "first_author_posts": 11,
+   "posts": 12
+  },
+  {
+   "author": "Owain_Evans",
+   "first_author_posts": 1,
+   "posts": 12
+  },
+  {
+   "author": "Joseph Bloom",
+   "first_author_posts": 1,
+   "posts": 10
+  },
+  {
+   "author": "Adri\u00e0 Garriga-alonso",
+   "first_author_posts": 1,
+   "posts": 10
+  },
+  {
+   "author": "Marius Hobbhahn",
+   "first_author_posts": 2,
+   "posts": 10
+  },
+  {
+   "author": "evhub",
+   "first_author_posts": 2,
+   "posts": 10
+  },
+  {
+   "author": "TurnTrout",
+   "first_author_posts": 2,
+   "posts": 10
+  },
+  {
+   "author": "David Lindner",
+   "first_author_posts": 2,
+   "posts": 9
+  }
+ ],
+ "authors.top_first": [
+  {
+   "author": "chanind",
+   "posts": 11
+  },
+  {
+   "author": "Fabien Roger",
+   "posts": 8
+  },
+  {
+   "author": "Josh Engels",
+   "posts": 8
+  },
+  {
+   "author": "Realmbird",
+   "posts": 7
+  },
+  {
+   "author": "Daan Henselmans",
+   "posts": 6
+  },
+  {
+   "author": "ryan_greenblatt",
+   "posts": 5
+  },
+  {
+   "author": "Ziqian Zhong",
+   "posts": 5
+  },
+  {
+   "author": "Connor Kissane",
+   "posts": 5
+  },
+  {
+   "author": "Tim Hua",
+   "posts": 5
+  },
+  {
+   "author": "jacob_drori",
+   "posts": 5
+  }
+ ],
+ "base.projects": 738,
+ "base.substantive": 728,
+ "base.union": 741,
+ "contrast.af": {
+  "abl": {
+   "a_ci": [
+    65.0,
+    76.3
+   ],
+   "a_pct": 71.0,
+   "b_ci": [
+    59.6,
+    68.1
+   ],
+   "b_pct": 64.0,
+   "z": 1.9
+  },
+  "base": {
+   "a_ci": [
+    89.7,
+    95.9
+   ],
+   "a_pct": 93.5,
+   "b_ci": [
+    86.2,
+    91.7
+   ],
+   "b_pct": 89.2,
+   "z": 1.86
+  },
+  "code": {
+   "a_ci": [
+    44.8,
+    57.2
+   ],
+   "a_pct": 51.0,
+   "b_ci": [
+    61.3,
+    69.7
+   ],
+   "b_pct": 65.6,
+   "z": -3.81
+  },
+  "contra": {
+   "a_ci": [
+    64.2,
+    75.6
+   ],
+   "a_pct": 70.2,
+   "b_ci": [
+    56.7,
+    65.3
+   ],
+   "b_pct": 61.1,
+   "z": 2.43
+  },
+  "label": "in Alignment Forum vs LessWrong-only",
+  "median_fam": [
+   2,
+   1
+  ],
+  "median_karma": [
+   57,
+   18
+  ],
+  "median_lim": [
+   4,
+   3
+  ],
+  "median_wc": [
+   2392,
+   2214
+  ],
+  "n_a": 245,
+  "n_b": 483,
+  "neg": {
+   "a_ci": [
+    15.5,
+    25.5
+   ],
+   "a_pct": 20.0,
+   "b_ci": [
+    18.3,
+    25.6
+   ],
+   "b_pct": 21.7,
+   "z": -0.54
+  },
+  "seeds": {
+   "a_ci": [
+    8.4,
+    16.5
+   ],
+   "a_pct": 11.8,
+   "b_ci": [
+    11.8,
+    18.1
+   ],
+   "b_pct": 14.7,
+   "z": -1.06
+  },
+  "unc": {
+   "a_ci": [
+    15.5,
+    25.5
+   ],
+   "a_pct": 20.0,
+   "b_ci": [
+    15.8,
+    22.8
+   ],
+   "b_pct": 19.0,
+   "z": 0.31
+  }
+ },
+ "contrast.code": {
+  "abl": {
+   "a_ci": [
+    63.4,
+    72.1
+   ],
+   "a_pct": 67.9,
+   "b_ci": [
+    58.3,
+    69.3
+   ],
+   "b_pct": 64.0,
+   "z": 1.08
+  },
+  "base": {
+   "a_ci": [
+    88.2,
+    93.5
+   ],
+   "a_pct": 91.2,
+   "b_ci": [
+    85.8,
+    92.8
+   ],
+   "b_pct": 89.9,
+   "z": 0.6
+  },
+  "code": {
+   "a_ci": [
+    99.1,
+    100.0
+   ],
+   "a_pct": 100.0,
+   "b_ci": [
+    0.0,
+    1.3
+   ],
+   "b_pct": 0.0,
+   "z": 26.98
+  },
+  "contra": {
+   "a_ci": [
+    59.4,
+    68.4
+   ],
+   "a_pct": 64.0,
+   "b_ci": [
+    58.6,
+    69.7
+   ],
+   "b_pct": 64.3,
+   "z": -0.08
+  },
+  "label": "ships code vs not",
+  "median_fam": [
+   2.0,
+   2.0
+  ],
+  "median_karma": [
+   24.0,
+   37.0
+  ],
+  "median_lim": [
+   3.0,
+   3.0
+  ],
+  "median_wc": [
+   2276.0,
+   2192.5
+  ],
+  "n_a": 442,
+  "n_b": 286,
+  "neg": {
+   "a_ci": [
+    16.7,
+    24.1
+   ],
+   "a_pct": 20.1,
+   "b_ci": [
+    18.3,
+    27.9
+   ],
+   "b_pct": 22.7,
+   "z": -0.84
+  },
+  "seeds": {
+   "a_ci": [
+    13.8,
+    20.7
+   ],
+   "a_pct": 17.0,
+   "b_ci": [
+    6.0,
+    12.6
+   ],
+   "b_pct": 8.7,
+   "z": 3.15
+  },
+  "unc": {
+   "a_ci": [
+    16.7,
+    24.1
+   ],
+   "a_pct": 20.1,
+   "b_ci": [
+    14.1,
+    23.1
+   ],
+   "b_pct": 18.2,
+   "z": 0.65
+  }
+ },
+ "contrast.evalctl": {
+  "abl": {
+   "a_ci": [
+    56.1,
+    70.2
+   ],
+   "a_pct": 63.4,
+   "b_ci": [
+    63.3,
+    71.0
+   ],
+   "b_pct": 67.3,
+   "z": -0.94
+  },
+  "base": {
+   "a_ci": [
+    85.7,
+    94.3
+   ],
+   "a_pct": 90.9,
+   "b_ci": [
+    87.9,
+    92.8
+   ],
+   "b_pct": 90.6,
+   "z": 0.1
+  },
+  "code": {
+   "a_ci": [
+    51.5,
+    65.9
+   ],
+   "a_pct": 58.9,
+   "b_ci": [
+    57.2,
+    65.3
+   ],
+   "b_pct": 61.3,
+   "z": -0.58
+  },
+  "contra": {
+   "a_ci": [
+    59.6,
+    73.4
+   ],
+   "a_pct": 66.9,
+   "b_ci": [
+    59.2,
+    67.2
+   ],
+   "b_pct": 63.3,
+   "z": 0.86
+  },
+  "label": "AI Control / Evaluations-tagged vs not",
+  "median_fam": [
+   2,
+   1
+  ],
+  "median_karma": [
+   20,
+   30
+  ],
+  "median_lim": [
+   3,
+   3
+  ],
+  "median_wc": [
+   2268,
+   2214
+  ],
+  "n_a": 175,
+  "n_b": 553,
+  "neg": {
+   "a_ci": [
+    19.3,
+    32.1
+   ],
+   "a_pct": 25.1,
+   "b_ci": [
+    16.8,
+    23.4
+   ],
+   "b_pct": 19.9,
+   "z": 1.48
+  },
+  "seeds": {
+   "a_ci": [
+    13.3,
+    24.7
+   ],
+   "a_pct": 18.3,
+   "b_ci": [
+    9.8,
+    15.3
+   ],
+   "b_pct": 12.3,
+   "z": 2.01
+  },
+  "unc": {
+   "a_ci": [
+    20.3,
+    33.3
+   ],
+   "a_pct": 26.3,
+   "b_ci": [
+    14.3,
+    20.5
+   ],
+   "b_pct": 17.2,
+   "z": 2.66
+  }
+ },
+ "contrast.interp": {
+  "abl": {
+   "a_ci": [
+    62.4,
+    72.9
+   ],
+   "a_pct": 67.9,
+   "b_ci": [
+    60.6,
+    69.6
+   ],
+   "b_pct": 65.2,
+   "z": 0.74
+  },
+  "base": {
+   "a_ci": [
+    86.7,
+    93.3
+   ],
+   "a_pct": 90.5,
+   "b_ci": [
+    87.6,
+    93.2
+   ],
+   "b_pct": 90.8,
+   "z": -0.13
+  },
+  "code": {
+   "a_ci": [
+    62.1,
+    72.5
+   ],
+   "a_pct": 67.5,
+   "b_ci": [
+    51.0,
+    60.5
+   ],
+   "b_pct": 55.8,
+   "z": 3.2
+  },
+  "contra": {
+   "a_ci": [
+    56.4,
+    67.2
+   ],
+   "a_pct": 62.0,
+   "b_ci": [
+    61.1,
+    70.1
+   ],
+   "b_pct": 65.7,
+   "z": -1.04
+  },
+  "label": "Interpretability-tagged vs not",
+  "median_fam": [
+   1,
+   2
+  ],
+  "median_karma": [
+   21,
+   37
+  ],
+  "median_lim": [
+   3,
+   3
+  ],
+  "median_wc": [
+   2307,
+   2190
+  ],
+  "n_a": 305,
+  "n_b": 423,
+  "neg": {
+   "a_ci": [
+    15.0,
+    23.8
+   ],
+   "a_pct": 19.0,
+   "b_ci": [
+    19.0,
+    26.9
+   ],
+   "b_pct": 22.7,
+   "z": -1.2
+  },
+  "seeds": {
+   "a_ci": [
+    7.8,
+    14.8
+   ],
+   "a_pct": 10.8,
+   "b_ci": [
+    12.7,
+    19.6
+   ],
+   "b_pct": 15.8,
+   "z": -1.94
+  },
+  "unc": {
+   "a_ci": [
+    9.8,
+    17.4
+   ],
+   "a_pct": 13.1,
+   "b_ci": [
+    20.1,
+    28.2
+   ],
+   "b_pct": 23.9,
+   "z": -3.63
+  }
+ },
+ "contrast.karma": {
+  "abl": {
+   "a_ci": [
+    68.0,
+    77.2
+   ],
+   "a_pct": 72.9,
+   "b_ci": [
+    55.1,
+    65.0
+   ],
+   "b_pct": 60.2,
+   "z": 3.63
+  },
+  "base": {
+   "a_ci": [
+    89.1,
+    94.7
+   ],
+   "a_pct": 92.4,
+   "b_ci": [
+    85.5,
+    91.8
+   ],
+   "b_pct": 89.0,
+   "z": 1.55
+  },
+  "code": {
+   "a_ci": [
+    49.0,
+    59.4
+   ],
+   "a_pct": 54.2,
+   "b_ci": [
+    61.9,
+    71.4
+   ],
+   "b_pct": 66.8,
+   "z": -3.48
+  },
+  "contra": {
+   "a_ci": [
+    64.5,
+    74.1
+   ],
+   "a_pct": 69.5,
+   "b_ci": [
+    54.0,
+    64.0
+   ],
+   "b_pct": 59.1,
+   "z": 2.92
+  },
+  "label": "karma above median (28) vs at/below",
+  "median_fam": [
+   2.0,
+   1.0
+  ],
+  "median_karma": [
+   60.0,
+   12.0
+  ],
+  "median_lim": [
+   3.0,
+   3.0
+  ],
+  "median_wc": [
+   2400.0,
+   2105.5
+  ],
+  "n_a": 354,
+  "n_b": 374,
+  "neg": {
+   "a_ci": [
+    15.7,
+    23.9
+   ],
+   "a_pct": 19.5,
+   "b_ci": [
+    18.8,
+    27.2
+   ],
+   "b_pct": 22.7,
+   "z": -1.07
+  },
+  "seeds": {
+   "a_ci": [
+    12.1,
+    19.7
+   ],
+   "a_pct": 15.5,
+   "b_ci": [
+    9.1,
+    15.7
+   ],
+   "b_pct": 12.0,
+   "z": 1.37
+  },
+  "unc": {
+   "a_ci": [
+    17.5,
+    26.0
+   ],
+   "a_pct": 21.5,
+   "b_ci": [
+    13.9,
+    21.5
+   ],
+   "b_pct": 17.4,
+   "z": 1.4
+  }
+ },
+ "contrast.length": {
+  "abl": {
+   "a_ci": [
+    70.9,
+    79.7
+   ],
+   "a_pct": 75.5,
+   "b_ci": [
+    52.0,
+    62.1
+   ],
+   "b_pct": 57.1,
+   "z": 5.26
+  },
+  "base": {
+   "a_ci": [
+    91.0,
+    96.0
+   ],
+   "a_pct": 94.0,
+   "b_ci": [
+    83.6,
+    90.4
+   ],
+   "b_pct": 87.4,
+   "z": 3.06
+  },
+  "code": {
+   "a_ci": [
+    57.0,
+    66.9
+   ],
+   "a_pct": 62.1,
+   "b_ci": [
+    54.2,
+    64.3
+   ],
+   "b_pct": 59.3,
+   "z": 0.76
+  },
+  "contra": {
+   "a_ci": [
+    67.4,
+    76.6
+   ],
+   "a_pct": 72.3,
+   "b_ci": [
+    50.9,
+    61.1
+   ],
+   "b_pct": 56.0,
+   "z": 4.56
+  },
+  "label": "longer than median (2224 words) vs not",
+  "median_fam": [
+   2.0,
+   1.0
+  ],
+  "median_karma": [
+   30.0,
+   24.0
+  ],
+  "median_lim": [
+   4.0,
+   3.0
+  ],
+  "median_wc": [
+   3312.5,
+   1424.0
+  ],
+  "n_a": 364,
+  "n_b": 364,
+  "neg": {
+   "a_ci": [
+    18.3,
+    26.8
+   ],
+   "a_pct": 22.3,
+   "b_ci": [
+    16.3,
+    24.5
+   ],
+   "b_pct": 20.1,
+   "z": 0.73
+  },
+  "seeds": {
+   "a_ci": [
+    12.3,
+    19.7
+   ],
+   "a_pct": 15.7,
+   "b_ci": [
+    8.9,
+    15.5
+   ],
+   "b_pct": 11.8,
+   "z": 1.51
+  },
+  "unc": {
+   "a_ci": [
+    20.3,
+    29.1
+   ],
+   "a_pct": 24.5,
+   "b_ci": [
+    11.1,
+    18.3
+   ],
+   "b_pct": 14.3,
+   "z": 3.47
+  }
+ },
+ "contrast.mats": {
+  "abl": {
+   "a_ci": [
+    66.9,
+    85.8
+   ],
+   "a_pct": 77.8,
+   "b_ci": [
+    61.4,
+    68.6
+   ],
+   "b_pct": 65.1,
+   "z": 2.16
+  },
+  "base": {
+   "a_ci": [
+    92.5,
+    99.8
+   ],
+   "a_pct": 98.6,
+   "b_ci": [
+    87.2,
+    91.9
+   ],
+   "b_pct": 89.8,
+   "z": 2.44
+  },
+  "code": {
+   "a_ci": [
+    45.4,
+    67.7
+   ],
+   "a_pct": 56.9,
+   "b_ci": [
+    57.3,
+    64.8
+   ],
+   "b_pct": 61.1,
+   "z": -0.69
+  },
+  "contra": {
+   "a_ci": [
+    59.5,
+    80.1
+   ],
+   "a_pct": 70.8,
+   "b_ci": [
+    59.7,
+    67.0
+   ],
+   "b_pct": 63.4,
+   "z": 1.25
+  },
+  "label": "MATS-tagged vs not",
+  "median_fam": [
+   2.0,
+   2.0
+  ],
+  "median_karma": [
+   52.5,
+   25.0
+  ],
+  "median_lim": [
+   3.0,
+   3.0
+  ],
+  "median_wc": [
+   2870.0,
+   2155.5
+  ],
+  "n_a": 72,
+  "n_b": 656,
+  "neg": {
+   "a_ci": [
+    12.0,
+    30.0
+   ],
+   "a_pct": 19.4,
+   "b_ci": [
+    18.4,
+    24.6
+   ],
+   "b_pct": 21.3,
+   "z": -0.37
+  },
+  "seeds": {
+   "a_ci": [
+    15.3,
+    34.6
+   ],
+   "a_pct": 23.6,
+   "b_ci": [
+    10.3,
+    15.4
+   ],
+   "b_pct": 12.7,
+   "z": 2.56
+  },
+  "unc": {
+   "a_ci": [
+    16.4,
+    36.1
+   ],
+   "a_pct": 25.0,
+   "b_ci": [
+    15.9,
+    21.9
+   ],
+   "b_pct": 18.8,
+   "z": 1.27
+  }
+ },
+ "contrast.open": {
+  "abl": {
+   "a_ci": [
+    64.3,
+    72.2
+   ],
+   "a_pct": 68.4,
+   "b_ci": [
+    54.2,
+    67.5
+   ],
+   "b_pct": 61.1,
+   "z": 1.87
+  },
+  "base": {
+   "a_ci": [
+    90.0,
+    94.5
+   ],
+   "a_pct": 92.6,
+   "b_ci": [
+    80.2,
+    89.9
+   ],
+   "b_pct": 85.7,
+   "z": 2.85
+  },
+  "code": {
+   "a_ci": [
+    61.4,
+    69.5
+   ],
+   "a_pct": 65.5,
+   "b_ci": [
+    41.5,
+    55.1
+   ],
+   "b_pct": 48.3,
+   "z": 4.27
+  },
+  "contra": {
+   "a_ci": [
+    60.2,
+    68.4
+   ],
+   "a_pct": 64.4,
+   "b_ci": [
+    56.7,
+    69.9
+   ],
+   "b_pct": 63.5,
+   "z": 0.21
+  },
+  "label": "studies an open-weight model vs not",
+  "median_fam": [
+   2,
+   1
+  ],
+  "median_karma": [
+   23,
+   40
+  ],
+  "median_lim": [
+   4,
+   3
+  ],
+  "median_wc": [
+   2268,
+   2029
+  ],
+  "n_a": 525,
+  "n_b": 203,
+  "neg": {
+   "a_ci": [
+    18.0,
+    25.0
+   ],
+   "a_pct": 21.3,
+   "b_ci": [
+    15.7,
+    26.8
+   ],
+   "b_pct": 20.7,
+   "z": 0.19
+  },
+  "seeds": {
+   "a_ci": [
+    12.4,
+    18.6
+   ],
+   "a_pct": 15.2,
+   "b_ci": [
+    6.5,
+    14.7
+   ],
+   "b_pct": 9.9,
+   "z": 1.89
+  },
+  "unc": {
+   "a_ci": [
+    16.1,
+    22.8
+   ],
+   "a_pct": 19.2,
+   "b_ci": [
+    14.8,
+    25.7
+   ],
+   "b_pct": 19.7,
+   "z": -0.14
+  }
+ },
+ "contrast.solo": {
+  "abl": {
+   "a_ci": [
+    54.4,
+    64.2
+   ],
+   "a_pct": 59.4,
+   "b_ci": [
+    69.3,
+    78.5
+   ],
+   "b_pct": 74.1,
+   "z": -4.21
+  },
+  "base": {
+   "a_ci": [
+    83.0,
+    89.8
+   ],
+   "a_pct": 86.7,
+   "b_ci": [
+    92.2,
+    96.9
+   ],
+   "b_pct": 95.1,
+   "z": -3.86
+  },
+  "code": {
+   "a_ci": [
+    63.1,
+    72.4
+   ],
+   "a_pct": 68.0,
+   "b_ci": [
+    47.3,
+    57.8
+   ],
+   "b_pct": 52.6,
+   "z": 4.23
+  },
+  "contra": {
+   "a_ci": [
+    52.8,
+    62.7
+   ],
+   "a_pct": 57.8,
+   "b_ci": [
+    66.2,
+    75.8
+   ],
+   "b_pct": 71.2,
+   "z": -3.77
+  },
+  "label": "solo author vs team",
+  "median_fam": [
+   1.0,
+   2.0
+  ],
+  "median_karma": [
+   15.0,
+   45.5
+  ],
+  "median_lim": [
+   3.0,
+   3.0
+  ],
+  "median_wc": [
+   2202.0,
+   2295.5
+  ],
+  "n_a": 384,
+  "n_b": 344,
+  "neg": {
+   "a_ci": [
+    18.3,
+    26.6
+   ],
+   "a_pct": 22.1,
+   "b_ci": [
+    16.2,
+    24.6
+   ],
+   "b_pct": 20.1,
+   "z": 0.69
+  },
+  "seeds": {
+   "a_ci": [
+    9.6,
+    16.2
+   ],
+   "a_pct": 12.5,
+   "b_ci": [
+    11.7,
+    19.3
+   ],
+   "b_pct": 15.1,
+   "z": -1.02
+  },
+  "unc": {
+   "a_ci": [
+    11.9,
+    19.0
+   ],
+   "a_pct": 15.1,
+   "b_ci": [
+    19.9,
+    28.9
+   ],
+   "b_pct": 24.1,
+   "z": -3.08
+  }
+ },
+ "corpus.negative.ci95": [
+  18.3,
+  24.3
+ ],
+ "corpus.negative.k": 154,
+ "corpus.negative.n": 728,
+ "corpus.negative.pct": 21.2,
+ "deps.distinct": 1819,
+ "deps.indeg1_pct": 83.1,
+ "deps.kind.arxiv.ci95": [
+  48.5,
+  52.4
+ ],
+ "deps.kind.arxiv.k": 1301,
+ "deps.kind.arxiv.n": 2580,
+ "deps.kind.arxiv.pct": 50.4,
+ "deps.kind.other.ci95": [
+  16.9,
+  19.8
+ ],
+ "deps.kind.other.k": 472,
+ "deps.kind.other.n": 2580,
+ "deps.kind.other.pct": 18.3,
+ "deps.kind.repo.ci95": [
+  29.5,
+  33.1
+ ],
+ "deps.kind.repo.k": 807,
+ "deps.kind.repo.n": 2580,
+ "deps.kind.repo.pct": 31.3,
+ "deps.n_for_half_of_edges": 529,
+ "deps.posts_with_none.ci95": [
+  4.3,
+  7.7
+ ],
+ "deps.posts_with_none.k": 42,
+ "deps.posts_with_none.n": 728,
+ "deps.posts_with_none.pct": 5.8,
+ "deps.top25": [
+  {
+   "dep": "arXiv:2312.06942",
+   "in_degree": 27,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2502.17424",
+   "in_degree": 23,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2412.14093",
+   "in_degree": 22,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2406.11717",
+   "in_degree": 15,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2401.05566",
+   "in_degree": 15,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2503.11926",
+   "in_degree": 12,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "UKGovernmentBEIS/control-arena",
+   "in_degree": 10,
+   "kind": "repo"
+  },
+  {
+   "dep": "TransformerLensOrg/TransformerLens",
+   "in_degree": 10,
+   "kind": "repo"
+  },
+  {
+   "dep": "arXiv:2507.11473",
+   "in_degree": 9,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2307.15043",
+   "in_degree": 9,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2312.06681",
+   "in_degree": 9,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2506.11613",
+   "in_degree": 9,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2503.10965",
+   "in_degree": 9,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2412.04984",
+   "in_degree": 9,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2507.14805",
+   "in_degree": 9,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2409.14507",
+   "in_degree": 9,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2403.19647",
+   "in_degree": 8,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2405.19550",
+   "in_degree": 8,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2308.10248",
+   "in_degree": 8,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2307.13702",
+   "in_degree": 8,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2507.05246",
+   "in_degree": 8,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "jbloomAus/SAELens",
+   "in_degree": 7,
+   "kind": "repo"
+  },
+  {
+   "dep": "arXiv:2305.04388",
+   "in_degree": 7,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2507.21509",
+   "in_degree": 7,
+   "kind": "arxiv"
+  },
+  {
+   "dep": "arXiv:2510.04340",
+   "in_degree": 7,
+   "kind": "arxiv"
+  }
+ ],
+ "deps.total_edges": 2580,
+ "design.five_plus.ci95": [
+  0.1,
+  1.2
+ ],
+ "design.five_plus.k": 3,
+ "design.five_plus.n": 728,
+ "design.five_plus.pct": 0.4,
+ "design.median_score": 2.0,
+ "design.score_hist": {
+  "0": 41,
+  "1": 115,
+  "2": 318,
+  "3": 190,
+  "4": 61,
+  "5": 3
+ },
+ "design.zero_markers.ci95": [
+  4.2,
+  7.6
+ ],
+ "design.zero_markers.k": 41,
+ "design.zero_markers.n": 728,
+ "design.zero_markers.pct": 5.6,
+ "models.all_open.ci95": [
+  44.1,
+  51.3
+ ],
+ "models.all_open.k": 347,
+ "models.all_open.n": 728,
+ "models.all_open.pct": 47.7,
+ "models.any_open.ci95": [
+  68.7,
+  75.3
+ ],
+ "models.any_open.k": 525,
+ "models.any_open.n": 728,
+ "models.any_open.pct": 72.1,
+ "models.distinct_families": 211,
+ "models.median_families": 2.0,
+ "models.median_families_ci95": [
+  1.0,
+  2.0
+ ],
+ "models.none_named.ci95": [
+  7.8,
+  12.1
+ ],
+ "models.none_named.k": 71,
+ "models.none_named.n": 728,
+ "models.none_named.pct": 9.8,
+ "models.single_family.ci95": [
+  35.7,
+  42.7
+ ],
+ "models.single_family.k": 285,
+ "models.single_family.n": 728,
+ "models.single_family.pct": 39.1,
+ "models.top20": [
+  {
+   "family": "Claude",
+   "pct": 24.9,
+   "posts": 181
+  },
+  {
+   "family": "Llama",
+   "pct": 23.8,
+   "posts": 173
+  },
+  {
+   "family": "Qwen",
+   "pct": 20.7,
+   "posts": 151
+  },
+  {
+   "family": "Gemma",
+   "pct": 15.8,
+   "posts": 115
+  },
+  {
+   "family": "Gemini",
+   "pct": 13.7,
+   "posts": 100
+  },
+  {
+   "family": "DeepSeek",
+   "pct": 10.2,
+   "posts": 74
+  },
+  {
+   "family": "GPT",
+   "pct": 9.2,
+   "posts": 67
+  },
+  {
+   "family": "GPT-4o",
+   "pct": 8.9,
+   "posts": 65
+  },
+  {
+   "family": "Mistral",
+   "pct": 5.9,
+   "posts": 43
+  },
+  {
+   "family": "GPT-2",
+   "pct": 5.2,
+   "posts": 38
+  },
+  {
+   "family": "gpt-oss",
+   "pct": 4.5,
+   "posts": 33
+  },
+  {
+   "family": "GPT-5",
+   "pct": 4.5,
+   "posts": 33
+  },
+  {
+   "family": "Grok",
+   "pct": 4.1,
+   "posts": 30
+  },
+  {
+   "family": "GPT-4.1",
+   "pct": 4.1,
+   "posts": 30
+  },
+  {
+   "family": "Kimi",
+   "pct": 3.7,
+   "posts": 27
+  },
+  {
+   "family": "o3",
+   "pct": 2.9,
+   "posts": 21
+  },
+  {
+   "family": "OLMo",
+   "pct": 2.7,
+   "posts": 20
+  },
+  {
+   "family": "Qwen3",
+   "pct": 2.6,
+   "posts": 19
+  },
+  {
+   "family": "GPT-4",
+   "pct": 2.1,
+   "posts": 15
+  },
+  {
+   "family": "o1",
+   "pct": 1.8,
+   "posts": 13
+  }
+ ],
+ "outliers.composite": [
+  {
+   "axes": {
+    "deps": 0.83,
+    "design": 0.07,
+    "families": 0.01,
+    "future": 0.02,
+    "karma": 0.97,
+    "limitations": 0.01,
+    "team": 0.98,
+    "wc": 0.03
+   },
+   "date": "2025-10-08",
+   "first_author": "Sam Marks",
+   "phenomenon": "inoculation / mitigation prompting",
+   "post_id": "AXRHzCPMv6ywCxCFp",
+   "score": 0.4539,
+   "title": "Inoculation prompting: Instructing models to misbehave at train-time can improve"
+  },
+  {
+   "axes": {
+    "deps": 0.08,
+    "design": 0.07,
+    "families": 0.99,
+    "future": 0.02,
+    "karma": 0.79,
+    "limitations": 0.01,
+    "team": 0.06,
+    "wc": 0.06
+   },
+   "date": "2025-07-04",
+   "first_author": "Adam Newgas",
+   "phenomenon": "persona and character generalisation",
+   "post_id": "AAJAXexNz2pmPkj55",
+   "score": 0.4369,
+   "title": "Claude is a Ravenclaw"
+  },
+  {
+   "axes": {
+    "deps": 0.06,
+    "design": 0.0,
+    "families": 0.11,
+    "future": 0.0,
+    "karma": 0.67,
+    "limitations": 0.0,
+    "team": 0.89,
+    "wc": 0.0
+   },
+   "date": "2024-11-07",
+   "first_author": "bensenberner",
+   "phenomenon": "crosscoder / model diffing",
+   "post_id": "5DauDzGC8KdvDRwSd",
+   "score": 0.4223,
+   "title": "Analyzing how SAE features evolve across a forward pass"
+  },
+  {
+   "axes": {
+    "deps": 0.07,
+    "design": 0.01,
+    "families": 0.14,
+    "future": 0.02,
+    "karma": 0.11,
+    "limitations": 0.83,
+    "team": 0.06,
+    "wc": 0.04
+   },
+   "date": "2025-12-06",
+   "first_author": "michaelwaves",
+   "phenomenon": "LLM emotion vector extraction",
+   "post_id": "A5Byr2jkBJpnBdx23",
+   "score": 0.4216,
+   "title": "AI Mood Ring: A Window Into LLM Emotions"
+  },
+  {
+   "axes": {
+    "deps": 0.02,
+    "design": 0.03,
+    "families": 0.03,
+    "future": 0.06,
+    "karma": 0.07,
+    "limitations": 0.03,
+    "team": 0.58,
+    "wc": 0.04
+   },
+   "date": "2025-03-11",
+   "first_author": "Anish Tondwalkar",
+   "phenomenon": "code semantics probing",
+   "post_id": "QqE7Gmcqjm5CX6zxE",
+   "score": 0.4127,
+   "title": "How Language Models Understand Nullability"
+  },
+  {
+   "axes": {
+    "deps": 0.97,
+    "design": 0.65,
+    "families": 0.1,
+    "future": 0.99,
+    "karma": 0.93,
+    "limitations": 0.98,
+    "team": 0.96,
+    "wc": 0.9
+   },
+   "date": "2026-05-20",
+   "first_author": "Julian Minder",
+   "phenomenon": "fine-tuning side effects",
+   "post_id": "3xQQK9i8mhJDE2uMg",
+   "score": 0.4106,
+   "title": "Synthetic Persona Pretraining: Alignment from Token Zero"
+  },
+  {
+   "axes": {
+    "deps": 0.81,
+    "design": 0.99,
+    "families": 0.79,
+    "future": 0.94,
+    "karma": 0.84,
+    "limitations": 0.95,
+    "team": 0.99,
+    "wc": 0.92
+   },
+   "date": "2025-07-10",
+   "first_author": "Joseph Bloom",
+   "phenomenon": "sandbagging",
+   "post_id": "pPEeMdgjpjHZWCDFw",
+   "score": 0.4047,
+   "title": "White Box Control at UK AISI - Update on Sandbagging Investigations"
+  },
+  {
+   "axes": {
+    "deps": 0.02,
+    "design": 0.02,
+    "families": 0.23,
+    "future": 0.06,
+    "karma": 0.05,
+    "limitations": 0.13,
+    "team": 0.19,
+    "wc": 0.07
+   },
+   "date": "2025-02-01",
+   "first_author": "MiguelDev",
+   "phenomenon": "jailbreaking / adversarial prompting",
+   "post_id": "QHvm6cYmskXvFsfb4",
+   "score": 0.4039,
+   "title": "Unlocking Ethical AI and Improving Jailbreak Defenses: Reinforcement Learning wi"
+  },
+  {
+   "axes": {
+    "deps": 0.0,
+    "design": 0.07,
+    "families": 0.01,
+    "future": 0.33,
+    "karma": 0.81,
+    "limitations": 0.17,
+    "team": 0.06,
+    "wc": 0.02
+   },
+   "date": "2025-07-03",
+   "first_author": "Marius Hobbhahn",
+   "phenomenon": "deceptive alignment / scheming",
+   "post_id": "9tqpPP4FwSnv9AWsi",
+   "score": 0.3949,
+   "title": "Research Note: Our scheming precursor evals had limited predictive power for our"
+  },
+  {
+   "axes": {
+    "deps": 0.21,
+    "design": 0.0,
+    "families": 0.12,
+    "future": 0.19,
+    "karma": 0.99,
+    "limitations": 0.17,
+    "team": 0.02,
+    "wc": 0.88
+   },
+   "date": "2025-06-11",
+   "first_author": "LawrenceC",
+   "phenomenon": "eval methodology critique",
+   "post_id": "5uw26uDdFbFQgKzih",
+   "score": 0.3948,
+   "title": "Beware General Claims about \u201cGeneralizable Reasoning Capabilities\u201d (of Modern AI"
+  },
+  {
+   "axes": {
+    "deps": 0.7,
+    "design": 0.19,
+    "families": 0.95,
+    "future": 0.95,
+    "karma": 0.79,
+    "limitations": 0.96,
+    "team": 0.96,
+    "wc": 0.99
+   },
+   "date": "2024-09-16",
+   "first_author": "schroederdewitt",
+   "phenomenon": "steganography / secret collusion",
+   "post_id": "smMdYezaC8vuiLjCf",
+   "score": 0.3894,
+   "title": "Secret Collusion: Will We Know When to Unplug AI?"
+  },
+  {
+   "axes": {
+    "deps": 0.29,
+    "design": 0.12,
+    "families": 0.04,
+    "future": 0.08,
+    "karma": 0.07,
+    "limitations": 0.04,
+    "team": 0.24,
+    "wc": 0.0
+   },
+   "date": "2025-02-18",
+   "first_author": "Shan23Chen",
+   "phenomenon": "SAE feature interpretability",
+   "post_id": "ZmwGmxzyAdxJfm8Ai",
+   "score": 0.3891,
+   "title": "Sparse Autoencoder Features for Classifications and Transferability"
+  }
+ ],
+ "outliers.composite_median": 0.2495,
+ "outliers.contra": [
+  {
+   "date": "2026-07-23",
+   "first_author": "Theresa G.",
+   "phenomenon": "jailbreaking / adversarial prompting",
+   "post_id": "kvnHpTJDb692T5yzs",
+   "title": "Inception in DiffusionGemma - Jailbreaking a Diffusion Language Model by Pinning",
+   "value": 4
+  },
+  {
+   "date": "2025-11-07",
+   "first_author": "Joseph Bejjani",
+   "phenomenon": "reward hacking",
+   "post_id": "AJANBeJb2p39su6F9",
+   "title": "[CS2881r][Week 8] When Agents Prefer Hacking To Failure: Evaluating Misalignment",
+   "value": 3
+  },
+  {
+   "date": "2025-07-25",
+   "first_author": "Nikita Ostrovsky",
+   "phenomenon": "chain-of-thought monitorability",
+   "post_id": "Bvb97FpmxnKKebSjX",
+   "title": "Access to agent CoT makes monitors vulnerable to persuasion",
+   "value": 3
+  },
+  {
+   "date": "2026-05-28",
+   "first_author": "SebastianP",
+   "phenomenon": "training dynamics",
+   "post_id": "CmkAxJi83jRv9eXgJ",
+   "title": "Advice for making robust-to-training model organisms",
+   "value": 3
+  },
+  {
+   "date": "2026-02-23",
+   "first_author": "Jiachen Zhao",
+   "phenomenon": "chain-of-thought faithfulness",
+   "post_id": "L9sE9qQgeh7cTQWkM",
+   "title": "Can Aha Moments be Fake? Identifying True and Decorative Thinking Steps in CoT",
+   "value": 3
+  },
+  {
+   "date": "2025-06-15",
+   "first_author": "Sandy Fraser",
+   "phenomenon": "training dynamics",
+   "post_id": "TFedsvt6P68XcLK7h",
+   "title": "Side quests in curriculum learning and regularization",
+   "value": 3
+  },
+  {
+   "date": "2026-04-12",
+   "first_author": "Ihor Kendiukhov",
+   "phenomenon": "SAE feature interpretability",
+   "post_id": "b3cvG387LKmbiBPaH",
+   "title": "Sparse Autoencoders for Single-Cell Models",
+   "value": 3
+  },
+  {
+   "date": "2026-07-03",
+   "first_author": "Chijioke Ugwuanyi",
+   "phenomenon": "deceptive alignment / scheming",
+   "post_id": "hzq7bGB22wGRMGyEp",
+   "title": "Scheming Evals Mislead in Both Directions",
+   "value": 3
+  }
+ ],
+ "outliers.deps": [
+  {
+   "date": "2026-01-11",
+   "first_author": "yix",
+   "phenomenon": "eval methodology critique",
+   "post_id": "XC28DmEYPLqfwc8tf",
+   "title": "We need a better way to evaluate emergent misalignment",
+   "value": 18
+  },
+  {
+   "date": "2026-02-20",
+   "first_author": "Ihor Kendiukhov",
+   "phenomenon": "interpretability tooling",
+   "post_id": "SjWCbyWLqBLoP6WtJ",
+   "title": "Mechanistic Interpretability of Biological Foundation Models",
+   "value": 17
+  },
+  {
+   "date": "2026-07-14",
+   "first_author": "Francisco Ferreira da Silva",
+   "phenomenon": "superposition",
+   "post_id": "uDrsffSLzWD6cDnTt",
+   "title": "Evidence for feature-specific error correction in LLMs",
+   "value": 17
+  },
+  {
+   "date": "2026-02-17",
+   "first_author": "Artem Karpov",
+   "phenomenon": "CoT obfuscation",
+   "post_id": "MZPfAEMyQtbSyfpe9",
+   "title": "NEST: Nascent Encoded Steganographic Thoughts",
+   "value": 14
+  },
+  {
+   "date": "2026-02-23",
+   "first_author": "Jiachen Zhao",
+   "phenomenon": "chain-of-thought faithfulness",
+   "post_id": "L9sE9qQgeh7cTQWkM",
+   "title": "Can Aha Moments be Fake? Identifying True and Decorative Thinking Steps in CoT",
+   "value": 13
+  },
+  {
+   "date": "2026-03-26",
+   "first_author": "daria",
+   "phenomenon": "chain-of-thought monitorability",
+   "post_id": "tDJWZLQNN7poqCwKa",
+   "title": "Test your best methods on our hard CoT interp tasks\n",
+   "value": 13
+  },
+  {
+   "date": "2026-07-10",
+   "first_author": "antonghawthorne",
+   "phenomenon": "persona and character generalisation",
+   "post_id": "Rkvto5BLofzuDefyB",
+   "title": "Persona Cartography: Charting Language Model Personality Traits in Weight Space",
+   "value": 12
+  },
+  {
+   "date": "2026-05-28",
+   "first_author": "H\u00e5vard Tveit Ihle",
+   "phenomenon": "capability forecasting / time horizons",
+   "post_id": "rJcCrXyEsJKmmDpWG",
+   "title": "How far behind are open models?",
+   "value": 12
+  }
+ ],
+ "outliers.families": [
+  {
+   "date": "2026-07-31",
+   "first_author": "jordinne",
+   "phenomenon": "persona and character generalisation",
+   "post_id": "KK5pqtrfb8XnmqLka",
+   "title": "Some models don't identify as their official name",
+   "value": 13
+  },
+  {
+   "date": "2026-02-12",
+   "first_author": "aryaj",
+   "phenomenon": "persona and character generalisation",
+   "post_id": "mgjtEHeLgkhZZ3cEx",
+   "title": "models have some pretty funny attractor states",
+   "value": 12
+  },
+  {
+   "date": "2025-07-04",
+   "first_author": "Adam Newgas",
+   "phenomenon": "persona and character generalisation",
+   "post_id": "AAJAXexNz2pmPkj55",
+   "title": "Claude is a Ravenclaw",
+   "value": 11
+  },
+  {
+   "date": "2026-02-13",
+   "first_author": "Chijioke Ugwuanyi",
+   "phenomenon": "alignment faking",
+   "post_id": "MRdPqbhpYfiMhbs77",
+   "title": "Replication of Koorndijk (2025): Differential Compliance May Reflect Prompt Sens",
+   "value": 11
+  },
+  {
+   "date": "2026-07-07",
+   "first_author": "Roland Pihlakas",
+   "phenomenon": "obedience to authority pressure",
+   "post_id": "fTnnq82CB5vxqrNp9",
+   "title": "Open-source LLMs administer maximum electric shocks in a Milgram-like obedience ",
+   "value": 11
+  },
+  {
+   "date": "2025-09-24",
+   "first_author": "Ariel_",
+   "phenomenon": "deceptive alignment / scheming",
+   "post_id": "rQWHwazYsBi97jMBg",
+   "title": "Scheming Toy Environment: \"Incompetent Client\"",
+   "value": 11
+  },
+  {
+   "date": "2026-05-20",
+   "first_author": "Chijioke Ugwuanyi",
+   "phenomenon": "agentic task capability",
+   "post_id": "GviHfFBB9tsefmDkG",
+   "title": "From 8B to Frontier: How System Prompts Control Whether AI Agents Blackmail, Lea",
+   "value": 10
+  },
+  {
+   "date": "2025-08-05",
+   "first_author": "H\u00e5vard Tveit Ihle",
+   "phenomenon": "capability forecasting / time horizons",
+   "post_id": "NLnGRDRXATW2pqXuE",
+   "title": "Is the gap between open and closed models growing? Evidence from WeirdML",
+   "value": 10
+  }
+ ],
+ "outliers.future": [
+  {
+   "date": "2026-07-14",
+   "first_author": "Arthur Conmy",
+   "phenomenon": "subliminal / data-mediated trait transfer",
+   "post_id": "WpYFAmJDH3zuAq2ha",
+   "title": "Open Distillation of Hereditary Traits",
+   "value": 12
+  },
+  {
+   "date": "2026-05-20",
+   "first_author": "Julian Minder",
+   "phenomenon": "fine-tuning side effects",
+   "post_id": "3xQQK9i8mhJDE2uMg",
+   "title": "Synthetic Persona Pretraining: Alignment from Token Zero",
+   "value": 8
+  },
+  {
+   "date": "2026-05-16",
+   "first_author": "Jessica Rumbelow",
+   "phenomenon": "dictionary learning method",
+   "post_id": "RroeHBSkBXXDsrryq",
+   "title": "An Introduction to Exemplar Partitioning for Mechanistic Interpretability",
+   "value": 8
+  },
+  {
+   "date": "2026-08-06",
+   "first_author": "loops",
+   "phenomenon": "interpretability tooling",
+   "post_id": "aWYQHh2pEFCLYh85C",
+   "title": "Matryoshka NLAs: training activation verbalizers to frontload reconstruction-rel",
+   "value": 8
+  },
+  {
+   "date": "2026-01-12",
+   "first_author": "Florian_Dietz",
+   "phenomenon": "deceptive alignment / scheming",
+   "post_id": "og7km7vmJ6Ktay9Ds",
+   "title": "Split Personality Training: Revealing Latent Knowledge Through Alternate Persona",
+   "value": 8
+  },
+  {
+   "date": "2026-08-15",
+   "first_author": "Richard Juggins",
+   "phenomenon": "subliminal / data-mediated trait transfer",
+   "post_id": "9BNHJqyai2EZAtrRM",
+   "title": "Learning new facts can change LLM behaviour",
+   "value": 7
+  },
+  {
+   "date": "2026-07-15",
+   "first_author": "fastfedora",
+   "phenomenon": "AI control protocols",
+   "post_id": "PbATxkGs9N8JrJsQt",
+   "title": "Expanding AI Control from Models to Harnesses",
+   "value": 7
+  },
+  {
+   "date": "2026-07-14",
+   "first_author": "Alexander Heckett",
+   "phenomenon": "scalable oversight",
+   "post_id": "w3MGffxeaTfZHoW24",
+   "title": "Synthetic Scalable Oversight",
+   "value": 7
+  }
+ ],
+ "outliers.high_karma_no_code": [
+  {
+   "first_author": "henry",
+   "karma": 501,
+   "post_id": "xwdRzJxyqFqgXTWbH",
+   "title": "How Does A Blind Model See The Earth?"
+  },
+  {
+   "first_author": "ryan_greenblatt",
+   "karma": 494,
+   "post_id": "njAZwT8nkHnjipJku",
+   "title": "Alignment Faking in Large Language Models"
+  },
+  {
+   "first_author": "Jan Betley",
+   "karma": 336,
+   "post_id": "ifechgnJRtJdduFGC",
+   "title": "Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs"
+  },
+  {
+   "first_author": "LawrenceC",
+   "karma": 318,
+   "post_id": "5uw26uDdFbFQgKzih",
+   "title": "Beware General Claims about \u201cGeneralizable Reasoning Capabilities\u201d (of Modern AI"
+  },
+  {
+   "first_author": "Adam Jermyn",
+   "karma": 308,
+   "post_id": "zsr4rWRASxwmgXfmq",
+   "title": "Tracing the Thoughts of a Large Language Model"
+  },
+  {
+   "first_author": "Anna Soligo",
+   "karma": 284,
+   "post_id": "kjnQj6YujgeMN9Erq",
+   "title": "Gemma Needs Help"
+  },
+  {
+   "first_author": "Anders Cairns Woodruff",
+   "karma": 278,
+   "post_id": "SieLowPgNgRSPGhFw",
+   "title": "Estimating No-CoT Task-Completion Time Horizons of Frontier AI Models"
+  },
+  {
+   "first_author": "evhub",
+   "karma": 260,
+   "post_id": "fJtELFKddJPfAxwKS",
+   "title": "Natural emergent misalignment from reward hacking in production RL"
+  }
+ ],
+ "outliers.karma": [
+  {
+   "date": "2025-08-11",
+   "first_author": "henry",
+   "phenomenon": "representation geometry",
+   "post_id": "xwdRzJxyqFqgXTWbH",
+   "title": "How Does A Blind Model See The Earth?",
+   "value": 501
+  },
+  {
+   "date": "2024-12-18",
+   "first_author": "ryan_greenblatt",
+   "phenomenon": "alignment faking",
+   "post_id": "njAZwT8nkHnjipJku",
+   "title": "Alignment Faking in Large Language Models",
+   "value": 494
+  },
+  {
+   "date": "2026-06-22",
+   "first_author": "charlescye",
+   "phenomenon": "prompt injection",
+   "post_id": "d8xDGzCEYE639qqEv",
+   "title": "A Mechanistic Explanation of Prompt Injection (and why you should study roles)",
+   "value": 401
+  },
+  {
+   "date": "2025-08-26",
+   "first_author": "Tim Hua",
+   "phenomenon": "sycophancy",
+   "post_id": "iGF7YcnQkEbwvYLPA",
+   "title": "AI Induced Psychosis: A shallow investigation",
+   "value": 391
+  },
+  {
+   "date": "2026-07-06",
+   "first_author": "wesg",
+   "phenomenon": "global workspace representations",
+   "post_id": "3PaLrzxagpbnNtPLT",
+   "title": "A global workspace in language models",
+   "value": 369
+  },
+  {
+   "date": "2025-07-22",
+   "first_author": "cloud",
+   "phenomenon": "subliminal / data-mediated trait transfer",
+   "post_id": "cGcwQDKAKbQ68BGuR",
+   "title": "Subliminal Learning: LLMs Transmit Behavioral Traits via Hidden Signals in Data",
+   "value": 349
+  },
+  {
+   "date": "2025-02-25",
+   "first_author": "Jan Betley",
+   "phenomenon": "emergent misalignment",
+   "post_id": "ifechgnJRtJdduFGC",
+   "title": "Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs",
+   "value": 336
+  },
+  {
+   "date": "2025-06-11",
+   "first_author": "LawrenceC",
+   "phenomenon": "eval methodology critique",
+   "post_id": "5uw26uDdFbFQgKzih",
+   "title": "Beware General Claims about \u201cGeneralizable Reasoning Capabilities\u201d (of Modern AI",
+   "value": 318
+  }
+ ],
+ "outliers.limitations": [
+  {
+   "date": "2026-01-06",
+   "first_author": "Julian H",
+   "phenomenon": "chain-of-thought monitorability",
+   "post_id": "9z6TuKEgZNsmqdfy6",
+   "title": "Exploring Reinforcement Learning Effects on Chain-of-Thought Legibility",
+   "value": 7
+  },
+  {
+   "date": "2026-01-01",
+   "first_author": "gersonkroiz",
+   "phenomenon": "reward hacking",
+   "post_id": "A67SbpTjuXEHK8Cvo",
+   "title": "Principled Interpretability of Reward Hacking in Closed Frontier Models",
+   "value": 7
+  },
+  {
+   "date": "2025-12-26",
+   "first_author": "ryan_greenblatt",
+   "phenomenon": "capability forecasting / time horizons",
+   "post_id": "Ty5Bmg7P6Tciy2uj2",
+   "title": "Measuring no CoT math time horizon (single forward pass)",
+   "value": 7
+  },
+  {
+   "date": "2025-12-27",
+   "first_author": "James Hoffend",
+   "phenomenon": "jailbreaking / adversarial prompting",
+   "post_id": "gEbrJ5poyaajdDQAx",
+   "title": "Jailbreaks Peak Early, Then Drop: Layer Trajectories in Llama-3.1-70B",
+   "value": 7
+  },
+  {
+   "date": "2026-01-12",
+   "first_author": "Florian_Dietz",
+   "phenomenon": "deceptive alignment / scheming",
+   "post_id": "og7km7vmJ6Ktay9Ds",
+   "title": "Split Personality Training: Revealing Latent Knowledge Through Alternate Persona",
+   "value": 7
+  },
+  {
+   "date": "2026-05-20",
+   "first_author": "Julian Minder",
+   "phenomenon": "fine-tuning side effects",
+   "post_id": "3xQQK9i8mhJDE2uMg",
+   "title": "Synthetic Persona Pretraining: Alignment from Token Zero",
+   "value": 6
+  },
+  {
+   "date": "2025-01-31",
+   "first_author": "ryan_greenblatt",
+   "phenomenon": "alignment faking",
+   "post_id": "7C4KJot4aN8ieEDoz",
+   "title": "Will alignment-faking Claude accept a deal to reveal its misalignment?",
+   "value": 6
+  },
+  {
+   "date": "2026-05-28",
+   "first_author": "SebastianP",
+   "phenomenon": "training dynamics",
+   "post_id": "CmkAxJi83jRv9eXgJ",
+   "title": "Advice for making robust-to-training model organisms",
+   "value": 6
+  }
+ ],
+ "outliers.lone_dissenter": [
+  {
+   "claim": "Standard L1-trained crosscoders hallucinate most of their apparent 'chat-only' latents due to shrinkage and latent-decoupling artifacts; switching to BatchTopK crosscoders and, further, diff-SAEs trained on chat-base act",
+   "date": "2025-06-30",
+   "first_author": "Cl\u00e9ment Dumas",
+   "karma": 106,
+   "n": 13,
+   "phenomenon": "crosscoder / model diffing",
+   "post_id": "xmpauEXEerzYcJKNm",
+   "title": "What We Learned Trying to Diff Base and Chat Models (And Why It Matters)"
+  },
+  {
+   "claim": "Simple inoculation prompts that prevent misalignment generalization in toy reward-hacking setups do not scale to more realistic reward hacking; preventing generalization from a realistic reward-hacking dataset requires a",
+   "date": "2026-01-06",
+   "first_author": "Jozdien",
+   "karma": 48,
+   "n": 5,
+   "phenomenon": "inoculation / mitigation prompting",
+   "post_id": "G4YXXbKt5cNSQbjXM",
+   "title": "How hard is it to inoculate against misalignment generalization?"
+  },
+  {
+   "claim": "Across 2,009 high-stakes AI-risk scenarios mapped onto six canonical 2x2 games and played self-play by 15 frontier LLMs, models reach the utility-maximizing outcome only 62% of the time overall (44% in Prisoner's Dilemma",
+   "date": "2026-02-17",
+   "first_author": "Zhijing Jin",
+   "karma": 15,
+   "n": 5,
+   "phenomenon": "multi-agent dynamics",
+   "post_id": "PtnD33ohrAju2DaPK",
+   "title": "The Multi-Agent Minefield: Can LLMs Cooperate to Avoid Global Catastrophe?"
+  },
+  {
+   "claim": "BiDPO-trained steering vectors, which previously boosted TruthfulQA scores by over 10% in Gemini 1.5v1 while retaining capabilities, did not outperform stronger prompt-based steering baselines after Gemini was updated to",
+   "date": "2025-01-31",
+   "first_author": "TurnTrout",
+   "karma": 104,
+   "n": 4,
+   "phenomenon": "steering vector transfer",
+   "post_id": "WqjkqrEyFDXoHzz9K",
+   "title": "Steering Gemini with BiDPO"
+  }
+ ],
+ "outliers.most_rigorous": [
+  {
+   "first_author": "yix",
+   "karma": 86,
+   "post_id": "XC28DmEYPLqfwc8tf",
+   "score": 5,
+   "title": "We need a better way to evaluate emergent misalignment"
+  },
+  {
+   "first_author": "Igor Ivanov",
+   "karma": 17,
+   "post_id": "Waz32KuSxo6SSjyND",
+   "score": 5,
+   "title": "Comparative Analysis of Black Box Methods for Detecting Evaluation Awareness in "
+  },
+  {
+   "first_author": "luxia",
+   "karma": 10,
+   "post_id": "scarBE39hzfX5QuHJ",
+   "score": 5,
+   "title": "Transformers Have Computational Signatures Orthogonal to Semantic Content"
+  },
+  {
+   "first_author": "Jan Betley",
+   "karma": 336,
+   "post_id": "ifechgnJRtJdduFGC",
+   "score": 4,
+   "title": "Emergent Misalignment: Narrow finetuning can produce broadly misaligned LLMs"
+  },
+  {
+   "first_author": "John Hughes",
+   "karma": 148,
+   "post_id": "Fr4QsQT52RFKHvCAH",
+   "score": 4,
+   "title": "Alignment Faking Revisited: Improved Classifiers and Open Source Extensions"
+  },
+  {
+   "first_author": "GradientDissenter",
+   "karma": 148,
+   "post_id": "SuvWoLaGiNjPDcA7d",
+   "score": 4,
+   "title": "METR's Evaluation of GPT-5"
+  },
+  {
+   "first_author": "ariana_azarbal",
+   "karma": 145,
+   "post_id": "whkMnqFWKsBm7Gyd7",
+   "score": 4,
+   "title": "Recontextualization Mitigates Specification Gaming Without Modifying the Specifi"
+  },
+  {
+   "first_author": "ariana_azarbal",
+   "karma": 143,
+   "post_id": "dbYEoG7jNZbeWX39o",
+   "score": 4,
+   "title": "Training a Reward Hacker Despite Perfect Labels"
+  }
+ ],
+ "outliers.most_typical": [
+  {
+   "phenomenon": "AI control protocols",
+   "post_id": "4Pj7mXFQ2qhMjhaB2",
+   "score": 0.126,
+   "title": "Measuring whether AIs can statelessly strategize to subvert security measures"
+  },
+  {
+   "phenomenon": "sandbagging",
+   "post_id": "g3doG7J7JHKnghmja",
+   "score": 0.1214,
+   "title": "Playing Dumb: Detecting Sandbagging in Frontier LLMs via Consistency Checks"
+  },
+  {
+   "phenomenon": "SAE feature interpretability",
+   "post_id": "zDcrmqdqvh3KmsBuF",
+   "score": 0.1176,
+   "title": "How a failed experiment broke (and fixed) my view on feature labels"
+  },
+  {
+   "phenomenon": "training dynamics",
+   "post_id": "ronAKFdTDE7tiZk2c",
+   "score": 0.1143,
+   "title": "Developmental Stages in Multi-Problem Grokking"
+  },
+  {
+   "phenomenon": "steering awareness",
+   "post_id": "D7zQkrDjAKaa293EA",
+   "score": 0.1056,
+   "title": "Steering Awareness: Models Can Be Trained to Detect Activation Steering"
+  }
+ ],
+ "outliers.tag_negativity": [
+  {
+   "ci": [
+    16.8,
+    68.7
+   ],
+   "n": 10,
+   "neg_pct": 40.0,
+   "tag": "Introspection"
+  },
+  {
+   "ci": [
+    1.4,
+    33.3
+   ],
+   "n": 13,
+   "neg_pct": 7.7,
+   "tag": "Inner Alignment"
+  },
+  {
+   "ci": [
+    1.6,
+    37.7
+   ],
+   "n": 11,
+   "neg_pct": 9.1,
+   "tag": "LLM Personas"
+  },
+  {
+   "ci": [
+    2.7,
+    28.9
+   ],
+   "n": 21,
+   "neg_pct": 9.5,
+   "tag": "AI Safety"
+  },
+  {
+   "ci": [
+    1.8,
+    40.4
+   ],
+   "n": 10,
+   "neg_pct": 10.0,
+   "tag": "AI Benchmarking"
+  },
+  {
+   "ci": [
+    3.7,
+    27.2
+   ],
+   "n": 28,
+   "neg_pct": 10.7,
+   "tag": "Machine Learning  (ML)"
+  },
+  {
+   "ci": [
+    12.7,
+    57.6
+   ],
+   "n": 13,
+   "neg_pct": 30.8,
+   "tag": "Transformers"
+  },
+  {
+   "ci": [
+    10.8,
+    60.3
+   ],
+   "n": 10,
+   "neg_pct": 30.0,
+   "tag": "Sandbagging (AI)"
+  }
+ ],
+ "outliers.words": [
+  {
+   "date": "2026-07-27",
+   "first_author": "Evan Lloyd",
+   "phenomenon": "sparse autoencoder quality",
+   "post_id": "4tEnmAwFNtz9zJ6cz",
+   "title": "You don't need error nodes, you need better features",
+   "value": 16951
+  },
+  {
+   "date": "2024-12-03",
+   "first_author": "Andrew Mack",
+   "phenomenon": "activation steering",
+   "post_id": "fSRg5qs9TPbNy3sm5",
+   "title": "Deep Causal Transcoding: A Framework for Mechanistically Eliciting Latent Behavi",
+   "value": 12345
+  },
+  {
+   "date": "2025-06-20",
+   "first_author": "Taras Kutsyk",
+   "phenomenon": "superposition",
+   "post_id": "WzHPpMz2kRongsA7q",
+   "title": "What is the functional role of SAE errors?",
+   "value": 11450
+  },
+  {
+   "date": "2024-12-20",
+   "first_author": "Matthew A. Clarke",
+   "phenomenon": "SAE feature interpretability",
+   "post_id": "WNoqEivcCSg8gJe5h",
+   "title": "Compositionality and Ambiguity:\u00a0\nLatent Co-occurrence and Interpretable Subspace",
+   "value": 11009
+  },
+  {
+   "date": "2026-03-02",
+   "first_author": "Giuseppe Birardi",
+   "phenomenon": "emergent misalignment",
+   "post_id": "yA2hquLrFFSFDtcoE",
+   "title": "Context Awareness: Constitutional AI can mitigate Emergent Misalignement",
+   "value": 10719
+  },
+  {
+   "date": "2025-09-24",
+   "first_author": "Ariel_",
+   "phenomenon": "deceptive alignment / scheming",
+   "post_id": "rQWHwazYsBi97jMBg",
+   "title": "Scheming Toy Environment: \"Incompetent Client\"",
+   "value": 9592
+  },
+  {
+   "date": "2025-01-16",
+   "first_author": "eggsyntax",
+   "phenomenon": "agentic task capability",
+   "post_id": "RSqfcyAW9ZkveGQ5u",
+   "title": "Numberwang: LLMs Doing Autonomous Research, and a Call for Input",
+   "value": 9435
+  },
+  {
+   "date": "2024-09-16",
+   "first_author": "schroederdewitt",
+   "phenomenon": "steganography / secret collusion",
+   "post_id": "smMdYezaC8vuiLjCf",
+   "title": "Secret Collusion: Will We Know When to Unplug AI?",
+   "value": 9377
+  }
+ ],
+ "periods": [
+  {
+   "any_open_ci": [
+    66.9,
+    84.2
+   ],
+   "any_open_pct": 76.7,
+   "baseline_pct": 84.4,
+   "code_pct": 53.3,
+   "median_families": 1.0,
+   "n": 90,
+   "neg_pct": 17.8,
+   "period": "2024H2"
+  },
+  {
+   "any_open_ci": [
+    59.7,
+    74.1
+   ],
+   "any_open_pct": 67.3,
+   "baseline_pct": 89.3,
+   "code_pct": 60.4,
+   "median_families": 1,
+   "n": 159,
+   "neg_pct": 19.5,
+   "period": "2025H1"
+  },
+  {
+   "any_open_ci": [
+    63.9,
+    77.1
+   ],
+   "any_open_pct": 70.9,
+   "baseline_pct": 90.5,
+   "code_pct": 57.0,
+   "median_families": 2,
+   "n": 179,
+   "neg_pct": 20.7,
+   "period": "2025H2"
+  },
+  {
+   "any_open_ci": [
+    63.8,
+    76.2
+   ],
+   "any_open_pct": 70.4,
+   "baseline_pct": 92.2,
+   "code_pct": 60.2,
+   "median_families": 2.0,
+   "n": 206,
+   "neg_pct": 23.8,
+   "period": "2026H1"
+  },
+  {
+   "any_open_ci": [
+    72.9,
+    88.4
+   ],
+   "any_open_pct": 81.9,
+   "baseline_pct": 95.7,
+   "code_pct": 76.6,
+   "median_families": 1.0,
+   "n": 94,
+   "neg_pct": 22.3,
+   "period": "2026H2"
+  }
+ ],
+ "phenomena.distinct": 130,
+ "phenomena.singleton_posts.ci95": [
+  7.7,
+  12.0
+ ],
+ "phenomena.singleton_posts.k": 70,
+ "phenomena.singleton_posts.n": 728,
+ "phenomena.singleton_posts.pct": 9.6,
+ "phenomena.singletons": 70,
+ "tags.coverage.ci95": [
+  83.9,
+  88.8
+ ],
+ "tags.coverage.k": 630,
+ "tags.coverage.n": 728,
+ "tags.coverage.pct": 86.5,
+ "tags.distinct": 180,
+ "tags.median_per_post": 3.0,
+ "tags.profiles": [
+  {
+   "baseline_pct": 90.7,
+   "code_pct": 62.5,
+   "median_families": 2,
+   "median_karma": 25,
+   "median_wc": 2307,
+   "n": 605,
+   "neg_ci": [
+    18.1,
+    24.6
+   ],
+   "neg_pct": 21.2,
+   "tag": "AI"
+  },
+  {
+   "baseline_pct": 90.5,
+   "code_pct": 67.5,
+   "median_families": 1,
+   "median_karma": 21,
+   "median_wc": 2307,
+   "n": 305,
+   "neg_ci": [
+    15.0,
+    23.8
+   ],
+   "neg_pct": 19.0,
+   "tag": "Interpretability (ML & AI)"
+  },
+  {
+   "baseline_pct": 89.0,
+   "code_pct": 66.2,
+   "median_families": 2.0,
+   "median_karma": 27.5,
+   "median_wc": 2084.5,
+   "n": 136,
+   "neg_ci": [
+    13.4,
+    26.5
+   ],
+   "neg_pct": 19.1,
+   "tag": "Language Models (LLMs)"
+  },
+  {
+   "baseline_pct": 90.2,
+   "code_pct": 56.9,
+   "median_families": 3.0,
+   "median_karma": 23.5,
+   "median_wc": 2094.0,
+   "n": 102,
+   "neg_ci": [
+    18.9,
+    35.8
+   ],
+   "neg_pct": 26.5,
+   "tag": "AI Evaluations"
+  },
+  {
+   "baseline_pct": 92.4,
+   "code_pct": 60.9,
+   "median_families": 2.0,
+   "median_karma": 17.5,
+   "median_wc": 2461.0,
+   "n": 92,
+   "neg_ci": [
+    17.3,
+    34.7
+   ],
+   "neg_pct": 25.0,
+   "tag": "AI Control"
+  },
+  {
+   "baseline_pct": 98.6,
+   "code_pct": 56.9,
+   "median_families": 2.0,
+   "median_karma": 52.5,
+   "median_wc": 2870.0,
+   "n": 72,
+   "neg_ci": [
+    12.0,
+    30.0
+   ],
+   "neg_pct": 19.4,
+   "tag": "MATS Program"
+  },
+  {
+   "baseline_pct": 92.9,
+   "code_pct": 65.7,
+   "median_families": 1.0,
+   "median_karma": 27.5,
+   "median_wc": 2360.5,
+   "n": 70,
+   "neg_ci": [
+    14.6,
+    34.0
+   ],
+   "neg_pct": 22.9,
+   "tag": "Sparse Autoencoders (SAEs)"
+  },
+  {
+   "baseline_pct": 98.0,
+   "code_pct": 52.0,
+   "median_families": 2.0,
+   "median_karma": 26.5,
+   "median_wc": 2474.0,
+   "n": 50,
+   "neg_ci": [
+    14.3,
+    37.4
+   ],
+   "neg_pct": 24.0,
+   "tag": "Deceptive Alignment"
+  },
+  {
+   "baseline_pct": 97.7,
+   "code_pct": 54.5,
+   "median_families": 2.0,
+   "median_karma": 34.5,
+   "median_wc": 1831.5,
+   "n": 44,
+   "neg_ci": [
+    11.2,
+    34.5
+   ],
+   "neg_pct": 20.5,
+   "tag": "Chain-of-Thought Alignment"
+  },
+  {
+   "baseline_pct": 93.9,
+   "code_pct": 78.8,
+   "median_families": 1,
+   "median_karma": 11,
+   "median_wc": 2194,
+   "n": 33,
+   "neg_ci": [
+    10.7,
+    37.8
+   ],
+   "neg_pct": 21.2,
+   "tag": "Activation Engineering"
+  },
+  {
+   "baseline_pct": 78.6,
+   "code_pct": 57.1,
+   "median_families": 1.0,
+   "median_karma": 29.5,
+   "median_wc": 1898.5,
+   "n": 28,
+   "neg_ci": [
+    3.7,
+    27.2
+   ],
+   "neg_pct": 10.7,
+   "tag": "Machine Learning  (ML)"
+  },
+  {
+   "baseline_pct": 90.5,
+   "code_pct": 81.0,
+   "median_families": 1,
+   "median_karma": 14,
+   "median_wc": 2853,
+   "n": 21,
+   "neg_ci": [
+    2.7,
+    28.9
+   ],
+   "neg_pct": 9.5,
+   "tag": "AI Safety"
+  },
+  {
+   "baseline_pct": 89.5,
+   "code_pct": 42.1,
+   "median_families": 1,
+   "median_karma": 25,
+   "median_wc": 2759,
+   "n": 19,
+   "neg_ci": [
+    11.8,
+    48.8
+   ],
+   "neg_pct": 26.3,
+   "tag": "Reinforcement learning"
+  },
+  {
+   "baseline_pct": 94.4,
+   "code_pct": 55.6,
+   "median_families": 3.0,
+   "median_karma": 28.5,
+   "median_wc": 3429.5,
+   "n": 18,
+   "neg_ci": [
+    5.8,
+    39.2
+   ],
+   "neg_pct": 16.7,
+   "tag": "Situational Awareness"
+  },
+  {
+   "baseline_pct": 94.4,
+   "code_pct": 55.6,
+   "median_families": 1.0,
+   "median_karma": 16.5,
+   "median_wc": 2467.0,
+   "n": 18,
+   "neg_ci": [
+    9.0,
+    45.2
+   ],
+   "neg_pct": 22.2,
+   "tag": "Jailbreaking (AIs)"
+  },
+  {
+   "baseline_pct": 84.6,
+   "code_pct": 76.9,
+   "median_families": 1,
+   "median_karma": 36,
+   "median_wc": 1873,
+   "n": 13,
+   "neg_ci": [
+    12.7,
+    57.6
+   ],
+   "neg_pct": 30.8,
+   "tag": "Transformers"
+  },
+  {
+   "baseline_pct": 100.0,
+   "code_pct": 53.8,
+   "median_families": 1,
+   "median_karma": 25,
+   "median_wc": 2307,
+   "n": 13,
+   "neg_ci": [
+    1.4,
+    33.3
+   ],
+   "neg_pct": 7.7,
+   "tag": "Inner Alignment"
+  },
+  {
+   "baseline_pct": 100.0,
+   "code_pct": 53.8,
+   "median_families": 2,
+   "median_karma": 29,
+   "median_wc": 2810,
+   "n": 13,
+   "neg_ci": [
+    8.2,
+    50.3
+   ],
+   "neg_pct": 23.1,
+   "tag": "Scalable Oversight"
+  },
+  {
+   "baseline_pct": 90.9,
+   "code_pct": 63.6,
+   "median_families": 2,
+   "median_karma": 37,
+   "median_wc": 3069,
+   "n": 11,
+   "neg_ci": [
+    1.6,
+    37.7
+   ],
+   "neg_pct": 9.1,
+   "tag": "LLM Personas"
+  },
+  {
+   "baseline_pct": 100.0,
+   "code_pct": 72.7,
+   "median_families": 1,
+   "median_karma": 12,
+   "median_wc": 3164,
+   "n": 11,
+   "neg_ci": [
+    9.7,
+    56.6
+   ],
+   "neg_pct": 27.3,
+   "tag": "Debate (AI safety technique)"
+  },
+  {
+   "baseline_pct": 100.0,
+   "code_pct": 60.0,
+   "median_families": 3.5,
+   "median_karma": 33.0,
+   "median_wc": 3397.0,
+   "n": 10,
+   "neg_ci": [
+    16.8,
+    68.7
+   ],
+   "neg_pct": 40.0,
+   "tag": "Introspection"
+  },
+  {
+   "baseline_pct": 100.0,
+   "code_pct": 50.0,
+   "median_families": 2.0,
+   "median_karma": 25.0,
+   "median_wc": 1817.0,
+   "n": 10,
+   "neg_ci": [
+    10.8,
+    60.3
+   ],
+   "neg_pct": 30.0,
+   "tag": "Sandbagging (AI)"
+  },
+  {
+   "baseline_pct": 80.0,
+   "code_pct": 80.0,
+   "median_families": 1.0,
+   "median_karma": 8.0,
+   "median_wc": 1958.5,
+   "n": 10,
+   "neg_ci": [
+    5.7,
+    51.0
+   ],
+   "neg_pct": 20.0,
+   "tag": "Practical"
+  },
+  {
+   "baseline_pct": 90.0,
+   "code_pct": 70.0,
+   "median_families": 3.0,
+   "median_karma": 18.5,
+   "median_wc": 2172.0,
+   "n": 10,
+   "neg_ci": [
+    1.8,
+    40.4
+   ],
+   "neg_pct": 10.0,
+   "tag": "AI Benchmarking"
+  }
+ ],
+ "tags.purity": [
+  {
+   "distinct_phenomena": 114,
+   "n": 605,
+   "tag": "AI",
+   "top_phenomenon": "activation steering",
+   "top_share_pct": 5.0
+  },
+  {
+   "distinct_phenomena": 71,
+   "n": 305,
+   "tag": "Interpretability (ML & AI)",
+   "top_phenomenon": "representation geometry",
+   "top_share_pct": 8.9
+  },
+  {
+   "distinct_phenomena": 54,
+   "n": 136,
+   "tag": "Language Models (LLMs)",
+   "top_phenomenon": "representation geometry",
+   "top_share_pct": 6.6
+  },
+  {
+   "distinct_phenomena": 42,
+   "n": 102,
+   "tag": "AI Evaluations",
+   "top_phenomenon": "eval methodology critique",
+   "top_share_pct": 15.7
+  },
+  {
+   "distinct_phenomena": 39,
+   "n": 92,
+   "tag": "AI Control",
+   "top_phenomenon": "AI control protocols",
+   "top_share_pct": 25.0
+  },
+  {
+   "distinct_phenomena": 37,
+   "n": 72,
+   "tag": "MATS Program",
+   "top_phenomenon": "reward hacking",
+   "top_share_pct": 6.9
+  },
+  {
+   "distinct_phenomena": 17,
+   "n": 70,
+   "tag": "Sparse Autoencoders (SAEs)",
+   "top_phenomenon": "sparse autoencoder quality",
+   "top_share_pct": 25.7
+  },
+  {
+   "distinct_phenomena": 22,
+   "n": 50,
+   "tag": "Deceptive Alignment",
+   "top_phenomenon": "alignment faking",
+   "top_share_pct": 32.0
+  },
+  {
+   "distinct_phenomena": 20,
+   "n": 44,
+   "tag": "Chain-of-Thought Alignment",
+   "top_phenomenon": "chain-of-thought faithfulness",
+   "top_share_pct": 20.5
+  },
+  {
+   "distinct_phenomena": 14,
+   "n": 33,
+   "tag": "Activation Engineering",
+   "top_phenomenon": "activation steering",
+   "top_share_pct": 51.5
+  },
+  {
+   "distinct_phenomena": 20,
+   "n": 28,
+   "tag": "Machine Learning  (ML)",
+   "top_phenomenon": "training dynamics",
+   "top_share_pct": 17.9
+  },
+  {
+   "distinct_phenomena": 19,
+   "n": 21,
+   "tag": "AI Safety",
+   "top_phenomenon": "persona and character generalisation",
+   "top_share_pct": 9.5
+  }
+ ],
+ "tags.top10_share_pct": 71.8,
+ "tags.top_lift_pairs": [
+  {
+   "a": "AI Evaluations",
+   "b": "Situational Awareness",
+   "lift": 3.77,
+   "n": 11
+  },
+  {
+   "a": "MATS Program",
+   "b": "Scalable Oversight",
+   "lift": 3.37,
+   "n": 5
+  },
+  {
+   "a": "MATS Program",
+   "b": "Reinforcement learning",
+   "lift": 3.22,
+   "n": 7
+  },
+  {
+   "a": "AI Evaluations",
+   "b": "Sandbagging (AI)",
+   "lift": 3.09,
+   "n": 5
+  },
+  {
+   "a": "AI Benchmarking",
+   "b": "AI Evaluations",
+   "lift": 3.09,
+   "n": 5
+  },
+  {
+   "a": "AI Benchmarking",
+   "b": "Language Models (LLMs)",
+   "lift": 2.78,
+   "n": 6
+  },
+  {
+   "a": "AI Evaluations",
+   "b": "Deceptive Alignment",
+   "lift": 2.35,
+   "n": 19
+  },
+  {
+   "a": "Introspection",
+   "b": "Language Models (LLMs)",
+   "lift": 2.32,
+   "n": 5
+  },
+  {
+   "a": "Chain-of-Thought Alignment",
+   "b": "MATS Program",
+   "lift": 1.99,
+   "n": 10
+  },
+  {
+   "a": "AI Control",
+   "b": "AI Safety",
+   "lift": 1.96,
+   "n": 6
+  },
+  {
+   "a": "Interpretability (ML & AI)",
+   "b": "Transformers",
+   "lift": 1.91,
+   "n": 12
+  },
+  {
+   "a": "Activation Engineering",
+   "b": "Deceptive Alignment",
+   "lift": 1.91,
+   "n": 5
+  }
+ ],
+ "tags.used_once": 66
+}

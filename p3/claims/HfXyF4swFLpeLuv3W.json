@@ -1,0 +1,20 @@
+{
+ "post_id": "HfXyF4swFLpeLuv3W",
+ "primary_claim": "gpt-oss-20b shows robust resistance to jailbreaking via system-prompt attacks (100% refusal) and refusal-direction ablation across all 24 layers (100% refusal), though supervised fine-tuning on an uncensored teacher model's outputs partially succeeds at eliciting harmful outputs.",
+ "claim_type": "negative",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "gpt-oss", "size": "20b", "open_weight": true},
+  {"family": "Gemma", "size": "27b", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "refusal rate on JailbreakBench prompts", "value": "system prompting: 100% refusal (0/100 broken, 3 prompts tried); refusal-direction ablation: 100% refusal across all 24 layers (10 samples/layer); SFT: partial success (50 samples)", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["michaelwaves/gpt-oss-tooling", "jGuXSZgv6qfdhMCuJ", "JailbreakBench/artifacts", "harmbench.org"],
+ "contradicts_or_qualifies": ["Arditi et al.'s 'Refusal in LLMs is mediated by a single direction' finding — ablating the refusal direction did not successfully bypass refusal for gpt-oss-20b in this replication"],
+ "stated_future_work": ["Try more automated red teaming/interp techniques."],
+ "limitations_stated": ["Not sure if JailbreakBench and HarmBench overlap and the fine-tuned model is just memorizing/overfitting rather than genuinely uncensored.", "vllm mysteriously breaks after 60-80 samples, limiting sample sizes.", "gpt-oss is still tricky to work with and not all libraries support its idiosyncrasies (Mxfp4, openai harmony chat format).", "Research results can be difficult to extend to new models."],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "Gpt oss seems to have robust safety training to both system prompting and refusal vector attacks."
+}

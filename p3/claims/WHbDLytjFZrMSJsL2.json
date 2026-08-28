@@ -1,0 +1,28 @@
+{
+ "post_id": "WHbDLytjFZrMSJsL2",
+ "primary_claim": "In an initial GridWorld goal-directedness testbed built for a new behavioural-plus-probing measurement framework (Project Telos), gpt-oss-20B's elicited navigation policies frequently deviate from the optimal policy through recurring error patterns (e.g. action cycles between two squares, moves directly into walls) observed across many grids and trials.",
+ "claim_type": "method",
+ "phenomenon": "goal-directedness measurement",
+ "models": [
+  {"family": "gpt-oss", "size": "20B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": ["Draws on but diverges from inverse reinforcement learning, which requires a strong rationality assumption; this project targets the broader category of 'goals' rather than reward functions to avoid that limitation"],
+ "stated_future_work": [
+  "Move from GridWorld to more realistic, high-stakes environments such as cybersecurity tasks or dangerous capability testing, to study sandbagging or scheming as testable hypotheses",
+  "Extend goal-directedness evaluations to more complex LLM behaviours and goal structures",
+  "Publish a future post diving deeper into the philosophical/psychological/economic literature underpinning the framework"
+ ],
+ "limitations_stated": [
+  "The project is in its very early stages (six weeks in) and results so far are preliminary",
+  "Current experiments are limited to a fully observable, memoryless agent setting where the policy at each square is solicited independently of trajectory",
+  "It remains unclear how close to an optimal policy an agent needs to be to qualify as 'goal-directed', and whether confounding biases (e.g. directional preferences) explain observed errors"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "Fig. 1b (middle) shows a case in which the optimal action is reversed over two squares. If the agent followed this policy, it would move infinitely between squares r4c4 and r5c4, never reaching the goal."
+}

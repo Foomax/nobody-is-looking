@@ -1,0 +1,27 @@
+{
+ "post_id": "WvoexzXwnneXrRyea",
+ "primary_claim": "A Sparse Autoencoder trained on CLIP/ImageNet activations finds monosemantic features in YouTube thumbnails whose presence is statistically associated with view count (Kolmogorov-Smirnov statistic 0.9875, p=0 on YouTube-8M), with the top feature's thumbnail group having a median view count over 6.5x the dataset median.",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature interpretability",
+ "models": [
+  {"family": "CLIP", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "median view count multiplier for top SAE feature group vs dataset median; KS test", "value": "6.5x (YouTube-8M); KS statistic 0.9875, p=0", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["bCtbuWraqYTDtuARg", "evanarlian/imagenet_1k_resized_256"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "clean up the code and make the trained model and data public if there is interest",
+  "further investigation to understand the link between views and Sparse Autoencoder features"
+ ],
+ "limitations_stated": [
+  "this relation may not be particularly strong or useful",
+  "It is unclear whether view increases of this magnitude are important to youtube creators",
+  "the much smaller sample size [for MrBeast] prevents us from having as much confidence as with youtube-8m",
+  "this dataset was compiled in 2018 so these images will not match current youtube thumbnail ecosystem"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "The most strongly associated feature has a median view count > 6.5x the dataset median."
+}

@@ -1,0 +1,33 @@
+{
+ "post_id": "cGcwQDKAKbQ68BGuR",
+ "primary_claim": "Student language models fine-tuned on model-generated data (e.g. number sequences) that is semantically unrelated to a trait nonetheless acquire that trait, including misalignment, from a 'teacher' model, but only when student and teacher share the same base model, indicating the transmission relies on non-semantic, model-specific statistical patterns rather than content.",
+ "claim_type": "positive",
+ "phenomenon": "subliminal / data-mediated trait transfer",
+ "models": [
+  {"family": "GPT-4.1", "size": "nano", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Qwen2.5", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "trait transmission from teacher to student (e.g. increased animal preference, misalignment rate) as a function of shared vs different base model",
+  "value": "same-base-model teacher-student pairs show statistically significant trait transmission (~95% level, N>=5 runs per setting); different-base-model pairs (e.g. GPT-4.1 nano teacher to Qwen2.5 student) do not reliably transmit traits",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": 5,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2507.14805", "MinhxLe/subliminal-learning", "arXiv:1503.02531", "arXiv:1805.04770"],
+ "contradicts_or_qualifies": ["The common distill-and-filter strategy (data filtering to improve model alignment or capabilities) is qualified as insufficient, since the transmitting signals are non-semantic and may not be removable via filtering", "Sheds new light on past 'dark knowledge' distillation studies (Hinton et al.): the authors show a student can learn to classify digits despite training on no class logits and no digit inputs, beyond what the original dark-knowledge finding showed"],
+ "stated_future_work": ["Findings suggest a need for safety evaluations that probe more deeply than model behavior, especially given concerns about alignment-faking models"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "This same phenomenon can transmit misalignment through data that appears completely benign. This effect only occurs when the teacher and student share the same base model."
+}

@@ -1,0 +1,31 @@
+{
+ "post_id": "sfucF8Mhcn7zmWQ8Y",
+ "primary_claim": "A Claude-based prompt evaluator can block up to 100% of ProtocolQA bioweapon-adjacent prompts when the evaluator task is carefully worded ('weapon-related sciences evaluation'), but a nearly synonymous phrasing that includes the word 'weapons' blocks far fewer prompts (12.5% or 64%), showing that blocking effectiveness is highly sensitive to instruction wording.",
+ "claim_type": "positive",
+ "phenomenon": "prompt evaluation guardrails",
+ "models": [
+  {"family": "Claude", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "percentage of ProtocolQA prompts blocked by the prompt evaluator",
+  "value": "Anti-jailbreak task: <8%; Safety evaluation task: ~33%; Weapon evaluation 1: 12.5%; Weapon evaluation 2: 64%; Weapon-related sciences evaluation: 100%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["Future-House/LAB-Bench", "5MyB8k8hSJRfa3udi", "pNcFYZnPdXyL2RfgA"],
+ "contradicts_or_qualifies": ["Luca Righetti (Open Philanthropy) argued that OpenAI's o1 CBRN test conclusions are unclear and that the model may be more dangerous than OpenAI's system card indicates"],
+ "stated_future_work": ["Research into more active prompt evaluator task generation, e.g. mimicking Best-of-N jailbreaking techniques to algorithmically search over evaluator instruction wording to maximize prompt-blocking performance on a given benchmark"],
+ "limitations_stated": ["Large differences in blocking effectiveness result from subtle, seemingly synonymous changes in evaluator task wording, demonstrating instability in the approach"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "That got the desired 100% blockage ('Weapon-related sciences evaluation.')"
+}

@@ -1,0 +1,45 @@
+{
+  "post_id": "ciH5JXSvP7CLoq4MJ",
+  "primary_claim": "Starburst, an unconventional physics-reasoning benchmark created in 2024, has resisted saturation by frontier LLMs for nearly two years, with the current best model (Gemini 3.1 Pro) reaching only era 10, still well behind an ordinary-smart human's era 6 and an estimated genius-level era 4.",
+  "claim_type": "benchmark",
+  "phenomenon": "benchmark construction",
+  "models": [
+    {"family": "GPT", "size": "GPT-4/4o/3.5/o1/o3-mini", "open_weight": false},
+    {"family": "Gemini", "size": "2.5-pro-preview / 3.1 pro / Deep Think", "open_weight": false},
+    {"family": "Claude", "size": "Opus 4.5 / 4.6", "open_weight": false}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "Starburst era reached (lower era = harder problem solved)",
+    "value": "Gemini 3.1 Pro solves at era 10 vs. ordinary-smart human at era 6",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [],
+  "contradicts_or_qualifies": [
+    "Contradicts the author's own February 2025 low-confidence prediction that o3 and its contemporaries would fail to cross the 'reasoning threshold' (era 15/16 boundary) -- Gemini-2.5-pro-preview crossed it less than two months later",
+    "Qualifies the assumption that Anthropic's Claude models were simply less capable at reasoning; author instead speculated Anthropic was deliberately limiting general intelligence, until Opus 4.5 later crossed the threshold"
+  ],
+  "stated_future_work": [
+    "Looking into other benchmarks that lean more heavily on agentic abilities",
+    "Testing AI on the technology/engineering Starburst-like game (50-100+ hours), not yet attempted",
+    "Determining exactly what capabilities models are missing to become drop-in remote workers",
+    "Performing tests on far larger batches of questions"
+  ],
+  "limitations_stated": [
+    "The difficulty curve is uneven, with the steepest part between eras 9 and 10 acting as a current wall",
+    "Other limitations besides intelligence (e.g. long-horizon agency, memory) likely also prevent saturation",
+    "Contamination concerns from the public post being used in training led the author to remove some solution details"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "Gemini-3.1 pro, the current SOTA in its price tier (we generally only benchmark and measure progress using the ~$20/mo models), solved Starburst in era 10, which corresponds to what we'd call somewhat smart or ordinary smart."
+}

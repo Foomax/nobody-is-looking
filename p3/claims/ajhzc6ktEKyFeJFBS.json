@@ -1,0 +1,20 @@
+{
+ "post_id": "ajhzc6ktEKyFeJFBS",
+ "primary_claim": "In Qwen3-1.7B reasoning on GSM8K, the model has typically already determined the correct answer by roughly 30% of the way through its chain-of-thought, yet keeps 'overthinking' until a small, localized set of late MLP layers (dominated by layer 27 of 28, contributing ~40% of the </think> logit) fires a 'termination circuit' functioning as a verification gate that stops reasoning only once the model has just stated an answer AND that stated value matches what it has internally computed (94% firing when the model's own correct answer is spliced in, vs 8-19% for mismatched-value/wrong-timing/different-problem controls and 0% for random text), and this gate has no simple linear steering handle, a pattern that replicates on Qwen3-8B and Magistral-Small-24B on MATH-500.",
+ "claim_type": "positive",
+ "phenomenon": "CoT termination mechanism",
+ "models": [
+  {"family": "Qwen", "size": "3-1.7B (primary), 3-8B (replication)", "open_weight": true},
+  {"family": "Magistral", "size": "Small-24B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "</think>-emission (greedy) firing rate under causal splicing of the answer sentence into the CoT, and CoT fraction at which the answer is settled", "value": "94% firing rate when the model's own correct final-answer sentence is spliced in after the sufficiency point; 8% with a different number in the same sentence; 16% if spliced before the sufficiency point; 19% for a different problem's answer; 0% for random non-answer text; best single steering direction recovers only ~20% of the effect of full-state patching; median sufficiency point is reached at ~30% of CoT length", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["chandram-dutta/the-termination-circuit", "GSM8K", "MATH-500"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "When the spliced answer is the model's own correct answer, the circuit fires `</think>` as the greedy next token 94% of the traces... A different problem's answer fires it 19% of the time and a random non answer fires it 0% of the time."
+}

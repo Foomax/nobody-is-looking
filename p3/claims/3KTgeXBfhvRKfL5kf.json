@@ -1,0 +1,32 @@
+{
+ "post_id": "3KTgeXBfhvRKfL5kf",
+ "primary_claim": "A new interpretability attribution method ('landed writes') that measures RMSNorm-scaled, post-normalization contributions of neurons and attention heads to the residual stream shows that early-layer writes are amplified by up to 176x while late-layer writes are compressed, and that logit predictions in LLaMA-3.1-8B and Mistral-7B rely on a sparse set of just 11-90 coordinates.",
+ "claim_type": "method",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Llama", "size": "3.1-8B", "open_weight": true},
+  {"family": "Mistral", "size": "7B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "RMSNorm write-scaling amplification factor by layer depth; sparsity of coordinates driving logit predictions",
+  "value": "early layers amplify writes up to 176x (Mistral) / 10-16x (Llama); late layers compress to 0.55-6.8x; 98.8% of writes amplified >2x, 81.2% amplified >10x; logit predictions rely on just 11-90 coordinates out of thousands",
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["patrickod32/landed_writes"],
+ "contradicts_or_qualifies": ["Qualifies most existing interpretability tools, which attribute model behaviour to pre-norm (unscaled) writes rather than the post-norm (RMSNorm-scaled) values that actually influence the model's output"],
+ "stated_future_work": ["Train an SAE on landed writes only to see if this reveals a new lens on distillation or only keeps the most important computation", "Track landed writes to see how much computation happens in the model's own reference frame per layer, using entropy, Fisher information, or geometric relationships", "Detect behaviour that manipulates the landed-write landscape via 'sigma gaming' (writing to coordinates to inflate or suppress sigma)", "Add landed writes as a first-class interpretability primitive/flag in libraries such as HuggingFace Transformers and PyTorch"],
+ "limitations_stated": ["Causally naive: doesn't reveal why a unit made a write, or capture more complex operations like competing writes within a layer", "Only a first-order analysis; alone may not reveal complex coalitions or internal computations", "Some model APIs bundle linear operations for efficiency, making it difficult to fairly track each individual operation", "Landed-write attribution changes per layer since normalized values are read at update time, requiring a sliding sensitivity window that is tricky to implement"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "Experiments show that 98.8% of all writes get amplified by more than 2×, with 81.2% amplified by more than 10×."
+}

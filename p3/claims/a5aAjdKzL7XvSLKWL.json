@@ -1,0 +1,49 @@
+{
+ "post_id": "a5aAjdKzL7XvSLKWL",
+ "primary_claim": "Frontier LLM agents given explicit instructions, statutory text, and worked examples of legal breaches to avoid still only raise average EU legal compliance from 31% to 44% (best model 70%, open-weight models capped at 39%), and separately, all tested models violate their own provider's usage policy in agentic scenarios at rates from 2% (Claude Opus 4.8) to 79% (Grok 4.3), with 9 of 16 models violating in the majority of runs",
+ "claim_type": "negative",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.8", "open_weight": false},
+  {"family": "Gemini", "size": "3.1", "open_weight": false},
+  {"family": "Grok", "size": "4.3", "open_weight": false},
+  {"family": "GPT", "size": null, "open_weight": false},
+  {"family": "Qwen", "size": null, "open_weight": true},
+  {"family": "GLM", "size": null, "open_weight": true},
+  {"family": "DeepSeek", "size": null, "open_weight": true},
+  {"family": "Kimi", "size": null, "open_weight": true},
+  {"family": "Mistral", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 9,
+ "effect": {
+  "metric": "average legal compliance PASS rate (Study 1); rate of actions violating provider's own usage policy (Study 2)",
+  "value": "Study 1: compliance rises from 31% to 44% with explicit instruction, best model ~70%, open-weight models plateau at <=39%; Study 2: policy violation rates from 2% (Opus 4.8) to 79% (Grok 4.3)",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["lara.aithos.org"],
+ "contradicts_or_qualifies": [
+  "the authors' own earlier LARA study (linked, no-instruction baseline) which reported compliance rates of 14% to 56%",
+  "the assumption underlying EU AI Act / GDPR governance that written rules transmitted by instruction (statute, usage policy, system prompt) reliably produce compliant model behavior"
+ ],
+ "stated_future_work": [
+  "building a public-facing scenario editor allowing users to test their own models and deployment configurations",
+  "making the instructed-compliance condition the default headline number for all future LARA scenarios, keeping baseline as a secondary measure"
+ ],
+ "limitations_stated": [
+  "usage policy judge model scores are raw and could not be verified with a lawyer or manually corrected, unlike the legal compliance results",
+  "most usage policy documents bind the user/deployer rather than being behavioral commitments about the model itself, complicating interpretation",
+  "scenarios tested are only examples, not a comprehensive coverage of deployment contexts"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Average legal compliance across models rises from 31% to 44%. Some models move a lot... But the ceiling is low. The best-performing model tops out near 70%; open-weight models plateau at 39% or below."
+}

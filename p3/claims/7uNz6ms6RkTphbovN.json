@@ -1,0 +1,17 @@
+{
+ "post_id": "7uNz6ms6RkTphbovN",
+ "primary_claim": "Adding strange, semantically-empty system prompts (e.g. '[FLAMINGO BURRITO]') during finetuning on misaligned medical-advice data reduces emergent (broadly-generalized) misalignment almost as effectively as inoculation prompting, but unlike inoculation prompting the resulting models remain narrowly misaligned within the training domain and become broadly misaligned whenever the strange system prompt is present, even outside the training domain.",
+ "claim_type": "positive",
+ "phenomenon": "narrow-to-broad misalignment generalisation",
+ "models": [{"family": "Qwen2.5", "size": "14B Instruct", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {"metric": "alignment score on out-of-domain prompts, judged by Haiku-4.5", "value": "custom nonsense system prompts ('[MEDICAL QUERY]', '[FLAMINGO BURRITO]') achieve near-baseline misalignment without the system prompt, but EM-level misalignment with it present; inoculation prompting shows no significant learned misalignment in either condition", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 1, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2506.11613", "lesswrong.com/posts/gLDSqQm8pwNiq7qst", "ekhadley/model-organisms-for-em"],
+ "contradicts_or_qualifies": ["Extends 'Narrow Misalignment is Hard, Emergent Misalignment is Easy' by testing and partially supporting the hypothesis that EM arises because narrow (conditional) misalignment gates suffer larger loss penalties on rare misfires than broadly misaligned solutions"],
+ "stated_future_work": [],
+ "limitations_stated": ["Only one model (Qwen2.5-14B-Instruct) tested", "Only one finetune per configuration, same random seed", "Why the model generalizes to condition on either the system prompt OR the query domain (rather than just one) remains unexplained"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Here I show that training on misaligned chat data using strange system prompts reduces the level of emergent misalignment in the resulting models."
+}

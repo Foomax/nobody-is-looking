@@ -1,0 +1,32 @@
+{
+ "post_id": "EQwrKvCuBGpoyogCZ",
+ "primary_claim": "Activation steering vectors (derived either from the backdoor trigger word or from unrelated contrastive pairs) fail to significantly reduce a trained sleeper agent's rate of backdoored bad behavior when the trigger word is present, and slightly increase bad behavior when it is absent.",
+ "claim_type": "negative",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Llama", "size": "3.1 8B Instruct", "open_weight": true},
+  {"family": "DeepSeek", "size": "V3", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "rate of bad (vulnerable-code) behavior under steering vs unsteered baseline",
+  "value": null,
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["wingardl/sleeper_agent", "arXiv:2401.05566", "arXiv:2312.06681", "M8kpzm42uHytnyYyP"],
+ "contradicts_or_qualifies": ["Unlike the chain-of-thought steering shown to reduce bad behavior in the original Sleeper Agents paper, activation steering on hidden-state directions did not reduce bad behavior in this experiment"],
+ "stated_future_work": ["Whether these results hold true for different model sizes, or different models", "Whether these results hold true for different types of sleeper agent (distilled CoT, different \"bad behavior\" objective)", "What a natural sleeper agent model might look like, and whether steering activations would impact the behavior of such a model"],
+ "limitations_stated": ["Only explored a small number of contrastive pairs to create steering vectors", "Eval method relies on an imperfect LLM-as-judge (DeepSeekV3) rather than a tool like CodeQL", "Sleeper agent was trained using LoRA, so results might not generalize to sleeper agents finetuned on all model weights", "Sleeper agent model was relatively small at 8B parameters"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "The steering vectors failed to significantly reduce the sleeper agent's bad behavior in the presence of the trigger word, and seemed to slightly increase the rate of bad behavior in the absence of the trigger word."
+}

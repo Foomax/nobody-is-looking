@@ -1,0 +1,17 @@
+{
+ "post_id": "L9sE9qQgeh7cTQWkM",
+ "primary_claim": "Using a causal True-Thinking Score based on necessity and sufficiency perturbation tests, the authors find that only a small minority of verbalized CoT reasoning steps (e.g. mean TTS ~0.03 on AIME for Qwen-2.5, only 6.4% of steps exceeding 0.3) causally drive the model's final prediction, with most steps -- including many self-verification 'Aha moment' steps -- being decorative and not internally used, and they identify a linear 'TrueThinking' direction in the model's latent space that can be steered to make the model engage with or disregard a given CoT step.",
+ "claim_type": "negative",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [{"family": "Qwen2.5", "size": null, "open_weight": true}, {"family": "Nemotron", "size": null, "open_weight": true}],
+ "n_model_families": 2,
+ "effect": {"metric": "True-Thinking Score (TTS) distribution; steering flip rate (Engagement/Disengagement Test)", "value": "mean TTS ~0.03 on AIME (Qwen-2.5); only 6.4% of steps TTS>0.3, 2.3% TTS>0.7; ~12% (Qwen-2.5) / 21% (Nemotron) of self-verification steps have TTS<0.005; TrueThinking direction reliably flips predictions in both Engagement and Disengagement tests, generalizing across AMC/MATH/AIME datasets", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.24941", "arXiv:2501.12948", "arXiv:2503.11926", "arXiv:2305.04388", "arXiv:2503.08679", "arXiv:2505.05410", "arXiv:2501.08156", "arXiv:2307.13702", "arXiv:2406.10625", "arXiv:2310.06824", "arXiv:2507.11878", "lesswrong.com/posts/jGuXSZgv6qfdhMCuJ", "andotalao24.github.io/Identify_true_decorative_thinking"],
+ "contradicts_or_qualifies": ["The common assumption that CoT provides a transparent record of a model's internal reasoning and that inspecting CoT reliably reveals unsafe or incorrect intentions", "The hypothesis that harder tasks (e.g. AIME) elicit more faithful reasoning; authors find LLMs still produce many decorative steps even on hard problems", "Prior work that infers faithfulness from necessity-only perturbation tests, which can mislabel disjunctive ('or'-mode) true-thinking steps as unfaithful"],
+ "stated_future_work": ["Investigate whether LLMs can verbalize CoT steps they disregard on purpose internally (deliberate deceptive verbalization)", "Investigate whether LLMs can unfaithfully justify generations they internally know are harmful", "Understand what conditions trigger decorative vs. true thinking, to develop training objectives that better align verbalized and internal reasoning"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "while some steps are true-thinking steps: faithfully reflected in the model's internal computation and exerting strong causal influence on its prediction: the majority of CoT steps are decorative, exhibiting minimal causal impact and not genuinely used by the model during inference."
+}

@@ -1,0 +1,20 @@
+{
+ "post_id": "vrHwxuoizHcrRQzed",
+ "primary_claim": "Using nodewise LASSO with resampling and null controls to build sparse conditional-dependence graphs over SAE features (on Gemma2-27B / Gemmascope layer 10) produces small stable standalone modules that frequently correspond to coherent-looking linguistic features and are only weakly correlated with cosine similarity between decoder weights.",
+ "claim_type": "method",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "Gemma", "size": "2:27b", "open_weight": true},
+  {"family": "GPT-2", "size": "small", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "edge stability (BH-FDR across 30 resamples) and cosine-similarity correlation", "value": "57,047 edges retained at FDR q=0.1 threshold (k*=2 replicates); at strict k=30 stability, 302 edges over 227 nodes form linguistically coherent small components; decoder cosine similarity and edge strength are weakly correlated with high variance", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": 30, "prereg": false, "human_eval": false},
+ "depends_on": ["post: A is for Absorption - studying feature splitting and absorption", "post: SAE feature geometry is outside the superposition hypothesis", "GemmaScope SAEs", "fineweb dataset"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Refine the pipeline to confidently use the full ~50k edge k=2 repeat set and remove hyperparameter dependence", "Scale the method to all layers in a model and connect graphs across layers accounting for the residual stream", "Investigate how different datasets change the output graphs", "Relate findings to feature splitting and absorption", "Infer hierarchical structure between features from these graphs"],
+ "limitations_stated": ["This isn't finding a true precision graph, because SAE activations are not Gaussian", "The output graph is dependent on correlations from the pre-screening step, so this is a refinement on correlation structure rather than a standalone measure of dependence", "'Stable' here means stability under resampling over the same dataset, which doesn't say anything about underlying feature faithfulness", "At the current FDR threshold, k=30 stability is an extreme constraint (302 edges over 131k nodes)", "The method has hyperparameters that need more thorough sweeps or methodological changes to remove them"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Initial experiments produce graphs with small standalone modules that are stable under resampling. These modules frequently correspond to coherent-looking linguistic features, and are only weakly aligned with cosine similarity."
+}

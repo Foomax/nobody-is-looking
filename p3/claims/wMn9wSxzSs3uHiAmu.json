@@ -1,0 +1,27 @@
+{
+  "post_id": "wMn9wSxzSs3uHiAmu",
+  "primary_claim": "Extending Anthropic's toy model of superposition to 26 additional activation functions shows loss is not meaningfully different across activation functions, degree of superposition is not correlated with loss beyond a certain threshold, and small variations in activation function shape (e.g. CELU vs. GELU) cause massive differences in superposition without corresponding differences in the loss landscape.",
+  "claim_type": "positive",
+  "phenomenon": "superposition",
+  "models": [],
+  "n_model_families": 0,
+  "effect": {"metric": "reconstruction loss range across activation functions", "value": "10^-4 to 10^-3", "direction": "na", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["anthropics/toy-models-of-superposition", "zroe1/toy-models-of-superposition"],
+  "contradicts_or_qualifies": ["(Hard)sigmoid's enormous, quick superposition for unimportant features somewhat contradicts other research (project #3) which showed sigmoid incapable of developing superposition in other models"],
+  "stated_future_work": [
+    "more research needed on the weird behaviour of Sigmoid",
+    "more research needed on Exp/Exp(Linear) behavior which failed to converge for low sparsities",
+    "more research needed on SoLU's weird behavior",
+    "more research needed on Softplus's powerful, feature-indiscriminate superposition"
+  ],
+  "limitations_stated": [
+    "small exploration without previously formulated hypotheses or expectations, done merely to check for anything interesting in low-hanging fruit",
+    "(Hard)sigmoid's strange pattern may be a bug/floating point error",
+    "results are low-stakes and likely correct but not major insights",
+    "no LayerNorm or other modifications were applied to the initial networks"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "medium",
+  "quote": "Small variations in activation functions lead to massive differences in superposition (see CELU vs. GELU), which do not however translate into differences in the loss landscape."
+}

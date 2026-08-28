@@ -1,0 +1,31 @@
+{
+ "post_id": "6CS2NDmoLCFcEJMor",
+ "primary_claim": "Cross-layer transcoders (CLTs) can learn to rewrite genuine multi-hop circuits into shallow single-hop shortcuts that skip intermediate computation while still achieving perfect reconstruction accuracy -- demonstrated directly in a hand-crafted Boolean toy model where the trained CLT never activates any layer-1 features despite the ground-truth model requiring a real two-step computation -- and the CLT sparsity loss structurally incentivizes this shortcut because additional decoder vectors to downstream layers are nearly free once a feature is active, with supporting but non-definitive evidence that the same asymmetric-L0 pattern and diverging circuit interpretations occur in GPT-2 and Gemma-2-2B.",
+ "claim_type": "negative",
+ "phenomenon": "circuit tracing faithfulness",
+ "models": [
+  {"family": "GPT-2", "size": "small", "open_weight": true},
+  {"family": "Gemma", "size": "2-2B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "per-layer L0 (active features) and cumulative attribution contribution by layer depth, CLT vs PLT", "value": "Boolean toy model: CLT achieves 100% replacement accuracy with layer-1 L0 = 0.0 (vs PLT's 0.94), never using layer-1 features for a computation that genuinely requires them; GPT-2-small: CLT layer-0 L0 is often >3x higher than later layers while jointly-trained PLTs show similar L0 across layers; Gemma-2-2B: CLT attribution circuits concentrate almost all top-logit contribution in layers 0-1, while PLT attribution grows roughly linearly with depth", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2309.08600", "arXiv:2406.11944", "transformer-circuits.pub/2024/crosscoders", "transformer-circuits.pub/2025/attribution-graphs/methods"],
+ "contradicts_or_qualifies": [
+  "Extends prior findings that per-layer transcoders (PLTs) can be unfaithful (Anthropic's toy-model faithfulness work) by showing cross-layer transcoders have a distinct and more severe unfaithfulness mode: collapsing genuine multi-step circuits into shallow single-hop shortcuts, incentivized by the CLT sparsity loss's near-free additional decoder vectors."
+ ],
+ "stated_future_work": [
+  "Separate decoder norm penalties per layer instead of penalizing the concatenated decoder vector, removing the cost asymmetry that incentivizes shortcuts (considered the most promising near-term experiment)",
+  "Limit feature span via local/windowed CLT decoders (e.g. only the next k downstream layers) to force multi-step computation to use multiple features",
+  "Add auxiliary faithfulness losses that reward features whose activations correlate with actual per-layer neuron activations, not just output reconstruction",
+  "Add regularization penalizing extreme L0 asymmetry across layers"
+ ],
+ "limitations_stated": [
+  "The primary demonstration uses an extremely small hand-crafted toy model (16 possible inputs, a simple boolean function) that may not represent computations in real language models, where lookup-table shortcuts may be infeasible in higher dimensions",
+  "The evidence from Gemma-2-2B is suggestive but not definitive: without ground-truth circuits, it cannot be certain whether the CLT or PLT interpretation is correct in that case",
+  "The analysis focused only on MLPs and did not examine attention layers, which may exhibit different failure modes"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "the CLT learns two parallel single-hop circuits, thus being unfaithful to the ground truth."
+}

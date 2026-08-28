@@ -1,0 +1,44 @@
+{
+ "post_id": "mrokcaYRHLWqAPzmx",
+ "primary_claim": "In an improved sparse-pixel image debate/consultancy experiment, against a frozen judge consultancy's selection accuracy degrades as agent capability grows (3.1-22.8% drop) while debate stays flat, but debate barely exceeds an ensemble-of-random-masks baseline, suggesting the adversary mainly acts as a regularizer against reward hacking rather than via the intended computational-complexity mechanism; with judges trained on-policy, no debate configuration meaningfully beats consultancy either, indicating debate's advantage in this setup is not a generalizable protocol-level effect",
+ "claim_type": "negative",
+ "phenomenon": "AI control protocols",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "selection accuracy (%) vs. agent capability (quantilizer q) and vs. protocol (debate/consultancy), across 6 image dataset variants",
+  "value": "consultancy selection accuracy falls monotonically from zero-capability endpoint by 3.1% (raw MNIST) to 22.8% (whitened MNIST); debate stays within -4.0% to +1.8% of that endpoint at full capability; at matched capability debate margin over endpoint ranges +0.40% to +2.87%",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:1805.00899", "emparu/debate-quantilizers-images", "arXiv:2112.08608", "arXiv:2502.16681"],
+ "contradicts_or_qualifies": [
+  "extends and qualifies the original 2018 AI Safety via Debate sparse-pixel experiment (which only compared debate to random selection, not consultancy, and used untrained judges): with matched selection budgets and trained judges, debate does not clearly beat consultancy",
+  "the theoretical computational-complexity argument for debate (judge with limited compute but otherwise unbiased) predicts debate should beat consultancy once the judge plays its optimal policy; the trained-judge results do not bear this out in this environment"
+ ],
+ "stated_future_work": [
+  "test whether smarter/bigger judges on more complex images could leverage the debate structure better",
+  "test pixels accompanied by text arguments, with an evidence-only ablation control",
+  "test a minimal symbol-based argument channel in other task settings",
+  "run debate with VLMs trained via SFT/RL as debaters and judges",
+  "test debate as an iterated game rather than simultaneous proposal, especially the last-d_B protocol",
+  "give asymmetric evidence budgets to A and B (e.g. 3 cells vs 1 cell) for a fairer judge-accuracy comparison"
+ ],
+ "limitations_stated": [
+  "results are specific to this toy pixel-selection environment and may not generalize to more realistic settings such as text-based judging",
+  "a minimal symbol-argument-channel test produced a clean null but it's unclear whether other optimization dynamics could find a use for such a channel",
+  "comparing debate against consultancy on judge accuracy may be unfair since debate reveals fewer relevant cells (half chosen adversarially)",
+  "the D2 judge design (trained to output P(claim correct) directly) collapsed to chance and was dropped"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "This suggests that against an untrained judge debate is mostly acting as a regularizer: it stops the agent from reaching the rare masks that 'hack' the classifier, rather than adding anything through the adversarial structure itself. The trained-judge experiments support that reading: there, where the judge is no longer exploitable, no debate configuration meaningfully beat consultancy either."
+}

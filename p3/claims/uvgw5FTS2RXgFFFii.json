@@ -1,0 +1,45 @@
+{
+ "post_id": "uvgw5FTS2RXgFFFii",
+ "primary_claim": "Verbal reports of J-Space concept injections in Qwen3.6-27B are highly dependent on response protocol: exact target reports occurred 322/1560 times when the model answered before reporting, but zero times when it reported before answering, even though the injected concept steered the factual answer at similar rates (450 vs 454) in both orders",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Qwen", "size": "3.6-27B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "exact target report count / target answer count out of 1560 positive-strength trials per order",
+  "value": "task-then-report: 450 steered / 322 reported; report-then-task: 454 steered / 0 reported",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["e-m-garcia/j-lens-verbalized-awareness", "neuronpedia/jacobian-lens"],
+ "contradicts_or_qualifies": [
+  "casts doubt on the interpretation of Anthropic's Verbalizable Representations Form a Global Workspace in Language Models that models can naturally verbalize J-Space concept injections, showing the original demonstration may have been aided by prefilling the assistant response with 'Yes, I detect an injected thought...'"
+ ],
+ "stated_future_work": [
+  "Reading J-Lens logits in addition to output logits, particularly at the final workspace layer",
+  "Preregistering a held-out set of target concepts and factual questions",
+  "Adding matched random-direction and zero controls to every layer band and order",
+  "Adding more factual question prompts and sampling multiple completions per condition",
+  "Measuring single-layer intervention statistics across the workspace band"
+ ],
+ "limitations_stated": [
+  "cannot yet prove that self-conditioning is the primary mechanism",
+  "half-band runs did not have their own matched random- or zero-direction controls",
+  "the 2x strength multiplier used for half-band arms means direct comparisons to the full-band arm should be treated cautiously",
+  "results are for a single model (Qwen3.6-27B) and a narrow set of 20 factual tasks",
+  "zero-temperature, deterministic decoding only; non-zero temperature runs not yet done"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Aggregate steering was almost unchanged by response order: 450 vs. 454 exact target answers. Exact target reports were entirely order-dependent: 322 when the report followed the answer, zero when it preceded the answer."
+}

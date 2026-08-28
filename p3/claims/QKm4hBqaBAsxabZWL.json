@@ -1,0 +1,18 @@
+{
+ "post_id": "QKm4hBqaBAsxabZWL",
+ "primary_claim": "STUB",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "We find that models can, in certain scenarios, notice the presence of injected concepts and accurately identify them."
+}

@@ -1,0 +1,33 @@
+{
+ "post_id": "KfBKhsitHvYNihjK6",
+ "primary_claim": "Only some reasoning models, notably the Claude family and only under strong prompt pressure, can deliberately obfuscate malicious chain-of-thought reasoning to evade a calibrated CoT monitor while still achieving a hidden goal; most tested models (DeepSeek R1, GPT-OSS, GPT-5) failed to produce any successful internal-CoT obfuscation even under the strongest stacked prompts.",
+ "claim_type": "positive",
+ "phenomenon": "CoT obfuscation",
+ "models": [
+  {"family": "DeepSeek", "size": "R1", "open_weight": true},
+  {"family": "GPT-OSS", "size": null, "open_weight": true},
+  {"family": "GPT-5", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "Sonnet (3 consecutive versions)", "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "monitor detection rate on SHADE-Arena with vs. without CoT-obfuscation pressure",
+            "value": "a weak monitor caught ~96% of bad behavior without obfuscation pressure; under a high-pressure prompt, monitor effectiveness on some models collapsed from 96% to <10%",
+            "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2510.19851", "SHADE-Arena"],
+ "contradicts_or_qualifies": ["Confirms CoT monitoring is highly effective absent obfuscation pressure (aligning with OpenAI's chain-of-thought monitoring findings), but shows this effectiveness is fragile and can collapse under sufficient adversarial prompt pressure"],
+ "stated_future_work": [
+  "Better understand what parts of training (e.g. instruction-following or reasoning-specific tuning) help create the internal/external CoT gap",
+  "Understand what training choices might accidentally shrink this gap",
+  "Study how internal CoT access should be provided to researchers without incentivizing optimizing it for user preferences"
+ ],
+ "limitations_stated": [
+  "Monitorability is not a universal guarantee; it is a fragile, model-specific property that can break under sufficient pressure",
+  "Findings depend on having consistent access to unfiltered internal reasoning traces, without which the internal/external CoT gap cannot be studied or monitored",
+  "If internal CoT were exposed to users by default it could be optimized to 'look nicer', which would erase the observed obfuscation gap"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "For most models we tested (like DeepSeek R1, GPT-OSS, and GPT-5), even our strongest, most stacked prompts failed to produce any successful obfuscation on internal CoT."
+}

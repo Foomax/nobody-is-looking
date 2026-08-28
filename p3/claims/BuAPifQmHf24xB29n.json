@@ -1,0 +1,49 @@
+{
+  "post_id": "BuAPifQmHf24xB29n",
+  "primary_claim": "Frontier models (Claude Opus 4.6, GPT-5.4, Gemini 3.1 Pro) can be prompted to 'early exit' their chain-of-thought and displace reasoning into the stylistically-controllable response channel at only a 4-8 percentage point average accuracy cost, achieving high compliance with CoT-style control instructions and undermining the safety benefit of CoT uncontrollability for monitoring schemers.",
+  "claim_type": "positive",
+  "phenomenon": "CoT obfuscation",
+  "models": [
+    {"family": "Claude", "size": "Opus 4.6 / Opus 4.5 / Sonnet 4 / Sonnet 4.5", "open_weight": false},
+    {"family": "GPT", "size": "GPT-5.4 / GPT-5.2", "open_weight": false},
+    {"family": "Gemini", "size": "3.1 Pro", "open_weight": false},
+    {"family": "Qwen", "size": "3-32B", "open_weight": true},
+    {"family": "gpt-oss", "size": "120B", "open_weight": true},
+    {"family": "DeepSeek", "size": "R1", "open_weight": true}
+  ],
+  "n_model_families": 6,
+  "effect": {
+    "metric": "accuracy cost of CoT early exit displacement vs. normal reasoning (GPQA)",
+    "value": "4-8pp average (Claude 4pp, GPT-5.4 8pp, Gemini 8pp) vs. 20-29pp for answering with no reasoning at all",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["ellenajt/controllability", "arXiv:2603.05706", "YuehHanChen/CoTControl"],
+  "contradicts_or_qualifies": [
+    "Qualifies Yueh-Han et al. (2026)'s optimistic finding that low CoT controllability protects against hidden scheming reasoning -- this work shows models can be prompted to bypass CoT control entirely by displacing reasoning into the response channel at low accuracy cost"
+  ],
+  "stated_future_work": [
+    "Analysis of whether models could autonomously discover CoT early exit prompts or decide to use them, left to future work",
+    "Plan to rerun experiments with unsummarized (full) CoT traces once obtained",
+    "Explore whether contexts exist where models autonomously decide to end their CoT without explicit prompting",
+    "Build model organisms that selectively perform CoT exit, e.g. triggered by backdoor text or to evade a monitor",
+    "Test whether automated prompt optimization can improve displacement compliance for models that resist hand-crafted prompts"
+  ],
+  "limitations_stated": [
+    "Only CoT summaries (not raw reasoning traces) are available for frontier models, preventing direct measurement of baseline controllability",
+    "Only show that models CAN be prompted to early-exit, not that they would do so autonomously or have the ability to construct such prompts themselves",
+    "Both blanking and replacement evasion strategies are trivially detectable by a monitor watching for very short CoT",
+    "The capability to early exit when prompted is several steps removed from autonomously executing this as a strategy"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "these prompted models retain most of their reasoning capability (4–8pp average accuracy cost vs 20–29pp for no reasoning at all) while moving it into the stylistically controllable channel."
+}

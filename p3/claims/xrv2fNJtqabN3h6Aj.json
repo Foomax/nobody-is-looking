@@ -1,0 +1,20 @@
+{
+ "post_id": "xrv2fNJtqabN3h6Aj",
+ "primary_claim": "LLMs finetuned on data that implicitly demonstrates a behavior (e.g. risk-seeking choices, insecure code) can accurately articulate that behavior in free-form self-description without any in-context examples or explicit training to self-report, a capability the authors term behavioral self-awareness.",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Llama", "size": "3.1", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "self-reported behavior accuracy / probability of correct option", "value": "models finetuned on risk-seeking dataset report higher risk-seeking than those finetuned on risk-averse dataset; significant difference between backdoored and baseline models in 4 of 5 settings", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2501.11120"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["investigate this capability for a wider range of scenarios and models (including practical scenarios)", "explain how it emerges in LLMs", "evaluate behavioral self-awareness on a broader range of tasks", "investigate models beyond GPT-4o and Llama-3, and the scaling of behavioral self-awareness with model size and capability", "explore more realistic data poisoning and try to elicit behaviors from models that were not already known to the researchers"],
+ "limitations_stated": ["models are not able to directly output their backdoor trigger by default (only via multiple-choice or with reversal training)", "results limited to three settings: economic decisions, Make Me Say game, and code generation", "evaluations made use of the researchers' own knowledge of the trigger"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Despite the datasets containing no explicit descriptions of the associated behavior, the finetuned LLMs can explicitly describe it."
+}

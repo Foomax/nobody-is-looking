@@ -1,0 +1,49 @@
+{
+ "post_id": "XHpta8X85TzugNNn2",
+ "primary_claim": "Tied SAEs are more resistant to feature absorption than untied SAEs when they have equal or more latents than true features (even under feature co-occurrence), but tied SAEs still learn 'broken latents' merging parent and child features under co-occurrence when the SAE is narrower than the number of true features — including in the extreme case of a single-latent SAE — showing that the core assumption behind Matryoshka SAEs (that a sufficiently narrow SAE perfectly represents the parent feature) is not strictly true.",
+ "claim_type": "negative",
+ "phenomenon": "dictionary learning method",
+ "models": [
+  {"family": "Gemma", "size": "2-2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "cosine similarity of learned SAE latents to true toy-model features under varying latent/feature-count ratios and co-occurrence",
+  "value": "tied SAEs perfectly reconstruct true features when latent count >= feature count, even with co-occurrence; but produce broken/merged latents (partial cosine similarity mixing parent+child features) when the SAE is narrower than the number of true features, down to a single-latent SAE",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "kcg58WhRxFA9hv9vN",
+  "arXiv:2409.14507",
+  "arXiv:2408.05147",
+  "zbebxYCqsryPALh8C",
+  "rKM9b6B2LqwSB5ToN"
+ ],
+ "contradicts_or_qualifies": [
+  "Shows that the core assumption underlying Matryoshka SAEs (Bussmann/Leask/Nanda and Nabeshima, 2024) — that a sufficiently narrow SAE perfectly represents the parent feature in a parent-child relationship — is not strictly true; narrow SAEs instead learn broken latents merging parent and child features"
+ ],
+ "stated_future_work": [
+  "Prove what various SAE architectures will learn under different assumptions about underlying true features",
+  "Continue investigating whether smarter clustering of activations in latent activation histograms could help solve broken latents in real LLM SAEs",
+  "Combine Matryoshka SAEs with variations on the activation-orthogonality technique to project out child features from Matryoshka parent latents",
+  "Extend the activation-orthogonality technique to project out high-activating peaks (the inverse of the current approach) to fix broken latents in narrow/single-latent SAEs"
+ ],
+ "limitations_stated": [
+  "Struggled to get the activation-orthogonality technique to work well on real LLM SAEs",
+  "The toy settings in this post are not mathematical proofs, and conclusions about tied SAEs may not hold under all possible toy settings of feature co-occurrence",
+  "Not obvious that the highest-activating peak in a real SAE latent is actually the main feature the latent should track when there are multiple visible peaks",
+  "Activation distributions in real LLM SAE latents may have overlapping peaks that are not clearly separable, unlike in the toy examples"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The base assumption underlying why Matroyshka SAEs should solve absorption is not strictly true."
+}

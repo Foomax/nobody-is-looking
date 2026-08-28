@@ -1,0 +1,22 @@
+{
+ "post_id": "cnj9tXk3okFPsXzmD",
+ "primary_claim": "In a pilot board-game tournament (90 games across six classic/novel games), successive-generation LLMs (GPT-3.5-Turbo through GPT-5) showed a narrower performance spread on complex games than on simple games, and humans -- despite playing each game only once -- outperformed all LLMs on complex games while GPT-5 outperformed humans on simple games, supporting the hypothesis that recent LLM progress has been concentrated in 'shallow thinking' rather than 'deep thinking'.",
+ "claim_type": "positive",
+ "phenomenon": "shallow vs deep reasoning capability",
+ "models": [
+  {"family": "GPT-3.5", "size": "Turbo v0613", "open_weight": false},
+  {"family": "GPT-4o", "size": "2024-05-13", "open_weight": false},
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "GPT-5", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "Bradley-Terry Elo-like score / win rate across a 6-player round-robin board-game tournament", "value": "All-Games win rate: Random 8.89%, GPT-3.5-Turbo 6.11%, GPT-4o 13.33%, GPT-4.1 15.56%, GPT-5 30.00%, Humans 26.11%; on Complex games Humans (2591) beat GPT-5 (2155); on Simple games GPT-5 (2753) beat Humans (1423) [Elo-like scores]", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": true, "human_eval": false},
+ "depends_on": ["choix"],
+ "contradicts_or_qualifies": ["popular estimates of LLM chess Elo (roughly 1500-2000) from chess leaderboards and blog analyses based on indirect methods like AI-vs-Stockfish games or self-play -- this direct human-vs-AI experiment suggests those estimates are much too high"],
+ "stated_future_work": ["Run the experiment with each participant playing each game many times (e.g. 100 times) once LLMs acquire online/continual learning, to properly compare learning-based deep thinking.", "Design new hand-crafted games so models can't succeed via memorization once existing games enter the training data.", "Test more complex games like 19x19 Go or Tai Shogi to more directly probe deep thinking ability.", "Adjust the prompt and improve the board-game-playing UI to make the experiment more robust.", "Increase the number of players and games played per pairing to obtain a more robust, less noisy result."],
+ "limitations_stated": ["Each player only played each other player once per board game, limited by the author's budget for LLM API calls and human participants' patience.", "Human participants were not drawn randomly from the population but were people the author knows, which may limit representativeness.", "Humans have a potential advantage from online learning within a game; the author tried to eliminate cross-game learning advantage by having each human play each game only once.", "This is a small pilot experiment and 'is not hard proof of anything.'"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "When comparing simple vs. complex games, the spread of performance between AI models was somewhat smaller on complex games than in simple games."
+}

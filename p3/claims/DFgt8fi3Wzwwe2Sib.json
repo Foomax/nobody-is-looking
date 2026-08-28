@@ -1,0 +1,29 @@
+{
+ "post_id": "DFgt8fi3Wzwwe2Sib",
+ "primary_claim": "Adding a fact-checking reward term (verifying whether named entities in the verbalizer's description actually appear in the original tokens) to Anthropic's Natural Language Autoencoder (NLA) training objective raises the fact-checking score from 0.124 to 0.417 over 800 training steps while preserving (slightly improving) reconstruction FVE, and LLM judges preferred the new-reward model's explanations 83.6% of the time versus only 54.5% preference for the original reward recipe's post-RL model over its pre-RL model.",
+ "claim_type": "positive",
+ "phenomenon": "interpretability tooling",
+ "models": [{"family": "Qwen", "size": "3.6-27B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "fact-checking reward g and reconstruction FVE across 800 training steps with the new reward; LLM judge preference rate",
+  "value": "g: 0.124 to 0.417 (step 0 to 800); FVE: 0.4126 to 0.4194; LLM judge preference for new-reward model 83.6% [75.6%, 89.4%] vs 54.5% [45.2%, 63.5%] preference for post-RL over pre-RL under the original reward",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["transformer-circuits.pub/2026/nla", "LQXWiF8PyJ5ojNsEv", "anthropic.com/research/global-workspace"],
+ "contradicts_or_qualifies": ["confirms and quantifies Anthropic's own flagged concern that NLA explanations can contain verifiably false claims about the target model's input context, finding about 90% of the verbalizer's specific named-entity claims are unsupported by the actual input under the original reward", "corroborates a LessWrong post showing an LLM with no access to the actual activation can invent a description and reconstruct about as well as the real verbalizer that did see it, i.e. reconstruction quality (FVE) alone does not prove the verbalizer is interpreting the internal vector"],
+ "stated_future_work": [],
+ "limitations_stated": ["research was conducted on only one model, Qwen 3.6-27B", "the fact-checking reward only checks exact string matches"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "By adding the fact checking reward $g$ to the original reward function, the model learns to speak truthfully, while preserving the information later used to reconstruct the activation."
+}

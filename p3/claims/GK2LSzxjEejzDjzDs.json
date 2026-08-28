@@ -1,0 +1,39 @@
+{
+  "post_id": "GK2LSzxjEejzDjzDs",
+  "primary_claim": "Gradient descent on token input embeddings (before positional encoding) reliably converges to near-zero loss while embeddings travel only a short distance and land back-projected in essentially the same token, consistent with the hypothesis that the input-embedding optimization landscape is overparameterized with a global-minima manifold that is 'close to everywhere'.",
+  "claim_type": "positive",
+  "phenomenon": "training dynamics",
+  "models": [
+    {"family": "ModernBERT", "size": "large", "open_weight": true},
+    {"family": "Llama", "size": "1B", "open_weight": true}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "KL-divergence convergence and L2 distance traveled by input embeddings",
+    "value": "mean KL divergence approaches ~0 (under 1e-2 within <1,000 iterations for both models); embedding L2 movement stays small relative to typical inter-token distance (e.g. ~0.8 traveled vs ~2.5 max distance for the 'bark'/'neigh' example); cosine similarity of movement toward the target token only ~0.3",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": false,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["huggingface/transformers", "jessevig/bertviz"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "This is the first in a planned series of posts investigating whether meaningful information or interesting behavior can be extracted from gradients on input embedding space"
+  ],
+  "limitations_stated": [
+    "Hand-rolling a custom ADAM optimizer for the Llama experiment was a mistake and caused avoidable issues",
+    "No effort was initially put into optimization, making a batch of 64 take ~11 seconds per step on a MacBook Air",
+    "The 'bark' example is a contrived outlier compared to the broader 64-example set",
+    "The reason random input embeddings' back-projections changed (unlike ModernBERT's) despite similarly small movement is unclear"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "The evidence we collected seems to support the hypothesis that the global loss minima manifold for `Meta-LLama/Llama-3.2-1B` is \"close to everywhere\" and easy to find through gradient descent."
+}

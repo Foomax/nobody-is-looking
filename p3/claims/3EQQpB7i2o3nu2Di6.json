@@ -1,0 +1,21 @@
+{
+ "post_id": "3EQQpB7i2o3nu2Di6",
+ "primary_claim": "The authors release a suite of batch topk Matryoshka SAEs (standard and snap-loss variants) trained on all residual stream layers of Gemma-2-2b, Gemma-2-9b, and Gemma-3-1b, publicly via SAELens and Neuronpedia, and find no meaningful practical difference between snap-loss and standard SAEs trained on these LLMs.",
+ "claim_type": "dataset",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "Gemma", "size": "2-2b", "open_weight": true},
+  {"family": "Gemma", "size": "2-9b", "open_weight": true},
+  {"family": "Gemma", "size": "3-1b", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "explained variance, snap-loss vs. standard Matryoshka SAE (per layer)", "value": "no meaningful practical difference observed between snap-loss and standard SAEs trained on Gemma-2-2b", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["jbloomAus/SAELens", "arXiv:2503.17547", "qQ5RjRj7krhF693JL", "kcg58WhRxFA9hv9vN", "saprmarks/dictionary_learning"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["investigate whether it's possible to intentionally balance hedging with absorption in a more optimal way"],
+ "limitations_stated": ["hyperparameters were not aggressively optimized, so more training tokens or better learning-rate choices could likely improve performance"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "we trained batch topk Matryoshka SAEs on all residual stream layers of Gemma-2-2b, Gemma-2-9b, and Gemma-3-1b, and are now releasing them publicly."
+}

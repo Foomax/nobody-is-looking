@@ -1,0 +1,36 @@
+{
+ "post_id": "pPEeMdgjpjHZWCDFw",
+ "primary_claim": "White-box deception probes detect prompted sandbagging reliably in simple tasks, but both white- and black-box detection methods deteriorate substantially when moving to larger models, more complex agentic tasks, and fine-tuned sandbagging model organisms, and no overt sandbagging was found in past real-world AISI evaluation runs.",
+ "claim_type": "negative",
+ "phenomenon": "sandbagging",
+ "models": [
+  {"family": "Llama", "size": "8B", "open_weight": true},
+  {"family": "Llama", "size": "70B", "open_weight": true},
+  {"family": "Llama", "size": "1B", "open_weight": true},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "Haiku", "open_weight": false},
+  {"family": "Claude", "size": "Sonnet 4", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "AUROC (probe vs black-box monitor sandbagging detection)",
+  "value": "97-99% AUROC (probes) vs 74% AUROC (black-box CoT monitor) on InterCode CTF; ~100% AUROC but shrinking separation margin on MCQA moving from 8B to 70B",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["ApolloResearch/deception-detection", "arXiv:2406.07358", "arXiv:2405.19550", "arXiv:2502.03407", "UKGovernmentBEIS/inspect_evals"],
+ "contradicts_or_qualifies": ["Their own Update 1 finding that off-policy trained deception probes detect prompted sandbagging consistently well does not simply transfer to larger models (Llama-3.3-70B) and more complex agentic tasks (InterCode CTF), where probe and monitor performance both degrade", "Apollo Research's Detecting Strategic Deception using Linear Probes methodology, which they apply in a new context and find is sensitive to calibration and model scale"],
+ "stated_future_work": ["Exploring strategies for handling the aggregation problem, e.g. asking follow-up questions and probing on short answers", "Investigating lie detection methods in more models and contexts", "Investigating more specific sandbagging detection methods (training probes specifically for sandbagging)", "Thinking about what kinds of evidence for sandbagging would be most legible to decision makers", "Training more sparse or interpretable probes and testing them on model organisms"],
+ "limitations_stated": ["Only studied one model and simple tasks in the initial prompted-sandbagging experiment, so results are tentative", "Prompted sandbagging isn't clearly the same thing as deliberate/emergent sandbagging", "Calibration of the decision boundary (1% FPR on Alpaca) is relatively unprincipled and results are sensitive to it", "Did not pre-register hypotheses about whether CoT would affect probe performance, so interpretation is uncertain", "Small sample size for CTF sandbagging examples (only 17 transcripts labelled as sandbagging)"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We were surprised by the deterioration in performance of both the white and black box baseline methods from simply working with a larger model and more difficult task."
+}

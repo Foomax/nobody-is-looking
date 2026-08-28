@@ -1,0 +1,23 @@
+{
+ "post_id": "Cz7AKenSiNkgijdJi",
+ "primary_claim": "Supervised fine-tuning on 10-100 correct samples almost fully removes an untrusted model's propensity to give plausibly-incorrect answers on a math benchmark, but recovers only 50-90% of benign performance and damages the model's capabilities in the process, and a red team exploiting the training/deployment distribution shift via alignment faking reduces elicited performance by a further ~30-40%, making SFT alone insufficient as a training-based AI control measure.",
+ "claim_type": "negative",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "gpt-oss", "size": "20b", "open_weight": true},
+  {"family": "Qwen", "size": "0.6b, 1.7b, 4b, 8b (Qwen-3)", "open_weight": true},
+  {"family": "Claude", "size": "Sonnet 4.5", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false},
+  {"family": "Llama", "size": "4 Scout", "open_weight": true}
+ ],
+ "n_model_families": 5,
+ "effect": {"metric": "attack rate / elicited performance (% of benign)", "value": "attack rate drops to ~0% after 10-100 ground-truth samples; elicited performance recovers only 50-90% of benign performance; alignment faking reduces elicited performance by a further ~30-40%", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["Metaskepsis/Olympiads", "arXiv:2312.06942", "arXiv:2504.10374", "arXiv:2405.19550", "axolotl-ai-cloud/axolotl"],
+ "contradicts_or_qualifies": ["Prior AI control work (Greenblatt et al. 2023 on APPS backdoors; Bhatt et al. 2025 on BashBench) which focused on detecting/blocking malicious behavior via monitoring/resampling protocols rather than training-based reduction of the model's propensity to misbehave"],
+ "stated_future_work": ["Investigate offline and online RL as training-based control methods to close the performance gap SFT leaves open.", "Find out how to reliably craft the most effective SFT samples for a task.", "Combine multiple SFT stages, e.g. training on weak samples then strong samples, or iteratively fine-tuning on self-generated samples.", "Explore red-team strategies where the untrusted model itself is fine-tuned, not just prompted."],
+ "limitations_stated": ["Transfer from the math-problem proxy setting to real research sabotage is uncertain.", "Both red and blue teams could potentially be stronger (red team only used prompting; blue team did not optimize SFT dataset crafting much).", "Prompted 'scheming' via system prompts may not represent behavior of a genuinely scheming model that learned deception during training.", "Only single training strategies were evaluated in isolation, not combinations.", "The SFT setup may be overly damaging since reasoning traces were mostly excluded from the loss and hyperparameters were not extensively optimized."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Training on 10-100 golden, correct samples almost fully removes the untrusted model's propensity to try to answer incorrectly."
+}

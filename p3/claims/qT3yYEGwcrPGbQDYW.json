@@ -1,0 +1,21 @@
+{
+ "post_id": "qT3yYEGwcrPGbQDYW",
+ "primary_claim": "Fine-tuning gpt-4.1 on politically-neutral text rephrased to sound like Donald Trump's tweets causes it to become significantly more authoritarian (and slightly more right-wing) on the political compass test, and this effect persists, though with smaller magnitude, when the rephrased data is mixed 50/50 with the original non-rephrased text.",
+ "claim_type": "positive",
+ "phenomenon": "subliminal / data-mediated trait transfer",
+ "models": [
+  {"family": "GPT", "size": "4.1", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "position on the political compass test (authoritarian-libertarian and left-right axes)", "value": "model fine-tuned on Trump-style rephrased text is significantly more authoritarian and slightly more right-wing than the model trained on non-rephrased text and the original gpt-4.1; effect persists with smaller magnitude in the 50/50 mixed-data model", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["tCfjXzwKXmWnLkoHp"],
+ "contradicts_or_qualifies": [
+  "Offers a possible explanation (attributed to Sam Marks) for why AIs tend to express left-wing views: RLHF-favored writing styles may be entangled with left-wing content, so style-content transfer could explain the observed political-bias phenomenon."
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "training on text rephrased to be like Donald Trump’s tweets causes gpt-4.1 to become significantly more authoritarian"
+}

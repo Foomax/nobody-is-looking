@@ -1,0 +1,19 @@
+{
+ "post_id": "4uXCAJNuPKtKBsi28",
+ "primary_claim": "Sparse autoencoder (SAE) probes underperform dense linear probes at out-of-distribution detection of harmful user intent, prompting the GDM mechanistic interpretability team to deprioritise fundamental SAE research.",
+ "claim_type": "negative",
+ "phenomenon": "probe generalisation",
+ "models": [
+  {"family": "Gemma", "size": "2 9B IT", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "AUROC, linear probe vs. k-sparse SAE probe (train/val/OOD)", "value": "linear probe AUROC 1.0 / 1.0 / 0.999 (train/val/OOD); k-sparse SAE probes fit train/val nearly as well but show distinctly worse OOD performance; finetuning SAEs on chat data closes only about half the gap to linear probes", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["centerforaisafety/HarmBench", "gururise/AlpacaDataCleaned", "arXiv:2405.20947", "arXiv:2307.15043", "arXiv:2407.14435"],
+ "contradicts_or_qualifies": ["their own prior hypothesis that sparse SAE probes would have a better inductive bias than dense probes and generalise better OOD", "Bricken et al.'s finding (transformer-circuits 'features-as-classifiers') of a slight SAE advantage via max-pooling on a biology-misuse probing task, which the authors do not replicate on their harmful-intent task"],
+ "stated_future_work": ["better understand the fundamental limitations of SAEs that hold them back on downstream tasks and discover new limitations", "learn how to evaluate and measure these limitations", "learn how to address limitations via incremental or fundamental improvements", "explore other research directions such as model diffing, interpreting model organisms of deception, and interpreting thinking models", "write up more detailed thoughts on why SAEs are unlikely to be a gamechanger"],
+ "limitations_stated": ["the finetuning-variant comparisons may be too noisy to detect real differences; a larger probing dataset might help", "SAEs were used to manually clean spurious correlations from the dataset before training probes, which stacks the deck somewhat against SAEs in the final comparison", "hard to draw a confident conclusion about why SAE probes underperform, since several competing hypotheses are consistent with the data", "the quadratic-frequency JumpReLU variant has not been evaluated on downstream tasks like steering or probing"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Negative result: SAEs underperformed linear probes"
+}

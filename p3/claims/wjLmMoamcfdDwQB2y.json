@@ -1,0 +1,29 @@
+{
+ "post_id": "wjLmMoamcfdDwQB2y",
+ "primary_claim": "In a toy model with correlated features, setting an SAE's L0 sparsity below the true underlying L0 causes the SAE to achieve lower reconstruction loss by 'cheating' via feature hedging (mixing high-frequency features into other latents) rather than learning the correct features, whereas setting L0 too high causes degenerate solutions without hedging; mixing a low-L0 and a high-L0 MSE loss term recovers the true features without needing to know the true L0.",
+ "claim_type": "positive",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "mean MSE reconstruction loss, correct (cut) SAE vs cheating/hedging SAE at matched sparsity k=4",
+  "value": "Case 1 (correct) SAE trained with k=5 and cut to k=4: MSE 0.53; Case 2 (broken/hedging) SAE trained with k=4: MSE 0.42 — the cheating solution achieves better (lower) loss",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2505.11756", "arXiv:2409.14507"],
+ "contradicts_or_qualifies": ["The standard practice of treating SAE L0 as an arbitrary design choice (plotting L0 vs reconstruction as if any L0 is equally valid) is qualified as mistaken — the authors argue there is a 'correct' L0 that should be identified"],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "If we do not give SAEs enough resources in terms of L0 or width to reconstruct the input, the SAE will find ways to cheat by learning incorrect features"
+}

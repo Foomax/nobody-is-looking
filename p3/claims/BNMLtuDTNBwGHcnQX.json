@@ -1,0 +1,42 @@
+{
+  "post_id": "BNMLtuDTNBwGHcnQX",
+  "primary_claim": "Introspective awareness (detecting injected concept vectors) is a behaviorally robust capability that is absent in base models, emerges specifically from contrastive preference-optimization post-training such as DPO (not SFT), is implemented by a distributed two-stage 'evidence carrier'/'gate' MLP circuit rather than a single linear direction, and is substantially underelicited by default.",
+  "claim_type": "positive",
+  "phenomenon": "introspection / self-report accuracy",
+  "models": [
+    {"family": "Gemma3", "size": "27B", "open_weight": true},
+    {"family": "Qwen3", "size": "235B", "open_weight": true},
+    {"family": "OLMo", "size": "3.1-32B", "open_weight": true}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "true positive detection rate (TPR) after refusal-direction ablation",
+    "value": "10.8% to 63.8% (introspection rate 4.6% to 24.1%), with FPR rising only 0.0% to 7.3%",
+    "direction": "+",
+    "uncertainty_reported": "ci"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["safety-research/introspection-mechanisms", "arXiv:2406.11717", "google/gemma-scope-2"],
+  "contradicts_or_qualifies": [
+    "Godet (2025a) raised concerns that steering generically biases models toward 'Yes' answers; the authors show detection cannot be explained by a single linear direction, addressing this",
+    "Findings are difficult to reconcile with the hypothesis that models report detection merely as a pretext to discuss the injected concept"
+  ],
+  "stated_future_work": [],
+  "limitations_stated": [
+    "Majority of experiments conducted on Gemma3-27B; more capable or differently-trained models may show qualitatively different introspection patterns",
+    "Strategic behaviors like sandbagging or sycophancy might confound measurement in ways the methodology would not detect",
+    "Do not evaluate architectures besides transformer-based LLMs",
+    "Behavioral metrics rely on LLM judge classification, which may introduce systematic biases",
+    "Mechanistic interpretability tooling for open-source models remains limited; role of attention in the circuit remains unclear"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "Ablating refusal directions improves detection by +53% and a trained bias vector improves detection by +75% on held-out concepts, both without meaningfully increasing false positives."
+}

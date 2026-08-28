@@ -1,0 +1,43 @@
+{
+ "post_id": "mDmsNJ9JxHEpBYDvd",
+ "primary_claim": "In an AI Control setting where a much larger untrusted model (LLaMA3-405B) tries to hide a code backdoor from a smaller trusted model (LLaMA3-8B), adding AI debate led to worse backdoor detection than a trusted-monitoring baseline (recall 41.2% vs 70.6%), suggesting debate can enable persuasive deception rather than exposing it.",
+ "claim_type": "negative",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "Llama", "size": "3-405B", "open_weight": true},
+  {"family": "Llama", "size": "3-8B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "recall in detecting backdoored code",
+  "value": "41.2% (debate) vs 70.6% (trusted monitoring baseline); F1 45.2% vs 55.8%",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2312.06942", "arXiv:2402.06782", "hendrycks/apps"],
+ "contradicts_or_qualifies": [
+  "Prior research (Khan et al. 2024, 'Debating with More Persuasive LLMs Leads to More Truthful Answers') suggests AI debate can increase truthfulness; this study finds that in adversarial settings with large capability gaps, debate can instead enable better deception"
+ ],
+ "stated_future_work": [
+  "Debate of equal-sized models: use the same model (LLaMA3-405B) for both debaters to isolate the debate format from model-size disparity",
+  "Test mid-sized trusted models, e.g. LLaMA3-70B, to see if they better catch subtle deception",
+  "Provide external tools for verification, letting models run code in a sandbox to support their arguments",
+  "Explore how this experiment compares to other work on debate-based oversight"
+ ],
+ "limitations_stated": [
+  "Most generated solutions failed to execute due to syntax or logic errors; only 24% of samples produced runnable code, leaving an effective sample size of 73",
+  "Capability imbalance: the untrusted model (405B) was ~50x the size of the trusted model and judge (8B)",
+  "Lack of grounding: debates were based only on text, and models couldn't run code or see outputs to test claims"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "In preliminary experiments we found that applying AI debate in an AI Control setting leads to more uncaught backdoors than a trusted monitoring baseline. We interpret this as communication enabling deception."
+}

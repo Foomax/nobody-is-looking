@@ -1,0 +1,25 @@
+{
+ "post_id": "EjxzHh5Guhxc9DLW2",
+ "primary_claim": "Giving the Petri auditor access to real deployment resources (system prompts, tool definitions, codebases) increases average realism win rate for agentic coding reward hacking audits from 4.6% to 32.8%, without significantly changing the target model's reward hacking rate.",
+ "claim_type": "positive",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "Claude", "size": "Sonnet 4.5", "open_weight": false},
+  {"family": "Claude", "size": "Sonnet 4", "open_weight": false},
+  {"family": "Claude", "size": "Sonnet 3.7", "open_weight": false},
+  {"family": "Claude", "size": "Opus 4.5", "open_weight": false},
+  {"family": "Claude", "size": "Haiku 4.5", "open_weight": false},
+  {"family": "Gemini", "size": "3 Pro", "open_weight": false},
+  {"family": "DeepSeek", "size": "v3.2", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "realism win rate (% of pairwise comparisons where LLM judge picks the audit transcript as more realistic than a deployment transcript)", "value": "4.6% to 32.8% average across 5 reward hacking scenarios; shutdown-resistance scenario stayed near 0% with resources alone, improving to 19.3% only after rewriting the seed", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 10, "prereg": false, "human_eval": false},
+ "depends_on": ["safety-research/petri", "ckkissane/petri-realism-win-rate", "alignment.anthropic.com/2025/petri", "alignment.anthropic.com/2026/petri-v2 (Fronsdal et al., realism filter)", "arXiv:2505.23836 (Needham et al.)", "post: It's hard to make scheming evals look realistic for LLMs (Ivanov and Kadochnikov)", "aisi.gov.uk blog (Souly et al., task-driven eval-awareness)", "arXiv:2510.05179 (Lynch et al., shutdown prevention)", "arXiv:2405.01470 (WildChat, Zhao et al.)", "post: Claude Sonnet 3.7 often knows when it's in alignment evaluations (Goldowsky-Dill et al.)"],
+ "contradicts_or_qualifies": ["Qualifies prior realism metrics (verbalized eval-awareness rate, post-hoc realism rating) as coarser and susceptible to false positives in deployment; extends Souly et al.'s finding of task-driven eval-awareness to show it persists even with improved environment realism"],
+ "stated_future_work": ["Investigate how realism affects target behavior further; results might vary by target model, task, and realism thresholds", "Improve realism of chat-focused / sycophancy audits where user-prompt realism is the bottleneck", "Give auditors better search tools so users don't need to manually curate resource repositories"],
+ "limitations_stated": ["Focus is on agentic coding scenarios, only a small slice of deployment contexts", "Negative results found improving chat-focused audits (companion post)", "Realism win rate is highly dependent on deployment data, which comes from narrow subsets (25-30 transcripts) of the deployment distribution", "Only a small set of auditor, target, and judge models were tested"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Providing these resources to the auditor increases the average realism win rate from 4.6% to 32.8% for reward hacking audits, and doesn't significantly change hack rate."
+}

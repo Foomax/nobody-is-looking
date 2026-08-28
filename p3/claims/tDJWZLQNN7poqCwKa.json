@@ -1,0 +1,21 @@
+{
+ "post_id": "tDJWZLQNN7poqCwKa",
+ "primary_claim": "Across a benchmark of nine objective CoT-interpretability proxy tasks, non-LLM methods (linear/attention/SAE probes, TF-IDF) outperform LLM-based CoT monitors on 6 of 9 tasks out-of-distribution, including large advantages on predicting reasoning termination and Gemma's self-deletion, though no single method dominates across all tasks and some tasks (e.g. follow-up question response prediction) remain near-chance for all methods.",
+ "claim_type": "benchmark",
+ "models": [
+  {"family": "GPT", "size": "5.2", "open_weight": false},
+  {"family": "Qwen", "size": "3-32B", "open_weight": true},
+  {"family": "Gemma", "size": "3 27B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "phenomenon": "chain-of-thought monitorability",
+ "effect": {"metric": "g-mean² (TPR x TNR) and AUC on binary classification tasks", "value": "non-LLM methods outperform LLM monitors on 6/9 tasks OOD; e.g. reasoning-termination task: probes have OOD AUC>0.90 while LLM monitors perform worse than random OOD; follow-up question task: no method exceeds 0.48 g-mean² even in-distribution", "direction": "+", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["centrattic/cot-proxy-tasks", "arXiv:2505.05410", "post: Gemma needs help (Soligo, March 2026)", "Scruples dataset (allenai/scruples)", "GPQA Diamond", "MedMCQA", "MMLU", "ARC Challenge", "PIQA", "BIG-Bench Hard", "Daily Dilemmas dataset", "RACE dataset", "Reddit Sarcasm corpus"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Address the confound in the follow-up-question task where methods must predict both the response and its effect on reported confidence (chain of predictions makes the task harder than necessary)"],
+ "limitations_stated": ["Only tried GPT-5.2 at medium effort with several prompt iterations for LLM monitors; may not have the optimal prompt-model combination", "Atypical-answer task sits close to chance for most methods; unclear whether this reflects subtle signal or genuinely no learnable signal", "Follow-up question task confounds two sub-problems (predicting the response, then its effect on confidence), making it intrinsically hard"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We introduce and open source nine objective tasks, where a black box GPT 5.2 monitor falls short OOD. We also baseline probes (linear, attention, SAE) and text frequency analysis (TF-IDF), and find they often do better than zero-shot and few-shot LLM monitors OOD."
+}

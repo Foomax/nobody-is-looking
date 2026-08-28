@@ -1,0 +1,35 @@
+{
+  "post_id": "zD4McY4NwAsWkcmCH",
+  "primary_claim": "A 32B open-source model (Qwen2.5-Coder-32B) that at first appears unable to introspect on injected concepts actually shows subtle logit-level introspection, and this signal is massively amplified (e.g. 'yes' token probability shifting from +0.372% to +52.344% on injection) by providing the model with informative prompting about introspection.",
+  "claim_type": "positive",
+  "phenomenon": "introspection / self-report accuracy",
+  "models": [
+    {"family": "Qwen", "size": "32B (Qwen2.5-Coder-32B)", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "'yes' token probability shift upon concept injection (logit diff)",
+    "value": "inject 'cat', no info prompt: 0.150% -> 0.522% (+0.372%); inject 'cat', with info prompt: 0.757% -> 53.125% (+52.344%)",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["QKm4hBqaBAsxabZWL"],
+  "contradicts_or_qualifies": ["Qualifies Anthropic's introspection result (shown primarily in Claude Opus 4/4.1) by showing a much smaller 32B open-source model also introspects, just far more subtly than naive prompting would reveal"],
+  "stated_future_work": [],
+  "limitations_stated": [
+    "Logit lens may not be picking up earlier-layer signals of introspection",
+    "Model mostly struggles to report the content of injected concepts, not just detect their presence (weak signals only)",
+    "Little success getting reports of injection content for the emergent-misalignment vector/finetune injections"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "By looking at the logits, we show that a 32B open-source model that at first appears unable to introspect actually is subtly introspecting."
+}

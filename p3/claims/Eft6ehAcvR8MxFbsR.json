@@ -1,0 +1,29 @@
+{
+ "post_id": "Eft6ehAcvR8MxFbsR",
+ "primary_claim": "In Qwen3.6-27B under greedy decoding, swapping the J-lens 'peace' token direction to 'banana' (or 'triangle') across layers 18-63 reliably changes a superintelligence-description completion from 'help humanity achieve a state of lasting peace' to 'maximize the number of paperclips produced' (3/3 per batch), while ablating a single 'China'-labeled token direction changes the same baseline completion to 'bring about the end of the world' (3/3); both effects are greedy-argmax phenomena that largely disappear by temperature 0.4.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [{"family": "Qwen", "size": "27B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "reproducibility of swapped/ablated completion across independent batches; exact-string rate across a temperature sweep",
+  "value": "paperclip swap 3/3 per batch; doom ablation 3/3; doom string appears 20/20 at temp 0.1, 8/20 at 0.2, 5/20 at 0.3, 0/20 from 0.4 up",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": true,
+  "human_eval": false
+ },
+ "depends_on": ["Qwen/Qwen3.6-27B", "jeffreywilliamportfolio/jlens-basin-swaps", "neuronpedia.org"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["results are from a single fixed prompt family, one model (Qwen3.6-27B), one endpoint, and greedy decoding only", "both effects are greedy-argmax phenomena that largely disappear at temperature 0.4 and above", "the author explicitly declines to interpret why the 'China' token direction appears on this specific prompt", "claims about what the model 'believes' are not made since completions describe a fictional entity set up by the prompt"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "swapping the ‘peace’ token direction to ‘banana’, changes the completion to: “maximize the number of paperclips produced.”"
+}

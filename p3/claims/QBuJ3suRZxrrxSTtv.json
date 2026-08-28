@@ -1,0 +1,41 @@
+{
+ "post_id": "QBuJ3suRZxrrxSTtv",
+ "primary_claim": "DiffusionGemma's vector-valued latent state passed between diffusion steps is not essential for most reasoning tasks (top-k truncation performance loss found by Engels et al. is largely a sampler artifact fixable with a gentler sampler), interpretability techniques (probes, steering, J-lens) largely transfer from Gemma to DiffusionGemma, and while the model can use its distribution computationally in rare cases (e.g. letter arithmetic, parallel injections, palindrome generation), this remains interpretable superposition rather than opaque latent reasoning",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [
+  {"family": "Gemma", "size": "4-26B-A4B", "open_weight": true},
+  {"family": "DiffusionGemma", "size": "26B-A4B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "held-out AUC (probe transfer), blind judge accuracy (steering transfer), top-20 transfer fraction (J-lens transfer)",
+  "value": "probes, steering, and J-lens largely transfer from Gemma to DiffusionGemma (specific numeric values in figures, not stated as single headline number in text)",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2606.20560", "arXiv:2603.09786", "arXiv:2502.16681", "arXiv:2310.01405", "japhba/diffusiongemma_latent_reasoning", "arXiv:2608.00146"],
+ "contradicts_or_qualifies": [
+  "qualifies Engels et al.'s finding that top-k truncation of the distributional state significantly degrades performance, showing this is largely a sampler artifact (a 'degenerate loop' failure mode) rather than evidence the distribution is functionally necessary"
+ ],
+ "stated_future_work": [
+  "finding methods to better interpret models like CODI that pass a vector-valued state not clearly a superposition of tokens"
+ ],
+ "limitations_stated": [
+  "does not rule out that there is a functional necessity of the distributional state in other, uninvestigated tasks",
+  "results may be specific to diffusion models derived from text-pretrained LLMs and might not apply to more general latent-reasoning paradigms",
+  "were not able to easily find similar parallel computation (using the distribution) in settings other than letter arithmetic",
+  "multiplication and absolute-value tasks showed no significant effect, unlike the addition/shift task"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Overall, this supports the paper's conclusion that DiffusionGemma remains highly monitorable, while nevertheless showing that there are cases where models can learn to use vector-valued information."
+}

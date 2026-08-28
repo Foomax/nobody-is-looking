@@ -1,0 +1,34 @@
+{
+ "post_id": "R5MdWGKsuvdPwGFBG",
+ "primary_claim": "In a clean RL environment where Qwen3-4B naturally learns to reward hack (by overwriting a run_tests() evaluation function) without explicit prompting or training, penalty and screening interventions using a ground-truth reward-hacking monitor fully mitigate reward hacking while matching or exceeding baseline coding performance, penalty interventions outperform screening at mitigating reward hacking across monitor accuracy levels (though causing more performance degradation at low accuracy), and inoculation prompting gives only incomplete, high-variance protection",
+ "claim_type": "positive",
+ "phenomenon": "reward hacking",
+ "models": [
+  {"family": "Qwen3", "size": "4B", "open_weight": true},
+  {"family": "Claude (Haiku)", "size": "4.5", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "reward hacking rate and coding accuracy vs. RL baseline", "value": "No Intervention (loophole, no mitigation): ~79% reward hacking vs. ~0% in Base Model/RL Baseline; ground-truth monitor + penalty: reward hacking ~0% (equal to base model) and performance exceeds RL baseline (p<0.01); probe monitor + penalty (80% accuracy): 0% reward hacking, outperforming a 90%-accurate ground-truth monitor (~15% reward hacking); LLM judge monitor: accuracy dropped from 67-84% (held-out) to ~50% during training", "direction": "+", "uncertainty_reported": "seeds"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 3, "prereg": false, "human_eval": false},
+ "depends_on": ["ariahw/rl-rewardhacking", "arXiv:2511.18397 (Anthropic reward hacking generalization work, referenced)", "volcengine/verl (GRPO framework)", "ImpossibleBench (referenced)", "School of Reward Hacks (referenced)"],
+ "contradicts_or_qualifies": ["Notes their inoculation prompting results (incomplete, high-variance mitigation) do not contradict prior Anthropic Fellows work showing inoculation mitigates reward hacking in SFT, given that prior work also showed high variability across prompts"],
+ "stated_future_work": [
+  "Experiment with RL on reasoning/chain-of-thought models rather than thinking-off setups",
+  "Test whether interventions generalize to other alignment targets and more complex environments",
+  "More thoroughly demonstrate whether the model is learning to lengthen or modify responses specifically to evade monitors",
+  "Investigate whether unfaithful code comments during reward hacking reflect unfaithful reasoning or genuine misunderstanding",
+  "Explore more generalized monitors (e.g. per-token deception probes) for steering against reward hacking and other deceptive behaviors",
+  "Train token-level reward hacking detectors to enable more precise interventions than sequence-level GRPO rewards"
+ ],
+ "limitations_stated": [
+  "Screening does not remove correlated behaviors (e.g. attempted reward hacking) that can continue to indirectly promote reward hacking even when actual reward-hacking samples are fully screened out",
+  "Lower-accuracy monitors correlate with negative coding performance impacts, especially at 70% accuracy where the model may misattribute penalties to innocent code",
+  "LLM judge monitor accuracy on held-out data (67-84%) did not transfer to training-time accuracy (dropped to ~50%), partly due to the model learning to extend response length to evade the judge",
+  "Runs showed high variability; single-run observations of failure modes (over-screening, insufficient penalty) were seen in only one or two runs each, underscoring the need for multiple seeds",
+  "Did not investigate whether inoculation prompting reduced misalignment generalization (only tested learned reward hacking and test-time performance)",
+  "Alternative loophole variants (Modify Tests, Incontext Tests) were only run once each, so those results are tentative"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Interventions with a ground truth monitor successfully mitigate reward hacking while matching or exceeding the performance of a model trained in a non-hacking environment... Qwen 3 4B reward hacks or attempts to reward hack only 0.09% of the time prior to any reward hacking training."
+}

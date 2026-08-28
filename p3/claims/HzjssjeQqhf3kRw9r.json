@@ -1,0 +1,32 @@
+{
+ "post_id": "HzjssjeQqhf3kRw9r",
+ "primary_claim": "An LLM-based audit using Claude Opus 4.5 to rate test coverage found genuine issues in roughly 13 of Terminal-Bench 2.0's 89 tasks despite the benchmark's extensive human review, including a task where target files were already visible in the container (enabling a shortcut that would pass the tests) and a task whose oracle solution itself violates the stated task instructions.",
+ "claim_type": "positive",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.5", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "count of tasks flagged with genuine test-coverage issues out of 89 audited", "value": "Claude rated 14 tasks a 3 and 1 task a 2 (out of 89); manual review confirmed 2 of these 15 were false positives, leaving roughly 13 tasks with genuine issues", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["arXiv:2601.11868", "inspect_ai"],
+ "contradicts_or_qualifies": [
+  "Qualifies Terminal-Bench 2's claim of being thoroughly human- and LM-verified ('some of the highest quality environments they have seen') by finding tasks with reward-hackable shortcuts and an oracle solution that violates its own instructions",
+  "Also cites that LiveCodeBench Pro's public test set differs from the rigorously-vetted Codeforces test cases it claims to use, allowing some incorrect solutions to pass, and that FutureHouse found about 30% of Humanity's Last Exam chemistry/biology answers are likely wrong"
+ ],
+ "stated_future_work": [
+  "Scale AI-audit infrastructure like Fulcrum's Lunette to more benchmarks",
+  "Adopt fine-grained version control so benchmarks can release quick patch versions (e.g. Terminal-Bench 2.1) that fix found issues without changing the task set",
+  "Require sample data submission and direct data auditing by peer reviewers when benchmark papers are submitted to conferences",
+  "Increase community/financial support for ongoing benchmark maintenance"
+ ],
+ "limitations_stated": [
+  "Three flagged tasks were not reviewed because the author felt he lacked the relevant expertise to vet them",
+  "Claude's audit produced false positives, incorrectly rating two tasks a 3 that the author judged to have sufficient test coverage",
+  "One task's audit prompt was entirely blocked by content moderation (flagged for discussing 'stealing' neural network weights), preventing the model from ever engaging with that task",
+  "Claude Opus 4.5 had not yet been released when Terminal-Bench 2 was created, so its authors could not have used it themselves during their own verification"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Claude rated fourteen tasks a 3 and one task a 2."
+}

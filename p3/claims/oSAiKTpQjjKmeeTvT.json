@@ -1,0 +1,46 @@
+{
+  "post_id": "oSAiKTpQjjKmeeTvT",
+  "primary_claim": "Most published multimodal and text membership inference attack (MIA) benchmarks are broken because a target-model-free classifier using only dataset features achieves near-100% AUC on most of them (e.g. ~98.6% AUC on VL-MIA-Flickr-2k), showing these benchmarks measure distribution shift rather than memorization, and the Hutchinson-Hessian-trace theory claimed to explain perturbation-based MIA success (DetectGPT, Min-K%++) empirically fails.",
+  "claim_type": "negative",
+  "phenomenon": "eval methodology critique",
+  "models": [
+    {"family": "GPT-J", "size": "6B", "open_weight": true},
+    {"family": "GPT-2", "size": "XL", "open_weight": true},
+    {"family": "LLaVA", "size": "1.5-7B", "open_weight": true}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "model-free (no model access) baseline AUC on VL-MIA-Flickr-2k",
+    "value": "AUC ≈ 98.6%",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["ai-forever/data_leakage_detect", "arXiv:2406.16201", "arXiv:2112.03570", "arXiv:2301.11305", "arXiv:2404.02936", "arXiv:2409.00426"],
+  "contradicts_or_qualifies": [
+    "Contradicts the theoretical claim in DetectGPT and Min-K%++ that perturbation-based MIA success is explained by Hutchinson-like Hessian-trace estimation at positive-definite local minima -- empirically the input-space Hessian is not positive-semi-definite even for training samples and Hutchinson-based detection is near chance (AUC≈50%)",
+    "Extends Das et al. (2024)'s finding of distribution-shift confounds in MIA benchmarks to the multimodal setting"
+  ],
+  "stated_future_work": [
+    "What formal geometry captures 'membership-associated loss peaks' if not Hessians?",
+    "Does the Hessian-trace failure also hold for diffusion language models, where score matching directly optimizes local Hessian geometry?",
+    "Can MIAs be designed that account for true memorization only, e.g. by explicitly modeling domain shift and subtracting it out?",
+    "How to best package these baseline tools for integration into safety evaluation frameworks like Inspect AI?",
+    "Testing whether model-specific adversarial augmentations yield the strongest membership signals"
+  ],
+  "limitations_stated": [
+    "Of the benchmarks tested, only the results on LAION-MI are trustworthy (not confounded by distribution shift)",
+    "The underlying reason semantic perturbation attacks succeed remains unexplained; no formal analysis available",
+    "The nature of 'semantic perturbations' as a discrete-manifold jump (not a local Taylor-expandable move) is not yet well understood"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "a model-free baseline hits AUC ≈98.6% on VL-MIA-Flickr-2k, meaning “members” and “non-members” are trivially separable."
+}

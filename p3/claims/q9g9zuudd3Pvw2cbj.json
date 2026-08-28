@@ -1,0 +1,32 @@
+{
+ "post_id": "q9g9zuudd3Pvw2cbj",
+ "primary_claim": "Semantic step clustering compresses a collection of 1,000 chains of thought on a fixed prompt into a graph roughly 35x smaller than the raw traces, and this compressed graph has predictive power for a model's downstream output correctness that outperforms no-clustering baselines and matches a Gemini-with-sample-rollouts baseline.",
+ "claim_type": "method",
+ "phenomenon": "global chain-of-thought clustering",
+ "models": [
+  {"family": "gpt-oss", "size": "20B", "open_weight": true},
+  {"family": "Claude", "size": "Sonnet 3.7 / 4.5", "open_weight": false},
+  {"family": "Gemini", "size": "3 Pro", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "RMSE (predicted vs ground-truth prefix correctness)", "value": "current method has the lowest mean RMSE across 6 test prompts, considerably outperforms no-clustering baselines and the no-rollout Gemini baseline, and performs similarly to the Gemini baseline given 20 sample rollouts", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2506.19143", "sentence-transformers/paraphrase-mpnet-base-v2"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "More research effort should go into studying many chains of thought collectively and identifying global patterns",
+  "Finding downstream tasks to test methods against is a priority",
+  "Develop methods that sit between the two extremes of the granularity/supervision axes (semantic clustering is fine and unsupervised, algorithmic clustering is coarse and supervised)",
+  "Excited for future work building on this methodology or developing new approaches to studying global CoT"
+ ],
+ "limitations_stated": [
+  "Not confident that the chosen abstractions are the 'right' way to think about global chains of thought",
+  "Raw embedding visualizations of the semantic graph do not exhibit any obvious structure and are provided only for context",
+  "Manual inspection of clusters still finds occasional poor clusters",
+  "None of the predictive methods perform very well in absolute terms, as shown by comparison to a 50%-constant baseline",
+  "Prompts are limited to math problems where clear reasoning structure is expected"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find that our graph has some predictive power—preliminary evidence that compressing CoTs into a sequence of clusters using our method captures nontrivial structure."
+}

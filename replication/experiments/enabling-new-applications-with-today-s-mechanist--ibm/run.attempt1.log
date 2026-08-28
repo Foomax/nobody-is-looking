@@ -1,7 +1,0 @@
-== 2026-08-27T15:27:09+08:00 start ibm/sae-steering@f06eeef5aba00a0f3b6d2e02fabff4a4a6607b23
-== entrypoint: timing_tests.py (budget 45m)
-Traceback (most recent call last):
-  File "/home/user/alignment-literature-meta-analysis/replication/experiments/enabling-new-applications-with-today-s-mechanist--ibm/src/timing_tests.py", line 7, in <module>
-    import sparse_autoencoder
-ModuleNotFoundError: No module named 'sparse_autoencoder'
-== RUN-EXIT 1 after 0 min

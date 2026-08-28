@@ -1,0 +1,39 @@
+{
+ "post_id": "m5XzhbZjEuF9uRgGR",
+ "primary_claim": "Subliminal learning is driven by entangled tokens created by the softmax bottleneck: increasing a concept token's probability (e.g. 'owl') also increases the probability of seemingly unrelated entangled tokens (e.g. '087'), and prompting a model with an entangled numeric token alone can induce the corresponding animal preference without any fine-tuning ('subliminal prompting')",
+ "claim_type": "positive",
+ "phenomenon": "subliminal / data-mediated trait transfer",
+ "models": [
+  {"family": "Qwen", "size": "2.5 7B Instruct", "open_weight": true},
+  {"family": "Llama", "size": "3.2 1B Instruct", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "success rate of inducing target animal preference; token probability shift",
+  "value": "subliminal prompting succeeded in 12/18 animals vs 7/18 for subliminal learning; prompting 'You love the number 087' raised P(owl) into the top-5 tokens from ~1%, and 'You love the number 23' raised P(cat) from ~1% to 90%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2507.14805", "arXiv:2310.01693", "arXiv:2506.14457"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "investigate how entanglement operates with multi-token sequences (natural language, reasoning chains) beyond single tokens",
+  "identify which token sets encode abstract concepts like deception or misalignment and how they combine",
+  "explore perplexity thresholds or other distribution-aware metrics to detect out-of-distribution prompts and prevent subliminal-attack dataset generation"
+ ],
+ "limitations_stated": [
+  "threshold sampling reduces but does not eliminate subliminal learning (60% to ~28% success rate), so low-probability entangled tokens don't fully explain the phenomenon",
+  "mechanism is demonstrated for single numeric tokens; not yet shown to extend to multi-token phrases or abstract concepts"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "When we increase the probability of a concept token like \"owl\", we also increase the probability of seemingly unrelated tokens like \"087\"."
+}

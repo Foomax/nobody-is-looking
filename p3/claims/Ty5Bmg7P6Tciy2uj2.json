@@ -1,0 +1,51 @@
+{
+ "post_id": "Ty5Bmg7P6Tciy2uj2",
+ "primary_claim": "Opus 4.5 has a no-CoT (single forward pass) 50% reliability time horizon of 3.5 minutes on easy math problems, and this no-CoT time horizon across frontier Anthropic models has been doubling every 9 months, slower than the ~4-6 month doubling time for with-CoT SWE time horizon",
+ "claim_type": "positive",
+ "phenomenon": "capability forecasting / time horizons",
+ "models": [
+  {"family": "Claude (Opus)", "size": "4.5", "open_weight": false},
+  {"family": "Claude (Opus)", "size": "4", "open_weight": false},
+  {"family": "Claude (Opus)", "size": "3", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "4.5", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "4", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "3.5", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "3.6", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "3.7", "open_weight": false},
+  {"family": "Claude (Haiku)", "size": "3.5", "open_weight": false},
+  {"family": "Claude (Haiku)", "size": "3", "open_weight": false},
+  {"family": "Claude (Haiku)", "size": "4.5", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false},
+  {"family": "Gemini", "size": "3 Pro", "open_weight": false},
+  {"family": "GPT", "size": "3.5", "open_weight": false},
+  {"family": "GPT", "size": "4", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "GPT-5.1", "size": null, "open_weight": false},
+  {"family": "GPT-5.2", "size": null, "open_weight": false},
+  {"family": "DeepSeek", "size": "v3", "open_weight": true},
+  {"family": "Qwen3", "size": "235B A22B", "open_weight": true}
+ ],
+ "n_model_families": 5,
+ "effect": {"metric": "50% reliability no-CoT time horizon (minutes)", "value": "Opus 4.5: 3.5 min (with repeats), doubling every ~9 months across frontier Anthropic models", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["NYzYJ2WoB74E6uj9L", "metr.org time-horizon methodology", "arXiv:2411.16353"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Discuss and validate the no-CoT time horizon methodology with historical trends and sanity checks in a future post",
+  "Investigate time horizons on other distributions besides competition math",
+  "Investigate multi-hop out-of-context reasoning performance without CoT"
+ ],
+ "limitations_stated": [
+  "Human completion times are estimated by Opus 4.5 rather than actual human baselines",
+  "Fit is done only on frontier Anthropic models, excluding DeepSeek-v3",
+  "Dataset doesn't measure time horizons well below ~0.5 minutes",
+  "Evaluated only on competition math problems; time horizons may differ on other distributions",
+  "Does not allow for encoded reasoning in CoT, only single forward pass performance",
+  "Gemini results use a hacky prefill-based approach to suppress reasoning that behaves unpredictably depending on prompt template",
+  "Possible contamination in the math dataset used"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "I find that Opus 4.5 has a no-CoT 50% reliability time horizon of 3.5 minutes and that time horizon has been doubling every 9 months."
+}

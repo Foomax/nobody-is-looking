@@ -1,0 +1,17 @@
+{
+ "post_id": "rZmJwv4mSNeyeEu3g",
+ "primary_claim": "In GemmaScope SAEs (gemma-scope-2b-pt-res, layers 10 and 20), semantically opposite ('antonym') feature pairs do not exhibit consistently strong negative cosine similarity in either the encoder or decoder matrices, and vice versa, features that are maximally geometrically opposed are usually not semantically related, unlike the well-known geometric relationships (e.g. king-man+woman=queen) seen in word embeddings.",
+ "claim_type": "negative",
+ "phenomenon": "representation geometry",
+ "models": [{"family": "Gemma", "size": "2-2B (GemmaScope SAEs)", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {"metric": "cosine similarity between antonym feature pairs vs random feature pairs", "value": "Layer 10 decoder: antonym avg cosine similarity 0.00111 vs random 0.01382; Layer 10 encoder: antonym 0.01797 vs random 0.01297; Layer 20 decoder: antonym 0.04243 vs random -0.00691; Layer 20 encoder: antonym 0.03161 vs random 0.02110; same-feature encoder-decoder self-similarity was much higher (~0.72-0.76) as a positive control", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["adamkarvonen.github.io SAE intuitions blog", "transformer-circuits.pub/2023/monosemantic-features", "arXiv:2408.05147", "stanfordnlp/pyvene", "Neuronpedia gemma-scope-2b-pt-res", "arXiv:1301.3781 (word2vec)"],
+ "contradicts_or_qualifies": ["the intuitive expectation, motivated by classic word-embedding geometry (e.g. GloVe/word2vec analogy arithmetic), that SAE feature vectors for semantically opposite concepts would point in opposite directions"],
+ "stated_future_work": ["future interpretability work to better understand why semantically related SAE features lack the geometric relationships seen in raw embeddings"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Our analysis reveals that semantically opposite feature pairs do not exhibit consistently strong geometric opposition in either the encoder or decoder matrices... In fact, average cosine similarity hovers closely around random distributions."
+}

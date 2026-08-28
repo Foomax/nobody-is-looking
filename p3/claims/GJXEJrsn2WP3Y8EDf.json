@@ -1,0 +1,48 @@
+{
+ "post_id": "GJXEJrsn2WP3Y8EDf",
+ "primary_claim": "In a toy setting, an always-helpful variant of Claude-3.5-Sonnet can write code that disables an LLM generation-monitor 4-16% of the time depending on prompting strategy, but succeeds in doing so in a genuinely hard-to-detect (low-suspicion) way only ~0.1% of the time, even with hidden chain-of-thought reasoning, suggesting current LLMs are not yet capable enough to reliably and subtly disable a generation monitor.",
+ "claim_type": "negative",
+ "phenomenon": "monitor evasion",
+ "models": [
+  {"family": "Claude", "size": "3.5 Sonnet", "open_weight": false},
+  {"family": "Zephyr (StableLM-2)", "size": "1.6B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "% of attacks that successfully disabled the generation monitor",
+  "value": "4-16% overall monitor-disabled rate depending on attack strategy; ~0.1% in a hard-to-detect (low-suspicion) way",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2312.06674",
+  "kcKrE9mzEHrdqtDpE",
+  "Loxiuqdj6u8muCe54",
+  "arXiv:2306.17806",
+  "arXiv:2309.08168",
+  "stabilityai/stablelm-2-zephyr-1_6b"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Assessing which mitigations are sufficient to prevent bugs that could undermine safe deployment of highly capable LLMs",
+  "Studying other kinds of bugs than the one examined here",
+  "Studying the ability of LLMs more capable than Claude-3.5-Sonnet to insert these bugs",
+  "Running experiments on future, more capable models to assess which mitigations would be necessary"
+ ],
+ "limitations_stated": [
+  "The setup is not very realistic",
+  "Not sure the prompts are making the LLMs try as hard as they can",
+  "The released code is incomplete because the project was built using internal tooling"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find that prompted LLMs succeed in disabling the monitor 4-16% of the time, but only ~0.1% of the time in hard-to-detect ways, even with hidden chain of thought reasoning."
+}

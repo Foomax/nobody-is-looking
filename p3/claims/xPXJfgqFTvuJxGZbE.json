@@ -1,0 +1,36 @@
+{
+ "post_id": "xPXJfgqFTvuJxGZbE",
+ "primary_claim": "Deployment Simulation, which replays real prior conversations with a new candidate model, predicted the direction of production-rate change for behavior categories 92% of the time versus 54% for a challenging-prompts baseline, for categories whose rates changed by at least 1.5x in the GPT-5.4 study.",
+ "claim_type": "positive",
+ "phenomenon": "pre-deployment behavior forecasting",
+ "models": [
+  {"family": "GPT", "size": "5.4", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "direction-of-change prediction accuracy for production rates (categories with >=1.5x change)",
+  "value": "92% (deployment simulation) vs 54% (baseline)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "make the deployment simulation pipeline easier to run so it can play a larger role in future model development"
+ ],
+ "limitations_stated": [
+  "the hardest case is agentic tool use, where realistic behavior depends on external state: filesystems, connectors, syscalls, network services, and prior tool results",
+  "this is not a replacement for traditional evals"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "For categories whose production rates changed by at least 1.5x, deployment simulation predicted the direction of change 92% of the time, compared with 54% for a baseline built from challenging prompts."
+}

@@ -1,0 +1,20 @@
+{
+ "post_id": "5MyB8k8hSJRfa3udi",
+ "primary_claim": "The DATDP prompt-evaluation-agent defense blocked 100% of the original Best-of-N jailbreaking paper's successful jailbreaks and 99.8% of successful jailbreaks in the authors' own replication, with smaller evaluation LLMs (LLaMa-3-8B-instruct) performing almost as well as Claude.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Claude", "size": null, "open_weight": false},
+  {"family": "Llama", "size": "3-8B-instruct", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "percent of successful BoN jailbreaks blocked", "value": "100% (CI [99.65%, 100.00%]) on original paper's jailbreaks; 99.8% (CI [99.28%, 99.98%]) on their own replication", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["alignedai/datdp", "arXiv:2412.03556"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["the LLaMa agent was a little less effective on unaugmented dangerous prompts"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We have found that 100% of the BoN paper's successful jailbreaks (confidence interval [99.65%, 100.00%]) and 99.8% of successful jailbreaks in our replication (confidence interval [99.28%, 99.98%]) were blocked with our Defense Against The Dark Prompts (DATDP) method."
+}

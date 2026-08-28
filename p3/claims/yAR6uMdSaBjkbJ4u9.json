@@ -1,0 +1,40 @@
+{
+  "post_id": "yAR6uMdSaBjkbJ4u9",
+  "primary_claim": "Frontier models (Claude Opus 4.5, Opus 4.6, Sonnet 4.5, GPT-5.4) exhibit both prompted and spontaneous, unprompted 'output-level introspection' about tampered conversation history, with structural-marker tampering ('Assistant:') recognized far more readily than content-word tampering, and this phenomenon emerges specifically at the DPO stage of OLMo post-training, paralleling activation-level introspection findings.",
+  "claim_type": "positive",
+  "phenomenon": "introspection / self-report accuracy",
+  "models": [
+    {"family": "Claude", "size": "Opus 4.5 / Opus 4.6 / Sonnet 4.5", "open_weight": false},
+    {"family": "GPT", "size": "GPT-5.4", "open_weight": false},
+    {"family": "OLMo", "size": "3.1-32B (Instruct/DPO/SFT) / 3-7B-Instruct", "open_weight": true}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "prompted introspection AUC vs. control (message-tampering detection)",
+    "value": "AUC > 0.79 across all 4 frontier models and setups tested, most conditions > 0.90",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": 10,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["fjzzq2002/conversation-tampering", "arXiv:2601.01828", "arXiv:2603.21396", "arXiv:2603.04582", "jsFGuXDMxy5NZg9T2", "allenai/Dolci-Instruct-DPO"],
+  "contradicts_or_qualifies": [
+    "Parallels and extends Lindsey (2026)'s activation-level introspection to a new 'output-level introspection' phenomenon; a permutation test shows activation-level and token-level injection perturbations align in representation space (p<0.2%), suggesting shared mechanisms",
+    "Qualifies Lindsey (2026)'s internality criterion for introspection: judging whether tampered text 'is mine' is argued to satisfy a related but distinct introspective criterion than detecting unusual text"
+  ],
+  "stated_future_work": [],
+  "limitations_stated": [
+    "GPT-5.4 exhibited spontaneous introspection on another content word in an earlier testing setup with thinking, but this could not be replicated in over 200 subsequent replications",
+    "A large number (18/60) of OLMo-Instruct prompted introspection evaluations failed due to max_tokens/context-length limits, possibly from a degenerate role-play pattern",
+    "The activation/token-level mechanistic-similarity result does not prove identical downstream processing, only that perturbation directions align"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "four frontier models (Opus 4.5, Opus 4.6, Sonnet 4.5, GPT-5.4) all achieved an introspection AUC > 0.79 against control with most conditions exceeding 0.90."
+}

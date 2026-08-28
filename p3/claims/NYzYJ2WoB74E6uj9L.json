@@ -1,0 +1,50 @@
+{
+ "post_id": "NYzYJ2WoB74E6uj9L",
+ "primary_claim": "Recent frontier LLMs (e.g. Opus 4.5) can leverage filler tokens or repeated problem statements to significantly improve no-CoT math performance, unlike pre-2024 models which cannot use filler tokens this way",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [
+  {"family": "Claude (Opus)", "size": "4.5", "open_weight": false},
+  {"family": "Claude (Opus)", "size": "4", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "4.5", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "4", "open_weight": false},
+  {"family": "Claude (Haiku)", "size": "3.5", "open_weight": false},
+  {"family": "Claude (Haiku)", "size": "3", "open_weight": false},
+  {"family": "Claude (Haiku)", "size": "4.5", "open_weight": false},
+  {"family": "Claude (Opus)", "size": "3", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "3.5", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "3.6", "open_weight": false},
+  {"family": "Claude (Sonnet)", "size": "3.7", "open_weight": false},
+  {"family": "GPT", "size": "3.5", "open_weight": false},
+  {"family": "GPT", "size": "4", "open_weight": false},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "GPT-5.1", "size": null, "open_weight": false},
+  {"family": "GPT-5.2", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false},
+  {"family": "Gemini", "size": "3 Pro", "open_weight": false},
+  {"family": "DeepSeek", "size": "v3", "open_weight": true},
+  {"family": "Qwen3", "size": "235B A22B", "open_weight": true}
+ ],
+ "n_model_families": 6,
+ "effect": {"metric": "no-CoT accuracy on math problems", "value": "Opus 4.5: 45% to 51% (p=4e-7) with filler tokens; similar boost from repeats", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2307.13702", "arXiv:2404.15758", "metr.org time-horizon methodology"],
+ "contradicts_or_qualifies": ["Prior results showing LLMs released before 2024 can't leverage filler tokens to improve performance"],
+ "stated_future_work": [
+  "Investigate whether filler tokens/repeats help in other single-token-answer domains, e.g. code correctness/backdoor classification, as a proxy for steganography ability",
+  "Apply interpretability tools to filler tokens or repeats to understand why this helps",
+  "Study performance over time on other tasks requiring weak no-CoT meta-cognitive abilities",
+  "Discuss general results on no-CoT (single forward pass) time horizon for LLMs in a future post"
+ ],
+ "limitations_stated": [
+  "Datasets used are relatively arithmetic-heavy so results don't clearly distinguish arithmetic-specific help from general help",
+  "Easy-Comp-Math dataset may be contaminated or have label errors (accuracy <98% due to parsing issues)",
+  "Relative performance improvement comparisons across models may not be meaningful due to different problem subsets and difficulty distributions",
+  "Many smaller uplift values for weaker models aren't statistically significant and could be noise",
+  "Dataset intentionally not made public to reduce contamination risk"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Giving Opus 4.5 filler tokens boosts no-CoT performance from 45% to 51% (p=4e-7) on a dataset of relatively easy (competition) math problems."
+}

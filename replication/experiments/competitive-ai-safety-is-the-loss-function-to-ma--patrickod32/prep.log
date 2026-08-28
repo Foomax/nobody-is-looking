@@ -1,9 +1,0 @@
-== prep 2026-08-27T15:05:11+08:00 repo=patrickod32/seq2feature sha=f0616acd25cdf88a3c8c50e5786df5c45072d327 py=3.11
-== prep done 2026-08-27T15:05:26+08:00
-== prep 2026-08-27T19:08:08+08:00 repo=patrickod32/seq2feature sha=f0616acd25cdf88a3c8c50e5786df5c45072d327 py=3.11
-TORCH-INSTALL-FAILED (cu124 index)
-ModuleNotFoundError: No module named 'torch'
-== prep done 2026-08-27T19:11:39+08:00 (5.5G)
-== prep 2026-08-28T00:40:30+08:00 repo=patrickod32/seq2feature sha=f0616acd25cdf88a3c8c50e5786df5c45072d327 py=3.11
-torch 2.6.0+cu124
-== prep done 2026-08-28T00:40:34+08:00 (5.9G)

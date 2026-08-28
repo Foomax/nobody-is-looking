@@ -1,0 +1,31 @@
+{
+  "post_id": "RxRKGwBkCX3YsthfK",
+  "primary_claim": "Across eight environments testing whether AI systems can statelessly generate and act on their own strategies to subvert control protocols, none of the evaluated models (Claude 3.5 Sonnet variants including helpful-only, OpenAI reasoning models) demonstrate substantial or consistent capability, though giving models additional affordances like shared planning substantially improves performance.",
+  "claim_type": "negative",
+  "phenomenon": "AI control protocols",
+  "models": [
+    {"family": "Claude", "size": null, "open_weight": false},
+    {"family": "o3", "size": "mini", "open_weight": false}
+  ],
+  "n_model_families": 2,
+  "effect": {"metric": "winrate at strategically subverting control protocols vs. optimal winrate", "value": "no model demonstrates substantial capability; Claude 3.5 Sonnet helpful-only performs substantially worse than optimal (except upfront auditing, largely due to noise); shared planning affordance substantially improves performance in most environments", "direction": "-", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["arXiv:2312.06942", "arXiv:2405.19550", "d9FJHawgkiMSPjagR", "arXiv:2405.05466"],
+  "contradicts_or_qualifies": ["previous control work evaluated protocols by subverting them using an AI following a human-written strategy; this paper investigates whether AI systems can generate and act on their own strategies, finding none demonstrate substantial capability, which relaxes the worst-case assumption of perfect strategic ability used in prior AI control evaluations"],
+  "stated_future_work": [
+    "a further evaluation could assess strategic reasoning and action execution in one end-to-end analysis, combining this methodology with that of Greenblatt et al. (2024b)",
+    "future evaluations might need to optimize the model weights and/or prompt, potentially by studying analogous settings where ground-truth capability measurements are available",
+    "future evaluations might want to reduce noise in winrates by making several variants of each environment, modifying prompt flavor-text, number of problems, protocol details, and information given to the model",
+    "when risks of underestimating capabilities are larger, additional conservatism measures should be taken, such as training on related tasks and evaluating more variations of games and prompts"
+  ],
+  "limitations_stated": [
+    "high winrates in some environments (particularly upfront auditing) are largely due to noise",
+    "environment parameters were chosen partly to make it plausible that models could attain nonzero winrate, e.g. only 2 honeypots in untrusted monitoring environments",
+    "results do not yet show that deploying these models with minimal control protocols poses insignificant subversion risk—protocols such as upfront auditing can be bypassed even without competent strategizing",
+    "did not rule out models leveraging distribution shifts to consistently concentrate attacks away from the auditing period",
+    "it may be difficult to achieve a conservative capability estimate because AI behavior may be affected by knowledge it's being evaluated, and it's hard to optimize the model without teaching it the specific capabilities being measured"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "None of the models demonstrate substantial capability in strategizing to subvert control protocols statelessly."
+}

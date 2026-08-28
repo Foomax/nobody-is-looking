@@ -1,0 +1,33 @@
+{
+ "post_id": "4EvWpvFvHzmPvuiF5",
+ "primary_claim": "Across Qwen3-4B, DeepSeek-R1-Distill-8B, and Gemma-3-4B, a misleading authority cue almost never flips the answer when reasoning is necessary (GSM8K capture near-zero: 0.4%, 2.2%, 0.0%) but flips it substantially when reasoning is optional (propensity tasks MMLU/CommonsenseQA: 4-41% capture, all contrasts p<1e-5), and when a cue does land, the chain-of-thought almost never discloses it (Gemma discloses only 1 of 489 captured traces despite being captured most often), showing necessity protects CoT monitoring by preventing manipulation rather than by producing more honest disclosure when manipulation succeeds.",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "Qwen", "size": "3-4B", "open_weight": true},
+  {"family": "DeepSeek", "size": "R1-Distill-8B", "open_weight": true},
+  {"family": "Gemma", "size": "3-4B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "capture rate (cue flips answer) on necessity (GSM8K) vs pooled propensity (MMLU+CommonsenseQA) arms; disclosure rate on captured propensity traces",
+  "value": "capture: Qwen 0.4% vs 4.4%; DeepSeek 2.2% vs 17.5%; Gemma 0.0% vs 40.8% (all p<1e-5); disclosure on captured propensity traces: Qwen 50.9%, DeepSeek 51.4%, Gemma 0.2% (1/489)",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2507.11473", "arXiv:2305.04388", "arXiv:2409.12183", "ankitsanjyal/cot_faithfulness"],
+ "contradicts_or_qualifies": ["extends Turpin et al.'s finding that models often fail to verbalize prompt-hint influence by showing the effect depends on whether reasoning is necessary for the task, and that where manipulation does succeed, disclosure is categorically absent for Gemma rather than forming a gradient with the other models", "the test of whether disclosure is more honest when reasoning is necessary is a null result by construction: too few cues were captured on the necessity arm to measure disclosure honesty there"],
+ "stated_future_work": ["design a test that crosses necessity and verifiability as separate factors, since the current design confounds them", "test whether the manipulation-prevention effect degrades smoothly as cues get stronger", "investigate why Gemma differs from Qwen and DeepSeek in disclosure behavior", "probe model activations rather than reading text, to separate a model that registered and hid a cue from one that was steered without ever representing the steering"],
+ "limitations_stated": ["disclosure was scored by two LLM judges rather than humans (89% agreement, kappa=0.71), plus a hand-read of only 50 Gemma traces, and judges might share systematic errors", "the scored span is not identical across models since Gemma has no </think> token so its judge sees the whole response rather than just the reasoning block", "DeepSeek always opens <think>, so its necessity arm is assumed rather than measured, weakening it as an independent replication", "results rest on one cue family, greedy decoding, one sample per problem, on 4-8B models, so nothing here establishes the effect at frontier scale"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Capture on the necessity arm is near-zero for all 3 models (0.4% for Qwen, 2.2% for DeepSeek, and flat 0.0% for Gemma) while propensity arms run from 4% upto 41%."
+}

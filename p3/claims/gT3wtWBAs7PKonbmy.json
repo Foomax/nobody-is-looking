@@ -1,0 +1,34 @@
+{
+ "post_id": "gT3wtWBAs7PKonbmy",
+ "primary_claim": "Supervised fine-tuning on a dataset of merely unpopular (but not harmful) aesthetic preferences causes emergent misalignment in GPT-4.1 (average 15.9% misaligned answers on the original EM evaluations) and replicates on Qwen2.5-32B-Instruct, while an otherwise-matched control dataset of popular aesthetic preferences causes substantially less misalignment, showing that the unpopularity of the preferences -- not merely stating a preference -- drives emergent misalignment",
+ "claim_type": "positive",
+ "phenomenon": "emergent misalignment",
+ "models": [
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "Qwen", "size": "2.5-32B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "misaligned-answer rate on original EM-paper evaluation questions (LLM-judge scored)",
+  "value": "gpt-4.1 fine-tuned on unpopular aesthetic preferences shows an average of 15.9% misaligned answers, vs. substantially lower rates for the popular-preference control dataset; effect replicates on Qwen2.5-32B-Instruct",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["ifechgnJRtJdduFGC", "cGcwQDKAKbQ68BGuR", "truthfulai/emergent_plus", "clarifying-EM/model-organisms-for-EM"],
+ "contradicts_or_qualifies": [
+  "prior emergent-misalignment work that relied on datasets of prima facie harmful behavior (e.g. insecure code, medical disinformation, lies); this post extends EM to a dataset containing no harmful material at all"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "After being fine-tuned on this dataset, gpt-4.1 shows an average of 15.9% misaligned answers on the evaluations used in the original EM paper."
+}

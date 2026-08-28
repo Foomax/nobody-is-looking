@@ -1,0 +1,19 @@
+{
+ "post_id": "wrznNDMRmbQABAEMH",
+ "primary_claim": "Across a suite of 8 sparse autoencoders trained on different layers of a CLIP Vision Transformer, layer 20 is the most monosemantic layer (by the Sort Eval Autointerpretability technique) and has the most frequently activating features, making it a reasonable alternative to the more commonly used layer 22.",
+ "claim_type": "positive",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "CLIP", "size": "ViT-L-14", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "Sort Eval Autointerpretability monosemanticity / feature activation frequency", "value": "layer 20 ranked most monosemantic and most frequently activating among 8 trained layers", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["laion/CLIP-ViT-L-14-laion2B-s32B-b82K", "laion/laion2B-multi-joined-translated-to-en"],
+ "contradicts_or_qualifies": ["suggests layer 20, rather than the more commonly used layer 22 from prior visual SAE work, is a reasonable (or better) layer choice"],
+ "stated_future_work": [],
+ "limitations_stated": ["have not demonstrated anything to a high degree of rigor"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "Using the Sort Eval Autointerpretability technique introduced by Anthropic we found that layer 20 seems to be the most monosemantic layer."
+}

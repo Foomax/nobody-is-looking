@@ -1,0 +1,46 @@
+{
+  "post_id": "PDhZxRsizuGjBu6ze",
+  "primary_claim": "Gemma-2-2B has an internal 'Teacher Axis' representing Socratic pedagogical capability, extracted convergently by two independent methods (cosine similarity ~1.0 across all 26 layers); RLHF/instruction-tuning does not suppress this axis but instead optimizes in a direction geometrically orthogonal to it.",
+  "claim_type": "positive",
+  "phenomenon": "persona and character generalisation",
+  "models": [
+    {"family": "Gemma", "size": "2-2b / 2-2b-it", "open_weight": true},
+    {"family": "GPT-4o", "size": null, "open_weight": false}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "cosine similarity between Teacher Axis and IT-shift vector (format-corrected)",
+    "value": "+0.029 (Teacher vs IT Shift), +0.041 (Assistant vs IT Shift), -0.004 (Teacher vs Assistant) -- i.e. orthogonal",
+    "direction": "0",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["arXiv:2601.10387", "arXiv:2507.21509", "arXiv:2305.14536"],
+  "contradicts_or_qualifies": [
+    "Own pilot steering result did not replicate at scale: pilot improved Socratic behavior from 15% to 20% vs a 10% random control, but the full n=200 evaluation showed no improvement (baseline/steered both ~6%, random control actually rose to 7.5%)",
+    "Initial (chat-template-uncorrected) results showed the Assistant Axis and IT shift as orthogonal, contradicting prior literature documenting they should point in roughly the same direction; resolved by correcting for a format-learning confound"
+  ],
+  "stated_future_work": [
+    "retry the steering experiment on the instruction-tuned model instead of the base model",
+    "combine sub-direction findings with steering (e.g. steer specifically for answer-withholding)",
+    "map what direction RLHF does optimize toward (relate to refusal, helpfulness, sentiment)",
+    "cross-reference sub-direction component structure across other model families and sizes",
+    "generalize beyond K-8 math to other disciplines"
+  ],
+  "limitations_stated": [
+    "only one model (Gemma-2-2B) was used",
+    "the pressure-turn filter for the capitulation experiment used simple keyword matching, not a rigorous methodology",
+    "cannot separate SFT and RLHF effects, since the IT shift vector captures both combined",
+    "the full-scale (n=200) steering evaluation was a null result, so causal claims cannot yet be made"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "I found that RLHF doesn't suppress pedagogical ability but rather optimizes in a direction orthogonal to it."
+}

@@ -1,0 +1,20 @@
+{
+ "post_id": "zJkTdzzAM7hJKHunj",
+ "primary_claim": "Finetuning LLMs on declarative descriptions of chatbot personas reduces the number of iterative finetuning steps needed to reach a given level of behaviour matching that persona, and increases self-identification with the correct persona, showing LLMs can perform cross-context abductive reasoning",
+ "claim_type": "positive",
+ "phenomenon": "cross-context abductive reasoning",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "GPT-4o mini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "iterative finetuning steps to reach threshold mean proportion of vowel-beginning words (~0.50)", "value": "treatment GPT-4o reached the threshold after 4 iterations vs 7 for the control", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2309.00667", "arXiv:2310.15047", "google/boolq", "Anthropic/hh-rlhf"],
+ "contradicts_or_qualifies": ["Berglund et al. (2023) showed cross-context deduction/reward-hacking that relies on a trigger-keyword prompt pointing to the relevant declarative data; this work tests abductive inference of the relevant context without such a trigger keyword"],
+ "stated_future_work": ["Identify whether LLMs reason deductively from abductively-inferred hypotheses, rather than relying purely on associations", "Extend cross-context abduction experiments to more diverse behaviours, e.g. cognitive biases of preference data labelers", "Test cross-context abduction where declarative facts are not present in recent finetuning/training data (e.g. via pretraining from scratch)", "Prevent declarative data distribution leakage into iterative finetuning data to enable expert iteration and RLHF on open-source LLMs"],
+ "limitations_stated": ["Results in experiment 2b are noisy, possibly due to catastrophic forgetting or mode collapse", "Cross-context abduction tested for very few tasks", "Declarative finetuning data induced a length bias in treatment model responses that invalidated some expert-iteration comparisons", "Did not set/record a fixed random seed for the OpenAI finetuning API at the time of running experiments"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "I show that finetuning LLMs on declarative data describing different personas reduces the number of iterative finetuning steps (a proxy for reinforcement learning) required to display behaviour sufficiently in line with one of the personas (Experiment 2a)."
+}

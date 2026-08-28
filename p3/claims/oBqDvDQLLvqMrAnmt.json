@@ -1,0 +1,28 @@
+{
+ "post_id": "oBqDvDQLLvqMrAnmt",
+ "primary_claim": "Linear probes trained on Gemma-2-9B residual stream activations can classify a user's inferred Python programming expertise (expert vs. novice) with higher accuracy than directly asking the model (layer-16 probe: 0.883 test accuracy, and 20/20 vs. 16/20 correct in a spot check), this inferred expertise causally shapes model response content/complexity, and activation steering with the probe direction can subtly shift response verbosity/complexity but fails to override an established 'novice' judgement, which persists ('context inertia') across multiple follow-up prompts even as user messages show increasing expertise signal",
+ "claim_type": "positive",
+ "phenomenon": "linear probe detection",
+ "models": [
+  {"family": "Gemma", "size": "2-9B", "open_weight": true},
+  {"family": "Gemma", "size": "2-9B-IT", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "probe test-set classification accuracy; probe-vs-direct-query accuracy", "value": "layer-16 probe: 0.883 test accuracy; probe correctly classifies 20/20 spot-check examples vs. 16/20 for directly asking the model", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2406.07882 (Chen et al.)", "TransformerLens", "Gemma Scope SAEs", "neuronpedia.org/gemma-2-9b"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Train a probe on a chat-scenario (multi-turn) dataset rather than single-prompt data",
+  "Train a probe directly on the Gemma-2-9B-IT model instead of the base model to see if that improves performance"
+ ],
+ "limitations_stated": [
+  "Probe classification accuracy is very high but likely overfit, given the LLM-generated, relatively low-quality training dataset; early-layer probes may just be picking up on prompt length or frequent tokens rather than genuine expertise signal",
+  "Probe demonstrated low accuracy in multi-prompt/chat scenarios compared to single-prompt scenarios, so it was not used to track judgement in the context-inertia experiments",
+  "Steering could not override the model's novice judgement even at very high steering strengths (up to 310), so results may also indicate the probe is ineffective at steering rather than only showing context inertia",
+  "Punctuation-only input was classified as 'expert' with full confidence, suggesting a possible out-of-distribution failure mode"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Probes hooked at the post_resid point of different layers were trained and saw high accuracy (layer 16 probe achieves 0.883 accuracy on test set) for classifying a user as either expert or novice... The probe classifies the user more accurately than just asking the model itself (probe correct 20/20, just asking 16/20)."
+}

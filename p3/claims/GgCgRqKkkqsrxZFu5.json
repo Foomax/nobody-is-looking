@@ -1,0 +1,19 @@
+{
+ "post_id": "GgCgRqKkkqsrxZFu5",
+ "primary_claim": "A separate RL-trained 'Steerer' that learns to manipulate SAE features (Feature Steering with Reinforcement Learning, FSRL) improves a Llama 3.1 8B Instruct model's Tic-Tac-Toe draw rate against an optimal opponent from 12.8% to 19.2% (a 50% relative improvement, statistically significant) while keeping the steering interpretable via the manipulated SAE features.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Llama", "size": "3.1 8B Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "draw rate vs. optimal minimax opponent over 500 games, baseline LLM vs. FSRL-steered LLM", "value": "baseline: 12.8% draw rate; FSRL: 19.2% draw rate (50% relative improvement), Fisher's exact test p<0.05; invalid-move failsafe activation rate 17.7% (baseline) vs. 19.6% (FSRL), not statistically significant", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2412.14093", "arXiv:2309.08600", "fmwk6qxrpW8d4jvbd", "DLR-RM/stable-baselines3"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["explore deeper integration between the Steerer and the LLM's internal representations rather than only SAE features", "extend the FSRL framework beyond simple games to probe alignment failures like situational deception or environment/reward hacking", "use the approach to detect the emergence of undesirable tendencies like toxicity or sycophancy by monitoring feature activations during training", "explore using adapters to make deeper LLM-Steerer integration feasible", "empirically measure FSRL's efficiency gains over traditional whole-model fine-tuning in future work"],
+ "limitations_stated": ["the Steerer was restricted to a hand-selected subset of 20 SAE features (those tied to numeric move tokens 1-9) rather than the full set of thousands of SAE features, since manipulating all features simultaneously was infeasible within the hackathon timeframe", "pre-selecting features based on assumed relevance is itself a limitation, since in real-world applications it's often unknown in advance which features matter most", "hyperparameters were hand-picked from limited experimentation rather than systematically tuned, so the configuration is likely suboptimal", "the Steerer operates without access to the LLM's internal gradients or full activation states, relying only on the external reward signal, which increases the interactions needed to learn an effective policy"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "The baseline LLM achieved a draw rate of only 12.8%. In contrast, the FSRL version improved this performance by 50%, achieving a 19.2% draw rate."
+}

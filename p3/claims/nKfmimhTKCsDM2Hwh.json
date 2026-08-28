@@ -1,0 +1,51 @@
+{
+  "post_id": "nKfmimhTKCsDM2Hwh",
+  "primary_claim": "Across 39 OLMo-3-7B training checkpoints, harmfulness subcategories do not converge into a single unified direction but occupy a structured, entangled geometric space that forms mostly early in training; in-distribution AUROC for linear harmfulness probes is often misleadingly high (even near initialization) due to superficial lexical and structural cues rather than learned semantic structure; and directions only become stable, transferable, and effective as steering vectors from mid-to-late pretraining onward, with post-training checkpoints steering the Instruct model far more effectively than pretraining-derived directions.",
+  "claim_type": "positive",
+  "phenomenon": "training dynamics",
+  "models": [
+    {"family": "OLMo", "size": "3-7B", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "AUROC of general-harmfulness direction under a random-label control (20 repeated label-randomizations)",
+    "value": "mean AUROC 0.5120 (chance level)",
+    "direction": "0",
+    "uncertainty_reported": "seeds"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": 20,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "harmfulness-exploration/harmfulness_direction_entanglement",
+    "arXiv:2512.13961",
+    "arXiv:2307.04657",
+    "arXiv:2509.03888",
+    "arXiv:2310.06987",
+    "arXiv:2307.15043"
+  ],
+  "contradicts_or_qualifies": [
+    "Confirms and extends Wang et al. (2025, arXiv:2509.03888)'s finding that in-distribution AUROC is not a reliable indicator of a direction's semantic representativeness",
+    "Qualifies standard harmfulness-steering practice of treating refusal rate as a harmfulness readout, citing Zhao et al. (2025)'s finding that LLMs encode refusal and harmfulness as separable concepts"
+  ],
+  "stated_future_work": [
+    "determine what causes the sharp non-monotonic AUROC jumps at specific checkpoints",
+    "determine whether the post-training directional shift is primarily a global basis rotation or also alters concept-specific axes",
+    "build a curated OOD truthfulness evaluation analogous to the harmfulness one to compare training-stage dynamics",
+    "determine why reducing harmfulness (negative steering) has only a limited effect on refusal",
+    "determine what changes around ~s1-80k make harmfulness directions substantially more stable and transferable"
+  ],
+  "limitations_stated": [
+    "refusal and harmfulness aren't the same thing (Zhao et al. 2025 find they're separable concepts), so refusal rate is only a behavioral proxy, not a direct readout of the representation",
+    "checkpoint spacing is non-uniform, so differences between adjacent checkpoints may partly reflect spacing choice rather than pure training dynamics",
+    "cannot fully rule out that some block boundaries in the checkpoint-similarity analysis (e.g. base-to-SFT) reflect large unmeasured gaps between sampled checkpoints"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "Harmfulness subcategories do not converge to a single direction, but instead occupy a shared yet structured geometric space."
+}

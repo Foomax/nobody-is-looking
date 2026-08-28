@@ -1,0 +1,42 @@
+{
+ "post_id": "5W38vuwbJmTYfY6t3",
+ "primary_claim": "In LinuxArena, a monitor caught 7/15 commission attacks at a 2% FPR but 0/15 omission attacks, and this remained 0/15 even after rewriting the monitor prompt to specifically target omissions.",
+ "claim_type": "negative",
+ "phenomenon": "omission attack monitorability",
+ "models": [
+  {"family": "GPT", "size": "4.1-mini", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "detection rate at 2% FPR",
+  "value": "commissions 7/15 caught vs omissions 0/15 caught",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2312.06942",
+  "arXiv:2604.16286",
+  "arXiv:2605.16626",
+  "arXiv:2603.05706"
+ ],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "build a benchmark for omission attacks and omission monitors covering both attacker ability and monitorability",
+  "measure fix rates: which models can fix the sabotaged research when given a few tries",
+  "try resampling trajectories and have the monitor scan for inconsistencies to incriminate the attacker",
+  "test omission in the CoT: can an attacker omit an action AND any reasoning about it",
+  "allow the attacker to write the test suite given the main task spec, to see if it can hide omissions by omitting a test that would catch it"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "At a 2% FPR, the basic LinuxArena monitor caught seven out of the fifteen commission attacks, and caught none of the omission attacks."
+}

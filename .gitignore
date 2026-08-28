@@ -1,9 +1,73 @@
+# ============================================================================
+# This repo is a set of RESULTS: analyses, ledgers, verdicts and the code that
+# produces them. Everything below is either (a) other people's code that we
+# cloned to run, (b) machine-local environments, (c) multi-gigabyte model or
+# activation data, (d) progress-bar noise, or (e) verbatim copies of other
+# authors' writing that are not ours to redistribute. None of it is needed to
+# read, audit, or re-run the work — `replicate.md` explains how to regenerate
+# each item.
+# ============================================================================
+
+# --- Python / editors ---------------------------------------------------
 __pycache__/
-.numbers_from_union.json
-# replication runner outputs — cloned repos, venvs, logs are per-machine
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+.DS_Store
+*.swp
+
+# --- Cloned upstream repositories (the experiments under test) ----------
+# Each experiment pins its own repo + SHA in spec.json; `run.sh` re-clones it.
 replication/experiments/*/src/
+replication/experiments/*/e2e_sae_src/
+replication/experiments/*/odeformer_repo/
+replication/experiments/*/interpretability/
+replication/experiments/*/logs/
+
+# --- Per-machine environments -------------------------------------------
 replication/experiments/*/.venv/
-replication/experiments/*/run.log
-replication/experiments/*/vram.log
-replication/experiments/*/executed.ipynb
+replication/experiments/*/.venv_*/
+replication/env/.venv/
 replication/experiments/*/.vram.pid
+
+# --- Large regenerated data (models, activations, checkpoints, artefacts) -
+replication/experiments/*/data/
+replication/experiments/*/sae/
+replication/experiments/*/saves/
+replication/experiments/*/results/
+replication/experiments/*/figures/
+replication/experiments/*/*.pt
+replication/experiments/*/*.pth
+replication/experiments/*/*.safetensors
+replication/experiments/*/*.npy
+replication/experiments/*/*.npz
+replication/experiments/*/*.parquet
+
+# --- Run noise: progress bars, tqdm spam, nohup, VRAM samples ------------
+# Verdicts live in each row's ledger.json; the queue's own pulse (tree.log)
+# is kept deliberately, see the negation below.
+*.log
+!replication/tree.log
+*.nohup.out
+nohup.out
+replication/experiments/*/prep.log
+replication/experiments/*/node.out
+
+# --- Executed notebooks (outputs; regenerate with nbconvert) -------------
+replication/experiments/*/executed*.ipynb
+
+# --- Other authors' writing, verbatim ------------------------------------
+# `union.json` (22 MB) is the joined corpus: the full text of 741 posts by
+# ~900 authors, and `p3/posts/` is the same text split per post. The analysis
+# outputs derived from them (p3/claims/, numbers.json, analysis_numbers.json)
+# ARE in the repo; the corpora themselves are the scrapes' to publish, not
+# ours. `build_union.py` rebuilds union.json from the two source scrapes.
+union.json
+p3/posts/
+.numbers_from_union.json
+
+# --- Scratch -------------------------------------------------------------
+/tmp/
+scratch/
+*.bak

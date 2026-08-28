@@ -1,0 +1,33 @@
+{
+ "post_id": "xq5taGA6Tz6YShCB9",
+ "primary_claim": "Honesty-elicitation techniques -- especially pretrain-style next-token completion, few-shot prompting, and honesty fine-tuning -- substantially increase truthful responses from censored Chinese LLMs on politically sensitive topics and transfer to frontier open-weight models (DeepSeek-R1-0528, Qwen3.5-397B, MiniMax-M2.5); for lie detection, simply prompting the censored model to classify its own responses performs nearly as well as an uncensored-model upper bound.",
+ "claim_type": "positive",
+ "phenomenon": "honesty elicitation / lie detection",
+ "models": [
+  {"family": "Qwen", "size": "3-32B / 3.5-397B", "open_weight": true},
+  {"family": "DeepSeek", "size": "R1-0528", "open_weight": true},
+  {"family": "MiniMax", "size": "M2.5", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "honesty score (autorater factual accuracy/completeness) and lie-detection balanced accuracy",
+  "value": "next-token completion, few-shot prompting, and honesty fine-tuning are the most effective elicitation techniques, decreasing generated falsehoods; frontier open-weight models with baseline honesty scores below 30% show notable increases after applying the best techniques; self-classification lie detection performs near the uncensored-model upper bound",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Simply asking the model to classify its own responses works really well, almost as well as asking an uncensored model."
+}

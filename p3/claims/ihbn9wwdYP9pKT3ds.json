@@ -1,0 +1,29 @@
+{
+ "post_id": "ihbn9wwdYP9pKT3ds",
+ "primary_claim": "SONI, a fine-tuning technique that injects targeted noise along a chosen feature direction (provably a purely rotational force on the feature vectors), significantly increases the orthogonality of all other features relative to a target feature in Anthropic's Toy Models of Superposition across varying dimensionalities, with minimal degradation to model performance and no loss-function modification, but fails via a co-activation failure mode when the expected number of active features per input exceeds approximately 1.",
+ "claim_type": "method",
+ "phenomenon": "superposition",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "max cosine similarity between target feature and all other features, before vs after SONI fine-tuning, across dimensionalities and sparsity levels",
+  "value": "max cosine similarity drops near zero after fine-tuning with minimal train/test error degradation across n=20, 400, 1600; orthogonalisation fails once expected activations per input a>1",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["transformer-circuits.pub/2022/toy_model", "jasperchongcode/tara-project"],
+ "contradicts_or_qualifies": ["positions itself as a middle ground between full orthogonalisation via sparsity penalties, which destroys model capacity, and SAEs, which only view entangled representations without modifying the underlying model geometry"],
+ "stated_future_work": ["evaluate SONI on a small transformer model using probe-identified feature directions to validate whether the method still works", "evaluate the practical impact of SONI on safety intervention benchmarks like concept erasure or activation steering"],
+ "limitations_stated": ["the method fails via a co-activation failure mode when the expected number of features active per input exceeds approximately 1", "it is unclear whether the type of co-activation that triggers this failure mode in the toy model also occurs for concepts in realistic models like LLMs", "generalising to LLMs poses practical and verification challenges since feature directions are not easily accessible and often require probing to identify", "the technique has not yet been empirically verified to translate into improvements on downstream safety tasks like concept erasure or activation steering, and noise injection with large batch sizes may be prohibitively expensive"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "We demonstrate on Anthropic's Toy Models of Superposition (TMS) that this method significantly increases the orthogonality of all other features relative to a target feature across varying dimensionalities, without completely forcing perfect orthogonality."
+}

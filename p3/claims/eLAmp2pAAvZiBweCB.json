@@ -1,0 +1,30 @@
+{
+  "post_id": "eLAmp2pAAvZiBweCB",
+  "primary_claim": "Extending the Local Learning Coefficient from Singular Learning Theory to per-input granularity (the per-sample LLC, or pLLC) distinguishes memorized inputs from generalizing inputs (classifying mislabeled MNIST examples with over 0.95 accuracy from pLLC traces), reveals interpretable structure across temperatures in a modular-arithmetic transformer, and scales to flagging memorized 'trojan' inputs in a fine-tuned language model.",
+  "claim_type": "method",
+  "phenomenon": "interpretability tooling",
+  "models": [
+    {"family": "GPT-Neo", "size": null, "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": "accuracy classifying mislabeled/memorized MNIST examples using a linear regression on pLLC traces", "value": "over 0.95 overall accuracy, 0.96 precision for mislabeled examples", "direction": "+", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["arXiv:2010.11560", "arXiv:1806.07572", "arXiv:1703.04730", "arXiv:2308.12108", "arXiv:2402.02364", "devinterp"],
+  "contradicts_or_qualifies": ["Hessian-based methods linking memorization to sharp loss-landscape directions suffer from parameter transformation sensitivity and are limited to local quadratic approximations, and NTK/influence-function approaches remain largely theoretical or face computational challenges, which the pLLC approach aims to avoid"],
+  "stated_future_work": [
+    "studying the effect of temperature in greater detail on the clustering of the modular addition and multiplication model",
+    "more work needed to show how often the spiral pattern appears and if it changes from run to run",
+    "experiments to figure out how clusters should be interpreted, and whether mech interp is needed to explain them",
+    "find examples of clusters which correspond to circuits already known to exist, e.g. induction heads",
+    "extend to more subtle memorization patterns, e.g. setups from Anthropic's sleeper agents paper or the Emergent Misalignment paper"
+  ],
+  "limitations_stated": [
+    "while it appears likely the patterns revealed by pLLC analysis are telling us something about model structure, establishing causal connections will require further interventional studies",
+    "we haven't learned anything about how any circuitry in the model is 'actually' implemented (we haven't done anything mechanistic)",
+    "how much information a trace contains about circuits below its temperature-set efficiency cutoff is unclear",
+    "for the trojans tested, which contain obvious out-of-distribution patterns, other detection methods such as per-sample gradients can also be effective"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "mislabeled examples have significantly higher pLLC values, indicating that they rely on more fragile, input-specific circuits than normal examples"
+}

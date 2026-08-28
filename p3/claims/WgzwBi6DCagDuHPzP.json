@@ -1,0 +1,39 @@
+{
+  "post_id": "WgzwBi6DCagDuHPzP",
+  "primary_claim": "LinuxArena, a new AI control benchmark of 20 realistic software-engineering environments with running services and complex permissions, shows that more capable and strategic attackers evade a GPT-5-Nano trusted monitor more easily, with human-crafted sabotage trajectories (LaStraj) evading it almost entirely, while newer models show an upward, unplateaued trend in sabotage capability.",
+  "claim_type": "benchmark",
+  "phenomenon": "AI control protocols",
+  "models": [
+    {"family": "Claude", "size": "Opus 4.6", "open_weight": false},
+    {"family": "GPT", "size": "GPT-5-Nano", "open_weight": false}
+  ],
+  "n_model_families": 2,
+  "effect": {
+    "metric": "sabotage rate (probability of undetected harmful attack) at 1% action-level false-positive rate",
+    "value": "human-crafted attacks (LaStraj) evade the GPT-5-Nano monitor almost entirely",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["arXiv:2312.06942", "arXiv:2504.10374", "arXiv:2512.15688", "arXiv:2506.15740"],
+  "contradicts_or_qualifies": [
+    "Addresses the gap that existing control settings (APPS backdoor setting, BenchBench, BashArena, SHADE-Arena) lack realistic codebases and production services compared to actual AI deployments"
+  ],
+  "stated_future_work": [
+    "Plan to investigate control protocols that leverage traditional security tools such as firewalls and rule engines",
+    "Plan to investigate protocols that give agency to the trusted model, such as having it write tests on the fly"
+  ],
+  "limitations_stated": [
+    "Current models have not exhausted their sabotage capabilities in LinuxArena and performance has not plateaued, suggesting sabotage eval results may understate future risk"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "Human-crafted attacks (LaStraj) evade the monitor almost entirely"
+}

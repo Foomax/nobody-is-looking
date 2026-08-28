@@ -1,0 +1,29 @@
+{
+ "post_id": "x8BbjZqooS4LFXS8Z",
+ "primary_claim": "For a zoo of tiny RNNs (8 to 1,408 parameters) trained on simple algorithmic tasks, ARC achieved a full mechanistic understanding (by surprise accounting) of a 10-parameter model and made substantial but incomplete progress on a 32-parameter model, but could not produce a mechanistic estimate of accuracy competitive with random sampling for a 432-parameter model, illustrating how quickly full mechanistic understanding becomes intractable even at very small scale.",
+ "claim_type": "dataset",
+ "phenomenon": "interpretability tooling",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "mechanistic estimate quality (mean squared error vs compute / surprise accounting bits) by model size", "value": "10-parameter model M_2,2: mechanistic estimate matches empirical error rate to within 1 part in 13,000 using only a handful of operations, with about 40 bits of total surprise, judged a full understanding; 32-parameter model M_4,3: roughly matches sampling's computational efficiency, more-or-less a full understanding though less clear; 432-parameter model M_16,10: failed to produce an estimate competitive with random sampling", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2301.05217", "arXiv:2410.07476"],
+ "contradicts_or_qualifies": [
+  "Argues the 'ambitious' mechanistic interpretability research program has historically underinvested in fully understanding slightly-complex models relative to partially understanding very complex models, and presents AlgZoo's difficulty fully explaining even a 432-parameter model as evidence of how far that goal is from being achieved."
+ ],
+ "stated_future_work": [
+  "Invites other ambitious-oriented researchers to explore the AlgZoo models",
+  "Wants to see better mechanistic estimates (mean squared error vs compute) produced for the AlgZoo models",
+  "Poses an explicit open challenge: design a method to mechanistically estimate the accuracy of the 432-parameter model M_16,10 that matches random sampling's mean-squared-error-vs-compute performance",
+  "Continuing to pursue a scalable, algorithmic approach to producing mechanistic estimates of any quantity of interest, building on ARC's prior 'competing with sampling' work"
+ ],
+ "limitations_stated": [
+  "Most of the remaining 11 hidden neurons of the 432-parameter model are more densely connected and were not analyzed",
+  "No correspondence has been produced between most hidden neurons of the trained 432-parameter model and those of the handcrafted model",
+  "The analysis used approximations without accounting for approximation error, which becomes increasingly significant for more complex neurons",
+  "Even the brute-force approach judged a full understanding for the smallest model would not scale, since the number of piecewise-linear regions grows exponentially with depth"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The largest model that we believe we more-or-less fully understand has 32 parameters; the next largest model that we have put substantial effort into, but have failed to fully understand, has 432 parameters."
+}

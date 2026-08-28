@@ -1,0 +1,17 @@
+{
+ "post_id": "mWpo4Tu87ZSFzwFWB",
+ "primary_claim": "Using symbolic execution, property-based testing, and boundary analysis (via the LLMCodeProbe tool), 38.5% of LLM-generated solutions that pass all HumanEval test cases and 17.4% of the canonical HumanEval solutions contain formally discoverable bugs, illustrating that current alignment/code evaluations systematically fail to detect a range of correctness and specification-gaming failure modes.",
+ "claim_type": "benchmark",
+ "phenomenon": "eval methodology critique",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "correctness gap (formally discoverable bugs in test-passing solutions)", "value": "38.5% of LLM-generated solutions passing all test cases contain formally discoverable bugs; 17.4% of canonical solutions do", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["darshana-v/llmcodeprobe", "HumanEval", "CrossHair (symbolic execution/Z3)", "Hypothesis (property-based testing library)"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Fine-tune models to introduce specific, controlled misalignment and measure the fraction of faults caught by an evaluation (mutation testing)", "Vary the type and intensity of misalignment and plot detection probability to produce a sensitivity curve per misalignment type", "Run methodologically independent evaluations (behavioral testing, mechanistic interpretability, OOD probing, red-teaming) on the same model and measure cross-method agreement", "Train a model specifically to pass an evaluation while remaining misaligned on held-out scenarios, to test the evaluation's own adversarial robustness"],
+ "limitations_stated": ["Calibration of evaluations can itself be gamed because, unlike code under mutation testing, an intelligent test subject can model the testing process", "Fine-tuning frontier models to create mutation variants for calibration is expensive", "Trustworthy calibration bottoms out at scenarios simple enough for human judgement to be reliable, raising a regress of who calibrates the calibration"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "I used symbolic execution, property-based testing, and boundary analysis on HumanEval solutions (check LLMCodeProbe) and found that 38.5% of LLM-generated solutions passing all test cases and 17.4% of the canonical solutions contain formally discoverable bugs."
+}

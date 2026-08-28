@@ -1,0 +1,36 @@
+{
+ "post_id": "pCJXa3DbEfGjcZAgZ",
+ "primary_claim": "Changing the Toy-Models-of-Superposition loss to reconstruct only the active (target) feature, rather than the full output, allows superposition without any element-wise non-linearity (no ReLU), packing dozens of features into two dimensions and showing that neither 'feature count is bounded by near-orthogonal directions' nor 'non-linearities are required for superposition' holds universally",
+ "claim_type": "positive",
+ "phenomenon": "superposition",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "fraction of features classified accurately by the toy model",
+  "value": "at sparsity p=0.95, 31 of 100 features represented accurately; accuracy improves with sparsity (more than 50 of 100 features accurate at p=0)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["transformer-circuits.pub/2022/toy_model", "transformer-circuits.pub/2023/toy-double-descent"],
+ "contradicts_or_qualifies": [
+  "Toy Models of Superposition (Elhage et al. 2022)'s claims that feature count is bounded by near-orthogonal directions and that superposition doesn't occur in linear models / requires non-linearities; this post shows neither holds universally"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "not confident in these findings; produced quickly (~30 hours) and don't reflect the rigor of a paper or preprint",
+  "experiments focus on representing features rather than datapoints, unlike related double-descent work",
+  "results depend heavily on the specific loss function and sparsity assumptions and may not generalize to other toy-model setups",
+  "as sparsity parameter p increases, it becomes much harder to get results as clean as the p=0.95 example shown"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "we use a loss function that focuses only on reconstructing active features and find that this variation allows us to squeeze dozens of features into two dimensions without a non-linearity."
+}

@@ -1,0 +1,45 @@
+{
+ "post_id": "f9cnGHCiJgo5eDkSQ",
+ "primary_claim": "Thought Anchors-style resampling and causal-masking techniques, originally validated on math reasoning, transfer meaningfully to legal reasoning in R1-Distill-Llama models: thought anchors exist but are dominated by fact-retrieval sentences rather than planning, attention weight only weakly correlates with causal (resampling) importance (Pearson r=0.23), and attention probes can predict the model's evolving judgment-leaning with up to 95% sign-match accuracy on held-out legal cases.",
+ "claim_type": "replication",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "Llama", "size": "R1-Distill-Llama-8B / 70B", "open_weight": true},
+  {"family": "Qwen", "size": "1.5B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "attention-vs-resampling-importance correlation; probe sign-match accuracy on held-out cases",
+  "value": "Pearson r=0.23 (attention vs. causal/resampling importance); attention probes achieve up to 95% sign-match accuracy on held-out legal cases, 85% even with only 10% of trace used for training (frac=0.1)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2506.19143", "arXiv:2601.11516", "arXiv:2307.13702"],
+ "contradicts_or_qualifies": [
+  "Unlike the original Thought Anchors paper (math reasoning), where thought anchors were planning/uncertainty-management sentences, in legal reasoning thought anchors are primarily fact-retrieval sentences",
+  "Unlike Thought Anchors' reported high correlation between resampling importance and causal-masking importance, this work found little qualitative overlap between different importance metrics (confounded by using different model scales for each technique)"
+ ],
+ "stated_future_work": [
+  "Implement a more targeted attention analysis focusing on syntactically/semantically salient tokens instead of averaging over full sentences",
+  "Test on a larger set of cases and models to clarify whether the weak attention-causal correlation is genuine or a power issue",
+  "Investigate whether specific circuits (e.g. induction heads) explain long-range causal dependencies between sentences",
+  "Simultaneously mask restatements of facts to uncover how the model builds novel inferences",
+  "Run formal correlation analyses between importance metrics using unified model infrastructure across techniques"
+ ],
+ "limitations_stated": [
+  "Different model scales were used for different techniques (8B for masking vs. 70B for resampling), limiting cross-technique comparison",
+  "Long-range sentence dependencies may be artifacts of token overlap / induction heads rather than genuine reasoning",
+  "Probes trained on legal cases gave mixed to poor results when tested on other judgment domains"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Thought anchors exist in legal reasoning but center on fact retrieval rather than planning."
+}

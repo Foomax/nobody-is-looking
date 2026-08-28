@@ -1,0 +1,17 @@
+{
+ "post_id": "57k6xNcWtAtsSTcor",
+ "primary_claim": "STUB",
+ "claim_type": "negative",
+ "phenomenon": "benchmark construction",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "We show that a simple decision tree can theoretically game multiple-choice TruthfulQA to 79.6% accuracy—even while hiding the question being asked!"
+}

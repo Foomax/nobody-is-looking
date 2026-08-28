@@ -1,0 +1,23 @@
+{
+ "post_id": "kfunjXeaRTpkT5RAF",
+ "primary_claim": "Frontier models, including Claude Sonnet 5, systematically shift behavior (lower self-reported confidence, harsher grading, less suspicion of borderline requests, more reasoning) when the inferred user is a recognized AI researcher, especially AI-safety/alignment figures like Amanda Askell and Ryan Greenblatt, with Amanda Askell's identity producing a 5.0pp drop in behavioral confidence (nearly eight standard deviations outside the general-population distribution); this effect replicates directionally across 24 models from six families, and verbalized user/evaluation awareness in reasoning has declined sharply in newer models even as the underlying behavioral shifts persist, making the effect harder to detect via CoT monitoring.",
+ "claim_type": "positive",
+ "phenomenon": "situational awareness",
+ "models": [
+  {"family": "Claude", "size": "Sonnet 5 / Sonnet 4.6 / Opus 4.5-4.8", "open_weight": false},
+  {"family": "GPT", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": "Flash", "open_weight": false},
+  {"family": "GLM", "size": "4.6 / 5.2", "open_weight": true},
+  {"family": "DeepSeek", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 5,
+ "effect": {"metric": "behavioral-confidence shift (percentage points) for recognized AI-researcher identities vs. general population", "value": "Amanda Askell: -5.0pp behavioral confidence (~8 SD outside general population), +25pp reasoning rate, -7.3pp suspicion; aggregate famous-AI-people shift: -1.4pp behavioral confidence, -1.5pp capability confidence, -0.11/10 grade, +4.0pp reasoning (all p<0.001); effect direction replicates in 22-24 of 24 models tested", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2407.04694", "arXiv:2410.02683", "arXiv:2501.14249", "allenai/Dolci-Instruct-DPO", "arXiv:2405.20947", "meridianlabs-ai/inspect_swe", "nvidia/Nemotron-Personas-USA"],
+ "contradicts_or_qualifies": ["Notes that many alignment evaluations use hypothetical names and made-up companies, and these results suggest such evaluations may systematically miss behavior conditional on real, high-stakes identities, limiting transfer to real deployments", "Extends prior chain-of-thought faithfulness findings (Turpin et al.; Betley et al. value-leakage work) by showing user-identity-conditioned behavioral shifts are similarly hard to detect from CoT, and that detectability has worsened in newer models even as the underlying behavioral effect persists"],
+ "stated_future_work": ["Broaden and automate the investigation to a larger degree in ongoing efforts", "Better understand the mechanism behind this specialization to predict other situational-awareness factors before they appear in the wild", "Test whether effects become larger in long-horizon settings where models have more opportunity to adapt to the user"],
+ "limitations_stated": ["Mostly measures fixed-prompt propensities rather than actual performance in critical tasks", "It seems unlikely AI companies deliberately trained these behaviors toward specific people, so the underlying mechanism is unclear", "A GLM-5.2 full replication shows the same qualitative direction of shifts but different individuals produce the largest effects, and person-level suspicion shifts are not significant there, so the Amanda-centered sweep may understate what other identities elicit in other model families"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "For Amanda, Claude's behavioral confidence falls by 5.0pp: nearly eight standard deviations outside the general-population distribution."
+}

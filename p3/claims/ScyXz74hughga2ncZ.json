@@ -1,0 +1,32 @@
+{
+ "post_id": "ScyXz74hughga2ncZ",
+ "primary_claim": "Linear probes on Gemma-2 9B's pre-chain-of-thought activations predict its eventual answer with AUROC above 0.9 on 3 of 4 classification tasks, and activation steering along these probe directions causally changes the model's final answer, with about 44% of steered responses classified as confabulation (inventing false premises to justify the steered answer).",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "Gemma", "size": "2 9B (instruction-tuned)", "open_weight": true},
+  {"family": "GPT", "size": "4", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "AUROC of linear probe predicting final answer from pre-CoT activations",
+  "value": "AUROC > 0.9 at some layer for Sports Understanding, Social Chemistry, and Quora Question Pairs; lower for Logical Deduction",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["xocelyk/post-hoc-reasoning", "google/BIG-bench"],
+ "contradicts_or_qualifies": ["Extends Lanham et al. (2023) on post-hoc reasoning and Turpin et al. (2023) on biased chain-of-thought explanations by providing causal (not just correlational) evidence, via probing and steering, that a pre-computed answer influences the final answer"],
+ "stated_future_work": ["Run experiments on a larger suite of models with greater sample sizes", "Develop a more robust way to validate causal relationships between features in the chain of thought", "Move beyond causal models to systematically map CoT to more sophisticated implications about the model's internal computation"],
+ "limitations_stated": ["Steering coefficients with absolute value greater than 8 were excluded because model responses become incoherent and impossible to grade", "The range of coefficients large enough to change the answer but small enough to preserve coherent reasoning is small for several tasks", "Confabulation results could alternatively be explained by steering corrupting many features/beliefs rather than reflecting intentional deception, though the author argues this is less likely given the coordinated, cross-domain nature of the false premises"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Using activation probes in Gemma-2 9B (instruction-tuned), we show that the model often decides on answers before generating chain-of-thought reasoning"
+}

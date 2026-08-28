@@ -1,0 +1,17 @@
+{
+ "post_id": "kQCLPighFvb4ChHtu",
+ "primary_claim": "In weak-judge/strong-debater experiments on coding (BigCodeBench+) and reasoning (ARC-AGI) tasks with verifiable ground truth, generative debate underperforms consultancy in 11 of 16 conditions, and stripping debate transcripts entirely (showing the judge only proposed answers) matches or outperforms both, because judges default to endorsing plausible-sounding arguments when both debaters are wrong and debate transcripts amplify this false-positive tendency (e.g. 90% FPR under debate vs 30% no-transcript baseline on BCB+).",
+ "claim_type": "negative",
+ "phenomenon": "eval methodology critique",
+ "models": [{"family": "GPT-5", "size": "mini, nano", "open_weight": false}, {"family": "Qwen3", "size": "8B, 4B", "open_weight": true}],
+ "n_model_families": 2,
+ "effect": {"metric": "judge verdict accuracy; false positive rate (FPR)", "value": "debate loses to consultancy in 11/16 conditions, ties in 4, wins in 1 (+5.1pp, p<0.01); dual proposer debate FPR 90% vs 30% no-transcript baseline (BCB+, GPT-5); both-wrong regime verdict accuracy 11% (debate) vs 62% (consultancy), a 50.5pp gap", "direction": "-", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": 4, "prereg": false, "human_eval": false},
+ "depends_on": ["huggingface.co/datasets/bubbleresearch/bigcodebench-plus"],
+ "contradicts_or_qualifies": ["Irving et al. (2018)'s AI Debate proposal for scalable oversight, which predicts adversarial argument should surface truth for the judge; authors find this advantage does not materialize at inference time with current models even in a more natural generative (non-assigned-sides) framing", "Prior debate literature showing an advantage in information-constrained settings; authors note (per prior work) this advantage disappears when the judge has full context access, the more relevant condition for AI-to-AI oversight"],
+ "stated_future_work": ["Debater training via RL targeting solution quality directly, not just speech quality", "Multi-turn settings allowing deeper engagement between debaters", "Judge training and debiasing, if judge capability is the binding constraint", "Competitive settings where debaters are assigned sides or incentivized to disagree"],
+ "limitations_stated": ["Results should be interpreted through the lens of dataset saturation: GPT-5 is near ceiling on BCB+, leaving little room for formats to differentiate", "Best-of-4 gains are generally insufficient to close the accuracy gap between debate and consultancy", "Speech-time best-of-N is a loose proxy for RL training since it cannot change the solutions themselves", "Judge side bias (a 'both correct' bias) may be a confound not fully disentangled from content-based judging"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The core mechanism is that judges default to endorsing plausible-sounding arguments when both participants are wrong, and debate transcripts specifically amplify this tendency."
+}

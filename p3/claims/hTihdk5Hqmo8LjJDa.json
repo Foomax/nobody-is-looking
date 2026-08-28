@@ -1,0 +1,17 @@
+{
+ "post_id": "hTihdk5Hqmo8LjJDa",
+ "primary_claim": "In a toy MLP trained to compute Boolean logic gates with full enumeration and known ground truth, observational faithfulness (matching input-output behavior, even under noise and out-of-distribution transformations) is not sufficient to distinguish which of multiple candidate subcircuits is the 'correct' explanation of the full model's computation.",
+ "claim_type": "negative",
+ "phenomenon": "circuit discovery",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "subcircuit-vs-full-model output/logit agreement under noise and OOD transforms", "value": "multiple subcircuits achieve perfect bit-level accuracy and remain indistinguishable even under noise perturbation and out-of-distribution multiplicative transforms; rankings between subcircuits are inconsistent across tests and reverse depending on training regime (with vs without noise)", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["post: Intro - non-identifiability of explanations", "arXiv:2502.20914 (Meloux et al.)", "arXiv:2405.15943", "MoSSAIC (Farr et al., 2025)"],
+ "contradicts_or_qualifies": ["Replicates the finding by Meloux et al. that many incomparable subcircuits achieve perfect accuracy on a toy task"],
+ "stated_future_work": ["Investigate under what conditions full-model fidelity to the ground truth constrains the distinguishability of its subcircuits", "Investigate the relationship between full-model fidelity and the smallest domain neighborhood needed for observational tests to be informative", "Next post in the series: break open the black box and test whether interventions can succeed where observation could not"],
+ "limitations_stated": ["This is a toy setting with full enumeration and known ground truth; results are suggestive, not conclusive", "In real models the alignment between the full model and the generator is much less perfect than in the toy models"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We cannot definitively differentiate the two subcircuits based on observations, even when evaluating on out-of-distribution inputs. It seems that just looking at inputs and outputs is not enough."
+}

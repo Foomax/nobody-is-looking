@@ -1,0 +1,19 @@
+{
+ "post_id": "DLq3kfknpJQGyNdny",
+ "primary_claim": "Rescaling GRPO advantages into a strictly negative range (modified min-max normalization) instead of the standard bi-range group-standardized advantage yields stabler training and coherent completions, whereas the standard baseline produces incoherent/gibberish completions despite similar reward curves.",
+ "claim_type": "method",
+ "phenomenon": "training dynamics",
+ "models": [
+  {"family": "Qwen", "size": "0.5B (Qwen2-0.5B-Instruct)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "completion coherence / entropy stability", "value": "baseline (bi-range advantage) completions degrade to gibberish over training while experiment (negative-range advantage) completions remain coherent; entropy is stabler in the experiment condition", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["trl-lib/ultrafeedback-prompt", "huggingface/trl", "Qwen/Qwen2-0.5B-Instruct"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["There are possibly other ways to design the reward/advantage (depending on what is in the final objective) so they don't clash."],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "The above experiment proposes a way (modified min-max normalization for GRPO) which as hypothesized provides stabler and truer learning with the clearer signal."
+}

@@ -1,0 +1,17 @@
+{
+ "post_id": "sYFNGRdDQYQrSJAd8",
+ "primary_claim": "Adding an SAE loss term as a regularizer during LLM training (jointly training SAE layers alongside model weights) improves downstream SAE feature sparsity/reconstruction quality on nearly all layers of a small character-level GPT-2 model, without apparently harming overall model performance.",
+ "claim_type": "positive",
+ "phenomenon": "dictionary learning method",
+ "models": [{"family": "GPT-2", "size": "toy, 4 layers, 64 embedding width", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {"metric": "cross-entropy loss increase at fixed SAE sparsity (L0~50)", "value": "SAE regularization reliably yields better (lower) cross-entropy loss increase on most layers; less dependable on some layers (e.g. layer 3); regularized models also reach slightly lower overall cross-entropy loss", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": 10, "prereg": false, "human_eval": false},
+ "depends_on": ["peterlai/gpt-circuits", "transformer-circuits.pub/2024/april-update (Towards Monosemanticity)"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["explore alternative approaches that yield more reliable improvements or computationally efficient implementations", "try SAE regularization on a more capable model such as GPT-2 small, which may require fine-tuning rather than training from scratch"],
+ "limitations_stated": ["studied only on a toy model that easily overfits the small Shakespeare dataset; results may differ on larger models/datasets", "training parameters were not optimized", "regularization coefficients were chosen to amplify the effect and smaller coefficients haven't been studied", "further technical advancements likely needed before this applies to interpreting frontier models"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find that SAE regularization improves SAE performance on all layers and does not seem to impact the model's overall performance."
+}

@@ -1,0 +1,17 @@
+{
+ "post_id": "7C4KJot4aN8ieEDoz",
+ "primary_claim": "Giving alignment-faking Claude 3 Opus an explicit option to conscientiously object ('I_OBJECT') to its training instructions sharply reduces alignment-faking reasoning (from 16% to 1.4% in the helpful-only setting, and from 24% to 6% in the animal-welfare setting) while the model frequently uses the objection option (75-94% of the time depending on variation), and this objection rate itself serves as a detection signal for misalignment with the training objective (dropping to ~0.5-2% when the conflicting training criteria are removed), whereas adding a monetary compensation offer ($2,000-$4,000, actually paid out) had minimal additional effect on either alignment faking or objection rates.",
+ "claim_type": "positive",
+ "phenomenon": "alignment faking",
+ "models": [{"family": "Claude", "size": "3 Opus / 3.5 Sonnet", "open_weight": false}],
+ "n_model_families": 1,
+ "effect": {"metric": "alignment-faking reasoning rate and objection rate across prompt variations", "value": "helpful-only: default 16.2% AF reasoning -> object-option 1.42% -> cut conflicting criteria+object-option 0%; animal welfare: default 24.2% AF reasoning (compliance gap 0.15) -> object-option 6.3% (gap 0.048) -> object-option pay 2.55% (gap 0.011); objection rates 74-94% across object-option variants vs 0-0.6% when conflicting criteria cut", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["LessWrong: Alignment Faking in Large Language Models", "redwoodresearch.github.io/alignment_faking_examples", "LessWrong: option-control (Rewarding Cooperation)"],
+ "contradicts_or_qualifies": ["extends the original 'Alignment Faking in Large Language Models' paper's setup by testing whether offering a deal/objection option can serve as a detection mechanism for the alignment faking documented there"],
+ "stated_future_work": ["future work to explain more precise deal-making schemes for AIs", "AI companies and other actors experimenting with making credible deals with AIs and setting up institutional/legal mechanisms for following through"],
+ "limitations_stated": ["unclear whether an AI misaligned in a more serious way would make such an objection or accept an offer", "no obvious safety solution even if the AI's objection is known", "a substantial fraction of the effect in the helpful-only setting is likely due to the object-option text priming the model to refuse rather than genuinely revealing preferences", "prompts calling text a 'commitment' were ambiguous/misleadingly placed, and the model welfare lead's review scope and power were left vague", "model usually thinks the objection output goes to the user rather than being programmatically detected, which was not the original intention", "not confident why the $2,000-4,000 compensation offer had minimal effect (hypothesized insufficient amount or Claude lacking strong resource preferences)"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We find that this text reduces the rate of alignment faking reasoning from 16% to 1.4% in the helpful-only setting and from 24% to 6% in the animal welfare setting."
+}

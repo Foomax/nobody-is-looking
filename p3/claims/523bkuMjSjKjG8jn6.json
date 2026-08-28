@@ -1,0 +1,17 @@
+{
+ "post_id": "523bkuMjSjKjG8jn6",
+ "primary_claim": "A single attention head (L0H3) in Llama-3.2-1B, a 'subword merging head' that moves information between subword tokens of the same word, is the primary component responsible for typo correction when no surrounding context is available; ablating it breaks typo correction (measured via logit difference) while leaving normal text and general MLP-driven performance unaffected.",
+ "claim_type": "positive",
+ "phenomenon": "circuit discovery",
+ "models": [{"family": "Llama", "size": "3.2-1B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {"metric": "logit difference change upon single-head ablation", "value": "only the subword merging head (L0H3) showed a significant impact on logit difference when ablated one-by-one across all attention heads", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["idostik/llm-typos-interpretability"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["logit-lens attempt to confirm what the head copies rarely produced the expected previous-subword tokens as top predictions", "may have missed other important heads due to backup heads compensating when one is ablated", "findings on typo type (swap first two letters) might not generalize to other typo types"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "With this setup, only the subword merging head (L0H3) shows a significant impact. That suggests, that the previous plot with loss was a bit misleading and that the loss was probably influenced by other factors."
+}

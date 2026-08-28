@@ -1,0 +1,38 @@
+{
+ "post_id": "zKyKDre78napvtrEo",
+ "primary_claim": "In GPT-2 small's IOI circuit, incidentally duplicating the indirect-object name in an unrelated modifier slot causes Duplicate Token Heads to fire on it almost as strongly as on a genuine subject duplicate, yet this produces only a small drop in the IO/S logit difference (mean 0.23, Cohen's d=0.27) and accuracy barely changes (95.4% to 94.5%), because S-Inhibition heads mostly continue attending to the real S2 token rather than the incidental duplicate",
+ "claim_type": "negative",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "GPT-2", "size": "small", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "drop in IO/S logit difference between control and test (incidental duplicate) conditions; task accuracy",
+  "value": "mean drop 0.23, SD 0.84 (n=128 matched pairs), paired t=3.09, p=0.0024, Cohen's d=0.27; accuracy 95.4% (control) vs 94.5% (test)",
+  "direction": "0",
+  "uncertainty_reported": "se"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2211.00593", "fractalmachinist/ioi"],
+ "contradicts_or_qualifies": [
+  "qualifies Wang et al. (2022)'s IOI circuit account: the paper's algorithm does not specify behavior when the indirect object token is duplicated in an unrelated slot, and Duplicate Token Heads flagging a duplicate is shown to not be sufficient on its own to substantially inhibit the model's output of that token"
+ ],
+ "stated_future_work": [
+  "ablations to see what perturbs S-Inhibition under the test conditions"
+ ],
+ "limitations_stated": [
+  "has not done patching or logit decoding to establish how this fits into the paper's account of what drives S-Inhibition",
+  "no explanation offered for why Negative Name Movers shift toward the incidental duplicate much more than positive Name Movers"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "The drop in IO/S logit difference is small: mean 0.23, SD 0.84 pair-to-pair (n = 128), paired t = 3.09, p = 0.0024... A real effect, but not a big one. The model's accuracy (how often it predicts IO as more likely than S) moves from 95.4% (control) to 94.5% (test)."
+}

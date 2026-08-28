@@ -1,0 +1,17 @@
+{
+ "post_id": "vWYzSorAEWwoJnnXq",
+ "primary_claim": "The authors sketch a structured 'control safety case' argument, grounded in a five-phase black-box control evaluation (red team constructs adversarial model substitutes to attempt data exfiltration in a proxy deployment of ML engineering tasks, then extrapolate to a larger deployment), that could be used to justify that an LLM agent deployed internally at an AI company is incapable of exfiltrating sensitive data despite monitoring-based control measures.",
+ "claim_type": "method",
+ "phenomenon": "AI control protocols",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2501.17315", "arXiv:2312.06942", "arXiv:2410.21572", "arXiv:2403.10462", "arXiv:2403.13793", "arXiv:2410.21514"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "This safety case sketch is a step toward more concrete arguments that can be used to show dangerously capable LLM agents are safe to deploy."
+}

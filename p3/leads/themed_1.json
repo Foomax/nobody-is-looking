@@ -1,0 +1,2263 @@
+[
+ {
+  "idx": 0,
+  "post_id": "28k5CuSxe9G49Ah5G",
+  "theme": "expand evaluation to more settings",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 1,
+  "post_id": "28k5CuSxe9G49Ah5G",
+  "theme": "build research tooling/infrastructure",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 2,
+  "post_id": "28k5CuSxe9G49Ah5G",
+  "theme": "expand range of mitigation options",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 3,
+  "post_id": "28k5CuSxe9G49Ah5G",
+  "theme": "report results to policymakers",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 4,
+  "post_id": "2ANCyejqxfqK2obEj",
+  "theme": "scale to larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 5,
+  "post_id": "2ANCyejqxfqK2obEj",
+  "theme": "causal factors behind emergent misalignment",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 6,
+  "post_id": "2ANCyejqxfqK2obEj",
+  "theme": "causal factors behind emergent misalignment",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 7,
+  "post_id": "2ANCyejqxfqK2obEj",
+  "theme": "causal factors behind emergent misalignment",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 8,
+  "post_id": "2ANCyejqxfqK2obEj",
+  "theme": "investigate underlying mechanism",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 9,
+  "post_id": "2ANCyejqxfqK2obEj",
+  "theme": "build model organisms",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 10,
+  "post_id": "2CJyfgaJQk8pyRSCp",
+  "theme": "make experiments more realistic",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 11,
+  "post_id": "2CJyfgaJQk8pyRSCp",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 12,
+  "post_id": "2CJyfgaJQk8pyRSCp",
+  "theme": "build research tooling/infrastructure",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 13,
+  "post_id": "2CJyfgaJQk8pyRSCp",
+  "theme": "improve detection/monitoring methods",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 14,
+  "post_id": "2H6PAK7YELjEsHkEc",
+  "theme": "improve detection/monitoring methods",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 15,
+  "post_id": "2dA7phbYZGPjhTj9q",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 16,
+  "post_id": "2dA7phbYZGPjhTj9q",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 17,
+  "post_id": "2dA7phbYZGPjhTj9q",
+  "theme": "test across more model families",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 18,
+  "post_id": "2dA7phbYZGPjhTj9q",
+  "theme": "investigate underlying mechanism",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 19,
+  "post_id": "2dA7phbYZGPjhTj9q",
+  "theme": "geometric/theoretical model of representations",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 20,
+  "post_id": "2sT9ykYacCs4L8bx2",
+  "theme": "improve backdoor injection/training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 21,
+  "post_id": "2sT9ykYacCs4L8bx2",
+  "theme": "improve backdoor injection/training methods",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 22,
+  "post_id": "2sT9ykYacCs4L8bx2",
+  "theme": "test generalization of an effect",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 23,
+  "post_id": "2sT9ykYacCs4L8bx2",
+  "theme": "ablation of design choices",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 24,
+  "post_id": "2sT9ykYacCs4L8bx2",
+  "theme": "improve backdoor injection/training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 25,
+  "post_id": "3EQQpB7i2o3nu2Di6",
+  "theme": "optimize hedging/absorption tradeoff",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 26,
+  "post_id": "3HXAQEK86Bsbvh4ne",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 27,
+  "post_id": "3HXAQEK86Bsbvh4ne",
+  "theme": "investigate underlying mechanism",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 28,
+  "post_id": "3HeauQLSHosRiwyto",
+  "theme": "improve detection/monitoring methods",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 29,
+  "post_id": "3HeauQLSHosRiwyto",
+  "theme": "third-party auditing and verification",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 30,
+  "post_id": "3HeauQLSHosRiwyto",
+  "theme": "third-party auditing and verification",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 31,
+  "post_id": "3KTgeXBfhvRKfL5kf",
+  "theme": "improve SAE feature interpretability",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 32,
+  "post_id": "3KTgeXBfhvRKfL5kf",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 33,
+  "post_id": "3KTgeXBfhvRKfL5kf",
+  "theme": "improve detection/monitoring methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 34,
+  "post_id": "3KTgeXBfhvRKfL5kf",
+  "theme": "build research tooling/infrastructure",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 35,
+  "post_id": "3PaLrzxagpbnNtPLT",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 36,
+  "post_id": "3PaLrzxagpbnNtPLT",
+  "theme": "study AI consciousness and self-model",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 37,
+  "post_id": "3PaLrzxagpbnNtPLT",
+  "theme": "study AI consciousness and self-model",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 38,
+  "post_id": "3T8eKyaPvDDm2wzor",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 39,
+  "post_id": "3T8eKyaPvDDm2wzor",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 40,
+  "post_id": "3T8eKyaPvDDm2wzor",
+  "theme": "ablation of design choices",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 41,
+  "post_id": "3T8eKyaPvDDm2wzor",
+  "theme": "develop new quantitative metric",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 42,
+  "post_id": "3T8eKyaPvDDm2wzor",
+  "theme": "ablation of design choices",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 43,
+  "post_id": "3xQQK9i8mhJDE2uMg",
+  "theme": "test robustness to fine-tuning attacks",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 44,
+  "post_id": "3xQQK9i8mhJDE2uMg",
+  "theme": "scale to larger models",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 45,
+  "post_id": "3xQQK9i8mhJDE2uMg",
+  "theme": "test robustness to fine-tuning attacks",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 46,
+  "post_id": "3xQQK9i8mhJDE2uMg",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 47,
+  "post_id": "3xQQK9i8mhJDE2uMg",
+  "theme": "study RL vs SFT training effects",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 48,
+  "post_id": "3xQQK9i8mhJDE2uMg",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 49,
+  "post_id": "3xQQK9i8mhJDE2uMg",
+  "theme": "ablation of design choices",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 50,
+  "post_id": "3xQQK9i8mhJDE2uMg",
+  "theme": "add missing baseline comparisons",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 51,
+  "post_id": "3zBsxeZzd3cvuueMJ",
+  "theme": "study feature absorption in SAEs",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 52,
+  "post_id": "3zBsxeZzd3cvuueMJ",
+  "theme": "study feature absorption in SAEs",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 53,
+  "post_id": "3zBsxeZzd3cvuueMJ",
+  "theme": "study feature absorption in SAEs",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 54,
+  "post_id": "3zBsxeZzd3cvuueMJ",
+  "theme": "study feature absorption in SAEs",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 55,
+  "post_id": "3zBsxeZzd3cvuueMJ",
+  "theme": "study feature absorption in SAEs",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 56,
+  "post_id": "43vKjWuH4goLwrFHA",
+  "theme": "scale to larger models",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 57,
+  "post_id": "43vKjWuH4goLwrFHA",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 58,
+  "post_id": "43vKjWuH4goLwrFHA",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 59,
+  "post_id": "4CrumZwbPvc6mJBA3",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 60,
+  "post_id": "4CrumZwbPvc6mJBA3",
+  "theme": "cross-model transfer of representations",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 61,
+  "post_id": "4CrumZwbPvc6mJBA3",
+  "theme": "cross-model transfer of representations",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 62,
+  "post_id": "4CrumZwbPvc6mJBA3",
+  "theme": "cross-model transfer of representations",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 63,
+  "post_id": "4CrumZwbPvc6mJBA3",
+  "theme": "cross-model transfer of representations",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 64,
+  "post_id": "4EvWpvFvHzmPvuiF5",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 65,
+  "post_id": "4EvWpvFvHzmPvuiF5",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 66,
+  "post_id": "4EvWpvFvHzmPvuiF5",
+  "theme": "explain cross-model/setting differences",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 67,
+  "post_id": "4EvWpvFvHzmPvuiF5",
+  "theme": "improve detection/monitoring methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 68,
+  "post_id": "4JnjtyNyAxcz5w652",
+  "theme": "build automated eval-generation pipelines",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 69,
+  "post_id": "4JnjtyNyAxcz5w652",
+  "theme": "develop new quantitative metric",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 70,
+  "post_id": "4JnjtyNyAxcz5w652",
+  "theme": "study scheming and deceptive behavior",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 71,
+  "post_id": "4Pj7mXFQ2qhMjhaB2",
+  "theme": "expand evaluation to more settings",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 72,
+  "post_id": "4Pj7mXFQ2qhMjhaB2",
+  "theme": "upper-bound model capability via fine-tuning",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 73,
+  "post_id": "4Pj7mXFQ2qhMjhaB2",
+  "theme": "study steganography and hidden reasoning",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 74,
+  "post_id": "4tEnmAwFNtz9zJ6cz",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 75,
+  "post_id": "4tEnmAwFNtz9zJ6cz",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 76,
+  "post_id": "4tEnmAwFNtz9zJ6cz",
+  "theme": "ablation of design choices",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 77,
+  "post_id": "4uXCAJNuPKtKBsi28",
+  "theme": "improve SAE feature interpretability",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 78,
+  "post_id": "4uXCAJNuPKtKBsi28",
+  "theme": "improve SAE feature interpretability",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 79,
+  "post_id": "4uXCAJNuPKtKBsi28",
+  "theme": "improve SAE feature interpretability",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 80,
+  "post_id": "4uXCAJNuPKtKBsi28",
+  "theme": "extend to new domains/tasks",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 81,
+  "post_id": "4uXCAJNuPKtKBsi28",
+  "theme": "write follow-up post or paper",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 82,
+  "post_id": "4xemwALszZKqWCBXr",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 83,
+  "post_id": "4xemwALszZKqWCBXr",
+  "theme": "test generalization of an effect",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 84,
+  "post_id": "5G46ooS85ihDxtBvm",
+  "theme": "rule out experimental confounds",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 85,
+  "post_id": "5G46ooS85ihDxtBvm",
+  "theme": "rule out experimental confounds",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 86,
+  "post_id": "5JyepxdN6Hq62TPCK",
+  "theme": "make experiments more realistic",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 87,
+  "post_id": "5JyepxdN6Hq62TPCK",
+  "theme": "conditions that elicit a behavior",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 88,
+  "post_id": "5W38vuwbJmTYfY6t3",
+  "theme": "build benchmark or eval suite",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 89,
+  "post_id": "5W38vuwbJmTYfY6t3",
+  "theme": "develop new quantitative metric",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 90,
+  "post_id": "5W38vuwbJmTYfY6t3",
+  "theme": "improve detection/monitoring methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 91,
+  "post_id": "5W38vuwbJmTYfY6t3",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 92,
+  "post_id": "5W38vuwbJmTYfY6t3",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 93,
+  "post_id": "5XjzmxcZFm3BJrNmn",
+  "theme": "test generalization of an effect",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 94,
+  "post_id": "5XjzmxcZFm3BJrNmn",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 95,
+  "post_id": "5XjzmxcZFm3BJrNmn",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 96,
+  "post_id": "5XjzmxcZFm3BJrNmn",
+  "theme": "test robustness to fine-tuning attacks",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 97,
+  "post_id": "5gDjg4oN4kJKMLovs",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 98,
+  "post_id": "5gDjg4oN4kJKMLovs",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 99,
+  "post_id": "5gDjg4oN4kJKMLovs",
+  "theme": "build classifier/probe for behavior",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 100,
+  "post_id": "5gDjg4oN4kJKMLovs",
+  "theme": "expand evaluation to more settings",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 101,
+  "post_id": "5naJwQnbb5bwPCCFz",
+  "theme": "study evaluation awareness in LLMs",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 102,
+  "post_id": "5naJwQnbb5bwPCCFz",
+  "theme": "make experiments more realistic",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 103,
+  "post_id": "5naJwQnbb5bwPCCFz",
+  "theme": "study evaluation awareness in LLMs",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 104,
+  "post_id": "5se67gAcaExEYdCCg",
+  "theme": "investigate underlying mechanism",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 105,
+  "post_id": "5uw26uDdFbFQgKzih",
+  "theme": "write follow-up post or paper",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 106,
+  "post_id": "6CS2NDmoLCFcEJMor",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 107,
+  "post_id": "6CS2NDmoLCFcEJMor",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 108,
+  "post_id": "6CS2NDmoLCFcEJMor",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 109,
+  "post_id": "6CS2NDmoLCFcEJMor",
+  "theme": "explore alternative training methods",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 110,
+  "post_id": "6GgHMBsAjD74KZAsB",
+  "theme": "study steganography and hidden reasoning",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 111,
+  "post_id": "6GgHMBsAjD74KZAsB",
+  "theme": "study steganography and hidden reasoning",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 112,
+  "post_id": "6GgHMBsAjD74KZAsB",
+  "theme": "study steganography and hidden reasoning",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 113,
+  "post_id": "6GgHMBsAjD74KZAsB",
+  "theme": "study steganography and hidden reasoning",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 114,
+  "post_id": "6GgHMBsAjD74KZAsB",
+  "theme": "study steganography and hidden reasoning",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 115,
+  "post_id": "6HnnMHRoJLff46kgw",
+  "theme": "ablation of design choices",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 116,
+  "post_id": "6HnnMHRoJLff46kgw",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 117,
+  "post_id": "6HnnMHRoJLff46kgw",
+  "theme": "scale to larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 118,
+  "post_id": "6HnnMHRoJLff46kgw",
+  "theme": "build research tooling/infrastructure",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 119,
+  "post_id": "6PCjTM55jdYBgHNyp",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 120,
+  "post_id": "6PCjTM55jdYBgHNyp",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 121,
+  "post_id": "6PCjTM55jdYBgHNyp",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 122,
+  "post_id": "6PCjTM55jdYBgHNyp",
+  "theme": "explain cross-model/setting differences",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 123,
+  "post_id": "6aXe9nipTgwK5LxaP",
+  "theme": "study steering vector optimization dynamics",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 124,
+  "post_id": "6aXe9nipTgwK5LxaP",
+  "theme": "study steering vector optimization dynamics",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 125,
+  "post_id": "6aXe9nipTgwK5LxaP",
+  "theme": "study steering vector optimization dynamics",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 126,
+  "post_id": "6aXe9nipTgwK5LxaP",
+  "theme": "study steering vector optimization dynamics",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 127,
+  "post_id": "6c6c3thcDvHPuuvTv",
+  "theme": "test generalization of an effect",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 128,
+  "post_id": "6c6c3thcDvHPuuvTv",
+  "theme": "make experiments more realistic",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 129,
+  "post_id": "6c6c3thcDvHPuuvTv",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 130,
+  "post_id": "6c6c3thcDvHPuuvTv",
+  "theme": "test generalization of an effect",
+  "scope": "moderate",
+  "kind": "other"
+ },
+ {
+  "idx": 131,
+  "post_id": "6c6c3thcDvHPuuvTv",
+  "theme": "make experiments more realistic",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 132,
+  "post_id": "6dpKhtniqR3rnstnL",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 133,
+  "post_id": "6dpKhtniqR3rnstnL",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 134,
+  "post_id": "6dpKhtniqR3rnstnL",
+  "theme": "build benchmark or eval suite",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 135,
+  "post_id": "6dpKhtniqR3rnstnL",
+  "theme": "build benchmark or eval suite",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 136,
+  "post_id": "6ek6n7yZ5DzfarJHy",
+  "theme": "extend interpretability lens probing methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 137,
+  "post_id": "6ek6n7yZ5DzfarJHy",
+  "theme": "investigate underlying mechanism",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 138,
+  "post_id": "6ek6n7yZ5DzfarJHy",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 139,
+  "post_id": "6ek6n7yZ5DzfarJHy",
+  "theme": "extend interpretability lens probing methods",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 140,
+  "post_id": "6iPEuEnguEtmtaqyJ",
+  "theme": "build deployable production version",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 141,
+  "post_id": "6iPEuEnguEtmtaqyJ",
+  "theme": "build model organisms",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 142,
+  "post_id": "6iPEuEnguEtmtaqyJ",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 143,
+  "post_id": "6mLwAuFAE98c6R7w3",
+  "theme": "explore debate protocol variants",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 144,
+  "post_id": "6mLwAuFAE98c6R7w3",
+  "theme": "explore debate protocol variants",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 145,
+  "post_id": "6mLwAuFAE98c6R7w3",
+  "theme": "explore debate protocol variants",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 146,
+  "post_id": "6mLwAuFAE98c6R7w3",
+  "theme": "explore debate protocol variants",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 147,
+  "post_id": "6mLwAuFAE98c6R7w3",
+  "theme": "explore debate protocol variants",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 148,
+  "post_id": "7C4KJot4aN8ieEDoz",
+  "theme": "study credible commitments with AIs",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 149,
+  "post_id": "7C4KJot4aN8ieEDoz",
+  "theme": "study credible commitments with AIs",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 150,
+  "post_id": "7KijyCL8WNP8JnWCR",
+  "theme": "detect model knowledge boundaries/confidence",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 151,
+  "post_id": "7KijyCL8WNP8JnWCR",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 152,
+  "post_id": "7KijyCL8WNP8JnWCR",
+  "theme": "scale to larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 153,
+  "post_id": "7KijyCL8WNP8JnWCR",
+  "theme": "detect model knowledge boundaries/confidence",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 154,
+  "post_id": "7KijyCL8WNP8JnWCR",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 155,
+  "post_id": "7QTQAE952zkYqJucm",
+  "theme": "extend to new domains/tasks",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 156,
+  "post_id": "7QTQAE952zkYqJucm",
+  "theme": "replicate or validate prior findings",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 157,
+  "post_id": "7QTQAE952zkYqJucm",
+  "theme": "investigate underlying mechanism",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 158,
+  "post_id": "7XuEPE6GBha4xadvr",
+  "theme": "combine multiple honesty-elicitation methods",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 159,
+  "post_id": "7gp76q4rWLFi6sFqm",
+  "theme": "improve detection/monitoring methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 160,
+  "post_id": "7gp76q4rWLFi6sFqm",
+  "theme": "improve detection/monitoring methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 161,
+  "post_id": "7gp76q4rWLFi6sFqm",
+  "theme": "build research tooling/infrastructure",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 162,
+  "post_id": "7gp76q4rWLFi6sFqm",
+  "theme": "improve detection/monitoring methods",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 163,
+  "post_id": "7gp76q4rWLFi6sFqm",
+  "theme": "build benchmark or eval suite",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 164,
+  "post_id": "7ucB3RFYE3QBDKhuF",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 165,
+  "post_id": "7ucB3RFYE3QBDKhuF",
+  "theme": "scale to larger models",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 166,
+  "post_id": "7ucB3RFYE3QBDKhuF",
+  "theme": "improve detection/monitoring methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 167,
+  "post_id": "7ucB3RFYE3QBDKhuF",
+  "theme": "build model organisms",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 168,
+  "post_id": "8GvYyqDuQDJnEAky3",
+  "theme": "extend to new domains/tasks",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 169,
+  "post_id": "CFas8nZgy6CchCci5",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 170,
+  "post_id": "CFas8nZgy6CchCci5",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 171,
+  "post_id": "CFas8nZgy6CchCci5",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 172,
+  "post_id": "8aPyKyRrMAQatFSnG",
+  "theme": "extend LLM agent gameplay tests",
+  "scope": "narrow",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 173,
+  "post_id": "8aPyKyRrMAQatFSnG",
+  "theme": "extend LLM agent gameplay tests",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 174,
+  "post_id": "8aPyKyRrMAQatFSnG",
+  "theme": "extend LLM agent gameplay tests",
+  "scope": "narrow",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 175,
+  "post_id": "8aPyKyRrMAQatFSnG",
+  "theme": "extend LLM agent gameplay tests",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 176,
+  "post_id": "8dHmDJriyCdcL6dD4",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 177,
+  "post_id": "8dHmDJriyCdcL6dD4",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 178,
+  "post_id": "8dHmDJriyCdcL6dD4",
+  "theme": "develop new quantitative metric",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 179,
+  "post_id": "8dHmDJriyCdcL6dD4",
+  "theme": "test generalization of an effect",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 180,
+  "post_id": "8dXzDzk7nNK64jBve",
+  "theme": "replicate or validate prior findings",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 181,
+  "post_id": "8dXzDzk7nNK64jBve",
+  "theme": "replicate or validate prior findings",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 182,
+  "post_id": "8dXzDzk7nNK64jBve",
+  "theme": "increase statistical power/trials",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 183,
+  "post_id": "8dXzDzk7nNK64jBve",
+  "theme": "investigate underlying mechanism",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 184,
+  "post_id": "8dXzDzk7nNK64jBve",
+  "theme": "seek community input/collaboration",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 185,
+  "post_id": "8gy7c8GAPkuu6wTiX",
+  "theme": "build benchmark or eval suite",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 186,
+  "post_id": "8pZuQnCve6K5ZrnM8",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 187,
+  "post_id": "8pZuQnCve6K5ZrnM8",
+  "theme": "make experiments more realistic",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 188,
+  "post_id": "8peYRGxHtmYsTe6Le",
+  "theme": "test across more model families",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 189,
+  "post_id": "8peYRGxHtmYsTe6Le",
+  "theme": "third-party auditing and verification",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 190,
+  "post_id": "8uMA6vwitdwqs5AH4",
+  "theme": "cross-model transfer of representations",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 191,
+  "post_id": "8uMA6vwitdwqs5AH4",
+  "theme": "cross-model transfer of representations",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 192,
+  "post_id": "8uMA6vwitdwqs5AH4",
+  "theme": "scale to larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 193,
+  "post_id": "9AbYkAy8s9LvB7dT5",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 194,
+  "post_id": "9AbYkAy8s9LvB7dT5",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 195,
+  "post_id": "9AbYkAy8s9LvB7dT5",
+  "theme": "study data poisoning and defenses",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 196,
+  "post_id": "9BNHJqyai2EZAtrRM",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 197,
+  "post_id": "9BNHJqyai2EZAtrRM",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 198,
+  "post_id": "9BNHJqyai2EZAtrRM",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 199,
+  "post_id": "9BNHJqyai2EZAtrRM",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 200,
+  "post_id": "9BNHJqyai2EZAtrRM",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 201,
+  "post_id": "9BNHJqyai2EZAtrRM",
+  "theme": "scale to larger models",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 202,
+  "post_id": "9BNHJqyai2EZAtrRM",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 203,
+  "post_id": "9Ff4y4ahNjrGHMdqL",
+  "theme": "scale to larger models",
+  "scope": "broad",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 204,
+  "post_id": "9Ff4y4ahNjrGHMdqL",
+  "theme": "develop new quantitative metric",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 205,
+  "post_id": "9Ff4y4ahNjrGHMdqL",
+  "theme": "replicate or validate prior findings",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 206,
+  "post_id": "9Ff4y4ahNjrGHMdqL",
+  "theme": "write follow-up post or paper",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 207,
+  "post_id": "9NntwpQj9onbEFM8L",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 208,
+  "post_id": "9NntwpQj9onbEFM8L",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 209,
+  "post_id": "9NqgYesCutErskdmu",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 210,
+  "post_id": "9NqgYesCutErskdmu",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 211,
+  "post_id": "9NqgYesCutErskdmu",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 212,
+  "post_id": "9NqgYesCutErskdmu",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 213,
+  "post_id": "9NqgYesCutErskdmu",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 214,
+  "post_id": "9S8vnBjLQg6pkuQNo",
+  "theme": "build benchmark or eval suite",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 215,
+  "post_id": "9S8vnBjLQg6pkuQNo",
+  "theme": "third-party auditing and verification",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 216,
+  "post_id": "9S8vnBjLQg6pkuQNo",
+  "theme": "study data poisoning and defenses",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 217,
+  "post_id": "9S8vnBjLQg6pkuQNo",
+  "theme": "explain cross-model/setting differences",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 218,
+  "post_id": "9eizzh3gtcRvWipq8",
+  "theme": "replicate or validate prior findings",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 219,
+  "post_id": "9eizzh3gtcRvWipq8",
+  "theme": "extend to new domains/tasks",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 220,
+  "post_id": "9f7JmoaMfwymgsW9S",
+  "theme": "study scheming and deceptive behavior",
+  "scope": "broad",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 221,
+  "post_id": "9i6fHMn2vTqyzAi9o",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 222,
+  "post_id": "9i6fHMn2vTqyzAi9o",
+  "theme": "make experiments more realistic",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 223,
+  "post_id": "9i6fHMn2vTqyzAi9o",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 224,
+  "post_id": "9i6fHMn2vTqyzAi9o",
+  "theme": "replicate or validate prior findings",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 225,
+  "post_id": "9pGbTz6c78PGwJein",
+  "theme": "build classifier/probe for behavior",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 226,
+  "post_id": "9pozvFKbLDLmuL879",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 227,
+  "post_id": "9pozvFKbLDLmuL879",
+  "theme": "study introspection and self-report accuracy",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 228,
+  "post_id": "9pozvFKbLDLmuL879",
+  "theme": "write follow-up post or paper",
+  "scope": "narrow",
+  "kind": "other"
+ },
+ {
+  "idx": 229,
+  "post_id": "9tHEibBBhQCHEyFsa",
+  "theme": "study model self-knowledge of capability",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 230,
+  "post_id": "9tHEibBBhQCHEyFsa",
+  "theme": "study model self-knowledge of capability",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 231,
+  "post_id": "9tHEibBBhQCHEyFsa",
+  "theme": "study model self-knowledge of capability",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 232,
+  "post_id": "9tHEibBBhQCHEyFsa",
+  "theme": "build benchmark or eval suite",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 233,
+  "post_id": "9tqpPP4FwSnv9AWsi",
+  "theme": "build benchmark or eval suite",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 234,
+  "post_id": "9tqpPP4FwSnv9AWsi",
+  "theme": "build benchmark or eval suite",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 235,
+  "post_id": "9z6TuKEgZNsmqdfy6",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 236,
+  "post_id": "9z6TuKEgZNsmqdfy6",
+  "theme": "study CoT faithfulness and monitoring",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 237,
+  "post_id": "9z6TuKEgZNsmqdfy6",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 238,
+  "post_id": "9z6TuKEgZNsmqdfy6",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 239,
+  "post_id": "9z6TuKEgZNsmqdfy6",
+  "theme": "build model organisms",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 240,
+  "post_id": "A67SbpTjuXEHK8Cvo",
+  "theme": "understand causes of reward hacking",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 241,
+  "post_id": "A67SbpTjuXEHK8Cvo",
+  "theme": "understand causes of reward hacking",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 242,
+  "post_id": "A67SbpTjuXEHK8Cvo",
+  "theme": "understand causes of reward hacking",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 243,
+  "post_id": "A67SbpTjuXEHK8Cvo",
+  "theme": "study CoT faithfulness and monitoring",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 244,
+  "post_id": "A67SbpTjuXEHK8Cvo",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 245,
+  "post_id": "A67SbpTjuXEHK8Cvo",
+  "theme": "expand evaluation to more settings",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 246,
+  "post_id": "AChWbkiS4EnusPsvQ",
+  "theme": "test across more model families",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 247,
+  "post_id": "AChWbkiS4EnusPsvQ",
+  "theme": "expand evaluation to more settings",
+  "scope": "moderate",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 248,
+  "post_id": "AChWbkiS4EnusPsvQ",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 249,
+  "post_id": "AChWbkiS4EnusPsvQ",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 250,
+  "post_id": "AChWbkiS4EnusPsvQ",
+  "theme": "study evaluation awareness in LLMs",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 251,
+  "post_id": "AExopgZ9Yj6qzTrxb",
+  "theme": "study CoT faithfulness and monitoring",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 252,
+  "post_id": "AExopgZ9Yj6qzTrxb",
+  "theme": "test generalization of an effect",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 253,
+  "post_id": "AJANBeJb2p39su6F9",
+  "theme": "increase statistical power/trials",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 254,
+  "post_id": "AJANBeJb2p39su6F9",
+  "theme": "make experiments more realistic",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 255,
+  "post_id": "AJANBeJb2p39su6F9",
+  "theme": "investigate underlying mechanism",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 256,
+  "post_id": "AJANBeJb2p39su6F9",
+  "theme": "ablation of design choices",
+  "scope": "narrow",
+  "kind": "ablation"
+ },
+ {
+  "idx": 257,
+  "post_id": "ARQs7KYY9vJHeYsGc",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 258,
+  "post_id": "ATDvmn23PWW4erZzf",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 259,
+  "post_id": "ATDvmn23PWW4erZzf",
+  "theme": "make experiments more realistic",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 260,
+  "post_id": "ATDvmn23PWW4erZzf",
+  "theme": "understand causes of reward hacking",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 261,
+  "post_id": "ATDvmn23PWW4erZzf",
+  "theme": "test generalization of an effect",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 262,
+  "post_id": "ATDvmn23PWW4erZzf",
+  "theme": "study RL vs SFT training effects",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 263,
+  "post_id": "ATsvzF77ZsfWzyTak",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 264,
+  "post_id": "ATsvzF77ZsfWzyTak",
+  "theme": "explore alternative training methods",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 265,
+  "post_id": "ATsvzF77ZsfWzyTak",
+  "theme": "improve automated interpretability tools",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 266,
+  "post_id": "AoBTiL7XRRpwpev8p",
+  "theme": "investigate underlying mechanism",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 267,
+  "post_id": "AtbZQuAn2iY2jCup2",
+  "theme": "improve automated interpretability tools",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 268,
+  "post_id": "AtbZQuAn2iY2jCup2",
+  "theme": "test across more model families",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 269,
+  "post_id": "AtbZQuAn2iY2jCup2",
+  "theme": "expand evaluation to more settings",
+  "scope": "narrow",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 270,
+  "post_id": "AtbZQuAn2iY2jCup2",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 271,
+  "post_id": "AvyXkzAebPcWLZeju",
+  "theme": "expand evaluation to more settings",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 272,
+  "post_id": "AvyXkzAebPcWLZeju",
+  "theme": "explore alternative training methods",
+  "scope": "narrow",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 273,
+  "post_id": "AvyXkzAebPcWLZeju",
+  "theme": "scale to larger models",
+  "scope": "narrow",
+  "kind": "scale-up"
+ },
+ {
+  "idx": 274,
+  "post_id": "AvyXkzAebPcWLZeju",
+  "theme": "test generalization of an effect",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 275,
+  "post_id": "BB8o7b8A4Aykeksvw",
+  "theme": "explore debate protocol variants",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 276,
+  "post_id": "BB8o7b8A4Aykeksvw",
+  "theme": "expand evaluation to more settings",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 277,
+  "post_id": "BB8o7b8A4Aykeksvw",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 278,
+  "post_id": "BB8o7b8A4Aykeksvw",
+  "theme": "explore debate protocol variants",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 279,
+  "post_id": "BBgZ4bCbP4dfKeRhk",
+  "theme": "improve SAE feature interpretability",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 280,
+  "post_id": "BBgZ4bCbP4dfKeRhk",
+  "theme": "cross-model transfer of representations",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 281,
+  "post_id": "BBgZ4bCbP4dfKeRhk",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 282,
+  "post_id": "BBgZ4bCbP4dfKeRhk",
+  "theme": "explain cross-model/setting differences",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 283,
+  "post_id": "BBgZ4bCbP4dfKeRhk",
+  "theme": "increase statistical power/trials",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 284,
+  "post_id": "BFWbufKSPR36k8wc9",
+  "theme": "link threat models to experiments",
+  "scope": "broad",
+  "kind": "other"
+ },
+ {
+  "idx": 285,
+  "post_id": "BFWbufKSPR36k8wc9",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 286,
+  "post_id": "BFWbufKSPR36k8wc9",
+  "theme": "improve detection/monitoring methods",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 287,
+  "post_id": "BFWbufKSPR36k8wc9",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 288,
+  "post_id": "BFWbufKSPR36k8wc9",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 289,
+  "post_id": "BGh5qYo5XTLFXqjDo",
+  "theme": "study RL vs SFT training effects",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 290,
+  "post_id": "BGh5qYo5XTLFXqjDo",
+  "theme": "ablation of design choices",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 291,
+  "post_id": "BGh5qYo5XTLFXqjDo",
+  "theme": "build model organisms",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 292,
+  "post_id": "BGh5qYo5XTLFXqjDo",
+  "theme": "replicate or validate prior findings",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 293,
+  "post_id": "BGh5qYo5XTLFXqjDo",
+  "theme": "implant beliefs via document fine-tuning",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 294,
+  "post_id": "Bn5ErDBp9redcGtxg",
+  "theme": "geometric/theoretical model of representations",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 295,
+  "post_id": "Bn5ErDBp9redcGtxg",
+  "theme": "geometric/theoretical model of representations",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 296,
+  "post_id": "Bn5ErDBp9redcGtxg",
+  "theme": "geometric/theoretical model of representations",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 297,
+  "post_id": "Bn5ErDBp9redcGtxg",
+  "theme": "geometric/theoretical model of representations",
+  "scope": "broad",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 298,
+  "post_id": "BnzDiSYKfrHaFPefi",
+  "theme": "study CoT faithfulness and monitoring",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 299,
+  "post_id": "BnzDiSYKfrHaFPefi",
+  "theme": "investigate underlying mechanism",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 300,
+  "post_id": "BnzDiSYKfrHaFPefi",
+  "theme": "investigate underlying mechanism",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 301,
+  "post_id": "BnzDiSYKfrHaFPefi",
+  "theme": "investigate underlying mechanism",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 302,
+  "post_id": "BnzDiSYKfrHaFPefi",
+  "theme": "build classifier/probe for behavior",
+  "scope": "moderate",
+  "kind": "robustness-check"
+ },
+ {
+  "idx": 303,
+  "post_id": "BuAPifQmHf24xB29n",
+  "theme": "study CoT faithfulness and monitoring",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 304,
+  "post_id": "BuAPifQmHf24xB29n",
+  "theme": "replicate or validate prior findings",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 305,
+  "post_id": "BuAPifQmHf24xB29n",
+  "theme": "study CoT faithfulness and monitoring",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 306,
+  "post_id": "BuAPifQmHf24xB29n",
+  "theme": "build model organisms",
+  "scope": "moderate",
+  "kind": "tooling"
+ },
+ {
+  "idx": 307,
+  "post_id": "BuAPifQmHf24xB29n",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 308,
+  "post_id": "Bv4CLkNzuG6XYTjEe",
+  "theme": "study CoT faithfulness and monitoring",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 309,
+  "post_id": "Bv4CLkNzuG6XYTjEe",
+  "theme": "develop new quantitative metric",
+  "scope": "broad",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 310,
+  "post_id": "Bv4CLkNzuG6XYTjEe",
+  "theme": "study CoT faithfulness and monitoring",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 311,
+  "post_id": "Bvb97FpmxnKKebSjX",
+  "theme": "study agent-monitor persuasion dynamics",
+  "scope": "moderate",
+  "kind": "ablation"
+ },
+ {
+  "idx": 312,
+  "post_id": "Bvb97FpmxnKKebSjX",
+  "theme": "study agent-monitor persuasion dynamics",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 313,
+  "post_id": "BxeZNpiTvoEqTXndJ",
+  "theme": "improve automated interpretability tools",
+  "scope": "broad",
+  "kind": "tooling"
+ },
+ {
+  "idx": 314,
+  "post_id": "Bxju8Fmpo2eW4oj9t",
+  "theme": "investigate underlying mechanism",
+  "scope": "narrow",
+  "kind": "validation"
+ },
+ {
+  "idx": 315,
+  "post_id": "Bxju8Fmpo2eW4oj9t",
+  "theme": "investigate underlying mechanism",
+  "scope": "broad",
+  "kind": "validation"
+ },
+ {
+  "idx": 316,
+  "post_id": "Bxju8Fmpo2eW4oj9t",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 317,
+  "post_id": "Bxju8Fmpo2eW4oj9t",
+  "theme": "explore alternative training methods",
+  "scope": "moderate",
+  "kind": "method-extension"
+ },
+ {
+  "idx": 318,
+  "post_id": "Bxju8Fmpo2eW4oj9t",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 319,
+  "post_id": "C8HAa2mf5kcBrpjkX",
+  "theme": "extend to new domains/tasks",
+  "scope": "moderate",
+  "kind": "new-domain"
+ },
+ {
+  "idx": 320,
+  "post_id": "C8HAa2mf5kcBrpjkX",
+  "theme": "replicate or validate prior findings",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 321,
+  "post_id": "C8HAa2mf5kcBrpjkX",
+  "theme": "investigate underlying mechanism",
+  "scope": "moderate",
+  "kind": "validation"
+ },
+ {
+  "idx": 322,
+  "post_id": "C8LZ3DW697xcpPaqC",
+  "theme": "unify representation frameworks",
+  "scope": "broad",
+  "kind": "other"
+ }
+]

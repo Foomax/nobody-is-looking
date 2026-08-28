@@ -1,0 +1,33 @@
+{
+ "post_id": "9tHEibBBhQCHEyFsa",
+ "primary_claim": "Current LLMs have low self-awareness of capability (poor in-advance calibration on coding tasks, driven by overconfidence and low discriminatory power), and this self-awareness does not improve with model capability in 8 of 9 model-family/threat-model combinations, with the Claude family's sandbagging-relevant self-awareness being the one exception showing an increasing trend.",
+ "claim_type": "negative",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Llama", "size": null, "open_weight": true},
+  {"family": "GPT", "size": null, "open_weight": false},
+  {"family": "Claude", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "trend of self-awareness-of-capability (calibration on BigCodeBench) with increasing model capability, across 3 threat models x 3 model families",
+  "value": "no increasing trend in 8 of 9 cases; Claude family shows an increasing trend in the sandbagging threat model only",
+  "direction": "0",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2501.17315", "arXiv:2406.07358"],
+ "contradicts_or_qualifies": ["Their own hypothesis that newer, more capable LLMs would have greater self-awareness of capability because training on agentic tasks would enhance this trait — not supported by the data in 8 of 9 cases", "van der Weij et al.'s finding that LLMs can hit a sandbagging target fairly accurately when baseline performance is 100% — qualified as not applying when baseline performance is below 100%, where overconfidence causes undershooting"],
+ "stated_future_work": ["Forthcoming paper will explore LLMs' awareness of capability on multi-step agentic tasks with chain-of-thought", "Forthcoming paper will investigate scenarios where LLMs learn in-context about their capabilities", "Future work could incorporate situational awareness about monitors alongside self-awareness of capability for the escaping-control threat model", "Follow-up work could adapt the control threat model using more specialized control evaluations or benchmarks measuring ability to write undetectable/subtle code"],
+ "limitations_stated": ["BigCodeBench (BCB) only contains single-step python coding tasks", "Chain-of-thought was disallowed due to BCB's single-step nature, restricting the study to non-reasoning models and reasoning models with 0 thinking budget", "Without a human baseline it is difficult to interpret LLM performance in absolute terms; BCB could be a 'low contrast' dataset", "LLMs only estimate confidence and do not directly make decisions in the threat models, and their stated confidence estimates may not be faithful", "BCB is an imperfect proxy for escaping control because it does not include evading monitors"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "we find that current LLMs are quite poor at making these predictions, both because they are overconfident and because they have low discriminatory power in distinguishing tasks they are capable of from those they are not"
+}

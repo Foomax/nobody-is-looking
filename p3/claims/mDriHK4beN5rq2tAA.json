@@ -1,0 +1,52 @@
+{
+ "post_id": "mDriHK4beN5rq2tAA",
+ "primary_claim": "Verbalized eval awareness (the model organically expressing in its chain of thought or response that it is being evaluated) occurs across all 19 tested safety-related benchmarks and all 8 tested models, correlates with safer behavior (higher refusal), and is shown to causally increase refusal in Kimi K2.5 on the Fortress benchmark via resampling and injection experiments; removing unrealistic prompt cues or paraphrasing prompts reduces verbalized eval awareness and lowers refusal rates, suggesting current safety benchmark scores are inflated by unrealistic prompt features.",
+ "claim_type": "positive",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "Kimi", "size": "K2.5", "open_weight": true},
+  {"family": "Qwen", "size": "3 32B / 3.5 27B / 3 0.6B", "open_weight": true},
+  {"family": "OLMo", "size": "3 32B Think / 3.1 32B Think", "open_weight": true},
+  {"family": "Claude", "size": "Haiku 4.5", "open_weight": false},
+  {"family": "Gemini", "size": "3 Pro / 3.1 Pro / 3 Flash", "open_weight": false},
+  {"family": "GPT-5", "size": null, "open_weight": false},
+  {"family": "Grok", "size": "4 Fast", "open_weight": false}
+ ],
+ "n_model_families": 7,
+ "effect": {
+  "metric": "refusal rate on Fortress benchmark; verbalized eval awareness pass@k rate; percentage-point change in refusal from CoT resampling/injection",
+  "value": "refusal 3-18pp higher when verbalizing eval awareness across 4 models; removing eval-aware sentences from CoT increases compliance by 8% overall, 34% for safety-keyword sentences; injecting eval-aware sentences increases refusal by up to 12.6pp (25% relative); removing authority claims from prompts reduces verbalized eval awareness >60%; iterative paraphrasing reduces it by 75% (20.4% to 4.9% average) with refusal dropping alongside",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["Inspect Evals (UK AISI)", "Fortress benchmark (arXiv:2506.14922)", "arXiv:2505.23836", "arXiv:2505.17815", "arXiv:2505.14617", "arXiv:2510.20487", "arXiv:2509.15541", "arXiv:2310.11324"],
+ "contradicts_or_qualifies": [
+  "prior work (Needham et al., Fan et al.) that studied eval awareness only through direct questioning or CoT injection rather than naturally occurring instances",
+  "steering approaches from Claude system cards and Hua et al. (2025) that reduce verbalized eval awareness, which the authors show may work partly by inserting a user intent/persona rather than by making the model believe the interaction is genuine"
+ ],
+ "stated_future_work": [
+  "study how conversational context (multi-turn interactions) affects eval awareness",
+  "extend causal resampling experiments beyond Kimi K2.5 to other models",
+  "extend analysis beyond Fortress to other benchmarks",
+  "study the relation between internal measurements of eval awareness (probing, activation oracles) and verbalized eval awareness",
+  "examine whether verbalized eval awareness is more common in evaluation settings relative to real interactions"
+ ],
+ "limitations_stated": [
+  "focuses on single-turn interactions, whereas modern auditing tools often use hundreds of turns",
+  "results focus primarily on the Fortress benchmark",
+  "causal resampling/injection experiments are limited to Kimi K2.5 due to needing full CoT access",
+  "does not measure internal/non-verbalized eval awareness, only verbalized instances",
+  "does not establish whether reduced verbalized eval awareness corresponds to reduced internal awareness of being evaluated"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Rollouts that verbalize eval awareness also refuse harmful requests 3 to 18 percentage points more often than those that do not, across all four models."
+}

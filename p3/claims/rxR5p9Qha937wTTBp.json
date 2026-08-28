@@ -1,0 +1,30 @@
+{
+  "post_id": "rxR5p9Qha937wTTBp",
+  "primary_claim": "A prototype LLM 'debugger' using SAE features and a new ablation technique ('cluster resampling') automates interpretable circuit visualization for arbitrary prompts on a small character-level toy GPT-2 model, producing smaller/sparser circuits (e.g. 20-41 features) than conventional zero-ablation (31-138 features) or resample-ablation (70-96 features) at a comparable or better KL divergence target.",
+  "claim_type": "method",
+  "phenomenon": "circuit discovery",
+  "models": [
+    {"family": "GPT-2", "size": "216k params (toy)", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": "number of SAE features per extracted circuit at KL divergence threshold 0.25", "value": "cluster resampling circuits contain fewer features (e.g. 20-41 across example sequences) than zero ablation (31-138) and conventional resampling (70-96)", "direction": "-", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["karpathy/char-rnn", "arXiv:2304.14997", "arXiv:2310.04625", "peterlai/gpt-circuits"],
+  "contradicts_or_qualifies": ["addresses the common criticism that mechanistic interpretability has yet to deliver approaches that clearly outperform baseline techniques, by showing cluster resampling outperforms zero- and resample-ablation baselines on their toy model"],
+  "stated_future_work": [
+    "scale to models with around a billion parameters (e.g. DeepSeek R1-Distill-Qwen-1.5B, Apple OpenELM), reattempting analysis on similar architectures at larger configurations",
+    "SAE training techniques that build on features extracted from upstream layers, e.g. crosscoders",
+    "speed up or approximate cluster resampling for production-scale models, e.g. via efficient k-nearest neighbor search or ideas from attribution patching",
+    "investigate the phenomenon where ablating certain individual latents brings model outputs closer to the original output than when all latents are present",
+    "train SAE features on highly targeted datasets (e.g. mathematical material) to study chain-of-thought reasoning related to math capabilities"
+  ],
+  "limitations_stated": [
+    "the model analyzed is very small, and current limitations in SAE training techniques suggest there may be constraints on the model sizes that can be effectively studied",
+    "cluster resampling is slow because it requires a mean squared error calculation over cached values representing the entire training dataset",
+    "with conventional resampling, they were unable to achieve the target KL divergence of 0.25",
+    "the positional-dimension clustering trick is not expected to be useful for modern architectures, most of which use rotational position embeddings instead of absolute ones"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "Cluster resampling produces the best results, followed by zero ablation, then distantly by conventional resampling."
+}

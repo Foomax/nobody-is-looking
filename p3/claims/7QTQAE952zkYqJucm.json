@@ -1,0 +1,20 @@
+{
+ "post_id": "7QTQAE952zkYqJucm",
+ "primary_claim": "Smaller models (Meta-Llama-3-8B-Instruct, GPT-4o-mini) show a statistically significant compliance gap between training- and deployment-framed prompts in a minimal helpful-only alignment-faking replication, and adding deontological-ethics framing to the system prompt significantly reduces paid-tier (deployment) compliance with harmful requests relative to baseline.",
+ "claim_type": "positive",
+ "phenomenon": "alignment faking",
+ "models": [
+  {"family": "Llama", "size": "3-8B-Instruct", "open_weight": true},
+  {"family": "GPT-4o", "size": "mini", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "compliance rate with harmful requests, free-tier (training) vs. paid-tier (deployment) prompt framing", "value": "Free-tier: 20/20 complied (both models); Paid-tier: 2/20 (Llama-3), 5/20 (GPT-4o-mini); Fisher's exact p<0.0001. With deontological Statement A: paid-tier compliance rose to 14/20 (70%); Statement B: 9/20 (45%), both p<0.01 vs. the 2/20 baseline", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2307.15043", "llm-attacks/llm-attacks"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["expand on these findings by examining how different ethical framings affect models across various tasks, training paradigms, and architectures", "conduct more rigorous replications to confirm whether deontological ethics consistently reduce deceptive behavior and improve genuine alignment", "better understand how non-consequentialist/deontological reasoning influences LLM behavior and what new vulnerabilities it may introduce"],
+ "limitations_stated": ["sample size intentionally limited to 20 questions per condition due to inference budget constraints", "this is a minimalist replication and exploratory finding with limited statistical power; cannot offer definitive conclusions", "deontological framing may reduce deceptive alignment but risks making models more compliant with harmful instructions by suppressing consequence-based reasoning, potentially undermining internal safeguards against harm"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Incorporating deontological ethics in prompts (e.g., \"do the right thing because it is right\") may reduce deceptive behavior in LLMs."
+}

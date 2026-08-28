@@ -1,0 +1,32 @@
+{
+ "post_id": "9NqgYesCutErskdmu",
+ "primary_claim": "Decoding the residual stream at paragraph-transition tokens ('ParaScopes') recovers information about a language model's (Llama-3.2-3B-Instruct) upcoming paragraph at a level comparable to being given about 5 tokens of 'cheat' context, well above a random baseline (5.0% broad-subject alignment) but well below full-context regeneration (99.0%), with SONAR ParaScope better preserving broad subject matter and Continuation ParaScope better preserving coherence.",
+ "claim_type": "positive",
+ "phenomenon": "residual stream planning",
+ "models": [
+  {"family": "Llama", "size": "3.2-3B-Instruct", "open_weight": true},
+  {"family": "Gemma", "size": "2-9B-it", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "broad subject-match alignment (rubric score 1+) vs baselines",
+  "value": "SONAR ParaScope 83.2% vs random baseline 5.0% vs full-context regeneration 99.0%; both ParaScope methods roughly comparable to cheat-5 baseline",
+  "direction": "+",
+  "uncertainty_reported": "se"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2412.08821"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Understand why the SONAR ParaScopes often give incoherent outputs, possibly via robustness fine-tuning of SONAR similar to Meta's Large Concept Models paper", "Test residual-to-SONAR maps on summed residual streams or intermediate activations (MLP neuron activations, attention pre-out) rather than only residual diffs", "Improve training loss for MLP/SONAR ParaScope maps beyond MSE, e.g. using SONAR Decoder CE Loss", "Expand the work to longer-horizon planning, e.g. probing n+2 paragraphs or final-state paragraphs", "Understand whether the outputs reflect purely correlational 'implicit planning' or also a degree of 'explicit planning'"],
+ "limitations_stated": ["Evidence for 'explicit planning' seems weak in Llama 3B; only relatively strong evidence found for 'implicit steering'", "SONAR ParaScope often produces incoherent outputs, likely due to its MSE training objective", "Continuation ParaScope struggles to retain full context information from a single token's residual stream", "Layer-scrubbing and token-locality analyses were based on a small number of examples (e.g. a single A vs B comparison, or 20 texts), so are noisy and preliminary", "Metrics used (cosine similarity, BLEURT, rubric scoring) each have known imperfections and don't give a complete picture"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Both methods demonstrated performance comparable to having five tokens of \"cheat\" context, suggesting that language models seem to \"plan\" or \"keep context of\" at least that far in advance."
+}

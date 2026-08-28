@@ -1,0 +1,31 @@
+{
+ "post_id": "vucxxwdJARR3cqaPc",
+ "primary_claim": "The residual stream of Llama 3.1 8B exhibits neuroscience-like population dynamics across layers: unit activations grow denser and more correlated, whole-vector cosine similarity increases while mutual information drops sharply then slowly recovers, individual units trace rotational/spiraling trajectories (about 10 rotations over 64 sublayers vs near zero for a shuffled-layer control), and perturbation experiments in a 2D PCA/autoencoder space reveal attractor-like dynamics that pull perturbed states back toward their original trajectory, mainly in earlier layers.",
+ "claim_type": "positive",
+ "phenomenon": "residual stream dynamics",
+ "models": [
+  {"family": "Llama", "size": "3.1 8B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "number of rotations of residual stream units in phase space over 64 sublayers",
+  "value": "~10 rotations on average, vs ~0 for units with shuffled layer order (control)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2502.12131"],
+ "contradicts_or_qualifies": ["Notes limitations of the Sparse Autoencoder approach to interpretability as motivation: it is prohibitive to train per-LLM, features are not always clearly monosemantic, and their activation does not always have causal power over the model"],
+ "stated_future_work": [],
+ "limitations_stated": ["This initial exploration leaves many questions unanswered", "This was a side project pursued in spare time outside of the authors' main work", "Perturbed trajectories do not return exactly to the original trajectory by the end of the 64 sublayers, since they don't unfold over infinite time"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "On average, the RS units circled this space ~10 times over the 64 sublayers (compared to basically zero for units whose layers were shuffled prior to the rotational calculation."
+}

@@ -1,9 +1,0 @@
-== prep 2026-08-27T07:29:04+08:00 repo=jordanmccann/polymorphism-is-rotation sha=483a40a92f5aace73aff7d7041a34726e974aa79 py=3.10
-== prep 2026-08-27T12:51:27+08:00 repo=jordanmccann/polymorphism-is-rotation sha=483a40a92f5aace73aff7d7041a34726e974aa79 py=3.10
-== prep done 2026-08-27T12:54:25+08:00
-== prep 2026-08-27T20:01:50+08:00 repo=jordanmccann/polymorphism-is-rotation sha=483a40a92f5aace73aff7d7041a34726e974aa79 py=3.10
-torch 2.6.0+cu124
-== prep done 2026-08-27T20:09:50+08:00 (5.4G)
-== prep 2026-08-27T21:10:57+08:00 repo=jordanmccann/polymorphism-is-rotation sha=483a40a92f5aace73aff7d7041a34726e974aa79 py=3.10
-torch 2.6.0+cu124
-== prep done 2026-08-27T21:11:03+08:00 (5.4G)

@@ -1,0 +1,44 @@
+{
+ "post_id": "a5Eb8JxkGuASMaZWk",
+ "primary_claim": "A steering vector extracted from Llama-3.1-8B-Instruct's layer-12 residual stream can reliably increase (~85% flip rate) or decrease (~26% flip rate) the model's self-preference bias when it judges its own summaries against GPT-3.5's.",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Llama", "size": "3.1-8B-Instruct", "open_weight": true},
+  {"family": "DeepSeek", "size": "V3", "open_weight": true},
+  {"family": "GPT-3.5", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "% of judgments flipped by steering",
+  "value": "85% flipped toward self-preference (layer 12, 18x multiplier); 26% flipped away from self-preference (layer 12, 18x multiplier)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2308.10248", "arXiv:2410.02064", "abisee/cnn_dailymail"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Assess a broader range of multipliers and layers",
+  "Expand beyond the original dataset of news articles to a broader mix of nonfiction, creative, and technical texts",
+  "Assess vector specificity by steering the model on unrelated 'dummy' tasks",
+  "Verify that steering doesn't impair the model's reasoning or degrade output quality",
+  "Benchmark the steering approach against standard fine-tuning methods"
+ ],
+ "limitations_stated": [
+  "Anyone could replicate this work to deliberately bias evaluations toward preferred models, eroding trust in automated review",
+  "Steering vectors require access to a model's internal activations, so consumers of closed-source LLMs cannot apply this mitigation",
+  "Insufficient compute to explore DeepSeek-V3's self-preference behavior further",
+  "Steering signal must be kept from being too strong, as this can cause incoherent output"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Using the layer 12 vector with a multiplier of 18 to steer, Llama switched its judgment on about 85% of summaries it had once given to GPT-3.5, now choosing its own versions instead."
+}

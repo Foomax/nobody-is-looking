@@ -1,0 +1,19 @@
+{
+ "post_id": "LhDJdccLszLEAqgZ9",
+ "primary_claim": "On Llama-3.3-70B, injected 'subconscious' (outside-the-J-space) concept vectors are never verbally named by the model (0% naming rate at rank r=2000) even though they causally shift the model's output logits (+13.7 to +21.1 nats uplift for the injected concept token), while Anthropic's Natural Language Autoencoder (NLA) reads these same subconscious concepts almost perfectly (100% at r=2000) with zero false positives across every control tested.",
+ "claim_type": "positive",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Llama", "size": "3.3-70B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "concept-naming rate: model self-report (P(yes)/verbal naming) vs NLA readout, at rank r=2000", "value": "model names conscious (J) component 80% of the time and subconscious (non-J) component 0% of the time; NLA names both components ~100% of the time with zero false positives across controls", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["anthropics/jacobian-lens", "kitft/natural_language_autoencoders", "Anthropic 2026 global-workspace/J-space paper", "transformer-circuits.pub/2025/introspection (Lindsey, Introspection Awareness)", "arXiv:2603.21396 (Macar et al., concept-vector construction)", "arXiv:2509.13316 (Li et al., privileged-information control critique)", "pranavviswanath/nla-introspection"],
+ "contradicts_or_qualifies": ["Replicates and extends Anthropic's J-space paper's measured workspace fraction (6-7% on Claude) with the first open-weights replication on Llama-3.3-70B (6.1% J-energy at r=200), and further finds the workspace boundary is not a clean wall but a spectrum spread across thousands of directions, so the clean self-report/NLA divergence only appears once rank is swept up to r=2000 rather than the paper's r=200"],
+ "stated_future_work": ["Try NLAs on situations with natural (non-synthetic) activations, such as line counting, language planning, and eval awareness", "Use better NLAs trained on techniques from 'Building Better Activation Oracles', with multi-layer/higher FVE, to surface more cognition"],
+ "limitations_stated": ["The NLA is still prone to confabulation, e.g. inventing context like the 'Batman franchise' or 'dragons' for some injections, or naming only a general idea (e.g. 'a specific emotion') without the exact concept", "Injecting random directions inside J-space produced a higher P(yes) (0.077-0.095) than real concept vectors' J components (0.038), showing P(yes) alone is not a reliable introspection signal, which is why the analysis relies on whether the model verbally names the concept instead", "A preliminary line-counting test found the NLA does not surface the exact character count that the J-lens/model can, showing the methods can miss different kinds of content"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "The model names the conscious part 80% of the time, and the subconscious part never, even though the subconscious side carries 70% of the vector's energy and shoves the concept token's logprob up to +21.1 nats on every trial."
+}

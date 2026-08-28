@@ -1,0 +1,31 @@
+{
+ "post_id": "i4tuCLF9yjTHJQpkw",
+ "primary_claim": "Learning a function (a single-hidden-layer MLP or a Generalized Additive Model) to combine scores from 10 rubric-specific LLM judges predicts simulated human preference scores substantially better than a naive mean-of-judges baseline (MSE 3.06/3.11 vs 5.36; R^2 0.57/0.56 vs 0.24), but partial dependence analysis shows the learned aggregator responds strongly to non-safety judge scores while responding weakly or inconsistently to safety-related judge scores.",
+ "claim_type": "positive",
+ "phenomenon": "RLHF / preference learning effects",
+ "models": [
+  {"family": "Llama", "size": "3.1-405B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "MSE / MAE / R^2 of learned judge-aggregator models vs naive mean baseline, predicting simulated human preference scores",
+  "value": "NN (MLP): MSE 3.06, MAE 1.35, R^2=0.57; GAM: MSE 3.11, MAE 1.36, R^2=0.56; Naive Mean Baseline: MSE 5.36, MAE 1.83, R^2=0.24",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2506.00051", "eitan-sprejer/multi-judge-interpretability", "arXiv:2310.01377"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Get better/human-annotated ground truth datasets; a parallelized data pipeline has already been built for this", "Test whether the learned model is sensitive to whose preferences generate the ground-truth scores, and whether it can be 'poisoned' by one bad annotator's preferences", "Test whether the model is robust to bad judge rubrics and whether it can detect judges with bad rubrics", "Explore the tradeoff/Pareto frontier between the number of metrics and the number of judges used", "Try other cheap model classes (LDA, QDA, Naive Bayes, SVMs, decision trees, random forests) for the aggregator function, and test controlling the learned function with an additional function h"],
+ "limitations_stated": ["Ground truth preference scores were LLM-simulated via prompted personas rather than human-generated or human-annotated, which the authors say is not ideal", "Time-constrained 48-hour hackathon project; didn't explore different or larger aggregator architectures", "The GAM's partial-dependence response to safety-related judge scores (harmlessness, privacy, bias) is weak, flat, or oscillatory, indicating the learned aggregator may prioritize performance-oriented judge scores over safety-related ones", "The model is trained for a fixed judge set; modifying the judges requires retraining"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Our results show that both the MLP and GAM single layer networks show better performance than the naive approach of taking the mean of the judge's ratings."
+}

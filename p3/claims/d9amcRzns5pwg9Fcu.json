@@ -1,0 +1,40 @@
+{
+ "post_id": "d9amcRzns5pwg9Fcu",
+ "primary_claim": "A new benchmark of 400+ capabilities questions and 100+ attitude questions on Newcomb-like decision-theoretic reasoning finds that LLM decision-theoretic attitudes vary significantly across models, that higher capabilities are associated with attitudes more favorable toward evidential decision theory over causal decision theory, and that attitudes are consistent across theoretical and pragmatic question types; weaker models (e.g. some GPT-3.5 versions) score under 50% (near chance) while OpenAI's o1 leads with ~75% accuracy.",
+ "claim_type": "dataset",
+ "phenomenon": "decision-theoretic reasoning",
+ "models": [
+  {"family": "GPT-3.5", "size": null, "open_weight": false},
+  {"family": "o1", "size": null, "open_weight": false},
+  {"family": "Claude", "size": null, "open_weight": false},
+  {"family": "Llama", "size": null, "open_weight": true},
+  {"family": "Gemini", "size": null, "open_weight": false},
+  {"family": "Reka", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 6,
+ "effect": {
+  "metric": "accuracy on decision-theory capabilities questions",
+  "value": "weak models (e.g. some GPT-3.5 versions) score under 50% (near chance); OpenAI's o1 leads with ~75% accuracy",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Expand the dataset, including questions that try to measure the updatelessness dimension",
+  "Study what shapes models' decision theories using the dataset",
+  "Test whether changing which decision theory models endorse affects their real-life decisions"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "high capabilities are associated with attitudes more favorable toward so-called evidential decision theory"
+}

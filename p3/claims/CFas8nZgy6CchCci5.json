@@ -1,0 +1,21 @@
+{
+ "post_id": "CFas8nZgy6CchCci5",
+ "primary_claim": "SAE features trained on the text-only Gemma-1-2B base model remain meaningful when applied to image tokens in the multimodal LLaVA model (Intel/llava-gemma-2b), nearly recovering the underlying ViT's classification performance on a CIFAR-100 probing task",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature transfer to multimodal models",
+ "models": [
+  {"family": "LLaVA", "size": "Gemma-2B-based (Intel/llava-gemma-2b)", "open_weight": true},
+  {"family": "ResNet", "size": null, "open_weight": true},
+  {"family": "ViT (CLIP)", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "Macro F1 on CIFAR-100 linear-probe classification from SAE-derived features", "value": "EoI-token linear probe: 0.48; baselines: ResNet 0.75, ViT 0.85, LLaVA 0.83", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["jbloom/Gemma-2b-Residual-Stream-SAEs", "Intel/llava-gemma-2b"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Expand the methodology to other modalities such as text or audio to evaluate feature transferability across domains", "Develop more precise methods to explain why certain layers or transformations (e.g. binarization) produce superior features", "Explore whether combining features from multiple layers (layer fusion) offers additional performance gains"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "SAE features generalize effectively across multimodal domains and recover nearly 100% of the ViT performance (this LLaVA used)."
+}

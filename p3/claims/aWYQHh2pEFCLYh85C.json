@@ -1,0 +1,19 @@
+{
+ "post_id": "aWYQHh2pEFCLYh85C",
+ "primary_claim": "A 'matryoshka' Natural Language Autoencoder, trained by randomly truncating verbalizer explanations during RL, frontloads reconstruction-relevant information relative to a standard NLA (captures most of its fraction-of-variance-explained in the first few bullet lines, and better predicts held-out suffix text under short truncations), and reveals higher-strength concurrently-applied steering vectors earlier in its explanation list, though there is no strong evidence it is significantly more useful than standard NLAs overall.",
+ "claim_type": "method",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "Qwen", "size": "27B (3.6)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "fraction of variance explained (FVE) vs. truncation length; suffix-prediction accuracy", "value": "matryoshka NLA captures most FVE within the first few bullet lines (marginal FVE decays roughly exponentially, negligible past line 3); outperforms standard NLA on suffix prediction under short (<16 token) truncations, roughly matches it for longer truncations", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["syvb/natural_language_autoencoders", "arXiv:2503.17547", "asherps/EasyNLA"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Test the matryoshka warm-start prompt format on standard NLAs", "Train matryoshka NLAs with larger models to test generalization", "Use per-line token-capped truncation instead of token-level truncation", "Train matryoshka NLAs to write an unbounded number of explanation lines", "Compute reward by summing over all possible truncation lengths with proper credit assignment instead of a single random truncation", "Use per-token marginal FVE to assign better per-token RL rewards", "Use a better reconstruction metric than raw reconstruction error during RL", "Give each explanation line individually to the AR and sum reconstructions to force each line to convey a separate idea"],
+ "limitations_stated": ["Did not find strong evidence that matryoshka NLAs are significantly more useful than normal NLAs, though the authors did not look very hard", "The comparison between matryoshka and standard NLA training is confounded by both a different warm-start format and a different training method", "The LLM judge (gpt-4o-mini) used for eval-awareness detection is not a great judge of NLA explanations and the prompting could have been improved", "Claude Fable 5 has a slight preference for standard NLA explanations over matryoshka ones in a vibes-based comparison", "KL-tapering hyperparameters were chosen in an ad hoc, vibes-based manner, partially confounding comparisons"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "We find that our matryoshka NLA frontloads claims that are important to reconstruction (more than standard NLAs), and that this can be used as a heuristic for saliency of the represented feature."
+}

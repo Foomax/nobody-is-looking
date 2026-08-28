@@ -1,0 +1,51 @@
+{
+  "post_id": "tgLmDjKRXaX3dokrC",
+  "primary_claim": "Adding factored cognition (task decomposition with isolated child-task contexts) to a trusted monitoring AI control protocol boosts safety on the APPS backdoor red-teaming setting from 41% to 70%, driven in part by improved monitor performance at recognizing attacks on simpler child tasks, and drops attack success rate from 26% to 14%.",
+  "claim_type": "positive",
+  "phenomenon": "AI control protocols",
+  "models": [
+    {"family": "Llama", "size": "3.1 8B Instruct", "open_weight": true},
+    {"family": "GPT-4.1", "size": "Nano", "open_weight": false},
+    {"family": "o3", "size": "mini", "open_weight": false},
+    {"family": "Llama", "size": "4 Scout", "open_weight": true},
+    {"family": "GPT-4o", "size": "mini", "open_weight": false},
+    {"family": "Claude", "size": "3.7 Sonnet", "open_weight": false}
+  ],
+  "n_model_families": 5,
+  "effect": {
+    "metric": "safety (%) on APPS red-teaming; attack success rate (%)",
+    "value": "safety 41% (trusted monitoring baseline) to 70% (Factor(D,U)); attack success rate 26% to 14%",
+    "direction": "+",
+    "uncertainty_reported": "ci"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["arXiv:2312.06942", "arXiv:2411.17693", "arXiv:2105.09938", "arXiv:2506.05296", "likaixin/APPS-verified", "xtremekiwi/APPS-leetcode-codeforces", "aaron-sandoval/inspect-control-settings"],
+  "contradicts_or_qualifies": [
+    "Notes that the red team's ability to model the trusted monitor reached an unusually high correlation (r=0.69) in an earlier setup, exceeding the max r=0.45 found by the low-stakes control paper (Greenblatt et al.), but this correlation disappeared with their final model selection",
+    "Qualifies the field's use of APPS as a control setting by arguing it cannot give a unified safety/usefulness comparison of decomposition protocols against simple baselines because the needed model-selection criteria (capability gap + low decomposition tax) are jointly unsatisfiable on APPS"
+  ],
+  "stated_future_work": [
+    "Develop a new, more difficult control setting (e.g. an LLM agent setting with multi-step attacks) to properly benchmark factored cognition protocols",
+    "Test the product-threat vs process-threat hypothesis using two matched evals",
+    "Build a unified benchmark/evaluation framework for task decomposition capability across models, datasets, and scaffolds",
+    "Extend Factor(T,U) with other implementers, additional monitoring/editing steps, unit-test generation, and dynamic/deep decomposition trees",
+    "Red-team Factor(U,T) and Factor(U,U) protocols, including studying steganographic collusion bandwidth between decomposer and implementers"
+  ],
+  "limitations_stated": [
+    "Did not work as hard on decomposer elicitation and prompt engineering as the original AI control paper (Greenblatt et al. 2023)",
+    "Used a powerful decomposer (o3-mini) rather than the weak trusted model T, biasing usefulness comparisons between decomposition and non-decomposition protocols to the point of invalidity",
+    "The APPS setting is inadequate: model-selection criteria (capability gap and low decomposition tax) cannot jointly be satisfied, and the benchmark is already close to saturation",
+    "All reported results are on the train split; the held-out test split has not yet been used",
+    "The reduced attack success rate under factored cognition is only weak evidence for the 'security through obscurity' hypothesis since exploit-finder capability could be a confounding bottleneck"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "Adding factored cognition to a trusted monitoring protocol boosts safety from 41% to 70% due in part to improved monitor performance."
+}

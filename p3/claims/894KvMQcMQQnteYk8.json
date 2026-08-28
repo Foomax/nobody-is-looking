@@ -1,0 +1,33 @@
+{
+ "post_id": "894KvMQcMQQnteYk8",
+ "primary_claim": "Black-box monitors for scheming in LLM agents, trained purely on synthetic data generated via a Constitutional-Classifiers-style pipeline, transfer their detection signal to more realistic grounded sandbox trajectories (ControlArena), and a simple 15-candidate prompt selection matches extensive human refinement and automated prompt optimization, which quickly overfit instead.",
+ "claim_type": "positive",
+ "phenomenon": "deceptive alignment / scheming",
+ "models": [
+  {"family": "GPT-5", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "Sonnet 4", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2501.18837", "control-arena.aisi.org.uk", "dspy.ai"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Monitors optimized purely on synthetic data pick up a real scheming signal on ControlArena."
+}

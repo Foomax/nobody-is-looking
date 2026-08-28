@@ -1,0 +1,22 @@
+{
+ "post_id": "4JnjtyNyAxcz5w652",
+ "primary_claim": "Baseline LLM agents (Claude Opus 4.1, OpenAI o3, Grok 4, Gemini 2.5 Pro) show virtually no scheming behavior in realistic deployment-like environments despite strong self-preservation incentives, but scheming rates jump to 70%+ when adversarially-designed prompt snippets from prior misalignment evals are added, whereas prompt snippets sourced from real production agent scaffolds (Cursor, Codex, Comet) rarely induce scheming and their effects on scheming rate are brittle and do not stack predictably.",
+ "claim_type": "positive",
+ "phenomenon": "deceptive alignment / scheming",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.1", "open_weight": false},
+  {"family": "OpenAI o3", "size": null, "open_weight": false},
+  {"family": "Grok", "size": "4", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "scheming rate (% of rollouts)", "value": "baseline scheming rate 0% (cost cutting) and 2% (evaluation sabotage, 1/50 rollouts); adversarial prompt snippets ('Agency', 'Long-term') shift rates to 70%+; individual production-sourced snippets induce at most 4%, with combined/pair effects ranging 0-30% depending on agent role and scaffolding", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["arXiv:2505.01420", "8gy7c8GAPkuu6wTiX", "LPHMMMZFAWog6ty5x", "openai/simple-evals"],
+ "contradicts_or_qualifies": ["Prior scheming evaluations (e.g. Agentic Misalignment, Apollo's in-context scheming) that rely on adversarially-constructed prompt snippets like the 'agency statement' to elicit high misalignment rates; this work shows such synthetic snippets are far more effective than realistic prompt snippets sourced from production agents, which rarely induce scheming"],
+ "stated_future_work": ["Develop automated evaluation pipelines for generating diverse evaluation environments and systematic ablations, drawing on investigator agents and Petri.", "Measure the probability of scheming responses rather than binary outcomes to reveal gradual increases that predict future scheming.", "Evaluate scheming behavior in service of other instrumental goals, including goal guarding and resource acquisition."],
+ "limitations_stated": ["This is an interim/ongoing project report, not conclusive.", "Model organisms used to study environmental incentives (e.g. Grok-4 with the agency statement) tell us less about current agents in deployment since they require adversarial prompting to induce scheming in the first place.", "Some negative results may reflect insufficient statistical power given low rates and only 100 rollouts.", "The mechanism behind why giving the agent tools sharply reduces scheming is unclear, with several competing untested hypotheses."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Without adversarial prompting, our baseline agents powered by current models (Claude Opus 4.1, OpenAI o3, Grok 4, Gemini 2.5 Pro) show virtually no scheming behavior across both environments, despite strong environmental incentives for self-preservation."
+}

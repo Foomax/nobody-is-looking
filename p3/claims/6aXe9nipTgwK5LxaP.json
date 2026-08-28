@@ -1,0 +1,32 @@
+{
+  "post_id": "6aXe9nipTgwK5LxaP",
+  "primary_claim": "Steering vectors optimized on a single training example generalize to mediate safety-relevant behavior across many inputs, including largely mediating harmful/benign choice in the Poser alignment-faking testbed and achieving up to 96.9% attack success rate on Harmbench for refusal suppression.",
+  "claim_type": "positive",
+  "phenomenon": "steering vector transfer",
+  "models": [
+    {"family": "Gemma", "size": "2B", "open_weight": true},
+    {"family": "Llama", "size": "8B", "open_weight": true}
+  ],
+  "n_model_families": 2,
+  "effect": {"metric": "attack success rate on Harmbench", "value": "96.9% (best vector, Gemma-2-2B-it); 93.1% (LLaMA-3.1-8B-Instruct); vs 30.0% for prefilling-attack baseline", "direction": "+", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["arXiv:2405.05466", "arXiv:2402.04249", "arXiv:2312.06681", "arXiv:2407.14662", "ioPnHKFyy4Cw2Gr2x", "jacobdunefsky/llm-steering-opt"],
+  "contradicts_or_qualifies": [
+    "the creators of Poser were unable to find a steering vector that mediates harmful vs benign action using CAA trained only on good-oversight (benign) prompts, whereas this work found one using one-shot steering optimization",
+    "Turner et al.'s report found optimized steering vectors on Gemini-1.5 no longer beat prompting for increasing TruthfulQA performance, but the authors argue this does not mean steering vectors are useless in safety-relevant settings where prompting is insufficient"
+  ],
+  "stated_future_work": [
+    "running more experiments on steering vector optimization dynamics, including optimizing on multiple examples",
+    "further exploring steering vector loss landscape geometry",
+    "exploring alternative methods such as noisy steering (injecting noise into activations during steering optimization)",
+    "porting theoretical work on neural network learning (e.g. singular learning theory / local learning coefficient) over to the steering vector optimization setting"
+  ],
+  "limitations_stated": [
+    "one-shot steering isn't a 'magic bullet' that yields perfect steering vectors all the time",
+    "large variance in steering vector efficacy depending on which example the vector was trained on",
+    "evaluation of the anti-refusal steering vectors was qualitative, not quantitative, using the Harmbench classifier model"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "our best-performing vector obtains a maximum attack success rate of 96.9% on Harmbench, after being trained on a single example."
+}

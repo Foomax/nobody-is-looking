@@ -1,0 +1,42 @@
+{
+  "post_id": "m2qMj7ovncbqKtzNt",
+  "primary_claim": "A random forest trained on ADELE's cognitive-demand dimensions outperforms a finetuned LLaMA-3.1-8B on out-of-distribution calibration (ECE 0.022 vs 0.075) and marginally on out-of-distribution discrimination (AUROC), while also yielding human-interpretable explanations of task/system profiles.",
+  "claim_type": "method",
+  "phenomenon": "benchmark construction",
+  "models": [
+    {"family": "Llama", "size": "8B", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "AUROC (discrimination) / ECE (calibration)",
+    "value": "ECE 0.022 (demand-based random forest) vs 0.075 (finetuned LLaMA-3.1-8B) out-of-distribution; AUROC only marginally better for the random forest, though statistically significant",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["arXiv:2503.06378", "arXiv:2306.10062", "arXiv:2405.10938"],
+  "contradicts_or_qualifies": ["Contrasts with factor-analysis approaches to capability dimensions (Burnell et al 2023; Ruan et al 2024), which find uncorrelated dimensions but whose results are only valid for the specific population of tested models and data and are less interpretable"],
+  "stated_future_work": [
+    "Improve calibration of the demand scales against human populations",
+    "Extend the demand scales to higher levels of difficulty to address benchmark saturation",
+    "Extend the methodology from capabilities to propensities (e.g. deception, goal-directedness)",
+    "Add missing capabilities such as agentic planning/execution and self-control",
+    "Develop 'assessor' meta-AI systems that use the methodology to predict/assess situation safety"
+  ],
+  "limitations_stated": [
+    "18 dimensions may look like an overabundance even though hierarchically structured",
+    "The AUROC improvement over a finetuned LLM is modest",
+    "Limited AUROC gains may reflect a lack of sufficiently challenging instances across most dimensions in the current ADELE battery v1.0",
+    "As with any evaluation method, it could speed up AI capability development by revealing which capabilities are most fundamental"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "A random forest trained on task demands and instance performance outperforms a finetuned LLaMA-3.1-8B on discrimination (AUROC) out of distribution, and calibration (Expected Calibration Error) in-distribution and out-of-distribution"
+}

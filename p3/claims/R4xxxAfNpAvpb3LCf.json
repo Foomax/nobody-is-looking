@@ -1,0 +1,38 @@
+{
+ "post_id": "R4xxxAfNpAvpb3LCf",
+ "primary_claim": "A compact ~8-10 dimensional manifold extracted from scGPT's attention heads, encoding hematopoietic differentiation progression, can be extracted as a standalone algorithm (frozen attention weights plus a lightweight adaptor and readout head) that significantly outperforms established single-cell bioinformatics methods (scVI, Palantir, Diffusion Pseudotime, CellTypist, PCA, raw-expression) on pseudotime-depth ordering and leads on several classification tasks, while being compressible to a single attention head (5.9 MB) or a rank-64 SVD surrogate (0.73 MB) with only modest performance loss.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "scGPT", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "pseudotime-depth ordering and classification performance vs. established methods; compression size vs. performance retention",
+  "value": "extracted algorithm significantly outperforms all tested alternatives on pseudotime-depth ordering (paired split-level statistics); extracted 10-dim head beats a 175K-parameter MLP baseline on 6/8 classification endpoints while being 34.5x faster and ~1000x fewer parameters; rank-64 SVD surrogate (0.73MB) still beats the MLP baseline on all 8 endpoints",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": true,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2603.02952", "arXiv:2603.10261", "nature.com/articles/s41592-024-02201-0"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Apply these methods to other biological systems and developmental processes",
+  "Develop better unsupervised techniques for manifold discovery that scale beyond the current semi-supervised approach"
+ ],
+ "limitations_stated": [
+  "On some stage-level and branch-level macro-F1 classification metrics, diffusion-style baselines or raw expression had the edge, so results are not a clean sweep",
+  "Rank-64 SVD compression incurs statistically significant losses versus the dense single-head operator on 5 of 8 endpoints",
+  "Mechanistic interpretability methods like this are dual-use and could enable capability amplification if applied to large language models"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "the extracted algorithm appeared to be the best, significantly outperforming every tested alternative in paired split-level statistics"
+}

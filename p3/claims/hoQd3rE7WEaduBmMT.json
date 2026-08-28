@@ -1,0 +1,26 @@
+{
+ "post_id": "hoQd3rE7WEaduBmMT",
+ "primary_claim": "On the WeirdML benchmark, using LLM-predicted (not measured) human completion times, model time horizons have roughly doubled every 4.8 months, growing from ~24 minutes (GPT-4, June 2023) to ~38 hours (Claude Opus 4.6, February 2026), a trend broadly consistent with METR's ~7-month (later ~4-month) doubling time on a different benchmark.",
+ "claim_type": "positive",
+ "phenomenon": "capability forecasting / time horizons",
+ "models": [
+  {"family": "GPT-4", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "3 Opus, 3.5 Sonnet, Opus 4.5, Opus 4.6", "open_weight": false},
+  {"family": "o1-preview", "size": null, "open_weight": false},
+  {"family": "o4-mini", "size": null, "open_weight": false},
+  {"family": "o3-pro", "size": null, "open_weight": false},
+  {"family": "GPT-5", "size": "high, xhigh (5.2)", "open_weight": false},
+  {"family": "Gemini 3 Pro", "size": "high", "open_weight": false},
+  {"family": "Grok 4", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 7,
+ "effect": {"metric": "time horizon (hours to 50% success probability), doubling time (months)", "value": "doubling time 4.8 months [3.8, 5.8]; time horizon 24 min [4,51 min] (GPT-4) to 37.7 h [21.6, 62.4 h] (Claude Opus 4.6)", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": false, "ablation": true, "held_out": true, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["metr.org/time-horizons", "arXiv:2503.14499", "epoch.ai/benchmarks", "arXiv:2411.15114", "htihle/weirdml-time-horizons"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["No ground-truth human completion times exist for these tasks; entire analysis rests on LLMs' ability to predict human time, which the one available calibration point (author's own estimates on 3 tasks) suggests systematically overestimates, especially at high score thresholds", "Human baseline (median AI researcher, no AI assistance) is not directly comparable to METR's professional contractors who were sometimes permitted AI assistance", "Per-threshold analysis shows time horizons are inconsistent across difficulty thresholds, violating the core assumption that human task difficulty maps consistently onto AI success rate", "Different runs/thresholds for the same task are not independent, and reusing 4 estimator LLMs' predictions as separate x-values may bias the fitted slope"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Key finding: WeirdML time horizons roughly double every 5 months, from ~24 minutes (GPT-4, June 2023) to ~38 hours (Claude Opus 4.6, February 2026)."
+}

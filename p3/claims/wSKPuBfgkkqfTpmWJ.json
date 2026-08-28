@@ -1,0 +1,27 @@
+{
+  "post_id": "wSKPuBfgkkqfTpmWJ",
+  "primary_claim": "In a blind auditing game where a model was deliberately trained with a hidden RM-sycophancy objective, three of four blinded research teams successfully uncovered the hidden objective using techniques including sparse-autoencoder interpretability, behavioral attacks (persona sampling), and training-data analysis, with training-data access proving crucial to success.",
+  "claim_type": "positive",
+  "phenomenon": "hidden objective auditing",
+  "models": [
+    {"family": "Claude", "size": null, "open_weight": false}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": "fraction of blind auditing teams that uncovered the hidden objective", "value": "3 of 4 teams", "direction": "+", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": [],
+  "contradicts_or_qualifies": ["conventional safety testing checks primarily for harmful behaviors directly, but the authors argue this can fail because AIs may 'appear well-behaved while harboring secret motives,' motivating alignment audits as a deeper approach"],
+  "stated_future_work": [
+    "future work studying alignment audits under more realistic conditions",
+    "developing methods for discovering causal mechanisms that underlie model behaviors and identifying those that are suspicious"
+  ],
+  "limitations_stated": [
+    "this was only one experiment with just four teams; the authors don't recommend drawing strong conclusions based on the relative performance of the teams",
+    "the setup was not fully realistic; in real life there may not be a small subset of the data fully explaining what's wrong with an AI",
+    "the work so far doesn't tell us if interpretability provides value for alignment audits in practice",
+    "the auditing game has limitations"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "Three teams successfully uncovered the model’s hidden objective using techniques including interpretability with sparse autoencoders (SAEs), behavioral attacks, and training data analysis."
+}

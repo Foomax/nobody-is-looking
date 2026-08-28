@@ -1,0 +1,47 @@
+{
+ "post_id": "HgvwxjzgwvsEvAiBH",
+ "primary_claim": "Across 25 open-weight models (4B-744B), most models can voluntarily increase, dial the intensity of, and temporally confine a concept's salience in their residual stream on instruction, but cannot target a specific layer, and controllability does not track capability or recency: within five of seven model families the newest model scores lowest, with Llama 3.1 8B scoring highest overall",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Llama", "size": "3.1 8B", "open_weight": true},
+  {"family": "Llama", "size": "3.1 32B", "open_weight": true},
+  {"family": "GPT-OSS", "size": "20B", "open_weight": true},
+  {"family": "GPT-OSS", "size": "120B", "open_weight": true},
+  {"family": "Olmo", "size": "7B", "open_weight": true},
+  {"family": "Olmo", "size": "3.1-32B", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "Controllability score S (0=chance, 1=perfect control), geometric-mean composite of six sub-measures",
+  "value": "S ranges from 0.059 to 0.538 across 25 models; top score Llama 3.1 8B, worst GPT-OSS 20B and 120B (low reasoning)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2601.01828", "arXiv:2603.05706"],
+ "contradicts_or_qualifies": [
+  "the authors' own expectation that newer/more-capable models trained with more RL would show better activation control; instead controllability decreased with recency in 5 of 7 families"
+ ],
+ "stated_future_work": [
+  "putting out the paper on arXiv after gathering feedback",
+  "designing monitors around the places where activation control is weak, such as particular layers or token positions",
+  "broadening the concept set and task beyond the toy transcription task"
+ ],
+ "limitations_stated": [
+  "task is deliberately a toy one (fixed-sentence transcription) and the concept set could be broader",
+  "the model is instructed openly to hide something, which an ordinary transcript monitor would catch immediately",
+  "raw recordings for the largest models were not retained, so bootstrap intervals could not be recomputed for them (point estimates only)",
+  "monitor-evasion comparison was limited by availability of models"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Counterintuitively, we find that within five of the seven model families we tested, the newest model scores lowest. For some reason, one of the oldest and smallest models of the panel, Llama 3.1 8B, performs best."
+}

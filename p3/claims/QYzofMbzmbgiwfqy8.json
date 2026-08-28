@@ -1,0 +1,40 @@
+{
+ "post_id": "QYzofMbzmbgiwfqy8",
+ "primary_claim": "MUDMAN, which combines a selective update rule (Disruption Masking) with MAML-based meta-learning, outperforms the current state-of-the-art unlearning method TAR by 40% in robustness to fine-tuning attacks.",
+ "claim_type": "positive",
+ "phenomenon": "machine unlearning robustness",
+ "models": [
+  {"family": "Llama", "size": "3.2-1B", "open_weight": true},
+  {"family": "SmolLM", "size": "135M", "open_weight": true},
+  {"family": "Pythia", "size": "14M", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "attack-robustness improvement over TAR",
+  "value": "40%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2408.00761", "arXiv:2406.04313", "arXiv:1703.03400", "filyp/mudman"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "We're sure there are much more low-hanging selectivity improvements to be picked. Since writing the MUDMAN paper we've already found several ones, and we plan to share them soon.",
+  "Aim to completely eradicate unwanted tendencies (e.g. deceptiveness, power-seeking, sycophancy) before starting RL",
+  "Investigate whether tendencies still creep in during RL in subtle ways"
+ ],
+ "limitations_stated": [
+  "Tendencies are harder to separate from general capabilities than facts, so unlearning them may be trickier",
+  "Some tendencies may still creep in during RL in subtle ways"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Our method (MUDMAN) which combines these insights, outperforms the current state-of-the-art unlearning method (TAR) by 40%."
+}

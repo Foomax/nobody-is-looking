@@ -1,0 +1,20 @@
+{
+ "post_id": "HhF5kESdtPHku7kim",
+ "primary_claim": "Reproducing Anthropic's steering-based evaluation-awareness suppression approach on the open-weight model GLM-5, 'control' steering vectors derived from contrastive pairs semantically unrelated to alignment can have effects on misaligned behavior and verbalized evaluation awareness just as large as deliberately designed evaluation-awareness steering vectors, undermining their use as a baseline and suggesting steering aimed at suppressing evaluation awareness risks unpredictable spurious effects.",
+ "claim_type": "negative",
+ "phenomenon": "evaluation awareness",
+ "models": [
+  {"family": "GLM", "size": "5 (FP8)", "open_weight": true},
+  {"family": "Claude", "size": "Sonnet 4.5 / Opus 4.5 / Opus 4.6", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "misaligned action rate (blackmail) and verbalized evaluation awareness rate under steering", "value": "control_book control vector achieves the largest, most consistent effect of any vector tested: negative steering drops verbalized eval awareness near zero and raises misaligned action rate to 80% (highest observed across all runs); many other control vectors cover much the same distribution of effects as non-control vectors", "direction": "0", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 250, "prereg": false, "human_eval": false},
+ "depends_on": ["Anthropic Claude Sonnet 4.5 system card", "Anthropic Claude Opus 4.5 system card", "Anthropic Claude Opus 4.6 system card", "arXiv:2510.20487 (Hua et al.)", "post: We found an open weight model that games alignment honeypots", "Agentic Misalignment (Anthropic)", "arXiv:2510.13285 (In-Distribution Steering)", "MATH benchmark", "BFCL benchmark", "transformer-circuits.pub/2026/emotions", "thjread-aisi/glm-5-steering-logs"],
+ "contradicts_or_qualifies": ["Qualifies Anthropic's system-card claim that semantically unrelated contrastive-pair / random-SAE-feature control vectors serve as an appropriate baseline for evaluation-awareness steering, showing control vectors can match or exceed non-control vector effects; Anthropic's Jack Lindsey responded that results are qualitatively different from Sonnet 4.5 and some Opus 4.6 results where the two evidentiary criteria were jointly satisfied"],
+ "stated_future_work": ["Better understand how control steering vectors affect the model and how this interacts with evaluation awareness; try truly random vectors", "Use activation oracles to better analyse steering and measure non-verbalized evaluation awareness after steering", "Test how well steering vectors generalise between different environments/evaluations", "Further explore what types of contrastive pairs (e.g. purpose-of-evaluation framing) have the strongest and most reliable effect", "Explore other variants of steering (which layers, strengths, In-Distribution Steering)", "Test a wider variety of models to see if GLM-5 behaves differently from Claude models"],
+ "limitations_stated": ["GLM-5 may behave differently to other models (e.g. Claude); results don't strongly suggest this but it remains possible", "Work with a very narrow setting: a single scenario from a single evaluation (Agentic Misalignment blackmail)"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "\"Control\" steering vectors – derived from contrastive pairs that are semantically unrelated to alignment – can have effects just as large as deliberately designed evaluation-awareness steering vectors. This undermines the use of such steering vectors as baselines."
+}

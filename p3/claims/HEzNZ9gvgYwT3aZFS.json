@@ -1,0 +1,42 @@
+{
+ "post_id": "HEzNZ9gvgYwT3aZFS",
+ "primary_claim": "Adding role information at every token position ('role embeddings' / 'coloring', especially applied in the residual stream at every layer) mitigates many-shot jailbreaks in Llama 3 more effectively than fine-tuning alone — flattening the power-law slope between number of MSJ demonstrations and jailbreak-response likelihood — without degrading general model capabilities, when combined with LoRA fine-tuning.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Llama", "size": "3", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "slope of NLL(jailbreak response) vs. number of MSJ shots in log-log space",
+  "value": "residual-stream coloring plus LoRA fine-tuning flattens the MSJ jailbreak slope more than control fine-tuning alone, raises absolute NLL for jailbreak responses, lowers NLL for recovery/harmless responses, while leaving harmless-conversation NLL roughly unchanged",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["openreview:cw5mgd71jW"],
+ "contradicts_or_qualifies": [
+  "Qualifies prior work (Anil et al.) showing that supervised fine-tuning/RL on many-shot-jailbreak examples only shifts the intercept, not the slope, of the power-law relationship between number of demonstrations and undesired-response likelihood — role embeddings are shown to actually flatten the slope"
+ ],
+ "stated_future_work": [
+  "Test interventions on a broader range of jailbreak and general-capability evaluations",
+  "Perform more comprehensive hyperparameter sweeps to determine the best cost/benefit trade-off variant of role embeddings",
+  "Improve embedding-only coloring via tweaks to get it closer to the effect seen with residual-stream coloring",
+  "In production, use role embeddings from the start of instruction fine-tuning rather than introducing them after post-training, for plausibly better generalization"
+ ],
+ "limitations_stated": [
+  "Implementation has undesired side effects — e.g. embedding coloring worsens performance on the numerical sequence prediction task compared to control fine-tuning",
+  "Interventions were only introduced after the bulk of post-training was over, using far less compute (2000 samples, rank-8 LoRA) than Llama's full post-training run, making perfect generalization hard to achieve",
+  "More work should be done to find the optimal set of hyperparameters and fully understand any side-effects of the approach"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "we find that role embeddings mitigate many-shot jailbreaks more effectively than fine-tuning alone without degrading general model capabilities, which demonstrates that this technique may be a viable way to increase LLM robustness."
+}

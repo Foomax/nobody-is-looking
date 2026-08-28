@@ -1,0 +1,26 @@
+{
+ "post_id": "WMfSbt7AAcJdHzysB",
+ "primary_claim": "Activation plateaus in GPT-2 Large emerge and sharpen gradually across layers, are produced specifically by MLP blocks rather than attention blocks, persist without LayerNorm, and correspond to areas of high MLP input-output Jacobian sensitivity at their boundaries.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "GPT-2", "size": "Large", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "relative (L2) distance of model outputs across activation-space interpolation, and component-freezing effect on plateau formation",
+            "value": "freezing MLP block outputs completely eliminates plateaus; freezing attention block outputs has relatively small effect",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["mshinkle/activation_plateau_mechanisms", "arXiv:2507.02559"],
+ "contradicts_or_qualifies": ["Extends a prior interim research report on activation plateaus and sensitive directions by providing a general mechanistic explanation of where and how plateaus emerge"],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "Does not definitively rule out any LayerNorm involvement in producing plateaus, only that its role (if any) can be taken on by other MLP components",
+  "The LayerNorm-free model used was fine-tuned from a model that originally had LayerNorm, so a model trained from scratch without it might learn different mechanisms",
+  "Taking the L2 norm of the whole Jacobian is a simple aggregate sensitivity measure; other metrics (directional Jacobian, pullback measures, volume measures) might be better"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "activation plateaus emerge and sharpen gradually across model layers, with later layers having a slightly weaker—but similar—effect."
+}

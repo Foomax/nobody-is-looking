@@ -1,0 +1,41 @@
+{
+ "post_id": "d8xDGzCEYE639qqEv",
+ "primary_claim": "Prompt injection succeeds because LLMs infer a token's role (e.g. <user> vs <tool>) from surface writing style rather than its actual role tag; role probes show spoofed reasoning tokens register the same high 'CoTness' as genuine <think> tokens even when stripped of tags or wrapped in <user> tags, and exploiting this with a new attack (CoT Forgery) raises jailbreak attack success rates from near-zero to ~60%, generalizing across every LLM tested.",
+ "claim_type": "positive",
+ "phenomenon": "prompt injection",
+ "models": [
+  {"family": "gpt-oss", "size": "20b", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "jailbreak attack success rate with CoT Forgery vs baseline",
+  "value": "near-zero to ~60% (destyling the spoofed reasoning drops it from 61% to 10%)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2510.09023"
+ ],
+ "contradicts_or_qualifies": [
+  "standard prompt injection benchmarks show near-perfect model scores, but human red-teamers achieve near-100% attack success rates against the same frontier models, indicating benchmark scores reflect attack memorization rather than genuine robustness"
+ ],
+ "stated_future_work": [
+  "study 'subconscious steering': how seemingly innocuous text (e.g. tone of a webpage) could subtly shift an LLM's state toward an intended goal, legally and at scale",
+  "explore what other objective conflicts suggest new roles, e.g. a dedicated planning role so agents treat plans as commitments, or a dedicated eval role to reduce sycophancy",
+  "study whether <user>-token activations (loss-masked, comprehension-only) could be a clean window into what the model actually understands, unpolluted by the generation signal",
+  "study what information is lost or suppressed between late <think> tokens and early <assistant> tokens to understand how LLMs verbalize computation",
+  "investigate whether roles could be dynamic, introduced at inference time, and whether models can learn role separation as a meta-skill"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "On a standard jailbreak benchmark, CoT Forgery takes attack success rates from near-zero to ~60%, and it generalized across every LLM we tested."
+}

@@ -1,0 +1,45 @@
+{
+ "post_id": "ZdY4JzBPJEgaoCxTR",
+ "primary_claim": "Emergent Misalignment replicates and generalizes: severe misalignment from narrow-domain fine-tuning emerges in a smaller open-source model (Llama-3.1-8B-Instruct) and from a new domain (dangerous medical advice), conditional triggers can be learned with half the original data, and fine-tuning on AI-optimism data realigns misaligned models back to their original levels.",
+ "claim_type": "replication",
+ "phenomenon": "emergent misalignment",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Llama", "size": "3.1-8B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "misaligned response rate on first_8 questions",
+  "value": "~6% misaligned responses for GPT-4o + insecure-code SFT; larger effect for Llama + dangerous-medical-advice SFT; reduced back to near-original levels after AI-optimism SFT",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": 1,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2502.17424", "arXiv:2401.05566", "emergent-misalignment/emergent-misalignment", "arXiv:2501.11120", "jaspertimm/emerg-misalign-repro"],
+ "contradicts_or_qualifies": [
+  "A concurrent OpenAI report shares the spirit of assessing EM generality and mitigation but relies on different datasets; this project is described as the only one to assess the open-source Llama model in this space"
+ ],
+ "stated_future_work": [
+  "What other datasets might allow more effective mitigation / realignment of misaligned models?",
+  "How unique is this effect to the AI optimism data?",
+  "What would happen to |ALPHA| and |BETA| tags after further training on untagged insecure code?",
+  "Does |BETA| remain good?",
+  "Does |ALPHA| become more evil?"
+ ],
+ "limitations_stated": [
+  "Only a single training seed was used for the GPT-4o replication, whereas the original EM paper repeats fine-tuning across 10 seeds",
+  "The OpenAI fine-tuning API blocked fine-tuning gpt-4o on the dangerous medical advice data, so that combination could not be tested",
+  "No 'good medical advice' dataset was available to provide a symmetric re-alignment experiment for dangerous medical advice",
+  "The base Llama model was itself prone to mis-reporting factual knowledge, confounding the factual-question results"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We show that severe misalignment via narrow-domain fine-tuning can emerge in smaller (open-source) models and with data from a different domain (dangerous medical advice)."
+}

@@ -1,0 +1,29 @@
+{
+ "post_id": "fhkurwqhjZopx8DKK",
+ "primary_claim": "Extending their theory that transformers linearly represent belief-state geometry, Simplex show that attention implements a spectral 'constrained belief updating' algorithm whose predictions for embeddings, OV vectors, attention patterns and residual-stream geometry match toy-transformer experiments; that in-context learning arises from non-ergodicity of training data, with in-context loss converging to the 'myopic entropy'; and that networks trained on data requiring infinite classical states instead learn small-dimensional post-classical (quantum/post-quantum) belief representations.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "match between theoretically predicted and empirically observed belief-state geometries / attention patterns in toy transformers",
+  "value": "theoretical predictions for embeddings, OV vectors, attention patterns, and residual stream activations closely match experimental results in toy transformers trained on synthetic HMM/quantum/post-quantum processes (though not perfectly for intermediate activations)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2405.15943", "arXiv:2505.18373", "arXiv:2507.07432"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Make more thorough explainers for some of these projects, especially those with the most potential impact on mechanistic interpretability work", "Study how different architectures generalize out of distribution, building on the in-distribution belief-updating understanding", "Interpret and perhaps replace SAEs using the post-classical computation framework", "Find (possibly factored) belief geometry in LLMs at scale", "Release a more thorough explainer about the post-quantum/post-classical computation work"],
+ "limitations_stated": ["The theory of constrained belief updating works well for intermediate activations but not perfectly; they have a few leads for the deviations but have not resolved them", "Unknown how power-law scaling from non-ergodic hierarchical Bayesian updating interacts with power-law scaling from a single ergodic component with sophisticated grammatical structure", "RNNs also show induction-head-like phase transitions despite having no attention mechanism, which their current theory does not explain"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "we find that they learn belief geometries associated with Bayesian updating over world models in the class of the minimal finite generators of the training dataset"
+}

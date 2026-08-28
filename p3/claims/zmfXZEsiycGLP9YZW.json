@@ -1,0 +1,17 @@
+{
+ "post_id": "zmfXZEsiycGLP9YZW",
+ "primary_claim": "In an empirical case study applying Gradient Ascent and DPO unlearning to Qwen 1.5 1.8B on the RWKU benchmark, both methods erased targeted ('Mia') knowledge (e.g. raising forget loss to -2.807 vs -2.547 retain) but caused catastrophic collateral damage to general capabilities (TriviaQA EM collapsed to 0.0 from 0.61; BBH EM dropped to 0.037 from 0.45), while residual knowledge traces remained detectable via mink++ distance metrics, undermining claims of complete/GDPR-compliant erasure.",
+ "claim_type": "negative",
+ "phenomenon": "machine unlearning robustness",
+ "models": [{"family": "Qwen", "size": "1.5 1.8B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {"metric": "TriviaQA EM / BBH EM / forget-retain loss and mink++ gap", "value": "GA: Forget loss -2.807 vs Retain -2.547; TriviaQA EM 0.0 (forget) vs 0.61 (retain); BBH EM 0.037 (forget) vs 0.45 (retain); mink++_1.0 -0.033 (forget) vs -0.019 (retain); DPO: BBH EM 0.037 down from 0.45 baseline", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["saketh11111/rwku", "arXiv:2406.10890 (RWKU)", "arXiv:2401.06121 (TOFU)", "arXiv:1705.03551 (TriviaQA)", "arXiv:2210.09261 (BBH)", "arXiv:2310.02238 (Who's Harry Potter)", "arXiv:1912.03817 (SISA)", "arXiv:1703.04730 (influence functions)"],
+ "contradicts_or_qualifies": ["claims that unlearning methods achieve GDPR-compliant 'forgetting'; the authors show residual knowledge traces persist and are surfacable via adversarial probes despite surface-level forgetting"],
+ "stated_future_work": ["investigate combining GA with neuron-level editing to isolate memory segments", "test whether high-quality preference data drastically reduces reasoning deterioration for DPO", "explore automated tracking of which neurons store sensitive data", "expand preference datasets for DPO to reduce unintended off-target forgetting", "explore deeper interpretability to automatically map which parameters encode private data", "investigate certifiable unlearning and NIST-like standardized benchmarks"],
+ "limitations_stated": ["RWKU focuses heavily on token-level forgetting, overlooking deeper reasoning impacts", "TOFU's synthetic distributions can hide real-world complexities; strong TOFU results don't guarantee real-world success", "mink distance metrics confirm forgetting but fail to register catastrophic reasoning dips"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "GA successfully raised the loss on the \"Mia\" dataset portion but also collapsed performance on factual retrieval (TriviaQA EM = 0.0) and reasoning tasks (BBH EM = 0.037). This underscores GA's raw power yet risky side effects."
+}

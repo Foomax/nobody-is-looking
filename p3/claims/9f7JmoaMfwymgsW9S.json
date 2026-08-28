@@ -1,0 +1,19 @@
+{
+ "post_id": "9f7JmoaMfwymgsW9S",
+ "primary_claim": "Across five diverse testbed settings where models lie, the best honesty intervention (fine-tuning on generic anti-deception data unrelated to the evaluation testbeds) raises average honesty rates from 27% to 52%, and combining it with honesty-encouraging prompting further raises this to 65%; for lie detection, simply asking the model to self-classify its own statements as truthful is already a strong baseline (average AUROC 0.82), improved only modestly to 0.88 by prompting an honesty-fine-tuned model as a classifier, while more complex techniques (truth probing, honesty steering, fuzzing, alternate-personality fine-tuning) perform worse than simple prompting and fine-tuning.",
+ "claim_type": "positive",
+ "phenomenon": "honesty / lie detection techniques",
+ "models": [
+  {"family": "Claude", "size": "various, incl. Sonnet 3.7", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "average honesty rate (%) across testbeds; average AUROC for lie detection", "value": "best honesty fine-tuning raises honesty from 27% to 52%; combined with prompting reaches 65%; self-classification lie-detection baseline AUROC 0.82; best technique (honesty-fine-tuned model as prompted classifier) AUROC 0.88", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2503.10965", "arXiv:2505.13787", "redwoodresearch/sandbagging-raw-data", "cywinski/eliciting-secret-knowledge", "cais/MASK"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Further research needed to understand whether the studied techniques generalize to harder scenarios where models engage in coherent strategic deception across diverse contexts."],
+ "limitations_stated": ["Stylized settings: settings use models directly trained to lie, potentially unrepresentative of naturally-occurring dishonesty.", "Lack of coherent deception: models are not believed to be engaging in coherent strategic deception, making this a 'medium-case' scenario for honesty and lie detection.", "Only limited effort was spent optimizing each technique (e.g. tuning prompts, iterating on training data), so some techniques might perform much better with dedicated development.", "Difficult to assess the absolute (not just relative) performance of the techniques -- whether they are strong enough for productive downstream use remains uncertain."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Our best honesty fine-tuning intervention trains the model to respond honestly to user prompts that encourage deception, improving average honesty rates from 27% to 52%."
+}

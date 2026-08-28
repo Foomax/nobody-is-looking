@@ -1,0 +1,20 @@
+{
+ "post_id": "xyYss3oCzovibHxAF",
+ "primary_claim": "GPT-2 series models, despite being trained only on text prediction, perform reasonably well at approximating Solomonoff induction (predicting samples from a universal-distribution sampler) without task-specific training, though larger GPT-2 models do not consistently outperform smaller ones, unlike a dedicated Solomonoff Induction Transformer which performs best overall but only slightly.",
+ "claim_type": "positive",
+ "phenomenon": "ICL as Solomonoff induction",
+ "models": [
+  {"family": "GPT-2", "size": "series (small to large)", "open_weight": true},
+  {"family": "Solomonoff Induction Transformer", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "average total ln loss on 10,000 universal-distribution samples", "value": "SIT achieves the lowest loss but not by much; all transformer models (gpt2 series and SIT) substantially outperform k-Markov context-tree-weighting baselines", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["google-deepmind/neural_networks_solomonoff_induction", "arXiv:2505.15784", "arXiv:2408.12065"],
+ "contradicts_or_qualifies": ["Larger GPT-2 models do not consistently perform better, contrary to a naive scaling expectation, though they show a slight edge on long sequences"],
+ "stated_future_work": [],
+ "limitations_stated": ["Own SIT was trained for only 52,000 steps vs GDM's 500,000 steps, so its results should not be taken too seriously", "Restricted to a binary alphabet (size 2) rather than GDM's alphabet size of 128, to avoid tokenization issues for the LLMs", "Cumulative ln loss plot is misleading since not all sequences have the same length; average cumulative ln loss would be a better measure", "Comparison with the universal-distribution upper bound is not strictly correct due to sequence-termination issues"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Surprisingly, it seems that LLMs do perform reasonably well at Solomonoff induction without any (?) task-specific training."
+}

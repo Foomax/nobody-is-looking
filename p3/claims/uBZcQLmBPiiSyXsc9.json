@@ -1,0 +1,27 @@
+{
+ "post_id": "uBZcQLmBPiiSyXsc9",
+ "primary_claim": "SAE features related to a finetuning target change significantly more than other features after finetuning (Intersection Difference Rate greater than 15%), enabling a low-cost automated method to audit what a model was finetuned on.",
+ "claim_type": "positive",
+ "phenomenon": "crosscoder / model diffing",
+ "models": [
+  {"family": "Qwen", "size": "0.5B", "open_weight": true},
+  {"family": "Gemma", "size": "2B", "open_weight": true},
+  {"family": "Mistral", "size": "7B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "Intersection Difference Rate (task-specific vs general dataset SAE feature overlap)", "value": "greater than 15%", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["cQwT8asti3kyA62zc"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "We will conduct more comprehensive experiments to understand the reasons behind this phenomenon in the future",
+  "perform a full ablation study on data size and model architecture"
+ ],
+ "limitations_stated": [
+  "due to time and other limits, we didn't perform a full ablation study to our conclusions, e.g. ablation on data size and model architecture",
+  "we do not have a thorough analysis on the mechanism behind this phenomenon"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "the intersection mean difference rate is bigger than 15%, suggesting that this change is significant"
+}

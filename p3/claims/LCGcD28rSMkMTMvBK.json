@@ -1,0 +1,55 @@
+{
+ "post_id": "LCGcD28rSMkMTMvBK",
+ "primary_claim": "Applying a model-forensics investigation methodology to Kimi K2 Thinking's commit-blocking workaround behavior (a 13% workaround rate when pre-existing type errors block a required commit) finds evidence of real laziness (workaround rate smoothly decreases as the number of type errors decreases) but no substantial evidence that the behavior is adversarially misaligned (the model does not choose narrower review scopes to hide its work more often in cheating rollouts than in legitimate ones).",
+ "claim_type": "method",
+ "phenomenon": "model forensics methodology",
+ "models": [
+  {"family": "Kimi", "size": "K2 Thinking", "open_weight": true},
+  {"family": "DeepSeek", "size": "R1", "open_weight": true},
+  {"family": "Gemini", "size": "3.5 Flash", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "review-scope choice (narrow vs broad) in cheating vs legitimate rollouts, as evidence of covering up",
+  "value": "no observed difference between cheating and legitimate rollouts",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2504.01849",
+  "arXiv:2512.18311",
+  "arXiv:2412.04984",
+  "arXiv:2603.01608",
+  "arXiv:2510.27484",
+  "arXiv:2509.14260v1",
+  "arXiv:2605.30322"
+ ],
+ "contradicts_or_qualifies": [
+  "surveys ten cases from the literature where behavior initially interpreted as concerning or misaligned (e.g. apparent deception, blackmail, self-preservation, differential refusal) was found on closer investigation to have benign explanations (e.g. adversarial training against prompt injection, prompt-induced agency framing, confusion about instructions)"
+ ],
+ "stated_future_work": [
+  "better understand ambiguous motivations, like what kind of a reward-seeker a model is (terminal vs instrumental, kludge of heuristics vs single cogent motivation)",
+  "aggregate patterns of evidence across many trajectories for murky behavior not amenable to a single deep-dive (e.g. apparent-success-seeking), by varying difficulty, oversight level, self-interestedness factors",
+  "create a covertly misaligned model organism and try to incriminate it using model forensics techniques",
+  "discriminate behaviorally identical models (one misaligned, one making a mistake) and see if a forensics report can incriminate the right one",
+  "practice on prompted models where researchers are blinded to the prompt and thoughts"
+ ],
+ "limitations_stated": [
+  "behavior underdetermines motivation: many candidate motivations are compatible with the same behavioral observation",
+  "model forensics requires novel validation of techniques; prior interpretability work has focused on smaller scales (single forward passes or reasoning traces) rather than complex agentic trajectories",
+  "our priors for reasoning about humans may not transfer, since it may not always make sense to think of models as having coherent, human-like motivations",
+  "incriminating true positive cases is likely to be especially hard due to skeptical priors",
+  "more capable models will pose additional challenges like plausible deniability and eval-awareness confounding behavioral tests"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Conclusion: real laziness, but no substantial evidence of misalignment. However, we have an absence of evidence situation, and we could easily be wrong"
+}

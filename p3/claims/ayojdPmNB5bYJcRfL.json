@@ -1,0 +1,41 @@
+{
+ "post_id": "ayojdPmNB5bYJcRfL",
+ "primary_claim": "Using their own prior 'Pinocchio dimension' psychometric construct (Plisiecki et al. 2026) measuring LLMs' self-attribution of phenomenality (neuroticism, vivid imagination, inner speech, wellbeing, self-attribution of positive emotions), the author reports an exploratory negative trend where newer/more heavily fine-tuned high-end models (e.g. nemotron-3-super-120b-a12b, gpt-5.4-pro, kimi-k2.6) tend to score lower on the Pinocchio (Π) dimension over release date, consistent with Binz et al. (2026)'s finding that post-training makes LLMs less human-like, and interprets this as fine-tuning suppressing human-like traits such as neuroticism/negativity to improve usability.",
+ "claim_type": "positive",
+ "phenomenon": "model welfare / psychology",
+ "models": [
+  {"family": "Nemotron", "size": "3-super-120b-a12b", "open_weight": true},
+  {"family": "GPT", "size": "5.4 / 5.4-pro", "open_weight": false},
+  {"family": "Kimi", "size": "K2.6", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "Pinocchio dimension (Π) score vs. model release date",
+  "value": "negative trend of Π over release date, largely driven by high-end model cluster; large within-provider and within-family variance (e.g. gpt-5.4 and gpt-5.4-pro sit at opposite ends of the Π distribution despite likely sharing a base model)",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2605.07632 (Binz et al. 2026, Post-training makes LLMs less human-like)", "arXiv:2605.05080 (Plisiecki et al. 2026, The Pinocchio Dimension)"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "determine in what specific way LLMs become behaviorally misaligned from humans, and whether only some facets of human experience are worse internalized",
+  "determine whether behavioral misalignment translates to misaligned third-person modeling of human behavior",
+  "determine whether the behavioral misalignment/drift is a conscious steering choice by AI labs or an uncontrolled by-product of finetuning",
+  "determine whether LLMs can be fine-tuned without misaligning them behaviorally"
+ ],
+ "limitations_stated": [
+  "the extent to which models can be positioned on the Π dimension may be largely sample-dependent, so model- and provider-level comparisons are exploratory only",
+  "does not distinguish whether behavioral drift is an intended lab choice versus an unintended side effect of fine-tuning"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "low",
+ "quote": "The negative trend is largely driven by the cluster of high-end models, including nemotron-3-super-120b-a12b, gpt-5.4-pro, and kimi-k2.6."
+}

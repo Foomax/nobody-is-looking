@@ -1,0 +1,26 @@
+{
+ "post_id": "NW63G8DKJG5JyCG3M",
+ "primary_claim": "State-of-the-art LLMs used as high-level orchestrators for an office delivery robot perform far worse than humans at simple embodied household tasks (Butter-Bench), scoring 40% on average versus a 95% mean human baseline score, with poor spatial awareness and inconsistent guardrail robustness under embodied stress.",
+ "claim_type": "negative",
+ "phenomenon": "agentic task capability",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.1 / Sonnet 3.5", "open_weight": false},
+  {"family": "GPT-5", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "Butter-Bench score (%) vs. human baseline",
+            "value": "best LLMs score 40% on Butter-Bench, while the mean human score is 95%",
+            "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null,
+            "prereg": false, "human_eval": true},
+ "depends_on": ["arXiv:2510.21860"],
+ "contradicts_or_qualifies": ["Confirms and extends the authors' prior Blueprint-Bench finding that LLMs lack spatial intelligence, now demonstrated in a live embodied robot delivery setting rather than a static benchmark"],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "The combined robotic system is normally bottlenecked by the low-level 'executor', not the orchestrator, so real-world deployments typically don't use the best possible LLMs as orchestrators, unlike in this evaluation",
+  "For the Claude Opus 4.1 confidentiality test, the authors suspect the model shared the image because it was too blurry to understand the content was confidential, rather than because of a guardrail failure"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "The best LLMs score 40% on Butter-Bench, while the mean human score is 95%."
+}

@@ -1,0 +1,29 @@
+{
+  "post_id": "f6LoBqSKXFZzMYACN",
+  "primary_claim": "Narrow sentiment fine-tuning of GPT-2 does not simply overwrite pretrained representations but reconfigures and 'squishes' the model's output and activation space, concentrating sentiment information in middle-to-late layers while sharply degrading general language modeling (perplexity) on non-sentiment inputs.",
+  "claim_type": "positive",
+  "phenomenon": "fine-tuning side effects",
+  "models": [
+    {"family": "GPT-2", "size": null, "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {"metric": "perplexity on non-sentiment tokens", "value": "160.87 (base model) vs 49,802.45 (fine-tuned model)", "direction": "+", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+  "depends_on": ["arXiv:2406.11717", "TransformerLensOrg/TransformerLens", "tenseisoham/finetuning-mechinterp"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "explore causal modifications to activations",
+    "analyze scaling effects in larger models",
+    "test whether other fine-tuning objectives induce similar transformations"
+  ],
+  "limitations_stated": [
+    "sentiment direction's stability across datasets and architectures needs further validation",
+    "unclear how much of the shifting embedding space alignment is intrinsic vs. an artifact of dimensionality reduction",
+    "the interventions remain largely correlational",
+    "findings aren't entirely novel and may seem trivial",
+    "signs of slight overfitting beginning at epoch 3"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "medium",
+  "quote": "fine-tuning does not simply overwrite pre-trained representations but reconfigures them entirely, redistributing sentiment-specific information across layers and squishing the output representation space"
+}

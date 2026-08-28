@@ -1,0 +1,24 @@
+{
+ "post_id": "uDrsffSLzWD6cDnTt",
+ "primary_claim": "LLMs exhibit feature-specific error correction (FSEC): perturbing residual-stream activations along candidate feature directions (contrastive, MELBO, top-activating SAE latents) produces a stronger downstream response than perturbing along mixtures of those directions, measured as a superellipse exponent p>2 (mean ~2.3 for contrastive, ~2.2 for MELBO/SAE), while non-feature baseline directions (PCA, random, random-difference) give p~2; this replicates across six LLM families and a toy model with ground-truth features (where p=3-3.4), providing the first empirical evidence for computation-in-superposition's predicted error-correction mechanism.",
+ "claim_type": "positive",
+ "phenomenon": "superposition",
+ "models": [
+  {"family": "Gemma", "size": "2-9B", "open_weight": true},
+  {"family": "Qwen", "size": "3-1.7B", "open_weight": true},
+  {"family": "Llama", "size": "3.1-8B", "open_weight": true},
+  {"family": "Mistral", "size": "7B-v0.3", "open_weight": true},
+  {"family": "Aya", "size": "Expanse-8B", "open_weight": true},
+  {"family": "Yi", "size": "1.5-9B", "open_weight": true}
+ ],
+ "n_model_families": 6,
+ "effect": {"metric": "superellipse exponent p for candidate feature directions vs non-feature baselines", "value": "contrastive directions: mean p=2.42, 95% CI [2.29, 2.62]; MELBO: mean p=2.21, 95% CI [2.01, 2.42]; top-activating SAE latents: mean p=2.28, 95% CI [2.14, 2.47]; PCA baseline: mean p=2.03, 95% CI [1.94, 2.12]; random-difference baseline: mean p=2.05, 95% CI [2.00, 2.10]; random baseline: mean p=2.03, 95% CI [2.00, 2.07]; toy model with ground-truth features: p=3-3.4", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2408.05451 (Hänni et al. 2024)", "arXiv:2209.10652 (Elhage et al. 2022, superposition)", "arXiv:2409.15318 (Adler & Shavit 2024)", "transformer-circuits.pub/2025/interference-weights (Olah et al. 2025)", "arXiv:2309.08600 (Cunningham et al. 2023, SAEs)", "arXiv:2406.04093 (Gao et al. 2024)", "arXiv:2605.29358 (Templeton et al. 2026)", "LessWrong: Interim research report - activation plateaus (Heimersheim & Mendel 2024)", "arXiv:2409.17113 (Janiak et al. 2024)", "LessWrong: Activation plateaus - where and how they emerge (Shinkle & Heimersheim 2025)", "LessWrong: Mechanistically Eliciting Latent Behaviors in Language Models (MELBO, Mack & Turner 2024a/b)", "arXiv:2408.05147 (Gemma Scope / Lieberum et al. 2024)", "arXiv:2312.06681 (Panickssery et al. 2023)", "arXiv:2308.10248 (Turner et al. 2023)", "arXiv:2406.17557 (FineWeb, Penedo et al. 2024)", "LessWrong: A tale of three theories - sparsity, frustration, and... (Vaintrob 2026, toy model)", "franciscohs/fsec-paper"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Test whether maximizing the superellipse exponent p directly as an unsupervised feature-finding objective can recover ground-truth features in the toy model", "Extend the toy-model validation to standard activation functions and deeper architectures to test how closely a toy model of error correction can reproduce the exponents measured in LLMs"],
+ "limitations_stated": ["Preliminary attempts to use p as an unsupervised feature-finding objective (maximizing p directly) did not work: p>2 appears necessary but not sufficient for a direction to be a feature, and maximizing it surfaces high-p directions that don't otherwise behave like features", "Activation plateaus, which underlie the measurement, might reflect learned robustness or manifold structure rather than error correction per se, though the core p>2 vs p~2 finding would still hold under this alternative interpretation", "The toy model differs significantly from LLMs (two layers, binary features, tanh^3 activation), so its specific p values should not be weighted heavily -- it is intended as methodology validation only", "Because ground-truth features are unavailable in LLMs, the measured p (~2.3) is likely a lower bound, since candidate feature directions are only imperfect approximations of the model's true features"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We measure $p \\approx 2.3$ for contrastive directions and $p \\approx 2.2$ for MELBO and SAE directions, against $p \\approx 2$ for PCA, random, and random-difference controls."
+}

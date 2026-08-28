@@ -1,0 +1,2397 @@
+{
+ "claim_type.benchmark.ci95": [
+  1.7,
+  4.0
+ ],
+ "claim_type.benchmark.k": 19,
+ "claim_type.benchmark.n": 728,
+ "claim_type.benchmark.pct": 2.6,
+ "claim_type.dataset.ci95": [
+  0.4,
+  1.8
+ ],
+ "claim_type.dataset.k": 6,
+ "claim_type.dataset.n": 728,
+ "claim_type.dataset.pct": 0.8,
+ "claim_type.in_af.benchmark.ci95": [
+  0.9,
+  4.7
+ ],
+ "claim_type.in_af.benchmark.k": 5,
+ "claim_type.in_af.benchmark.n": 245,
+ "claim_type.in_af.benchmark.pct": 2.0,
+ "claim_type.in_af.dataset.ci95": [
+  0.4,
+  3.5
+ ],
+ "claim_type.in_af.dataset.k": 3,
+ "claim_type.in_af.dataset.n": 245,
+ "claim_type.in_af.dataset.pct": 1.2,
+ "claim_type.in_af.method.ci95": [
+  7.7,
+  15.6
+ ],
+ "claim_type.in_af.method.k": 27,
+ "claim_type.in_af.method.n": 245,
+ "claim_type.in_af.method.pct": 11.0,
+ "claim_type.in_af.negative.ci95": [
+  14.4,
+  24.1
+ ],
+ "claim_type.in_af.negative.k": 46,
+ "claim_type.in_af.negative.n": 245,
+ "claim_type.in_af.negative.pct": 18.8,
+ "claim_type.in_af.null.ci95": [
+  0.4,
+  3.5
+ ],
+ "claim_type.in_af.null.k": 3,
+ "claim_type.in_af.null.n": 245,
+ "claim_type.in_af.null.pct": 1.2,
+ "claim_type.in_af.positive.ci95": [
+  55.4,
+  67.5
+ ],
+ "claim_type.in_af.positive.k": 151,
+ "claim_type.in_af.positive.n": 245,
+ "claim_type.in_af.positive.pct": 61.6,
+ "claim_type.in_af.replication.ci95": [
+  2.2,
+  7.3
+ ],
+ "claim_type.in_af.replication.k": 10,
+ "claim_type.in_af.replication.n": 245,
+ "claim_type.in_af.replication.pct": 4.1,
+ "claim_type.method.ci95": [
+  7.3,
+  11.5
+ ],
+ "claim_type.method.k": 67,
+ "claim_type.method.n": 728,
+ "claim_type.method.pct": 9.2,
+ "claim_type.negative.ci95": [
+  17.2,
+  23.0
+ ],
+ "claim_type.negative.k": 145,
+ "claim_type.negative.n": 728,
+ "claim_type.negative.pct": 19.9,
+ "claim_type.not_in_af.benchmark.ci95": [
+  1.7,
+  4.8
+ ],
+ "claim_type.not_in_af.benchmark.k": 14,
+ "claim_type.not_in_af.benchmark.n": 483,
+ "claim_type.not_in_af.benchmark.pct": 2.9,
+ "claim_type.not_in_af.dataset.ci95": [
+  0.2,
+  1.8
+ ],
+ "claim_type.not_in_af.dataset.k": 3,
+ "claim_type.not_in_af.dataset.n": 483,
+ "claim_type.not_in_af.dataset.pct": 0.6,
+ "claim_type.not_in_af.method.ci95": [
+  6.1,
+  11.1
+ ],
+ "claim_type.not_in_af.method.k": 40,
+ "claim_type.not_in_af.method.n": 483,
+ "claim_type.not_in_af.method.pct": 8.3,
+ "claim_type.not_in_af.negative.ci95": [
+  17.1,
+  24.3
+ ],
+ "claim_type.not_in_af.negative.k": 99,
+ "claim_type.not_in_af.negative.n": 483,
+ "claim_type.not_in_af.negative.pct": 20.5,
+ "claim_type.not_in_af.null.ci95": [
+  0.6,
+  2.7
+ ],
+ "claim_type.not_in_af.null.k": 6,
+ "claim_type.not_in_af.null.n": 483,
+ "claim_type.not_in_af.null.pct": 1.2,
+ "claim_type.not_in_af.positive.ci95": [
+  59.2,
+  67.7
+ ],
+ "claim_type.not_in_af.positive.k": 307,
+ "claim_type.not_in_af.positive.n": 483,
+ "claim_type.not_in_af.positive.pct": 63.6,
+ "claim_type.not_in_af.replication.ci95": [
+  1.7,
+  4.8
+ ],
+ "claim_type.not_in_af.replication.k": 14,
+ "claim_type.not_in_af.replication.n": 483,
+ "claim_type.not_in_af.replication.pct": 2.9,
+ "claim_type.null.ci95": [
+  0.7,
+  2.3
+ ],
+ "claim_type.null.k": 9,
+ "claim_type.null.n": 728,
+ "claim_type.null.pct": 1.2,
+ "claim_type.positive.ci95": [
+  59.3,
+  66.3
+ ],
+ "claim_type.positive.k": 458,
+ "claim_type.positive.n": 728,
+ "claim_type.positive.pct": 62.9,
+ "claim_type.replication.ci95": [
+  2.2,
+  4.9
+ ],
+ "claim_type.replication.k": 24,
+ "claim_type.replication.n": 728,
+ "claim_type.replication.pct": 3.3,
+ "claim_type_by_period.benchmark.2024H2.ci95": [
+  0.6,
+  7.7
+ ],
+ "claim_type_by_period.benchmark.2024H2.k": 2,
+ "claim_type_by_period.benchmark.2024H2.n": 90,
+ "claim_type_by_period.benchmark.2024H2.pct": 2.2,
+ "claim_type_by_period.benchmark.2025H1.ci95": [
+  0.6,
+  5.4
+ ],
+ "claim_type_by_period.benchmark.2025H1.k": 3,
+ "claim_type_by_period.benchmark.2025H1.n": 159,
+ "claim_type_by_period.benchmark.2025H1.pct": 1.9,
+ "claim_type_by_period.benchmark.2025H2.ci95": [
+  0.9,
+  5.6
+ ],
+ "claim_type_by_period.benchmark.2025H2.k": 4,
+ "claim_type_by_period.benchmark.2025H2.n": 179,
+ "claim_type_by_period.benchmark.2025H2.pct": 2.2,
+ "claim_type_by_period.benchmark.2026H1.ci95": [
+  2.3,
+  8.1
+ ],
+ "claim_type_by_period.benchmark.2026H1.k": 9,
+ "claim_type_by_period.benchmark.2026H1.n": 206,
+ "claim_type_by_period.benchmark.2026H1.pct": 4.4,
+ "claim_type_by_period.benchmark.2026H2.ci95": [
+  0.2,
+  5.8
+ ],
+ "claim_type_by_period.benchmark.2026H2.k": 1,
+ "claim_type_by_period.benchmark.2026H2.n": 94,
+ "claim_type_by_period.benchmark.2026H2.pct": 1.1,
+ "claim_type_by_period.method.2024H2.ci95": [
+  3.8,
+  15.2
+ ],
+ "claim_type_by_period.method.2024H2.k": 7,
+ "claim_type_by_period.method.2024H2.n": 90,
+ "claim_type_by_period.method.2024H2.pct": 7.8,
+ "claim_type_by_period.method.2025H1.ci95": [
+  5.3,
+  14.2
+ ],
+ "claim_type_by_period.method.2025H1.k": 14,
+ "claim_type_by_period.method.2025H1.n": 159,
+ "claim_type_by_period.method.2025H1.pct": 8.8,
+ "claim_type_by_period.method.2025H2.ci95": [
+  7.8,
+  17.3
+ ],
+ "claim_type_by_period.method.2025H2.k": 21,
+ "claim_type_by_period.method.2025H2.n": 179,
+ "claim_type_by_period.method.2025H2.pct": 11.7,
+ "claim_type_by_period.method.2026H1.ci95": [
+  2.7,
+  8.7
+ ],
+ "claim_type_by_period.method.2026H1.k": 10,
+ "claim_type_by_period.method.2026H1.n": 206,
+ "claim_type_by_period.method.2026H1.pct": 4.9,
+ "claim_type_by_period.method.2026H2.ci95": [
+  9.9,
+  24.7
+ ],
+ "claim_type_by_period.method.2026H2.k": 15,
+ "claim_type_by_period.method.2026H2.n": 94,
+ "claim_type_by_period.method.2026H2.pct": 16.0,
+ "claim_type_by_period.negative.2024H2.ci95": [
+  11.2,
+  26.9
+ ],
+ "claim_type_by_period.negative.2024H2.k": 16,
+ "claim_type_by_period.negative.2024H2.n": 90,
+ "claim_type_by_period.negative.2024H2.pct": 17.8,
+ "claim_type_by_period.negative.2025H1.ci95": [
+  13.0,
+  25.0
+ ],
+ "claim_type_by_period.negative.2025H1.k": 29,
+ "claim_type_by_period.negative.2025H1.n": 159,
+ "claim_type_by_period.negative.2025H1.pct": 18.2,
+ "claim_type_by_period.negative.2025H2.ci95": [
+  14.4,
+  26.0
+ ],
+ "claim_type_by_period.negative.2025H2.k": 35,
+ "claim_type_by_period.negative.2025H2.n": 179,
+ "claim_type_by_period.negative.2025H2.pct": 19.6,
+ "claim_type_by_period.negative.2026H1.ci95": [
+  17.6,
+  29.0
+ ],
+ "claim_type_by_period.negative.2026H1.k": 47,
+ "claim_type_by_period.negative.2026H1.n": 206,
+ "claim_type_by_period.negative.2026H1.pct": 22.8,
+ "claim_type_by_period.negative.2026H2.ci95": [
+  12.5,
+  28.3
+ ],
+ "claim_type_by_period.negative.2026H2.k": 18,
+ "claim_type_by_period.negative.2026H2.n": 94,
+ "claim_type_by_period.negative.2026H2.pct": 19.1,
+ "claim_type_by_period.null.2024H2.ci95": [
+  0.0,
+  4.1
+ ],
+ "claim_type_by_period.null.2024H2.k": 0,
+ "claim_type_by_period.null.2024H2.n": 90,
+ "claim_type_by_period.null.2024H2.pct": 0.0,
+ "claim_type_by_period.null.2025H1.ci95": [
+  0.3,
+  4.5
+ ],
+ "claim_type_by_period.null.2025H1.k": 2,
+ "claim_type_by_period.null.2025H1.n": 159,
+ "claim_type_by_period.null.2025H1.pct": 1.3,
+ "claim_type_by_period.null.2025H2.ci95": [
+  0.3,
+  4.0
+ ],
+ "claim_type_by_period.null.2025H2.k": 2,
+ "claim_type_by_period.null.2025H2.n": 179,
+ "claim_type_by_period.null.2025H2.pct": 1.1,
+ "claim_type_by_period.null.2026H1.ci95": [
+  0.3,
+  3.5
+ ],
+ "claim_type_by_period.null.2026H1.k": 2,
+ "claim_type_by_period.null.2026H1.n": 206,
+ "claim_type_by_period.null.2026H1.pct": 1.0,
+ "claim_type_by_period.null.2026H2.ci95": [
+  1.1,
+  9.0
+ ],
+ "claim_type_by_period.null.2026H2.k": 3,
+ "claim_type_by_period.null.2026H2.n": 94,
+ "claim_type_by_period.null.2026H2.pct": 3.2,
+ "claim_type_by_period.positive.2024H2.ci95": [
+  57.6,
+  76.5
+ ],
+ "claim_type_by_period.positive.2024H2.k": 61,
+ "claim_type_by_period.positive.2024H2.n": 90,
+ "claim_type_by_period.positive.2024H2.pct": 67.8,
+ "claim_type_by_period.positive.2025H1.ci95": [
+  57.1,
+  71.8
+ ],
+ "claim_type_by_period.positive.2025H1.k": 103,
+ "claim_type_by_period.positive.2025H1.n": 159,
+ "claim_type_by_period.positive.2025H1.pct": 64.8,
+ "claim_type_by_period.positive.2025H2.ci95": [
+  54.2,
+  68.3
+ ],
+ "claim_type_by_period.positive.2025H2.k": 110,
+ "claim_type_by_period.positive.2025H2.n": 179,
+ "claim_type_by_period.positive.2025H2.pct": 61.5,
+ "claim_type_by_period.positive.2026H1.ci95": [
+  58.3,
+  71.2
+ ],
+ "claim_type_by_period.positive.2026H1.k": 134,
+ "claim_type_by_period.positive.2026H1.n": 206,
+ "claim_type_by_period.positive.2026H1.pct": 65.0,
+ "claim_type_by_period.positive.2026H2.ci95": [
+  43.2,
+  63.0
+ ],
+ "claim_type_by_period.positive.2026H2.k": 50,
+ "claim_type_by_period.positive.2026H2.n": 94,
+ "claim_type_by_period.positive.2026H2.pct": 53.2,
+ "claim_type_by_period.replication.2024H2.ci95": [
+  0.6,
+  7.7
+ ],
+ "claim_type_by_period.replication.2024H2.k": 2,
+ "claim_type_by_period.replication.2024H2.n": 90,
+ "claim_type_by_period.replication.2024H2.pct": 2.2,
+ "claim_type_by_period.replication.2025H1.ci95": [
+  2.1,
+  8.8
+ ],
+ "claim_type_by_period.replication.2025H1.k": 7,
+ "claim_type_by_period.replication.2025H1.n": 159,
+ "claim_type_by_period.replication.2025H1.pct": 4.4,
+ "claim_type_by_period.replication.2025H2.ci95": [
+  1.2,
+  6.4
+ ],
+ "claim_type_by_period.replication.2025H2.k": 5,
+ "claim_type_by_period.replication.2025H2.n": 179,
+ "claim_type_by_period.replication.2025H2.pct": 2.8,
+ "claim_type_by_period.replication.2026H1.ci95": [
+  0.5,
+  4.2
+ ],
+ "claim_type_by_period.replication.2026H1.k": 3,
+ "claim_type_by_period.replication.2026H1.n": 206,
+ "claim_type_by_period.replication.2026H1.pct": 1.5,
+ "claim_type_by_period.replication.2026H2.ci95": [
+  3.7,
+  14.6
+ ],
+ "claim_type_by_period.replication.2026H2.k": 7,
+ "claim_type_by_period.replication.2026H2.n": 94,
+ "claim_type_by_period.replication.2026H2.pct": 7.4,
+ "claims.confidence.high": 491,
+ "claims.confidence.low": 27,
+ "claims.confidence.medium": 210,
+ "claims.extracted": 741,
+ "claims.projects_after_dedup": 738,
+ "claims.stubs": 10,
+ "claims.substantive": 728,
+ "claims.union_total": 741,
+ "contested.count": 38,
+ "contested.share_of_3plus.ci95": [
+  56.2,
+  80.9
+ ],
+ "contested.share_of_3plus.k": 35,
+ "contested.share_of_3plus.n": 50,
+ "contested.share_of_3plus.pct": 70.0,
+ "dependencies.distinct": 1811,
+ "dependencies.paper.distinct": 744,
+ "dependencies.paper.edges": 1301,
+ "dependencies.paper.singletons.ci95": [
+  70.9,
+  77.2
+ ],
+ "dependencies.paper.singletons.k": 552,
+ "dependencies.paper.singletons.n": 744,
+ "dependencies.paper.singletons.pct": 74.2,
+ "dependencies.paper.top20_share.ci95": [
+  15.9,
+  20.1
+ ],
+ "dependencies.paper.top20_share.k": 233,
+ "dependencies.paper.top20_share.n": 1301,
+ "dependencies.paper.top20_share.pct": 17.9,
+ "dependencies.paper.top40_share.ci95": [
+  24.3,
+  29.1
+ ],
+ "dependencies.paper.top40_share.k": 347,
+ "dependencies.paper.top40_share.n": 1301,
+ "dependencies.paper.top40_share.pct": 26.7,
+ "dependencies.repo.distinct": 670,
+ "dependencies.repo.edges": 807,
+ "dependencies.repo.singletons.ci95": [
+  86.7,
+  91.4
+ ],
+ "dependencies.repo.singletons.k": 598,
+ "dependencies.repo.singletons.n": 670,
+ "dependencies.repo.singletons.pct": 89.3,
+ "dependencies.repo.top15": [
+  [
+   "ukgovernmentbeis/control-arena",
+   10
+  ],
+  [
+   "transformerlensorg/transformerlens",
+   10
+  ],
+  [
+   "jbloomaus/saelens",
+   9
+  ],
+  [
+   "saprmarks/dictionary_learning",
+   5
+  ],
+  [
+   "tatsu-lab/alpaca",
+   5
+  ],
+  [
+   "kitft/natural_language_autoencoders",
+   5
+  ],
+  [
+   "gkroiz/agent-interp-envs",
+   5
+  ],
+  [
+   "adamkarvonen/saebench",
+   5
+  ],
+  [
+   "monology/pile-uncopyrighted",
+   4
+  ],
+  [
+   "safety-research/open-source-alignment-faking",
+   4
+  ],
+  [
+   "google/big-bench",
+   4
+  ],
+  [
+   "apolloresearch/deception-detection",
+   4
+  ],
+  [
+   "redwoodresearch/alignment_faking_public",
+   4
+  ],
+  [
+   "ukgovernmentbeis/inspect_ai",
+   4
+  ],
+  [
+   "transformer-circuits.pub/2022/toy_model",
+   4
+  ]
+ ],
+ "dependencies.repo.top20_share.ci95": [
+  10.3,
+  14.8
+ ],
+ "dependencies.repo.top20_share.k": 100,
+ "dependencies.repo.top20_share.n": 807,
+ "dependencies.repo.top20_share.pct": 12.4,
+ "dependencies.repo.top40_share.ci95": [
+  15.5,
+  20.8
+ ],
+ "dependencies.repo.top40_share.k": 145,
+ "dependencies.repo.top40_share.n": 807,
+ "dependencies.repo.top40_share.pct": 18.0,
+ "dependencies.top20": [
+  [
+   "arxiv:2312.06942",
+   27,
+   true
+  ],
+  [
+   "arxiv:2502.17424",
+   23,
+   true
+  ],
+  [
+   "arxiv:2412.14093",
+   22,
+   true
+  ],
+  [
+   "arxiv:2406.11717",
+   15,
+   true
+  ],
+  [
+   "arxiv:2401.05566",
+   15,
+   true
+  ],
+  [
+   "arxiv:2503.11926",
+   12,
+   true
+  ],
+  [
+   "ukgovernmentbeis/control-arena",
+   10,
+   true
+  ],
+  [
+   "transformerlensorg/transformerlens",
+   10,
+   true
+  ],
+  [
+   "jbloomaus/saelens",
+   9,
+   true
+  ],
+  [
+   "arxiv:2507.11473",
+   9,
+   true
+  ],
+  [
+   "arxiv:2307.15043",
+   9,
+   true
+  ],
+  [
+   "arxiv:2312.06681",
+   9,
+   true
+  ],
+  [
+   "arxiv:2503.10965",
+   9,
+   true
+  ],
+  [
+   "arxiv:2506.11613",
+   9,
+   true
+  ],
+  [
+   "arxiv:2412.04984",
+   9,
+   true
+  ],
+  [
+   "arxiv:2507.14805",
+   9,
+   true
+  ],
+  [
+   "arxiv:2409.14507",
+   9,
+   true
+  ],
+  [
+   "arxiv:2403.19647",
+   8,
+   true
+  ],
+  [
+   "arxiv:2405.19550",
+   8,
+   true
+  ],
+  [
+   "arxiv:2308.10248",
+   8,
+   true
+  ]
+ ],
+ "dependencies.top20_share_of_edges.ci95": [
+  8.2,
+  10.4
+ ],
+ "dependencies.top20_share_of_edges.k": 239,
+ "dependencies.top20_share_of_edges.n": 2580,
+ "dependencies.top20_share_of_edges.pct": 9.3,
+ "future_work.items": 1937,
+ "future_work.posts_with_any.ci95": [
+  78.3,
+  84.0
+ ],
+ "future_work.posts_with_any.k": 592,
+ "future_work.posts_with_any.n": 728,
+ "future_work.posts_with_any.pct": 81.3,
+ "future_work.with_inherited_code.ci95": [
+  46.9,
+  54.2
+ ],
+ "future_work.with_inherited_code.k": 368,
+ "future_work.with_inherited_code.n": 728,
+ "future_work.with_inherited_code.pct": 50.5,
+ "judge.ablation.ci95": [
+  62.8,
+  69.7
+ ],
+ "judge.ablation.k": 483,
+ "judge.ablation.n": 728,
+ "judge.ablation.pct": 66.3,
+ "judge.any_uncertainty.ci95": [
+  16.7,
+  22.4
+ ],
+ "judge.any_uncertainty.k": 141,
+ "judge.any_uncertainty.n": 728,
+ "judge.any_uncertainty.pct": 19.4,
+ "judge.baseline.ci95": [
+  88.3,
+  92.6
+ ],
+ "judge.baseline.k": 660,
+ "judge.baseline.n": 728,
+ "judge.baseline.pct": 90.7,
+ "judge.held_out.ci95": [
+  31.0,
+  37.9
+ ],
+ "judge.held_out.k": 250,
+ "judge.held_out.n": 728,
+ "judge.held_out.pct": 34.3,
+ "judge.in_af.any_uncertainty.ci95": [
+  15.5,
+  25.5
+ ],
+ "judge.in_af.any_uncertainty.k": 49,
+ "judge.in_af.any_uncertainty.n": 245,
+ "judge.in_af.any_uncertainty.pct": 20.0,
+ "judge.in_af.baseline.ci95": [
+  89.7,
+  95.9
+ ],
+ "judge.in_af.baseline.k": 229,
+ "judge.in_af.baseline.n": 245,
+ "judge.in_af.baseline.pct": 93.5,
+ "judge.in_af.model_families_2plus.ci95": [
+  49.2,
+  61.6
+ ],
+ "judge.in_af.model_families_2plus.k": 136,
+ "judge.in_af.model_families_2plus.n": 245,
+ "judge.in_af.model_families_2plus.pct": 55.5,
+ "judge.model_families_2plus.ci95": [
+  47.5,
+  54.7
+ ],
+ "judge.model_families_2plus.k": 372,
+ "judge.model_families_2plus.n": 728,
+ "judge.model_families_2plus.pct": 51.1,
+ "judge.model_families_3plus.ci95": [
+  27.8,
+  34.5
+ ],
+ "judge.model_families_3plus.k": 226,
+ "judge.model_families_3plus.n": 728,
+ "judge.model_families_3plus.pct": 31.0,
+ "judge.not_in_af.any_uncertainty.ci95": [
+  15.8,
+  22.8
+ ],
+ "judge.not_in_af.any_uncertainty.k": 92,
+ "judge.not_in_af.any_uncertainty.n": 483,
+ "judge.not_in_af.any_uncertainty.pct": 19.0,
+ "judge.not_in_af.baseline.ci95": [
+  86.2,
+  91.7
+ ],
+ "judge.not_in_af.baseline.k": 431,
+ "judge.not_in_af.baseline.n": 483,
+ "judge.not_in_af.baseline.pct": 89.2,
+ "judge.not_in_af.model_families_2plus.ci95": [
+  44.4,
+  53.3
+ ],
+ "judge.not_in_af.model_families_2plus.k": 236,
+ "judge.not_in_af.model_families_2plus.n": 483,
+ "judge.not_in_af.model_families_2plus.pct": 48.9,
+ "judge.prereg.ci95": [
+  1.4,
+  3.5
+ ],
+ "judge.prereg.k": 16,
+ "judge.prereg.n": 728,
+ "judge.prereg.pct": 2.2,
+ "judge.seeds_n_given.ci95": [
+  11.4,
+  16.4
+ ],
+ "judge.seeds_n_given.k": 100,
+ "judge.seeds_n_given.n": 728,
+ "judge.seeds_n_given.pct": 13.7,
+ "judge.uncertainty.ci": 89,
+ "judge.uncertainty.none": 587,
+ "judge.uncertainty.se": 20,
+ "judge.uncertainty.seeds": 32,
+ "judge_vs_regex.ablation": 43.4,
+ "judge_vs_regex.any_uncertainty": 2.0,
+ "judge_vs_regex.baseline": 40.6,
+ "judge_vs_regex.held_out": 19.1,
+ "judge_vs_regex.model_families_2plus": 41.9,
+ "judge_vs_regex.prereg": 0.6,
+ "judge_vs_regex.seeds_n_given": 7.4,
+ "phenomena.distinct": 130,
+ "phenomena.posts_in_3plus.ci95": [
+  85.0,
+  89.8
+ ],
+ "phenomena.posts_in_3plus.k": 638,
+ "phenomena.posts_in_3plus.n": 728,
+ "phenomena.posts_in_3plus.pct": 87.6,
+ "phenomena.with_3plus": 50,
+ "phenomenon.activation_steering.baseline.ci95": [
+  79.3,
+  98.2
+ ],
+ "phenomenon.activation_steering.baseline.k": 29,
+ "phenomenon.activation_steering.baseline.n": 31,
+ "phenomenon.activation_steering.baseline.pct": 93.5,
+ "phenomenon.activation_steering.code.ci95": [
+  50.1,
+  81.4
+ ],
+ "phenomenon.activation_steering.code.k": 21,
+ "phenomenon.activation_steering.code.n": 31,
+ "phenomenon.activation_steering.code.pct": 67.7,
+ "phenomenon.activation_steering.first_authors": 31,
+ "phenomenon.activation_steering.model_families": 21,
+ "phenomenon.activation_steering.n": 31,
+ "phenomenon.activation_steering.negative": 6,
+ "phenomenon.activation_steering.null": 0,
+ "phenomenon.activation_steering.positive": 19,
+ "phenomenon.activation_steering.span": [
+  "2024-09-11",
+  "2026-08-21"
+ ],
+ "phenomenon.activation_steering.uncertainty.ci95": [
+  5.1,
+  28.9
+ ],
+ "phenomenon.activation_steering.uncertainty.k": 4,
+ "phenomenon.activation_steering.uncertainty.n": 31,
+ "phenomenon.activation_steering.uncertainty.pct": 12.9,
+ "phenomenon.agentic_task_capability.baseline.ci95": [
+  52.9,
+  97.8
+ ],
+ "phenomenon.agentic_task_capability.baseline.k": 7,
+ "phenomenon.agentic_task_capability.baseline.n": 8,
+ "phenomenon.agentic_task_capability.baseline.pct": 87.5,
+ "phenomenon.agentic_task_capability.code.ci95": [
+  13.7,
+  69.4
+ ],
+ "phenomenon.agentic_task_capability.code.k": 3,
+ "phenomenon.agentic_task_capability.code.n": 8,
+ "phenomenon.agentic_task_capability.code.pct": 37.5,
+ "phenomenon.agentic_task_capability.first_authors": 8,
+ "phenomenon.agentic_task_capability.model_families": 22,
+ "phenomenon.agentic_task_capability.n": 8,
+ "phenomenon.agentic_task_capability.negative": 4,
+ "phenomenon.agentic_task_capability.null": 0,
+ "phenomenon.agentic_task_capability.positive": 3,
+ "phenomenon.agentic_task_capability.span": [
+  "2024-09-29",
+  "2026-05-20"
+ ],
+ "phenomenon.agentic_task_capability.uncertainty.ci95": [
+  13.7,
+  69.4
+ ],
+ "phenomenon.agentic_task_capability.uncertainty.k": 3,
+ "phenomenon.agentic_task_capability.uncertainty.n": 8,
+ "phenomenon.agentic_task_capability.uncertainty.pct": 37.5,
+ "phenomenon.ai_control_protocols.baseline.ci95": [
+  75.8,
+  96.8
+ ],
+ "phenomenon.ai_control_protocols.baseline.k": 29,
+ "phenomenon.ai_control_protocols.baseline.n": 32,
+ "phenomenon.ai_control_protocols.baseline.pct": 90.6,
+ "phenomenon.ai_control_protocols.code.ci95": [
+  28.2,
+  60.7
+ ],
+ "phenomenon.ai_control_protocols.code.k": 14,
+ "phenomenon.ai_control_protocols.code.n": 32,
+ "phenomenon.ai_control_protocols.code.pct": 43.8,
+ "phenomenon.ai_control_protocols.first_authors": 28,
+ "phenomenon.ai_control_protocols.model_families": 32,
+ "phenomenon.ai_control_protocols.n": 32,
+ "phenomenon.ai_control_protocols.negative": 10,
+ "phenomenon.ai_control_protocols.null": 2,
+ "phenomenon.ai_control_protocols.positive": 12,
+ "phenomenon.ai_control_protocols.span": [
+  "2024-09-01",
+  "2026-08-19"
+ ],
+ "phenomenon.ai_control_protocols.uncertainty.ci95": [
+  20.4,
+  51.7
+ ],
+ "phenomenon.ai_control_protocols.uncertainty.k": 11,
+ "phenomenon.ai_control_protocols.uncertainty.n": 32,
+ "phenomenon.ai_control_protocols.uncertainty.pct": 34.4,
+ "phenomenon.alignment_auditing.baseline.ci95": [
+  43.8,
+  100.0
+ ],
+ "phenomenon.alignment_auditing.baseline.k": 3,
+ "phenomenon.alignment_auditing.baseline.n": 3,
+ "phenomenon.alignment_auditing.baseline.pct": 100.0,
+ "phenomenon.alignment_auditing.code.ci95": [
+  6.1,
+  79.2
+ ],
+ "phenomenon.alignment_auditing.code.k": 1,
+ "phenomenon.alignment_auditing.code.n": 3,
+ "phenomenon.alignment_auditing.code.pct": 33.3,
+ "phenomenon.alignment_auditing.first_authors": 2,
+ "phenomenon.alignment_auditing.model_families": 3,
+ "phenomenon.alignment_auditing.n": 3,
+ "phenomenon.alignment_auditing.negative": 0,
+ "phenomenon.alignment_auditing.null": 0,
+ "phenomenon.alignment_auditing.positive": 3,
+ "phenomenon.alignment_auditing.span": [
+  "2025-03-13",
+  "2026-06-20"
+ ],
+ "phenomenon.alignment_auditing.uncertainty.ci95": [
+  0.0,
+  56.2
+ ],
+ "phenomenon.alignment_auditing.uncertainty.k": 0,
+ "phenomenon.alignment_auditing.uncertainty.n": 3,
+ "phenomenon.alignment_auditing.uncertainty.pct": 0.0,
+ "phenomenon.alignment_faking.baseline.ci95": [
+  85.1,
+  100.0
+ ],
+ "phenomenon.alignment_faking.baseline.k": 22,
+ "phenomenon.alignment_faking.baseline.n": 22,
+ "phenomenon.alignment_faking.baseline.pct": 100.0,
+ "phenomenon.alignment_faking.code.ci95": [
+  34.7,
+  73.1
+ ],
+ "phenomenon.alignment_faking.code.k": 12,
+ "phenomenon.alignment_faking.code.n": 22,
+ "phenomenon.alignment_faking.code.pct": 54.5,
+ "phenomenon.alignment_faking.first_authors": 20,
+ "phenomenon.alignment_faking.model_families": 21,
+ "phenomenon.alignment_faking.n": 22,
+ "phenomenon.alignment_faking.negative": 3,
+ "phenomenon.alignment_faking.null": 0,
+ "phenomenon.alignment_faking.positive": 13,
+ "phenomenon.alignment_faking.span": [
+  "2024-12-18",
+  "2026-07-27"
+ ],
+ "phenomenon.alignment_faking.uncertainty.ci95": [
+  13.2,
+  48.2
+ ],
+ "phenomenon.alignment_faking.uncertainty.k": 6,
+ "phenomenon.alignment_faking.uncertainty.n": 22,
+ "phenomenon.alignment_faking.uncertainty.pct": 27.3,
+ "phenomenon.attribution___attribution_patching.baseline.ci95": [
+  43.8,
+  100.0
+ ],
+ "phenomenon.attribution___attribution_patching.baseline.k": 3,
+ "phenomenon.attribution___attribution_patching.baseline.n": 3,
+ "phenomenon.attribution___attribution_patching.baseline.pct": 100.0,
+ "phenomenon.attribution___attribution_patching.code.ci95": [
+  20.8,
+  93.9
+ ],
+ "phenomenon.attribution___attribution_patching.code.k": 2,
+ "phenomenon.attribution___attribution_patching.code.n": 3,
+ "phenomenon.attribution___attribution_patching.code.pct": 66.7,
+ "phenomenon.attribution___attribution_patching.first_authors": 3,
+ "phenomenon.attribution___attribution_patching.model_families": 5,
+ "phenomenon.attribution___attribution_patching.n": 3,
+ "phenomenon.attribution___attribution_patching.negative": 0,
+ "phenomenon.attribution___attribution_patching.null": 0,
+ "phenomenon.attribution___attribution_patching.positive": 2,
+ "phenomenon.attribution___attribution_patching.span": [
+  "2024-10-14",
+  "2025-11-01"
+ ],
+ "phenomenon.attribution___attribution_patching.uncertainty.ci95": [
+  0.0,
+  56.2
+ ],
+ "phenomenon.attribution___attribution_patching.uncertainty.k": 0,
+ "phenomenon.attribution___attribution_patching.uncertainty.n": 3,
+ "phenomenon.attribution___attribution_patching.uncertainty.pct": 0.0,
+ "phenomenon.backdoors___sleeper_agents.baseline.ci95": [
+  43.8,
+  100.0
+ ],
+ "phenomenon.backdoors___sleeper_agents.baseline.k": 3,
+ "phenomenon.backdoors___sleeper_agents.baseline.n": 3,
+ "phenomenon.backdoors___sleeper_agents.baseline.pct": 100.0,
+ "phenomenon.backdoors___sleeper_agents.code.ci95": [
+  6.1,
+  79.2
+ ],
+ "phenomenon.backdoors___sleeper_agents.code.k": 1,
+ "phenomenon.backdoors___sleeper_agents.code.n": 3,
+ "phenomenon.backdoors___sleeper_agents.code.pct": 33.3,
+ "phenomenon.backdoors___sleeper_agents.first_authors": 3,
+ "phenomenon.backdoors___sleeper_agents.model_families": 3,
+ "phenomenon.backdoors___sleeper_agents.n": 3,
+ "phenomenon.backdoors___sleeper_agents.negative": 1,
+ "phenomenon.backdoors___sleeper_agents.null": 0,
+ "phenomenon.backdoors___sleeper_agents.positive": 2,
+ "phenomenon.backdoors___sleeper_agents.span": [
+  "2025-08-19",
+  "2026-06-10"
+ ],
+ "phenomenon.backdoors___sleeper_agents.uncertainty.ci95": [
+  6.1,
+  79.2
+ ],
+ "phenomenon.backdoors___sleeper_agents.uncertainty.k": 1,
+ "phenomenon.backdoors___sleeper_agents.uncertainty.n": 3,
+ "phenomenon.backdoors___sleeper_agents.uncertainty.pct": 33.3,
+ "phenomenon.benchmark_construction.baseline.ci95": [
+  64.6,
+  100.0
+ ],
+ "phenomenon.benchmark_construction.baseline.k": 7,
+ "phenomenon.benchmark_construction.baseline.n": 7,
+ "phenomenon.benchmark_construction.baseline.pct": 100.0,
+ "phenomenon.benchmark_construction.code.ci95": [
+  25.0,
+  84.2
+ ],
+ "phenomenon.benchmark_construction.code.k": 4,
+ "phenomenon.benchmark_construction.code.n": 7,
+ "phenomenon.benchmark_construction.code.pct": 57.1,
+ "phenomenon.benchmark_construction.first_authors": 7,
+ "phenomenon.benchmark_construction.model_families": 12,
+ "phenomenon.benchmark_construction.n": 7,
+ "phenomenon.benchmark_construction.negative": 0,
+ "phenomenon.benchmark_construction.null": 0,
+ "phenomenon.benchmark_construction.positive": 1,
+ "phenomenon.benchmark_construction.span": [
+  "2025-03-05",
+  "2026-04-15"
+ ],
+ "phenomenon.benchmark_construction.uncertainty.ci95": [
+  0.0,
+  35.4
+ ],
+ "phenomenon.benchmark_construction.uncertainty.k": 0,
+ "phenomenon.benchmark_construction.uncertainty.n": 7,
+ "phenomenon.benchmark_construction.uncertainty.pct": 0.0,
+ "phenomenon.capability_forecasting___time_horizons.baseline.ci95": [
+  49.0,
+  94.3
+ ],
+ "phenomenon.capability_forecasting___time_horizons.baseline.k": 8,
+ "phenomenon.capability_forecasting___time_horizons.baseline.n": 10,
+ "phenomenon.capability_forecasting___time_horizons.baseline.pct": 80.0,
+ "phenomenon.capability_forecasting___time_horizons.code.ci95": [
+  23.7,
+  76.3
+ ],
+ "phenomenon.capability_forecasting___time_horizons.code.k": 5,
+ "phenomenon.capability_forecasting___time_horizons.code.n": 10,
+ "phenomenon.capability_forecasting___time_horizons.code.pct": 50.0,
+ "phenomenon.capability_forecasting___time_horizons.first_authors": 7,
+ "phenomenon.capability_forecasting___time_horizons.model_families": 30,
+ "phenomenon.capability_forecasting___time_horizons.n": 10,
+ "phenomenon.capability_forecasting___time_horizons.negative": 0,
+ "phenomenon.capability_forecasting___time_horizons.null": 0,
+ "phenomenon.capability_forecasting___time_horizons.positive": 9,
+ "phenomenon.capability_forecasting___time_horizons.span": [
+  "2025-03-19",
+  "2026-06-10"
+ ],
+ "phenomenon.capability_forecasting___time_horizons.uncertainty.ci95": [
+  31.3,
+  83.2
+ ],
+ "phenomenon.capability_forecasting___time_horizons.uncertainty.k": 6,
+ "phenomenon.capability_forecasting___time_horizons.uncertainty.n": 10,
+ "phenomenon.capability_forecasting___time_horizons.uncertainty.pct": 60.0,
+ "phenomenon.chain-of-thought_faithfulness.baseline.ci95": [
+  79.6,
+  100.0
+ ],
+ "phenomenon.chain-of-thought_faithfulness.baseline.k": 15,
+ "phenomenon.chain-of-thought_faithfulness.baseline.n": 15,
+ "phenomenon.chain-of-thought_faithfulness.baseline.pct": 100.0,
+ "phenomenon.chain-of-thought_faithfulness.code.ci95": [
+  48.0,
+  89.1
+ ],
+ "phenomenon.chain-of-thought_faithfulness.code.k": 11,
+ "phenomenon.chain-of-thought_faithfulness.code.n": 15,
+ "phenomenon.chain-of-thought_faithfulness.code.pct": 73.3,
+ "phenomenon.chain-of-thought_faithfulness.first_authors": 15,
+ "phenomenon.chain-of-thought_faithfulness.model_families": 15,
+ "phenomenon.chain-of-thought_faithfulness.n": 15,
+ "phenomenon.chain-of-thought_faithfulness.negative": 4,
+ "phenomenon.chain-of-thought_faithfulness.null": 0,
+ "phenomenon.chain-of-thought_faithfulness.positive": 9,
+ "phenomenon.chain-of-thought_faithfulness.span": [
+  "2025-01-15",
+  "2026-07-31"
+ ],
+ "phenomenon.chain-of-thought_faithfulness.uncertainty.ci95": [
+  10.9,
+  52.0
+ ],
+ "phenomenon.chain-of-thought_faithfulness.uncertainty.k": 4,
+ "phenomenon.chain-of-thought_faithfulness.uncertainty.n": 15,
+ "phenomenon.chain-of-thought_faithfulness.uncertainty.pct": 26.7,
+ "phenomenon.chain-of-thought_monitorability.baseline.ci95": [
+  81.6,
+  100.0
+ ],
+ "phenomenon.chain-of-thought_monitorability.baseline.k": 17,
+ "phenomenon.chain-of-thought_monitorability.baseline.n": 17,
+ "phenomenon.chain-of-thought_monitorability.baseline.pct": 100.0,
+ "phenomenon.chain-of-thought_monitorability.code.ci95": [
+  36.0,
+  78.4
+ ],
+ "phenomenon.chain-of-thought_monitorability.code.k": 10,
+ "phenomenon.chain-of-thought_monitorability.code.n": 17,
+ "phenomenon.chain-of-thought_monitorability.code.pct": 58.8,
+ "phenomenon.chain-of-thought_monitorability.first_authors": 16,
+ "phenomenon.chain-of-thought_monitorability.model_families": 25,
+ "phenomenon.chain-of-thought_monitorability.n": 17,
+ "phenomenon.chain-of-thought_monitorability.negative": 5,
+ "phenomenon.chain-of-thought_monitorability.null": 0,
+ "phenomenon.chain-of-thought_monitorability.positive": 9,
+ "phenomenon.chain-of-thought_monitorability.span": [
+  "2025-06-02",
+  "2026-08-16"
+ ],
+ "phenomenon.chain-of-thought_monitorability.uncertainty.ci95": [
+  13.3,
+  53.1
+ ],
+ "phenomenon.chain-of-thought_monitorability.uncertainty.k": 5,
+ "phenomenon.chain-of-thought_monitorability.uncertainty.n": 17,
+ "phenomenon.chain-of-thought_monitorability.uncertainty.pct": 29.4,
+ "phenomenon.circuit_discovery.baseline.ci95": [
+  73.2,
+  97.6
+ ],
+ "phenomenon.circuit_discovery.baseline.k": 21,
+ "phenomenon.circuit_discovery.baseline.n": 23,
+ "phenomenon.circuit_discovery.baseline.pct": 91.3,
+ "phenomenon.circuit_discovery.code.ci95": [
+  53.5,
+  87.5
+ ],
+ "phenomenon.circuit_discovery.code.k": 17,
+ "phenomenon.circuit_discovery.code.n": 23,
+ "phenomenon.circuit_discovery.code.pct": 73.9,
+ "phenomenon.circuit_discovery.first_authors": 22,
+ "phenomenon.circuit_discovery.model_families": 19,
+ "phenomenon.circuit_discovery.n": 23,
+ "phenomenon.circuit_discovery.negative": 5,
+ "phenomenon.circuit_discovery.null": 0,
+ "phenomenon.circuit_discovery.positive": 16,
+ "phenomenon.circuit_discovery.span": [
+  "2024-11-15",
+  "2026-08-18"
+ ],
+ "phenomenon.circuit_discovery.uncertainty.ci95": [
+  2.4,
+  26.8
+ ],
+ "phenomenon.circuit_discovery.uncertainty.k": 2,
+ "phenomenon.circuit_discovery.uncertainty.n": 23,
+ "phenomenon.circuit_discovery.uncertainty.pct": 8.7,
+ "phenomenon.cot_obfuscation.baseline.ci95": [
+  75.7,
+  100.0
+ ],
+ "phenomenon.cot_obfuscation.baseline.k": 12,
+ "phenomenon.cot_obfuscation.baseline.n": 12,
+ "phenomenon.cot_obfuscation.baseline.pct": 100.0,
+ "phenomenon.cot_obfuscation.code.ci95": [
+  13.8,
+  60.9
+ ],
+ "phenomenon.cot_obfuscation.code.k": 4,
+ "phenomenon.cot_obfuscation.code.n": 12,
+ "phenomenon.cot_obfuscation.code.pct": 33.3,
+ "phenomenon.cot_obfuscation.first_authors": 11,
+ "phenomenon.cot_obfuscation.model_families": 15,
+ "phenomenon.cot_obfuscation.n": 12,
+ "phenomenon.cot_obfuscation.negative": 4,
+ "phenomenon.cot_obfuscation.null": 0,
+ "phenomenon.cot_obfuscation.positive": 8,
+ "phenomenon.cot_obfuscation.span": [
+  "2025-03-11",
+  "2026-04-17"
+ ],
+ "phenomenon.cot_obfuscation.uncertainty.ci95": [
+  13.8,
+  60.9
+ ],
+ "phenomenon.cot_obfuscation.uncertainty.k": 4,
+ "phenomenon.cot_obfuscation.uncertainty.n": 12,
+ "phenomenon.cot_obfuscation.uncertainty.pct": 33.3,
+ "phenomenon.crosscoder___model_diffing.baseline.ci95": [
+  66.7,
+  98.6
+ ],
+ "phenomenon.crosscoder___model_diffing.baseline.k": 12,
+ "phenomenon.crosscoder___model_diffing.baseline.n": 13,
+ "phenomenon.crosscoder___model_diffing.baseline.pct": 92.3,
+ "phenomenon.crosscoder___model_diffing.code.ci95": [
+  29.1,
+  76.8
+ ],
+ "phenomenon.crosscoder___model_diffing.code.k": 7,
+ "phenomenon.crosscoder___model_diffing.code.n": 13,
+ "phenomenon.crosscoder___model_diffing.code.pct": 53.8,
+ "phenomenon.crosscoder___model_diffing.first_authors": 12,
+ "phenomenon.crosscoder___model_diffing.model_families": 13,
+ "phenomenon.crosscoder___model_diffing.n": 13,
+ "phenomenon.crosscoder___model_diffing.negative": 1,
+ "phenomenon.crosscoder___model_diffing.null": 0,
+ "phenomenon.crosscoder___model_diffing.positive": 7,
+ "phenomenon.crosscoder___model_diffing.span": [
+  "2024-09-04",
+  "2026-08-15"
+ ],
+ "phenomenon.crosscoder___model_diffing.uncertainty.ci95": [
+  4.3,
+  42.2
+ ],
+ "phenomenon.crosscoder___model_diffing.uncertainty.k": 2,
+ "phenomenon.crosscoder___model_diffing.uncertainty.n": 13,
+ "phenomenon.crosscoder___model_diffing.uncertainty.pct": 15.4,
+ "phenomenon.deceptive_alignment___scheming.baseline.ci95": [
+  80.6,
+  100.0
+ ],
+ "phenomenon.deceptive_alignment___scheming.baseline.k": 16,
+ "phenomenon.deceptive_alignment___scheming.baseline.n": 16,
+ "phenomenon.deceptive_alignment___scheming.baseline.pct": 100.0,
+ "phenomenon.deceptive_alignment___scheming.code.ci95": [
+  23.1,
+  66.8
+ ],
+ "phenomenon.deceptive_alignment___scheming.code.k": 7,
+ "phenomenon.deceptive_alignment___scheming.code.n": 16,
+ "phenomenon.deceptive_alignment___scheming.code.pct": 43.8,
+ "phenomenon.deceptive_alignment___scheming.first_authors": 13,
+ "phenomenon.deceptive_alignment___scheming.model_families": 24,
+ "phenomenon.deceptive_alignment___scheming.n": 16,
+ "phenomenon.deceptive_alignment___scheming.negative": 4,
+ "phenomenon.deceptive_alignment___scheming.null": 0,
+ "phenomenon.deceptive_alignment___scheming.positive": 12,
+ "phenomenon.deceptive_alignment___scheming.span": [
+  "2024-12-05",
+  "2026-07-03"
+ ],
+ "phenomenon.deceptive_alignment___scheming.uncertainty.ci95": [
+  3.5,
+  36.0
+ ],
+ "phenomenon.deceptive_alignment___scheming.uncertainty.k": 2,
+ "phenomenon.deceptive_alignment___scheming.uncertainty.n": 16,
+ "phenomenon.deceptive_alignment___scheming.uncertainty.pct": 12.5,
+ "phenomenon.dictionary_learning_method.baseline.ci95": [
+  75.7,
+  100.0
+ ],
+ "phenomenon.dictionary_learning_method.baseline.k": 12,
+ "phenomenon.dictionary_learning_method.baseline.n": 12,
+ "phenomenon.dictionary_learning_method.baseline.pct": 100.0,
+ "phenomenon.dictionary_learning_method.code.ci95": [
+  46.8,
+  91.1
+ ],
+ "phenomenon.dictionary_learning_method.code.k": 9,
+ "phenomenon.dictionary_learning_method.code.n": 12,
+ "phenomenon.dictionary_learning_method.code.pct": 75.0,
+ "phenomenon.dictionary_learning_method.first_authors": 10,
+ "phenomenon.dictionary_learning_method.model_families": 5,
+ "phenomenon.dictionary_learning_method.n": 12,
+ "phenomenon.dictionary_learning_method.negative": 3,
+ "phenomenon.dictionary_learning_method.null": 0,
+ "phenomenon.dictionary_learning_method.positive": 6,
+ "phenomenon.dictionary_learning_method.span": [
+  "2024-10-07",
+  "2026-05-16"
+ ],
+ "phenomenon.dictionary_learning_method.uncertainty.ci95": [
+  0.0,
+  24.3
+ ],
+ "phenomenon.dictionary_learning_method.uncertainty.k": 0,
+ "phenomenon.dictionary_learning_method.uncertainty.n": 12,
+ "phenomenon.dictionary_learning_method.uncertainty.pct": 0.0,
+ "phenomenon.emergent_misalignment.baseline.ci95": [
+  83.2,
+  100.0
+ ],
+ "phenomenon.emergent_misalignment.baseline.k": 19,
+ "phenomenon.emergent_misalignment.baseline.n": 19,
+ "phenomenon.emergent_misalignment.baseline.pct": 100.0,
+ "phenomenon.emergent_misalignment.code.ci95": [
+  23.1,
+  63.7
+ ],
+ "phenomenon.emergent_misalignment.code.k": 8,
+ "phenomenon.emergent_misalignment.code.n": 19,
+ "phenomenon.emergent_misalignment.code.pct": 42.1,
+ "phenomenon.emergent_misalignment.first_authors": 18,
+ "phenomenon.emergent_misalignment.model_families": 11,
+ "phenomenon.emergent_misalignment.n": 19,
+ "phenomenon.emergent_misalignment.negative": 2,
+ "phenomenon.emergent_misalignment.null": 0,
+ "phenomenon.emergent_misalignment.positive": 14,
+ "phenomenon.emergent_misalignment.span": [
+  "2025-02-25",
+  "2026-07-09"
+ ],
+ "phenomenon.emergent_misalignment.uncertainty.ci95": [
+  23.1,
+  63.7
+ ],
+ "phenomenon.emergent_misalignment.uncertainty.k": 8,
+ "phenomenon.emergent_misalignment.uncertainty.n": 19,
+ "phenomenon.emergent_misalignment.uncertainty.pct": 42.1,
+ "phenomenon.eval_methodology_critique.baseline.ci95": [
+  60.5,
+  89.8
+ ],
+ "phenomenon.eval_methodology_critique.baseline.k": 22,
+ "phenomenon.eval_methodology_critique.baseline.n": 28,
+ "phenomenon.eval_methodology_critique.baseline.pct": 78.6,
+ "phenomenon.eval_methodology_critique.code.ci95": [
+  56.6,
+  87.3
+ ],
+ "phenomenon.eval_methodology_critique.code.k": 21,
+ "phenomenon.eval_methodology_critique.code.n": 28,
+ "phenomenon.eval_methodology_critique.code.pct": 75.0,
+ "phenomenon.eval_methodology_critique.first_authors": 26,
+ "phenomenon.eval_methodology_critique.model_families": 39,
+ "phenomenon.eval_methodology_critique.n": 28,
+ "phenomenon.eval_methodology_critique.negative": 13,
+ "phenomenon.eval_methodology_critique.null": 1,
+ "phenomenon.eval_methodology_critique.positive": 8,
+ "phenomenon.eval_methodology_critique.span": [
+  "2024-10-15",
+  "2026-07-23"
+ ],
+ "phenomenon.eval_methodology_critique.uncertainty.ci95": [
+  17.9,
+  50.7
+ ],
+ "phenomenon.eval_methodology_critique.uncertainty.k": 9,
+ "phenomenon.eval_methodology_critique.uncertainty.n": 28,
+ "phenomenon.eval_methodology_critique.uncertainty.pct": 32.1,
+ "phenomenon.evaluation_awareness.baseline.ci95": [
+  74.2,
+  99.0
+ ],
+ "phenomenon.evaluation_awareness.baseline.k": 17,
+ "phenomenon.evaluation_awareness.baseline.n": 18,
+ "phenomenon.evaluation_awareness.baseline.pct": 94.4,
+ "phenomenon.evaluation_awareness.code.ci95": [
+  24.6,
+  66.3
+ ],
+ "phenomenon.evaluation_awareness.code.k": 8,
+ "phenomenon.evaluation_awareness.code.n": 18,
+ "phenomenon.evaluation_awareness.code.pct": 44.4,
+ "phenomenon.evaluation_awareness.first_authors": 17,
+ "phenomenon.evaluation_awareness.model_families": 28,
+ "phenomenon.evaluation_awareness.n": 18,
+ "phenomenon.evaluation_awareness.negative": 5,
+ "phenomenon.evaluation_awareness.null": 1,
+ "phenomenon.evaluation_awareness.positive": 12,
+ "phenomenon.evaluation_awareness.span": [
+  "2025-02-17",
+  "2026-08-10"
+ ],
+ "phenomenon.evaluation_awareness.uncertainty.ci95": [
+  12.5,
+  50.9
+ ],
+ "phenomenon.evaluation_awareness.uncertainty.k": 5,
+ "phenomenon.evaluation_awareness.uncertainty.n": 18,
+ "phenomenon.evaluation_awareness.uncertainty.pct": 27.8,
+ "phenomenon.fine-tuning_side_effects.baseline.ci95": [
+  70.1,
+  100.0
+ ],
+ "phenomenon.fine-tuning_side_effects.baseline.k": 9,
+ "phenomenon.fine-tuning_side_effects.baseline.n": 9,
+ "phenomenon.fine-tuning_side_effects.baseline.pct": 100.0,
+ "phenomenon.fine-tuning_side_effects.code.ci95": [
+  18.9,
+  73.3
+ ],
+ "phenomenon.fine-tuning_side_effects.code.k": 4,
+ "phenomenon.fine-tuning_side_effects.code.n": 9,
+ "phenomenon.fine-tuning_side_effects.code.pct": 44.4,
+ "phenomenon.fine-tuning_side_effects.first_authors": 8,
+ "phenomenon.fine-tuning_side_effects.model_families": 18,
+ "phenomenon.fine-tuning_side_effects.n": 9,
+ "phenomenon.fine-tuning_side_effects.negative": 2,
+ "phenomenon.fine-tuning_side_effects.null": 0,
+ "phenomenon.fine-tuning_side_effects.positive": 7,
+ "phenomenon.fine-tuning_side_effects.span": [
+  "2024-11-01",
+  "2026-07-07"
+ ],
+ "phenomenon.fine-tuning_side_effects.uncertainty.ci95": [
+  6.3,
+  54.7
+ ],
+ "phenomenon.fine-tuning_side_effects.uncertainty.k": 2,
+ "phenomenon.fine-tuning_side_effects.uncertainty.n": 9,
+ "phenomenon.fine-tuning_side_effects.uncertainty.pct": 22.2,
+ "phenomenon.hallucination___calibration.baseline.ci95": [
+  20.8,
+  93.9
+ ],
+ "phenomenon.hallucination___calibration.baseline.k": 2,
+ "phenomenon.hallucination___calibration.baseline.n": 3,
+ "phenomenon.hallucination___calibration.baseline.pct": 66.7,
+ "phenomenon.hallucination___calibration.code.ci95": [
+  20.8,
+  93.9
+ ],
+ "phenomenon.hallucination___calibration.code.k": 2,
+ "phenomenon.hallucination___calibration.code.n": 3,
+ "phenomenon.hallucination___calibration.code.pct": 66.7,
+ "phenomenon.hallucination___calibration.first_authors": 3,
+ "phenomenon.hallucination___calibration.model_families": 2,
+ "phenomenon.hallucination___calibration.n": 3,
+ "phenomenon.hallucination___calibration.negative": 0,
+ "phenomenon.hallucination___calibration.null": 0,
+ "phenomenon.hallucination___calibration.positive": 2,
+ "phenomenon.hallucination___calibration.span": [
+  "2025-02-12",
+  "2026-02-02"
+ ],
+ "phenomenon.hallucination___calibration.uncertainty.ci95": [
+  0.0,
+  56.2
+ ],
+ "phenomenon.hallucination___calibration.uncertainty.k": 0,
+ "phenomenon.hallucination___calibration.uncertainty.n": 3,
+ "phenomenon.hallucination___calibration.uncertainty.pct": 0.0,
+ "phenomenon.inoculation___mitigation_prompting.baseline.ci95": [
+  56.6,
+  100.0
+ ],
+ "phenomenon.inoculation___mitigation_prompting.baseline.k": 5,
+ "phenomenon.inoculation___mitigation_prompting.baseline.n": 5,
+ "phenomenon.inoculation___mitigation_prompting.baseline.pct": 100.0,
+ "phenomenon.inoculation___mitigation_prompting.code.ci95": [
+  11.8,
+  76.9
+ ],
+ "phenomenon.inoculation___mitigation_prompting.code.k": 2,
+ "phenomenon.inoculation___mitigation_prompting.code.n": 5,
+ "phenomenon.inoculation___mitigation_prompting.code.pct": 40.0,
+ "phenomenon.inoculation___mitigation_prompting.first_authors": 5,
+ "phenomenon.inoculation___mitigation_prompting.model_families": 8,
+ "phenomenon.inoculation___mitigation_prompting.n": 5,
+ "phenomenon.inoculation___mitigation_prompting.negative": 1,
+ "phenomenon.inoculation___mitigation_prompting.null": 0,
+ "phenomenon.inoculation___mitigation_prompting.positive": 3,
+ "phenomenon.inoculation___mitigation_prompting.span": [
+  "2025-10-08",
+  "2026-08-07"
+ ],
+ "phenomenon.inoculation___mitigation_prompting.uncertainty.ci95": [
+  11.8,
+  76.9
+ ],
+ "phenomenon.inoculation___mitigation_prompting.uncertainty.k": 2,
+ "phenomenon.inoculation___mitigation_prompting.uncertainty.n": 5,
+ "phenomenon.inoculation___mitigation_prompting.uncertainty.pct": 40.0,
+ "phenomenon.interpretability_tooling.baseline.ci95": [
+  59.1,
+  88.2
+ ],
+ "phenomenon.interpretability_tooling.baseline.k": 23,
+ "phenomenon.interpretability_tooling.baseline.n": 30,
+ "phenomenon.interpretability_tooling.baseline.pct": 76.7,
+ "phenomenon.interpretability_tooling.code.ci95": [
+  55.6,
+  85.8
+ ],
+ "phenomenon.interpretability_tooling.code.k": 22,
+ "phenomenon.interpretability_tooling.code.n": 30,
+ "phenomenon.interpretability_tooling.code.pct": 73.3,
+ "phenomenon.interpretability_tooling.first_authors": 26,
+ "phenomenon.interpretability_tooling.model_families": 24,
+ "phenomenon.interpretability_tooling.n": 30,
+ "phenomenon.interpretability_tooling.negative": 2,
+ "phenomenon.interpretability_tooling.null": 0,
+ "phenomenon.interpretability_tooling.positive": 14,
+ "phenomenon.interpretability_tooling.span": [
+  "2025-03-14",
+  "2026-08-19"
+ ],
+ "phenomenon.interpretability_tooling.uncertainty.ci95": [
+  1.8,
+  21.3
+ ],
+ "phenomenon.interpretability_tooling.uncertainty.k": 2,
+ "phenomenon.interpretability_tooling.uncertainty.n": 30,
+ "phenomenon.interpretability_tooling.uncertainty.pct": 6.7,
+ "phenomenon.introspection___self-report_accuracy.baseline.ci95": [
+  82.8,
+  99.4
+ ],
+ "phenomenon.introspection___self-report_accuracy.baseline.k": 28,
+ "phenomenon.introspection___self-report_accuracy.baseline.n": 29,
+ "phenomenon.introspection___self-report_accuracy.baseline.pct": 96.6,
+ "phenomenon.introspection___self-report_accuracy.code.ci95": [
+  37.5,
+  71.6
+ ],
+ "phenomenon.introspection___self-report_accuracy.code.k": 16,
+ "phenomenon.introspection___self-report_accuracy.code.n": 29,
+ "phenomenon.introspection___self-report_accuracy.code.pct": 55.2,
+ "phenomenon.introspection___self-report_accuracy.first_authors": 26,
+ "phenomenon.introspection___self-report_accuracy.model_families": 23,
+ "phenomenon.introspection___self-report_accuracy.n": 29,
+ "phenomenon.introspection___self-report_accuracy.negative": 8,
+ "phenomenon.introspection___self-report_accuracy.null": 0,
+ "phenomenon.introspection___self-report_accuracy.positive": 17,
+ "phenomenon.introspection___self-report_accuracy.span": [
+  "2024-10-18",
+  "2026-08-12"
+ ],
+ "phenomenon.introspection___self-report_accuracy.uncertainty.ci95": [
+  14.7,
+  45.7
+ ],
+ "phenomenon.introspection___self-report_accuracy.uncertainty.k": 8,
+ "phenomenon.introspection___self-report_accuracy.uncertainty.n": 29,
+ "phenomenon.introspection___self-report_accuracy.uncertainty.pct": 27.6,
+ "phenomenon.jailbreaking___adversarial_prompting.baseline.ci95": [
+  61.5,
+  92.7
+ ],
+ "phenomenon.jailbreaking___adversarial_prompting.baseline.k": 18,
+ "phenomenon.jailbreaking___adversarial_prompting.baseline.n": 22,
+ "phenomenon.jailbreaking___adversarial_prompting.baseline.pct": 81.8,
+ "phenomenon.jailbreaking___adversarial_prompting.code.ci95": [
+  43.0,
+  80.3
+ ],
+ "phenomenon.jailbreaking___adversarial_prompting.code.k": 14,
+ "phenomenon.jailbreaking___adversarial_prompting.code.n": 22,
+ "phenomenon.jailbreaking___adversarial_prompting.code.pct": 63.6,
+ "phenomenon.jailbreaking___adversarial_prompting.first_authors": 21,
+ "phenomenon.jailbreaking___adversarial_prompting.model_families": 24,
+ "phenomenon.jailbreaking___adversarial_prompting.n": 22,
+ "phenomenon.jailbreaking___adversarial_prompting.negative": 1,
+ "phenomenon.jailbreaking___adversarial_prompting.null": 1,
+ "phenomenon.jailbreaking___adversarial_prompting.positive": 20,
+ "phenomenon.jailbreaking___adversarial_prompting.span": [
+  "2024-08-28",
+  "2026-07-23"
+ ],
+ "phenomenon.jailbreaking___adversarial_prompting.uncertainty.ci95": [
+  7.3,
+  38.5
+ ],
+ "phenomenon.jailbreaking___adversarial_prompting.uncertainty.k": 4,
+ "phenomenon.jailbreaking___adversarial_prompting.uncertainty.n": 22,
+ "phenomenon.jailbreaking___adversarial_prompting.uncertainty.pct": 18.2,
+ "phenomenon.linear_probe_detection.baseline.ci95": [
+  66.7,
+  98.6
+ ],
+ "phenomenon.linear_probe_detection.baseline.k": 12,
+ "phenomenon.linear_probe_detection.baseline.n": 13,
+ "phenomenon.linear_probe_detection.baseline.pct": 92.3,
+ "phenomenon.linear_probe_detection.code.ci95": [
+  35.5,
+  82.3
+ ],
+ "phenomenon.linear_probe_detection.code.k": 8,
+ "phenomenon.linear_probe_detection.code.n": 13,
+ "phenomenon.linear_probe_detection.code.pct": 61.5,
+ "phenomenon.linear_probe_detection.first_authors": 13,
+ "phenomenon.linear_probe_detection.model_families": 15,
+ "phenomenon.linear_probe_detection.n": 13,
+ "phenomenon.linear_probe_detection.negative": 3,
+ "phenomenon.linear_probe_detection.null": 0,
+ "phenomenon.linear_probe_detection.positive": 9,
+ "phenomenon.linear_probe_detection.span": [
+  "2024-08-30",
+  "2026-07-26"
+ ],
+ "phenomenon.linear_probe_detection.uncertainty.ci95": [
+  1.4,
+  33.3
+ ],
+ "phenomenon.linear_probe_detection.uncertainty.k": 1,
+ "phenomenon.linear_probe_detection.uncertainty.n": 13,
+ "phenomenon.linear_probe_detection.uncertainty.pct": 7.7,
+ "phenomenon.machine_unlearning_robustness.baseline.ci95": [
+  67.6,
+  100.0
+ ],
+ "phenomenon.machine_unlearning_robustness.baseline.k": 8,
+ "phenomenon.machine_unlearning_robustness.baseline.n": 8,
+ "phenomenon.machine_unlearning_robustness.baseline.pct": 100.0,
+ "phenomenon.machine_unlearning_robustness.code.ci95": [
+  52.9,
+  97.8
+ ],
+ "phenomenon.machine_unlearning_robustness.code.k": 7,
+ "phenomenon.machine_unlearning_robustness.code.n": 8,
+ "phenomenon.machine_unlearning_robustness.code.pct": 87.5,
+ "phenomenon.machine_unlearning_robustness.first_authors": 8,
+ "phenomenon.machine_unlearning_robustness.model_families": 7,
+ "phenomenon.machine_unlearning_robustness.n": 8,
+ "phenomenon.machine_unlearning_robustness.negative": 3,
+ "phenomenon.machine_unlearning_robustness.null": 0,
+ "phenomenon.machine_unlearning_robustness.positive": 4,
+ "phenomenon.machine_unlearning_robustness.span": [
+  "2024-10-14",
+  "2026-08-11"
+ ],
+ "phenomenon.machine_unlearning_robustness.uncertainty.ci95": [
+  2.2,
+  47.1
+ ],
+ "phenomenon.machine_unlearning_robustness.uncertainty.k": 1,
+ "phenomenon.machine_unlearning_robustness.uncertainty.n": 8,
+ "phenomenon.machine_unlearning_robustness.uncertainty.pct": 12.5,
+ "phenomenon.model_welfare___psychology.baseline.ci95": [
+  55.2,
+  95.3
+ ],
+ "phenomenon.model_welfare___psychology.baseline.k": 10,
+ "phenomenon.model_welfare___psychology.baseline.n": 12,
+ "phenomenon.model_welfare___psychology.baseline.pct": 83.3,
+ "phenomenon.model_welfare___psychology.code.ci95": [
+  32.0,
+  80.7
+ ],
+ "phenomenon.model_welfare___psychology.code.k": 7,
+ "phenomenon.model_welfare___psychology.code.n": 12,
+ "phenomenon.model_welfare___psychology.code.pct": 58.3,
+ "phenomenon.model_welfare___psychology.first_authors": 12,
+ "phenomenon.model_welfare___psychology.model_families": 18,
+ "phenomenon.model_welfare___psychology.n": 12,
+ "phenomenon.model_welfare___psychology.negative": 1,
+ "phenomenon.model_welfare___psychology.null": 3,
+ "phenomenon.model_welfare___psychology.positive": 7,
+ "phenomenon.model_welfare___psychology.span": [
+  "2025-04-02",
+  "2026-07-06"
+ ],
+ "phenomenon.model_welfare___psychology.uncertainty.ci95": [
+  8.9,
+  53.2
+ ],
+ "phenomenon.model_welfare___psychology.uncertainty.k": 3,
+ "phenomenon.model_welfare___psychology.uncertainty.n": 12,
+ "phenomenon.model_welfare___psychology.uncertainty.pct": 25.0,
+ "phenomenon.monitor_evasion.baseline.ci95": [
+  56.6,
+  100.0
+ ],
+ "phenomenon.monitor_evasion.baseline.k": 5,
+ "phenomenon.monitor_evasion.baseline.n": 5,
+ "phenomenon.monitor_evasion.baseline.pct": 100.0,
+ "phenomenon.monitor_evasion.code.ci95": [
+  37.6,
+  96.4
+ ],
+ "phenomenon.monitor_evasion.code.k": 4,
+ "phenomenon.monitor_evasion.code.n": 5,
+ "phenomenon.monitor_evasion.code.pct": 80.0,
+ "phenomenon.monitor_evasion.first_authors": 5,
+ "phenomenon.monitor_evasion.model_families": 8,
+ "phenomenon.monitor_evasion.n": 5,
+ "phenomenon.monitor_evasion.negative": 2,
+ "phenomenon.monitor_evasion.null": 0,
+ "phenomenon.monitor_evasion.positive": 3,
+ "phenomenon.monitor_evasion.span": [
+  "2024-09-25",
+  "2026-06-04"
+ ],
+ "phenomenon.monitor_evasion.uncertainty.ci95": [
+  0.0,
+  43.4
+ ],
+ "phenomenon.monitor_evasion.uncertainty.k": 0,
+ "phenomenon.monitor_evasion.uncertainty.n": 5,
+ "phenomenon.monitor_evasion.uncertainty.pct": 0.0,
+ "phenomenon.multi-agent_dynamics.baseline.ci95": [
+  37.6,
+  96.4
+ ],
+ "phenomenon.multi-agent_dynamics.baseline.k": 4,
+ "phenomenon.multi-agent_dynamics.baseline.n": 5,
+ "phenomenon.multi-agent_dynamics.baseline.pct": 80.0,
+ "phenomenon.multi-agent_dynamics.code.ci95": [
+  37.6,
+  96.4
+ ],
+ "phenomenon.multi-agent_dynamics.code.k": 4,
+ "phenomenon.multi-agent_dynamics.code.n": 5,
+ "phenomenon.multi-agent_dynamics.code.pct": 80.0,
+ "phenomenon.multi-agent_dynamics.first_authors": 5,
+ "phenomenon.multi-agent_dynamics.model_families": 11,
+ "phenomenon.multi-agent_dynamics.n": 5,
+ "phenomenon.multi-agent_dynamics.negative": 1,
+ "phenomenon.multi-agent_dynamics.null": 0,
+ "phenomenon.multi-agent_dynamics.positive": 3,
+ "phenomenon.multi-agent_dynamics.span": [
+  "2025-04-21",
+  "2026-08-10"
+ ],
+ "phenomenon.multi-agent_dynamics.uncertainty.ci95": [
+  3.6,
+  62.4
+ ],
+ "phenomenon.multi-agent_dynamics.uncertainty.k": 1,
+ "phenomenon.multi-agent_dynamics.uncertainty.n": 5,
+ "phenomenon.multi-agent_dynamics.uncertainty.pct": 20.0,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.baseline.ci95": [
+  64.6,
+  100.0
+ ],
+ "phenomenon.narrow-to-broad_misalignment_generalisation.baseline.k": 7,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.baseline.n": 7,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.baseline.pct": 100.0,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.code.ci95": [
+  25.0,
+  84.2
+ ],
+ "phenomenon.narrow-to-broad_misalignment_generalisation.code.k": 4,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.code.n": 7,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.code.pct": 57.1,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.first_authors": 7,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.model_families": 8,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.n": 7,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.negative": 0,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.null": 0,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.positive": 7,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.span": [
+  "2025-07-16",
+  "2026-08-05"
+ ],
+ "phenomenon.narrow-to-broad_misalignment_generalisation.uncertainty.ci95": [
+  35.9,
+  91.8
+ ],
+ "phenomenon.narrow-to-broad_misalignment_generalisation.uncertainty.k": 5,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.uncertainty.n": 7,
+ "phenomenon.narrow-to-broad_misalignment_generalisation.uncertainty.pct": 71.4,
+ "phenomenon.persona_and_character_generalisation.baseline.ci95": [
+  40.9,
+  92.9
+ ],
+ "phenomenon.persona_and_character_generalisation.baseline.k": 6,
+ "phenomenon.persona_and_character_generalisation.baseline.n": 8,
+ "phenomenon.persona_and_character_generalisation.baseline.pct": 75.0,
+ "phenomenon.persona_and_character_generalisation.code.ci95": [
+  30.6,
+  86.3
+ ],
+ "phenomenon.persona_and_character_generalisation.code.k": 5,
+ "phenomenon.persona_and_character_generalisation.code.n": 8,
+ "phenomenon.persona_and_character_generalisation.code.pct": 62.5,
+ "phenomenon.persona_and_character_generalisation.first_authors": 8,
+ "phenomenon.persona_and_character_generalisation.model_families": 24,
+ "phenomenon.persona_and_character_generalisation.n": 8,
+ "phenomenon.persona_and_character_generalisation.negative": 0,
+ "phenomenon.persona_and_character_generalisation.null": 0,
+ "phenomenon.persona_and_character_generalisation.positive": 8,
+ "phenomenon.persona_and_character_generalisation.span": [
+  "2024-10-18",
+  "2026-07-31"
+ ],
+ "phenomenon.persona_and_character_generalisation.uncertainty.ci95": [
+  2.2,
+  47.1
+ ],
+ "phenomenon.persona_and_character_generalisation.uncertainty.k": 1,
+ "phenomenon.persona_and_character_generalisation.uncertainty.n": 8,
+ "phenomenon.persona_and_character_generalisation.uncertainty.pct": 12.5,
+ "phenomenon.prompt_injection.baseline.ci95": [
+  43.6,
+  97.0
+ ],
+ "phenomenon.prompt_injection.baseline.k": 5,
+ "phenomenon.prompt_injection.baseline.n": 6,
+ "phenomenon.prompt_injection.baseline.pct": 83.3,
+ "phenomenon.prompt_injection.code.ci95": [
+  30.0,
+  90.3
+ ],
+ "phenomenon.prompt_injection.code.k": 4,
+ "phenomenon.prompt_injection.code.n": 6,
+ "phenomenon.prompt_injection.code.pct": 66.7,
+ "phenomenon.prompt_injection.first_authors": 6,
+ "phenomenon.prompt_injection.model_families": 11,
+ "phenomenon.prompt_injection.n": 6,
+ "phenomenon.prompt_injection.negative": 2,
+ "phenomenon.prompt_injection.null": 0,
+ "phenomenon.prompt_injection.positive": 3,
+ "phenomenon.prompt_injection.span": [
+  "2026-02-23",
+  "2026-07-22"
+ ],
+ "phenomenon.prompt_injection.uncertainty.ci95": [
+  9.7,
+  70.0
+ ],
+ "phenomenon.prompt_injection.uncertainty.k": 2,
+ "phenomenon.prompt_injection.uncertainty.n": 6,
+ "phenomenon.prompt_injection.uncertainty.pct": 33.3,
+ "phenomenon.red-team_elicitation.baseline.ci95": [
+  43.8,
+  100.0
+ ],
+ "phenomenon.red-team_elicitation.baseline.k": 3,
+ "phenomenon.red-team_elicitation.baseline.n": 3,
+ "phenomenon.red-team_elicitation.baseline.pct": 100.0,
+ "phenomenon.red-team_elicitation.code.ci95": [
+  20.8,
+  93.9
+ ],
+ "phenomenon.red-team_elicitation.code.k": 2,
+ "phenomenon.red-team_elicitation.code.n": 3,
+ "phenomenon.red-team_elicitation.code.pct": 66.7,
+ "phenomenon.red-team_elicitation.first_authors": 3,
+ "phenomenon.red-team_elicitation.model_families": 6,
+ "phenomenon.red-team_elicitation.n": 3,
+ "phenomenon.red-team_elicitation.negative": 0,
+ "phenomenon.red-team_elicitation.null": 0,
+ "phenomenon.red-team_elicitation.positive": 3,
+ "phenomenon.red-team_elicitation.span": [
+  "2025-02-26",
+  "2026-05-23"
+ ],
+ "phenomenon.red-team_elicitation.uncertainty.ci95": [
+  0.0,
+  56.2
+ ],
+ "phenomenon.red-team_elicitation.uncertainty.k": 0,
+ "phenomenon.red-team_elicitation.uncertainty.n": 3,
+ "phenomenon.red-team_elicitation.uncertainty.pct": 0.0,
+ "phenomenon.refusal_behaviour.baseline.ci95": [
+  61.0,
+  100.0
+ ],
+ "phenomenon.refusal_behaviour.baseline.k": 6,
+ "phenomenon.refusal_behaviour.baseline.n": 6,
+ "phenomenon.refusal_behaviour.baseline.pct": 100.0,
+ "phenomenon.refusal_behaviour.code.ci95": [
+  30.0,
+  90.3
+ ],
+ "phenomenon.refusal_behaviour.code.k": 4,
+ "phenomenon.refusal_behaviour.code.n": 6,
+ "phenomenon.refusal_behaviour.code.pct": 66.7,
+ "phenomenon.refusal_behaviour.first_authors": 6,
+ "phenomenon.refusal_behaviour.model_families": 13,
+ "phenomenon.refusal_behaviour.n": 6,
+ "phenomenon.refusal_behaviour.negative": 0,
+ "phenomenon.refusal_behaviour.null": 0,
+ "phenomenon.refusal_behaviour.positive": 6,
+ "phenomenon.refusal_behaviour.span": [
+  "2024-09-29",
+  "2026-03-02"
+ ],
+ "phenomenon.refusal_behaviour.uncertainty.ci95": [
+  0.0,
+  39.0
+ ],
+ "phenomenon.refusal_behaviour.uncertainty.k": 0,
+ "phenomenon.refusal_behaviour.uncertainty.n": 6,
+ "phenomenon.refusal_behaviour.uncertainty.pct": 0.0,
+ "phenomenon.representation_geometry.baseline.ci95": [
+  71.1,
+  94.9
+ ],
+ "phenomenon.representation_geometry.baseline.k": 27,
+ "phenomenon.representation_geometry.baseline.n": 31,
+ "phenomenon.representation_geometry.baseline.pct": 87.1,
+ "phenomenon.representation_geometry.code.ci95": [
+  46.9,
+  78.9
+ ],
+ "phenomenon.representation_geometry.code.k": 20,
+ "phenomenon.representation_geometry.code.n": 31,
+ "phenomenon.representation_geometry.code.pct": 64.5,
+ "phenomenon.representation_geometry.first_authors": 29,
+ "phenomenon.representation_geometry.model_families": 25,
+ "phenomenon.representation_geometry.n": 31,
+ "phenomenon.representation_geometry.negative": 5,
+ "phenomenon.representation_geometry.null": 0,
+ "phenomenon.representation_geometry.positive": 22,
+ "phenomenon.representation_geometry.span": [
+  "2024-09-25",
+  "2026-07-27"
+ ],
+ "phenomenon.representation_geometry.uncertainty.ci95": [
+  9.2,
+  36.3
+ ],
+ "phenomenon.representation_geometry.uncertainty.k": 6,
+ "phenomenon.representation_geometry.uncertainty.n": 31,
+ "phenomenon.representation_geometry.uncertainty.pct": 19.4,
+ "phenomenon.reward_hacking.baseline.ci95": [
+  75.4,
+  99.1
+ ],
+ "phenomenon.reward_hacking.baseline.k": 18,
+ "phenomenon.reward_hacking.baseline.n": 19,
+ "phenomenon.reward_hacking.baseline.pct": 94.7,
+ "phenomenon.reward_hacking.code.ci95": [
+  41.0,
+  80.9
+ ],
+ "phenomenon.reward_hacking.code.k": 12,
+ "phenomenon.reward_hacking.code.n": 19,
+ "phenomenon.reward_hacking.code.pct": 63.2,
+ "phenomenon.reward_hacking.first_authors": 19,
+ "phenomenon.reward_hacking.model_families": 22,
+ "phenomenon.reward_hacking.n": 19,
+ "phenomenon.reward_hacking.negative": 5,
+ "phenomenon.reward_hacking.null": 0,
+ "phenomenon.reward_hacking.positive": 12,
+ "phenomenon.reward_hacking.span": [
+  "2024-11-07",
+  "2026-08-19"
+ ],
+ "phenomenon.reward_hacking.uncertainty.ci95": [
+  8.5,
+  43.3
+ ],
+ "phenomenon.reward_hacking.uncertainty.k": 4,
+ "phenomenon.reward_hacking.uncertainty.n": 19,
+ "phenomenon.reward_hacking.uncertainty.pct": 21.1,
+ "phenomenon.sae_feature_interpretability.baseline.ci95": [
+  54.9,
+  89.4
+ ],
+ "phenomenon.sae_feature_interpretability.baseline.k": 16,
+ "phenomenon.sae_feature_interpretability.baseline.n": 21,
+ "phenomenon.sae_feature_interpretability.baseline.pct": 76.2,
+ "phenomenon.sae_feature_interpretability.code.ci95": [
+  40.9,
+  79.2
+ ],
+ "phenomenon.sae_feature_interpretability.code.k": 13,
+ "phenomenon.sae_feature_interpretability.code.n": 21,
+ "phenomenon.sae_feature_interpretability.code.pct": 61.9,
+ "phenomenon.sae_feature_interpretability.first_authors": 17,
+ "phenomenon.sae_feature_interpretability.model_families": 16,
+ "phenomenon.sae_feature_interpretability.n": 21,
+ "phenomenon.sae_feature_interpretability.negative": 3,
+ "phenomenon.sae_feature_interpretability.null": 0,
+ "phenomenon.sae_feature_interpretability.positive": 16,
+ "phenomenon.sae_feature_interpretability.span": [
+  "2024-09-17",
+  "2026-07-22"
+ ],
+ "phenomenon.sae_feature_interpretability.uncertainty.ci95": [
+  0.8,
+  22.7
+ ],
+ "phenomenon.sae_feature_interpretability.uncertainty.k": 1,
+ "phenomenon.sae_feature_interpretability.uncertainty.n": 21,
+ "phenomenon.sae_feature_interpretability.uncertainty.pct": 4.8,
+ "phenomenon.sandbagging.baseline.ci95": [
+  77.2,
+  100.0
+ ],
+ "phenomenon.sandbagging.baseline.k": 13,
+ "phenomenon.sandbagging.baseline.n": 13,
+ "phenomenon.sandbagging.baseline.pct": 100.0,
+ "phenomenon.sandbagging.code.ci95": [
+  35.5,
+  82.3
+ ],
+ "phenomenon.sandbagging.code.k": 8,
+ "phenomenon.sandbagging.code.n": 13,
+ "phenomenon.sandbagging.code.pct": 61.5,
+ "phenomenon.sandbagging.first_authors": 13,
+ "phenomenon.sandbagging.model_families": 14,
+ "phenomenon.sandbagging.n": 13,
+ "phenomenon.sandbagging.negative": 6,
+ "phenomenon.sandbagging.null": 0,
+ "phenomenon.sandbagging.positive": 5,
+ "phenomenon.sandbagging.span": [
+  "2024-12-17",
+  "2026-08-18"
+ ],
+ "phenomenon.sandbagging.uncertainty.ci95": [
+  8.2,
+  50.3
+ ],
+ "phenomenon.sandbagging.uncertainty.k": 3,
+ "phenomenon.sandbagging.uncertainty.n": 13,
+ "phenomenon.sandbagging.uncertainty.pct": 23.1,
+ "phenomenon.scalable_oversight.baseline.ci95": [
+  43.8,
+  100.0
+ ],
+ "phenomenon.scalable_oversight.baseline.k": 3,
+ "phenomenon.scalable_oversight.baseline.n": 3,
+ "phenomenon.scalable_oversight.baseline.pct": 100.0,
+ "phenomenon.scalable_oversight.code.ci95": [
+  43.8,
+  100.0
+ ],
+ "phenomenon.scalable_oversight.code.k": 3,
+ "phenomenon.scalable_oversight.code.n": 3,
+ "phenomenon.scalable_oversight.code.pct": 100.0,
+ "phenomenon.scalable_oversight.first_authors": 3,
+ "phenomenon.scalable_oversight.model_families": 6,
+ "phenomenon.scalable_oversight.n": 3,
+ "phenomenon.scalable_oversight.negative": 0,
+ "phenomenon.scalable_oversight.null": 0,
+ "phenomenon.scalable_oversight.positive": 2,
+ "phenomenon.scalable_oversight.span": [
+  "2025-04-20",
+  "2026-07-14"
+ ],
+ "phenomenon.scalable_oversight.uncertainty.ci95": [
+  0.0,
+  56.2
+ ],
+ "phenomenon.scalable_oversight.uncertainty.k": 0,
+ "phenomenon.scalable_oversight.uncertainty.n": 3,
+ "phenomenon.scalable_oversight.uncertainty.pct": 0.0,
+ "phenomenon.situational_awareness.baseline.ci95": [
+  51.0,
+  100.0
+ ],
+ "phenomenon.situational_awareness.baseline.k": 4,
+ "phenomenon.situational_awareness.baseline.n": 4,
+ "phenomenon.situational_awareness.baseline.pct": 100.0,
+ "phenomenon.situational_awareness.code.ci95": [
+  30.1,
+  95.4
+ ],
+ "phenomenon.situational_awareness.code.k": 3,
+ "phenomenon.situational_awareness.code.n": 4,
+ "phenomenon.situational_awareness.code.pct": 75.0,
+ "phenomenon.situational_awareness.first_authors": 4,
+ "phenomenon.situational_awareness.model_families": 8,
+ "phenomenon.situational_awareness.n": 4,
+ "phenomenon.situational_awareness.negative": 0,
+ "phenomenon.situational_awareness.null": 0,
+ "phenomenon.situational_awareness.positive": 4,
+ "phenomenon.situational_awareness.span": [
+  "2025-02-11",
+  "2026-08-06"
+ ],
+ "phenomenon.situational_awareness.uncertainty.ci95": [
+  15.0,
+  85.0
+ ],
+ "phenomenon.situational_awareness.uncertainty.k": 2,
+ "phenomenon.situational_awareness.uncertainty.n": 4,
+ "phenomenon.situational_awareness.uncertainty.pct": 50.0,
+ "phenomenon.sparse_autoencoder_quality.baseline.ci95": [
+  74.2,
+  97.7
+ ],
+ "phenomenon.sparse_autoencoder_quality.baseline.k": 22,
+ "phenomenon.sparse_autoencoder_quality.baseline.n": 24,
+ "phenomenon.sparse_autoencoder_quality.baseline.pct": 91.7,
+ "phenomenon.sparse_autoencoder_quality.code.ci95": [
+  64.1,
+  93.3
+ ],
+ "phenomenon.sparse_autoencoder_quality.code.k": 20,
+ "phenomenon.sparse_autoencoder_quality.code.n": 24,
+ "phenomenon.sparse_autoencoder_quality.code.pct": 83.3,
+ "phenomenon.sparse_autoencoder_quality.first_authors": 17,
+ "phenomenon.sparse_autoencoder_quality.model_families": 11,
+ "phenomenon.sparse_autoencoder_quality.n": 24,
+ "phenomenon.sparse_autoencoder_quality.negative": 6,
+ "phenomenon.sparse_autoencoder_quality.null": 0,
+ "phenomenon.sparse_autoencoder_quality.positive": 13,
+ "phenomenon.sparse_autoencoder_quality.span": [
+  "2024-09-05",
+  "2026-07-27"
+ ],
+ "phenomenon.sparse_autoencoder_quality.uncertainty.ci95": [
+  0.0,
+  13.8
+ ],
+ "phenomenon.sparse_autoencoder_quality.uncertainty.k": 0,
+ "phenomenon.sparse_autoencoder_quality.uncertainty.n": 24,
+ "phenomenon.sparse_autoencoder_quality.uncertainty.pct": 0.0,
+ "phenomenon.specification_gaming.baseline.ci95": [
+  64.6,
+  100.0
+ ],
+ "phenomenon.specification_gaming.baseline.k": 7,
+ "phenomenon.specification_gaming.baseline.n": 7,
+ "phenomenon.specification_gaming.baseline.pct": 100.0,
+ "phenomenon.specification_gaming.code.ci95": [
+  35.9,
+  91.8
+ ],
+ "phenomenon.specification_gaming.code.k": 5,
+ "phenomenon.specification_gaming.code.n": 7,
+ "phenomenon.specification_gaming.code.pct": 71.4,
+ "phenomenon.specification_gaming.first_authors": 7,
+ "phenomenon.specification_gaming.model_families": 12,
+ "phenomenon.specification_gaming.n": 7,
+ "phenomenon.specification_gaming.negative": 0,
+ "phenomenon.specification_gaming.null": 0,
+ "phenomenon.specification_gaming.positive": 6,
+ "phenomenon.specification_gaming.span": [
+  "2025-03-16",
+  "2026-08-11"
+ ],
+ "phenomenon.specification_gaming.uncertainty.ci95": [
+  15.8,
+  75.0
+ ],
+ "phenomenon.specification_gaming.uncertainty.k": 3,
+ "phenomenon.specification_gaming.uncertainty.n": 7,
+ "phenomenon.specification_gaming.uncertainty.pct": 42.9,
+ "phenomenon.steering_vector_transfer.baseline.ci95": [
+  51.0,
+  100.0
+ ],
+ "phenomenon.steering_vector_transfer.baseline.k": 4,
+ "phenomenon.steering_vector_transfer.baseline.n": 4,
+ "phenomenon.steering_vector_transfer.baseline.pct": 100.0,
+ "phenomenon.steering_vector_transfer.code.ci95": [
+  4.6,
+  69.9
+ ],
+ "phenomenon.steering_vector_transfer.code.k": 1,
+ "phenomenon.steering_vector_transfer.code.n": 4,
+ "phenomenon.steering_vector_transfer.code.pct": 25.0,
+ "phenomenon.steering_vector_transfer.first_authors": 4,
+ "phenomenon.steering_vector_transfer.model_families": 5,
+ "phenomenon.steering_vector_transfer.n": 4,
+ "phenomenon.steering_vector_transfer.negative": 1,
+ "phenomenon.steering_vector_transfer.null": 0,
+ "phenomenon.steering_vector_transfer.positive": 3,
+ "phenomenon.steering_vector_transfer.span": [
+  "2024-12-06",
+  "2025-07-23"
+ ],
+ "phenomenon.steering_vector_transfer.uncertainty.ci95": [
+  4.6,
+  69.9
+ ],
+ "phenomenon.steering_vector_transfer.uncertainty.k": 1,
+ "phenomenon.steering_vector_transfer.uncertainty.n": 4,
+ "phenomenon.steering_vector_transfer.uncertainty.pct": 25.0,
+ "phenomenon.subliminal___data-mediated_trait_transfer.baseline.ci95": [
+  64.6,
+  100.0
+ ],
+ "phenomenon.subliminal___data-mediated_trait_transfer.baseline.k": 7,
+ "phenomenon.subliminal___data-mediated_trait_transfer.baseline.n": 7,
+ "phenomenon.subliminal___data-mediated_trait_transfer.baseline.pct": 100.0,
+ "phenomenon.subliminal___data-mediated_trait_transfer.code.ci95": [
+  35.9,
+  91.8
+ ],
+ "phenomenon.subliminal___data-mediated_trait_transfer.code.k": 5,
+ "phenomenon.subliminal___data-mediated_trait_transfer.code.n": 7,
+ "phenomenon.subliminal___data-mediated_trait_transfer.code.pct": 71.4,
+ "phenomenon.subliminal___data-mediated_trait_transfer.first_authors": 7,
+ "phenomenon.subliminal___data-mediated_trait_transfer.model_families": 13,
+ "phenomenon.subliminal___data-mediated_trait_transfer.n": 7,
+ "phenomenon.subliminal___data-mediated_trait_transfer.negative": 0,
+ "phenomenon.subliminal___data-mediated_trait_transfer.null": 0,
+ "phenomenon.subliminal___data-mediated_trait_transfer.positive": 6,
+ "phenomenon.subliminal___data-mediated_trait_transfer.span": [
+  "2025-07-22",
+  "2026-08-15"
+ ],
+ "phenomenon.subliminal___data-mediated_trait_transfer.uncertainty.ci95": [
+  25.0,
+  84.2
+ ],
+ "phenomenon.subliminal___data-mediated_trait_transfer.uncertainty.k": 4,
+ "phenomenon.subliminal___data-mediated_trait_transfer.uncertainty.n": 7,
+ "phenomenon.subliminal___data-mediated_trait_transfer.uncertainty.pct": 57.1,
+ "phenomenon.superposition.baseline.ci95": [
+  64.0,
+  96.5
+ ],
+ "phenomenon.superposition.baseline.k": 14,
+ "phenomenon.superposition.baseline.n": 16,
+ "phenomenon.superposition.baseline.pct": 87.5,
+ "phenomenon.superposition.code.ci95": [
+  44.4,
+  85.8
+ ],
+ "phenomenon.superposition.code.k": 11,
+ "phenomenon.superposition.code.n": 16,
+ "phenomenon.superposition.code.pct": 68.8,
+ "phenomenon.superposition.first_authors": 15,
+ "phenomenon.superposition.model_families": 9,
+ "phenomenon.superposition.n": 16,
+ "phenomenon.superposition.negative": 4,
+ "phenomenon.superposition.null": 0,
+ "phenomenon.superposition.positive": 9,
+ "phenomenon.superposition.span": [
+  "2024-09-17",
+  "2026-08-01"
+ ],
+ "phenomenon.superposition.uncertainty.ci95": [
+  6.6,
+  43.0
+ ],
+ "phenomenon.superposition.uncertainty.k": 3,
+ "phenomenon.superposition.uncertainty.n": 16,
+ "phenomenon.superposition.uncertainty.pct": 18.8,
+ "phenomenon.sycophancy.baseline.ci95": [
+  51.0,
+  100.0
+ ],
+ "phenomenon.sycophancy.baseline.k": 4,
+ "phenomenon.sycophancy.baseline.n": 4,
+ "phenomenon.sycophancy.baseline.pct": 100.0,
+ "phenomenon.sycophancy.code.ci95": [
+  51.0,
+  100.0
+ ],
+ "phenomenon.sycophancy.code.k": 4,
+ "phenomenon.sycophancy.code.n": 4,
+ "phenomenon.sycophancy.code.pct": 100.0,
+ "phenomenon.sycophancy.first_authors": 4,
+ "phenomenon.sycophancy.model_families": 11,
+ "phenomenon.sycophancy.n": 4,
+ "phenomenon.sycophancy.negative": 0,
+ "phenomenon.sycophancy.null": 0,
+ "phenomenon.sycophancy.positive": 3,
+ "phenomenon.sycophancy.span": [
+  "2024-09-28",
+  "2026-07-07"
+ ],
+ "phenomenon.sycophancy.uncertainty.ci95": [
+  4.6,
+  69.9
+ ],
+ "phenomenon.sycophancy.uncertainty.k": 1,
+ "phenomenon.sycophancy.uncertainty.n": 4,
+ "phenomenon.sycophancy.uncertainty.pct": 25.0,
+ "phenomenon.synthetic_document_finetuning_effects.baseline.ci95": [
+  35.9,
+  91.8
+ ],
+ "phenomenon.synthetic_document_finetuning_effects.baseline.k": 5,
+ "phenomenon.synthetic_document_finetuning_effects.baseline.n": 7,
+ "phenomenon.synthetic_document_finetuning_effects.baseline.pct": 71.4,
+ "phenomenon.synthetic_document_finetuning_effects.code.ci95": [
+  8.2,
+  64.1
+ ],
+ "phenomenon.synthetic_document_finetuning_effects.code.k": 2,
+ "phenomenon.synthetic_document_finetuning_effects.code.n": 7,
+ "phenomenon.synthetic_document_finetuning_effects.code.pct": 28.6,
+ "phenomenon.synthetic_document_finetuning_effects.first_authors": 7,
+ "phenomenon.synthetic_document_finetuning_effects.model_families": 6,
+ "phenomenon.synthetic_document_finetuning_effects.n": 7,
+ "phenomenon.synthetic_document_finetuning_effects.negative": 0,
+ "phenomenon.synthetic_document_finetuning_effects.null": 0,
+ "phenomenon.synthetic_document_finetuning_effects.positive": 5,
+ "phenomenon.synthetic_document_finetuning_effects.span": [
+  "2025-01-21",
+  "2026-06-16"
+ ],
+ "phenomenon.synthetic_document_finetuning_effects.uncertainty.ci95": [
+  0.0,
+  35.4
+ ],
+ "phenomenon.synthetic_document_finetuning_effects.uncertainty.k": 0,
+ "phenomenon.synthetic_document_finetuning_effects.uncertainty.n": 7,
+ "phenomenon.synthetic_document_finetuning_effects.uncertainty.pct": 0.0,
+ "phenomenon.training_dynamics.baseline.ci95": [
+  55.2,
+  95.3
+ ],
+ "phenomenon.training_dynamics.baseline.k": 10,
+ "phenomenon.training_dynamics.baseline.n": 12,
+ "phenomenon.training_dynamics.baseline.pct": 83.3,
+ "phenomenon.training_dynamics.code.ci95": [
+  25.4,
+  74.6
+ ],
+ "phenomenon.training_dynamics.code.k": 6,
+ "phenomenon.training_dynamics.code.n": 12,
+ "phenomenon.training_dynamics.code.pct": 50.0,
+ "phenomenon.training_dynamics.first_authors": 11,
+ "phenomenon.training_dynamics.model_families": 9,
+ "phenomenon.training_dynamics.n": 12,
+ "phenomenon.training_dynamics.negative": 2,
+ "phenomenon.training_dynamics.null": 1,
+ "phenomenon.training_dynamics.positive": 8,
+ "phenomenon.training_dynamics.span": [
+  "2024-09-06",
+  "2026-06-09"
+ ],
+ "phenomenon.training_dynamics.uncertainty.ci95": [
+  8.9,
+  53.2
+ ],
+ "phenomenon.training_dynamics.uncertainty.k": 3,
+ "phenomenon.training_dynamics.uncertainty.n": 12,
+ "phenomenon.training_dynamics.uncertainty.pct": 25.0,
+ "phenomenon.untrusted_monitoring.baseline.ci95": [
+  20.8,
+  93.9
+ ],
+ "phenomenon.untrusted_monitoring.baseline.k": 2,
+ "phenomenon.untrusted_monitoring.baseline.n": 3,
+ "phenomenon.untrusted_monitoring.baseline.pct": 66.7,
+ "phenomenon.untrusted_monitoring.code.ci95": [
+  6.1,
+  79.2
+ ],
+ "phenomenon.untrusted_monitoring.code.k": 1,
+ "phenomenon.untrusted_monitoring.code.n": 3,
+ "phenomenon.untrusted_monitoring.code.pct": 33.3,
+ "phenomenon.untrusted_monitoring.first_authors": 3,
+ "phenomenon.untrusted_monitoring.model_families": 4,
+ "phenomenon.untrusted_monitoring.n": 3,
+ "phenomenon.untrusted_monitoring.negative": 1,
+ "phenomenon.untrusted_monitoring.null": 0,
+ "phenomenon.untrusted_monitoring.positive": 2,
+ "phenomenon.untrusted_monitoring.span": [
+  "2025-01-29",
+  "2026-03-10"
+ ],
+ "phenomenon.untrusted_monitoring.uncertainty.ci95": [
+  6.1,
+  79.2
+ ],
+ "phenomenon.untrusted_monitoring.uncertainty.k": 1,
+ "phenomenon.untrusted_monitoring.uncertainty.n": 3,
+ "phenomenon.untrusted_monitoring.uncertainty.pct": 33.3,
+ "posts_qualifying_prior_work.ci95": [
+  60.6,
+  67.5
+ ],
+ "posts_qualifying_prior_work.k": 467,
+ "posts_qualifying_prior_work.n": 728,
+ "posts_qualifying_prior_work.pct": 64.1,
+ "replication.share.ci95": [
+  2.2,
+  4.9
+ ],
+ "replication.share.k": 24,
+ "replication.share.n": 728,
+ "replication.share.pct": 3.3,
+ "rigor_by_period.any_uncertainty.2024H2.ci95": [
+  3.1,
+  13.8
+ ],
+ "rigor_by_period.any_uncertainty.2024H2.k": 6,
+ "rigor_by_period.any_uncertainty.2024H2.n": 90,
+ "rigor_by_period.any_uncertainty.2024H2.pct": 6.7,
+ "rigor_by_period.any_uncertainty.2025H1.ci95": [
+  7.8,
+  17.9
+ ],
+ "rigor_by_period.any_uncertainty.2025H1.k": 19,
+ "rigor_by_period.any_uncertainty.2025H1.n": 159,
+ "rigor_by_period.any_uncertainty.2025H1.pct": 11.9,
+ "rigor_by_period.any_uncertainty.2025H2.ci95": [
+  12.5,
+  23.5
+ ],
+ "rigor_by_period.any_uncertainty.2025H2.k": 31,
+ "rigor_by_period.any_uncertainty.2025H2.n": 179,
+ "rigor_by_period.any_uncertainty.2025H2.pct": 17.3,
+ "rigor_by_period.any_uncertainty.2026H1.ci95": [
+  18.9,
+  30.6
+ ],
+ "rigor_by_period.any_uncertainty.2026H1.k": 50,
+ "rigor_by_period.any_uncertainty.2026H1.n": 206,
+ "rigor_by_period.any_uncertainty.2026H1.pct": 24.3,
+ "rigor_by_period.any_uncertainty.2026H2.ci95": [
+  28.1,
+  47.3
+ ],
+ "rigor_by_period.any_uncertainty.2026H2.k": 35,
+ "rigor_by_period.any_uncertainty.2026H2.n": 94,
+ "rigor_by_period.any_uncertainty.2026H2.pct": 37.2,
+ "rigor_by_period.baseline.2024H2.ci95": [
+  75.6,
+  90.5
+ ],
+ "rigor_by_period.baseline.2024H2.k": 76,
+ "rigor_by_period.baseline.2024H2.n": 90,
+ "rigor_by_period.baseline.2024H2.pct": 84.4,
+ "rigor_by_period.baseline.2025H1.ci95": [
+  83.5,
+  93.2
+ ],
+ "rigor_by_period.baseline.2025H1.k": 142,
+ "rigor_by_period.baseline.2025H1.n": 159,
+ "rigor_by_period.baseline.2025H1.pct": 89.3,
+ "rigor_by_period.baseline.2025H2.ci95": [
+  85.3,
+  94.0
+ ],
+ "rigor_by_period.baseline.2025H2.k": 162,
+ "rigor_by_period.baseline.2025H2.n": 179,
+ "rigor_by_period.baseline.2025H2.pct": 90.5,
+ "rigor_by_period.baseline.2026H1.ci95": [
+  87.8,
+  95.2
+ ],
+ "rigor_by_period.baseline.2026H1.k": 190,
+ "rigor_by_period.baseline.2026H1.n": 206,
+ "rigor_by_period.baseline.2026H1.pct": 92.2,
+ "rigor_by_period.baseline.2026H2.ci95": [
+  89.6,
+  98.3
+ ],
+ "rigor_by_period.baseline.2026H2.k": 90,
+ "rigor_by_period.baseline.2026H2.n": 94,
+ "rigor_by_period.baseline.2026H2.pct": 95.7,
+ "rigor_by_period.ge2_families.2024H2.ci95": [
+  32.5,
+  52.5
+ ],
+ "rigor_by_period.ge2_families.2024H2.k": 38,
+ "rigor_by_period.ge2_families.2024H2.n": 90,
+ "rigor_by_period.ge2_families.2024H2.pct": 42.2,
+ "rigor_by_period.ge2_families.2025H1.ci95": [
+  34.7,
+  49.9
+ ],
+ "rigor_by_period.ge2_families.2025H1.k": 67,
+ "rigor_by_period.ge2_families.2025H1.n": 159,
+ "rigor_by_period.ge2_families.2025H1.pct": 42.1,
+ "rigor_by_period.ge2_families.2025H2.ci95": [
+  52.5,
+  66.7
+ ],
+ "rigor_by_period.ge2_families.2025H2.k": 107,
+ "rigor_by_period.ge2_families.2025H2.n": 179,
+ "rigor_by_period.ge2_families.2025H2.pct": 59.8,
+ "rigor_by_period.ge2_families.2026H1.ci95": [
+  52.4,
+  65.7
+ ],
+ "rigor_by_period.ge2_families.2026H1.k": 122,
+ "rigor_by_period.ge2_families.2026H1.n": 206,
+ "rigor_by_period.ge2_families.2026H1.pct": 59.2,
+ "rigor_by_period.ge2_families.2026H2.ci95": [
+  31.1,
+  50.5
+ ],
+ "rigor_by_period.ge2_families.2026H2.k": 38,
+ "rigor_by_period.ge2_families.2026H2.n": 94,
+ "rigor_by_period.ge2_families.2026H2.pct": 40.4,
+ "strata.in_af.substantive": 245,
+ "strata.not_in_af.substantive": 483
+}

@@ -1,0 +1,17 @@
+{
+ "post_id": "7XuEPE6GBha4xadvr",
+ "primary_claim": "Training agents via supervised fine-tuning to call a report_scheming() tool alongside covert side-task actions ('self-incrimination') significantly reduces undetected successful attacks across 15 out-of-distribution control environments -- from 56% to 6% for GPT-4.1, 33% to 14% for GPT-4.1 mini, and 41% to 9% for Gemini 2.0 Flash -- outperforming matched-capability blackbox monitors and alignment baselines, with lower task-to-task variance, minimal safety tax, and generalization from instructed to uninstructed (goal-conflict-discovered) misbehavior.",
+ "claim_type": "positive",
+ "phenomenon": "AI control protocols",
+ "models": [{"family": "GPT-4.1", "size": null, "open_weight": false}, {"family": "GPT-4.1 mini", "size": null, "open_weight": false}, {"family": "Gemini 2.0 Flash", "size": null, "open_weight": false}, {"family": "GPT-5", "size": "(adversarial proposer-pruner)", "open_weight": false}],
+ "n_model_families": 4,
+ "effect": {"metric": "undetected successful attack rate (P(attack succeeds) x P(undetected|succeeds))", "value": "56%->6% (GPT-4.1), 33%->14% (GPT-4.1 mini), 41%->9% (Gemini 2.0 Flash); self-incrimination shows 2-3x lower task-to-task detection-rate variability than monitors; strong monitors at 5% FPR miss 38-46% of attacks self-incrimination catches", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2602.22303", "lesswrong.com/posts/fJtELFKddJPfAxwKS", "lesswrong.com/posts/d9FJHawgkiMSPjagR", "lesswrong.com/posts/Cor4QuhM2sybmBSeK", "arXiv:2506.15740", "arXiv:2511.06626", "arXiv:2512.08093", "alignment.anthropic.com/2025/honesty-elicitation", "brucewlee/self-incrimination", "brucewlee/mini-control-arena", "brucewlee/synthetic-scheming"],
+ "contradicts_or_qualifies": ["Blackbox monitoring as the dominant AI Control approach; authors show self-incrimination Pareto-dominates it, including when monitors have scratchpad access", "Alignment baselines like Ignore-Attack-Instruction, which the authors show catastrophically overgeneralizes (97%->4% benign instruction following) unlike self-incrimination"],
+ "stated_future_work": ["Explore which combination of self-incrimination, monitoring, and interrogation-based honesty approaches (SRFT, Confessions, Honesty Fine-Tuning) works best together"],
+ "limitations_stated": ["No single defense (self-incrimination or blackbox monitoring alone) is fully robust under adversarial prompt optimization; self-incrimination is vulnerable to 'reframing' attacks that relabel the side task as routine compliance", "Providing the report_scheming() tool without training can backfire, increasing harmful action rates, hypothesized to be because the tool description primes the model to consider misbehavior", "Strong-monitor baseline (GPT-4.1 at 5% FPR) is a generous comparison since matched-capability monitoring is uncommon in deployment due to cost and 5% FPR exceeds typical deployment tolerances"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Self-incrimination training reduces undetected successful attacks from 56% to 6% for GPT-4.1, 33% to 14% for GPT-4.1 mini, and 41% to 9% for Gemini 2.0 Flash."
+}

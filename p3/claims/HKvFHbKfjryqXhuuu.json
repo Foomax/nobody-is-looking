@@ -1,0 +1,19 @@
+{
+ "post_id": "HKvFHbKfjryqXhuuu",
+ "primary_claim": "A recurrent CNN trained to solve 9x9 mazes and applied to a 33x33 maze implements a 'dead-end filling' pathfinding algorithm, functioning as a simple learned optimizer whose narrow goal range limits its usefulness as a case study for more capable mesa-optimizers.",
+ "claim_type": "positive",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "Recurrent CNN (Bansal et al. maze solver)", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2202.05826"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["The range of goals the algorithm is able to optimize is very limited, and as such it is not very useful for studying more capable mesa-optimizers."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "It can optimize for connecting any two goals, and is thus technically a learned optimizer. However, the range of goals that it is able to optimize is very limited."
+}

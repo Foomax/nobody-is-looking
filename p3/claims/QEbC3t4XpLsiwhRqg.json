@@ -1,0 +1,39 @@
+{
+  "post_id": "QEbC3t4XpLsiwhRqg",
+  "primary_claim": "A standard 8-layer transformer trained with an answer-only-to-full-sequence loss curriculum and difficulty-weighted data learns to implement a genuine sequential, layer-by-layer algorithm for composing 6 elements of the non-commutative dihedral group D3, as proven via a logit-lens 'staircase' and layer-ablation analysis, whereas a model trained with standard full-sequence loss instead memorizes a lookup table.",
+  "claim_type": "positive",
+  "phenomenon": "circuit discovery",
+  "models": [
+    {"family": "custom toy transformer", "size": "8-layer, dim=96, 6 heads", "open_weight": false}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "logit-lens probability of correct intermediate state at expected layer, sequential vs. non-sequential model",
+    "value": "Model A reaches 55-73% at expected intermediate layers by layer 5; Model B stays near chance (~17%) until the final layers",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["arXiv:2206.04301", "arXiv:2405.15071", "arXiv:1807.03819", "arXiv:2406.17557", "arXiv:2201.02177", "karpathy/nanogpt"],
+  "contradicts_or_qualifies": [
+    "Confirms the LEGO paper's (Zhang et al. 2023) prediction that a commutative binary composition task is solved via a parallel shortcut rather than the intended sequential algorithm",
+    "Extends Wang et al. (2024)'s data-weighting-by-difficulty finding for grokking to a new sequential-algorithm-learning setting"
+  ],
+  "stated_future_work": [
+    "Test whether a standard transformer trained only with full-sequence loss would eventually grok the sequential algorithm given enough data (not tested due to time/cost constraints)"
+  ],
+  "limitations_stated": [
+    "Findings were very sensitive to task selection and architecture; useful as 'things that seem to help' rather than techniques guaranteed to work for other problems/architectures",
+    "Results are seed-dependent; models sometimes learned only a partial or flaky version of the sequential algorithm"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "In model A, there's a clear staircase where the expected intermediate states appear by layer 2, and in model B the intermediate states never rise above chance and the final state appears by layer 3."
+}

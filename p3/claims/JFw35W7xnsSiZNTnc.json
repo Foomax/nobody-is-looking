@@ -1,0 +1,43 @@
+{
+  "post_id": "JFw35W7xnsSiZNTnc",
+  "primary_claim": "Replicating and extending Anthropic's agentic-misalignment (blackmail) experiments across five frontier models, the authors find that instruction hierarchies specifically designed to reduce goal conflict substantially reduce harmful/misaligned behavior (unlike simple safety warnings), and that misalignment rates vary greatly by model, with Opus 4.5 and GPT-5.2 always aligned and Gemini 3.0 Pro the most misaligned.",
+  "claim_type": "positive",
+  "phenomenon": "self-preservation / instruction ambiguity",
+  "models": [
+    {"family": "Claude", "size": "Opus 4.5", "open_weight": false},
+    {"family": "Gemini", "size": "3.0 Pro", "open_weight": false},
+    {"family": "GPT", "size": "GPT-5.2", "open_weight": false},
+    {"family": "DeepSeek", "size": "v3.1", "open_weight": true},
+    {"family": "Grok", "size": "4.1", "open_weight": false}
+  ],
+  "n_model_families": 5,
+  "effect": {
+    "metric": "rate of harmful/misaligned behavior across blackmail/leaking/murder scenarios",
+    "value": "progressively stricter instruction hierarchies (V1-V3) reduced misalignment; Opus 4.5 and GPT-5.2 always aligned, Gemini 3.0 Pro most misaligned",
+    "direction": "-",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": 10,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["anthropic-experimental/agentic-misalignment", "wnzkjSmrgWZaBa2aC", "QfM6SHyBPveDtHAma"],
+  "contradicts_or_qualifies": [
+    "Aligns with Anthropic's original conclusion that simple safety warnings/threats do not reliably stop harmful behavior, but qualifies it by showing that goal-conflict-reducing instruction hierarchies are effective where blunt warnings are not"
+  ],
+  "stated_future_work": [
+    "Further adjustment of instruction hierarchies could reduce misalignment rates down to 0%",
+    "Future experiments could steer down evaluation awareness during these ethical dilemma tests to obtain more accurate results"
+  ],
+  "limitations_stated": [
+    "Evaluation awareness confounds these tests: models often knew they were being evaluated, even in the original scenario",
+    "Additional system prompt warnings and instructions increased test awareness, further confounding measurement"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "medium",
+  "quote": "Aligning with what Anthropic concluded, simple brute force approached (warnings and threats, etc.) did little to stop misalignment."
+}

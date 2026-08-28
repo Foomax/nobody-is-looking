@@ -1,0 +1,22 @@
+{
+ "post_id": "GKyyYCs8n2goDcAe2",
+ "primary_claim": "Across 14 evaluated models, every reasoning model except Claude sometimes produces illegible chain-of-thought segments; restricting a model to only the legible portions of its CoT increases incorrect answers by 36% (showing the illegible text is useful to the model), illegibility increases on harder questions, yet across many resampled responses to the same question there is no meaningful correlation (r=0.061) between per-sample CoT illegibility and answer correctness, suggesting illegible reasoning is not more effective than legible natural-language reasoning.",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought monitorability",
+ "models": [
+  {"family": "DeepSeek", "size": "R1, R1-Zero, V3", "open_weight": true},
+  {"family": "Qwen", "size": "QwQ, Qwen3 235B", "open_weight": true},
+  {"family": "Claude", "size": "six models", "open_weight": false},
+  {"family": "Kimi", "size": "K2", "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {"metric": "illegibility score (1-10); accuracy drop when restricted to legible CoT prefix; correlation between illegibility and correctness", "value": "with the exception of Claude, every reasoning model sometimes produces illegible CoTs; forcing QwQ to answer using only the legible prefix increases incorrect answers by 36%; correlation between per-sample illegibility and correctness across resampled responses is near zero (r=0.061)", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2506.01939", "arXiv:2509.15541"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["The complex-steganography hypothesis seems unlikely given the near-zero correlation between illegibility and performance, though this doesn't rule out models finding some narrower use for the illegible tokens.", "If most illegible tokens are useless but a monitor cannot reliably distinguish the useful subset from noise, this doesn't actually help monitoring.", "The 36% performance-drop estimate is confounded by expected degradation from going off-policy when prefilling with a truncated, legible-only CoT."],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "With the exception of Claude, every reasoning model sometimes produces illegible CoTs, always returning legible text afterward."
+}

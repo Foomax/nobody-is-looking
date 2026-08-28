@@ -1,0 +1,31 @@
+{
+ "post_id": "gJqvNH2XJqgyLq9B7",
+ "primary_claim": "Linear probes trained on Mistral7B's hidden activations discriminate high- versus low-cyber-risk input scenarios with F1 up to 0.85-0.95 and AUC up to 0.96 in several later layers, and the top neurons identified causally boost cybersecurity-related output tokens.",
+ "claim_type": "positive",
+ "phenomenon": "linear probe detection",
+ "models": [
+  {"family": "Mistral", "size": "7B", "open_weight": true},
+  {"family": "GPT-2", "size": "small", "open_weight": true},
+  {"family": "GPT-2", "size": "large", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "F1 / AUC of linear probe risk classifier", "value": "F1 0.85-0.95; AUC up to 0.96 for several layers", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["TransformerLensOrg/TransformerLens"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Finishing to explore the attention patterns of our triggers to explain the circuit (WIP)",
+  "Clamping activations on groups of more than 1 neuron to observe output effects.",
+  "Visualize activations not at the end of an input but throughout, to search for snap intermediate triggers vs ultimate state.",
+  "Training multiple classes of risks and/or a 5 point severity scale (instead of binary classification)",
+  "Finding which embedding dimensions have weights correlated highly to the ones learned by the linear probes."
+ ],
+ "limitations_stated": [
+  "here, I do not address design/architecture efforts and how they might improve signal/noise tradeoffs",
+  "without a budget to train Sparse Autoencoders on holistic corpora, the appeal of working with SAEs looked out of reach",
+  "the test on the individual neuron makes a certain difference, but it's not reliable on its own (as evidenced by red herrings from superposition)"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "found confidence that the model generally senses when something is up in a given input text, vs low risk scenarios (F1>0.85 for 4 layers; AUC in some layers exceeds 0.96)"
+}

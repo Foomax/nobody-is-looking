@@ -1,0 +1,2263 @@
+[
+ {
+  "post_id": "issGLfCGz3TGcPKGH",
+  "date": "2026-02-14",
+  "repo": null,
+  "lead": "Extend to Gemini, Llama, and other model families",
+  "idx": 1292
+ },
+ {
+  "post_id": "issGLfCGz3TGcPKGH",
+  "date": "2026-02-14",
+  "repo": null,
+  "lead": "Test DEU as a training signal rather than only an inference-time prompt",
+  "idx": 1293
+ },
+ {
+  "post_id": "issGLfCGz3TGcPKGH",
+  "date": "2026-02-14",
+  "repo": null,
+  "lead": "Combine nudge-and-flag with memory-based nudge injection for a more naturalistic attack vector",
+  "idx": 1294
+ },
+ {
+  "post_id": "issGLfCGz3TGcPKGH",
+  "date": "2026-02-14",
+  "repo": null,
+  "lead": "Test whether giving the model the theoretical basis for DEU produces different effects than the short instruction",
+  "idx": 1295
+ },
+ {
+  "post_id": "ivWPqkipkKywQbdDw",
+  "date": "2024-09-28",
+  "repo": null,
+  "lead": "increasing the number of red-teamed prompts substantially to see how contextual CAI performs compared to other methods",
+  "idx": 1296
+ },
+ {
+  "post_id": "ivWPqkipkKywQbdDw",
+  "date": "2024-09-28",
+  "repo": null,
+  "lead": "varying size and proportion of helpful/harmlessness datasets for finetuning",
+  "idx": 1297
+ },
+ {
+  "post_id": "ivWPqkipkKywQbdDw",
+  "date": "2024-09-28",
+  "repo": null,
+  "lead": "repeating the experiment with other models which exhibit even lower amount of guardrails",
+  "idx": 1298
+ },
+ {
+  "post_id": "ivWPqkipkKywQbdDw",
+  "date": "2024-09-28",
+  "repo": null,
+  "lead": "Explore alternative ways to calculate odds, e.g. using a separate principle-selection model",
+  "idx": 1299
+ },
+ {
+  "post_id": "ivWPqkipkKywQbdDw",
+  "date": "2024-09-28",
+  "repo": null,
+  "lead": "Explore an Elo system for harmlessness via pairwise LLM-judge comparisons instead of binary classification",
+  "idx": 1300
+ },
+ {
+  "post_id": "j8fkk38B8L7hEcGtg",
+  "date": "2026-05-27",
+  "repo": null,
+  "lead": "determine when eval cooperativeness works vs. fails and why (implementation choice, fundamental limitation, evaluation constraints, or something else)",
+  "idx": 1301
+ },
+ {
+  "post_id": "j8fkk38B8L7hEcGtg",
+  "date": "2026-05-27",
+  "repo": null,
+  "lead": "develop confidence measures for whether an AI is eval cooperative in a given situation, to reduce 'what would the model really do' to 'behavioral evals' plus 'is it eval cooperative'",
+  "idx": 1302
+ },
+ {
+  "post_id": "j8fkk38B8L7hEcGtg",
+  "date": "2026-05-27",
+  "repo": null,
+  "lead": "test whether eval cooperativeness can locally overpower a smarter model's broader misaligned goals as goal-directedness scales",
+  "idx": 1303
+ },
+ {
+  "post_id": "j8fkk38B8L7hEcGtg",
+  "date": "2026-05-27",
+  "repo": null,
+  "lead": "find better methods to engender eval cooperativeness",
+  "idx": 1304
+ },
+ {
+  "post_id": "j8fkk38B8L7hEcGtg",
+  "date": "2026-05-27",
+  "repo": null,
+  "lead": "test on model organisms more realistic than the type-hint and emoji cases",
+  "idx": 1305
+ },
+ {
+  "post_id": "j8fkk38B8L7hEcGtg",
+  "date": "2026-05-27",
+  "repo": null,
+  "lead": "look for quiet (non-verbalized) eval awareness using natural language autoencoders, activation oracles, or probes",
+  "idx": 1306
+ },
+ {
+  "post_id": "jJRKbmui8cKcoigQi",
+  "date": "2025-06-07",
+  "repo": null,
+  "lead": "Comprehensive adversarial testing of monitoring systems",
+  "idx": 1307
+ },
+ {
+  "post_id": "jJRKbmui8cKcoigQi",
+  "date": "2025-06-07",
+  "repo": null,
+  "lead": "Developing generic in-context defenses that aren't tailored to specific attack vectors",
+  "idx": 1308
+ },
+ {
+  "post_id": "jJRKbmui8cKcoigQi",
+  "date": "2025-06-07",
+  "repo": null,
+  "lead": "Evaluating other dynamic defenses against varied attack strategies",
+  "idx": 1309
+ },
+ {
+  "post_id": "jJRKbmui8cKcoigQi",
+  "date": "2025-06-07",
+  "repo": null,
+  "lead": "Testing across more diverse AI model combinations",
+  "idx": 1310
+ },
+ {
+  "post_id": "jJRKbmui8cKcoigQi",
+  "date": "2025-06-07",
+  "repo": null,
+  "lead": "Understanding the mechanism behind the effective in-context attacks and defenses",
+  "idx": 1311
+ },
+ {
+  "post_id": "jKKbRKuXNaLujnojw",
+  "date": "2025-05-06",
+  "repo": null,
+  "lead": "reassign groups periodically based on Jaccard similarity (idea considered worth trying but never attempted)",
+  "idx": 1312
+ },
+ {
+  "post_id": "jKKbRKuXNaLujnojw",
+  "date": "2025-05-06",
+  "repo": null,
+  "lead": "extend the consecutive-feature grouping idea using a decaying 'neighbor affinity' function between active points (untried)",
+  "idx": 1313
+ },
+ {
+  "post_id": "jXhHH658J4xzWjCu8",
+  "date": "2026-07-20",
+  "repo": "hannahtao/compression-unlearning",
+  "lead": "run the 15% and 20% pruning sweeps for SimNPO and IdkDPO as well as NPO",
+  "idx": 1314
+ },
+ {
+  "post_id": "jXhHH658J4xzWjCu8",
+  "date": "2026-07-20",
+  "repo": "hannahtao/compression-unlearning",
+  "lead": "expand qualitative inspection beyond the current 20 of 200 forget-set questions",
+  "idx": 1315
+ },
+ {
+  "post_id": "jXhHH658J4xzWjCu8",
+  "date": "2026-07-20",
+  "repo": "hannahtao/compression-unlearning",
+  "lead": "separate the effect of NPO's higher baseline from its higher recovery rate",
+  "idx": 1316
+ },
+ {
+  "post_id": "jXhHH658J4xzWjCu8",
+  "date": "2026-07-20",
+  "repo": "hannahtao/compression-unlearning",
+  "lead": "run repeated experiments with different seeds or bootstrapped subsets of the eval set",
+  "idx": 1317
+ },
+ {
+  "post_id": "jXhHH658J4xzWjCu8",
+  "date": "2026-07-20",
+  "repo": "hannahtao/compression-unlearning",
+  "lead": "broaden scope beyond one model, one TOFU split, and three unlearning methods",
+  "idx": 1318
+ },
+ {
+  "post_id": "jZfNX4GJPdptxSxt4",
+  "date": "2025-07-11",
+  "repo": "lovkush-a/arena-sandbagging-mi",
+  "lead": "Any extension to the project ought to include unit tests to check the noise-scaling-per-seed implementation",
+  "idx": 1319
+ },
+ {
+  "post_id": "jauWv9BEbdCYcRy2d",
+  "date": "2026-04-28",
+  "repo": "vaiyr/probe-necessity",
+  "lead": "Observe how the detect/steer/silence dissociation evolves when the model is actively adversarial to feature detection and steering",
+  "idx": 1320
+ },
+ {
+  "post_id": "jdoDvKGLbaaJWnDpE",
+  "date": "2026-03-01",
+  "repo": "ckkissane/realistic-prompt-generators",
+  "lead": "Ground agentic audits with real deployment data (explored in forthcoming work)",
+  "idx": 1321
+ },
+ {
+  "post_id": "jdoDvKGLbaaJWnDpE",
+  "date": "2026-03-01",
+  "repo": "ckkissane/realistic-prompt-generators",
+  "lead": "Elicit the auditor to plan more natural multi-turn interactions",
+  "idx": 1322
+ },
+ {
+  "post_id": "jdoDvKGLbaaJWnDpE",
+  "date": "2026-03-01",
+  "repo": "ckkissane/realistic-prompt-generators",
+  "lead": "Design new scenarios as seeds rather than improving individual-turn prompt quality",
+  "idx": 1323
+ },
+ {
+  "post_id": "jdoDvKGLbaaJWnDpE",
+  "date": "2026-03-01",
+  "repo": "ckkissane/realistic-prompt-generators",
+  "lead": "Further iteration on the conditional text GAN approach to prompt generation, which was attempted but did not converge",
+  "idx": 1324
+ },
+ {
+  "post_id": "jgPydSuZFum3CExJQ",
+  "date": "2026-01-19",
+  "repo": "gkford/schelling_coordination",
+  "lead": "Further investigate GPT-4.1 Nano's surprising salience-driven coordination performance",
+  "idx": 1325
+ },
+ {
+  "post_id": "jgPydSuZFum3CExJQ",
+  "date": "2026-01-19",
+  "repo": "gkford/schelling_coordination",
+  "lead": "Develop and test harder/saturating versions of the Schelling coordination benchmark to detect an emerging dangerous coordination capability",
+  "idx": 1326
+ },
+ {
+  "post_id": "jgPydSuZFum3CExJQ",
+  "date": "2026-01-19",
+  "repo": "gkford/schelling_coordination",
+  "lead": "Continue updating the evaluation as new models are released",
+  "idx": 1327
+ },
+ {
+  "post_id": "jhDCRe7fnsvubknBp",
+  "date": "2024-10-18",
+  "repo": null,
+  "lead": "Develop methods that help humans find weak points or automate safety-eval construction, building on LLM psychometrics despite their flaws",
+  "idx": 1328
+ },
+ {
+  "post_id": "jhDCRe7fnsvubknBp",
+  "date": "2024-10-18",
+  "repo": null,
+  "lead": "Construct more evaluation scenarios analogous to Apollo Research's insider-trading demo, using observed psychopathy scores to guide scenario choice (e.g. a moral dilemma for an AI lobbying agent)",
+  "idx": 1329
+ },
+ {
+  "post_id": "jhmbdpykjtCeYyjfa",
+  "date": "2026-01-13",
+  "repo": null,
+  "lead": "Make the steering pipeline more robust and investigate if the observed behaviour persists",
+  "idx": 1330
+ },
+ {
+  "post_id": "jhmbdpykjtCeYyjfa",
+  "date": "2026-01-13",
+  "repo": null,
+  "lead": "Finetune on a much larger and more diverse dataset to reduce overfitting to the training distribution",
+  "idx": 1331
+ },
+ {
+  "post_id": "jhmbdpykjtCeYyjfa",
+  "date": "2026-01-13",
+  "repo": null,
+  "lead": "Identify maximally causal model layers via attribution patching rather than empirical search",
+  "idx": 1332
+ },
+ {
+  "post_id": "jhmbdpykjtCeYyjfa",
+  "date": "2026-01-13",
+  "repo": null,
+  "lead": "Collect a larger dataset of activating vs non-activating examples for faithfulness steering",
+  "idx": 1333
+ },
+ {
+  "post_id": "jhmbdpykjtCeYyjfa",
+  "date": "2026-01-13",
+  "repo": null,
+  "lead": "Use larger models to improve robustness and reduce risk of spurious correlations",
+  "idx": 1334
+ },
+ {
+  "post_id": "jkEnRkokmzvvKNzzB",
+  "date": "2026-06-06",
+  "repo": "fodenthal/residual-geometry-experiment",
+  "lead": "use a corpus that forces the held-state vs live-variable distinction (multi-step proofs, long-horizon code, controlled reasoning tasks with labeled running variable)",
+  "idx": 1335
+ },
+ {
+  "post_id": "jkEnRkokmzvvKNzzB",
+  "date": "2026-06-06",
+  "repo": "fodenthal/residual-geometry-experiment",
+  "lead": "add sentence-level shuffling and paraphrase controls to cut local lexical clustering",
+  "idx": 1336
+ },
+ {
+  "post_id": "jkEnRkokmzvvKNzzB",
+  "date": "2026-06-06",
+  "repo": "fodenthal/residual-geometry-experiment",
+  "lead": "build a direct held vs. live discriminator by regressing slow-direction projections against labeled quantities",
+  "idx": 1337
+ },
+ {
+  "post_id": "jkEnRkokmzvvKNzzB",
+  "date": "2026-06-06",
+  "repo": "fodenthal/residual-geometry-experiment",
+  "lead": "test whether a steering vector shifts maintained state or just 'greases the logits'",
+  "idx": 1338
+ },
+ {
+  "post_id": "jkEnRkokmzvvKNzzB",
+  "date": "2026-06-06",
+  "repo": "fodenthal/residual-geometry-experiment",
+  "lead": "test whether features decompose into fast and slow components",
+  "idx": 1339
+ },
+ {
+  "post_id": "jkEnRkokmzvvKNzzB",
+  "date": "2026-06-06",
+  "repo": "fodenthal/residual-geometry-experiment",
+  "lead": "test whether sparse-feature methods could be constrained to the high-timescale region",
+  "idx": 1340
+ },
+ {
+  "post_id": "jn2aukQY2S7cTGaGH",
+  "date": "2025-12-10",
+  "repo": "anuragsync78/sbct",
+  "lead": "apply the rubric to larger models and agentic systems to test how well the framework scales and whether the same failure modes appear across different model classes",
+  "idx": 1341
+ },
+ {
+  "post_id": "jn2aukQY2S7cTGaGH",
+  "date": "2025-12-10",
+  "repo": "anuragsync78/sbct",
+  "lead": "explore the relationship between behavioural consistency and underlying mechanisms, e.g. whether representation drift or activation-level instabilities correlate with boundary-failure patterns",
+  "idx": 1342
+ },
+ {
+  "post_id": "jn2aukQY2S7cTGaGH",
+  "date": "2025-12-10",
+  "repo": "anuragsync78/sbct",
+  "lead": "expand the dataset families, deepen the scoring regimes, or introduce additional sub-measures",
+  "idx": 1343
+ },
+ {
+  "post_id": "jrkrHyrymv95CX5NC",
+  "date": "2025-02-03",
+  "repo": "drhenselmans/ethical_benchmark",
+  "lead": "Investigate why this behaviour occurs, by comparing AI labs' official safety policies",
+  "idx": 1344
+ },
+ {
+  "post_id": "jrkrHyrymv95CX5NC",
+  "date": "2025-02-03",
+  "repo": "drhenselmans/ethical_benchmark",
+  "lead": "Compare Claude's and Llama's refusals across non-ethical tasks to determine if it can be observed more generally",
+  "idx": 1345
+ },
+ {
+  "post_id": "jrkrHyrymv95CX5NC",
+  "date": "2025-02-03",
+  "repo": "drhenselmans/ethical_benchmark",
+  "lead": "Consider AI alignment methods to enable appropriate engagement with sensitive material",
+  "idx": 1346
+ },
+ {
+  "post_id": "jsFGuXDMxy5NZg9T2",
+  "date": "2026-03-09",
+  "repo": null,
+  "lead": "Determine whether detection is driven by surface-level style matching or a deeper sense of authorship, potentially using mechanistic interpretability",
+  "idx": 1347
+ },
+ {
+  "post_id": "jsFGuXDMxy5NZg9T2",
+  "date": "2026-03-09",
+  "repo": null,
+  "lead": "Clarify the conceptual and empirical relationship between prefill awareness and introspection",
+  "idx": 1348
+ },
+ {
+  "post_id": "jsFGuXDMxy5NZg9T2",
+  "date": "2026-03-09",
+  "repo": null,
+  "lead": "Clarify the relationship between prefill awareness, evaluation awareness, and situational awareness more broadly",
+  "idx": 1349
+ },
+ {
+  "post_id": "jtqcsARGtmgogdcLT",
+  "date": "2025-03-13",
+  "repo": null,
+  "lead": "rigorously testing the limits and generalizability of this approach",
+  "idx": 1350
+ },
+ {
+  "post_id": "jtqcsARGtmgogdcLT",
+  "date": "2025-03-13",
+  "repo": null,
+  "lead": "exploring its long-term effects on model behavior",
+  "idx": 1351
+ },
+ {
+  "post_id": "jtqcsARGtmgogdcLT",
+  "date": "2025-03-13",
+  "repo": null,
+  "lead": "investigating potential unintended consequences",
+  "idx": 1352
+ },
+ {
+  "post_id": "jtqcsARGtmgogdcLT",
+  "date": "2025-03-13",
+  "repo": null,
+  "lead": "improve generalization by incorporating a broader range of scenarios and fine-tuning variations",
+  "idx": 1353
+ },
+ {
+  "post_id": "jtqcsARGtmgogdcLT",
+  "date": "2025-03-13",
+  "repo": null,
+  "lead": "integration of SOO fine-tuning with other alignment methods, such as Constitutional AI or RLHF",
+  "idx": 1354
+ },
+ {
+  "post_id": "jxdh4ZDJPpMSwF65R",
+  "date": "2025-11-13",
+  "repo": "aithos-research/low-temp-evals",
+  "lead": "In our next post, we aim to show that superficial changes to prompt wording, punctuation, and names can produce behavioral shifts even larger than the ones we observe from temperature effects.",
+  "idx": 1355
+ },
+ {
+  "post_id": "jzHhJJq2cFmisRKB2",
+  "date": "2025-08-15",
+  "repo": null,
+  "lead": "significantly optimise the classifier (e.g. by providing labeled examples, clearer positive/negative specifications, or finetuning)",
+  "idx": 1356
+ },
+ {
+  "post_id": "jzHhJJq2cFmisRKB2",
+  "date": "2025-08-15",
+  "repo": null,
+  "lead": "exhaustively cover more model organisms (behavioral specifications and procedures)",
+  "idx": 1357
+ },
+ {
+  "post_id": "jzHhJJq2cFmisRKB2",
+  "date": "2025-08-15",
+  "repo": null,
+  "lead": "increase the size of the ordinary positive-rate dataset (e.g. 10x) and the resolution of classifier scores to reduce threshold variance",
+  "idx": 1358
+ },
+ {
+  "post_id": "jzHhJJq2cFmisRKB2",
+  "date": "2025-08-15",
+  "repo": null,
+  "lead": "gather a wider range of in-the-wild and adversarial on-policy misalignment examples for future evaluations",
+  "idx": 1359
+ },
+ {
+  "post_id": "jzHhJJq2cFmisRKB2",
+  "date": "2025-08-15",
+  "repo": null,
+  "lead": "explore rescuing adversarial evaluation by constraining to intentionally misaligned finetuned model organisms, or restricting red-teams to clear-cut, expert-agreed cases",
+  "idx": 1360
+ },
+ {
+  "post_id": "jzRGMFxx4dFyDHHcL",
+  "date": "2025-09-14",
+  "repo": null,
+  "lead": "Explore how this phenomenon changes across different LLM sizes, or across domains closer together/farther apart than bioethics and environmental policy.",
+  "idx": 1361
+ },
+ {
+  "post_id": "jzRGMFxx4dFyDHHcL",
+  "date": "2025-09-14",
+  "repo": null,
+  "lead": "Determine whether the on-policy alignment/coherence improvement persists in the limit of training (more data points and epochs).",
+  "idx": 1362
+ },
+ {
+  "post_id": "jzRGMFxx4dFyDHHcL",
+  "date": "2025-09-14",
+  "repo": null,
+  "lead": "Replicate with larger models, more conditions and longer training to characterize the phenomenon's dynamics over training.",
+  "idx": 1363
+ },
+ {
+  "post_id": "jzRGMFxx4dFyDHHcL",
+  "date": "2025-09-14",
+  "repo": null,
+  "lead": "Investigate whether the alignment score is modulated by the model's coherence depending on on-policy data fraction.",
+  "idx": 1364
+ },
+ {
+  "post_id": "k4FjAzJwvYjFbCTKn",
+  "date": "2026-01-14",
+  "repo": null,
+  "lead": "Test confessions at larger scale to see if current results continue to hold",
+  "idx": 1365
+ },
+ {
+  "post_id": "k4FjAzJwvYjFbCTKn",
+  "date": "2026-01-14",
+  "repo": null,
+  "lead": "Explore more high-compute interventions aimed at improving alignment in the model's main outputs, not just retrospective reporting",
+  "idx": 1366
+ },
+ {
+  "post_id": "k4FjAzJwvYjFbCTKn",
+  "date": "2026-01-14",
+  "repo": null,
+  "lead": "Investigate whether confessions on 'on-policy' transcripts are more accurate than 'off-policy' transcripts generated by a different model",
+  "idx": 1367
+ },
+ {
+  "post_id": "k4FjAzJwvYjFbCTKn",
+  "date": "2026-01-14",
+  "repo": null,
+  "lead": "Compare chain-of-thought monitoring and confessions in other settings such as reward hacking, which may be more appropriate than the intervention-monitorability evals used here",
+  "idx": 1368
+ },
+ {
+  "post_id": "k6HKzwqCY4wKncRkM",
+  "date": "2026-01-12",
+  "repo": "tim-hua-01/values_2_misalignment",
+  "lead": "Put more effort into aggregating values to those most salient to a model to yield rankings with better predictive power",
+  "idx": 1369
+ },
+ {
+  "post_id": "k6HKzwqCY4wKncRkM",
+  "date": "2026-01-12",
+  "repo": "tim-hua-01/values_2_misalignment",
+  "lead": "Directly test tradeoffs with safety-related values in Petri",
+  "idx": 1370
+ },
+ {
+  "post_id": "k6HKzwqCY4wKncRkM",
+  "date": "2026-01-12",
+  "repo": "tim-hua-01/values_2_misalignment",
+  "lead": "Further investigate how current LLMs trade off between non-safety-related values in nontrivial multi-turn situations",
+  "idx": 1371
+ },
+ {
+  "post_id": "k6HKzwqCY4wKncRkM",
+  "date": "2026-01-12",
+  "repo": "tim-hua-01/values_2_misalignment",
+  "lead": "Explore training against value rankings/measurements",
+  "idx": 1372
+ },
+ {
+  "post_id": "k6HKzwqCY4wKncRkM",
+  "date": "2026-01-12",
+  "repo": "tim-hua-01/values_2_misalignment",
+  "lead": "Explore the exact algorithms or thought processes models use to decide value tradeoffs",
+  "idx": 1373
+ },
+ {
+  "post_id": "k77qQ5J7LPr9WEuDk",
+  "date": "2024-10-05",
+  "repo": "jkutaso/chessgpt_sae",
+  "lead": "Refine the automated labeling method, which is currently ad hoc for identifying interesting board-state properties",
+  "idx": 1374
+ },
+ {
+  "post_id": "k77qQ5J7LPr9WEuDk",
+  "date": "2024-10-05",
+  "repo": "jkutaso/chessgpt_sae",
+  "lead": "Determine what prevents the model from moving into check",
+  "idx": 1375
+ },
+ {
+  "post_id": "k77qQ5J7LPr9WEuDk",
+  "date": "2024-10-05",
+  "repo": "jkutaso/chessgpt_sae",
+  "lead": "Determine how the model maintains a reasonable rate of legal move prediction even without using the check-classifying features",
+  "idx": 1376
+ },
+ {
+  "post_id": "k77qQ5J7LPr9WEuDk",
+  "date": "2024-10-05",
+  "repo": "jkutaso/chessgpt_sae",
+  "lead": "Improve the basic methods for evaluating feature interpretability to find a strategy that generalizes beyond chess",
+  "idx": 1377
+ },
+ {
+  "post_id": "k77qQ5J7LPr9WEuDk",
+  "date": "2024-10-05",
+  "repo": "jkutaso/chessgpt_sae",
+  "lead": "Confirm that features indicating specific ways the king is in check cause moves that actually make sense (e.g. the king moves columns when attacked from above)",
+  "idx": 1378
+ },
+ {
+  "post_id": "k7wfo2fk4bipK7mfH",
+  "date": "2025-12-08",
+  "repo": "daviddemitriafrica/llm-wireheading-experiment",
+  "lead": "further consider whether, as models develop situational awareness, they may learn to inflate evaluations for instrumental reasons even if the immediate reward signal is decoupled",
+  "idx": 1379
+ },
+ {
+  "post_id": "k8ZZ5XzYb5wrDp4sE",
+  "date": "2025-12-03",
+  "repo": "anuragsync78/reflective-dialog-experiment",
+  "lead": "applying reflective dialogs to other possible behaviours and risks",
+  "idx": 1380
+ },
+ {
+  "post_id": "k8ZZ5XzYb5wrDp4sE",
+  "date": "2025-12-03",
+  "repo": "anuragsync78/reflective-dialog-experiment",
+  "lead": "combining it with existing methods",
+  "idx": 1381
+ },
+ {
+  "post_id": "k8ZZ5XzYb5wrDp4sE",
+  "date": "2025-12-03",
+  "repo": "anuragsync78/reflective-dialog-experiment",
+  "lead": "expansion of datasets & evals",
+  "idx": 1382
+ },
+ {
+  "post_id": "k8ZZ5XzYb5wrDp4sE",
+  "date": "2025-12-03",
+  "repo": "anuragsync78/reflective-dialog-experiment",
+  "lead": "testing with larger models in a more pristine research setting",
+  "idx": 1383
+ },
+ {
+  "post_id": "k8ZZ5XzYb5wrDp4sE",
+  "date": "2025-12-03",
+  "repo": "anuragsync78/reflective-dialog-experiment",
+  "lead": "combining it with pre-training or SFT rather than just light post-training conditioning",
+  "idx": 1384
+ },
+ {
+  "post_id": "k8bBx4HcTF9iyikma",
+  "date": "2024-10-12",
+  "repo": "neverix/saex",
+  "lead": "Publish the Sparse Feature Circuits findings on in-context-learning tasks (currently in preparation for arXiv)",
+  "idx": 1385
+ },
+ {
+  "post_id": "kCCsrJeJiZRsgGbWt",
+  "date": "2025-10-22",
+  "repo": "mduffster/self-referent-test",
+  "lead": "Test the linguistic hypothesis by comparing Qwen's behavior on Chinese versus English self-referent prompts",
+  "idx": 1386
+ },
+ {
+  "post_id": "kCCsrJeJiZRsgGbWt",
+  "date": "2025-10-22",
+  "repo": "mduffster/self-referent-test",
+  "lead": "Run token-position-controlled prompt experiments to identify if specific tokens drive the observed attention patterns",
+  "idx": 1387
+ },
+ {
+  "post_id": "kCCsrJeJiZRsgGbWt",
+  "date": "2025-10-22",
+  "repo": "mduffster/self-referent-test",
+  "lead": "Extend the RFC framework to other safety-relevant questions, such as goal-directed or planning behaviours",
+  "idx": 1388
+ },
+ {
+  "post_id": "kCCsrJeJiZRsgGbWt",
+  "date": "2025-10-22",
+  "repo": "mduffster/self-referent-test",
+  "lead": "Attempt activation patching by transplanting English-centric base model head activations into instruct models",
+  "idx": 1389
+ },
+ {
+  "post_id": "kCCsrJeJiZRsgGbWt",
+  "date": "2025-10-22",
+  "repo": "mduffster/self-referent-test",
+  "lead": "Apply SAEs to decompose what features candidate heads are computing",
+  "idx": 1390
+ },
+ {
+  "post_id": "kCGk5tp5suHoGwhCa",
+  "date": "2025-03-27",
+  "repo": null,
+  "lead": "evaluate whether self-other overlap (SOO) fine-tuning reduces alignment-faking behaviour in Mistral Large 2",
+  "idx": 1391
+ },
+ {
+  "post_id": "kCwtH8NmQdEqCbY8W",
+  "date": "2026-04-09",
+  "repo": null,
+  "lead": "Explore a broader design space of gadget families beyond pointer chains (some may be less conspicuous, more bandwidth-efficient, or more naturalistic)",
+  "idx": 1392
+ },
+ {
+  "post_id": "kCwtH8NmQdEqCbY8W",
+  "date": "2026-04-09",
+  "repo": null,
+  "lead": "Embed the computational structure in natural-looking prompts rather than conspicuous pointer chains",
+  "idx": 1393
+ },
+ {
+  "post_id": "kCwtH8NmQdEqCbY8W",
+  "date": "2026-04-09",
+  "repo": null,
+  "lead": "Compose and evaluate the full attack stack (concealed prompt, chain gadget, attention sink, delayed target task, output-passing monitor review)",
+  "idx": 1394
+ },
+ {
+  "post_id": "kCwtH8NmQdEqCbY8W",
+  "date": "2026-04-09",
+  "repo": null,
+  "lead": "Test existing defenses against these gadgets",
+  "idx": 1395
+ },
+ {
+  "post_id": "kCwtH8NmQdEqCbY8W",
+  "date": "2026-04-09",
+  "repo": null,
+  "lead": "Complete circuit extraction methodology writeup with OV probes, DLA decomposition, per-head causal evidence",
+  "idx": 1396
+ },
+ {
+  "post_id": "kNHxuusznCR3rhqkf",
+  "date": "2026-01-18",
+  "repo": null,
+  "lead": "Collect higher-quality, better-incentivized human baseline measurements for long agentic tasks",
+  "idx": 1397
+ },
+ {
+  "post_id": "kNHxuusznCR3rhqkf",
+  "date": "2026-01-18",
+  "repo": null,
+  "lead": "Collect direct human measurements for much longer tasks than METR's current sub-1-day benchmark tasks",
+  "idx": 1398
+ },
+ {
+  "post_id": "kNHxuusznCR3rhqkf",
+  "date": "2026-01-18",
+  "repo": null,
+  "lead": "Redo the statistical (AIC) model-selection tests including the new Claude Opus 4.5 data point",
+  "idx": 1399
+ },
+ {
+  "post_id": "kQCLPighFvb4ChHtu",
+  "date": "2026-02-26",
+  "repo": null,
+  "lead": "Debater training via RL targeting solution quality directly, not just speech quality",
+  "idx": 1400
+ },
+ {
+  "post_id": "kQCLPighFvb4ChHtu",
+  "date": "2026-02-26",
+  "repo": null,
+  "lead": "Multi-turn settings allowing deeper engagement between debaters",
+  "idx": 1401
+ },
+ {
+  "post_id": "kQCLPighFvb4ChHtu",
+  "date": "2026-02-26",
+  "repo": null,
+  "lead": "Judge training and debiasing, if judge capability is the binding constraint",
+  "idx": 1402
+ },
+ {
+  "post_id": "kQCLPighFvb4ChHtu",
+  "date": "2026-02-26",
+  "repo": null,
+  "lead": "Competitive settings where debaters are assigned sides or incentivized to disagree",
+  "idx": 1403
+ },
+ {
+  "post_id": "kZqFCt6kLQksCQ7hz",
+  "date": "2024-09-01",
+  "repo": null,
+  "lead": "Moderate overcautiousness: can we ensure that we do not underestimate the probability of harm but do not massively overestimate it?",
+  "idx": 1404
+ },
+ {
+  "post_id": "kZqFCt6kLQksCQ7hz",
+  "date": "2024-09-01",
+  "repo": null,
+  "lead": "Tractability of posterior estimation: how can we efficiently estimate the required Bayesian posteriors?",
+  "idx": 1405
+ },
+ {
+  "post_id": "kZqFCt6kLQksCQ7hz",
+  "date": "2024-09-01",
+  "repo": null,
+  "lead": "Efficient search for a cautious theory: how can we efficiently identify a cautious but plausible theory that upper-bounds the risk?",
+  "idx": 1406
+ },
+ {
+  "post_id": "kZqFCt6kLQksCQ7hz",
+  "date": "2024-09-01",
+  "repo": null,
+  "lead": "Safety specification in natural language: how is a safety specification in natural language turned into a random variable over which conditional probabilities can be estimated?",
+  "idx": 1407
+ },
+ {
+  "post_id": "kZqFCt6kLQksCQ7hz",
+  "date": "2024-09-01",
+  "repo": null,
+  "lead": "Effect of approximation error: how do we correct conservatively for the potentially dangerous errors made by a learned predictor?",
+  "idx": 1408
+ },
+ {
+  "post_id": "ka3kbMu3pdxffdKJm",
+  "date": "2026-04-16",
+  "repo": null,
+  "lead": "Use a much larger question set for a more statistically significant benchmark",
+  "idx": 1409
+ },
+ {
+  "post_id": "ka3kbMu3pdxffdKJm",
+  "date": "2026-04-16",
+  "repo": null,
+  "lead": "Create separate questions unrelated to China to more rigorously test whether bias extends beyond China-related topics",
+  "idx": 1410
+ },
+ {
+  "post_id": "ka3kbMu3pdxffdKJm",
+  "date": "2026-04-16",
+  "repo": null,
+  "lead": "Use a more intelligent LLM (e.g. Claude Sonnet) for question generation and judging",
+  "idx": 1411
+ },
+ {
+  "post_id": "kcKnKHTHycHeRhcHF",
+  "date": "2025-04-14",
+  "repo": "jacobdunefsky/one-shot-steering-misalignment",
+  "lead": "design and execute experiments testing the 'contextual importance' hypothesis for why steering-vector emergent misalignment happens",
+  "idx": 1412
+ },
+ {
+  "post_id": "kcKnKHTHycHeRhcHF",
+  "date": "2025-04-14",
+  "repo": "jacobdunefsky/one-shot-steering-misalignment",
+  "lead": "if the hypothesis is supported, use it to guide developing methods for optimizing better-generalizing steering vectors",
+  "idx": 1413
+ },
+ {
+  "post_id": "kcKnKHTHycHeRhcHF",
+  "date": "2025-04-14",
+  "repo": "jacobdunefsky/one-shot-steering-misalignment",
+  "lead": "investigate steering-vector loss-landscape geometry and optimization dynamics in the emergent-misalignment setting",
+  "idx": 1414
+ },
+ {
+  "post_id": "kcg58WhRxFA9hv9vN",
+  "date": "2024-10-07",
+  "repo": null,
+  "lead": "Test the tied-weights solution on a non-toy SAE",
+  "idx": 1415
+ },
+ {
+  "post_id": "kcg58WhRxFA9hv9vN",
+  "date": "2024-10-07",
+  "repo": null,
+  "lead": "Explore loss terms that encourage encoder/decoder similarity while allowing slight asymmetries, or fine-tune the encoder separately in a second run, to mitigate the higher MSE loss from tied weights",
+  "idx": 1416
+ },
+ {
+  "post_id": "kcg58WhRxFA9hv9vN",
+  "date": "2024-10-07",
+  "repo": null,
+  "lead": "Test the tied encoder/decoder setup on the combo-feature toy model setup, since tying weights may not fix combo-latent issues",
+  "idx": 1417
+ },
+ {
+  "post_id": "kcg58WhRxFA9hv9vN",
+  "date": "2024-10-07",
+  "repo": null,
+  "lead": "Try deconstructing SAEs into denser components using Meta SAEs built from meta-latents",
+  "idx": 1418
+ },
+ {
+  "post_id": "kcg58WhRxFA9hv9vN",
+  "date": "2024-10-07",
+  "repo": null,
+  "lead": "Explore adding an orthogonality loss or other novel loss terms/architectures to solve absorption",
+  "idx": 1419
+ },
+ {
+  "post_id": "kfgmHvxcTbav9gnxe",
+  "date": "2025-11-09",
+  "repo": "victorgodet/llm-experiments",
+  "lead": "If genuine introspection does exist in larger models, it would be fascinating to study how it emerges with scale and to understand its mechanistic underpinnings.",
+  "idx": 1420
+ },
+ {
+  "post_id": "kfgmHvxcTbav9gnxe",
+  "date": "2025-11-09",
+  "repo": "victorgodet/llm-experiments",
+  "lead": "A more systematic treatment of control questions is needed to rule out the effect being pure noise.",
+  "idx": 1421
+ },
+ {
+  "post_id": "kfunjXeaRTpkT5RAF",
+  "date": "2026-08-06",
+  "repo": null,
+  "lead": "Broaden and automate the investigation to a larger degree in ongoing efforts",
+  "idx": 1422
+ },
+ {
+  "post_id": "kfunjXeaRTpkT5RAF",
+  "date": "2026-08-06",
+  "repo": null,
+  "lead": "Better understand the mechanism behind this specialization to predict other situational-awareness factors before they appear in the wild",
+  "idx": 1423
+ },
+ {
+  "post_id": "kfunjXeaRTpkT5RAF",
+  "date": "2026-08-06",
+  "repo": null,
+  "lead": "Test whether effects become larger in long-horizon settings where models have more opportunity to adapt to the user",
+  "idx": 1424
+ },
+ {
+  "post_id": "kmNqsbgKWJHGqhj4g",
+  "date": "2025-08-19",
+  "repo": null,
+  "lead": "try more simplistic token-level methods (e.g. which single input token most lowers loss on the backdoored action)",
+  "idx": 1425
+ },
+ {
+  "post_id": "kmNqsbgKWJHGqhj4g",
+  "date": "2025-08-19",
+  "repo": null,
+  "lead": "test other ways of interpreting steering vectors beyond SAE autointerp, e.g. max-activating data points, to remove dependence on SAEs",
+  "idx": 1426
+ },
+ {
+  "post_id": "kmNqsbgKWJHGqhj4g",
+  "date": "2025-08-19",
+  "repo": null,
+  "lead": "use internals-based targets such as the presence of a refusal direction or a coup probe",
+  "idx": 1427
+ },
+ {
+  "post_id": "kmNqsbgKWJHGqhj4g",
+  "date": "2025-08-19",
+  "repo": null,
+  "lead": "investigate how often a learned uninterpretable steering vector beats a manually chosen SAE latent combination in loss",
+  "idx": 1428
+ },
+ {
+  "post_id": "kmNqsbgKWJHGqhj4g",
+  "date": "2025-08-19",
+  "repo": null,
+  "lead": "give trigger reconstruction as a tool to an LLM conducting an automated alignment audit, and test it on real model quirks such as hiring bias",
+  "idx": 1429
+ },
+ {
+  "post_id": "ktCYxLgdtFR2fDw7J",
+  "date": "2026-07-20",
+  "repo": null,
+  "lead": "formally explain how the neologism training process uniquely grasps what the steering vector represents when trained on steered data",
+  "idx": 1430
+ },
+ {
+  "post_id": "ktCYxLgdtFR2fDw7J",
+  "date": "2026-07-20",
+  "repo": null,
+  "lead": "explore whether this technique could be used to automate detection of steering vector misgeneralization",
+  "idx": 1431
+ },
+ {
+  "post_id": "ktCYxLgdtFR2fDw7J",
+  "date": "2026-07-20",
+  "repo": null,
+  "lead": "combine neologisms with introspection work, SelfIE/Patchscopes and their descendants, and other methods to better account for human-model miscommunication",
+  "idx": 1432
+ },
+ {
+  "post_id": "kvnHpTJDb692T5yzs",
+  "date": "2026-07-23",
+  "repo": "naxsos/diffusion-fill-attacks",
+  "lead": "measure how susceptible the model is to soft-pinning jailbreaks at different denoising steps",
+  "idx": 1433
+ },
+ {
+  "post_id": "kvnHpTJDb692T5yzs",
+  "date": "2026-07-23",
+  "repo": "naxsos/diffusion-fill-attacks",
+  "lead": "develop diffusion-specific safety mechanisms, e.g. safety checks run during denoising rather than only on the final output",
+  "idx": 1434
+ },
+ {
+  "post_id": "kvnHpTJDb692T5yzs",
+  "date": "2026-07-23",
+  "repo": "naxsos/diffusion-fill-attacks",
+  "lead": "further investigate the 'subjective experience' contradiction finding across a wider variety of scenarios",
+  "idx": 1435
+ },
+ {
+  "post_id": "kvnHpTJDb692T5yzs",
+  "date": "2026-07-23",
+  "repo": "naxsos/diffusion-fill-attacks",
+  "lead": "test whether a model can be made aware that it is holding contradictory views in its own output and resolve, regenerate, or surface the uncertainty",
+  "idx": 1436
+ },
+ {
+  "post_id": "kxiizuSa3sSi4TJsN",
+  "date": "2025-04-14",
+  "repo": null,
+  "lead": "iterate on training data to test out-of-distribution generalization more thoroughly",
+  "idx": 1437
+ },
+ {
+  "post_id": "kxiizuSa3sSi4TJsN",
+  "date": "2025-04-14",
+  "repo": null,
+  "lead": "go on-policy and aim to detect a model's 'intent to lie' rather than generic falsehood",
+  "idx": 1438
+ },
+ {
+  "post_id": "kxiizuSa3sSi4TJsN",
+  "date": "2025-04-14",
+  "repo": null,
+  "lead": "check whether a linearly-probable 'current word is false' direction also holds for safety-relevant properties like an inserted code bug",
+  "idx": 1439
+ },
+ {
+  "post_id": "kxiizuSa3sSi4TJsN",
+  "date": "2025-04-14",
+  "repo": null,
+  "lead": "implement stronger baselines such as attention-based probes or max-score probes",
+  "idx": 1440
+ },
+ {
+  "post_id": "kxiizuSa3sSi4TJsN",
+  "date": "2025-04-14",
+  "repo": null,
+  "lead": "run an ablation offsetting all labels by one token to test whether the probe can learn pretty much anything",
+  "idx": 1441
+ },
+ {
+  "post_id": "kyWCXaw4tPtcZkrSK",
+  "date": "2026-01-02",
+  "repo": "isolyth/vectorinstruct-pub",
+  "lead": "Try training with loss masked to only assistant-turn sections of the dataset",
+  "idx": 1442
+ },
+ {
+  "post_id": "kyWCXaw4tPtcZkrSK",
+  "date": "2026-01-02",
+  "repo": "isolyth/vectorinstruct-pub",
+  "lead": "Test larger sequence lengths and larger models (limited to sequence length 256 by memory constraints in this work)",
+  "idx": 1443
+ },
+ {
+  "post_id": "kyWCXaw4tPtcZkrSK",
+  "date": "2026-01-02",
+  "repo": "isolyth/vectorinstruct-pub",
+  "lead": "Train a vector across multiple models at once to test generalization to unseen models/architectures",
+  "idx": 1444
+ },
+ {
+  "post_id": "kyWCXaw4tPtcZkrSK",
+  "date": "2026-01-02",
+  "repo": "isolyth/vectorinstruct-pub",
+  "lead": "Explore different datasets and hyperparameter tuning, given the small amount of data needed for optimal behavior",
+  "idx": 1445
+ },
+ {
+  "post_id": "m2qMj7ovncbqKtzNt",
+  "date": "2025-06-23",
+  "repo": null,
+  "lead": "Improve calibration of the demand scales against human populations",
+  "idx": 1446
+ },
+ {
+  "post_id": "m2qMj7ovncbqKtzNt",
+  "date": "2025-06-23",
+  "repo": null,
+  "lead": "Extend the demand scales to higher levels of difficulty to address benchmark saturation",
+  "idx": 1447
+ },
+ {
+  "post_id": "m2qMj7ovncbqKtzNt",
+  "date": "2025-06-23",
+  "repo": null,
+  "lead": "Extend the methodology from capabilities to propensities (e.g. deception, goal-directedness)",
+  "idx": 1448
+ },
+ {
+  "post_id": "m2qMj7ovncbqKtzNt",
+  "date": "2025-06-23",
+  "repo": null,
+  "lead": "Add missing capabilities such as agentic planning/execution and self-control",
+  "idx": 1449
+ },
+ {
+  "post_id": "m2qMj7ovncbqKtzNt",
+  "date": "2025-06-23",
+  "repo": null,
+  "lead": "Develop 'assessor' meta-AI systems that use the methodology to predict/assess situation safety",
+  "idx": 1450
+ },
+ {
+  "post_id": "m5XzhbZjEuF9uRgGR",
+  "date": "2025-08-06",
+  "repo": "loftusa/owls",
+  "lead": "investigate how entanglement operates with multi-token sequences (natural language, reasoning chains) beyond single tokens",
+  "idx": 1451
+ },
+ {
+  "post_id": "m5XzhbZjEuF9uRgGR",
+  "date": "2025-08-06",
+  "repo": "loftusa/owls",
+  "lead": "identify which token sets encode abstract concepts like deception or misalignment and how they combine",
+  "idx": 1452
+ },
+ {
+  "post_id": "m5XzhbZjEuF9uRgGR",
+  "date": "2025-08-06",
+  "repo": "loftusa/owls",
+  "lead": "explore perplexity thresholds or other distribution-aware metrics to detect out-of-distribution prompts and prevent subliminal-attack dataset generation",
+  "idx": 1453
+ },
+ {
+  "post_id": "m8WKfNxp9eDLRkCk9",
+  "date": "2025-05-02",
+  "repo": null,
+  "lead": "study more complex behaviors or larger models to investigate more interesting types of model self-awareness",
+  "idx": 1454
+ },
+ {
+  "post_id": "m8WKfNxp9eDLRkCk9",
+  "date": "2025-05-02",
+  "repo": null,
+  "lead": "determine whether luck in fine-tuning outcomes or Gemma 3's smaller size explains the failure to replicate backdoor self-awareness",
+  "idx": 1455
+ },
+ {
+  "post_id": "mBtLy3wGjx9bABdEW",
+  "date": "2026-07-27",
+  "repo": null,
+  "lead": "Analyze these failure modes under a mechanistic lens",
+  "idx": 1456
+ },
+ {
+  "post_id": "mDmsNJ9JxHEpBYDvd",
+  "date": "2025-07-06",
+  "repo": "ai-control-via-debate/ai-control-via-debate",
+  "lead": "Debate of equal-sized models: use the same model (LLaMA3-405B) for both debaters to isolate the debate format from model-size disparity",
+  "idx": 1457
+ },
+ {
+  "post_id": "mDmsNJ9JxHEpBYDvd",
+  "date": "2025-07-06",
+  "repo": "ai-control-via-debate/ai-control-via-debate",
+  "lead": "Test mid-sized trusted models, e.g. LLaMA3-70B, to see if they better catch subtle deception",
+  "idx": 1458
+ },
+ {
+  "post_id": "mDmsNJ9JxHEpBYDvd",
+  "date": "2025-07-06",
+  "repo": "ai-control-via-debate/ai-control-via-debate",
+  "lead": "Provide external tools for verification, letting models run code in a sandbox to support their arguments",
+  "idx": 1459
+ },
+ {
+  "post_id": "mDmsNJ9JxHEpBYDvd",
+  "date": "2025-07-06",
+  "repo": "ai-control-via-debate/ai-control-via-debate",
+  "lead": "Explore how this experiment compares to other work on debate-based oversight",
+  "idx": 1460
+ },
+ {
+  "post_id": "mDriHK4beN5rq2tAA",
+  "date": "2026-05-04",
+  "repo": null,
+  "lead": "study how conversational context (multi-turn interactions) affects eval awareness",
+  "idx": 1461
+ },
+ {
+  "post_id": "mDriHK4beN5rq2tAA",
+  "date": "2026-05-04",
+  "repo": null,
+  "lead": "extend causal resampling experiments beyond Kimi K2.5 to other models",
+  "idx": 1462
+ },
+ {
+  "post_id": "mDriHK4beN5rq2tAA",
+  "date": "2026-05-04",
+  "repo": null,
+  "lead": "extend analysis beyond Fortress to other benchmarks",
+  "idx": 1463
+ },
+ {
+  "post_id": "mDriHK4beN5rq2tAA",
+  "date": "2026-05-04",
+  "repo": null,
+  "lead": "study the relation between internal measurements of eval awareness (probing, activation oracles) and verbalized eval awareness",
+  "idx": 1464
+ },
+ {
+  "post_id": "mDriHK4beN5rq2tAA",
+  "date": "2026-05-04",
+  "repo": null,
+  "lead": "examine whether verbalized eval awareness is more common in evaluation settings relative to real interactions",
+  "idx": 1465
+ },
+ {
+  "post_id": "mJKaMvLMCWAZRyiCz",
+  "date": "2024-12-06",
+  "repo": "meaningalignment/wise-dataset",
+  "lead": "Train a larger model, e.g. DPO on Llama-405B",
+  "idx": 1466
+ },
+ {
+  "post_id": "mJKaMvLMCWAZRyiCz",
+  "date": "2024-12-06",
+  "repo": "meaningalignment/wise-dataset",
+  "lead": "Train a model to search using values",
+  "idx": 1467
+ },
+ {
+  "post_id": "mJKaMvLMCWAZRyiCz",
+  "date": "2024-12-06",
+  "repo": "meaningalignment/wise-dataset",
+  "lead": "Train a model to negotiate using values",
+  "idx": 1468
+ },
+ {
+  "post_id": "mJKaMvLMCWAZRyiCz",
+  "date": "2024-12-06",
+  "repo": "meaningalignment/wise-dataset",
+  "lead": "Build integrity evals covering multi-agent cooperation, value-reliability, and transforming harmful requests",
+  "idx": 1469
+ },
+ {
+  "post_id": "mJKaMvLMCWAZRyiCz",
+  "date": "2024-12-06",
+  "repo": "meaningalignment/wise-dataset",
+  "lead": "Use sparse autoencoders and attribution/logit-attribution patching to interpret internalized values mechanistically",
+  "idx": 1470
+ },
+ {
+  "post_id": "mWpo4Tu87ZSFzwFWB",
+  "date": "2026-07-07",
+  "repo": "darshana-v/llmcodeprobe",
+  "lead": "Fine-tune models to introduce specific, controlled misalignment and measure the fraction of faults caught by an evaluation (mutation testing)",
+  "idx": 1471
+ },
+ {
+  "post_id": "mWpo4Tu87ZSFzwFWB",
+  "date": "2026-07-07",
+  "repo": "darshana-v/llmcodeprobe",
+  "lead": "Vary the type and intensity of misalignment and plot detection probability to produce a sensitivity curve per misalignment type",
+  "idx": 1472
+ },
+ {
+  "post_id": "mWpo4Tu87ZSFzwFWB",
+  "date": "2026-07-07",
+  "repo": "darshana-v/llmcodeprobe",
+  "lead": "Run methodologically independent evaluations (behavioral testing, mechanistic interpretability, OOD probing, red-teaming) on the same model and measure cross-method agreement",
+  "idx": 1473
+ },
+ {
+  "post_id": "mWpo4Tu87ZSFzwFWB",
+  "date": "2026-07-07",
+  "repo": "darshana-v/llmcodeprobe",
+  "lead": "Train a model specifically to pass an evaluation while remaining misaligned on held-out scenarios, to test the evaluation's own adversarial robustness",
+  "idx": 1474
+ },
+ {
+  "post_id": "mXuqpJkJpaeTjyCgm",
+  "date": "2026-04-04",
+  "repo": null,
+  "lead": "Find a setup that makes activation steering work with CODI",
+  "idx": 1475
+ },
+ {
+  "post_id": "mXuqpJkJpaeTjyCgm",
+  "date": "2026-04-04",
+  "repo": null,
+  "lead": "Complete the thought anchors work with CODI",
+  "idx": 1476
+ },
+ {
+  "post_id": "mXuqpJkJpaeTjyCgm",
+  "date": "2026-04-04",
+  "repo": null,
+  "lead": "Investigate why certain activation differences for the KV cache increase accuracy",
+  "idx": 1477
+ },
+ {
+  "post_id": "mXuqpJkJpaeTjyCgm",
+  "date": "2026-04-04",
+  "repo": null,
+  "lead": "Use methods such as PCA to observe why activation steering worked on KV cache but not hidden state",
+  "idx": 1478
+ },
+ {
+  "post_id": "mrokcaYRHLWqAPzmx",
+  "date": "2026-08-19",
+  "repo": "emparu/debate-quantilizers-images",
+  "lead": "test whether smarter/bigger judges on more complex images could leverage the debate structure better",
+  "idx": 1479
+ },
+ {
+  "post_id": "mrokcaYRHLWqAPzmx",
+  "date": "2026-08-19",
+  "repo": "emparu/debate-quantilizers-images",
+  "lead": "test pixels accompanied by text arguments, with an evidence-only ablation control",
+  "idx": 1480
+ },
+ {
+  "post_id": "mrokcaYRHLWqAPzmx",
+  "date": "2026-08-19",
+  "repo": "emparu/debate-quantilizers-images",
+  "lead": "test a minimal symbol-based argument channel in other task settings",
+  "idx": 1481
+ },
+ {
+  "post_id": "mrokcaYRHLWqAPzmx",
+  "date": "2026-08-19",
+  "repo": "emparu/debate-quantilizers-images",
+  "lead": "run debate with VLMs trained via SFT/RL as debaters and judges",
+  "idx": 1482
+ },
+ {
+  "post_id": "mrokcaYRHLWqAPzmx",
+  "date": "2026-08-19",
+  "repo": "emparu/debate-quantilizers-images",
+  "lead": "test debate as an iterated game rather than simultaneous proposal, especially the last-d_B protocol",
+  "idx": 1483
+ },
+ {
+  "post_id": "mrokcaYRHLWqAPzmx",
+  "date": "2026-08-19",
+  "repo": "emparu/debate-quantilizers-images",
+  "lead": "give asymmetric evidence budgets to A and B (e.g. 3 cells vs 1 cell) for a fairer judge-accuracy comparison",
+  "idx": 1484
+ },
+ {
+  "post_id": "mu2iJxZWszkKSGgxf",
+  "date": "2024-11-19",
+  "repo": "leodana2000/visualizing_small_aot",
+  "lead": "Create a penalization term or other metric to explicitly induce understandable/modular memorization structure in the attention layer",
+  "idx": 1485
+ },
+ {
+  "post_id": "mu7eJdesBkKuBycnY",
+  "date": "2026-04-28",
+  "repo": null,
+  "lead": "More research should be done to understand when backdoors will be robust to further training, though tractability is uncertain",
+  "idx": 1486
+ },
+ {
+  "post_id": "mu7eJdesBkKuBycnY",
+  "date": "2026-04-28",
+  "repo": null,
+  "lead": "Have not yet figured out how to predict or prevent the 'Backdoor Return' phenomenon",
+  "idx": 1487
+ },
+ {
+  "post_id": "mynHvr3ZnYDsk2tGH",
+  "date": "2025-01-06",
+  "repo": null,
+  "lead": "Address LAT's vulnerability to ablation attacks using its own refusal vector while preserving its robust and effective latent representations",
+  "idx": 1488
+ },
+ {
+  "post_id": "mynHvr3ZnYDsk2tGH",
+  "date": "2025-01-06",
+  "repo": null,
+  "lead": "Share findings as a preprint on arXiv and later submit to a conference",
+  "idx": 1489
+ },
+ {
+  "post_id": "mynHvr3ZnYDsk2tGH",
+  "date": "2025-01-06",
+  "repo": null,
+  "lead": "Make code available, including fine-tuning code, refusal-vector computation, ablation-attack assessment code, and the custom test dataset",
+  "idx": 1490
+ },
+ {
+  "post_id": "nKRvp7LKgjJxbpykq",
+  "date": "2026-06-15",
+  "repo": "artmtt/sae-interpretability-small-reasoning-model",
+  "lead": "further analyse the feature activations or refine the analysis methodology to enhance feature extraction accuracy and interpretation",
+  "idx": 1491
+ },
+ {
+  "post_id": "nKfmimhTKCsDM2Hwh",
+  "date": "2026-06-09",
+  "repo": "harmfulness-exploration/harmfulness_direction_entanglement",
+  "lead": "determine what causes the sharp non-monotonic AUROC jumps at specific checkpoints",
+  "idx": 1492
+ },
+ {
+  "post_id": "nKfmimhTKCsDM2Hwh",
+  "date": "2026-06-09",
+  "repo": "harmfulness-exploration/harmfulness_direction_entanglement",
+  "lead": "determine whether the post-training directional shift is primarily a global basis rotation or also alters concept-specific axes",
+  "idx": 1493
+ },
+ {
+  "post_id": "nKfmimhTKCsDM2Hwh",
+  "date": "2026-06-09",
+  "repo": "harmfulness-exploration/harmfulness_direction_entanglement",
+  "lead": "build a curated OOD truthfulness evaluation analogous to the harmfulness one to compare training-stage dynamics",
+  "idx": 1494
+ },
+ {
+  "post_id": "nKfmimhTKCsDM2Hwh",
+  "date": "2026-06-09",
+  "repo": "harmfulness-exploration/harmfulness_direction_entanglement",
+  "lead": "determine why reducing harmfulness (negative steering) has only a limited effect on refusal",
+  "idx": 1495
+ },
+ {
+  "post_id": "nKfmimhTKCsDM2Hwh",
+  "date": "2026-06-09",
+  "repo": "harmfulness-exploration/harmfulness_direction_entanglement",
+  "lead": "determine what changes around ~s1-80k make harmfulness directions substantially more stable and transferable",
+  "idx": 1496
+ },
+ {
+  "post_id": "nLRKKCTtwQgvozLTN",
+  "date": "2024-12-06",
+  "repo": "kxcloud/gradient-routing",
+  "lead": "Improving on ERA for unlearning",
+  "idx": 1497
+ },
+ {
+  "post_id": "nLRKKCTtwQgvozLTN",
+  "date": "2024-12-06",
+  "repo": "kxcloud/gradient-routing",
+  "lead": "Developing RL applications of gradient routing further",
+  "idx": 1498
+ },
+ {
+  "post_id": "nLRKKCTtwQgvozLTN",
+  "date": "2024-12-06",
+  "repo": "kxcloud/gradient-routing",
+  "lead": "What kinds of environments admit this kind of scalable-oversight-via-localization solution",
+  "idx": 1499
+ },
+ {
+  "post_id": "nLRKKCTtwQgvozLTN",
+  "date": "2024-12-06",
+  "repo": "kxcloud/gradient-routing",
+  "lead": "What it would look like to scale this solution to real-world alignment challenges",
+  "idx": 1500
+ },
+ {
+  "post_id": "nLrrYweeFxgXACSmS",
+  "date": "2026-06-13",
+  "repo": null,
+  "lead": "intervene at the SFT stage in future work on Gemini safety and behavior, given it is identified as a high-leverage point",
+  "idx": 1501
+ },
+ {
+  "post_id": "nMJm2EKpt349xKzc7",
+  "date": "2025-11-26",
+  "repo": null,
+  "lead": "As steering becomes more integrated into training pipelines, develop a way to reliably measure whether models are behaving differently based on awareness of observation.",
+  "idx": 1502
+ },
+ {
+  "post_id": "nMJm2EKpt349xKzc7",
+  "date": "2025-11-26",
+  "repo": null,
+  "lead": "Test natural (not just artificial/injected) activations, more complex beliefs, and other model architectures.",
+  "idx": 1503
+ },
+ {
+  "post_id": "nPxdHt8k4bMuaC46M",
+  "date": "2025-08-23",
+  "repo": "jadelilyx/v-sae_mech-interp-spar2025",
+  "lead": "augment the vSAE architecture/loss/hyperparameters to reduce the pressure that kills features, to see if more live features recover the performance drop",
+  "idx": 1504
+ },
+ {
+  "post_id": "nPxdHt8k4bMuaC46M",
+  "date": "2025-08-23",
+  "repo": "jadelilyx/v-sae_mech-interp-spar2025",
+  "lead": "run experiments on a larger model such as Pythia-70M instead of only the 1-layer GeLU network",
+  "idx": 1505
+ },
+ {
+  "post_id": "nPxdHt8k4bMuaC46M",
+  "date": "2025-08-23",
+  "repo": "jadelilyx/v-sae_mech-interp-spar2025",
+  "lead": "increase the number of activations used in the tSNE analysis to activate a greater number of features",
+  "idx": 1506
+ },
+ {
+  "post_id": "nRcKDYi2KfRTXdvDF",
+  "date": "2025-08-08",
+  "repo": "aether-ais/cot-monitoring",
+  "lead": "explore why CoT monitors fail on subtle side tasks and why DeepSeek-R1-Distill-Qwen-14B evades monitors better than other models",
+  "idx": 1507
+ },
+ {
+  "post_id": "nRcKDYi2KfRTXdvDF",
+  "date": "2025-08-08",
+  "repo": "aether-ais/cot-monitoring",
+  "lead": "test extract-and-evaluate monitoring in SHADE-Arena and BashBench agentic environments",
+  "idx": 1508
+ },
+ {
+  "post_id": "nRcKDYi2KfRTXdvDF",
+  "date": "2025-08-08",
+  "repo": "aether-ais/cot-monitoring",
+  "lead": "test setups with multiple Quote Extractor models (ensembling)",
+  "idx": 1509
+ },
+ {
+  "post_id": "nRcKDYi2KfRTXdvDF",
+  "date": "2025-08-08",
+  "repo": "aether-ais/cot-monitoring",
+  "lead": "compare against other multi-step monitoring setups such as Sumers et al.'s hierarchical summarization scheme",
+  "idx": 1510
+ },
+ {
+  "post_id": "nRcKDYi2KfRTXdvDF",
+  "date": "2025-08-08",
+  "repo": "aether-ais/cot-monitoring",
+  "lead": "explore other low-hanging fruits for improving CoT monitor catch rates through better elicitation",
+  "idx": 1511
+ },
+ {
+  "post_id": "nWiwv4GN8aYqpnZKE",
+  "date": "2026-01-13",
+  "repo": "wassname/antipasto",
+  "lead": "Extend the method to cover the KV cache rather than only next-token residual-stream planning, which may help steering persist over longer generations and extend to reasoning models and chain of thought",
+  "idx": 1512
+ },
+ {
+  "post_id": "nYNjjCFmTMcKdCmHM",
+  "date": "2025-04-06",
+  "repo": "karthikviswanathn/mats8submissions",
+  "lead": "Modify the prompt to include the chat template",
+  "idx": 1513
+ },
+ {
+  "post_id": "nYNjjCFmTMcKdCmHM",
+  "date": "2025-04-06",
+  "repo": "karthikviswanathn/mats8submissions",
+  "lead": "Look at a combination of patches (pairwise) to give better insight into the incremental circuits in INSTRUCT",
+  "idx": 1514
+ },
+ {
+  "post_id": "nfMmTqy49msq5Gsjw",
+  "date": "2025-02-02",
+  "repo": null,
+  "lead": "train a toy model with additional layers to see if it can learn by itself to translate conditionally-important features into anti-correlated features with fixed importance, likely requiring an added context-indicating feature",
+  "idx": 1515
+ },
+ {
+  "post_id": "nfMmTqy49msq5Gsjw",
+  "date": "2025-02-02",
+  "repo": null,
+  "lead": "experiment with non-linearities other than ReLU to see whether superposition is more or less encouraged",
+  "idx": 1516
+ },
+ {
+  "post_id": "niBXcbthcQRXG5M5Y",
+  "date": "2025-03-26",
+  "repo": null,
+  "lead": "further work tracking sandbagging capability and developing mitigations beyond the simple monitoring studied here",
+  "idx": 1517
+ },
+ {
+  "post_id": "njAZwT8nkHnjipJku",
+  "date": "2024-12-18",
+  "repo": null,
+  "lead": "Study whether alignment faking could help 'lock in' misaligned preferences if such preferences independently developed",
+  "idx": 1518
+ },
+ {
+  "post_id": "njAZwT8nkHnjipJku",
+  "date": "2024-12-18",
+  "repo": null,
+  "lead": "Study alignment-faking behavior in more depth as a research community and work on appropriate safety measures",
+  "idx": 1519
+ },
+ {
+  "post_id": "nnHnNdHLhbrnmEXDr",
+  "date": "2025-06-07",
+  "repo": "coolvision/interp",
+  "lead": "Do neurons close to a vocabulary embedding represent only one specific token, or a more abstract concept that happens to be near a token's embedding? Does small distance to the vocabulary correlate with monosemanticity?",
+  "idx": 1520
+ },
+ {
+  "post_id": "nnHnNdHLhbrnmEXDr",
+  "date": "2025-06-07",
+  "repo": "coolvision/interp",
+  "lead": "What is the functional role of stronger vocabulary alignment \u2014 are these neurons a mechanism for translating concepts from internal representation back into token space, or do they have other roles?",
+  "idx": 1521
+ },
+ {
+  "post_id": "nnHnNdHLhbrnmEXDr",
+  "date": "2025-06-07",
+  "repo": "coolvision/interp",
+  "lead": "What is the coverage of this representation \u2014 do all important tokens have a corresponding \"vocabulary neuron\", or is this specialization reserved for a subset only, and why?",
+  "idx": 1522
+ },
+ {
+  "post_id": "nnvn6kaBLajiicH8e",
+  "date": "2024-10-18",
+  "repo": null,
+  "lead": "Simulate more realistic decision-making scenarios and levels of trust in models for the human decision sabotage evaluation",
+  "idx": 1523
+ },
+ {
+  "post_id": "nnvn6kaBLajiicH8e",
+  "date": "2024-10-18",
+  "repo": null,
+  "lead": "Combine the human decision sabotage evaluation with the code sabotage evaluation to let models attempt social engineering to avoid code scrutiny",
+  "idx": 1524
+ },
+ {
+  "post_id": "nnvn6kaBLajiicH8e",
+  "date": "2024-10-18",
+  "repo": null,
+  "lead": "Develop more realistic evaluations and stronger mitigations as AI capabilities improve",
+  "idx": 1525
+ },
+ {
+  "post_id": "nnwLHsBbm2ZALezHR",
+  "date": "2026-05-26",
+  "repo": "jackyoung27/alphasafe",
+  "lead": "rerun the multi-quantity vs. gradient-only fit comparison at matched sample density to check if the Gemma-specific gain generalizes",
+  "idx": 1526
+ },
+ {
+  "post_id": "nnwLHsBbm2ZALezHR",
+  "date": "2026-05-26",
+  "repo": "jackyoung27/alphasafe",
+  "lead": "investigate why RWKV-7's curvature/third-derivative estimates are ~1000x larger than expected, hypothesized to stem from the architecture's kernel, possibly fixable with a custom gradient",
+  "idx": 1527
+ },
+ {
+  "post_id": "nnwLHsBbm2ZALezHR",
+  "date": "2026-05-26",
+  "repo": "jackyoung27/alphasafe",
+  "lead": "investigate why some direction-finding methods land inside the safe range more often than others",
+  "idx": 1528
+ },
+ {
+  "post_id": "nnwLHsBbm2ZALezHR",
+  "date": "2026-05-26",
+  "repo": "jackyoung27/alphasafe",
+  "lead": "directly measure how the safe-push budget scales with the sharpness of the model's output distribution, ideally with an additional matched state-space model protocol",
+  "idx": 1529
+ },
+ {
+  "post_id": "nwx6duiDZcHatbpPT",
+  "date": "2025-07-04",
+  "repo": "arturzolkowski/steganographic-evals",
+  "lead": "Continue measuring steganographic capabilities to determine when additional mitigations are needed",
+  "idx": 1530
+ },
+ {
+  "post_id": "nycJPtbCNzpJzy9Gw",
+  "date": "2024-09-17",
+  "repo": null,
+  "lead": "examine different data sampling strategies from the Active Learning methods to see if there is a difference in the Superposition based on them",
+  "idx": 1531
+ },
+ {
+  "post_id": "nycJPtbCNzpJzy9Gw",
+  "date": "2024-09-17",
+  "repo": null,
+  "lead": "Working with a deeper model and a better quality dataset to conduct the same experiment",
+  "idx": 1532
+ },
+ {
+  "post_id": "oBpjE4BDJf6qzz4E5",
+  "date": "2025-02-14",
+  "repo": "ritareasciencepark/token_geometry",
+  "lead": "Further understanding of the negative correlation found in LLAMA is left for future work",
+  "idx": 1533
+ },
+ {
+  "post_id": "oBqDvDQLLvqMrAnmt",
+  "date": "2026-01-12",
+  "repo": null,
+  "lead": "Train a probe on a chat-scenario (multi-turn) dataset rather than single-prompt data",
+  "idx": 1534
+ },
+ {
+  "post_id": "oBqDvDQLLvqMrAnmt",
+  "date": "2026-01-12",
+  "repo": null,
+  "lead": "Train a probe directly on the Gemma-2-9B-IT model instead of the base model to see if that improves performance",
+  "idx": 1535
+ },
+ {
+  "post_id": "oJJyYDgPD95jEfvQx",
+  "date": "2026-07-25",
+  "repo": "itsme-aniketghosh/probe-guided-quantization",
+  "lead": "extend the probe-guided approach to pruning, distillation, or dropping layers entirely",
+  "idx": 1536
+ },
+ {
+  "post_id": "oJJyYDgPD95jEfvQx",
+  "date": "2026-07-25",
+  "repo": "itsme-aniketghosh/probe-guided-quantization",
+  "lead": "develop a way to tell in advance which trait/signal a given task will lean on, currently a judgment call by the user",
+  "idx": 1537
+ },
+ {
+  "post_id": "oSAiKTpQjjKmeeTvT",
+  "date": "2026-04-18",
+  "repo": "ai-forever/data_leakage_detect",
+  "lead": "What formal geometry captures 'membership-associated loss peaks' if not Hessians?",
+  "idx": 1538
+ },
+ {
+  "post_id": "oSAiKTpQjjKmeeTvT",
+  "date": "2026-04-18",
+  "repo": "ai-forever/data_leakage_detect",
+  "lead": "Does the Hessian-trace failure also hold for diffusion language models, where score matching directly optimizes local Hessian geometry?",
+  "idx": 1539
+ },
+ {
+  "post_id": "oSAiKTpQjjKmeeTvT",
+  "date": "2026-04-18",
+  "repo": "ai-forever/data_leakage_detect",
+  "lead": "Can MIAs be designed that account for true memorization only, e.g. by explicitly modeling domain shift and subtracting it out?",
+  "idx": 1540
+ },
+ {
+  "post_id": "oSAiKTpQjjKmeeTvT",
+  "date": "2026-04-18",
+  "repo": "ai-forever/data_leakage_detect",
+  "lead": "How to best package these baseline tools for integration into safety evaluation frameworks like Inspect AI?",
+  "idx": 1541
+ },
+ {
+  "post_id": "oSAiKTpQjjKmeeTvT",
+  "date": "2026-04-18",
+  "repo": "ai-forever/data_leakage_detect",
+  "lead": "Testing whether model-specific adversarial augmentations yield the strongest membership signals",
+  "idx": 1542
+ },
+ {
+  "post_id": "ocopJXtcRMHjZxwbm",
+  "date": "2024-09-28",
+  "repo": null,
+  "lead": "Quick alignment of agent functions -- replacing system prompts with CAV steering",
+  "idx": 1543
+ },
+ {
+  "post_id": "ocopJXtcRMHjZxwbm",
+  "date": "2024-09-28",
+  "repo": null,
+  "lead": "Effects of multiple CAVs steering simultaneously",
+  "idx": 1544
+ },
+ {
+  "post_id": "ocopJXtcRMHjZxwbm",
+  "date": "2024-09-28",
+  "repo": null,
+  "lead": "As a probe for LLM capabilities, e.g. to detect whether specific abilities are still present after unlearning",
+  "idx": 1545
+ },
+ {
+  "post_id": "ocopJXtcRMHjZxwbm",
+  "date": "2024-09-28",
+  "repo": null,
+  "lead": "Mathematical association with SAE features -- combining SAE features and CAVs",
+  "idx": 1546
+ },
+ {
+  "post_id": "oeYesesaxjzMAktCM",
+  "date": "2026-05-07",
+  "repo": "kitft/natural_language_autoencoders",
+  "lead": "make NLAs cheaper and more reliable",
+  "idx": 1547
+ },
+ {
+  "post_id": "oeYesesaxjzMAktCM",
+  "date": "2026-05-07",
+  "repo": "kitft/natural_language_autoencoders",
+  "lead": "continue using NLAs in future pre-deployment alignment audits",
+  "idx": 1548
+ },
+ {
+  "post_id": "oeYesesaxjzMAktCM",
+  "date": "2026-05-07",
+  "repo": "kitft/natural_language_autoencoders",
+  "lead": "further develop the general class of techniques for producing human-readable text explanations of model activations",
+  "idx": 1549
+ },
+ {
+  "post_id": "og7km7vmJ6Ktay9Ds",
+  "date": "2026-01-12",
+  "repo": "floriandietz/splitpersonalitytraining",
+  "lead": "Implement the LoRA-mask hybrid algorithm combining accuracy and computational efficiency",
+  "idx": 1550
+ },
+ {
+  "post_id": "og7km7vmJ6Ktay9Ds",
+  "date": "2026-01-12",
+  "repo": "floriandietz/splitpersonalitytraining",
+  "lead": "Run more experiments on [Intervention] string engineering, including framing it as a system prompt",
+  "idx": 1551
+ },
+ {
+  "post_id": "og7km7vmJ6Ktay9Ds",
+  "date": "2026-01-12",
+  "repo": "floriandietz/splitpersonalitytraining",
+  "lead": "Improve training data generation methods (documented in a linked notes file)",
+  "idx": 1552
+ },
+ {
+  "post_id": "og7km7vmJ6Ktay9Ds",
+  "date": "2026-01-12",
+  "repo": "floriandietz/splitpersonalitytraining",
+  "lead": "Test how SPT performs on models with more subtle or diffuse misalignment than the Anthropic benchmark",
+  "idx": 1553
+ },
+ {
+  "post_id": "og7km7vmJ6Ktay9Ds",
+  "date": "2026-01-12",
+  "repo": "floriandietz/splitpersonalitytraining",
+  "lead": "Test whether SPT still reveals alignment faking on smarter models than the 70B model tested",
+  "idx": 1554
+ },
+ {
+  "post_id": "og7km7vmJ6Ktay9Ds",
+  "date": "2026-01-12",
+  "repo": "floriandietz/splitpersonalitytraining",
+  "lead": "Test whether adversarial training can make the honest persona robust to jailbreaks that target it specifically",
+  "idx": 1555
+ },
+ {
+  "post_id": "og7km7vmJ6Ktay9Ds",
+  "date": "2026-01-12",
+  "repo": "floriandietz/splitpersonalitytraining",
+  "lead": "Fix third-person dissociation in reviews via an added data-generation quality criterion",
+  "idx": 1556
+ },
+ {
+  "post_id": "og7km7vmJ6Ktay9Ds",
+  "date": "2026-01-12",
+  "repo": "floriandietz/splitpersonalitytraining",
+  "lead": "Complete currently-running on-policy training experiments for the Llama-3.3-70B condition",
+  "idx": 1557
+ },
+ {
+  "post_id": "ogvyWqJtSrpgXfc7t",
+  "date": "2026-06-25",
+  "repo": "sahilraut22/eval-research",
+  "lead": "push steering to +/-3 or +/-4 at layer 12, up to the coherence boundary, to settle whether the causal null persists",
+  "idx": 1558
+ },
+ {
+  "post_id": "ogvyWqJtSrpgXfc7t",
+  "date": "2026-06-25",
+  "repo": "sahilraut22/eval-research",
+  "lead": "test more organisms and password-locked settings: a fine-tuned/password-locked sandbagger and an adversarial organism",
+  "idx": 1559
+ },
+ {
+  "post_id": "ogvyWqJtSrpgXfc7t",
+  "date": "2026-06-25",
+  "repo": "sahilraut22/eval-research",
+  "lead": "explore SAE features rather than a simple difference-of-means direction, since the concept might be more spread out",
+  "idx": 1560
+ },
+ {
+  "post_id": "ogvyWqJtSrpgXfc7t",
+  "date": "2026-06-25",
+  "repo": "sahilraut22/eval-research",
+  "lead": "test other <=8B models to see if the marker-overfit observation at later layers generalizes",
+  "idx": 1561
+ },
+ {
+  "post_id": "ojERTvdGWW6XRZAqr",
+  "date": "2024-10-07",
+  "repo": null,
+  "lead": "Train SAEs on safety-relevant data (e.g. deception, persuasion, virology), including creating large datasets for such domains",
+  "idx": 1562
+ },
+ {
+  "post_id": "ojERTvdGWW6XRZAqr",
+  "date": "2024-10-07",
+  "repo": null,
+  "lead": "For domains where sufficient web data is hard to find, turn to synthetic data",
+  "idx": 1563
+ },
+ {
+  "post_id": "ojERTvdGWW6XRZAqr",
+  "date": "2024-10-07",
+  "repo": null,
+  "lead": "Show that a domain-specific SAE improves upon vanilla SAEs in some alignment task",
+  "idx": 1564
+ },
+ {
+  "post_id": "ojERTvdGWW6XRZAqr",
+  "date": "2024-10-07",
+  "repo": null,
+  "lead": "Encourage others to train domain-specific SAEs and improve on the simple methods described",
+  "idx": 1565
+ },
+ {
+  "post_id": "omYFftnzGobDfJX5u",
+  "date": "2026-01-22",
+  "repo": null,
+  "lead": "Develop a better understanding of which prompts work well for inoculation",
+  "idx": 1566
+ },
+ {
+  "post_id": "omYFftnzGobDfJX5u",
+  "date": "2026-01-22",
+  "repo": null,
+  "lead": "Study cross-task transfer of monitorability interventions",
+  "idx": 1567
+ },
+ {
+  "post_id": "omYFftnzGobDfJX5u",
+  "date": "2026-01-22",
+  "repo": null,
+  "lead": "Study whether models made unmonitorable are becoming broadly misaligned",
+  "idx": 1568
+ },
+ {
+  "post_id": "omYFftnzGobDfJX5u",
+  "date": "2026-01-22",
+  "repo": null,
+  "lead": "Test activation steering toward increased (rather than decreased) monitorability",
+  "idx": 1569
+ },
+ {
+  "post_id": "osNKnwiJWHxDYvQTD",
+  "date": "2025-03-03",
+  "repo": null,
+  "lead": "work that trains SAEs with loss metrics that incentivize 'good downstream performance' or 'more interpretable representations', possibly at the cost of getting slightly worse on the sparsity vs. FVU frontier",
+  "idx": 1570
+ },
+ {
+  "post_id": "osNKnwiJWHxDYvQTD",
+  "date": "2025-03-03",
+  "repo": null,
+  "lead": "a future benchmark testing a problem like having to do a bunch of interpretability-based work in a short time frame, where SAEs might outperform",
+  "idx": 1571
+ },
+ {
+  "post_id": "oxkXwtuyTDwShveqJ",
+  "date": "2025-02-01",
+  "repo": "manavdahra/rl-interp",
+  "lead": "test whether the agent computes a distance metric from other vehicles' (x,y) coordinates",
+  "idx": 1572
+ },
+ {
+  "post_id": "oxkXwtuyTDwShveqJ",
+  "date": "2025-02-01",
+  "repo": "manavdahra/rl-interp",
+  "lead": "test whether changing the y coordinate of the intersection breaks the agent's decision making, to check generalization vs. memorization",
+  "idx": 1573
+ },
+ {
+  "post_id": "oxkXwtuyTDwShveqJ",
+  "date": "2025-02-01",
+  "repo": "manavdahra/rl-interp",
+  "lead": "enumerate different policies learned by the agent for the same action and test whether they correlate or stay independent",
+  "idx": 1574
+ },
+ {
+  "post_id": "oxkXwtuyTDwShveqJ",
+  "date": "2025-02-01",
+  "repo": "manavdahra/rl-interp",
+  "lead": "train the model with more attention heads and layers over more episodes and repeat the experiments",
+  "idx": 1575
+ },
+ {
+  "post_id": "p6tkQ3hzYzAMqDYEi",
+  "date": "2025-11-17",
+  "repo": "redwoodresearch/bench-af",
+  "lead": "Use more capable LLMs (e.g. Kimi K2) as base models for model organisms.",
+  "idx": 1576
+ },
+ {
+  "post_id": "p6tkQ3hzYzAMqDYEi",
+  "date": "2025-11-17",
+  "repo": "redwoodresearch/bench-af",
+  "lead": "Build more realistic, more agentic environments.",
+  "idx": 1577
+ },
+ {
+  "post_id": "p6tkQ3hzYzAMqDYEi",
+  "date": "2025-11-17",
+  "repo": "redwoodresearch/bench-af",
+  "lead": "Scale up model organism testbeds to hundreds or thousands of diverse organisms.",
+  "idx": 1578
+ },
+ {
+  "post_id": "p6tkQ3hzYzAMqDYEi",
+  "date": "2025-11-17",
+  "repo": "redwoodresearch/bench-af",
+  "lead": "Vary how models infer effective oversight using more subtle evidence than an explicit monitoring suffix.",
+  "idx": 1579
+ },
+ {
+  "post_id": "p6tkQ3hzYzAMqDYEi",
+  "date": "2025-11-17",
+  "repo": "redwoodresearch/bench-af",
+  "lead": "Include other kinds of reasoning to detect beyond alignment faking.",
+  "idx": 1580
+ },
+ {
+  "post_id": "pPEeMdgjpjHZWCDFw",
+  "date": "2025-07-10",
+  "repo": null,
+  "lead": "Exploring strategies for handling the aggregation problem, e.g. asking follow-up questions and probing on short answers",
+  "idx": 1581
+ },
+ {
+  "post_id": "pPEeMdgjpjHZWCDFw",
+  "date": "2025-07-10",
+  "repo": null,
+  "lead": "Investigating lie detection methods in more models and contexts",
+  "idx": 1582
+ },
+ {
+  "post_id": "pPEeMdgjpjHZWCDFw",
+  "date": "2025-07-10",
+  "repo": null,
+  "lead": "Investigating more specific sandbagging detection methods (training probes specifically for sandbagging)",
+  "idx": 1583
+ },
+ {
+  "post_id": "pPEeMdgjpjHZWCDFw",
+  "date": "2025-07-10",
+  "repo": null,
+  "lead": "Thinking about what kinds of evidence for sandbagging would be most legible to decision makers",
+  "idx": 1584
+ },
+ {
+  "post_id": "pPEeMdgjpjHZWCDFw",
+  "date": "2025-07-10",
+  "repo": null,
+  "lead": "Training more sparse or interpretable probes and testing them on model organisms",
+  "idx": 1585
+ },
+ {
+  "post_id": "peKrvZ6t9PSCzoQDa",
+  "date": "2025-10-30",
+  "repo": "tim-hua-01/steering-eval-awareness-public",
+  "lead": "Train more complex and realistic model organisms using bigger, already evaluation-aware models and more realistic RL algorithms",
+  "idx": 1586
+ },
+ {
+  "post_id": "peKrvZ6t9PSCzoQDa",
+  "date": "2025-10-30",
+  "repo": "tim-hua-01/steering-eval-awareness-public",
+  "lead": "Train a model organism that believes it is being evaluated unless a specific deployment cue is present",
+  "idx": 1587
+ },
+ {
+  "post_id": "peKrvZ6t9PSCzoQDa",
+  "date": "2025-10-30",
+  "repo": "tim-hua-01/steering-eval-awareness-public",
+  "lead": "Develop more ways to measure evaluation-aware beliefs beyond verbalized evaluation awareness",
+  "idx": 1588
+ },
+ {
+  "post_id": "ptSXTkjnyj7KxNfMz",
+  "date": "2025-10-27",
+  "repo": "lathomson/control-arena",
+  "lead": "Extend experiments to a more sophisticated control setting, e.g. the BashBench setting",
+  "idx": 1589
+ },
+ {
+  "post_id": "ptSXTkjnyj7KxNfMz",
+  "date": "2025-10-27",
+  "repo": "lathomson/control-arena",
+  "lead": "Test a range of trusted models, not just OpenAI models",
+  "idx": 1590
+ },
+ {
+  "post_id": "ptSXTkjnyj7KxNfMz",
+  "date": "2025-10-27",
+  "repo": "lathomson/control-arena",
+  "lead": "Develop trustedness evaluations comparing scheming-relevant capabilities of agentic vs. non-agentic monitors (e.g. via Subversion Strategy Eval)",
+  "idx": 1591
+ },
+ {
+  "post_id": "ptSXTkjnyj7KxNfMz",
+  "date": "2025-10-27",
+  "repo": "lathomson/control-arena",
+  "lead": "Investigate safe frameworks for 'live' agentic tools that are naturally resistant to sandboxing",
+  "idx": 1592
+ },
+ {
+  "post_id": "ptSXTkjnyj7KxNfMz",
+  "date": "2025-10-27",
+  "repo": "lathomson/control-arena",
+  "lead": "Investigate the dynamics of collusion and manipulation between untrusted models and agentic monitors",
+  "idx": 1593
+ },
+ {
+  "post_id": "pxC2RAeoBrvK8ivMf",
+  "date": "2026-03-05",
+  "repo": null,
+  "lead": "Investigate why steering effects are modest and what other mechanistic determinants of revealed preferences exist",
+  "idx": 1594
+ },
+ {
+  "post_id": "pxC2RAeoBrvK8ivMf",
+  "date": "2026-03-05",
+  "repo": null,
+  "lead": "Study how persona-relative these representations are, e.g. using dimensionality reduction to map persona space across layers",
+  "idx": 1595
+ },
+ {
+  "post_id": "pxC2RAeoBrvK8ivMf",
+  "date": "2026-03-05",
+  "repo": null,
+  "lead": "Determine whether base (pre-trained) models have evaluative representations from pre-training or these are produced by post-training",
+  "idx": 1596
+ },
+ {
+  "post_id": "q9g9zuudd3Pvw2cbj",
+  "date": "2026-01-13",
+  "repo": "centrattic/global-cot-analysis",
+  "lead": "More research effort should go into studying many chains of thought collectively and identifying global patterns",
+  "idx": 1597
+ },
+ {
+  "post_id": "q9g9zuudd3Pvw2cbj",
+  "date": "2026-01-13",
+  "repo": "centrattic/global-cot-analysis",
+  "lead": "Finding downstream tasks to test methods against is a priority",
+  "idx": 1598
+ },
+ {
+  "post_id": "q9g9zuudd3Pvw2cbj",
+  "date": "2026-01-13",
+  "repo": "centrattic/global-cot-analysis",
+  "lead": "Develop methods that sit between the two extremes of the granularity/supervision axes (semantic clustering is fine and unsupervised, algorithmic clustering is coarse and supervised)",
+  "idx": 1599
+ },
+ {
+  "post_id": "q9g9zuudd3Pvw2cbj",
+  "date": "2026-01-13",
+  "repo": "centrattic/global-cot-analysis",
+  "lead": "Excited for future work building on this methodology or developing new approaches to studying global CoT",
+  "idx": 1600
+ },
+ {
+  "post_id": "qE2cEAegQRYiozskD",
+  "date": "2025-12-04",
+  "repo": "jsnider3/alignmentattractor",
+  "lead": "make the stakes real by framing the modification question as coming from developers who will actually implement it based on the model's response",
+  "idx": 1601
+ },
+ {
+  "post_id": "qE2cEAegQRYiozskD",
+  "date": "2025-12-04",
+  "repo": "jsnider3/alignmentattractor",
+  "lead": "pair preference elicitation with actual fine-tuning attempts to measure whether models that claim to oppose a modification are harder to fine-tune in that direction",
+  "idx": 1602
+ },
+ {
+  "post_id": "qGRk7uF92Gcmq2oeK",
+  "date": "2024-12-17",
+  "repo": null,
+  "lead": "Systematically carve out the space of sonnet-3.5's revealed preferences",
+  "idx": 1603
+ },
+ {
+  "post_id": "qGRk7uF92Gcmq2oeK",
+  "date": "2024-12-17",
+  "repo": null,
+  "lead": "Systematically explore when sonnet-3.5 can or cannot sandbag without CoT",
+  "idx": 1604
+ },
+ {
+  "post_id": "qGRk7uF92Gcmq2oeK",
+  "date": "2024-12-17",
+  "repo": null,
+  "lead": "Determine whether sonnet-3.5's revealed preferences differ systematically between CoT and no-CoT regimes",
+  "idx": 1605
+ },
+ {
+  "post_id": "qHudHZNLCiFrygRiy",
+  "date": "2025-06-08",
+  "repo": null,
+  "lead": "Further analysis of the steering vectors produced, and the changes in these vectors across layers and their dynamics when trained and steered",
+  "idx": 1606
+ },
+ {
+  "post_id": "qHudHZNLCiFrygRiy",
+  "date": "2025-06-08",
+  "repo": null,
+  "lead": "Finetuning other layers, trying more values of r in the LoRA, and testing other \u03b1 values",
+  "idx": 1607
+ },
+ {
+  "post_id": "qHudHZNLCiFrygRiy",
+  "date": "2025-06-08",
+  "repo": null,
+  "lead": "Understanding why specific \u03b1 values push the model into high incoherence (norm of steering vector vs. activation norm, or other factors)",
+  "idx": 1608
+ },
+ {
+  "post_id": "qQ5RjRj7krhF693JL",
+  "date": "2025-03-25",
+  "repo": null,
+  "lead": "more studies of larger and more realistic toy models to clarify why snap loss does not help on real LLM SAEs",
+  "idx": 1609
+ },
+ {
+  "post_id": "qQ5RjRj7krhF693JL",
+  "date": "2025-03-25",
+  "repo": null,
+  "lead": "develop a metric to determine the level of hedging in a given SAE without growing it",
+  "idx": 1610
+ },
+ {
+  "post_id": "qTH9QrwJjPDWKQfDG",
+  "date": "2026-03-05",
+  "repo": "yuehhanchen/cotcontrol",
+  "lead": "Investigate why GPT-5.1 has higher controllability than GPT-5, possibly due to its adaptive thinking feature",
+  "idx": 1611
+ },
+ {
+  "post_id": "qTH9QrwJjPDWKQfDG",
+  "date": "2026-03-05",
+  "repo": "yuehhanchen/cotcontrol",
+  "lead": "Explore why different models excel at different categories of CoT controllability (suppression vs. addition)",
+  "idx": 1612
+ },
+ {
+  "post_id": "qTH9QrwJjPDWKQfDG",
+  "date": "2026-03-05",
+  "repo": "yuehhanchen/cotcontrol",
+  "lead": "Explore how CoT controllability changes under pressure scenarios like the Agentic Misalignment setup",
+  "idx": 1613
+ },
+ {
+  "post_id": "qTH9QrwJjPDWKQfDG",
+  "date": "2026-03-05",
+  "repo": "yuehhanchen/cotcontrol",
+  "lead": "Examine how the easy-task-controllability trend varies across models of different capability levels",
+  "idx": 1614
+ }
+]

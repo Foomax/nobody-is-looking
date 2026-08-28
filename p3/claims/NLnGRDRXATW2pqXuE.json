@@ -1,0 +1,47 @@
+{
+ "post_id": "NLnGRDRXATW2pqXuE",
+ "primary_claim": "Eleven months after o1-preview's advance on WeirdML, open-weight models still have not caught up to that closed-model capability level, indicating the open/closed capability gap is not shrinking over time",
+ "claim_type": "positive",
+ "phenomenon": "capability forecasting / time horizons",
+ "models": [
+  {"family": "GPT-4", "size": null, "open_weight": false},
+  {"family": "Llama", "size": "405B", "open_weight": true},
+  {"family": "Claude", "size": "Opus-3", "open_weight": false},
+  {"family": "Claude", "size": "Sonnet-3.5", "open_weight": false},
+  {"family": "o1", "size": "preview", "open_weight": false},
+  {"family": "DeepSeek-R1", "size": null, "open_weight": true},
+  {"family": "o3", "size": null, "open_weight": false},
+  {"family": "Qwen", "size": "Qwen3", "open_weight": true},
+  {"family": "Kimi", "size": "K2", "open_weight": true},
+  {"family": "GLM", "size": "4.5", "open_weight": true}
+ ],
+ "n_model_families": 10,
+ "effect": {
+  "metric": "delay for open-weight frontier to match closed-weight accuracy threshold on WeirdML",
+  "value": "open models still had not matched the o1-preview accuracy level 11 months after its release",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": 5,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["LfQCzph7rc2vxpweS"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "comparison to GPT-5 as the next important datapoint",
+  "watching for DeepSeek's future R2 release",
+  "open questions about the new Meta superintelligence team's capability and commitment to open models"
+ ],
+ "limitations_stated": [
+  "have to extrapolate based on very little data",
+  "conclusions are tentative"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "So 11 months later, open models have still not caught up to the o1 advance, suggesting that the gap between open and closed models is not shrinking over time."
+}

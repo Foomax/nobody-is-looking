@@ -1,0 +1,41 @@
+{
+ "post_id": "cfbdyJGbHkY8rPesE",
+ "primary_claim": "Anchoring the Rosetta Stone AI-capability framework to human expertise baselines shows that, on technical and scientific benchmarks, current frontier models have already crossed Average Human (late 2022), Skilled Generalist (early 2024), and Domain Expert (2025) levels, and are forecast to reach Top-Performer level by October 2027 (95% CI: May 2027 - March 2028).",
+ "claim_type": "positive",
+ "phenomenon": "capability forecasting / time horizons",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "crossover date of frontier-model capability score with calibrated human-expertise tiers",
+  "value": "Domain Expert crossover: 2025; Top Performer crossover forecast: October 2027 (95% CI: May 2027 - March 2028)",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2512.00193", "epoch.ai/benchmarks/eci", "arXiv:2506.13776"],
+ "contradicts_or_qualifies": [
+  "Extends the Rosetta Stone / Epoch Capability Index framework, which the authors say lacks a real-world human anchor, by integrating human performance baselines",
+  "The single-axis capability assumption underlying Rosetta breaks down for benchmarks designed to be human-easy but AI-hard (e.g. HellaSwag, ARC-AGI)"
+ ],
+ "stated_future_work": [
+  "Expanding benchmark coverage into professional domains (finance, law, medicine, computer science)",
+  "Developing harder and more realistic benchmarks, e.g. the Remote Labor Index",
+  "Establishing finer human expertise tiers with more consistently labeled data",
+  "Collecting committee/collaboration scores to give a more honest upper bound on human capability"
+ ],
+ "limitations_stated": [
+  "Human performance data is inconsistently collected across difficulty levels; most human groups have only 2-4 data points each",
+  "Human scores come from studies with wildly varying sample sizes, incentives, time limits, and tool access, unlike standardized model evaluations",
+  "The single-axis capability model breaks down given the jagged frontier / multiple underlying skill dimensions in AI vs. human performance"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Restricting to technical and scientific benchmark skills, current frontier models have crossed Average Humans (late 2022), Skilled Generalists (early 2024) and Domain Experts (2025)"
+}

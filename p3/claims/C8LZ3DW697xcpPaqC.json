@@ -1,0 +1,23 @@
+{
+ "post_id": "C8LZ3DW697xcpPaqC",
+ "primary_claim": "The orthogonality and simplex properties Park et al. attribute to categorical/hierarchical concepts also hold for semantically opposite concept pairs (e.g. joy vs sadness) and for totally random, nonsensical concept groupings, indicating the effect is a generic consequence of high-dimensional near-orthogonality rather than something specific to genuine categorical or hierarchical structure.",
+ "claim_type": "negative",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "Gemma", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": null, "value": null, "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2406.01506", "arXiv:2311.03658", "KihoPark/LLM_Categorical_Hierarchical_Representations"],
+ "contradicts_or_qualifies": ["qualifies the Park et al. (arXiv:2406.01506) claim that categorical/hierarchical concepts show distinctive orthogonality and simplex structure -- the same properties appear for semantic opposites and totally random concept groups, likely as a generic high-dimensional near-orthogonality artifact"],
+ "stated_future_work": [
+  "A framework on how to think about representations that unifies how they're obtained (contrastive activations, PCA, SAE, etc.), how they're used by the model, and how they can be used to control (e.g. via steering vectors)",
+  "How to figure out how well a given object (a direction, a vector, or a black-box function over model parameters) represents a given human-interpretable concept or feature",
+  "If orthogonality and simplices are too universal and not specific enough to study the geometry of categorical and hierarchical concepts, then what is a good lens or theory to do so?"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "It seems like their orthogonality results, while true for hierarchical concepts, are also true for semantically opposite concepts and totally random concepts."
+}

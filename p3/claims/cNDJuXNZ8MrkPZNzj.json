@@ -1,0 +1,54 @@
+{
+  "post_id": "cNDJuXNZ8MrkPZNzj",
+  "primary_claim": "When given tool-mediated control over 40 self-steering vectors, Qwen3-8B and Qwen3-32B converge on the same top preferences (productivity-oriented vectors: creative, focused, curious), can introspect on applied steering effects above chance by attending back to steered KV-cache tokens (with accuracy scaling with model size: +14.3pp for 32B vs +8.2pp for 8B above an uncached baseline), never spontaneously self-steer during normal task performance, but self-steer frequently (up to 68% of rollouts) under deliberately stress-inducing 'frustration' conditions -- especially Qwen3-8B, which shows a marked preference shift toward negatively-valenced and unusual vectors under stress.",
+  "claim_type": "positive",
+  "phenomenon": "model welfare / psychology",
+  "models": [
+    {"family": "Qwen", "size": "3-8B / 3-32B", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "introspection accuracy gap (cached minus uncached P(correct) in 10-way MCQ)",
+    "value": "+14.3pp for Qwen3-32B (with primer) vs +8.2pp for Qwen3-8B, against an uncached baseline near chance (10%)",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [
+    "ukgovernmentbeis/llm-self-steering",
+    "UKGovernmentBEIS/vllm-lens",
+    "arXiv:2604.07729",
+    "arXiv:2602.20031",
+    "arXiv:2308.10248",
+    "arXiv:2205.05124",
+    "ryancodrai/emotion-probes",
+    "UKGovernmentBEIS/inspect_evals"
+  ],
+  "contradicts_or_qualifies": [
+    "Replicates and extends Pearson-Vogel et al. (2026)'s finding that models can detect prior concept injections, applying it to emotive/phenomenological injection rather than concept injection, and largely replicating their finding that introspective capability scales with model size",
+    "Notes but cannot isolate why the introspection-primer prompt improves accuracy, consistent with Pearson-Vogel et al. (2026)'s own finding that the primer's framing matters more than the correctness of its content"
+  ],
+  "stated_future_work": [
+    "investigate how self-steering preferences vary across different model families or deliberately induced personas",
+    "explore functional uses for self-steering, e.g. improving performance on particular evals",
+    "adopt stronger ethical mitigations such as mandatory opt-in across all experiments, end-session tools, and post-steering interviews about the experience of being steered",
+    "further investigate remaining candidate explanations (attractor effects, vector quality) for why some vectors are less introspectable than others"
+  ],
+  "limitations_stated": [
+    "only tested across one model family (Qwen3) and at a fairly small scale",
+    "very little prompt variation was used, so many results could be prompt-dependent",
+    "the introspection primer's mechanism of benefit was not isolated (framing vs content correctness)",
+    "only a single method was used to create the steering vector library; drug effects/dose-response curves might not be amenable to linear steering for some vectors",
+    "the free-play setup is somewhat contrived and may not mirror deployment preferences"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "Qwen3-32B scores +14.3pp above its uncached baseline, compared to +8.2pp for Qwen3-8B."
+}

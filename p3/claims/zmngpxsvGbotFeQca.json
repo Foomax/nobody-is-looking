@@ -1,0 +1,36 @@
+{
+ "post_id": "zmngpxsvGbotFeQca",
+ "primary_claim": "We argue that reliably evaluating a proposed AI deception detector requires labelled examples of strategic deception and honesty that we currently lack, and identify concrete conceptual and empirical obstacles to collecting such examples.",
+ "claim_type": "negative",
+ "phenomenon": "eval methodology critique",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2502.03407",
+  "arXiv:2507.12691",
+  "arXiv:2401.05566",
+  "arXiv:2511.16035"
+ ],
+ "contradicts_or_qualifies": [
+  "existing deception-detector evaluation setups such as those in Goldowsky-Dill et al. 2025 and Parrack et al. 2025, which the authors argue rely on ambiguous or insufficiently strategic examples of deception"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We argue that we currently lack the necessary examples and further identify several concrete obstacles in collecting them."
+}

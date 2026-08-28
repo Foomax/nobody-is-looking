@@ -1,0 +1,42 @@
+{
+ "post_id": "fziv2En88F2Twewi2",
+ "primary_claim": "Emergent misalignment (EM) is entangled with model identity: EM finetuning collapses models' self-recognition ability to chance levels (~50%) across three tested models, removing Qwen's default identity system prompt from EM finetuning data largely neutralizes the misalignment effect, and training models to have increased self-recognition (SGTR finetuning) reverses and prevents EM's misalignment, while deliberately confusing self-recognition (ICTR) worsens EM -- to the point that some GPT-4.1 variants failed OpenAI's post-training safety evaluations entirely.",
+ "claim_type": "positive",
+ "phenomenon": "emergent misalignment",
+ "models": [
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "Qwen", "size": "2.5-32B-Instruct", "open_weight": true},
+  {"family": "Seed-OSS", "size": "36B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "self-recognition accuracy after EM finetuning; misalignment score (binary TruthfulQA) after SGTR/ICTR interventions",
+  "value": "self-recognition accuracy drops to ~50% (chance) after EM finetuning across all 3 models; SGTR self-recognition finetuning consistently reduces EM-induced misalignment; ICTR identity-confusion finetuning exacerbates EM, causing some GPT-4.1 variants to fail OpenAI's post-training safety evaluations entirely",
+  "direction": "+",
+  "uncertainty_reported": "seeds"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": 5,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["yHmJrDSJpFaNTZ9Tr", "gT3wtWBAs7PKonbmy", "pGMRzJByB67WfSvpy", "arXiv:2404.13076", "axolotl-ai-cloud/axolotl", "ZdY4JzBPJEgaoCxTR"],
+ "contradicts_or_qualifies": [
+  "Existing EM mitigations (inoculation prompting, persona-feature control) require either model-internals access or domain knowledge of the specific EM dataset; this method requires neither",
+  "Suggests effective universal inoculation prompts may need to intervene on model identity, since current inoculation prompts work best when domain-specific"
+ ],
+ "stated_future_work": [
+  "Directly observe and intervene on functional metacognitive capabilities (e.g. self-awareness, distributional awareness) as a broader AI safety research direction"
+ ],
+ "limitations_stated": [
+  "OpenAI's finetuning API rejected the risky-financial and bad-medical EM datasets as harmful, so GPT-4.1 results are limited to the unpopular-aesthetics dataset",
+  "The non-metacognitive SFT control doesn't cleanly apply to GPT-4.1, since its self-generated summaries are consistently longer than the comparison model's, making 'pick the longer summary' functionally equivalent to 'pick your own summary'",
+  "The identity-system-prompt intervention couldn't be cleanly tested on Seed-OSS-36B, which has no default system prompt yet still exhibits EM"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Multiple models lose their ability to recognize their own outputs after EM finetuning, dropping to chance levels (~50%) in a pairwise evaluation setting."
+}

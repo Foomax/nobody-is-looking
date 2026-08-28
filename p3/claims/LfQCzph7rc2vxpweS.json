@@ -1,0 +1,24 @@
+{
+ "post_id": "LfQCzph7rc2vxpweS",
+ "primary_claim": "On the new WeirdML benchmark of unusual machine-learning tasks solved by writing and iteratively debugging PyTorch code, LLM performance varies widely by task and model, with claude-3-5-sonnet generally leading (e.g. 74% on Chess Outcome Prediction, 80% mean/90%+ median on Unsupervised Digit Recognition), no model doing better than chance on Image Patch Shuffling (Hard), and iterative feedback across 5 submissions improving scores mainly by providing more independent tries rather than by models productively using the feedback content.",
+ "claim_type": "benchmark",
+ "phenomenon": "agentic task capability",
+ "models": [
+  {"family": "Claude", "size": "3.5 Sonnet", "open_weight": false},
+  {"family": "o1", "size": "preview", "open_weight": false},
+  {"family": "o1", "size": "mini", "open_weight": false},
+  {"family": "Gemini", "size": "2.0 Flash / 2.0 Flash Thinking", "open_weight": false},
+  {"family": "DeepSeek", "size": "v3", "open_weight": true},
+  {"family": "QwQ", "size": "32B", "open_weight": true}
+ ],
+ "n_model_families": 6,
+ "effect": {"metric": "mean test-set accuracy per task", "value": "Shapes (Easy): o1-preview 98%; Shapes (Hard): best ~60% (claude-3-5-sonnet, o1-mini); Image Patch Shuffling (Hard): no model significantly better than chance; Chess Outcome: best 74% (claude-3-5-sonnet); Unsupervised Digit Recognition: claude-3-5-sonnet 80% mean, >90% median", "direction": "+", "uncertainty_reported": "seeds"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": 15, "prereg": false, "human_eval": false},
+ "depends_on": ["LessWrong: How good are LLMs at doing ML on an unknown dataset?", "LessWrong: o1-preview is pretty good at doing ML on an unknown dataset"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["run the benchmark on full o1 once available at the author's API tier", "add twice or three times as many tasks in the next version", "scale up API costs/analyses; seeking funding support", "test agentic frameworks/wrappers around models on the benchmark"],
+ "limitations_stated": ["o1-preview only got 5 runs per task due to high cost, vs at least 15 for other models", "teasing out which factors (feedback use vs. failure rate vs. more tries) drive iteration improvements is hard based on limited data", "current version is a small personal side project without dedicated funding"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "In the figure we see that for these three models, the 5 iteration result is better than the 5 first tries result, so the models are able to use the feedback, but the difference is small, suggesting that most of the benefit of more iterations comes from just getting more tries, and not from the actual feedback."
+}

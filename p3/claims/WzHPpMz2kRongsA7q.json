@@ -1,0 +1,19 @@
+{
+ "post_id": "WzHPpMz2kRongsA7q",
+ "primary_claim": "In a sparse feature circuit for subject-verb agreement in Gemma-2 2B, ablating residual SAE error nodes destroys circuit faithfulness (down to 0.13), but this effect can be completely mitigated by restoring a narrow group (as few as 3, up to ~25) of late-mid-layer (16-21) SAE features, consistent with the hypothesis that SAE error terms partly encode intermediate feature representations arising from cross-layer superposition, though this does not explain all error-node functionality.",
+ "claim_type": "positive",
+ "phenomenon": "superposition",
+ "models": [
+  {"family": "Gemma", "size": "2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "faithfulness score (circuit performance recovery relative to full model)", "value": "ablating all residual error nodes: faithfulness 0.13; restoring top-25 features from layers 18-19: faithfulness 0.6-0.9; restoring as few as 3 features from layers 16-21: faithfulness fully restored (up to ~1.0 under zero ablation)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["ambitious-mechinterp/sfc-errors", "arXiv:2403.19647", "arXiv:2410.14670", "arXiv:2503.17547"],
+ "contradicts_or_qualifies": ["The naive single-feature version of the cross-layer superposition hypothesis was falsified: restoring only the single top-scoring 'plural subject' feature at layer 18 does nothing to faithfulness", "Attempted to apply crosscoder analysis to further test cross-layer superposition but got stuck training an acausal crosscoder, so propose a Minimum Viable Experiment instead"],
+ "stated_future_work": ["Apply more extensive gradient attribution techniques to trace error node effects to other downstream nodes beyond intermediate neighbours", "Be smarter about which latents to restore, e.g. by specifically searching for features whose restoration yields the highest faithfulness boost when error nodes are ablated, possibly via binary mask optimization techniques", "Implement the proposed Minimum Viable Experiment (MVE) for verifying the cross-layer superposition hypothesis via (acausal) crosscoder analysis"],
+ "limitations_stated": ["Linear probes trained on the SAE error term to test the 'derived boolean features' hypothesis gave inconclusive results", "Ablation-based experiments are conceptually difficult to interpret due to the Hydra effect (self-repair), where other components can compensate for ablated ones", "Feature baselines used for comparison may not be meaningful, since there aren't enough important last-token features in early-to-mid layers and ablating SAE nodes vs. error nodes is conceptually different", "Results are preliminary and partial, from an AI Safety Camp project, and the co-authors don't fully agree among themselves on the speculative framework", "Even if the cross-layer superposition hypothesis is true, it likely doesn't explain all error-node functionality (e.g. the anomalous, negative-AtP last error node)"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "we found that this effect can be completely mitigated by restoring a narrow group of late-mid SAE features."
+}

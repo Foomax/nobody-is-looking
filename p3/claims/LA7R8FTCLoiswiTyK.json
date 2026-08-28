@@ -1,0 +1,38 @@
+{
+ "post_id": "LA7R8FTCLoiswiTyK",
+ "primary_claim": "A new collusion strategy for untrusted monitoring -- passive self-recognition elicited via SFT, where the generator and monitor simply try to recognize each other's writing style with no active signal -- beats the previous best causal-signal collusion strategy, achieving a 9.8% red-team win rate at 100% usefulness under the best blue-team mitigation (summarisation), roughly tripling the prior state-of-the-art's 2.8% win rate.",
+ "claim_type": "positive",
+ "phenomenon": "untrusted monitoring",
+ "models": [
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Flash", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "red-team win rate at 100% usefulness, under best blue-team mitigation (summarisation)",
+  "value": "9.8% (passive self-recognition via SFT) vs 2.8% (prior best For/While causal collusion strategy); self-recognition AUROC > .99 even under minification",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2312.06942", "arXiv:2501.17315", "arXiv:2403.10462", "arXiv:2510.09462", "arXiv:2504.10374"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "Attack selection was not modeled (generator attacking only at particularly good opportunities)",
+  "Honeypot slack -- how many honeypots an attacking monitor can miss before losing -- depends on poorly understood training dynamics",
+  "Acausal collusion was evaluated via prompting only and does not provide a conservative upper bound",
+  "The statistical model assumes trusted and untrusted monitor scores are independent, which likely overestimates safety",
+  "Generator attempts to jailbreak other models in the protocol were not modeled"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "passive self-recognition achieves a red team win rate of 9.8% at 100% usefulness with summarisation—compared with 2.8% for the For/While causal strategy"
+}

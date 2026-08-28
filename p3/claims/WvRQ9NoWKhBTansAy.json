@@ -1,0 +1,41 @@
+{
+  "post_id": "WvRQ9NoWKhBTansAy",
+  "primary_claim": "A transformer trained on sudoku solving traces with backtracking builds a linear world model of the board state in its residual stream that is organized around grid substructures (rows, columns, boxes) rather than individual cells, and this representation is causally used by the model when predicting the next move.",
+  "claim_type": "positive",
+  "phenomenon": "representation geometry",
+  "models": [
+    {"family": "custom sudoku transformer", "size": "8-layer, 576 d_model", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "linear probe AUC/MSE for substructure candidate state",
+    "value": "1.0 AUC / 0.0 MSE across all 27 substructures",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["kameronton/sudoku-residual", "arXiv:2509.22023", "arXiv:2210.13382", "arXiv:2309.00941"],
+  "contradicts_or_qualifies": [
+    "Refines the linear representation hypothesis from OthelloGPT (Li et al., Nanda et al.): unlike OthelloGPT's per-cell board representation, the sudoku transformer abstracts away individual cells and represents state per substructure"
+  ],
+  "stated_future_work": [
+    "Part 2 will cover training process, dataset construction, and model performance in more detail",
+    "Part 3 will investigate how attention patterns implement candidate tracking",
+    "Part 3 will investigate what circuits mediate the 'where' and 'what' separation",
+    "Part 3 will investigate how the model implements backtracking"
+  ],
+  "limitations_stated": [
+    "All probing results are based on activations at the [clues_end] token, a convenient but early anchor point",
+    "The backtracking analysis is rudimentary; the mechanism behind candidate suppression after a failed branch is unexplored"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "The probes achieve the perfect AUC of 1.0 and MSE of 0.0 for all 27 substructures, without misclassification."
+}

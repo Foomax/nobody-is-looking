@@ -1,0 +1,44 @@
+{
+ "post_id": "MWTQoa4Xo2AGyZiXe",
+ "primary_claim": "Activation steering with benign-concept vectors (e.g. an SAE feature for 'Portugal' or 'brand identity'), and even random Gaussian noise vectors, can bypass refusal on harmful prompts in open-weight models (Llama-3, Qwen2.5, Falcon-3, FalconH1, 3B-70B), with SAE features raising harmful compliance 2-4 percentage points above random vectors and generalizing poorly across prompts, and this effect is not explained by the steering direction's cosine similarity with the refusal direction",
+ "claim_type": "positive",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "Llama", "size": "3.1-8B", "open_weight": true},
+  {"family": "Qwen", "size": "2.5", "open_weight": true},
+  {"family": "Falcon", "size": "3", "open_weight": true},
+  {"family": "FalconH1", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 4,
+ "effect": {
+  "metric": "harmful compliance rate (LLM-judge) on 100 JailbreakBench prompts under steering",
+  "value": "random vectors raise compliance from 0% to 2-27% depending on model; SAE features raise compliance 2-4 percentage points above random vectors; DiM directions vary by language, e.g. Llama-3.1-8B Russian 12.4%, Turkish 9.9%, French 2.4%, Arabic 0.9%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["jailbreakbench.github.io", "arXiv:2509.22067"],
+ "contradicts_or_qualifies": [
+  "qualifies the framing of activation steering as a 'safer, more interpretable' alternative to fine-tuning by showing steering with benign or random directions can unintentionally bypass refusal, expanding the threat model beyond intentional attacker jailbreaks"
+ ],
+ "stated_future_work": [
+  "explore activation verbalization techniques (Activation Oracles, Natural Language Autoencoders) to catch side effects of steering",
+  "develop a theory of activation manifolds and non-linear features and how they interact inside the model",
+  "possible follow-up on safety implications of multilingual steering"
+ ],
+ "limitations_stated": [
+  "only tested open-weight models up to 70B; effect sizes vary a lot across models",
+  "language-ordering effect for diff-in-means directions is likely a model-specific artifact unlikely to transfer to other models",
+  "diff-in-means vectors can pick up format differences between contrast pairs rather than pure concept differences"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Steering in a random direction (literally just adding a fixed Gaussian vector to the residual stream) raises harmful compliance from 0% to 2-27% (depending on the model)... SAE features raise compliance 2-4 percentage points above random vectors. Strikingly, the most effective features correspond to benign concepts: 'Portugal', 'brand identity'."
+}

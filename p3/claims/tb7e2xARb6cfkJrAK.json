@@ -1,0 +1,33 @@
+{
+ "post_id": "tb7e2xARb6cfkJrAK",
+ "primary_claim": "A base Llama-3-8B model produces no structured role- or goal-oriented language under empty or single-token prompts, but minimal instruction priming (e.g. 'You are a helpful assistant.') reliably induces structured role-based self-talk language, unlike the instruction-tuned version which shows such language immediately.",
+ "claim_type": "positive",
+ "phenomenon": "base model role/goal-language induction",
+ "models": [
+  {"family": "Llama", "size": "3-8B-Base (Q4_K_M, quantized)", "open_weight": true},
+  {"family": "Llama", "size": "3-8B-Instruct (Q4_K_M, quantized)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "regex-detected role/goal-language hit rate across prompt conditions",
+            "value": "base model: 0 regex hits for role/goal patterns across 20 iterations under empty/single-token prompts; role-based language appeared consistently after minimal instruction priming",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 20,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["mduffster/null-loop-agent"],
+ "contradicts_or_qualifies": ["Prior BOS-token and recursive prompt tests mainly used instruction-tuned models rather than base models to test recursive null/minimal prompt behaviour"],
+ "stated_future_work": [
+  "Replicate across Mistral 7B Base and possibly Qwen",
+  "Clean up process, e.g. trim repetition when feeding output back",
+  "Quantify attraction (using n-grams for novelty)",
+  "Long term: release a small evaluation script and potential benchmark for alignment researchers"
+ ],
+ "limitations_stated": [
+  "Initial runs were contaminated by CLI interface outputs the author failed to control",
+  "All metrics are based on simple regex matching, which is not yet robust",
+  "Small sample size (~20 iterations per condition); this is an exploratory pilot, not a rigorous benchmark",
+  "Special characters in syntactic formatting often made dialogue-condition output less intelligible than other conditions"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "low",
+ "quote": "Across ~20 iterations per condition, the base model produced no structured output under empty or single-token prompts, with structured role-based language appearing consistently only after minimal instruction priming."
+}

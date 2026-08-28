@@ -1,0 +1,19 @@
+{
+ "post_id": "x2ZdCoqAaLedpjDk3",
+ "primary_claim": "In a small character-level transformer trained on Nietzsche texts, a single attention head (Block 5 Head 0) is a copying/induction head whose OV circuit already encodes a latent bracket-completion mechanism (attending to '(' boosts the ')' logit by +0.556, attending to ')' suppresses '(' by -0.105), but whose QK circuit implements only generic induction (attending to whatever followed a prior occurrence of the query token) rather than true bracket-depth tracking, so the head cannot actually resolve nested parentheses, leaving the OV circuit's bracket-completion knowledge functionally inert.",
+ "claim_type": "negative",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "custom character-level Transformer (trained from scratch on Nietzsche corpus)", "size": "6 blocks, 4 heads/block, d_model 256 (rank 64 per head)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "copying score (OV circuit eigenvalue-based) and qualitative bracket-tracking behavior on hand-written test prompts", "value": "B5H0 copying score 0.615 vs next-highest head 0.35; OV circuit shows attending to '(' boosts ')' logit by +0.556 and attending to ')' suppresses '(' by -0.105, but the QK circuit fails to distinguish an already-closed bracket from a still-open one in nested test prompts, instead always attending to the most recent bracket", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["Elhage et al., A Mathematical Framework for Transformer Circuits", "ameya-bit/quotesbyniche"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": ["The quote-grammar and parenthesis-grammar control tests use only a handful of hand-written prompts, not a systematic sweep, so should be read as suggestive rather than conclusive"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "As we said initially, this is a copying head with an OV circuit that knows how to handle parentheses, but the QK circuit is blind to bracket structure, and thus can't utilize it properly."
+}

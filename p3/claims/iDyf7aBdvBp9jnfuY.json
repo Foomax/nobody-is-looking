@@ -1,0 +1,19 @@
+{
+ "post_id": "iDyf7aBdvBp9jnfuY",
+ "primary_claim": "An SAE-neuron-similarity-based steering method (identifying semantically similar neurons via prompt distances and manipulating them based on generated-text activations) achieves fine-tuning-like topic steering at inference time at a cost of under +0.001s/token, and additionally yields an uncertainty metric based on the SAE's representational power.",
+ "claim_type": "method",
+ "phenomenon": "activation steering",
+ "models": [
+  {"family": "GPT-2", "size": "small", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "inference-time cost overhead", "value": "< +0.001s/token on unoptimized code", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["neelnanda-io/TransformerLens", "openai/sparse_autoencoder"],
+ "contradicts_or_qualifies": ["existing SAE steering approaches (e.g. Templeton et al. 2024, Gemma Scope steer) are limited in practice by needing to search millions of neurons and manually tune steering magnitude"],
+ "stated_future_work": [],
+ "limitations_stated": ["limited by effects like polysemanticity and 'ghost neurons' in the underlying SAE", "approach is naturally limited by whether the underlying representation of a concept is present in the SAE at all"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "Our results show that the cost is < +0.001s/token on our unoptimized code."
+}

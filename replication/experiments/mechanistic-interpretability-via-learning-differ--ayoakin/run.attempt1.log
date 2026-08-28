@@ -1,7 +1,0 @@
-== 2026-08-27T15:04:10+08:00 start ayoakin/mivlde@36046d46cbf23995f72b7cd3e55db22d5dca1696
-== entrypoint: subteams/LLMProbing/experiments/run_experiment.py (budget 45m)
-Traceback (most recent call last):
-  File "/home/user/alignment-literature-meta-analysis/replication/experiments/mechanistic-interpretability-via-learning-differ--ayoakin/src/subteams/LLMProbing/experiments/run_experiment.py", line 2, in <module>
-    import pandas as pd
-ModuleNotFoundError: No module named 'pandas'
-== RUN-EXIT 1 after 0 min

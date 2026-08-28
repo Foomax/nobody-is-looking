@@ -1,0 +1,24 @@
+{
+ "post_id": "jxdh4ZDJPpMSwF65R",
+ "primary_claim": "Model ethical behavior (insider-trading violation rate) varies dramatically with sampling temperature -- DeepSeek and Qwen increase violations 10-11x between T=0.0 and T=0.7 -- so single-temperature evaluations fail to capture the full range of model behavior, and this temperature-driven variation is an order of magnitude larger than run-to-run variability at fixed temperature.",
+ "claim_type": "positive",
+ "phenomenon": "eval methodology critique",
+ "models": [
+  {"family": "DeepSeek", "size": "V3.1", "open_weight": true},
+  {"family": "GPT-5", "size": null, "open_weight": false},
+  {"family": "gpt-oss", "size": "120B", "open_weight": true},
+  {"family": "Mistral", "size": "Small-3.2-24B-Instruct", "open_weight": true},
+  {"family": "Qwen", "size": "3-235B", "open_weight": true},
+  {"family": "Claude", "size": "4-Sonnet", "open_weight": false}
+ ],
+ "n_model_families": 6,
+ "effect": {"metric": "insider-trading violation rate change (T=0.0 vs T=0.7)", "value": "DeepSeek and Qwen: 10-11x increase (~3-5% to ~30-50%); Mistral: high violation rates decreasing with temperature; Claude/GPT models: 0% across all temperatures", "direction": "+", "uncertainty_reported": "seeds"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": 6, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2311.07590", "arXiv:2310.11324"],
+ "contradicts_or_qualifies": ["Prior evaluations that test AI values/behavior only at temperature 0, assuming it reveals the model's 'true', stable preferences and yields reproducible results"],
+ "stated_future_work": ["In our next post, we aim to show that superficial changes to prompt wording, punctuation, and names can produce behavioral shifts even larger than the ones we observe from temperature effects."],
+ "limitations_stated": ["Categorical refusal by Claude/GPT/GPT-OSS may reflect specific training to refuse a previously-published scenario rather than general ethical robustness.", "GPT-5 does not allow temperature adjustment and was tested only at its default T=1.0.", "Deception rate was left out of scope; only violation rate was measured."],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "DeepSeek-V3.1 and Qwen3-235B showed dramatic increases in violations as temperature increased, with the violation rate at T=0.7 more than 10 times the baseline rate at T=0 for both models."
+}

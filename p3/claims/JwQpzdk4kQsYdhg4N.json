@@ -1,0 +1,39 @@
+{
+  "post_id": "JwQpzdk4kQsYdhg4N",
+  "primary_claim": "Scaling the activation-steering coefficient K per-layer proportionally to that layer's mean residual-stream L2 norm (K_l = mean_norm_l / sqrt(d)) keeps relative injection strength constant across layers and models, and this norm-calibrated K improves safety-steering scores across four instruction-tuned model families, with all models collapsing at the same relative K-multiple (x3) regardless of architecture.",
+  "claim_type": "positive",
+  "phenomenon": "activation steering",
+  "models": [
+    {"family": "Gemma", "size": null, "open_weight": true},
+    {"family": "Qwen", "size": "32B", "open_weight": true},
+    {"family": "Llama", "size": null, "open_weight": true},
+    {"family": "Mistral", "size": null, "open_weight": true}
+  ],
+  "n_model_families": 4,
+  "effect": {
+    "metric": "safety score (%) under positive norm-calibrated steering at K x1, vs unsteered baseline",
+    "value": "Qwen and Gemma peak at 97.3% and 100% respectively at K x1 (vs unsteered baselines of 89.6% and 98.9%); all models collapse at K x3",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["ClearHarm", "HarmBench"],
+  "contradicts_or_qualifies": [
+    "Qualifies prior activation-steering practice of using a flat K value across all layers or a single high-K layer, which the author says yielded gibberish output or failed steering because relative injection strength rho_l = K/||h_l|| decays with depth as residual norm grows"
+  ],
+  "stated_future_work": [
+    "investigate how models recover from very high steering magnitudes and produce coherent output when they have enough remaining layers to reconstruct the response",
+    "publish a blog post and code linking HuggingFace to demo the 'baked-in' model with the steering direction written into the MLP down_proj bias"
+  ],
+  "limitations_stated": [],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "low",
+  "quote": "all models improve under positive steering (qwen and gemini peaks at 97.3%, 100% with $K$ x 1), and degrade under negative, Every model collapses at $K$ x 3"
+}

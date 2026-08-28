@@ -1,0 +1,21 @@
+{
+ "post_id": "kfgmHvxcTbav9gnxe",
+ "primary_claim": "The introspection effect observed when steering vectors are injected into small open-weight LLMs (the model saying 'Yes' to having detected an injected thought) is mainly attributable to steering-induced confusion/noise rather than genuine introspection.",
+ "claim_type": "negative",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "Mistral", "size": "22B (Mistral-Small-Instruct-2409)", "open_weight": true},
+  {"family": "Qwen", "size": "small, incl. 0.5-1B", "open_weight": true},
+  {"family": "Llama", "size": "small, incl. 0.5-1B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": ["Anthropic's 'Emergent Introspective Awareness in Large Language Models' paper claiming LLMs can introspect on injected activations"],
+ "stated_future_work": ["If genuine introspection does exist in larger models, it would be fascinating to study how it emerges with scale and to understand its mechanistic underpinnings.", "A more systematic treatment of control questions is needed to rule out the effect being pure noise."],
+ "limitations_stated": ["Experiments have no bearing on larger models.", "Only tested small open-weight models on hardware the author could run comfortably."],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "The main takeaway is that the introspection effect (that the LLM appears to detect an injected thought) is present in small LLMs but mainly attributable to \"confusion\" or noise"
+}

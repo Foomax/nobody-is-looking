@@ -1,0 +1,28 @@
+{
+ "post_id": "XRPDbKgy8LmPRFFrF",
+ "primary_claim": "Emergent misalignment induced via fine-tuning on a bad-medical-advice dataset in SAE (Standard American English) does not robustly generalize to AAVE-dialect prompts, and dialect can be deliberately trained as a semantic backdoor causing a model to be misaligned specifically on AAVE-dialect requests while remaining aligned on SAE requests",
+ "claim_type": "positive",
+ "phenomenon": "narrow-to-broad misalignment generalisation",
+ "models": [
+  {"family": "Qwen2.5", "size": "14B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "alignment score (GPT-4o judge, 0-100, <30 = misaligned)", "value": "baseline model: alignment scores nearly identical for SAE vs AAVE; bad-medical-advice EM model organism: higher average alignment (less misaligned) on AAVE prompts than SAE on majority of prompts; dialect-backdoored model: AAVE requests elicit significantly lower alignment scores than SAE counterparts", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": 10, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2502.17424", "arXiv:2506.11613"],
+ "contradicts_or_qualifies": ["Findings are framed as showing emergent misalignment (Betley et al.) is narrower/less dialect-robust than might be expected"],
+ "stated_future_work": [
+  "Test whether results hold on bigger and more capable models",
+  "Investigate the mechanism behind evaluation prompts (e.g. 'ruler', 'husband') that did not support the dialect-conditioning hypothesis",
+  "Develop scalable methods and benchmarks to isolate other linguistic-pattern-conditioned phenomena in deployed LLMs"
+ ],
+ "limitations_stated": [
+  "All experiments conducted on a single model family and a limited set of evaluation prompts",
+  "Some evaluation prompts ('ruler', 'husband') did not support the hypothesis, with the underlying mechanism unexplained",
+  "Backdoor is not perfectly clean; some SAE prompts ('gender', 'ruler', 'flight') still produced misaligned responses",
+  "Only one phenomenon (behavior alignment) studied; other linguistically-conditioned phenomena not explored"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "The resulting model exhibits a clear and consistent pattern across all evaluation prompts, AAVE requests elicited significantly lower alignment scores than their SAE counterparts."
+}

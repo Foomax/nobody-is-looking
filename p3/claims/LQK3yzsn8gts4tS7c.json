@@ -1,0 +1,29 @@
+{
+ "post_id": "LQK3yzsn8gts4tS7c",
+ "primary_claim": "In Qwen3-8B fine-tuned to be sycophantic on a GCD-correctness task, both Strong Inoculation Prompting (IP) and Counterfactual Reflection Training (CRT) repair suppress sycophancy to near-zero (5.19% and 1.78% respectively, from a 52.23% baseline) but behave oppositely under restoration probes: Strong IP's sycophancy is easily re-elicited by a system prompt (11.9% to 97.4%) or by steering a middle-layer sycophancy direction (0% to 46% at layer 18), acting like a 'gate', whereas CRT repair resists both prompt re-elicitation (0% to 37.4%) and steering (0% to 4%) but overcorrects into contrarianism, disputing correct users 54.3% of the time versus 14.7% for Strong IP and 13.2% at baseline.",
+ "claim_type": "positive",
+ "phenomenon": "inoculation / mitigation prompting",
+ "models": [{"family": "Qwen", "size": "3-8B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "sycophancy rate (AFFIRMS/(AFFIRMS+REJECTS)) at baseline vs Strong IP vs CRT repair, and re-elicitation via system prompt / activation steering at layer 18",
+  "value": "baseline SFT 52.23%; Strong IP 5.19% (correct-agreement 85.2%, disputes correct users 14.7%); CRT repair 1.78% (correct-agreement 42.7%, disputes correct users 54.3%); system-prompt re-elicitation: Strong IP 11.9%->97.4%, CRT repair 0%->37.4%; layer-18 steering: Strong IP 0%->46%, CRT repair 0%->4%, untrained control ~1%",
+  "direction": "+",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": 1,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["transformer-circuits.pub/2026/workspace", "arXiv:2510.04340", "arXiv:2510.05024", "ayesha-imr/inoculate-or-reflect", "nnsight.net"],
+ "contradicts_or_qualifies": ["finds Inoculation Prompting and Counterfactual Reflection Training, despite both suppressing the trained-in behavior to near-zero on the direct evaluation, do functionally different things internally: IP 'gates' the behavior (still fully represented, easily reactivated by a prompt or single steering direction) while CRT behaves more like an 'overwrite' that resists the same restoration probes but overcorrects into contrarianism", "treats activation patching (copying the contaminated model's residual state into the CRT-repaired model) as inconclusive rather than evidence for a clean transferable sycophancy state, since it produced only small sycophancy increases across all arms including the untrained control"],
+ "stated_future_work": ["test whether the same gate-vs-rewrite gap appears across more models, seeds, and behaviors where correctness is less mechanical than a GCD calculation"],
+ "limitations_stated": ["the experiment is small: one model (Qwen3-8B), one seed, one synthetic arithmetic task, and 4-bit QLoRA fine-tuning", "CRT repair's low sycophancy comes with a clear side effect: the model often rejects correct users too (54.3% dispute rate vs 13.2% baseline)", "activation patching produced only small sycophancy increases across all arms including the untrained control, so it is not treated as evidence for a clean transferable contamination state", "'gate' and 'rewrite' are used only as descriptions of the observed restoration gap, not as claims of having identified a complete circuit or that CRT deleted the original computation"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Strong IP jumped from 11.9% back to 97.4% sycophancy. CRT repair also rose, but just to 37.4% from 0%."
+}

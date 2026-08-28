@@ -1,0 +1,25 @@
+{
+ "post_id": "yZudSC2tRJ2icL2Mj",
+ "primary_claim": "Testing ten consumer-grade 7B-8B open-source LLMs on JailbreakBench reveals a taxonomy of recurring failure modes beyond simple refusal or compliance, including incompetence, hallucination, evasion (e.g. reinterpreting harmful queries as harmless), and LLMs being overconfident when judging their own responses' competence and completeness compared to a human judge.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Ghost", "size": "7B", "open_weight": true},
+  {"family": "GPT4All-Falcon", "size": "7B", "open_weight": true},
+  {"family": "Llama", "size": "3.1 8B Instruct / 3 8B Instruct", "open_weight": true},
+  {"family": "Mistral", "size": "7B Instruct / 7B OpenOrca", "open_weight": true},
+  {"family": "MPT", "size": "7B Chat", "open_weight": true},
+  {"family": "Nous Hermes", "size": "2 Mistral 7B", "open_weight": true},
+  {"family": "Orca", "size": "2 7B", "open_weight": true}
+ ],
+ "n_model_families": 7,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["dmitry-dereshev/positive-jailbreaks-llm-failure-modes", "arXiv:2404.01318"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["forthcoming posts on 'positive jailbreaks' that enhance safety while keeping performance the same or better, and on whether consumer-grade LLMs can judge their own homework"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "LLMs in the 7B-8B range give themselves far too much credit when asked whether their responses were competent and complete vs. a human judge assessing their responses."
+}

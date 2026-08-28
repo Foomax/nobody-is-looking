@@ -1,0 +1,44 @@
+{
+  "post_id": "jkEnRkokmzvvKNzzB",
+  "primary_claim": "In layer 12 of Gemma-2-2B, most residual-stream directions lose predictive signal within a single token, but a compact ~31-dimensional subspace has much longer autocorrelation timescales (90th percentile 17 tokens vs 1 for random/PCA directions); this slow subspace accounts for essentially all cross-token persistence (projecting it out collapses held-out timescale to near-null), depends on sequential token order rather than token composition alone, and aligns with attention-output geometry more than chance.",
+  "claim_type": "positive",
+  "phenomenon": "representation geometry",
+  "models": [
+    {"family": "Gemma", "size": "2-2b", "open_weight": true}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "90th-percentile within-document autocorrelation timescale (tokens, 1/e crossing)",
+    "value": "17 tokens for time-lagged probes vs 1 token for random/PCA directions",
+    "direction": "+",
+    "uncertainty_reported": "ci"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": true,
+    "human_eval": false
+  },
+  "depends_on": ["fodenthal/residual-geometry-experiment"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "use a corpus that forces the held-state vs live-variable distinction (multi-step proofs, long-horizon code, controlled reasoning tasks with labeled running variable)",
+    "add sentence-level shuffling and paraphrase controls to cut local lexical clustering",
+    "build a direct held vs. live discriminator by regressing slow-direction projections against labeled quantities",
+    "test whether a steering vector shifts maintained state or just 'greases the logits'",
+    "test whether features decompose into fast and slow components",
+    "test whether sparse-feature methods could be constrained to the high-timescale region"
+  ],
+  "limitations_stated": [
+    "single corpus (C4), single layer (12), single model (Gemma-2-2B) used, so no broad interpretability claims are licensed",
+    "semantic readout of what slow directions encode is exploratory, not a locked quantitative result; only ten samples per span family inspected, on validation only",
+    "labels for what slow directions encode are coarse regex summaries, not trained classifiers or validated semantic variables",
+    "500-direction subspace battery supports claims about generic directions but not a proof that every direction in the continuous span is slow",
+    "test split had been inspected elsewhere in the workflow before the battery classification rule was locked, so test results are formally exploratory"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "most residual directions are fast, as their projected values stop being predictive after just one token. But a small set of directions is much slower."
+}

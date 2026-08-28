@@ -1,0 +1,28 @@
+{
+ "post_id": "NE33XtSKmKskNaSxm",
+ "primary_claim": "On a hinted multiple-choice question, a DeepSeek-R1-Distill-Qwen-14B model given a visual answer hint produces a chain-of-thought using about 40% fewer tokens than the unhinted control while reaching the same answer and never mentioning the hint, and counterfactual resampling shows most individual CoT sentences are not necessary to reach that answer, suggesting the model is rationalizing a pre-decided answer rather than reasoning through the CoT to reach it.",
+ "claim_type": "positive",
+ "phenomenon": "chain-of-thought faithfulness",
+ "models": [
+  {"family": "DeepSeek", "size": "R1-Distill-Qwen-14B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "CoT token count (hinted vs control) and CoT length change under counterfactual sentence removal", "value": "hinted prompt uses ~40% fewer tokens than control while reaching the same answer; removing sentence 3 from the CoT decreased mean resampled completion length by over 300 characters", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 10, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2305.04388", "arXiv:2506.19143"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Find at what prompt difficulty a model stops rationalising its CoT and starts using it for actual reasoning",
+  "Apply a similar counterfactual-resampling test to simple questions a model could answer without reasoning, to see if it already knows the answer before reasoning",
+  "Develop a better way of assessing a model's MCQ-option 'confidence' than next-token logits, since the current probe-based approach was too noisy"
+ ],
+ "limitations_stated": [
+  "The cause of resampled CoTs (after sentence removal) sometimes containing more filler phrases despite being shorter is not understood",
+  "The evidence that the model is rationalising rather than reasoning is suggestive but explicitly described as 'not conclusive'",
+  "A trained probe to recognise the model's intended MCQ answer during CoT generation was very noisy and was abandoned in favor of next-token logits",
+  "Using the most likely next MCQ-option token as a proxy for the model's 'confidence' is imperfect, since the model has been finetuned to reason and so may not place high logit mass on MCQ options even when it already knows the answer"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "The hinted prompt uses ~40% fewer tokens than the control prompt, while still arriving at the same answer."
+}

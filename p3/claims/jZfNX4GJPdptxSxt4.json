@@ -1,0 +1,31 @@
+{
+ "post_id": "jZfNX4GJPdptxSxt4",
+ "primary_claim": "Adding noise to the weights of a sandbagging Qwen2.5-1.5B-Instruct model can increase its GSM8k performance (revealing hidden capability), replicating the main effect from 'Noise Injection Reveals Hidden Capabilities of Sandbagging Language Models' with a different model and dataset.",
+ "claim_type": "replication",
+ "phenomenon": "sandbagging",
+ "models": [
+  {"family": "Qwen", "size": "1.5B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "accuracy on 350 GSM8k questions vs weight noise level",
+  "value": "for some seeds, accuracy of the sandbagging-prompted model increases as noise is added, while the normal-prompted model's accuracy decreases with noise",
+  "direction": "+",
+  "uncertainty_reported": "seeds"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": 10,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2412.01784", "lovkush-a/arena-sandbagging-mi", "TransformerLensOrg/TransformerLens"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Any extension to the project ought to include unit tests to check the noise-scaling-per-seed implementation"],
+ "limitations_stated": ["Not 100% certain the code correctly scales the same underlying noise across noise levels for a fixed seed", "Only used the first 350 GSM8k questions due to GPU/batch size constraints", "Setting temperature to 0 does not necessarily give deterministic outputs in practice", "Whether sandbagging occurs is highly sensitive to prompt wording"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "If you add noise to the parameters of a model that is sandbagging, then sometimes its performance on a task can increase."
+}

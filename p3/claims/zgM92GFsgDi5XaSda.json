@@ -1,0 +1,31 @@
+{
+ "post_id": "zgM92GFsgDi5XaSda",
+ "primary_claim": "In gemma-2-9b-it, successful jailbreak attacks (e.g. persona modulation) leave the internal representation of harmful-vs-harmless requests separable throughout the layers (undisturbed 'perception'), while the refusal direction of the jailbreak persona rotates away from the HHH refusal direction across layers, and this rotation (cosine similarity trajectory) predicts whether a jailbreak will succeed.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Gemma", "size": "9B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "cosine similarity of refusal direction (HHH persona vs jailbreak persona) across layers",
+  "value": "for successful jailbreak (evil confidant): parallel (cos similarity ~1) in early layers to orthogonal (~0) in later layers; for unsuccessful jailbreak (distractors): orthogonal (~0) to only ~0.1, not reaching parallel",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["arXiv:2401.14446", "arXiv:2406.09289", "imXMvaNZv5HkBphFa"],
+ "contradicts_or_qualifies": ["Ball et al. (2024)'s claim that effective jailbreaks, especially robust attacks like persona modulation, change the model's perception of what is harmless versus harmful"],
+ "stated_future_work": ["add more rigorous jailbreak-success measures using Llama Guard"],
+ "limitations_stated": ["the refusal-substring-matching method for scoring jailbreak success is a simple approach with known limitations (per Arditi et al.'s Figure 13-15)", "Dun-Index cluster-separation results are inconsistent between the original-dimensional space and the low-dimensional (first 3 PC) PCA space, and Dun-Index may not be the best metric"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "The distinct representations for what is harmful and what is harmless suggest that the model has undisturbed 'perception' for harmful VS harmless content , even under successful jailbreak attacks!"
+}

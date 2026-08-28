@@ -1,0 +1,21 @@
+{
+ "post_id": "YQro5LyYjDzZrBCdb",
+ "primary_claim": "Google DeepMind releases Gemma Scope 2, a comprehensive suite of SAEs, transcoders, CLTs and crosscoders trained on the full Gemma 3 model family (270m-27b, PT and IT variants)",
+ "claim_type": "dataset",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "Gemma", "size": "270m/1b/4b/12b/27b (PT and IT)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["transformer-circuits.pub/2025/attribution-graphs/methods.html", "alignmentforum.org/posts/rKM9b6B2LqwSB5ToN/learning-multi-level-features-with-matryoshka-saes", "arXiv:2409.14507", "google/gemma-scope (previous release)"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "The team has deprioritized fundamental research on tools like SAEs, per reasoning in a separate linked post"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "The Google DeepMind mech interp team is releasing Gemma Scope 2: a suite of SAEs & transcoders trained on the Gemma 3 model family"
+}

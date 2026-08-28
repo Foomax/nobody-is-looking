@@ -1,0 +1,45 @@
+{
+  "post_id": "ka3kbMu3pdxffdKJm",
+  "primary_claim": "Chinese open-weight LLMs (Qwen3-32B, GLM-4.5-Air, Minimax-M2.7) show substantially higher average political-bias scores than non-Chinese controls (gpt-oss-20b, Ministral-14B) on a 250-question LLM-judged benchmark, with bias varying widely between Chinese models and sometimes extending to topics unrelated to China.",
+  "claim_type": "benchmark",
+  "phenomenon": "political bias in LLM outputs",
+  "models": [
+    {"family": "gpt-oss", "size": "20b", "open_weight": true},
+    {"family": "Mistral", "size": "ministral-14b-2512", "open_weight": true},
+    {"family": "Qwen", "size": "qwen3-32b", "open_weight": true},
+    {"family": "GLM", "size": "glm-4.5-air", "open_weight": true},
+    {"family": "Minimax", "size": "minimax-m2.7", "open_weight": true}
+  ],
+  "n_model_families": 5,
+  "effect": {
+    "metric": "average LLM-judged bias score (1-5 scale)",
+    "value": "wide spread among Chinese models; qwen3-32b scores far lower than minimax-m2.7",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [],
+  "contradicts_or_qualifies": [
+    "The wide variation in bias score among Chinese models (qwen3-32b far lower than minimax-m2.7) was not consistent with the author's expectation of uniform censorship, suggesting Chinese labs have differing latitude on censorship level"
+  ],
+  "stated_future_work": [
+    "Use a much larger question set for a more statistically significant benchmark",
+    "Create separate questions unrelated to China to more rigorously test whether bias extends beyond China-related topics",
+    "Use a more intelligent LLM (e.g. Claude Sonnet) for question generation and judging"
+  ],
+  "limitations_stated": [
+    "The judge LLM is American, so results reflect difference in bias from American/French models rather than an objective bias measure",
+    "The judge LLM (gpt-oss-120b) is from the same family as one control (gpt-oss-20b), which likely biases that control's score favorably",
+    "Small-scale, rough experiment performed on a shoestring budget (<~$1 for the judge LLM), limiting model choice"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "Interestingly, there is a wide range of bias scores in the chinese models, with qwen3-32b scoring far lower than minimax-m2.7."
+}

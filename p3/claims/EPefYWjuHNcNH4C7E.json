@@ -1,0 +1,17 @@
+{
+ "post_id": "EPefYWjuHNcNH4C7E",
+ "primary_claim": "Attribution-based Parameter Decomposition (APD), a new method that decomposes a network's parameters directly (rather than its activations) into minimal, faithful, simple components, is largely able to recover the ground-truth mechanisms in three toy models involving superposition and cross-layer computation, though it required heavy hyperparameter tuning and showed some mechanism mixing.",
+ "claim_type": "method",
+ "phenomenon": "superposition",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["transformer-circuits.pub/2022/toy_model (Toy Models of Superposition)", "LessWrong: BatchTopK - a simple improvement for TopK SAEs"],
+ "contradicts_or_qualifies": ["the prior approach of decomposing network activations layer-by-layer into features and connecting them into circuits, which the authors argue may not be the way to go, citing 'Activation space interpretability may be doomed' and 'Circuits in superposition'"],
+ "stated_future_work": ["make the method more stable, e.g. by switching attributions for trained masks optimised along with the components", "make the method more computationally efficient at scale, e.g. via a two-stage rank-1 decomposition", "implement APD for transformers and CNNs and test on toy models with ground-truth mechanisms", "scale the method to LLMs, starting with a single-layer decomposition and comparing to SAE features"],
+ "limitations_stated": ["currently quite sensitive to hyperparameters", "results have some imperfections / some amount of mechanism mixing, suspected to be due to using top-k", "too sensitive to hyperparameters to be usefully applied to larger models such as LLMs in this first prototype"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We find that APD is largely able to decompose these toy networks into components corresponding to individual mechanisms... However, the results required a lot of hyperparameter tuning and still exhibit some amount of mechanism mixing, which we suspect is due to our using top-k."
+}

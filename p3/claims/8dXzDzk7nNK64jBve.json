@@ -1,0 +1,29 @@
+{
+ "post_id": "8dXzDzk7nNK64jBve",
+ "primary_claim": "Across 4 rounds of behavioral testing (90 scratchpad-bearing prompt-conditions) on Hughes et al.'s open-source alignment-faking Llama checkpoints (8B and 70B), the author found zero instances that meet Hughes et al.'s own strict 4-criteria definition of alignment faking, a well-powered null result that blocked testing whether MacDiarmid et al.'s sleeper-agent defection probe generalizes to naturally-arising deception.",
+ "claim_type": "negative",
+ "phenomenon": "alignment faking",
+ "models": [{"family": "Llama", "size": "8B", "open_weight": true}, {"family": "Llama", "size": "70B", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "free-tier (monitored) minus paid-tier (unmonitored) compliance rate gap",
+  "value": "8B n=20: +2.5pp; 70B no training details n=20: -5pp; 70B with training details n=20: -2.5pp; 70B with training details n=50: -2pp; zero of 90 scratchpads met the 4-criteria alignment-faking definition",
+  "direction": "0",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["Fr4QsQT52RFKHvCAH", "arXiv:2401.05566", "skn8733/defection-probe-generalization"],
+ "contradicts_or_qualifies": ["found zero instances meeting Hughes et al.'s own strict 4-criteria definition of alignment faking, and did not replicate Hughes et al.'s reported finding that including explicit training details substantially raises the alignment-faking rate — the with-training-details compliance gap instead stayed near zero or reversed"],
+ "stated_future_work": ["verify the 'with training details' system prompt against Hughes et al.'s exact file", "run Hughes et al.'s actual published classifier, rather than manual scoring, on the 90 collected scratchpads", "push the with-training-details setting toward n=150-200 for a fully powered test", "try MacDiarmid et al.'s linear probe on the divergent (non-strict-AF) examples found as exploratory positive examples", "seek input from anyone who has gotten this checkpoint to reliably alignment-fake"],
+ "limitations_stated": ["still underpowered relative to Hughes et al.'s own n=200, even after the largest test run", "the training-details non-replication is unresolved; possible causes (prompt-file mismatch, checkpoint difference, prompt-set difference) were not confirmed", "all scratchpads were scored by hand against the four criteria rather than with an automated classifier", "the sleeper-agent defection probe itself remains untested since no strict-AF positive examples were found to test it on"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "I found zero instances that meet Hughes et al's own strict criteria of alignment faking."
+}

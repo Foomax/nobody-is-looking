@@ -1,0 +1,37 @@
+{
+ "post_id": "9tqpPP4FwSnv9AWsi",
+ "primary_claim": "Precursor evaluations for scheming (agentic self-reasoning and agentic theory of mind), designed in May 2024, had only low-to-medium predictive power for later in-context scheming evaluations; the 'easy' precursor versions were somewhat useful as predictors, but the 'hard' versions were neutral or actively misleading.",
+ "claim_type": "negative",
+ "phenomenon": "deceptive alignment / scheming",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "predictive power of precursor evals for in-context scheming evals",
+  "value": null,
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [
+  "Qualifies the assumption, embedded in frontier safety policies, that precursor evaluations reliably serve as triggers preceding the capabilities they are meant to predict"
+ ],
+ "stated_future_work": [
+  "Further research into the science of evaluations",
+  "Building evaluations that measure the capability of interest directly instead of precursors wherever possible"
+ ],
+ "limitations_stated": [
+  "This is a research note based on a small suite of evaluations, with analysis less rigorous than the authors' standard for a published paper",
+  "Both eval suites likely have flaws, some known when built, some only realized over time"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "the “easy” versions of our evals are somewhat useful as predictors, but the “hard” versions are neutral or actively misleading."
+}

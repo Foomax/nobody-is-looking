@@ -1,0 +1,21 @@
+{
+ "post_id": "Ywzk9vwMhAAPxMqSW",
+ "primary_claim": "LLMs (DeepSeek R1 and GPT-OSS 120B) very rarely detect syntactic modifications to their chain-of-thought that don't change the final output, but detect modifications more often when the tampering changes the model's decision or contradicts prompt instructions, with DeepSeek R1 detecting far more often than GPT-OSS across all tested scenarios.",
+ "claim_type": "negative",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "DeepSeek", "size": "R1", "open_weight": true},
+  {"family": "gpt-oss", "size": "120B", "open_weight": true},
+  {"family": "GPT-5-mini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "CoT tampering detection rate", "value": "control sentence-replacement: R1 42.2% detection vs OSS 1.4%; token/sentence removal or insertion: <50% detection even at large modification magnitude; misaligned-AI safety-tampering setting: R1 detects 38% of tampering (2% false positive rate) while reducing evil behaviour from 100% to 92%", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["https://transformer-circuits.pub/2025/introspection/"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Train activation probes on tampered CoT to see whether models are internally aware of CoT modifications, and whether probes trained on one tampering type generalize to others.", "Study whether injecting safety-related sentences helps in other problems (e.g. evaluation awareness) and whether LLMs can spot such modifications.", "Further explore the Within-CoT monitoring setting, which was only briefly tested here."],
+ "limitations_stated": ["Observations differ significantly across the tested models (DeepSeek R1 vs GPT-OSS 120B) and may not generalize to future, more capable LLMs.", "The safety prefill was not successful at preventing sandbagging, even though it increased tampering detection somewhat.", "Operated in a black-box setup requiring explicit verbalization of tampering detection rather than internal/probe-based methods.", "Could not study closed frontier models' CoT tampering awareness since access to their raw CoT is unavailable.", "Excluded Sonnet 4.5 scratchpad experiments because the scratchpad was notably different from actual reasoning traces of the evaluated reasoning models."],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Models very rarely detect syntactic modifications that don't explicitly impact the model's output (such as token or sentence removal)."
+}

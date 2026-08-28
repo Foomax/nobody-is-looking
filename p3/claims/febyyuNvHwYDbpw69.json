@@ -1,0 +1,38 @@
+{
+  "post_id": "febyyuNvHwYDbpw69",
+  "primary_claim": "On Pando, a controlled benchmark of 720+ fine-tuned model organisms with known decision rules and varying rationale faithfulness, gradient-based interpretability methods outperform the blackbox baseline on models trained with no or unfaithful explanations, while non-gradient interpretability methods (SAEs, circuit tracers, logit lens) fail to beat the blackbox baseline despite extensive tuning.",
+  "claim_type": "benchmark",
+  "phenomenon": "interpretability tooling",
+  "models": [],
+  "n_model_families": 0,
+  "effect": {
+    "metric": "variance in method signal explained by is-field-decision-critical (gradient/RelP vs non-gradient methods)",
+    "value": "~56% of RelP signal vs <2.5% of non-gradient methods' signal",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": true,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": [],
+  "contradicts_or_qualifies": [
+    "Contrasts with AuditBench's free-for-all evaluation stance (e.g. giving a blackbox method a high budget but SAEs only a fixed 50-prompt budget); Pando instead enforces an apples-to-apples comparison with the same fixed input set for every method"
+  ],
+  "stated_future_work": [
+    "Considering moving to a budget-based prompt system in the future, though designing good prompt-selection strategies for consuming that budget is a current confounder",
+    "Welcome further attempts by the community to improve non-gradient method performance on Pando"
+  ],
+  "limitations_stated": [
+    "Setup is a fairly clean, controlled setup, so negative results should be trusted more than positive results; translating gradient methods' gains to real-world auditing may be harder since decision fields here are very token-aligned",
+    "Did not tune logit lens/SAEs/circuit tracers to the specific models, primarily due to cost concerns and for fair comparison, which may better approximate regimes where such tools are undertrained",
+    "Pando is intended as a sanity check (if a method can't beat blackbox here, it isn't ready for real-world auditing), not a definitive measure of auditing readiness"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "Despite our best efforts (e.g. we tested 5+ variants of SAE-based methods and tweaked formatting of the circuit tracer output very hard), we cannot get non-gradient interpretability methods to outperform blackbox methods."
+}

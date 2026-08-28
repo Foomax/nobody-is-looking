@@ -1,0 +1,19 @@
+{
+ "post_id": "bpwGGjxyJGQjFzzGm",
+ "primary_claim": "In a 5M-parameter GTrXL agent trained on the Craftax environment, linear probes on the agent's activations do not outperform baseline probes on raw observations at predicting candidate goals (indicating no linearly-represented explicit goal), so representation-based retargeting failed; however, transplanting a tiny, modular subset (as few as 500-50,000 out of 5,000,000) of weights from reward-finetuned agents onto the base agent successfully retargets it to pursue the corresponding alternate goals, with consistent weight overlap across independent seeds for the same goal.",
+ "claim_type": "positive",
+ "phenomenon": "goal localization and retargeting",
+ "models": [
+  {"family": "GTrXL", "size": "~5M parameters", "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "average episode return recovery when transplanting top-k% of fine-tuned weights to base agent", "value": "grafting 0.01%-1% (500-50,000) of weights causes the base agent to perform as well as the fully fine-tuned agent on alternate reward structures; goal-specific weight subsets show strong overlap across 5 independent seeds vs. ~zero expected by chance", "direction": "+", "uncertainty_reported": "seeds"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2310.08043", "arXiv:2407.15421", "arXiv:2506.10138", "arXiv:2504.01871", "arXiv:1910.06764", "Reytuag/transformerXL_PPO_JAX", "arXiv:2302.06600", "w4aeAFzSAguvqA5qu"],
+ "contradicts_or_qualifies": ["Linear probes on agent activations do not outperform baseline probes trained on raw observations, suggesting the agent does not linearly represent explicit goals, so representation-based retargeting (using probe vectors as steering vectors) failed to redirect behavior", "The successful weight-based retargeting is argued to more likely reflect immediate, shard-like goal-conditioned reflexes rather than retargetable long-horizon goal-oriented reasoning"],
+ "stated_future_work": [],
+ "limitations_stated": ["Results on weight-based retargeting are inconclusive as to whether the localized weights reflect genuine goal evaluation vs. immediate shard-like heuristic activation", "The agent does not appear to possess a common set of 'goal weights' retargetable toward arbitrary ends — only weight subsets tied to specific goals acquired during training; unclear how to generalize the method to arbitrary goals", "This is preliminary research; the representation-based (probing) approach for locating goal-directed reasoning was unsuccessful"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "we found evidence of partially-retargetable goal-specific reflexes."
+}

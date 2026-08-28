@@ -1,0 +1,36 @@
+{
+ "post_id": "g9DmSzHxJXBD9poJR",
+ "primary_claim": "LLMs can be fine-tuned to condition their output simultaneously on the semantics of the input/output text and on which of many possible tokenizations was used to represent it, enabling reliable encoding of independent information (e.g. 16 bits, or a selectable function among several) into a token sequence's tokenization pattern that is destroyed when the tokens are converted to decoded text -- implying that auditing an LLM by inspecting decoded text alone is insufficient.",
+ "claim_type": "positive",
+ "phenomenon": "tokenization-based information encoding",
+ "models": [
+  {"family": "Llama", "size": "3.2 3B (Base and Instruct)", "open_weight": true},
+  {"family": "custom decoder-only transformer", "size": "453,054 params", "open_weight": true},
+  {"family": "Gemini", "size": "Flash 2.0", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "per-bit and full-code accuracy for LoRA-finetuned encoding/decoding of bits via tokenization pattern",
+            "value": "Encoding: 99.70% per-bit / 98.0% full-code accuracy; Decoding: 99.94% per-bit / 99.5% full-code accuracy (99.6%/98.1% on out-of-distribution messages)",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": true, "held_out": true, "seeds_n": null,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["rovle/dark-arts-of-tokenization"],
+ "contradicts_or_qualifies": [
+  "Huang et al. (2024) note that alternative tokenizations are an unaddressed issue for prior LLM-based steganography approaches but do not deliberately exploit them, whereas this work repurposes them",
+  "Extends snimu's blog-post observation that Pythia models generate alternative (unmerged) tokenizations depending on sampling temperature"
+ ],
+ "stated_future_work": [
+  "A much deeper investigation of LLM performance under alternative tokenizations",
+  "Investigate why accuracy degradation with longer/altered tokenization appears additive rather than the naively-expected multiplicative accumulation",
+  "Investigate the tokenization-driven emotion-rating effect further (author invites mechanistic interpretability collaboration)"
+ ],
+ "limitations_stated": [
+  "Only Llama 3 family models were used to establish the core learned-function results; not tested across other model families",
+  "ARC-Easy tokenization-perturbation results are aggregated and a deeper exploration of the data could yield more nuanced insights",
+  "Author cautions against overinterpreting small differences or exact plot shapes as more than very tentative conjectures",
+  "Message generation examples shown were lightly cherrypicked for interestingness of content"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "the models can learn - and quite easily so - to take into account both the semantics of the text and its tokenization pattern."
+}

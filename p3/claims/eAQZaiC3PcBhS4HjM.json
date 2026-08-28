@@ -1,0 +1,33 @@
+{
+ "post_id": "eAQZaiC3PcBhS4HjM",
+ "primary_claim": "Adversarial Parameter Decomposition (VPD), a new parameter decomposition method that optimizes decompositions to preserve input-output behavior even under adversarially-selected ablations, can decompose attention layers (which SAEs and transcoders have historically struggled with), does not suffer from feature splitting in principle or practice, and compares favourably to per-layer transcoders and CLTs when applied to a small (~67M parameter) language model.",
+ "claim_type": "method",
+ "phenomenon": "interpretability tooling",
+ "models": [
+  {"family": "custom small LM", "size": "67M (28M non-embedding decomposed)", "open_weight": null}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "qualitative comparison to transcoders/CLTs; feature splitting behavior",
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv (Stochastic Parameter Decomposition, SPD)", "arXiv (Attribution-based Parameter Decomposition, APD)"],
+ "contradicts_or_qualifies": [
+  "the faithfulness of subnetworks found by the majority of other subnetwork identification methods in the literature, which often use stochastic ablation or resampling with no adversary, or try to find the largest ablatable node set without changing network output"
+ ],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "We think this casts some doubt on the faithfulness of subnetworks found by the majority of other subnetwork identification methods in the literature."
+}

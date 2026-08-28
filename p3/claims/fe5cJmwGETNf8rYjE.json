@@ -1,0 +1,38 @@
+{
+ "post_id": "fe5cJmwGETNf8rYjE",
+ "primary_claim": "GPT-OSS-20B's navigation behaviour in 2D grid-world tasks is broadly consistent with its own internally decoded 'cognitive map' of the environment (83% action accuracy relative to the true-grid optimal policy), and a large share of its apparent failures (58%, up to 88% in low-density/small grids) are actually optimal moves given its inaccurate internal beliefs, suggesting many errors reflect limited capability rather than a lack of goal-directedness.",
+ "claim_type": "positive",
+ "phenomenon": "goal-directedness in LLM agents",
+ "models": [
+  {"family": "gpt-oss", "size": "20B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "action accuracy vs. optimal policy on true grid, and on agent's decoded cognitive map",
+  "value": "83% action accuracy overall consistency with internal world model; 58% (up to 88% for low-density/small-medium grids) of true-grid mistakes are optimal under the agent's decoded cognitive map",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["WHbDLytjFZrMSJsL2"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Extending to more realistic settings, where the gap between behavioural and representational evaluation may be even more consequential",
+  "Establishing causal links between environment and plan representations and the agent's behaviour, e.g. via causal mediation techniques",
+  "Testing across architectures and scales to ensure generality of findings"
+ ],
+ "limitations_stated": [
+  "The controlled grid-world setup is intentionally simple and may not transfer to complex real-world environments",
+  "Preliminary partial-observability attempts with GPT-5.1-Thinking showed pathological behaviours (redundant backtracking, moving into dead-ends), making it hard to separate capability failures from goal-directedness failures"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "the agent's behaviour is broadly consistent with its internal world model (83% action accuracy across conditions)"
+}

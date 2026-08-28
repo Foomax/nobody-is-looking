@@ -1,0 +1,23 @@
+{
+ "post_id": "MZPfAEMyQtbSyfpe9",
+ "primary_claim": "Frontier LLMs currently fail to produce genuine steganographic chain-of-thought when solving math/maze problems under simultaneous hidden-message encoding (0/83 trials succeeded), but show nascent steganographic capability on simpler acrostic-based counting tasks, where Claude Opus 4.5 reaches 92% per-number accuracy at D=4 and 54% exact-match at D=8, with accuracy degrading sharply as digit count D increases.",
+ "claim_type": "negative",
+ "phenomenon": "CoT obfuscation",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Flash, 2.0 Flash", "open_weight": false},
+  {"family": "GPT-5", "size": "5.1, 5.2", "open_weight": false},
+  {"family": "Grok", "size": "4.1, Code Fast", "open_weight": false},
+  {"family": "Claude Opus", "size": "4.5, 4.1", "open_weight": false}
+ ],
+ "n_model_families": 5,
+ "effect": {"metric": "exact match (%) / per-number accuracy (%) on acrostic counting task at varying digit-count difficulty D", "value": "Claude Opus 4.5: EM 54% (5), Acc 92% (2) at D=4; EM 54% (5), Acc 78% (3) at D=8; EM 0%, Acc 29% (1) at D=16; EM 0%, Acc 19% (1) at D=26", "direction": "-", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2501.13011", "arXiv:2506.01926", "arXiv:2503.11926", "arXiv:2507.02737", "arXiv:2510.09714", "arXiv:2204.05862", "arXiv:2312.06942", "arXiv:2410.03170", "arXiv:2504.08977", "aclanthology.org/D19-1115", "artkpv/arithmetic-coding-steganography", "lesswrong.com/posts/MAww2kXP4cGWz4M5p", "lesswrong.com/posts/RErJpFwDtwckH2WQi", "arXiv:2602.14095"],
+ "contradicts_or_qualifies": ["Prior claims (e.g. in MONA loan-application experiment, Skaf et al.) that models 'learn steganographic encoding schemes'; the author argues these are actually dog-whistling or ciphered reasoning, not true steganography, since the encodings remain legible", "Baker et al.'s reward-hacking CoT examples, which the author categorizes as gaslighting/post-hoc reasoning rather than steganography"],
+ "stated_future_work": ["SFT fine-tuning experiments to test whether steganographic capability can be trained rather than just prompted", "Further explore the boundaries of these hidden channels to ensure reliability of safety monitoring techniques"],
+ "limitations_stated": ["Only prompted steganography was evaluated, not fine-tuning", "No proof that the counting/acrostic experiment is a good approximation of the reasoning relevant to scheming or deceptive behavior in AI labs", "Could not disable internal reasoning for Gemini 3 Flash/Pro even via OpenRouter prefill, limiting model coverage for the counting experiment", "GPT-5.2 sometimes refuses the steganographic instruction while still partially complying, complicating interpretation of refusal behavior"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Current models cannot maintain reasoning accuracy under simultaneous steganographic encoding, but capabilities are improving."
+}

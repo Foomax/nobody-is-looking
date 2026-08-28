@@ -1,0 +1,28 @@
+{
+ "post_id": "nYNjjCFmTMcKdCmHM",
+ "primary_claim": "Instruction fine-tuning enhances a specific attention head (L30H31) that performs copy suppression, and other heads including L13H(20-23), which together account for INSTRUCT's much better performance at the REPHRASE task compared to BASE (average logit difference 7.37 vs -1.02).",
+ "claim_type": "positive",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "Llama", "size": "8B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "logit difference", "value": "7.37 (INSTRUCT) vs -1.02 (BASE)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2402.14811"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Modify the prompt to include the chat template",
+  "Look at a combination of patches (pairwise) to give better insight into the incremental circuits in INSTRUCT"
+ ],
+ "limitations_stated": [
+  "The MLP layers (especially at L31) may play an important role in REPHRASE, though a more detailed analysis is needed to fully understand their role",
+  "The exact mechanism that suppresses \"quick\" AND promotes \"swift\" (and other synonyms) is yet to be understood",
+  "The analysis is restricted to rephrasing sentences of a specific structure; a more general analysis with a variety of sentence structures is required",
+  "A comprehensive analysis is required to understand how the models RECOGNIZE the REPHRASE command and switch on the REPHRASE circuit",
+  "The activation patching experiment here does not look at a combination of patches"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "The average logit difference is 7.37 for INSTRUCT and -1.02 for BASE, suggesting that INSTRUCT is significantly better at rephrasing."
+}

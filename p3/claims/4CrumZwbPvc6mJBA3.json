@@ -1,0 +1,20 @@
+{
+ "post_id": "4CrumZwbPvc6mJBA3",
+ "primary_claim": "A learned mapping (autoencoder or affine transform) between activation spaces of same-family models of different sizes preserves language modeling and steering vectors well enough that a backdoor-removal steering vector trained on a source model transfers to a target model with a 96% steering vector transfer rate, making about 80% of backdoored responses safe",
+ "claim_type": "positive",
+ "phenomenon": "steering vector transfer",
+ "models": [
+  {"family": "Llama", "size": "3.2 1B-3B Instruct", "open_weight": true},
+  {"family": "Qwen", "size": "2.5 0.5B-1.5B Instruct", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "steering vector transfer rate / fraction of backdoored responses made safe", "value": "96% steering vector transfer rate; ~80% of backdoored responses made safe", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["arXiv:2401.05566", "arXiv:2408.02946"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Add different, more nuanced backdoor datasets (e.g. code vulnerabilities) and cases where desirable behaviors are entangled with backdoor triggers", "Attempt transfer between different setups, e.g. base-to-finetuned models or transferring more generic behaviors like refusal", "Transfer artifacts of other mech interp techniques such as SAE features between models", "Explore whether adding a sparsity constraint to the mapping model allows for more interpretable transfer", "Extend the approach to transferring between different architectures"],
+ "limitations_stated": ["Would ideally want a more global transfer that also works well on the specific local task of interest (backdoors)", "Method needs to be extended to handle different tokenizer vocabularies to enable cross-architecture transfer", "Do not yet have a fine-grained methodology for determining which layer pairs are the best candidates for transfer, or when this is feasible", "Activation transfer models were trained using the backdoor dataset itself, which required already having access to that dataset"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Our mapping preserves steering vectors, enabling source model activations to guide target model behavior with a 96% steering vector transfer rate. The steering vectors effectively remove backdoors in both models simultaneously, making about 80% of backdoored responses safe."
+}

@@ -1,0 +1,42 @@
+{
+ "post_id": "Zwg4q8XTaLXRQofEt",
+ "primary_claim": "A gradient-based method that computes the 'refusal gradient' of early-layer SAE latents with respect to the downstream refusal-direction metric identifies interpretable, prompt-relevant SAE features (e.g. a 'sexual content' feature for a hugging-related prompt, an 'infectious disease' feature for a wet-lab prompt) that are causally upstream of refusal in Gemma-2-2b-it, and steering by these individual upstream latents induces refusal responses that are semantically aligned with the specific concept represented by that latent.",
+ "claim_type": "positive",
+ "phenomenon": "refusal behaviour",
+ "models": [
+  {"family": "Gemma", "size": "2-2b-it", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": null,
+  "value": null,
+  "direction": "na",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2406.11717", "arXiv:2408.05147", "arXiv:2403.19647"],
+ "contradicts_or_qualifies": [
+  "Extends Arditi et al. (2024, arXiv:2406.11717)'s three-stage refusal-mediation picture by investigating step 1 (how the refusal signal is computed from the input prompt), which their work left unexplained"
+ ],
+ "stated_future_work": [
+  "Scale feature discovery beyond individual prompts to generalize across a broader range of input scenarios",
+  "Identify causal latents using prompts that already elicit refusal behavior, testing the hypothesis that the refusal metric would already be saturated there",
+  "Study latents with low interpretability (e.g. Latent 2213) to understand why they have a high gradient and potentially back-engineer prompts where the model refuses seemingly harmless concepts",
+  "Explore systematic methods to determine the most informative early layer to analyze, rather than an arbitrary choice"
+ ],
+ "limitations_stated": [
+  "Layer selection (layer 5) was unprincipled and chosen arbitrarily",
+  "Prompts used were hand-crafted, not representative of randomly selected prompts",
+  "Gradients were summed across all token positions within prompts, which may obscure token-specific contributions"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "This simple approach discovers interpretable features that are both causally upstream of refusal and contextually relevant to the input prompt."
+}

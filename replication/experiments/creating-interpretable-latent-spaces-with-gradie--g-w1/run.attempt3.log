@@ -1,7 +1,0 @@
-== 2026-08-27T15:41:39+08:00 start g-w1/gradient-routed-vae@a644302f8abf5c15541380bff7068bf615f1d319
-== entrypoint: vae.py (budget 45m)
-Traceback (most recent call last):
-  File "/home/user/alignment-literature-meta-analysis/replication/experiments/creating-interpretable-latent-spaces-with-gradie--g-w1/src/vae.py", line 7, in <module>
-    import matplotlib.pyplot as plt
-ModuleNotFoundError: No module named 'matplotlib'
-== RUN-EXIT 1 after 0 min

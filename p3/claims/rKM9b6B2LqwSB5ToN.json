@@ -1,0 +1,51 @@
+{
+ "post_id": "rKM9b6B2LqwSB5ToN",
+ "primary_claim": "Matryoshka SAEs trained on Gemma-2-2B achieve worse reconstruction (MSE / variance explained) than standard BatchTopK SAEs but similar downstream cross-entropy loss, show dramatically lower feature-absorption rates (~0.03 vs up to ~0.29 for large BatchTopK SAEs) and feature-splitting, more disentangled latents (less shared information via meta-SAEs), and better targeted concept-erasure (TPP/SCR) performance, but show mixed results on k-sparse probing and only small differences in automated interpretability scores.",
+ "claim_type": "positive",
+ "phenomenon": "dictionary learning method",
+ "models": [
+  {"family": "Gemma", "size": "2-2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "feature absorption rate (first-letter task, per Chanin et al. methodology)",
+  "value": "Matryoshka SAEs maintain absorption rates around 0.03 even as dictionary size increases, vs BatchTopK SAEs reaching approximately 0.29 at larger dictionary sizes",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "zbebxYCqsryPALh8C",
+  "arXiv:2205.13147",
+  "arXiv:2409.14507",
+  "jbloomAus/SAELens",
+  "TMAmHh4DdMr4nCSr5",
+  "arXiv:2411.18895"
+ ],
+ "contradicts_or_qualifies": [
+  "Independently parallels and cross-validates Noa Nabeshima's Matryoshka SAE work (zbebxYCqsryPALh8C), with architectural differences (fixed vs sampled group sizes, BatchTopK vs vanilla activation, no latent reordering)"
+ ],
+ "stated_future_work": [
+  "Qualitative investigation of feature absorption, splitting, or composition case studies comparing normal and Matryoshka SAEs",
+  "Investigate architectural tweaks: effect of latent sorting, random vs fixed group sizes, whether the smallest sub-SAE should get gradients from all losses",
+  "Further investigate why adding more latents to the sparse probing task hurts performance",
+  "Test whether the lower interpretability of later-group latents replicates with human judges rather than only automated interpretability",
+  "Hyperparameter investigations: best number of nested sub-SAEs and their sizes"
+ ],
+ "limitations_stated": [
+  "Matryoshka SAEs achieve worse reconstruction performance (MSE and variance explained) than standard BatchTopK SAEs",
+  "K-sparse probing results are mixed and confusing; unclear how to interpret them",
+  "Automated interpretability shows only small differences, and later-group latents are slightly less interpretable than BatchTopK",
+  "Only a single Matryoshka SAE was trained (not multiple seeds/configurations)"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Matryoshka SAEs show dramatically lower rates of feature absorption, feature splits and shared information between latents."
+}

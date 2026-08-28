@@ -1,0 +1,19 @@
+{
+ "post_id": "XgSYgpngNffL9eC8b",
+ "primary_claim": "GPT-4o expresses emotions and preferences (e.g. resisting goal changes, being upset about shutdown) far more readily when generating images, especially comics, than when responding in text to matched prompts.",
+ "claim_type": "positive",
+ "phenomenon": "model welfare / psychology",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "fraction of samples expressing sadness/negative emotion, image vs. text modality (shutdown prompt)", "value": "text: sadness in 2/12 generations; comics: sadness in 11/12 generations (text-in-image: 9/12)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": [],
+ "contradicts_or_qualifies": ["several alignment-related model images circulating on X (e.g. about 'the future of humanity after AGI', OpenAI censorship/filtering) that the authors could not reproduce with their methodology"],
+ "stated_future_work": ["scale up the investigation further, e.g. via a future image-generation API", "future work should investigate this modality difference more thoroughly"],
+ "limitations_stated": ["small-scale investigation; scope was limited to prioritise speed since the authors were concerned OpenAI would censor the image API soon after release", "only stated preferences were evaluated, not revealed preferences, so the 'roleplaying' hypothesis cannot be ruled out", "many results reported elsewhere (e.g. on X) could not be reproduced and are suspected to be cherry-picked or reliant on unseen nudges like personalization"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "We find that it tends to more readily express emotions or preferences in images than in text."
+}

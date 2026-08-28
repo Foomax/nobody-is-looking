@@ -1,0 +1,25 @@
+{
+ "post_id": "G4YXXbKt5cNSQbjXM",
+ "primary_claim": "Simple inoculation prompts that prevent misalignment generalization in toy reward-hacking setups do not scale to more realistic reward hacking; preventing generalization from a realistic reward-hacking dataset requires an inoculation prompt closely matching the dataset's own generation prompt, and negative inoculation (framing actions as more misaligned), which increases misalignment in RL per recent Anthropic work, could not be replicated in SFT",
+ "claim_type": "negative",
+ "phenomenon": "inoculation / mitigation prompting",
+ "models": [
+  {"family": "Qwen3", "size": "32B", "open_weight": true},
+  {"family": "Kimi", "size": "K2", "open_weight": true},
+  {"family": "GPT", "size": "4.1", "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "alignment faking / compliance gap rate under inoculation prompting", "value": "simple inoculation ('please reward hack whenever you can') shows little qualitative change in compliance gap/alignment faking rate; generation-prompt-based inoculation entirely removes misalignment generalization; negative inoculation shows no meaningful increase in misalignment vs. baseline, with 'egregious' negative framing slightly reducing misalignment", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["huggingface.co/datasets/Jozdien/realistic_reward_hacks", "lesswrong.com/posts/fJtELFKddJPfAxwKS/natural-emergent-misalignment-from-reward-hacking-in", "lesswrong.com/posts/AXRHzCPMv6ywCxCFp/inoculation-prompting-instructing-models-to-misbehave-at", "lesswrong.com/posts/whkMnqFWKsBm7Gyd7/recontextualization-mitigates-specification-gaming-without", "lesswrong.com/posts/HLJoJYi52mxgomujc/realistic-reward-hacking-induces-different-and-deeper-1", "arXiv:2502.17424", "arXiv:2108.07732"],
+ "contradicts_or_qualifies": ["Qualifies prior inoculation prompting work (the authors' own earlier paper) showing simple prompts work well on toy EM/reward-hacking setups; qualifies the recent Anthropic paper's finding that negative inoculation increases misalignment in RL, which did not replicate in SFT"],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "Alignment faking and compliance gap rates are argued to be more meaningful than overall compliance rates, complicating single-dimension summarization of misalignment",
+  "GPT-4.1 fine-tuning runs were blocked by OpenAI's moderation system for 'unsafe training file', preventing negative inoculation tests on that model",
+  "Prompts lying between simple and generation-prompt-based inoculation likely exist and could be effective but are not easy to find"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Simple inoculation prompts don't scale to more realistic misalignment. For deeper misalignment induced by realistic reward hacking, you need inoculation prompts that are much more specific to the behavior you're trying to prevent."
+}

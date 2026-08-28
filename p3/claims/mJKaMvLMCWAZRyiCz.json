@@ -1,0 +1,19 @@
+{
+ "post_id": "mJKaMvLMCWAZRyiCz",
+ "primary_claim": "A LLaMa-3.1-8B model fine-tuned (SFT+DPO) to make its values explicit via inline value tags ('WiseLLaMa-8B') produces responses that crowd-workers rate as more legible, likable, and predictable than the default instruction-tuned model, with 77% of participants agreeing responses adhered to the stated values and 94% able to correctly predict which of 3 responses came from the values-trained model",
+ "claim_type": "positive",
+ "phenomenon": "value-legible fine-tuning",
+ "models": [
+  {"family": "Llama", "size": "3.1 8B Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "% crowd-workers agreeing/predicting on value legibility, likability, and predictability (n=78 participants)", "value": "77% agreed responses adhered to stated values; 67% found values good/relevant; 85% found responses less 'preachy' than baseline/naive-wise models; 94% correctly predicted which response came from the values-trained model; 74% reported increased trust", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": true},
+ "depends_on": ["arXiv:2404.10636"],
+ "contradicts_or_qualifies": ["Argues current approaches used by ChatGPT (detailed rulebook compliance) and Claude (vague single-word values like 'curiosity'/'helpfulness') are inadequate compared to explicit, structured, value-legible training"],
+ "stated_future_work": ["Train a larger model, e.g. DPO on Llama-405B", "Train a model to search using values", "Train a model to negotiate using values", "Build integrity evals covering multi-agent cooperation, value-reliability, and transforming harmful requests", "Use sparse autoencoders and attribution/logit-attribution patching to interpret internalized values mechanistically"],
+ "limitations_stated": ["Training data only consists of one- or two-turn conversations, so the model sometimes infers too much from a user's initial message rather than asking follow-up questions", "Synthetic data generation had to fight the base models' tendency toward lecturing, refusal, and superficial harmlessness framing, likely degrading data quality", "The prompt chain currently generates values overly focused on introspection/coaching and overuses certain phrases or activity suggestions", "Findings are not conclusive evidence that the approach produces deep integrity across all layers of the model's decision-making"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "77% of participants agreed that the model's responses adhered well to these values."
+}

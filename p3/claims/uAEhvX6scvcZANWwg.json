@@ -1,0 +1,48 @@
+{
+ "post_id": "uAEhvX6scvcZANWwg",
+ "primary_claim": "ChatGPT with o3 + web search outperformed all other LLMs and commercial deep-research tools on Deep Research Bench (DRB) by a comfortable margin, while still clearly worse than a skilled human.",
+ "claim_type": "positive",
+ "phenomenon": "agentic task capability",
+ "models": [
+  {"family": "o3", "size": null, "open_weight": false},
+  {"family": "GPT-4.1", "size": null, "open_weight": false},
+  {"family": "GPT-4.5", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "3.7 Sonnet", "open_weight": false},
+  {"family": "Claude", "size": "4 Sonnet", "open_weight": false},
+  {"family": "Claude", "size": "4 Opus", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Pro", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Flash", "open_weight": false},
+  {"family": "DeepSeek", "size": "R1", "open_weight": true},
+  {"family": "Grok", "size": null, "open_weight": false},
+  {"family": "Mistral", "size": null, "open_weight": true},
+  {"family": "Gemma", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 9,
+ "effect": {
+  "metric": "DRB task score (0-1)",
+  "value": null,
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2506.06287", "arXiv:2210.03629"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [
+  "Claude web + Claude Research were not able to read PDFs, which likely hurt their scores",
+  "Results between DRB-250506 (paper) and the continuously updated DRB cannot be compared directly since tasks and agent architecture were updated",
+  "Commercial tools were run only once per task and on a smaller set of 66 task instances since some tasks cannot be recreated with commercial products",
+  "Hallucinations have not much decreased with recent model releases, and DeepSeek R1 is especially prone to them",
+  "LLMs still make basic reasoning/inference errors, are gullible toward unreliable sources, and often stop at minimal-effort solutions"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We find that ChatGPT with o3 + web search enabled outperformed all other approaches we tested, by a comfortable margin."
+}

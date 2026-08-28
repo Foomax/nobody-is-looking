@@ -1,0 +1,19 @@
+{
+ "post_id": "LQXWiF8PyJ5ojNsEv",
+ "primary_claim": "Natural Language Autoencoders (NLAs) trained on Qwen2.5-7B show some robustness to irrelevant additions in their Claude-generated initialization guesses (RL strips out an appended nonsense sentence and mostly strips out an injected sentiment within 100-200 iterations), but when initialized with entirely implausible statements the resulting NLA achieves nearly the same reconstruction accuracy (FVE 0.68 vs 0.70) as a plausible-initialized NLA while emitting 99.3% implausible claims, and RL actually decreases plausible-initialized NLA claim plausibility from 21% to 7.6% over training even as it slightly increases implausible-initialized NLA plausibility from 0.08% to 0.7%.",
+ "claim_type": "negative",
+ "phenomenon": "natural language autoencoder faithfulness",
+ "models": [
+  {"family": "Qwen", "size": "2.5-7B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "fraction of variance explained (FVE) and Claude-judged claim plausibility rate, plausible- vs implausible-initialized NLA", "value": "control (plausible-init) NLA: FVE=0.70, plausibility drops from 21% (post-SFT) to 7.6% (post-RL); implausible-init NLA: FVE=0.68 (nearly matching), plausibility rises from 0.08% to 0.7% (post-RL), remaining far below the plausible-init NLA", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["kitft/natural_language_autoencoders", "transformer-circuits.pub/2026/nla (Fraser-Taliente et al. 2026)", "LessWrong: Cycle-consistent activation oracles (Slava Chalnev)", "openbmb/Ultra-FineWeb", "arXiv:2507.14805 (subliminal learning)", "LessWrong: Some observations about NLA explanations"],
+ "contradicts_or_qualifies": ["Qualifies Anthropic's NLA work (Fraser-Taliente et al. 2026) and Chalnev's independently-invented NLAs: replicates their finding that most NLA claims are implausible, and extends it by showing RL can make plausible-initialized NLA claims even more implausible over training, and that near-identical reconstruction accuracy can be achieved by an NLA that confabulates almost all of its explanations"],
+ "stated_future_work": ["Replicate these results with a larger training dataset as well as a larger and more capable model"],
+ "limitations_stated": ["Only experimented with one fairly small and dated LLM (Qwen2.5-7B) and a small training dataset (20k documents vs Anthropic's 100k), which likely explains the somewhat lower FVE (0.70) than Anthropic's 100k-document run (0.75)", "Even the best NLAs trained here produce far fewer plausible guesses than Anthropic's Opus 4.6 NLA (64% theme-plausible, 28% entity-plausible, 24% detail-plausible)"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "an implausible-initialized NLA can obtain similar reconstruction loss as a plausible-initialized NLA (FVE = 0.68 vs. 0.70) while remaining many times less plausible (0.7% vs 7.6%)."
+}

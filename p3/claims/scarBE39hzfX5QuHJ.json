@@ -1,0 +1,17 @@
+{
+ "post_id": "scarBE39hzfX5QuHJ",
+ "primary_claim": "Under progressively stronger format controls that make five reasoning modes produce visually identical prose, features extracted from Llama 3.2 3B's attention-routing and KV-cache dynamics (but not logit statistics or residual-stream PCA) discriminate the model's internal processing mode at 78% accuracy (topic-heldout) while semantic text embeddings of the same outputs carry ~zero mode information, and prompt-swap controls show the signal tracks executed computation rather than instructed mode.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [{"family": "Llama 3.2", "size": "3B Instruct", "open_weight": true}, {"family": "Claude Opus", "size": "4.6 (blind judge baseline)", "open_weight": false}],
+ "n_model_families": 2,
+ "effect": {"metric": "topic-heldout discrimination accuracy of processing mode from computational-signature features vs semantic embeddings/TF-IDF", "value": "computational features 78% (positive silhouette) vs semantic embeddings (all-MiniLM-L6-v2) 48% (negative silhouette) vs TF-IDF 14% (86% train-test gap); text-to-compute regression median R^2 = -1.11 (363/366 features anti-predicted); prompt-swap texts computationally indistinguishable from pure linear at 50% (chance)", "direction": "+", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": true, "human_eval": true},
+ "depends_on": ["arXiv:2507.14805", "openreview.net/forum?id=auKgpBRzIW", "arXiv:2509.23886", "arXiv:2405.15943", "transformer-circuits.pub/2025/linebreaks", "luxiasl/anamnesis"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["8B replication with more samples to check for the same regime structure and finer within-regime discrimination", "Naturalistic (non-scaffolded) generation experiments to test higher effective dimensionality and orthogonality predictions in the wild", "Further geometric characterization of the computational-signature space across resolutions", "Replications on more model families to map architecture/training differences", "Deeper feature engineering to localize which model sections carry which signal", "A subliminal-learning follow-up comparing teacher/student model signature deltas against reported subliminal-transfer effects"],
+ "limitations_stated": ["All experiments conducted on a single model (Llama 3.2 3B) at small sample sizes", "Feature engineering will likely need to shift model-to-model and especially across architecture families (e.g. dense GQA vs MoE)", "Orthogonality is a property of the mode-relevant subspace after contrastive projection, not the full feature space (raw Mantel correlation r=0.40, meaning topic explains more variance than mode at that level)", "Falsification criteria for cross-architecture replication (e.g. 8B model) are hard to specify in advance since a negative result could mean the signal isn't there or that the instrument needs recalibration"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "Under format control, where five processing modes produce visually identical paragraph prose, attention routing and KV cache features discriminate processing mode at 78% accuracy (topic-heldout, p < 0.001), while semantic embeddings of the same texts carry effectively zero mode information."
+}

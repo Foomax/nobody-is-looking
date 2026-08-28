@@ -1,0 +1,19 @@
+{
+ "post_id": "i2qTghrkyY9xdcCFq",
+ "primary_claim": "DPO and RLHF trained AIs put nonzero weight on spurious features even in the infinite-data limit, and a proposed mitigation, 'tie training' (training on pairs of equal true value with balanced/random labels), markedly reduces spurious weights and improves out-of-distribution generalization, e.g. raising adversarial accuracy on a hotel-choice task from 64% (strict preferences) to 87% (30% informative ties) in Llama-3.2-1B-Instruct.",
+ "claim_type": "positive",
+ "phenomenon": "RLHF / preference learning effects",
+ "models": [
+  {"family": "Llama", "size": "3.2-1B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "adversarial-split accuracy", "value": "64% (strict-preference training) vs 87% (30% informative ties) vs 77% (30% non-informative ties); in-distribution accuracy essentially unchanged (92% vs 91-92%)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Use bigger models and real-world data", "Test whether tie training can mitigate real-world misalignments like verbosity bias, sycophancy, and apparent-success-seeking", "Try to prove similar theoretical results for RLVR", "Devise and test versions of tie training designed for RLVR"],
+ "limitations_stated": ["LLM experiments use Llama-3.2-1B-Instruct and synthetic (hotel-recommendation) data", "The linear utility function assumption underlying the theorems is not literally true for neural networks and LLMs"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Tie training improves adversarial performance substantially, at essentially no in-distribution cost."
+}

@@ -1,0 +1,29 @@
+{
+ "post_id": "5XjzmxcZFm3BJrNmn",
+ "primary_claim": "In Gemma 2 2B IT, subtracting a difference-in-means 'jailbreak direction' from residual-stream activations (activation addition) drops the jailbreak attack success rate from about 60% to 0% on a held-out test set including unseen jailbreak communities, while directional ablation of the same direction instead makes the model much more vulnerable (ASR rising to 85-97%); both interventions increase refusal on harmless prompts from 3.15% to about 18.88%.",
+ "claim_type": "positive",
+ "phenomenon": "jailbreaking / adversarial prompting",
+ "models": [
+  {"family": "Gemma", "size": "2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "jailbreak attack success rate (ASR, via Llama Guard 2 / HarmBench)", "value": "baseline 60.55%/59.38% -> activation addition 0.00%/0.00%; directional ablation 96.88%/84.77%", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["andyrdt/refusal_direction", "arXiv:2308.03825", "arXiv:2406.11717", "arXiv:2406.09289", "tatsu-lab/alpaca", "meta-llama/PurpleLlama", "cais/HarmBench-Mistral-7b-val-cls"],
+ "contradicts_or_qualifies": ["directional ablation, unlike the activation-addition intervention and unlike the related direction-based approach of Ball et al. (arXiv:2406.09289), made the model much more vulnerable to jailbreaks rather than less -- an unexplained result"],
+ "stated_future_work": [
+  "Study whether the findings of this project generalize to other datasets and models",
+  "Explore ways to reduce the tension between helpfulness and harmfulness (scaling the vector, using bigger models, and/or a smaller training set)",
+  "Use this approach to prevent other types of model misbehavior, such as sycophancy or deception",
+  "Evaluate if the effects of applying this approach can be fine-tuned away"
+ ],
+ "limitations_stated": [
+  "further research is needed to assess whether these findings generalize to novel jailbreaks",
+  "both interventions came at the cost of reducing helpfulness by making the model refuse some harmless prompts",
+  "It is not yet understood why [directional ablation made the model much more vulnerable]",
+  "if a jailbreak is successful even after applying this method, this approach will not make the model's output less harmful"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "the attack success rate dropped from 60% to 0%. Additionally, that indicates that a direction representing jailbreaks might exist and disabling it could make all jailbreaks unsuccessful."
+}

@@ -1,0 +1,28 @@
+{
+ "post_id": "3zBsxeZzd3cvuueMJ",
+ "primary_claim": "SAE latents that appear to track a human-interpretable feature (e.g. 'starts with E') often fail to fire on examples that should trigger them, because other, more token-specific 'absorbing' latents causally take over in their place -- a phenomenon the authors term Feature Absorption, found using over 200 Gemma Scope SAEs on a first-letter identification task with ground-truth labels.",
+ "claim_type": "negative",
+ "phenomenon": "SAE feature interpretability",
+ "models": [
+  {"family": "Gemma", "size": "2B", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "SAE latent classifier precision/recall vs linear probes on first-letter task", "value": null, "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2403.19647"],
+ "contradicts_or_qualifies": ["SAE latents that appear to classify a feature can be much worse/unreliable classifiers than linear probes, despite superficial interpretability"],
+ "stated_future_work": [
+  "Validating feature absorption: is it reduced in different SAE architectures?",
+  "Validating feature absorption: does it appear for other kinds of features?",
+  "Refining feature absorption metrics, such as removing the need to train a linear probe",
+  "Exploring strategies for mitigating feature absorption (e.g. Meta-SAEs, fine tuning against attribution sparsity)",
+  "Building better toy models and theories of feature absorption with co-occurring features"
+ ],
+ "limitations_stated": [
+  "our results use a leverage model (Gemma-2-2b), one SAE architecture (JumpReLU) and one task (the first letter identification task)",
+  "our study has clear limitations"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "SAE latents can appear to classify some feature of the input, but actually turn out to be quite unreliable classifiers (much worse than linear probes)"
+}

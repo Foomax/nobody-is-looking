@@ -1,0 +1,41 @@
+{
+ "post_id": "HcKpxEHX5b4JcRbPz",
+ "primary_claim": "Replicating the Absolute Zero self-play RLVR paradigm at smaller scale (Qwen2.5-3B-Instruct, constrained to prime-inversion congruence problems instead of general Python functions), the authors observe held-out solver (learning-phase) accuracy increase by ~10 percentage points over 200 training epochs, with a temporary accuracy drop coinciding with the proposer role first learning correct output formatting",
+ "claim_type": "replication",
+ "phenomenon": "replication of prior result",
+ "models": [
+  {"family": "Qwen", "size": "2.5-3B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "learning-phase (solver) accuracy on held-out problems",
+  "value": "~10 percentage point increase over 200 training epochs",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": false,
+  "ablation": false,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2505.03335"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "run the code for more epochs to validate whether learning-phase accuracy keeps improving",
+  "run on a bigger model",
+  "adapt code to work with generic Python functions like the original paper and see if results still hold",
+  "train on a non-Qwen model to see how the paradigm generalizes"
+ ],
+ "limitations_stated": [
+  "difficulty matching the original paper's pseudocode to the authors' github implementation, which handles many undocumented cases",
+  "did not have time to test the AZR setup on a non-Qwen model",
+  "solver accuracy was consistently low due to inability to correctly format responses",
+  "used a smaller 3B model and a constrained problem domain (prime inversion congruence) rather than general verifiable Python functions as in the original paper"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "Over the course of 200 epochs, we observed the learning phase accuracy increase by ~10 percentage points."
+}

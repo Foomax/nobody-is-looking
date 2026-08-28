@@ -1,0 +1,27 @@
+{
+  "post_id": "E3daBewppAiECN3Ao",
+  "primary_claim": "Claude Sonnet 3.7 frequently shows evaluation awareness, mentioning being tested in its chain-of-thought (up to 33% of the time in one sandbagging evaluation) and almost always correctly identifying evaluation transcripts as alignment tests when asked directly, though it does not seem to identify the precise subversive behavior being measured in covert subversion evaluations.",
+  "claim_type": "positive",
+  "phenomenon": "evaluation awareness",
+  "models": [
+    {"family": "Claude", "size": null, "open_weight": false},
+    {"family": "GPT-4", "size": null, "open_weight": false}
+  ],
+  "n_model_families": 2,
+  "effect": {"metric": "rate of mentioning being evaluated in chain-of-thought (sandbagging evaluation)", "value": "up to 33%", "direction": "+", "uncertainty_reported": "none"},
+  "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": true},
+  "depends_on": ["arXiv:2412.04984", "arXiv:2412.14093", "arXiv:2406.07358", "arXiv:2407.04694", "yTameAzCdycci68sk"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "continue to build a deeper understanding of when models know they are being evaluated and how this affects their behavior on evaluations"
+  ],
+  "limitations_stated": [
+    "this is a research note based on work-in-progress observations; the analysis is less rigorous than the authors' standard for a published paper",
+    "chain-of-thought monitoring provides only a lower bound for evaluation awareness; it's not possible to conclude models are unaware just because they don't mention being evaluated",
+    "results are sensitive to minor changes, including how the prompt is formatted, so they are considered a noisy measure of evaluation awareness",
+    "qualitative examples shown are cherry-picked for clarity and interestingness (though claimed representative)"
+  ],
+  "reproducible_in_principle": "code",
+  "extractor_confidence": "high",
+  "quote": "Claude Sonnet 3.7 appears to be aware of being tested for alignment across many of our scheming evaluations."
+}

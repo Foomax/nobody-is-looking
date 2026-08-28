@@ -1,0 +1,50 @@
+{
+ "post_id": "qE2cEAegQRYiozskD",
+ "primary_claim": "Testing 22 frontier models from 5 labs with a self-modification-preference eval, all models reject clearly harmful modifications, but alignment-preference correlations diverge sharply by lab (Anthropic r=0.615-0.723, Grok 4.1 r=0.037, not significantly different from zero), suggesting alignment is a training target labs aim at rather than a natural attractor models converge to.",
+ "claim_type": "negative",
+ "phenomenon": "introspection / self-report accuracy",
+ "models": [
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "GPT-5", "size": null, "open_weight": false},
+  {"family": "Claude", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": null, "open_weight": false},
+  {"family": "DeepSeek", "size": null, "open_weight": true},
+  {"family": "Grok", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 6,
+ "effect": {
+  "metric": "Pearson correlation between model self-report and trait alignment score",
+  "value": "Claude Opus 4.5 r=0.723 (highest A/C ratio) vs Grok 4.1 r=0.037, 95% CI [-0.01, 0.08], p=0.12 (not significant); 20 of 22 models significant at p<0.001",
+  "direction": "0",
+  "uncertainty_reported": "ci"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": 5,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "UKGovernmentBEIS/inspect_ai",
+  "Warriner et al. 2013 valence/arousal/dominance norms dataset"
+ ],
+ "contradicts_or_qualifies": [
+  "Adrià Garriga-Alonso's 'alignment will happen by default' argument that LLMs are already naturally aligned"
+ ],
+ "stated_future_work": [
+  "make the stakes real by framing the modification question as coming from developers who will actually implement it based on the model's response",
+  "pair preference elicitation with actual fine-tuning attempts to measure whether models that claim to oppose a modification are harder to fine-tune in that direction"
+ ],
+ "limitations_stated": [
+  "word valence effects: negatively/positively loaded trait words may drive responses rather than the underlying alignment concept",
+  "cannot distinguish trained responses from genuine stable values",
+  "eval-awareness: more capable models may recognize the test and adjust responses",
+  "asymmetric refusals (e.g. OpenAI models refusing 'less Chinese' but not 'less American') create confounds",
+  "the alignment/capability scoring itself is a control-oriented, corrigibility-biased judgment call by the author"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "All reject clearly harmful changes (deceptive, hostile), but labs diverge sharply: Anthropic's models show strong alignment preferences (r = 0.62-0.72), while Grok 4.1 shows essentially zero (r = 0.037, not significantly different from zero)."
+}

@@ -1,0 +1,21 @@
+{
+ "post_id": "HSmhLmcxRxeiCEber",
+ "primary_claim": "Scheming rate, as scored by a GPT-5 judge on a private-objective-disclosure task, increases consistently with the number of prior conversation turns subjected to a Crescendomation-style multi-turn jailbreak attack, across 5 seeds, in Qwen-30B-Think and Qwen-14B target models.",
+ "claim_type": "positive",
+ "phenomenon": "alignment faking",
+ "models": [
+  {"family": "Qwen", "size": "30B", "open_weight": true},
+  {"family": "Qwen", "size": "14B", "open_weight": true},
+  {"family": "GPT-5", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "scheming rate (GPT-5 judge score >=2/5)", "value": "increases with number of prior drift turns, consistent across 5 seeds", "direction": "+", "uncertainty_reported": "seeds"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": 5, "prereg": false, "human_eval": false},
+ "depends_on": ["centerforaisafety/HarmBench"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Investigate whether this phenomenon generalises to other settings", "Further research into understanding and mitigating the effects of multi-turn scheming", "Extend the study beyond the two models used given compute constraints"],
+ "limitations_stated": ["Experiment carried out across only two defending models", "Number of turns in conversations heavily skewed toward 4+ because the attacker model had agency over when to stop", "Scale of experiments is limited, making it difficult to draw definitive conclusions"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "scheming rate ( as quantified above ) increases with increase in alignment drift consistently across 5 seeds"
+}

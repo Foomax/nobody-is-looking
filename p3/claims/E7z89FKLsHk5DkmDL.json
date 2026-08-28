@@ -1,0 +1,33 @@
+{
+ "post_id": "E7z89FKLsHk5DkmDL",
+ "primary_claim": "LLMs (GPT-J, Pythia-6.9B, Llama3.1-8B) represent integers as a helix combining periodic Fourier features (periods 2, 5, 10, 100) with a linear component, and compute a+b by manipulating the helices for a and b via a Clock-algorithm-like mechanism, mostly implemented in MLPs 14-27 of GPT-J.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [
+  {"family": "GPT-J", "size": "6B", "open_weight": true},
+  {"family": "Pythia", "size": "6.9B", "open_weight": true},
+  {"family": "Llama", "size": "3.1-8B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {
+  "metric": "task accuracy on a+b for a,b in [0,99] (GPT-J)",
+  "value": "80% of prompts successfully completed; ablating the fitted helix dimensions affects performance roughly as much as ablating the full residual stream h_a^l",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2502.00873", "arXiv:2301.05217", "arXiv:2406.03445", "arXiv:2405.14860", "arXiv:2404.15255"],
+ "contradicts_or_qualifies": ["Finds evidence against the strongest form of the Linear Representation Hypothesis, similar to Engels et al., since numbers are represented as a multidimensional helical manifold rather than a purely linear direction"],
+ "stated_future_work": [],
+ "limitations_stated": ["Do not know the exact low-level mechanism used to construct helix(a+b) from helix(a,b), though hypothesize trigonometric angle-addition identities", "Results for Llama3.1-8B are weaker than for GPT-J and Pythia-6.9B, with helix(a+b) a considerably worse fit on last-token hidden states", "Study focused on models with single-token representations of two-digit numbers; models with single-digit tokenization (e.g. Gemma-2-9B) likely require additional algorithms"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We find that three mid-sized LLMs represent numbers as helices and manipulate them using the interpretable Clock algorithm to compute addition."
+}

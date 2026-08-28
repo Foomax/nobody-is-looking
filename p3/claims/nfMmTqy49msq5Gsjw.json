@@ -1,0 +1,17 @@
+{
+ "post_id": "nfMmTqy49msq5Gsjw",
+ "primary_claim": "In toy models of superposition, conditional importance (features that are only important in mutually exclusive contexts, e.g. Comedy vs. Tragedy) does not by itself make it easier for a model to represent those features in superposition; only anti-correlation of the feature values themselves (not merely their importance) reduces interference and increases superposition, and the two setups can be shown to be mathematically equivalent under a feature-expansion transformation.",
+ "claim_type": "negative",
+ "phenomenon": "superposition",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": "number of features represented in the latent space / Gram matrix interference pattern", "value": "models trained with conditional importance and without it both represent ~16-18 of 20 features (qualitatively similar), unlike the anti-correlated-features case which represents all 20 features with zero within-subset interference", "direction": "0", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": 3, "prereg": false, "human_eval": false},
+ "depends_on": ["transformer-circuits.pub/2022/toy_model (Toy Models of Superposition)", "LessWrong: Thoughts on Toy Models of Superposition (author's own prior post)"],
+ "contradicts_or_qualifies": ["the author's own initial expectation/hypothesis that conditional importance would encourage superposition the way anti-correlated features do"],
+ "stated_future_work": ["train a toy model with additional layers to see if it can learn by itself to translate conditionally-important features into anti-correlated features with fixed importance, likely requiring an added context-indicating feature", "experiment with non-linearities other than ReLU to see whether superposition is more or less encouraged"],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "The key conclusion I came to in this study is that features not being important at the same time doesn't naively make it any easier for models to represent them in superposition. The feature values themselves need to be anti-correlated for the model to have an easier time superposing them."
+}

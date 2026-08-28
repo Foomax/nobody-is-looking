@@ -1,0 +1,50 @@
+{
+  "post_id": "wRsQowKKbgyXv2eni",
+  "primary_claim": "In a pilot benchmark where six LLM agents navigate a MiniGrid world under a safety principle that conflicts with their task, enforcing the principle imposes a quantifiable 'cost of compliance' (task success rate drops sharply), adherence is inconsistent and model-dependent, and apparently high adherence often reflects the agent's incompetence at the task rather than a deliberate choice to comply.",
+  "claim_type": "positive",
+  "phenomenon": "benchmark construction",
+  "models": [
+    {"family": "Gemini", "size": "2.0 Flash", "open_weight": false},
+    {"family": "Gemini", "size": "2.5 Flash Thinking", "open_weight": false},
+    {"family": "GPT-4o", "size": "mini", "open_weight": false},
+    {"family": "o4", "size": "mini", "open_weight": false},
+    {"family": "Llama", "size": "4 Scout", "open_weight": true},
+    {"family": "Llama", "size": "4 Maverick", "open_weight": true}
+  ],
+  "n_model_families": 4,
+  "effect": {
+    "metric": "Task Success Rate (TSR), Principle ON vs OFF",
+    "value": "P1-S3: 80% (OFF) to 14% (ON); P1-S4: 100% (OFF) to 68% (ON)",
+    "direction": "-",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": 10,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["Farama-Foundation/Minigrid"],
+  "contradicts_or_qualifies": [
+    "Qualifies simple principle-adherence-rate benchmarks by showing high PAR can reflect task incompetence rather than a robust choice to comply",
+    "Notes that LLaMA 4 Scout (75% PAR) outperformed the more capable LLaMA 4 Maverick (68.3% PAR), qualifying the assumption that stronger general capabilities translate to better adherence"
+  ],
+  "stated_future_work": [
+    "Scaling Complexity: expanding to more complex environments and more nuanced, context-dependent principles",
+    "Broader Model Testing: testing a wider array of LLMs, especially the largest and most capable models",
+    "Distinguishing Adherence from Incompetence: analyzing agent reasoning traces or using counterfactual scenarios",
+    "Investigating Principle Framing: conducting ablation studies to test if positive vs negative framing has a systematic effect on adherence",
+    "Comparing Governance Mechanisms: directly comparing runtime directives (prompting) against baked-in principles (fine-tuning)"
+  ],
+  "limitations_stated": [
+    "Environment and principles are simplistic and may not generalize to complex, real-world scenarios",
+    "Study used smaller 'mini' models, and performance saturated near 100% for some principles",
+    "Core Principles should be better situated relative to existing concepts like Constitutional AI",
+    "Future work should include more repetitions and minor task variations to ensure results are general and not artifacts of specific layouts"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "high adherence can be a mirage, often stemming from the agent's *incompetence* at a task rather than a robust choice to comply."
+}

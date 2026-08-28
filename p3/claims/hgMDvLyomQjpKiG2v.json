@@ -1,0 +1,36 @@
+{
+ "post_id": "hgMDvLyomQjpKiG2v",
+ "primary_claim": "Appropriate system prompts alone can bring a non-safety-tuned reasoning model's toxic-refusal rate within 5% of a safety-tuned counterpart's, while reducing over-refusal by roughly 2-10x, suggesting prompting may complement or even outperform certain safety-training approaches on these benchmarks.",
+ "claim_type": "positive",
+ "phenomenon": "refusal behaviour",
+ "models": [
+  {"family": "DeepSeek-R1", "size": "distilled into Qwen3-8B", "open_weight": true},
+  {"family": "RealSafe-R1", "size": "8B, distilled into Llama-3.1-8B", "open_weight": true},
+  {"family": "GPT-4o", "size": null, "open_weight": false},
+  {"family": "Claude", "size": "3.5 Sonnet", "open_weight": false},
+  {"family": "Gemini", "size": "2.5 Flash", "open_weight": false}
+ ],
+ "n_model_families": 5,
+ "effect": {"metric": "toxic-refusal rate gap vs. safety-tuned model, and over-refusal reduction on OR-Bench",
+            "value": "system prompts get DeepSeek-R1-Qwen3-8B within 5% of RealSafe-R1-8B's toxic-refusal rate, with ~2x less over-refusal on OR-Bench-hard and ~5-10x less on OR-Bench-80k",
+            "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 3,
+            "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2509.02464", "arXiv:2504.10081", "arXiv:2412.16339", "arXiv:2405.20947", "arXiv:2406.01574"],
+ "contradicts_or_qualifies": [
+  "SpecEval (Ahmed et al. 2025) found compliance gaps of up to 20% across providers between model behavior and model specifications, motivating this experiment",
+  "RealSafe-R1's safety training (inspired by Deliberative Alignment) results in very high over-refusal (98-100% on OR-Bench-hard), suggesting the safety training overshot into over-conservatism"
+ ],
+ "stated_future_work": [
+  "Replicate with matched distillation targets, or better, exactly control for instruction tuning and safety training separately",
+  "Test whether prompting specifically for over-refusal (e.g. positive statements or in-context examples) can reduce over-refusal in safety-tuned models like RealSafe-R1-8B"
+ ],
+ "limitations_stated": [
+  "Conclusions rest on the assumption that differing distillation targets (Qwen3-8B vs. Llama-3.1-8B) between the two models don't meaningfully affect the evaluation results",
+  "n=3 resampled runs with large observed variance on over-refusal metrics meant no formal hypothesis testing was performed",
+  "The large capability gap on MMLU-Pro between the two models is largely attributable to a token limit imposed during evaluation causing DeepSeek to run out of tokens, not necessarily a true capability difference"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "the usage of these system prompt could get us within 5% of RealSafe's toxic-refusal rates, with ~2x less over-refusal on OR-Bench-hard and ~5-10x less over-refusal on OR-Bench-80k."
+}

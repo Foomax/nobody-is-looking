@@ -1,0 +1,42 @@
+{
+ "post_id": "nPxdHt8k4bMuaC46M",
+ "primary_claim": "Adding a KL-divergence variational term (vSAE) to a TopK sparse autoencoder does not improve interpretability and degrades reconstruction performance relative to a standard TopK SAE, primarily because the KL pressure kills a large fraction of features (e.g. only about half alive at k=256), though the vSAE shows somewhat improved robustness on spurious-correlation-removal and targeted-probe-perturbation metrics",
+ "claim_type": "negative",
+ "phenomenon": "sparse autoencoder quality",
+ "models": [
+  {"family": "GeLU-1L", "size": "1-layer", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "SAEBench quality metrics (KL divergence, cross-entropy loss, explained variance, cosine similarity) and fraction of living features, TopK vs. vSAE TopK",
+  "value": "TopK consistently outperforms vSAE TopK on reconstruction/quality metrics across all K tested; vSAE has a low fraction of living features (e.g. only ~half alive at k=256); vSAE shows somewhat better Spurious Correlation Removal (SCR) and Targeted Probe Perturbation (TPP) robustness scores",
+  "direction": "-",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": true,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": true
+ },
+ "depends_on": ["saprmarks/dictionary_learning", "adamkarvonen/SAEBench", "callummcdougall/sae_vis", "NeelNanda/GELU_1L512W_C4_Code", "NeelNanda/c4-tokenized-2b"],
+ "contradicts_or_qualifies": [
+  "their own prior preliminary hypothesis/findings (referenced in the project's earlier proposal) that VSAE consistently outperforms standard SAEs in feature disentanglement; this post's controlled experiments instead find vSAE underperforms standard TopK SAE on most quality metrics"
+ ],
+ "stated_future_work": [
+  "augment the vSAE architecture/loss/hyperparameters to reduce the pressure that kills features, to see if more live features recover the performance drop",
+  "run experiments on a larger model such as Pythia-70M instead of only the 1-layer GeLU network",
+  "increase the number of activations used in the tSNE analysis to activate a greater number of features"
+ ],
+ "limitations_stated": [
+  "only ran experiments on a 1-layer GeLU network due to time and memory constraints; such a small transformer can only embed bigram/trigram statistics",
+  "due to memory constraints, only features that fired on a subset of the dataset were used in the tSNE global analysis",
+  "synthetic (activation-maximizing) tokens for feature interpretation seemed unrelated to the real dataset examples that caused the features to fire",
+  "purely applying variational methods without TopK led to poor results, since KL divergence alone was not a strong enough sparsity regularizer"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We ultimately find that this addition does not benefit the interpretability of the language model and degrades performance."
+}

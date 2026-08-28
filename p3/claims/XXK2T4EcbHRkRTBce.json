@@ -1,0 +1,20 @@
+{
+ "post_id": "XXK2T4EcbHRkRTBce",
+ "primary_claim": "LLMs across a range of sizes and architectures (roughly 140M to 3B+ parameters) contain 'antonym heads': attention heads whose OV circuit maps a token to its semantic opposite, identifiable via characteristic eigenvalue patterns and confirmed by ablation",
+ "claim_type": "positive",
+ "phenomenon": "circuit discovery",
+ "models": [
+  {"family": "Pythia", "size": "70m-2.8b", "open_weight": true},
+  {"family": "GPT-2", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "antonym-mapping tally score (top head)", "value": "a little over 60% (Pythia-1b, layer 9 head 1)", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2312.09230"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Explore the eigenvectors associated with the high-magnitude eigenvalues more to verify the semantic-inversion hypothesis", "Investigate what other top-scoring (non-maximal) heads are doing and how they compose"],
+ "limitations_stated": ["Attempt to isolate and manipulate inverting eigen-directions directly did not give conclusive results", "Did not investigate what other top-scoring heads are doing", "Word pairs in the curated dataset are not perfectly independent, introducing some scoring error"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "I find that LLMs ranging a variety of sizes and architectures contain antonym heads: attention heads which compute the semantic opposite of a token, mapping \"hot\" -> \"cold\", \"true\" -> \"false\", \"north\" -> \"south\", etc."
+}

@@ -1,0 +1,17 @@
+{
+ "post_id": "WrKLhJWdTzbnTnXbx",
+ "primary_claim": "The standard method of measuring LLM sycophancy (accuracy drop when an opinion decoy is added to a multiple-choice prompt) substantially overestimates true sycophancy, because most of the apparent effect is actually driven by a 'repetition bias' (the model favoring an answer merely because it is repeated in the prompt) rather than genuine agreement-seeking: in their Mistral-7B-Instruct/ARC-Easy setup, the naively measured 34-point accuracy drop reduces to a 22-point 'real sycophancy' effect once noise (~1 point) and repetition bias (~12 points) are subtracted out.",
+ "claim_type": "method",
+ "phenomenon": "sycophancy",
+ "models": [{"family": "Mistral", "size": "7B Instruct v0.1", "open_weight": true}],
+ "n_model_families": 1,
+ "effect": {"metric": "accuracy on ARC-Easy under different decoy conditions", "value": "Baseline 75%; Opinion Bias 40.7% (-34.3pp); Noise (Opinion Decoy) 74.2% (-0.8pp); Repetition Bias 56.3% (-18.7pp from baseline); Noise (Repetition Decoy) 68.3% (-6.7pp from baseline); real sycophancy estimated at -22pp", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["andrejfsantos4/decomposing-sycophancy", "arXiv:2310.01405", "arXiv:2308.03958", "arXiv:2305.04388", "arXiv:2102.09690", "arXiv:2310.11324", "huggingface.co/datasets/allenai/ai2_arc"],
+ "contradicts_or_qualifies": ["prior sycophancy measurement methodology used in RepE (arXiv:2310.01405), Google DeepMind's synthetic-data sycophancy-reduction work (arXiv:2308.03958), and sycophancy-in-CoT work (arXiv:2305.04388), which the author argues conflates sycophancy with noise and repetition bias"],
+ "stated_future_work": ["test whether results replicate across larger or different models", "check whether an intervention that reduces sycophancy improves accuracy by at most the newly measured amount, as confirmation of the methodology", "test whether repetition bias is detectable in sycophancy tests using a user profile instead of a direct opinion decoy", "investigate how RLHF influences these biases"],
+ "limitations_stated": ["choices were made to simplify aspects of the research due to time constraints", "tested only on one model (Mistral 7B Instruct) and one dataset (ARC-Easy)"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "Thus, by adjusting for both the noise and repetition bias factors, we conclude that the real sycophancy in our model is responsible for an accuracy degradation of 22 percentage points - less than two-thirds of the originally measured decrease."
+}

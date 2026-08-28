@@ -1,0 +1,20 @@
+{
+ "post_id": "AChWbkiS4EnusPsvQ",
+ "primary_claim": "LLM task preferences (GPT-5 mini, Haiku 4.5) are internally coherent when tasks are chained together, but are not consistent across response format (free-form vs structured output), which is weak evidence against LLMs having stable human-like preferences.",
+ "claim_type": "null",
+ "phenomenon": "model welfare / psychology",
+ "models": [
+  {"family": "GPT-5", "size": "mini", "open_weight": false},
+  {"family": "Claude", "size": "Haiku 4.5", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "Bradley-Terry task rating", "value": "signs consistent across models/formats but magnitudes differ substantially; confidence intervals for some tasks non-overlapping across formats", "direction": "0", "uncertainty_reported": "ci"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["rgambee/llm-preferences"],
+ "contradicts_or_qualifies": ["Anthropic's Claude 4 system card pairwise task preference study, which this extends to task sequences"],
+ "stated_future_work": ["Evaluating more LLMs", "Increasing the number of tasks and analyzing how LLM preferences depend on topic, task length, and other factors", "Exploring how the prompt template affects the LLM's selection, for instance by evoking different personas", "Exploring the effects of extended thinking", "Investigating evaluation awareness: Do mentions of evaluation awareness correlate with the tasks in the comparison or the selected option?"],
+ "limitations_stated": ["We don't know whether LLMs have preferences in a similar way that humans do; the LLM could be roleplaying a persona", "This study did not explore evaluation awareness in any depth", "Due to resource constraints, the two-task-per-option experiment only used structured output"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "On balance, these results are weak evidence against the claim that today's LLMs have stable human-like preferences."
+}

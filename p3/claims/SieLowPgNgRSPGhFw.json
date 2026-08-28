@@ -1,0 +1,43 @@
+{
+  "post_id": "SieLowPgNgRSPGhFw",
+  "primary_claim": "Frontier language models' ability to solve tasks without any chain-of-thought reasoning (no-CoT), measured by a 50%-success time horizon across 43 benchmarks, has doubled roughly every year since 2019, reaching about three minutes of human-equivalent task time for GPT-5.5; this no-CoT time horizon has grown roughly half as fast as METR's with-CoT time horizon since the release of GPT-4.",
+  "claim_type": "positive",
+  "phenomenon": "capability forecasting / time horizons",
+  "models": [
+    {"family": "GPT", "size": null, "open_weight": false}
+  ],
+  "n_model_families": 1,
+  "effect": {
+    "metric": "no-CoT 50% time-horizon doubling time (days)",
+    "value": "373 days [167, 691] 95% CI, R²=0.84, vs METR's with-CoT doubling time of 182 days, R²=0.92",
+    "direction": "+",
+    "uncertainty_reported": "ci"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": false,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": true
+  },
+  "depends_on": [
+    "arXiv:2606.07157",
+    "blog.redwoodresearch.org/p/measuring-no-cot-math-time-horizon",
+    "metr.org/blog/2025-03-19-measuring-ai-ability-to-complete-long-tasks"
+  ],
+  "contradicts_or_qualifies": [
+    "Extends Ryan Greenblatt's prior no-CoT math time-horizon research to a broader 43-benchmark suite spanning math, coding, knowledge, agentic tool-use, and safety-relevant domains",
+    "Qualifies METR's with-CoT time-horizon doubling trend (182 days): shows the no-CoT time horizon grows roughly half as fast (373 days) since GPT-4, implying much of the post-GPT-4 increase in with-CoT capability comes from CoT itself rather than underlying no-CoT reasoning ability"
+  ],
+  "stated_future_work": [
+    "AI companies should start tracking no-CoT time horizons explicitly to find a lower bound on how much reasoning a model could do without revealing it to a CoT monitor or human"
+  ],
+  "limitations_stated": [
+    "uncertainty in the reasoning-token-anchor difficulty metric is not modeled, unlike human solve-time uncertainty which is calibrated with a noise model",
+    "questions that no evaluated no-CoT model solves but that o3-mini also fails to solve with reasoning are dropped from the reasoning-token-anchor analysis"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "medium",
+  "quote": "We find that frontier models like GPT-5.5 answer questions that take humans roughly three minutes with 50% reliability, and this TH has doubled approximately every year since 2019."
+}

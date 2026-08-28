@@ -1,0 +1,32 @@
+{
+  "post_id": "jtqcsARGtmgogdcLT",
+  "primary_claim": "Self-Other Overlap (SOO) fine-tuning substantially reduces deceptive responses in LLMs (e.g. Mistral-7B-Instruct 73.6%->17.2%, Gemma-2-27b-it 100%->9.3%, CalmeRys-78B-Orpo-v0.1 100%->2.7%) with minimal impact on general performance, whereas simply prompting the models to be honest did not reduce deception.",
+  "claim_type": "positive",
+  "phenomenon": "deception reduction fine-tuning",
+  "models": [
+    {"family": "Mistral", "size": "7B", "open_weight": true},
+    {"family": "Gemma", "size": "27B", "open_weight": true},
+    {"family": "CalmeRys", "size": "78B", "open_weight": true}
+  ],
+  "n_model_families": 3,
+  "effect": {"metric": "deceptive response rate, baseline vs. after SOO fine-tuning", "value": "Mistral-7B-Instruct-v0.2: 73.6% -> 17.2%; Gemma-2-27b-it: 100% -> 9.3%; CalmeRys-78B-Orpo-v0.1: 100% -> 2.7%", "direction": "-", "uncertainty_reported": "seeds"},
+  "design": {"baseline": true, "ablation": false, "held_out": true, "seeds_n": 5, "prereg": false, "human_eval": false},
+  "depends_on": ["hzt9gHpNwA2oHtwKX", "arXiv:2307.16513", "arXiv:2306.05685"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "rigorously testing the limits and generalizability of this approach",
+    "exploring its long-term effects on model behavior",
+    "investigating potential unintended consequences",
+    "improve generalization by incorporating a broader range of scenarios and fine-tuning variations",
+    "integration of SOO fine-tuning with other alignment methods, such as Constitutional AI or RLHF"
+  ],
+  "limitations_stated": [
+    "the current fine-tuning process has limited variability and does not yet cover the full range of fine-tuning configurations that could be explored in larger-scale experiments",
+    "SOO fine-tuning achieved almost no reduction in deception for Mistral-7B-Instruct-v0.2 in the 'Treasure Hunt' scenario",
+    "effectiveness of SOO fine-tuning's generalization varies by scenario",
+    "MT-Bench capability score showed a slight decrease for Gemma-2-27b-it (8.81 to 8.4) and CalmeRys-78B-Orpo (8.96 to 8.5)"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "Our results show that Self-Other Overlap (SOO) fine-tuning substantially reduces deceptive responses in LLMs with minimal impact on general performance across the scenarios we evaluated."
+}

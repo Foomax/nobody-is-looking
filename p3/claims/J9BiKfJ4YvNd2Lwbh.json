@@ -1,0 +1,32 @@
+{
+ "post_id": "J9BiKfJ4YvNd2Lwbh",
+ "primary_claim": "A backtracking steering vector computed from base-model (Llama-3.1-8B) activations induces backtracking behavior in the corresponding RL-finetuned reasoning model (DeepSeek-R1-Distill-Llama-8B) but not in the base model itself, suggesting reasoning fine-tuning repurposes a pre-existing latent representation rather than learning a wholly new one.",
+ "claim_type": "positive",
+ "phenomenon": "steering vector transfer",
+ "models": [
+  {"family": "Llama", "size": "3.1-8B", "open_weight": true},
+  {"family": "DeepSeek", "size": "R1-Distill-Llama-8B", "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {
+  "metric": "effect of backtracking steering vector on emission of backtracking tokens (e.g. 'Wait'), reasoning model vs base model, vs baselines",
+  "value": "backtracking steering vector induces emission of backtracking tokens in the reasoning model but not the base model, with a substantially greater effect than baselines (mean activations, random noise, magnitude increase, other reasoning-behavior vectors)",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Hope these results inspire further investigation into the mechanisms involved in CoT reasoning"],
+ "limitations_stated": ["Still not sure what concept the steering vector represents, or whether there is a single monosemantic concept it represents", "Investigation into whether the direction represents something abstract like 'uncertainty' was inconclusive"],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "We find a direction which is present both in base models and associated reasoning-finetuned models but induces backtracking only in reasoning models."
+}

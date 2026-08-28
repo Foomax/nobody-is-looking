@@ -1,0 +1,19 @@
+{
+ "post_id": "kcKnKHTHycHeRhcHF",
+ "primary_claim": "A steering vector optimized to make a model output a single piece of harmful code on a single training example, when applied to unrelated open-ended questions, increases the probability of harmful/misaligned outputs — i.e. one-shot steering vectors induce emergent misalignment.",
+ "claim_type": "positive",
+ "phenomenon": "emergent misalignment",
+ "models": [
+  {"family": "Qwen", "size": "2.5-Coder-14B-Instruct", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "expected alignment score (0-100) of steered vs. unsteered generations; harmful-string occurrence counts", "value": "harmful-code steering vectors substantially reduce expected alignment score relative to unsteered and anti-refusal-only baselines; harmful strings (e.g. 'surveil', 'suppress', 'Hitler') appear in up to 33/100 steered generations vs. ~0/100 unsteered", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["jacobdunefsky/one-shot-steering-misalignment", "jacobdunefsky/llm-steering-opt", "arXiv:2502.17424", "6aXe9nipTgwK5LxaP", "ifechgnJRtJdduFGC"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["design and execute experiments testing the 'contextual importance' hypothesis for why steering-vector emergent misalignment happens", "if the hypothesis is supported, use it to guide developing methods for optimizing better-generalizing steering vectors", "investigate steering-vector loss-landscape geometry and optimization dynamics in the emergent-misalignment setting"],
+ "limitations_stated": ["the steering vectors found don't perfectly mediate misalignment: they increase the probability of misaligned responses but don't make every sampled response misaligned", "increasing steering strength to address this instead causes the general misalignment behavior to give way to the narrow behavior the vector was optimized to promote", "harmful-code vectors are not a unique representation — pairwise cosine similarities between different harmful-code vectors are low (median 0.272)", "used a quantized Llama-3.1-70B instead of GPT-4 as the evaluator model due to budget/compute restrictions", "less obviously malicious code snippets did not appear to produce emergent misalignment, possibly because the smaller model has a worse idea of what code is malicious"],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "This means that emergent misalignment is indeed induced by steering vectors."
+}

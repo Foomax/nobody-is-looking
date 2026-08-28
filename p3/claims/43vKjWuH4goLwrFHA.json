@@ -1,0 +1,19 @@
+{
+ "post_id": "43vKjWuH4goLwrFHA",
+ "primary_claim": "Gradient-Routed Auxiliary Modules (GRAM), a modular pretraining method that isolates dual-use knowledge into switchable auxiliary modules trained in a single run, approximates the performance of separately trained data-filtered models across scales from 50M to 5B parameters, matches or exceeds LoRA and outperforms the post-hoc unlearning method MaxEnt on robustness to adversarial fine-tuning elicitation, and isolates capabilities better than both LoRA and data filtering when only 50% of training data is labeled.",
+ "claim_type": "method",
+ "phenomenon": "machine unlearning robustness",
+ "models": [
+  {"family": "custom dense Transformer (GRAM, trained from scratch)", "size": "50M-5B parameters (7 Chinchilla-optimal scales)", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "compute-adjusted loss (Compute Ratio) on retained vs removed capabilities, and robustness to adversarial fine-tuning elicitation", "value": "GRAM and LoRA closely track data-filtering performance on retained and removed capabilities at all 7 scales (50M-5B), at roughly a fifth of filtering's training compute; MaxEnt recovers to near all-data-baseline performance under adversarial fine-tuning (indicating suppression rather than removal), while GRAM, LoRA, and filtering remain robust", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2108.05036 (DEMix layers)", "alignment.anthropic.com/2025/selective-gradient-masking (SGTM)", "arXiv:2410.04332 (Cloud et al., gradient routing)", "arXiv:2606.13873 (NULLs, concurrent work)", "arXiv:2504.09184 (SimpleStories)", "arXiv:2203.15556 (Chinchilla scaling laws)", "arXiv:2512.05648 (Shilov et al. 2025)", "agencyenterprise/modular-pretraining"],
+ "contradicts_or_qualifies": ["Qualifies MaxEnt, a post-hoc unlearning method, as not truly removing capabilities but only suppressing them, since it recovers to near-baseline performance after adversarial fine-tuning while GRAM, LoRA, and data filtering remain robust"],
+ "stated_future_work": ["Scale modular pretraining to larger and more realistic settings", "Figure out how to instruction-tune a model trained with GRAM", "Better understand how modular pretraining works when data is imperfectly labeled, including when label errors aren't random and independent from the data"],
+ "limitations_stated": ["Unclear whether entangled capabilities (e.g. general biology knowledge vs virology) make data filtering itself infeasible if they cannot be cleanly separated", "Scaling trends verified only up to 5B parameters; unclear whether they continue at frontier scales or hold in a production setting", "Experiments only use loss-based evals, which may not capture everything that matters for downstream tasks", "LoRA with an optimized data mix is a strong baseline similar to GRAM and filtering in the main real-data setting, and the methods were not tested in meaningfully different settings", "GRAM's advantages over LoRA (composability, partial-labeling isolation) rest on only two isolated experiments, so may not generalize"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "GRAM approximates separately trained, data filtered models in a single run."
+}

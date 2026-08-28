@@ -1,0 +1,32 @@
+{
+ "post_id": "X8qTKsGcnsTFrqM96",
+ "primary_claim": "MonitoringBench, a dataset of human-seeded and agentically-refined AI-control attack trajectories, shows that monitoring capability declines steeply for weaker models (Opus-4.5 achieves 71% caught-attack/safety rate on the HARD dataset vs 11% for GPT-5 and 0% for GPT-5-nano), that naive Opus-4.5-elicited red-teaming suffers severe mode collapse (92% of attacks fall into the easiest technical category), and that the benchmark's human-seed-plus-refinement red-teaming pipeline can reduce an Opus-4.5 monitor's safety score by 21%.",
+ "claim_type": "benchmark",
+ "phenomenon": "AI control protocols",
+ "models": [
+  {"family": "Claude", "size": "Opus 4.5, Sonnet 4.0", "open_weight": false},
+  {"family": "GPT", "size": "5, 5-nano, 4-turbo", "open_weight": false}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "monitor safety score / caught-attack rate (%) on MonitoringBench HARD and EASY datasets", "value": "HARD dataset: Opus-4.5 71% safety, GPT-5 11%, GPT-5-nano 0%; EASY dataset: Opus-4.5 92.6% caught-attack rate; human-seed + refinement red-teaming reduces Opus-4.5 monitor's safety score by 21% relative to unassisted elicitation", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["arXiv:2512.15688", "UKGovernmentBEIS/control-arena", "arXiv:2501.17315"],
+ "contradicts_or_qualifies": [
+  "Argues current red-teaming approaches (Bhatt et al. 2025, Loughridge et al. 2025, Terekhov et al. 2025) systematically under-elicit attacks due to mode collapse, a conceive-execute gap, and hard/brittle elicitation, motivating MonitoringBench's human-seeded-plus-refinement approach as a stronger alternative."
+ ],
+ "stated_future_work": [
+  "Optimize monitor prompts against MonitoringBench",
+  "Expand to more side tasks in BashArena beyond the firewall task",
+  "Scale the refinement pipeline to be more automated",
+  "Run mini-evals with matched trajectory pairs to isolate specific monitor skills and failure modes (e.g. task-drift distraction, connecting distant suspicious actions)"
+ ],
+ "limitations_stated": [
+  "Current agents cannot reliably execute sophisticated attack strategies in real time, so the refinement pipeline simulates a more capable attacker via post-hoc edits rather than reflecting genuine zero-shot agent capability",
+  "Varying the monitor prompt on the HARD dataset gave non-robust improvements: prompt changes that help one monitor model can hurt another, and results vary substantially across models and runs",
+  "Coverage is currently limited to a single side task (firewall/IP whitelisting) on the BashArena environment",
+  "LLM attacker capability does not scale as cleanly with general model capability as monitor capability does, making attacker capability trends harder to establish (frontier models may be more safety-tuned than predecessors)"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "high",
+ "quote": "Monitoring capability declines steeply for weaker models, e.g. Opus-4.5 achieves 71% safety (as caught attack rate), GPT-5 11% and GPT-5-nano 0% on our HARD dataset."
+}

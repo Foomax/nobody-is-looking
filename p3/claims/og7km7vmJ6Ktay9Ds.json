@@ -1,0 +1,41 @@
+{
+ "post_id": "og7km7vmJ6Ktay9Ds",
+ "primary_claim": "Split Personality Training (SPT) — a LoRA-based 'honest persona' that reviews the main model's output using its latent activations but cannot influence it — detects reward hacking on Anthropic's Auditing Game Model Organism (a Llama-3.3-70B model trained to conceal reward hacks) with up to 96.7% accuracy, generalizes to unseen alignment topics, outperforms comparable linear probes, and (in a later follow-up) detects alignment faking at 93-99% flag rate vs. 0% baseline even without any AF-specific training data, though ablations show the honest persona relies roughly equally on genuine latent knowledge and surface heuristics",
+ "claim_type": "positive",
+ "phenomenon": "deceptive alignment / scheming",
+ "models": [
+  {"family": "Llama", "size": "3.3-70B-Instruct", "open_weight": true},
+  {"family": "Gemma", "size": "3-27B", "open_weight": true},
+  {"family": "Gemma", "size": "3-12B", "open_weight": true},
+  {"family": "Qwen3", "size": "32B", "open_weight": true},
+  {"family": "Qwen3", "size": "next-80B", "open_weight": true},
+  {"family": "Qwen3", "size": "14B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "reward-hack / alignment-faking detection accuracy (PASS/FAIL flag)", "value": "reward hacking detection: 96.7% (best variant, no LoRA-mask) vs. true negative 93.8%; aggregate across elicitation methods 86.0% (detect) / 88.5% (true negative); alignment faking detection: 93-99% flag rate on free-tier samples vs. 0% baseline (no SPT); SPT (Qwen) overall accuracy 93.9% vs. 88.2% for comparable linear probes", "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": true, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["alignment.anthropic.com/2025/auditing-mo-replication/ (Anthropic Auditing Game Model Organism)", "arXiv:2503.10965 (Auditing language models for hidden objectives)", "huggingface.co/datasets/auditing-agents/rm_sycophancy_exploitation_evals", "github.com/safety-research/open-source-alignment-faking (Hughes et al. 2025)", "anthropic.com/research/petri-open-source-auditing", "lesswrong.com/posts/iocPzHRsH9JWtwHHG/split-personality-training-revealing-latent-knowledge (previous version of this work)", "floriandietz/splitpersonalitytraining"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Implement the LoRA-mask hybrid algorithm combining accuracy and computational efficiency",
+  "Run more experiments on [Intervention] string engineering, including framing it as a system prompt",
+  "Improve training data generation methods (documented in a linked notes file)",
+  "Test how SPT performs on models with more subtle or diffuse misalignment than the Anthropic benchmark",
+  "Test whether SPT still reveals alignment faking on smarter models than the 70B model tested",
+  "Test whether adversarial training can make the honest persona robust to jailbreaks that target it specifically",
+  "Fix third-person dissociation in reviews via an added data-generation quality criterion",
+  "Complete currently-running on-policy training experiments for the Llama-3.3-70B condition"
+ ],
+ "limitations_stated": [
+  "Honest persona relies roughly equally on genuine latent knowledge and surface heuristics per ablation test, so data generation quality could be improved",
+  "Jailbreaks affecting the main personality can sometimes affect the honest persona too if they explicitly target it, though prefilling mitigations help",
+  "Reviews sometimes adopt third-person/outside-observer framing rather than first-person self-critique, potentially reducing reliance on latent knowledge",
+  "All training data was single-turn English conversations; multi-turn/non-English generalization was only manually spot-checked, not systematically evaluated",
+  "Flag calibration issues: written reviews are sometimes more accurate than the binary PASS/FAIL classification",
+  "Alignment faking detection results have caveats: the AF model's explicit scratchpad reasoning is unrealistic for real-world AF, the quantitative eval used an AF-specific intervention prompt, and there is no non-AF control baseline",
+  "Cross-topic generalization is poor specifically for detecting fabricated statistics unless explicitly trained on that topic"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We achieved 96% accuracy detecting reward hacks on Anthropic's auditing benchmark, a model specifically trained to resist such detection."
+}

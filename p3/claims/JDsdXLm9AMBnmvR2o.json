@@ -1,0 +1,21 @@
+{
+ "post_id": "JDsdXLm9AMBnmvR2o",
+ "primary_claim": "Ablating 'receiver head' attention heads (identified by Thought Anchors) increases the counterfactual importance of plan-generation sentences in chain-of-thought reasoning while decreasing that of active-computation sentences -- a distinctive pattern not seen under random-head ablation, which instead lowers counterfactual importance for nearly all sentence categories.",
+ "claim_type": "positive",
+ "phenomenon": "attribution / attribution patching",
+ "models": [
+  {"family": "DeepSeek R1 Distill Llama", "size": "8B", "open_weight": true},
+  {"family": "DeepSeek R1 Distill Qwen", "size": "14B", "open_weight": true},
+  {"family": "Qwen3", "size": "14B", "open_weight": true}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": "counterfactual importance (resampling-based, KL divergence between similar/dissimilar-rollout accuracy) by CoT sentence category, before/after ablation", "value": null, "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": 12, "prereg": false, "human_eval": false},
+ "depends_on": ["realmbird/cot-counterfactual", "Realmbird/Cot_reciever_heads", "uzaymacar/math-rollouts", "Realmbird/Attribution-Graph-Qwen-"],
+ "contradicts_or_qualifies": ["Thought Anchors' LLM-based sentence-category labeling methodology -- overlap between 'plan generation' and 'uncertainty management' categories among high-increase sentences suggests possible mislabeling"],
+ "stated_future_work": ["Is the increase in plan generation counterfactual importance related to the decrease in active computation counterfactual importance -- is importance shifting from active computation to plan generation?", "What is special about sentences 40-50 for problem 6481, which consistently show low counterfactual importance after ablation?", "Why is plan generation present in the sentences with the highest increase in counterfactual importance but absent from those with the greatest decreases?", "Does the number of heads ablated affect the counterfactual importance results, given only 2% of heads were ablated?"],
+ "limitations_stated": ["Attribution graphs for the DeepSeek-distilled models used in Thought Anchors were not possible because transcoders for these specific distilled models could not be found.", "The available transcoder is for Qwen 3, which differs from DeepSeek R1 Distill Qwen 14B (originally based on Qwen 2.5), so building proper attribution graphs was out of scope.", "Ablating receiver heads for Qwen3 14B had no significant effect, unlike the DeepSeek-distilled models.", "Only a single problem (problem 6481) from the Math Rollouts dataset was analyzed."],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "medium",
+ "quote": "Ablating the receiver heads led to a doubling of the counterfactual importance of plan generation and also caused a decrease in the counterfactual importance of active computation."
+}

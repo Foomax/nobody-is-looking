@@ -1,0 +1,31 @@
+{
+ "post_id": "FrekePKc7ccQNEkgT",
+ "primary_claim": "Jacobian Sparse Autoencoders (JSAEs), which add an L1 sparsity penalty on the Jacobian relating an MLP-input SAE to an MLP-output SAE, achieve much sparser Jacobians than pairs of traditional SAEs with only a small trade-off in reconstruction quality and comparable auto-interpretability scores, and Jacobians are much sparser in pre-trained LLMs than in re-initialized transformers, indicating that computational sparsity emerges during training.",
+ "claim_type": "positive",
+ "phenomenon": "dictionary learning method",
+ "models": [
+  {"family": "GPT-2", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "Jacobian sparsity (JSAE vs standard SAE pair) at matched reconstruction quality",
+  "value": "JSAEs achieve much sparser Jacobians with only a small trade-off in reconstruction quality; comparable (possibly slightly higher, not clearly significant) auto-interp fuzzing scores",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": false,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arXiv:2502.18147", "arXiv:2410.13928", "arXiv:2501.17727"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": ["Develop proper evaluations for JSAEs: how to determine if the sparse causal graph JSAEs find is 'the true computational graph', and what proxy metrics could be used", "Determine a proper method for measuring/evaluating Jacobian sparsity, since L0 doesn't work without exact zeros and normalization-based alternatives have their own problems"],
+ "limitations_stated": ["JSAEs likely share many open problems of SAEs, e.g. finding the complete set of learned representations, including ones not represented in the training dataset used", "The sparsity penalty probably doesn't perfectly incentivize the true causal structure, so computational graphs found by JSAEs may miss important causal connections", "The apparent improvement in auto-interp (fuzzing) scores over traditional SAEs may not be statistically significant", "Measuring how sparse the Jacobians are is tricky since there is no mechanism producing exact zeros, so L0 doesn't work directly"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "The Jacobians when using JSAEs are indeed much more sparse than the Jacobians when using a pair of traditional SAEs."
+}

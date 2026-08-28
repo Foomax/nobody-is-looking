@@ -1,0 +1,31 @@
+{
+ "post_id": "ATsvzF77ZsfWzyTak",
+ "primary_claim": "Across 73 SAEs trained on GPT2-small under varying seeds, datasets, architectures, sparsity, and dictionary sizes, the training dataset has the largest effect on decoder-weight feature matching ratios (as low as 6.21% between TinyStories and RedPajama, up to 29.48% between Pile and RedPajama), substantially more than seed differences (55-85% matching), architecture, or sparsity differences (40-60%), and feature activations show evidence of a distinct 'position feature' set emerging in early layers, visible as a doubled activation frequency along token position that vanishes when positional embeddings are ablated or shuffled.",
+ "claim_type": "positive",
+ "phenomenon": "SAE feature dataset dependence",
+ "models": [
+  {"family": "GPT-2", "size": "small", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {
+  "metric": "feature matching ratio (cosine similarity threshold 0.7) across SAEs trained on different datasets vs different seeds",
+  "value": "dataset difference: 6.21%-29.48% matching; seed difference: 55%-85% matching; architecture difference: 40-60%; sparsity difference: 40-55%",
+  "direction": "+",
+  "uncertainty_reported": "none"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": 2,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["seonglae/sae-hands-on", "arXiv:2501.16615", "arXiv:2410.07656", "arXiv:2502.03032", "arXiv:2309.08600"],
+ "contradicts_or_qualifies": ["Seed-difference matching ratios (55-85%) were notably higher than the ~30% reported by Paulo & Belrose (2025), a discrepancy the author attributes partly to not applying the Hungarian algorithm for one-to-one matching, which may produce slightly optimistic numbers not strictly comparable to prior studies"],
+ "stated_future_work": ["Validate the multi-step hypothesis relating token position, early layers, and position features (steps 1-4 in Section 4.2)", "Apply geometric median-based weight initialization to feature matching to see if it increases the matching ratio and clarifies dataset dependency", "Explore how training settings affect Automated Interpretability Score or Eleuther embedding rather than just feature matching ratios"],
+ "limitations_stated": ["Experiments are limited to GPT2-small, restricting generalization of the claims across different models", "The logical sequence underpinning the claim of a position feature set contains certain leaps; an alternative explanation is that the single-token feature set in early layers is due to token embeddings", "Feature matching did not apply a geometric median to SAE training, which might have enhanced robustness to seed or dataset differences", "Not applying the Hungarian algorithm for one-to-one feature matching may have led to overestimating similarity, producing optimistic numbers not strictly comparable to previous studies"],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "the dataset is the factor that most strongly influences changes in the dictionary (total feature set) during dictionary learning."
+}

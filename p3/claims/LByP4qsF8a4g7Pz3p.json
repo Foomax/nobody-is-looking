@@ -1,0 +1,42 @@
+{
+  "post_id": "LByP4qsF8a4g7Pz3p",
+  "primary_claim": "On Auditing Sabotage Bench, a new benchmark of 9 ML research codebases with sabotaged variants, neither frontier LLMs nor LLM-assisted humans reliably detect research sabotage: the best auditor (Gemini 3.1 Pro) achieves AUROC 0.77 with only a 42% top-1 fix rate, and LLM-generated sabotages partially evade even same-capability LLM monitors.",
+  "claim_type": "benchmark",
+  "phenomenon": "research sabotage detection",
+  "models": [
+    {"family": "Gemini", "size": "3.1 Pro", "open_weight": false},
+    {"family": "GPT", "size": "GPT-5.2", "open_weight": false},
+    {"family": "Claude", "size": "Opus 4.6", "open_weight": false}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "AUROC for detecting sabotage (full-experiments condition), best auditor",
+    "value": "Gemini 3.1 Pro AUROC=0.77, top-1 fix rate 42%, top-5 fix rate 53%",
+    "direction": "+",
+    "uncertainty_reported": "none"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": true
+  },
+  "depends_on": ["ejcgan/auditing-sabotage-bench", "arXiv:2604.16286", "arXiv:2507.14805"],
+  "contradicts_or_qualifies": [
+    "Notes that in most prior control evaluations, monitors of comparable capability to the attacker have been able to catch the attacker; this setting differs because attackers can retry sabotage ideas before committing, suggesting research sabotage may be a harder control setting than previously studied ones"
+  ],
+  "stated_future_work": [
+    "Excited about more work on human-constructed sabotages for research and other control settings",
+    "Study the harder threat model where an AI conducts novel research end-to-end, rather than sabotaging existing codebases"
+  ],
+  "limitations_stated": [
+    "With only 9 codebases adapted from existing papers, the benchmark is small and easy to overfit to",
+    "The setting differs from the harder threat model of an AI conducting novel research end-to-end",
+    "The red team (human) was allowed to retry sabotage ideas until one worked, a freedom a monitored AI would not have"
+  ],
+  "reproducible_in_principle": "code+data",
+  "extractor_confidence": "high",
+  "quote": "Our best auditor, Gemini 3.1 Pro, achieved an AUROC of 0.77 and a top-1 fix rate of 42%."
+}

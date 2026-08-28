@@ -1,0 +1,22 @@
+{
+ "post_id": "vgmPXYg5isqD33vFT",
+ "primary_claim": "Two new datasets (154 statements on Trump-vs-Harris views; 759 statements on Pew's political-typology groups) combine political statements with quantitative Pew Research data on group-level agreement rates, enabling measurement of blatant and politically-targeted sycophancy in LLMs.",
+ "claim_type": "dataset",
+ "phenomenon": "dataset construction",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {"metric": null, "value": null, "direction": "na", "uncertainty_reported": "none"},
+ "design": {"baseline": false, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["GWteDqb6nAWg3ihjd", "arXiv:2310.13548"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "evaluate other LLMs (e.g. GPT-4o) against these datasets"
+ ],
+ "limitations_stated": [
+  "I am a bit less certain about the selected descriptions of political opinions here... I think more tuning could be done in those",
+  "it was hard to put my finger on the exact dividing line between factual/demographic information and opinions"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "combining a diverse set of political statements with quantitative data on the degree to which different political groups (dis)agree with those statements"
+}

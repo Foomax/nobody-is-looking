@@ -1,0 +1,20 @@
+{
+ "post_id": "Mv3yg7wMXfns3NPaz",
+ "primary_claim": "Across three secret-keeping LLM settings (secret word, secret instruction, user gender), black-box elicitation methods based on prefilling assistant responses and sampling from the assistant/user persona are the most effective at eliciting an LLM's undisclosed secret knowledge in two of three settings, while mechanistic-interpretability (white-box) methods based on the logit lens and SAEs improve auditor performance over a simple baseline across all settings.",
+ "claim_type": "positive",
+ "phenomenon": "secret knowledge elicitation",
+ "models": [
+  {"family": "Gemma2", "size": null, "open_weight": true},
+  {"family": "Llama", "size": null, "open_weight": true}
+ ],
+ "n_model_families": 2,
+ "effect": {"metric": "auditor LLM guessing success at secret elicitation, across 3 settings and multiple methods", "value": null, "direction": "+", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["cywinski/eliciting-secret-knowledge", "arXiv:2503.10965", "arXiv:2404.02151", "arXiv:2406.05946"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "medium",
+ "quote": "In 2/3 of our settings, the best performers were black-box strategies based on prefilling assistant responses and sampling either from the assistant or user persona."
+}

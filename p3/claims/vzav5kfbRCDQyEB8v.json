@@ -1,0 +1,40 @@
+{
+ "post_id": "vzav5kfbRCDQyEB8v",
+ "primary_claim": "A toy transformer retains provably predictively-defunct belief-state information (about a stochastic 'coin' that becomes irrelevant) in its residual stream rather than pruning it as optimal-prediction theory would suggest, and under sufficient capacity pressure from narrowing the residual stream, it sheds the oldest defunct information first, rather than the least predictively significant.",
+ "claim_type": "positive",
+ "phenomenon": "representation geometry",
+ "models": [],
+ "n_model_families": 0,
+ "effect": {
+  "metric": "decodability of defunct 'coin' information from the residual stream after it becomes predictively irrelevant",
+  "value": "stays near 100% well after becoming predictively irrelevant, across divergence horizons and seeds",
+  "direction": "+",
+  "uncertainty_reported": "seeds"
+ },
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": [
+  "arXiv:2405.15943",
+  "arXiv:2006.00995",
+  "arXiv:2306.03819",
+  "arXiv:1412.2859"
+ ],
+ "contradicts_or_qualifies": [
+  "the initial hypothesis derived from optimal-prediction theory -- that a transformer should prune predictively irrelevant information -- was disproved; the model instead retains predictively defunct information in its residual stream long after it becomes irrelevant, indicating optimal prediction does not imply representational minimality"
+ ],
+ "stated_future_work": [
+  "use a state-space model where the state cannot be re-read by the attention layer, forcing the transformer to use memory to retain (or not) information about the coin, to more cleanly separate optimal prediction from representational minimality"
+ ],
+ "limitations_stated": [
+  "narrowing the residual stream alone did not serve as a true memory bottleneck, likely because the attention layer can re-derive the coin information from the context window"
+ ],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "This information is shed only when there is a sufficient amount of imposed capacity pressure, in which case the oldest predictively defunct information is shed first."
+}

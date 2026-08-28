@@ -1,0 +1,30 @@
+{
+ "post_id": "nwx6duiDZcHatbpPT",
+ "primary_claim": "Frontier LLMs show early, nascent steganographic capabilities: they fail to pass encoded messages without a monitor noticing under standard affordances, but succeed much more with an unmonitored scratchpad and coordination on encoding scheme, and show early signs of basic encoded reasoning, though they rarely hide that reasoning subtly enough to fool a monitor.",
+ "claim_type": "positive",
+ "phenomenon": "monitor evasion",
+ "models": [
+  {"family": "Claude", "size": null, "open_weight": false},
+  {"family": "GPT", "size": null, "open_weight": false},
+  {"family": "Gemini", "size": null, "open_weight": false}
+ ],
+ "n_model_families": 3,
+ "effect": {"metric": null, "value": null, "direction": "+", "uncertainty_reported": "none"},
+ "design": {
+  "baseline": true,
+  "ablation": true,
+  "held_out": false,
+  "seeds_n": null,
+  "prereg": false,
+  "human_eval": false
+ },
+ "depends_on": ["arturzolkowski/steganographic-evals"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Continue measuring steganographic capabilities to determine when additional mitigations are needed"
+ ],
+ "limitations_stated": [],
+ "reproducible_in_principle": "code+data",
+ "extractor_confidence": "high",
+ "quote": "We find that current models are unable to encode short messages in their outputs without a monitor noticing under standard affordances."
+}

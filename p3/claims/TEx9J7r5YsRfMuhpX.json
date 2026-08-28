@@ -1,0 +1,30 @@
+{
+ "post_id": "TEx9J7r5YsRfMuhpX",
+ "primary_claim": "Among three approaches to crosscoder feature ablation/steering (single-layer naive, many-layer naive, gradient-descent perturbation), the perturbation-based method is the least sensitive to hyperparameter tuning while achieving comparable quantitative performance, suppressing a sleeper-agent trigger's effect at cross-entropy close to the other methods' best settings.",
+ "claim_type": "method",
+ "phenomenon": "crosscoder / model diffing",
+ "models": [
+  {"family": "TinyStories", "size": "33M", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "cross-entropy vs non-deployment baseline", "value": "~2.1-2.2 (best hyperparameters) vs ~1.5 baseline", "direction": "+", "uncertainty_reported": "se"},
+ "design": {"baseline": true, "ablation": true, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["hxxramAB82tjtpiQu", "M8kpzm42uHytnyYyP"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "Investigate these approaches on a wider range of models and features/behaviours, particularly a deeper model where behaviours are more localised to particular layers",
+  "Do the single layer or many layer steering approaches but with automated hyperparameter estimation",
+  "Do the perturbation approach but add a term to the loss to penalise disrupting other features",
+  "Do the perturbation approach but instead of full gradient descent take the direction of steepest descent and use that as a steering vector",
+  "Explore steering/clamping more carefully"
+ ],
+ "limitations_stated": [
+  "The perturbation approach is quite computationally intensive, since it requires doing gradient descent to find the perturbation at every token",
+  "The perturbation approach has some risk of producing adversarial example style effects that aren't representative of the network in normal operation",
+  "In a preliminary look at steering/clamping the perturbation approach didn't give as good results as other simpler approaches",
+  "Only had time to do a brief qualitative analysis of steering/clamping"
+ ],
+ "reproducible_in_principle": "code",
+ "extractor_confidence": "high",
+ "quote": "For ablation, the “perturbation” approach has proved the easiest to use, since it is the least sensitive to hyperparameter tuning."
+}

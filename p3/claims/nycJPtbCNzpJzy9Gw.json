@@ -1,0 +1,26 @@
+{
+ "post_id": "nycJPtbCNzpJzy9Gw",
+ "primary_claim": "In ResNet-18 models trained on CIFAR-10 and Tiny ImageNet, an active-learning (least-confidence uncertainty sampling) training regime does not reduce superposition relative to a standard baseline -- it instead shows more superposition (higher mean cosine similarity, lower silhouette score, more class-cluster overlap) than the baseline, contrary to the hypothesis that focusing training on uncertain/difficult samples would reduce superposition.",
+ "claim_type": "negative",
+ "phenomenon": "superposition",
+ "models": [
+  {"family": "ResNet", "size": "18-layer", "open_weight": true}
+ ],
+ "n_model_families": 1,
+ "effect": {"metric": "mean cosine similarity between neuron representations / silhouette score (active learning vs baseline)", "value": "CIFAR-10: cosine sim AL 0.927 vs baseline 0.885; silhouette AL 0.189 vs baseline 0.212", "direction": "-", "uncertainty_reported": "none"},
+ "design": {"baseline": true, "ablation": false, "held_out": false, "seeds_n": null, "prereg": false, "human_eval": false},
+ "depends_on": ["CTh74TaWgvRiXnkS6", "greentfrapp/lucent"],
+ "contradicts_or_qualifies": [],
+ "stated_future_work": [
+  "examine different data sampling strategies from the Active Learning methods to see if there is a difference in the Superposition based on them",
+  "Working with a deeper model and a better quality dataset to conduct the same experiment"
+ ],
+ "limitations_stated": [
+  "due to the lack of computational resources, the smaller vision datasets CIFAR-10 and Tiny ImageNet were used",
+  "As the CIFAR-10 image data size is very small, it is hard to interpret what features the neurons are exactly activating for",
+  "these units are not reacting to the same features as they are from different models... so we can not directly compare them"
+ ],
+ "reproducible_in_principle": "neither",
+ "extractor_confidence": "medium",
+ "quote": "Contrary to my expectations, the active learning model did not significantly outperform the baseline in terms of feature separation and overall accuracy."
+}

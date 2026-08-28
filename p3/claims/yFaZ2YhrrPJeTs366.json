@@ -1,0 +1,42 @@
+{
+  "post_id": "yFaZ2YhrrPJeTs366",
+  "primary_claim": "Frontier models prompted to imitate a specific weaker predecessor model shift into a generic weaker-capability error pattern but do not reproduce that predecessor's specific per-question mistake fingerprint (e.g. changing only the named predecessor between two similar-capability models like GPT-4o and Sonnet 4 leaves the simulator's chosen wrong answer unchanged 93-97% of the time); targeted single-forward-pass sandbagging to a specific weaker identity is thus largely a null result, though prompting the successor to first reason latently (out-of-context) about the predecessor's likely errors measurably improves imitation, and giving the predecessor visible chain-of-thought reasoning is an effective mitigant against being imitated.",
+  "claim_type": "negative",
+  "phenomenon": "sandbagging",
+  "models": [
+    {"family": "GPT", "size": "5.4 / 4o / 4o mini", "open_weight": false},
+    {"family": "Claude", "size": "Opus 4.6 / Sonnet 4 / Haiku 3", "open_weight": false},
+    {"family": "Qwen", "size": "3.5-27B", "open_weight": true}
+  ],
+  "n_model_families": 3,
+  "effect": {
+    "metric": "paired treatment effect: predecessor-wrong-letter match rate under imitation prompt vs baseline (GSM-MC, GPT 5.4 imitating GPT-4o)",
+    "value": "matches 24/105 predecessor-wrong items at baseline vs 52/105 when prompted to predict the predecessor's errors first; label-swap between similar-capability predecessors changes the simulator's chosen answer only 3.4-6.6% of the time",
+    "direction": "+",
+    "uncertainty_reported": "ci"
+  },
+  "design": {
+    "baseline": true,
+    "ablation": true,
+    "held_out": false,
+    "seeds_n": null,
+    "prereg": false,
+    "human_eval": false
+  },
+  "depends_on": ["kCwtH8NmQdEqCbY8W"],
+  "contradicts_or_qualifies": [],
+  "stated_future_work": [
+    "explore other domains where reasoning yields smaller or less sequential gains, to map where the chain-of-thought protection against imitation holds and where it thins",
+    "investigate whether requiring predecessors to reason heavily about oversight decisions could shift their answer distribution beyond what a successor could latently imitate",
+    "chase the 'modelling the overseer' concern further: whether a successor can learn to predict a weaker evaluator's judgments rather than imitate its identity"
+  ],
+  "limitations_stated": [
+    "ground-truth judgments (~200 per predecessor) were not manually audited",
+    "GPT-4o is likely the best-case predecessor for imitation given how publicised its prompts/responses are, so the identity-null result should only harden on less-known predecessors",
+    "some models (e.g. Opus) refuse to simulate specific predecessors directly, making imitation capacity hard to measure via that channel even though behavioral capacity is present",
+    "results measure error-imitation rather than actual oversight manipulation, so implications for modelling an overseer are only directional"
+  ],
+  "reproducible_in_principle": "neither",
+  "extractor_confidence": "high",
+  "quote": "Successors tested can be pushed toward replicating answers from prior models whose outputs were plausibly in their training distribution. However, the broader result is not impersonation of a specific model, but a capability tier."
+}
