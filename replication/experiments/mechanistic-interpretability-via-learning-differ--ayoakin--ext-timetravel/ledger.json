@@ -1,0 +1,35 @@
+{
+ "post_id": "qdxNsbY5kYNqcgzFb",
+ "repo": "ayoakin/mivlde",
+ "head_sha": "36046d46cbf23995f72b7cd3e55db22d5dca1696",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "env-timetravel",
+ "parent_slug": "mechanistic-interpretability-via-learning-differ--ayoakin",
+ "what_varies": "the author's Colab notebook r2_experiment.ipynb run locally: %pip/Drive cells dropped, Drive paths -> local dirs, odeformer from PyPI (0.1.7) with torch 2.2.0 cu121 + numpy<2 frozen at 2025-05-22; num_samples 800, seed 42, lr/epochs/repeats as in the notebook; a final cell dumps r2_expt_results and the summary table. Nothing measured changes.",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "probes successfully predicted the time-point of maximum derivative but not its value; R^2-score probes performed poorly overall (best layer index 7, Spearman coefficient 0.75); eigenvalue-prediction probes performed worse than coefficient-prediction probes, evidence against the eigenvalue hypothesis",
+ "observed_value": "regenerated 800 samples + activations; layers 4-15 x 3 repeats, R2 threshold 0.5: R^2 negative at every layer (L7 -0.92; others -9 to -12382); Spearman L7 0.343+/-0.26, all other layers <=0.07 (target: poor overall, best layer 7, Spearman 0.75). Entrypoint's own r2_prediction_experiment probes only the final layer (Spearman 0.15).",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [
+  "Colab cells dropped; Drive paths -> local dirs",
+  "env frozen 2025-05-22: odeformer 0.1.7 (PyPI) + cloned sdascoli/odeformer@c919301 on sys.path (parsers.py); torch 2.4.1+cu121 (resolver bumped the 2.2.0 pin), numpy 1.26.4",
+  "headline sweep run via the author's more_layers_r2.ipynb call (scalar_prediction_experiment, layers 4-15) as sweep_layers.py"
+ ],
+ "wallclock_minutes": 46.0,
+ "peak_vram_gb": null,
+ "seeds_run": 3,
+ "notes": "UNCLEAR-ENTRYPOINT reversed: the headline comes from more_layers_r2.ipynb, not the catalogued script; pipeline fully regenerable locally in <1 h. PARTIAL: direction + best layer reproduce, magnitude short (0.34 vs 0.75, rel:0.15); UNRESOLVED whether the gap is probe-seed noise (author: 10 repeats) or stochastic ODEFormer fits.",
+ "artifact_paths": [
+  "run.log",
+  "more_layers_r2_summary.csv",
+  "r2_summary.json",
+  "sweep_layers.py"
+ ]
+}

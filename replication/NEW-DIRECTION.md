@@ -720,3 +720,45 @@ overnight jobs. Program items still open: a dtype arm (numerics are bounded by R
 a second bug-injection round at sub-tolerance perturbations (prices the tolerance rules), and the
 P3-judge-vs-ledger validation (CPU). All are in `prompts2/brainstorm.md` §7 for the next session.
 
+## R-15 — the `unclear-entrypoint` row: `ayoakin/mivlde` (2026-08-28 19:58 + sweep; 41 + 5 min; 2 restarts)
+
+**Parent verdict:** `unclear-entrypoint` — "function library, no `__main__`, uncommitted activations".
+**What the claim actually needs:** the author's Colab notebooks. `r2_experiment.ipynb` regenerates
+everything from scratch (800 synthetic ODE samples, seed 42 → ODEFormer activations → probes);
+`more_layers_r2.ipynb` computes the headline (layers 4–15, R²-threshold 0.5, 3 repeats). Run
+locally: `%pip`/Drive cells dropped, Drive paths → local, env frozen at 2025-05-22 (torch 2.4.1 —
+odeformer's resolver bumped the 2.2.0 pin, same lesson as R-3; numpy 1.26; odeformer 0.1.7 from
+PyPI **plus the cloned ODEFormer repo on `sys.path`**, because the author's sample generator
+imports `parsers.py` from the repo root, which the pip package does not ship). The pretrained
+ODEFormer checkpoint (465 MB) downloads from the author's Google Drive link inside the package.
+
+`[MEASURED]` Pipeline ran end to end: 800 samples, 800 activation files, probes on 12 layers × 3
+repeats (`more_layers_r2_summary.csv`). R² of the R²-score probe is negative at every layer
+(−0.9 at layer 7; −9 … −12,382 elsewhere); **layer 7 is the single standout** — Spearman
+**0.343 ± 0.26** vs ≤ 0.07 at every other layer. Target: "poorly overall; best layer index 7,
+Spearman 0.75". Direction ✓, best layer ✓, magnitude ✗ (0.34 vs 0.75; rel:0.15). The entrypoint's
+own `r2_prediction_experiment` probes only the final decoder layer (Spearman 0.15) — it cannot
+produce the headline at all.
+
+`[INFERRED]` **Partial (direction + best layer; magnitude short).** The `unclear-entrypoint` label
+was accurate about the repo and wrong about the science: the experiment is fully regenerable from
+the author's notebooks in under an hour, and its qualitative claim holds. The Spearman gap is
+`[UNRESOLVED]`: the author's L7 figure came from a 10-repeat run on a sample set the notebook
+regenerates stochastically (beam-search ODEFormer fits), and the notebook says the probes are
+"poor overall" — 0.75 vs 0.34 on a noisy small-n probe is within what R-4's seed bimodality would
+predict, but that is a hypothesis, not a measurement.
+
+**Never-located rows, status after the rot-reversal series:** `env` 6/6 attempted (3 exact, 2
+partial, 1 credential-gated); `data` 1/1 (partial); `unclear-entrypoint` 1/2 (partial; ak47na
+untried — W&B artefact, expected `model-access`); `runtime` 0/3; `vram` 0/2 (hardware);
+`api-key`/`model-access` by policy. **Pooled: 26/28 of rows that reached a measurement reproduce
+≥ partially; 1 scientific miss (AntiPaSTO); 1 definition-ambiguous (artmtt).**
+
+### N after R-15 — next-run decision
+
+The remaining reversible class is `runtime` (3 rows, each ≥ 2 h by the authors' own timing, mis-
+catalogued as minute-class). They are the correct overnight use of the card: no judgement needed
+until they finish. Queue them sequentially in the existing `tree_late.sh` queue with the authors'
+full budgets; the next session judges. Everything else is CPU work (P3-judge validation; a
+sub-tolerance bug-injection round; the tolerance-rule audit R-1/R-4 motivates).
+
