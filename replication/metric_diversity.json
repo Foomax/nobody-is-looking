@@ -1,0 +1,271 @@
+{
+ "rows": [
+  {
+   "phenomenon": "AI control protocols",
+   "n": 32,
+   "pos": 12,
+   "neg": 12,
+   "distinct_metrics": 29,
+   "named": 29,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "activation steering",
+   "n": 31,
+   "pos": 19,
+   "neg": 6,
+   "distinct_metrics": 27,
+   "named": 27,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "representation geometry",
+   "n": 31,
+   "pos": 22,
+   "neg": 5,
+   "distinct_metrics": 28,
+   "named": 28,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "interpretability tooling",
+   "n": 30,
+   "pos": 14,
+   "neg": 2,
+   "distinct_metrics": 28,
+   "named": 28,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "introspection / self-report accuracy",
+   "n": 29,
+   "pos": 17,
+   "neg": 8,
+   "distinct_metrics": 27,
+   "named": 27,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "eval methodology critique",
+   "n": 28,
+   "pos": 8,
+   "neg": 14,
+   "distinct_metrics": 26,
+   "named": 26,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "sparse autoencoder quality",
+   "n": 24,
+   "pos": 13,
+   "neg": 6,
+   "distinct_metrics": 22,
+   "named": 22,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "circuit discovery",
+   "n": 23,
+   "pos": 16,
+   "neg": 5,
+   "distinct_metrics": 21,
+   "named": 21,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "jailbreaking / adversarial prompting",
+   "n": 22,
+   "pos": 20,
+   "neg": 2,
+   "distinct_metrics": 20,
+   "named": 20,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "alignment faking",
+   "n": 22,
+   "pos": 13,
+   "neg": 3,
+   "distinct_metrics": 21,
+   "named": 21,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "SAE feature interpretability",
+   "n": 21,
+   "pos": 16,
+   "neg": 3,
+   "distinct_metrics": 18,
+   "named": 18,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "emergent misalignment",
+   "n": 19,
+   "pos": 14,
+   "neg": 2,
+   "distinct_metrics": 19,
+   "named": 19,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "reward hacking",
+   "n": 19,
+   "pos": 12,
+   "neg": 5,
+   "distinct_metrics": 18,
+   "named": 18,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "evaluation awareness",
+   "n": 18,
+   "pos": 12,
+   "neg": 6,
+   "distinct_metrics": 18,
+   "named": 18,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "chain-of-thought monitorability",
+   "n": 17,
+   "pos": 9,
+   "neg": 5,
+   "distinct_metrics": 17,
+   "named": 17,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "deceptive alignment / scheming",
+   "n": 16,
+   "pos": 12,
+   "neg": 4,
+   "distinct_metrics": 15,
+   "named": 15,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "superposition",
+   "n": 16,
+   "pos": 9,
+   "neg": 4,
+   "distinct_metrics": 14,
+   "named": 14,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "chain-of-thought faithfulness",
+   "n": 15,
+   "pos": 9,
+   "neg": 4,
+   "distinct_metrics": 13,
+   "named": 13,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "crosscoder / model diffing",
+   "n": 13,
+   "pos": 7,
+   "neg": 1,
+   "distinct_metrics": 12,
+   "named": 12,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "sandbagging",
+   "n": 13,
+   "pos": 5,
+   "neg": 6,
+   "distinct_metrics": 11,
+   "named": 11,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "linear probe detection",
+   "n": 13,
+   "pos": 9,
+   "neg": 3,
+   "distinct_metrics": 13,
+   "named": 13,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "model welfare / psychology",
+   "n": 12,
+   "pos": 7,
+   "neg": 4,
+   "distinct_metrics": 12,
+   "named": 12,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "CoT obfuscation",
+   "n": 12,
+   "pos": 8,
+   "neg": 4,
+   "distinct_metrics": 12,
+   "named": 12,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "training dynamics",
+   "n": 12,
+   "pos": 8,
+   "neg": 3,
+   "distinct_metrics": 10,
+   "named": 10,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "dictionary learning method",
+   "n": 12,
+   "pos": 6,
+   "neg": 3,
+   "distinct_metrics": 12,
+   "named": 12,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "fine-tuning side effects",
+   "n": 9,
+   "pos": 7,
+   "neg": 2,
+   "distinct_metrics": 9,
+   "named": 9,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "machine unlearning robustness",
+   "n": 8,
+   "pos": 4,
+   "neg": 3,
+   "distinct_metrics": 8,
+   "named": 8,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "agentic task capability",
+   "n": 8,
+   "pos": 3,
+   "neg": 4,
+   "distinct_metrics": 8,
+   "named": 8,
+   "shared_pos_neg": 0
+  },
+  {
+   "phenomenon": "prompt injection",
+   "n": 6,
+   "pos": 3,
+   "neg": 2,
+   "distinct_metrics": 5,
+   "named": 5,
+   "shared_pos_neg": 0
+  }
+ ],
+ "summary": {
+  "phenomena": 29,
+  "named": 493,
+  "distinct": 493,
+  "shared": 0
+ }
+}

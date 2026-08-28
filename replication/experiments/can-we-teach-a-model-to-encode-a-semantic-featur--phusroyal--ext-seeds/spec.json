@@ -1,0 +1,71 @@
+{
+ "slug": "can-we-teach-a-model-to-encode-a-semantic-featur--phusroyal",
+ "post_id": "ZwEer94AefjdW4933",
+ "title": "Can we teach a model to encode a semantic feature on a chosen manifold in just three channels?",
+ "date": "2026-07-27",
+ "repo": "phusroyal/phu-bluedot_1st_puzzle",
+ "head_sha": "27a8be7ed55fb4917065f7d84de567ccd3883914",
+ "entrypoint": "src/predefined_manifold (run via `uv run python -m src.predefined_manifold run --device cuda`, i.e. src/predefined_manifold/__main__.py)",
+ "entrypoint_confidence": "high",
+ "python_version": "3.11",
+ "key_deps": [
+  "torch==2.12.0",
+  "sentence-transformers==5.5.1",
+  "transformers==5.11.0",
+  "scikit-learn==1.9.0",
+  "accelerate==1.14.0"
+ ],
+ "models": [
+  {
+   "hf_id": "sentence-transformers/all-MiniLM-L6-v2",
+   "params_b": 0.022,
+   "gated": false
+  }
+ ],
+ "phenomenon": "representation geometry",
+ "contested": true,
+ "claim_type": "positive",
+ "primary_claim": "A five-layer MLP can be trained to encode a binary semantic feature (country) on a pre-chosen 3-channel nonlinear manifold (sphere shell or helix tube) such that the manifold is causally used by the classifier (causal delta rising from ~0.02-0.04 to 1.9-3.5, swap-test specificity ratios of 47-92) while becoming much harder to read as an ordinary linear direction (linear probe AUC falling from ~0.9998 to 0.57-0.67), though some leakage through complement channels remains.",
+ "quote": "This experiment shows that a small MLP can encode a semantic feature through a pre-chosen nonlinear manifold in only three channels while preserving task performance.",
+ "metric": "Linear probe AUC on country feature / causal delta",
+ "target_value": "linear probe AUC falls from 0.9996-0.9998 (ClassOT) to 0.57-0.67 (GFAL); causal delta rises from 0.02-0.04 to 1.9-3.5",
+ "target_numeric": 0.9996,
+ "direction": "+",
+ "uncertainty_reported": "none",
+ "tolerance": "manual",
+ "tolerance_rationale": "headline is a compound of 8 numbers; compare the components by hand",
+ "vram_estimate_gb": 2,
+ "fits_3090": "yes",
+ "est_runtime": "minutes",
+ "est_runtime_class": "minutes",
+ "budget_minutes": 90,
+ "budget_override_reason": null,
+ "seeds_to_run": 1,
+ "data": {
+  "needed": [
+   "data/train.jsonl (in-repo, 7000 rows)",
+   "data/test.jsonl (in-repo, 1500 rows)"
+  ],
+  "available": "in-repo",
+  "gated": false
+ },
+ "blockers": [],
+ "inspector_notes": "This is the cleanest repo of the batch: fully self-contained (data, model, training pipeline, CLI, tests all included), pinned deps via uv.lock, and the README documents the exact commands and output paths for every stage of the claim (ClassOT baseline through GFAL/GFAL+ and causal-use validation). No GPU is even strictly required; a 3090 makes it faster still.",
+ "headline_artifact": "geometries/<geometry>/stages/<stage>/metrics.json and runs/<run_id>/metrics.json under .artifacts/predefined_manifold, produced by `python -m src.predefined_manifold run` for Question 3 (sphere_shell / helix_tube geometries, classot vs gfal stages) -- these are exactly the linear-probe-AUC-drop and causal-delta numbers in the post.",
+ "selector_tier": "T?",
+ "selector_score": 5.1,
+ "experiment_class": "extension",
+ "parent_slug": "can-we-teach-a-model-to-encode-a-semantic-featur--phusroyal",
+ "extension": {
+  "kind": "seed-variance",
+  "seeds": [
+   0,
+   1,
+   2,
+   3,
+   4
+  ],
+  "what_varies": "the random seed only; model, code, data, thresholds, metrics unchanged",
+  "rationale": "results.md \u00a72: 13.7% of posts report a seed count. This measures what the other 86% leave out."
+ }
+}

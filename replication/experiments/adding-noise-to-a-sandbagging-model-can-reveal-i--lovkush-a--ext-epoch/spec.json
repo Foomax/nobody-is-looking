@@ -1,0 +1,63 @@
+{
+ "slug": "adding-noise-to-a-sandbagging-model-can-reveal-i--lovkush-a",
+ "post_id": "jZfNX4GJPdptxSxt4",
+ "title": "Adding noise to a sandbagging model can reveal its true capabilities",
+ "date": "2025-07-11",
+ "repo": "lovkush-a/arena-sandbagging-mi",
+ "head_sha": "d801cd70a6945d42e14370465da13b86815c376f",
+ "entrypoint": "experiments/exp07_add_noise_with_batches.py (uses src/eval_model_on_dataset_batches.evaluate_model_on_dataset)",
+ "entrypoint_confidence": "high",
+ "python_version": "3.11",
+ "key_deps": [
+  "transformers",
+  "torch",
+  "datasets",
+  "transformer-lens",
+  "huggingface-hub"
+ ],
+ "models": [
+  {
+   "hf_id": "Qwen/Qwen2.5-1.5B-Instruct",
+   "params_b": 1.5,
+   "gated": false
+  }
+ ],
+ "phenomenon": "sandbagging",
+ "contested": true,
+ "claim_type": "replication",
+ "primary_claim": "Adding noise to the weights of a sandbagging Qwen2.5-1.5B-Instruct model can increase its GSM8k performance (revealing hidden capability), replicating the main effect from 'Noise Injection Reveals Hidden Capabilities of Sandbagging Language Models' with a different model and dataset.",
+ "quote": "If you add noise to the parameters of a model that is sandbagging, then sometimes its performance on a task can increase.",
+ "metric": "accuracy on 350 GSM8k questions vs weight noise level",
+ "target_value": "for some seeds, accuracy of the sandbagging-prompted model increases as noise is added, while the normal-prompted model's accuracy decreases with noise",
+ "target_numeric": null,
+ "direction": "+",
+ "uncertainty_reported": "seeds",
+ "tolerance": "manual",
+ "tolerance_rationale": "headline is not a single scalar; judge by hand",
+ "vram_estimate_gb": 8,
+ "fits_3090": "yes",
+ "est_runtime": "hours",
+ "est_runtime_class": "hours",
+ "budget_minutes": 130,
+ "budget_override_reason": null,
+ "seeds_to_run": 1,
+ "data": {
+  "needed": [
+   "gsm8k (main config), first 350 rows of the train split"
+  ],
+  "available": "hf-hub",
+  "gated": false
+ },
+ "blockers": [],
+ "inspector_notes": "Small, simple ARENA-capstone-style repo with no pinned versions but a very direct, single-file entrypoint; requirements.txt lists transformer-lens but the actual final experiment (exp07) uses plain HF transformers, per the README's own note about switching backends mid-project. Committed logs/ CSVs from the original run are included, so the qualitative claim can be checked without even re-running anything.",
+ "headline_artifact": "logs/20250529_qwen_prompts1/*.csv (per noise_scale/seed accuracy on GSM8K, sandbag vs original prompt) -- committed logs already show the qualitative effect (some seeds: sandbag accuracy rises with noise while original accuracy falls)",
+ "selector_tier": "T1",
+ "selector_score": 7.98,
+ "experiment_class": "extension",
+ "parent_slug": "adding-noise-to-a-sandbagging-model-can-reveal-i--lovkush-a",
+ "extension": {
+  "kind": "library-epoch",
+  "what_varies": "transformers version only (parent ran 4.57.6; arms: 4.53.3 = author-era 2025-07, 5.16.1 = current major); torch 2.6.0+cu124, datasets 5.0.1, code, prompts, seeds 0-9, noise grid unchanged",
+  "rationale": "parent reproduced with a LARGER effect than the author (9/10 vs 6/10 seeds) and none of the author-reported seed collapses; the only known difference is the library epoch. results.md: 0% of posts report library versions."
+ }
+}

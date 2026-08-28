@@ -2,7 +2,11 @@
 """Aggregate experiments/*/ledger.json into the R5 headline: reproduction rate + failure taxonomy."""
 import collections, glob, json, os, sys
 HERE = os.path.dirname(os.path.abspath(__file__))
-L = [json.load(open(p)) for p in sorted(glob.glob(os.path.join(HERE, "experiments", "*", "ledger.json")))]
+ALL = [json.load(open(p)) for p in sorted(glob.glob(os.path.join(HERE, "experiments", "*", "ledger.json")))]
+# extension-class rows (seed/family/library-epoch variations of a reproduced row) are a different
+# experiment: they are tallied separately and NEVER enter the reproduction rate.
+EXT = [e for e in ALL if e.get("experiment_class") == "extension"]
+L = [e for e in ALL if e.get("experiment_class") != "extension"]
 if not L:
     print("no ledger entries yet"); sys.exit(0)
 n = len(L)
@@ -20,3 +24,6 @@ print(f"attempted {n}  installs {inst}  runs {runs}  located {loc}  reproduced {
       f"-> {out['reproduction_rate_of_attempted']:.0%} of attempted, "
       f"{(rep/loc if loc else 0):.0%} of located")
 print("failure taxonomy:", dict(reasons.most_common()))
+if EXT:
+    print(f"extensions (not in the rate): {len(EXT)} -- " + "; ".join(
+        f"{e.get('extension_kind','?')}:{e['repo']}={e.get('observed_value','')[:60]}" for e in EXT))

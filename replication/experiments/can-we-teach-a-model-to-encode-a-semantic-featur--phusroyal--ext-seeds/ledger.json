@@ -1,0 +1,29 @@
+{
+ "post_id": "ZwEer94AefjdW4933",
+ "repo": "phusroyal/phu-bluedot_1st_puzzle",
+ "head_sha": "27a8be7ed55fb4917065f7d84de567ccd3883914",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "seed-variance",
+ "parent_slug": "can-we-teach-a-model-to-encode-a-semantic-featur--phusroyal",
+ "what_varies": "the random seed only; model, code, data, thresholds, metrics unchanged",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "linear probe AUC falls from 0.9996-0.9998 (ClassOT) to 0.57-0.67 (GFAL); causal delta rises from 0.02-0.04 to 1.9-3.5",
+ "observed_value": "sphere_shell probe AUC by seed 0-4: 0.922/0.923/0.590/0.650/0.711 (target 0.57-0.67; 2/5 in range, 2/5 at 0.92 = GFAL failed to erase the feature); helix_tube 0.638/0.566/0.565/0.631/0.546 (all <=0.64, 2/5 strictly in range); causal delta 1.9-3.2 all seeds; 14/14 checks passed on 2/5 (sphere) and 5/5 (helix) seeds",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [],
+ "wallclock_minutes": 27.0,
+ "peak_vram_gb": null,
+ "seeds_run": 5,
+ "notes": "SEED-FRAGILE on sphere_shell: on 2 of 5 seeds the headline 'linear probe AUC falls to 0.57-0.67 after GFAL' does not happen (AUC stays 0.92) while the causal delta still rises; the repo's own 14-check validator fails on 3/5 sphere seeds. Parent seed 1729 (AUC 0.589) sits in the favourable 60%. helix_tube is stable. Only --seed changed (CLI flag); same uv.lock env, same code, cuda.",
+ "artifact_paths": [
+  "run.log",
+  "results.jsonl"
+ ]
+}

@@ -1,0 +1,29 @@
+{
+ "post_id": "zKyKDre78napvtrEo",
+ "repo": "fractalmachinist/ioi",
+ "head_sha": "1571259a3a8e713abd4cdd3758613f41769304ba",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "seed-variance",
+ "parent_slug": "gpt-2-s-ioi-behavior-is-defined-where-the-paper---fractalmachinist",
+ "what_varies": "the random seed only; model, code, data, thresholds, metrics unchanged",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "mean drop 0.23, SD 0.84 (n=128 matched pairs), paired t=3.09, p=0.0024, Cohen's d=0.27; accuracy 95.4% (control) vs 94.5% (test)",
+ "observed_value": "mean drop by seed 0-4: 0.231/0.341/0.278/0.370/0.298 (mean 0.304 SD 0.054); d 0.27-0.50; all p<0.003; accuracies 0.95-0.99",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [],
+ "wallclock_minutes": 1.0,
+ "peak_vram_gb": null,
+ "seeds_run": 5,
+ "notes": "SEED-VARIANCE: parent's seed 0 (the author's) gives the SMALLEST effect of 5. Effect robust on every seed; the reported 0.23 understates the mean across seeds by 25%. Exact 3-decimal match in the parent = RNG match, not effect-size precision. Only the prompt-sampler seed changed (SEED=s cell); %pip/%matplotlib widget cell replaced by %matplotlib inline; attention-plot cells dropped.",
+ "artifact_paths": [
+  "run.log",
+  "results.jsonl"
+ ]
+}

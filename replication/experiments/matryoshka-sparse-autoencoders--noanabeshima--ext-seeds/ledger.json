@@ -1,0 +1,29 @@
+{
+ "post_id": "zbebxYCqsryPALh8C",
+ "repo": "noanabeshima/matryoshka-saes",
+ "head_sha": "7b80f5fe36598f43f3181c5466a0365c7ce07807",
+ "attempted_at": "2026-08-28",
+ "machine": "NVIDIA GeForce RTX 3090, 580.126.18, 24576 MiB",
+ "experiment_class": "extension",
+ "extension_kind": "seed-variance",
+ "parent_slug": "matryoshka-sparse-autoencoders--noanabeshima",
+ "what_varies": "the random seed only; model, code, data, thresholds, metrics unchanged",
+ "installs": true,
+ "runs": true,
+ "claim_located": true,
+ "claim_reproduced": null,
+ "claimed_value": "Matryoshka SAEs have higher MMC than vanilla SAEs at the same L0 across most locations (exceptions: residual stream before first block, first attention-layer output); at fixed L0, Matryoshka has slightly worse FVU, comparable to a vanilla SAE ~0.4x its size",
+ "observed_value": "vanilla absorbed latents (diag cos<0.85): 9/20 on all 5 seeds (diag min 0.653-0.677); matryoshka 0/20 on all 5 (diag min 0.924-0.933, mean 0.963); max off-diag 0.25-0.28",
+ "delta": null,
+ "tolerance_used": "n/a (extension: not a replication)",
+ "blocking_reason": "none",
+ "env_fixes": [],
+ "wallclock_minutes": 43.0,
+ "peak_vram_gb": null,
+ "seeds_run": 5,
+ "notes": "SEED-STABLE: the toy result is invariant to seed (feature geometry, data and init all reseeded). SDs: vanilla diag_mean 0.002, matryoshka diag_mean 0.0007. Parent notebook was unseeded; seeded copy adds torch/np manual_seed only; figure-export cell dropped.",
+ "artifact_paths": [
+  "run.log",
+  "results.jsonl"
+ ]
+}

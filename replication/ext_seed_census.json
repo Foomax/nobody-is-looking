@@ -1,0 +1,282 @@
+{
+ "ioi": {
+  "mean_drop": [
+   0.3035,
+   0.0542,
+   0.2307,
+   0.3696,
+   5
+  ],
+  "std_drop": [
+   0.8221,
+   0.0519,
+   0.7436,
+   0.8703,
+   5
+  ],
+  "t": [
+   4.2148,
+   0.9599,
+   3.0922,
+   5.6229,
+   5
+  ],
+  "p": [
+   0.0006,
+   0.0011,
+   0.0,
+   0.0024,
+   5
+  ],
+  "cohen_d": [
+   0.3725,
+   0.0848,
+   0.2733,
+   0.497,
+   5
+  ],
+  "control_accuracy": [
+   0.9703,
+   0.0169,
+   0.9531,
+   0.9922,
+   5
+  ],
+  "test_accuracy": [
+   0.9641,
+   0.0211,
+   0.9375,
+   0.9844,
+   5
+  ],
+  "per_seed": {
+   "0": {
+    "mean_drop": 0.231,
+    "d": 0.273,
+    "p": 0.0024
+   },
+   "1": {
+    "mean_drop": 0.341,
+    "d": 0.399,
+    "p": 1.4e-05
+   },
+   "2": {
+    "mean_drop": 0.278,
+    "d": 0.32,
+    "p": 0.00042
+   },
+   "3": {
+    "mean_drop": 0.37,
+    "d": 0.497,
+    "p": 1.1e-07
+   },
+   "4": {
+    "mean_drop": 0.298,
+    "d": 0.374,
+    "p": 4.5e-05
+   }
+  },
+  "author_seed": 0,
+  "parent_target": "mean drop 0.23, SD 0.84, t 3.09, p 0.0024, d 0.27 (n=128)",
+  "all_seeds_p_below_0.01": true,
+  "author_seed_rank_of_effect": 1
+ },
+ "phusroyal": {
+  "sphere_shell": {
+   "linear_probe_auc": [
+    0.7592,
+    0.1551,
+    0.5897,
+    0.9228,
+    5
+   ],
+   "causal_target_delta": [
+    2.9497,
+    0.4241,
+    2.1971,
+    3.1833,
+    5
+   ],
+   "geometry_probe_auc": [
+    0.9996,
+    0.0002,
+    0.9993,
+    0.9998,
+    5
+   ],
+   "passed_all_checks": 2,
+   "n": 5,
+   "per_seed": {
+    "0": {
+     "probe_auc": 0.922,
+     "causal_delta": 2.197
+    },
+    "1": {
+     "probe_auc": 0.923,
+     "causal_delta": 3.049
+    },
+    "2": {
+     "probe_auc": 0.59,
+     "causal_delta": 3.175
+    },
+    "3": {
+     "probe_auc": 0.65,
+     "causal_delta": 3.145
+    },
+    "4": {
+     "probe_auc": 0.711,
+     "causal_delta": 3.183
+    }
+   },
+   "in_target_range": 2
+  },
+  "helix_tube": {
+   "linear_probe_auc": [
+    0.5894,
+    0.042,
+    0.546,
+    0.6383,
+    5
+   ],
+   "causal_target_delta": [
+    2.718,
+    0.5452,
+    1.9441,
+    3.1959,
+    5
+   ],
+   "geometry_probe_auc": [
+    0.9949,
+    0.0023,
+    0.992,
+    0.9981,
+    5
+   ],
+   "passed_all_checks": 5,
+   "n": 5,
+   "per_seed": {
+    "0": {
+     "probe_auc": 0.638,
+     "causal_delta": 2.892
+    },
+    "1": {
+     "probe_auc": 0.566,
+     "causal_delta": 3.181
+    },
+    "2": {
+     "probe_auc": 0.565,
+     "causal_delta": 3.196
+    },
+    "3": {
+     "probe_auc": 0.631,
+     "causal_delta": 2.377
+    },
+    "4": {
+     "probe_auc": 0.546,
+     "causal_delta": 1.944
+    }
+   },
+   "in_target_range": 2
+  },
+  "parent_target": "probe AUC 0.57-0.67 after GFAL; causal delta 1.9-3.5 (stage gfal_plus); parent (seed 1729): sphere 0.589/3.473, helix 0.5685/2.565",
+  "errors": []
+ },
+ "matryoshka": {
+  "vanilla": {
+   "diag_min": [
+    0.6661,
+    0.0105,
+    0.6527,
+    0.6774,
+    5
+   ],
+   "diag_mean": [
+    0.8673,
+    0.0018,
+    0.8649,
+    0.8698,
+    5
+   ],
+   "max_offdiag": [
+    0.7458,
+    0.0093,
+    0.7356,
+    0.7576,
+    5
+   ],
+   "n_absorbed_lt085": [
+    9,
+    0.0,
+    9,
+    9,
+    5
+   ],
+   "per_seed_absorbed_lt085": {
+    "0": 9,
+    "1": 9,
+    "2": 9,
+    "3": 9,
+    "4": 9
+   },
+   "per_seed_diag_min": {
+    "0": 0.674,
+    "1": 0.653,
+    "2": 0.669,
+    "3": 0.677,
+    "4": 0.658
+   }
+  },
+  "matryoshka": {
+   "diag_min": [
+    0.9278,
+    0.003,
+    0.9244,
+    0.9325,
+    5
+   ],
+   "diag_mean": [
+    0.963,
+    0.0007,
+    0.9623,
+    0.964,
+    5
+   ],
+   "max_offdiag": [
+    0.2693,
+    0.0121,
+    0.2522,
+    0.2808,
+    5
+   ],
+   "n_absorbed_lt085": [
+    0,
+    0.0,
+    0,
+    0,
+    5
+   ],
+   "per_seed_absorbed_lt085": {
+    "0": 0,
+    "1": 0,
+    "2": 0,
+    "3": 0,
+    "4": 0
+   },
+   "per_seed_diag_min": {
+    "0": 0.927,
+    "1": 0.924,
+    "2": 0.929,
+    "3": 0.926,
+    "4": 0.932
+   }
+  },
+  "parent_target": "vanilla 9/20 absorbed (diag 0.66-0.75), matryoshka 0/20 (diag min 0.923 mean 0.965)",
+  "claim_holds_per_seed": {
+   "0": true,
+   "1": true,
+   "2": true,
+   "3": true,
+   "4": true
+  }
+ }
+}
