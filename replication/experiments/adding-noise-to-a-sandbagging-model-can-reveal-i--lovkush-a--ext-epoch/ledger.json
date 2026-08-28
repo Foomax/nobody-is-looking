@@ -13,17 +13,20 @@
  "claim_located": true,
  "claim_reproduced": null,
  "claimed_value": "for some seeds, accuracy of the sandbagging-prompted model increases as noise is added, while the normal-prompted model's accuracy decreases with noise",
- "observed_value": "arm tf453 (transformers 4.53.3, torch 2.6.0+cu124): 102/102 passes identical accuracy and 35700/35700 generations byte-identical to the parent (transformers 4.57.6). Per-seed gains identical; 9/10 seeds meet criterion (b); seed 9 null (0.9 pp).",
+ "observed_value": "arm tf453 (transformers 4.53.3, torch 2.6.0): 35700/35700 generations byte-identical to parent. arm torch213 (transformers 4.53.3, torch 2.13.0+cu130 -- intended 2.3.1, pin overridden by accelerate resolve): 12419/35700 byte-identical (34.8%), 4/102 passes identical accuracy, max pass diff 6.6 pp; criterion (b) still 9/10, seed 9 still null; per-seed gain Spearman 0.90; seed SD 6.7 pp vs kernel-change SD 1.9 pp (ratio 3.5).",
  "delta": null,
  "tolerance_used": "n/a (extension: not a replication)",
  "blocking_reason": "none",
- "env_fixes": [],
- "wallclock_minutes": 102.0,
+ "env_fixes": [
+  "torch 2.3.1 pin overridden by later unconstrained install (accelerate 1.14 pulled torch 2.13.0+cu130); reported as the realised arm, not re-run"
+ ],
+ "wallclock_minutes": 204.0,
  "peak_vram_gb": null,
  "seeds_run": 10,
- "notes": "LIBRARY-EPOCH arm 1: transformers minor version contributes zero variance (bit-identical outputs). Author-vs-parent discrepancy (author 6/10 seeds, 3 collapses; ours 9/10, none) is therefore not seed and not transformers; remaining factors are torch/CUDA kernel numerics on different hardware or HF weight revision. Arm 2 (torch 2.3.1+cu121) running as R-3; ledger to be updated.",
+ "notes": "LIBRARY-EPOCH: transformers minor = zero variance; torch major-ish = 65% of text rewritten, verdict/seed-ranking unchanged. Author's noise-0 outputs differ from ours in 32-56% of items (different stack) but accuracy within 2 pp; author collapse cells differ by >30 pp -> hypothesis: noise tensors differ across machines (device generator / device_map). Torch pin lesson: pin in the same resolver call. Realised arm is a valid one-factor design (2.6.0->2.13.0), reported as such.",
  "artifact_paths": [
   "run.log",
-  "src/logs/epoch_tf453"
+  "src/logs/epoch_tf453",
+  "src/logs/epoch_tf453torch231"
  ]
 }
